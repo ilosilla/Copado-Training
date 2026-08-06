@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>alerta_email_de_nuevos_leads</fullName>
+        <description>alerta email de nuevos leads</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>salesforce@porcelanosagrupo.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Leads/Lead_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>alerta_email_de_nuevos_leads_EN</fullName>
+        <description>alerta email de nuevos leads EN</description>
+        <protected>false</protected>
+        <recipients>
+            <type>campaignMemberDerivedOwner</type>
+        </recipients>
+        <senderAddress>salesforce@porcelanosagrupo.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Leads/Lead_Notification_EN</template>
+    </alerts>
+    <alerts>
+        <fullName>alerta_email_de_nuevos_leads_FR</fullName>
+        <description>alerta email de nuevos leads FR</description>
+        <protected>false</protected>
+        <recipients>
+            <type>campaignMemberDerivedOwner</type>
+        </recipients>
+        <senderAddress>salesforce@porcelanosagrupo.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Leads/Lead_Notification_FR</template>
+    </alerts>
+    <tasks>
+        <fullName>Contactez_ou_Convertez_la_Piste</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>Souvenez-vous de convertir la piste ou changer l&apos;status à &quot;Pas Intéressé&quot;.</description>
+        <dueDateOffset>7</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Lead.CreatedDate</offsetFromField>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Convertez ou Pas Intéressé</subject>
+    </tasks>
+    <tasks>
+        <fullName>Lead_Reminder</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>Convert the Lead or change its status to &quot;Not Interested&quot;</description>
+        <dueDateOffset>7</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Lead.CreatedDate</offsetFromField>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Lead Reminder: Convert or Not Interested</subject>
+    </tasks>
+</Workflow>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CLAIMS_Required_Field_Liability</fullName>
+    <active>true</active>
+    <errorConditionFormula>IsClaim__c = true &amp;&amp; NOT(ISPICKVAL(Status, &apos;Consideration&apos;)) 
+&amp;&amp; NOT(ISPICKVAL(Status, &apos;Rejected&apos;)) &amp;&amp; ISBLANK(TEXT(Liability__c))</errorConditionFormula>
+    <errorMessage>Please complete the Liability information</errorMessage>
+</ValidationRule>

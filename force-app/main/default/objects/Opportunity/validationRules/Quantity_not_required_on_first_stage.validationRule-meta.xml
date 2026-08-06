@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quantity_not_required_on_first_stage</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(FLOOR(Amount_custom__c)=0, ISBLANK(Amount_custom__c))
+,
+OR(
+ISPICKVAL(Have_you_sent_a_quote__c , &quot;Yes&quot;),
+ISPICKVAL(Offer_has_been_accepted__c  , &quot;Yes&quot;),
+ISPICKVAL(Have_we_won_specification__c  , &quot;Yes&quot;),
+AND(NOT(ISPICKVAL( Reason_Lost__c  , &quot;&quot;)),NOT(ISPICKVAL( Opportunity_Classification__c , &quot;Samples Ecommerce&quot; )))
+)
+)</errorConditionFormula>
+    <errorDisplayField>Amount_custom__c</errorDisplayField>
+    <errorMessage>In this stage, you must enter an amount to save the record</errorMessage>
+</ValidationRule>

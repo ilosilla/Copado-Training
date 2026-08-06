@@ -1,0 +1,19 @@
+<template>
+    <lightning-combobox
+        if:true={showComboContactRecordTypes}
+        name="contactRecordTypes"
+        label={label.recordTypeLabel}
+        placeholder={label.selectRecordTypeLabel}
+        onchange={handleChangeContactRecordTypes}
+        options={accountRecordtypesOptions}>
+    </lightning-combobox>
+    <lightning-record-form 
+        if:true={showContactForm}
+        object-api-name={contactObject}
+        fields={contactFields}
+        record-type-id={contactRecordtypeSelected}
+        onsubmit={handleSubmit}
+        onsuccess={handleSuccess}
+        oncancel={handleCancel}>
+    </lightning-record-form>
+</template>

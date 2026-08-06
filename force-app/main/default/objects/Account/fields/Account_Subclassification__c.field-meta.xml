@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Subclassification__c</fullName>
+    <label>Account Subclassification</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Account_Classification__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Automotive</fullName>
+                <default>false</default>
+                <label>Automotive</label>
+            </value>
+            <value>
+                <fullName>Big-Box</fullName>
+                <default>false</default>
+                <label>Big-Box</label>
+            </value>
+            <value>
+                <fullName>Consumer Goods</fullName>
+                <default>false</default>
+                <label>Consumer Goods</label>
+            </value>
+            <value>
+                <fullName>Cruises</fullName>
+                <default>false</default>
+                <label>Cruises</label>
+            </value>
+            <value>
+                <fullName>Education</fullName>
+                <default>false</default>
+                <label>Education</label>
+            </value>
+            <value>
+                <fullName>Food &amp; Beverage</fullName>
+                <default>false</default>
+                <label>Food &amp; Beverage</label>
+            </value>
+            <value>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+                <label>Healthcare</label>
+            </value>
+            <value>
+                <fullName>Hospitality/ Hotel</fullName>
+                <default>false</default>
+                <label>Hospitality/ Hotel</label>
+            </value>
+            <value>
+                <fullName>Landscape Architect</fullName>
+                <default>false</default>
+                <label>Landscape Architect</label>
+            </value>
+            <value>
+                <fullName>Multifamily</fullName>
+                <default>false</default>
+                <label>Multifamily</label>
+            </value>
+            <value>
+                <fullName>Multi-Unit</fullName>
+                <default>false</default>
+                <label>Multi-Unit</label>
+            </value>
+            <value>
+                <fullName>Offices</fullName>
+                <default>false</default>
+                <label>Offices</label>
+            </value>
+            <value>
+                <fullName>Residential</fullName>
+                <default>false</default>
+                <label>Residential</label>
+            </value>
+            <value>
+                <fullName>Retail Chain</fullName>
+                <default>false</default>
+                <label>Retail Chain</label>
+            </value>
+            <value>
+                <fullName>Senior Living</fullName>
+                <default>false</default>
+                <label>Senior Living</label>
+            </value>
+            <value>
+                <fullName>Transportation</fullName>
+                <default>false</default>
+                <label>Transportation</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Private customer</controllingFieldValue>
+            <controllingFieldValue>SCI (Société Civile Immobilière FR)</controllingFieldValue>
+            <controllingFieldValue>Interior design firm</controllingFieldValue>
+            <controllingFieldValue>Kitchen &amp; Bath store</controllingFieldValue>
+            <controllingFieldValue>Architectural firm</controllingFieldValue>
+            <controllingFieldValue>Brand/Chain/Franchise</controllingFieldValue>
+            <valueName>Retail Chain</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior design firm</controllingFieldValue>
+            <controllingFieldValue>Architectural firm</controllingFieldValue>
+            <valueName>Education</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior design firm</controllingFieldValue>
+            <controllingFieldValue>Architectural firm</controllingFieldValue>
+            <controllingFieldValue>Brand/Chain/Franchise</controllingFieldValue>
+            <valueName>Healthcare</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior design firm</controllingFieldValue>
+            <controllingFieldValue>Architectural firm</controllingFieldValue>
+            <controllingFieldValue>Brand/Chain/Franchise</controllingFieldValue>
+            <valueName>Hospitality/ Hotel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior design firm</controllingFieldValue>
+            <controllingFieldValue>Architectural firm</controllingFieldValue>
+            <valueName>Multifamily</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior design firm</controllingFieldValue>
+            <controllingFieldValue>Architectural firm</controllingFieldValue>
+            <valueName>Multi-Unit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior design firm</controllingFieldValue>
+            <controllingFieldValue>Architectural firm</controllingFieldValue>
+            <valueName>Offices</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior design firm</controllingFieldValue>
+            <controllingFieldValue>Architectural firm</controllingFieldValue>
+            <valueName>Residential</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior design firm</controllingFieldValue>
+            <controllingFieldValue>Architectural firm</controllingFieldValue>
+            <controllingFieldValue>Brand/Chain/Franchise</controllingFieldValue>
+            <valueName>Senior Living</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior design firm</controllingFieldValue>
+            <controllingFieldValue>Architectural firm</controllingFieldValue>
+            <valueName>Transportation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Architectural firm</controllingFieldValue>
+            <valueName>Landscape Architect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brand/Chain/Franchise</controllingFieldValue>
+            <valueName>Automotive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brand/Chain/Franchise</controllingFieldValue>
+            <valueName>Big-Box</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brand/Chain/Franchise</controllingFieldValue>
+            <valueName>Consumer Goods</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brand/Chain/Franchise</controllingFieldValue>
+            <valueName>Cruises</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brand/Chain/Franchise</controllingFieldValue>
+            <valueName>Food &amp; Beverage</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

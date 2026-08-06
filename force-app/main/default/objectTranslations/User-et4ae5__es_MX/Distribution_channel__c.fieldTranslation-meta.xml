@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Distribution channel --></label>
+    <name>Distribution_channel__c</name>
+    <picklistValues>
+        <masterLabel>10 Third Party</masterLabel>
+        <translation><!-- 10 Third Party --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>15 Associates</masterLabel>
+        <translation><!-- 15 Associates --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>20 Subsidiaries</masterLabel>
+        <translation><!-- 20 Subsidiaries --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>30 National Builders</masterLabel>
+        <translation><!-- 30 National Builders --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>40 Intercompany</masterLabel>
+        <translation><!-- 40 Intercompany --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>50 Others</masterLabel>
+        <translation><!-- 50 Others --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>60 Retail</masterLabel>
+        <translation><!-- 60 Retail --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>65 eCommerce</masterLabel>
+        <translation><!-- 65 eCommerce --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>70 Trade</masterLabel>
+        <translation><!-- 70 Trade --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

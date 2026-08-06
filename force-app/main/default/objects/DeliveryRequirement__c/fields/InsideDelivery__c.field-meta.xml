@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InsideDelivery__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Select if the delivery must be made inside the building, beyond curbside.</inlineHelpText>
+    <label>Inside Delivery</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

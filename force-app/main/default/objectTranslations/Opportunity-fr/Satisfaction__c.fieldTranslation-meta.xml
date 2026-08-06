@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Satisfaction</label>
+    <name>Satisfaction__c</name>
+    <picklistValues>
+        <masterLabel>Not defined</masterLabel>
+        <translation><!-- Not defined --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not satisfied</masterLabel>
+        <translation><!-- Not satisfied --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Satisfied</masterLabel>
+        <translation><!-- Satisfied --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,4 @@
+<design:component label="Flow Message Component">
+    <design:attribute name="type" label="Type" datasource="Warning,Error,Success,Info,Shade" default="Warning" />	    
+    <design:attribute name="message" label="Message"/>	    
+</design:component>

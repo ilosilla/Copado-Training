@@ -1,0 +1,36 @@
+<template>
+    <div class="slds-card slds-card_boundary slds-card_related-list-fix headerBottomBorder forceRelatedListCardDesktop">
+        <div lwc:if={isLoading}>
+            <lightning-spinner size="xx-small"></lightning-spinner>
+        </div>
+
+        <header class={windowTheme}>
+            <!--
+            <div class="slds-media__figure">
+                <lightning-icon icon-name="standard:real_time"></lightning-icon>
+            </div>
+            -->
+            <div class="slds-media__body">
+                <h2 class="slds-card__header-title">
+                    <span>{header}</span>
+                </h2>
+            </div>
+        </header>
+        <div class="slds-scrollable_y" style="max-height: 12rem;">
+            <div class="slds-grid slds-wrap slds-var-p-bottom_small" lwc:if={hasBody}>
+                <lightning-layout vertical-align="stretch" multiple-rows="true">
+                    
+                    <lightning-layout-item size="12" padding="horizontal-small" class="slds-var-m-top_x-small">
+                        <p class="slds-var-m-vertical_small" lwc:if={hasSubtitle}><b>{subtitle}</b></p>
+                        <p lwc:if={hasText}>{bodyText}</p>
+                    </lightning-layout-item>
+
+                    
+                </lightning-layout>
+            </div>
+        </div>
+        <div class={footerClass} lwc:if={hasFooter}>            
+            <p class={factoryClass}><b>{factoryText}</b></p>
+        </div>
+    </div>
+</template>

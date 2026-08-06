@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sample_Requests_to_Follow_Up_ASAP</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LeadSubtype__c</columns>
+    <columns>LeadType__c</columns>
+    <columns>LEAD.STATE_CODE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>LeadSubtype__c</field>
+        <operation>contains</operation>
+        <value>sample request</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>Not contacted</value>
+    </filters>
+    <label>Sample Requests to Follow Up ASAP</label>
+</ListView>

@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SymptomsDetails__c</fullName>
+    <description>Additional details to qualify the problem</description>
+    <label>Symptoms Details</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Symptoms__c</controllingField>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>ADHESIVE NOT WORKING</fullName>
+                <default>false</default>
+                <label>ADHESIVE NOT WORKING</label>
+            </value>
+            <value>
+                <fullName>ADJUSTABLE SCREW HAS FALLEN OUT OF THE DRAIN CAP</fullName>
+                <default>false</default>
+                <label>ADJUSTABLE SCREW HAS FALLEN OUT OF THE DRAIN CAP</label>
+            </value>
+            <value>
+                <fullName>AERATOR OBSTRUCTED</fullName>
+                <default>false</default>
+                <label>AERATOR OBSTRUCTED</label>
+            </value>
+            <value>
+                <fullName>BASIN WARPED / NOT LEVEL</fullName>
+                <default>false</default>
+                <label>BASIN WARPED / NOT LEVEL</label>
+            </value>
+            <value>
+                <fullName>BROKEN</fullName>
+                <default>false</default>
+                <label>BROKEN</label>
+            </value>
+            <value>
+                <fullName>CARRIER BOLTS TOO FAR OUT</fullName>
+                <default>false</default>
+                <label>CARRIER BOLTS TOO FAR OUT</label>
+            </value>
+            <value>
+                <fullName>CHROME / PAINT DELAMINATING / COMING AWAY FROM ITEM</fullName>
+                <default>false</default>
+                <label>CHROME / PAINT DELAMINATING / COMING AWAY FROM ITEM</label>
+            </value>
+            <value>
+                <fullName>CHROME DELAMINATING / COMING AWAY FROM TAP</fullName>
+                <default>false</default>
+                <label>CHROME DELAMINATING / COMING AWAY FROM TAP</label>
+            </value>
+            <value>
+                <fullName>CRACKS DEVELOPED AFTER INSTALLATION</fullName>
+                <default>false</default>
+                <label>CRACKS DEVELOPED AFTER INSTALLATION</label>
+            </value>
+            <value>
+                <fullName>CRACKS VISIBLE PRIOR TO INSTALLATION</fullName>
+                <default>false</default>
+                <label>CRACKS VISIBLE PRIOR TO INSTALLATION</label>
+            </value>
+            <value>
+                <fullName>DEBRIS / DAMAGE IN CARTRIDGE</fullName>
+                <default>false</default>
+                <label>DEBRIS / DAMAGE IN CARTRIDGE</label>
+            </value>
+            <value>
+                <fullName>DEBRIS IN DIVERTER OR DAMAGED</fullName>
+                <default>false</default>
+                <label>DEBRIS IN DIVERTER OR DAMAGED</label>
+            </value>
+            <value>
+                <fullName>DEFECTIVE DRAWER GLIDES</fullName>
+                <default>false</default>
+                <label>DEFECTIVE DRAWER GLIDES</label>
+            </value>
+            <value>
+                <fullName>DIVERTER OBSTRUCTED OR DAMAGED</fullName>
+                <default>false</default>
+                <label>DIVERTER OBSTRUCTED OR DAMAGED</label>
+            </value>
+            <value>
+                <fullName>DOESN&apos;T HEAT UP</fullName>
+                <default>false</default>
+                <label>DOESN&apos;T HEAT UP</label>
+            </value>
+            <value>
+                <fullName>DRAIN CABLE DISCONNECTED (IF SMALL BRASS SCREW STILL IN PLACED)</fullName>
+                <default>false</default>
+                <label>DRAIN CABLE DISCONNECTED (IF SMALL BRASS SCREW STILL IN PLACED)</label>
+            </value>
+            <value>
+                <fullName>FLEXIBLE HOSE DEGRADED</fullName>
+                <default>false</default>
+                <label>FLEXIBLE HOSE DEGRADED</label>
+            </value>
+            <value>
+                <fullName>GENERAL PROBLEM AFFECTING ENTIRE PROPERTY</fullName>
+                <default>false</default>
+                <label>GENERAL PROBLEM AFFECTING ENTIRE PROPERTY</label>
+            </value>
+            <value>
+                <fullName>GLASS CHIPPED / DAMAGED / SCRATCHED</fullName>
+                <default>false</default>
+                <label>GLASS CHIPPED / DAMAGED / SCRATCHED</label>
+            </value>
+            <value>
+                <fullName>GLASS SCRATCHED OR MARKED</fullName>
+                <default>false</default>
+                <label>GLASS SCRATCHED OR MARKED</label>
+            </value>
+            <value>
+                <fullName>HAIRLINE CRACK WITH UNDERFLOOR HEATING</fullName>
+                <default>false</default>
+                <label>HAIRLINE CRACK WITH UNDERFLOOR HEATING</label>
+            </value>
+            <value>
+                <fullName>HANDLES DAMAGED</fullName>
+                <default>false</default>
+                <label>HANDLES DAMAGED</label>
+            </value>
+            <value>
+                <fullName>HINGES DROPPED / NOT LEVEL</fullName>
+                <default>false</default>
+                <label>HINGES DROPPED / NOT LEVEL</label>
+            </value>
+            <value>
+                <fullName>IMPROPER CLEANING OR MAINTENACE</fullName>
+                <default>false</default>
+                <label>IMPROPER CLEANING OR MAINTENACE</label>
+            </value>
+            <value>
+                <fullName>INCOMPLETE</fullName>
+                <default>false</default>
+                <label>INCOMPLETE</label>
+            </value>
+            <value>
+                <fullName>INSUFFICIENT WATER PRESSURE</fullName>
+                <default>false</default>
+                <label>INSUFFICIENT WATER PRESSURE</label>
+            </value>
+            <value>
+                <fullName>LEAKING FROM HANDLE OR SPOUT</fullName>
+                <default>false</default>
+                <label>LEAKING FROM HANDLE OR SPOUT</label>
+            </value>
+            <value>
+                <fullName>LEAKING THROUGH CRACKS</fullName>
+                <default>false</default>
+                <label>LEAKING THROUGH CRACKS</label>
+            </value>
+            <value>
+                <fullName>LIFTING VALVE DOES NOT STOP THE FLOW</fullName>
+                <default>false</default>
+                <label>LIFTING VALVE DOES NOT STOP THE FLOW</label>
+            </value>
+            <value>
+                <fullName>LIFTING VALVE STOPS FLOW</fullName>
+                <default>false</default>
+                <label>LIFTING VALVE STOPS FLOW</label>
+            </value>
+            <value>
+                <fullName>LOGO INCORRECTLY PLACED</fullName>
+                <default>false</default>
+                <label>LOGO INCORRECTLY PLACED</label>
+            </value>
+            <value>
+                <fullName>MARKED / DISCOLOURATION</fullName>
+                <default>false</default>
+                <label>MARKED / DISCOLOURATION</label>
+            </value>
+            <value>
+                <fullName>MOVEMENT IN SUBSTRATE</fullName>
+                <default>false</default>
+                <label>MOVEMENT IN SUBSTRATE</label>
+            </value>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>NK LOGO INCORRECTLY PLACED</fullName>
+                <default>false</default>
+                <label>NK LOGO INCORRECTLY PLACED</label>
+            </value>
+            <value>
+                <fullName>NOT FITTED CORRECTLY</fullName>
+                <default>false</default>
+                <label>NOT FITTED CORRECTLY</label>
+            </value>
+            <value>
+                <fullName>NOT REACHING CORRECT TEMPERATURE</fullName>
+                <default>false</default>
+                <label>NOT REACHING CORRECT TEMPERATURE</label>
+            </value>
+            <value>
+                <fullName>OBSTRUCTED CARTRIDGE</fullName>
+                <default>false</default>
+                <label>OBSTRUCTED CARTRIDGE</label>
+            </value>
+            <value>
+                <fullName>OBSTRUCTED FLOW RESTRICTOR</fullName>
+                <default>false</default>
+                <label>OBSTRUCTED FLOW RESTRICTOR</label>
+            </value>
+            <value>
+                <fullName>OBSTRUCTED WASTE PIPE</fullName>
+                <default>false</default>
+                <label>OBSTRUCTED WASTE PIPE</label>
+            </value>
+            <value>
+                <fullName>ORDER ERROR</fullName>
+                <default>false</default>
+                <label>ORDER ERROR</label>
+            </value>
+            <value>
+                <fullName>OTHERS</fullName>
+                <default>false</default>
+                <label>OTHERS</label>
+            </value>
+            <value>
+                <fullName>OTHER TAPS IN THE PROPERTY WORK CORRECTLY</fullName>
+                <default>false</default>
+                <label>OTHER TAPS IN THE PROPERTY WORK CORRECTLY</label>
+            </value>
+            <value>
+                <fullName>PART OF THE CISTERN FRAME IS DAMAGED OR CRACKED</fullName>
+                <default>false</default>
+                <label>PART OF THE CISTERN FRAME IS DAMAGED OR CRACKED</label>
+            </value>
+            <value>
+                <fullName>PART OF THE CISTERN FRAME IS MISSING</fullName>
+                <default>false</default>
+                <label>PART OF THE CISTERN FRAME IS MISSING</label>
+            </value>
+            <value>
+                <fullName>PATCHING OR DRYING LIGHTER</fullName>
+                <default>false</default>
+                <label>PATCHING OR DRYING LIGHTER</label>
+            </value>
+            <value>
+                <fullName>PIPE AT THE WALL OUTLET DOES NOT FEEL HOT ON THE LEFT AND COLD ON THE RIGHT</fullName>
+                <default>false</default>
+                <label>PIPE AT THE WALL OUTLET DOES NOT FEEL HOT ON THE LEFT AND COLD ON THE RIGHT</label>
+            </value>
+            <value>
+                <fullName>PIPE AT THE WALL OUTLET FEEL HOT ON THE LEFT AND COLD ON THE RIGHT</fullName>
+                <default>false</default>
+                <label>PIPE AT THE WALL OUTLET FEEL HOT ON THE LEFT AND COLD ON THE RIGHT</label>
+            </value>
+            <value>
+                <fullName>PRODUCT BECOMING MARKED OR STAINED</fullName>
+                <default>false</default>
+                <label>PRODUCT BECOMING MARKED OR STAINED</label>
+            </value>
+            <value>
+                <fullName>PRODUCT DEFECT</fullName>
+                <default>false</default>
+                <label>PRODUCT DEFECT</label>
+            </value>
+            <value>
+                <fullName>PRODUCT IMPERFECTION</fullName>
+                <default>false</default>
+                <label>PRODUCT IMPERFECTION</label>
+            </value>
+            <value>
+                <fullName>PRODUCT INSTALLED NOT PER SPECS.</fullName>
+                <default>false</default>
+                <label>PRODUCT INSTALLED NOT PER SPECS.</label>
+            </value>
+            <value>
+                <fullName>PRODUCTION ERROR</fullName>
+                <default>false</default>
+                <label>PRODUCTION ERROR</label>
+            </value>
+            <value>
+                <fullName>RUST ON SURFACE</fullName>
+                <default>false</default>
+                <label>RUST ON SURFACE</label>
+            </value>
+            <value>
+                <fullName>SCRATCHES / DEFECT ON SURFACE</fullName>
+                <default>false</default>
+                <label>SCRATCHES / DEFECT ON SURFACE</label>
+            </value>
+            <value>
+                <fullName>SENSOR NOT REACTING TO TOUCH</fullName>
+                <default>false</default>
+                <label>SENSOR NOT REACTING TO TOUCH</label>
+            </value>
+            <value>
+                <fullName>SOFT CLOSE FUNCTION NOT WORKING</fullName>
+                <default>false</default>
+                <label>SOFT CLOSE FUNCTION NOT WORKING</label>
+            </value>
+            <value>
+                <fullName>SOFT CLOSE SEAT CRACKED</fullName>
+                <default>false</default>
+                <label>SOFT CLOSE SEAT CRACKED</label>
+            </value>
+            <value>
+                <fullName>SOME COLD AREAS</fullName>
+                <default>false</default>
+                <label>SOME COLD AREAS</label>
+            </value>
+            <value>
+                <fullName>SUPPLY HOSES OBSTRUCTING MOVEMENT</fullName>
+                <default>false</default>
+                <label>SUPPLY HOSES OBSTRUCTING MOVEMENT</label>
+            </value>
+            <value>
+                <fullName>SUPPLY LINES NOT FLUSHED PRIOR TO INSTALLATION</fullName>
+                <default>false</default>
+                <label>SUPPLY LINES NOT FLUSHED PRIOR TO INSTALLATION</label>
+            </value>
+            <value>
+                <fullName>SURFACE IS SCRATCHED OR MARKED</fullName>
+                <default>false</default>
+                <label>SURFACE IS SCRATCHED OR MARKED</label>
+            </value>
+            <value>
+                <fullName>SURFACE NOT SMOOTH</fullName>
+                <default>false</default>
+                <label>SURFACE NOT SMOOTH</label>
+            </value>
+            <value>
+                <fullName>TAP SURFACE IS SCRATCHED OR MARKED</fullName>
+                <default>false</default>
+                <label>TAP SURFACE IS SCRATCHED OR MARKED</label>
+            </value>
+            <value>
+                <fullName>TOWEL WARMER HAS BECOME DEFORMED OVER TIME</fullName>
+                <default>false</default>
+                <label>TOWEL WARMER HAS BECOME DEFORMED OVER TIME</label>
+            </value>
+            <value>
+                <fullName>TOWEL WARMER HAS STARTED TO LEAK</fullName>
+                <default>false</default>
+                <label>TOWEL WARMER HAS STARTED TO LEAK</label>
+            </value>
+            <value>
+                <fullName>TRAY NOT LEVEL / WARPED / OUT OF TOLERANCE</fullName>
+                <default>false</default>
+                <label>TRAY NOT LEVEL / WARPED / OUT OF TOLERANCE</label>
+            </value>
+            <value>
+                <fullName>TRAY WARPED / NOT LEVEL</fullName>
+                <default>false</default>
+                <label>TRAY WARPED / NOT LEVEL</label>
+            </value>
+            <value>
+                <fullName>TRIMS SCRATCHED OR MARKED</fullName>
+                <default>false</default>
+                <label>TRIMS SCRATCHED OR MARKED</label>
+            </value>
+            <value>
+                <fullName>UNIT DAMAGED</fullName>
+                <default>false</default>
+                <label>UNIT DAMAGED</label>
+            </value>
+            <value>
+                <fullName>UNIT EXPOSED TO HIGH HUMIDITY OR WATER</fullName>
+                <default>false</default>
+                <label>UNIT EXPOSED TO HIGH HUMIDITY OR WATER</label>
+            </value>
+            <value>
+                <fullName>UNIT OBSTRUCTED</fullName>
+                <default>false</default>
+                <label>UNIT OBSTRUCTED</label>
+            </value>
+            <value>
+                <fullName>VALVE INSTALLED TOO FAR INTO THE WALL</fullName>
+                <default>false</default>
+                <label>VALVE INSTALLED TOO FAR INTO THE WALL</label>
+            </value>
+            <value>
+                <fullName>VALVE OBSTRUCTED</fullName>
+                <default>false</default>
+                <label>VALVE OBSTRUCTED</label>
+            </value>
+            <value>
+                <fullName>VISIBLE CRACKS IN TILES</fullName>
+                <default>false</default>
+                <label>VISIBLE CRACKS IN TILES</label>
+            </value>
+            <value>
+                <fullName>WASTE COVER MISSING</fullName>
+                <default>false</default>
+                <label>WASTE COVER MISSING</label>
+            </value>
+            <value>
+                <fullName>WATER LEAKING FROM TOP OF SHOWER HEAD</fullName>
+                <default>false</default>
+                <label>WATER LEAKING FROM TOP OF SHOWER HEAD</label>
+            </value>
+            <value>
+                <fullName>WATER LEAKING THROUGH DOOR OR SEALS</fullName>
+                <default>false</default>
+                <label>WATER LEAKING THROUGH DOOR OR SEALS</label>
+            </value>
+            <value>
+                <fullName>WATER NOT DRAINING AWAY</fullName>
+                <default>false</default>
+                <label>WATER NOT DRAINING AWAY</label>
+            </value>
+            <value>
+                <fullName>WATER NOT FLOWING FROM EVERY NOZZLE</fullName>
+                <default>false</default>
+                <label>WATER NOT FLOWING FROM EVERY NOZZLE</label>
+            </value>
+            <value>
+                <fullName>WATER REMAINING IN TRAY CONSTANTLY</fullName>
+                <default>false</default>
+                <label>WATER REMAINING IN TRAY CONSTANTLY</label>
+            </value>
+            <value>
+                <fullName>WIRED INCORRECTLY</fullName>
+                <default>false</default>
+                <label>WIRED INCORRECTLY</label>
+            </value>
+            <value>
+                <fullName>WORKED WELL PREVIOULSLY - ISSUE DEVELOPED SINCE INSTALLATION</fullName>
+                <default>false</default>
+                <label>WORKED WELL PREVIOULSLY - ISSUE DEVELOPED SINCE INSTALLATION</label>
+            </value>
+            <value>
+                <fullName>WORKTOP WARPED / NOT LEVEL</fullName>
+                <default>false</default>
+                <label>WORKTOP WARPED / NOT LEVEL</label>
+            </value>
+            <value>
+                <fullName>WRONG COLOUR SUPPLIED</fullName>
+                <default>false</default>
+                <label>WRONG COLOUR SUPPLIED</label>
+            </value>
+            <value>
+                <fullName>WRONG-PRODUCT</fullName>
+                <default>false</default>
+                <label>WRONG-PRODUCT</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>PRODUCT DOES NOT PERFORM AS EXPECTED</controllingFieldValue>
+            <valueName>N/A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PRODUCT HAS STAINS</controllingFieldValue>
+            <valueName>IMPROPER CLEANING OR MAINTENACE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PRODUCT HAS STAINS</controllingFieldValue>
+            <controllingFieldValue>PRODUCT MALFORMED ON SURFACE</controllingFieldValue>
+            <controllingFieldValue>PRODUCT CRACKED OR MALFORMED</controllingFieldValue>
+            <valueName>PRODUCT IMPERFECTION</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PRODUCT LEAKS FROM HANDLE OR SPOUT</controllingFieldValue>
+            <valueName>LEAKING FROM HANDLE OR SPOUT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PRODUCT LEAKS FROM UNDERNEATH THE BASIN</controllingFieldValue>
+            <valueName>FLEXIBLE HOSE DEGRADED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>REDUCTION IN WATER FLOW - AERATOR MODELS</controllingFieldValue>
+            <valueName>AERATOR OBSTRUCTED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>REDUCTION IN WATER FLOW - NON AERATOR MODELS</controllingFieldValue>
+            <valueName>OBSTRUCTED CARTRIDGE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>REDUCTION IN WATER FLOW - NON AERATOR MODELS</controllingFieldValue>
+            <valueName>OBSTRUCTED FLOW RESTRICTOR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SENSOR NOT WORKING CORRECTLY</controllingFieldValue>
+            <valueName>SENSOR NOT REACTING TO TOUCH</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SENSOR NOT WORKING CORRECTLY</controllingFieldValue>
+            <valueName>WIRED INCORRECTLY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SHOWER NOZZLES BLOCKED</controllingFieldValue>
+            <valueName>WATER LEAKING FROM TOP OF SHOWER HEAD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SHOWER NOZZLES BLOCKED</controllingFieldValue>
+            <valueName>WATER NOT FLOWING FROM EVERY NOZZLE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SMART CABINET UNIT DAMAGED</controllingFieldValue>
+            <valueName>UNIT DAMAGED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SOFT CLOSE SEAT ISSUE</controllingFieldValue>
+            <valueName>SOFT CLOSE FUNCTION NOT WORKING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SOFT CLOSE SEAT ISSUE</controllingFieldValue>
+            <valueName>SOFT CLOSE SEAT CRACKED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SURFACE DEFECT</controllingFieldValue>
+            <controllingFieldValue>VISIBLE DAMAGE ON SURFACE</controllingFieldValue>
+            <valueName>LOGO INCORRECTLY PLACED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SURFACE DEFECT</controllingFieldValue>
+            <valueName>MARKED / DISCOLOURATION</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SURFACE DEFECT</controllingFieldValue>
+            <controllingFieldValue>VISIBLE DAMAGE ON SURFACE</controllingFieldValue>
+            <valueName>NK LOGO INCORRECTLY PLACED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SURFACE DEFECT</controllingFieldValue>
+            <valueName>SURFACE NOT SMOOTH</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THERMOSTAT NOT WORKING</controllingFieldValue>
+            <valueName>NOT REACHING CORRECT TEMPERATURE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TILES CRACKING AFTER INSTALLATION</controllingFieldValue>
+            <valueName>VISIBLE CRACKS IN TILES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TOWEL WARMER NOT WORKING</controllingFieldValue>
+            <valueName>DOESN&apos;T HEAT UP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TOWEL WARMER NOT WORKING</controllingFieldValue>
+            <valueName>SOME COLD AREAS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TOWEL WARMER NOT WORKING</controllingFieldValue>
+            <valueName>TOWEL WARMER HAS BECOME DEFORMED OVER TIME</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TOWEL WARMER NOT WORKING</controllingFieldValue>
+            <valueName>TOWEL WARMER HAS STARTED TO LEAK</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TOWEL WARMER NOT WORKING</controllingFieldValue>
+            <valueName>WORKED WELL PREVIOULSLY - ISSUE DEVELOPED SINCE INSTALLATION</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TRAY NOT LEVEL</controllingFieldValue>
+            <valueName>TRAY WARPED / NOT LEVEL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BASIN NOT LEVEL</controllingFieldValue>
+            <valueName>BASIN WARPED / NOT LEVEL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BASIN NOT LEVEL / MOVEMENT</controllingFieldValue>
+            <controllingFieldValue>WORKTOP NOT LEVEL / MOVEMENT</controllingFieldValue>
+            <valueName>CARRIER BOLTS TOO FAR OUT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BATH DRAIN NO LONGER OPEN/CLOSE</controllingFieldValue>
+            <valueName>ADJUSTABLE SCREW HAS FALLEN OUT OF THE DRAIN CAP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BATH DRAIN NO LONGER OPEN/CLOSE</controllingFieldValue>
+            <valueName>DRAIN CABLE DISCONNECTED (IF SMALL BRASS SCREW STILL IN PLACED)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BROKEN</controllingFieldValue>
+            <valueName>BROKEN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TRAY WARPED</controllingFieldValue>
+            <valueName>TRAY NOT LEVEL / WARPED / OUT OF TOLERANCE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TRIMS CANNOT BE INSTALLED CORRECTLY / KNOB FALLS OFF</controllingFieldValue>
+            <valueName>VALVE INSTALLED TOO FAR INTO THE WALL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UNIT DAMAGED</controllingFieldValue>
+            <valueName>HANDLES DAMAGED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UNIT DAMAGED</controllingFieldValue>
+            <valueName>SCRATCHES / DEFECT ON SURFACE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UNIT IS DELAMINATING</controllingFieldValue>
+            <valueName>UNIT EXPOSED TO HIGH HUMIDITY OR WATER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CISTERN FRAME IMCOMPLETE</controllingFieldValue>
+            <valueName>PART OF THE CISTERN FRAME IS MISSING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UNIT IS PRODUCING ONLY VERY HOT OR COLD WATER</controllingFieldValue>
+            <valueName>PIPE AT THE WALL OUTLET DOES NOT FEEL HOT ON THE LEFT AND COLD ON THE RIGHT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UNIT IS PRODUCING ONLY VERY HOT OR COLD WATER</controllingFieldValue>
+            <valueName>PIPE AT THE WALL OUTLET FEEL HOT ON THE LEFT AND COLD ON THE RIGHT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CISTERN OR PAN RUNNING CONTINOUSLY</controllingFieldValue>
+            <valueName>LIFTING VALVE DOES NOT STOP THE FLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CISTERN OR PAN RUNNING CONTINOUSLY</controllingFieldValue>
+            <valueName>LIFTING VALVE STOPS FLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UNIT NOT DIVERTING</controllingFieldValue>
+            <valueName>DIVERTER OBSTRUCTED OR DAMAGED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UNIT NOT DIVERTING</controllingFieldValue>
+            <valueName>INSUFFICIENT WATER PRESSURE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CRACKS WITHIN PRODUCT</controllingFieldValue>
+            <valueName>CRACKS DEVELOPED AFTER INSTALLATION</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CRACKS WITHIN PRODUCT</controllingFieldValue>
+            <valueName>CRACKS VISIBLE PRIOR TO INSTALLATION</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CRACKS WITHIN PRODUCT</controllingFieldValue>
+            <valueName>LEAKING THROUGH CRACKS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UNIT NOT SUPPLYING REQUIRED TEMPERTAURE OF WATER</controllingFieldValue>
+            <valueName>GENERAL PROBLEM AFFECTING ENTIRE PROPERTY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UNIT NOT SUPPLYING REQUIRED TEMPERTAURE OF WATER</controllingFieldValue>
+            <valueName>OTHER TAPS IN THE PROPERTY WORK CORRECTLY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DAMAGE ON CISTERN / FRAME</controllingFieldValue>
+            <valueName>PART OF THE CISTERN FRAME IS DAMAGED OR CRACKED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VISIBLE DAMAGE ON SURFACE</controllingFieldValue>
+            <valueName>GLASS SCRATCHED OR MARKED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VISIBLE DAMAGE ON SURFACE</controllingFieldValue>
+            <valueName>SURFACE IS SCRATCHED OR MARKED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VISIBLE DAMAGE ON SURFACE</controllingFieldValue>
+            <valueName>TAP SURFACE IS SCRATCHED OR MARKED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VISIBLE DAMAGE ON SURFACE</controllingFieldValue>
+            <valueName>TRIMS SCRATCHED OR MARKED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DIVERTER DIFFICULT TO OPERATE</controllingFieldValue>
+            <valueName>DEBRIS IN DIVERTER OR DAMAGED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WASTE NOT REMOVED</controllingFieldValue>
+            <valueName>OBSTRUCTED WASTE PIPE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DOOR MIS-ALIGNED / DROPPED</controllingFieldValue>
+            <valueName>HINGES DROPPED / NOT LEVEL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WATER BACKING UP</controllingFieldValue>
+            <valueName>UNIT OBSTRUCTED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DRAWERS NOT OPERATING SMOOTHLY</controllingFieldValue>
+            <valueName>DEFECTIVE DRAWER GLIDES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DRAWERS NOT OPERATING SMOOTHLY</controllingFieldValue>
+            <valueName>SUPPLY HOSES OBSTRUCTING MOVEMENT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FLOOR SENSOR NOT WORKING</controllingFieldValue>
+            <valueName>NOT FITTED CORRECTLY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GLASS DAMAGED</controllingFieldValue>
+            <valueName>GLASS CHIPPED / DAMAGED / SCRATCHED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GROUT CRACKING AFTER INSTALLATION</controllingFieldValue>
+            <valueName>HAIRLINE CRACK WITH UNDERFLOOR HEATING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GROUT CRACKING AFTER INSTALLATION</controllingFieldValue>
+            <valueName>MOVEMENT IN SUBSTRATE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WATER DOESN&apos;T DRAIN AWAY</controllingFieldValue>
+            <valueName>WATER REMAINING IN TRAY CONSTANTLY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WATER REMAINING IN TRAY</controllingFieldValue>
+            <valueName>WATER NOT DRAINING AWAY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WORKTOP NOT LEVEL</controllingFieldValue>
+            <valueName>WORKTOP WARPED / NOT LEVEL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GROUT INCORRECT COLOUR</controllingFieldValue>
+            <valueName>PATCHING OR DRYING LIGHTER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GROUT INCORRECT COLOUR</controllingFieldValue>
+            <valueName>WRONG COLOUR SUPPLIED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WRONG-PRODUCT</controllingFieldValue>
+            <valueName>WRONG-PRODUCT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HANDLE DIFFICULT TO OPERATE</controllingFieldValue>
+            <valueName>DEBRIS / DAMAGE IN CARTRIDGE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WRONG SHADING</controllingFieldValue>
+            <valueName>ORDER ERROR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WRONG SHADING</controllingFieldValue>
+            <valueName>PRODUCTION ERROR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HOT WATER PUMPED BACK TO COLD WATER</controllingFieldValue>
+            <valueName>VALVE OBSTRUCTED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LEAKS</controllingFieldValue>
+            <valueName>WATER LEAKING THROUGH DOOR OR SEALS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INCOMPLETE</controllingFieldValue>
+            <valueName>INCOMPLETE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INCORRECT FLOW RATE AFTER INSTALLATION</controllingFieldValue>
+            <valueName>SUPPLY LINES NOT FLUSHED PRIOR TO INSTALLATION</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NEWLY DEVELOPED STAINING</controllingFieldValue>
+            <controllingFieldValue>NEWLY DEVELOPED YELLOWING</controllingFieldValue>
+            <valueName>PRODUCT BECOMING MARKED OR STAINED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NOT CURING</controllingFieldValue>
+            <valueName>ADHESIVE NOT WORKING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <valueName>OTHERS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PARTS MISSING</controllingFieldValue>
+            <valueName>WASTE COVER MISSING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PEELING OFF OR CORROSION</controllingFieldValue>
+            <valueName>CHROME / PAINT DELAMINATING / COMING AWAY FROM ITEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PEELING OFF OR CORROSION</controllingFieldValue>
+            <valueName>CHROME DELAMINATING / COMING AWAY FROM TAP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PEELING OFF OR CORROSION</controllingFieldValue>
+            <valueName>RUST ON SURFACE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PRODUCT CRACKED OR MALFORMED</controllingFieldValue>
+            <valueName>PRODUCT INSTALLED NOT PER SPECS.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PRODUCT DECOLORATED FROM START</controllingFieldValue>
+            <controllingFieldValue>PRODUCT DISCOLOURED FROM START</controllingFieldValue>
+            <valueName>PRODUCT DEFECT</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

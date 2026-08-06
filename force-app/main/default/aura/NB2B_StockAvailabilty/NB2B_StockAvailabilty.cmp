@@ -1,0 +1,87 @@
+<!--
+  @description       : 
+  @author            : EHG@nubika.com
+  @group             : 
+  @last modified on  : 01-24-2023
+  @last modified by  : EHG@nubika.com
+-->
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                 access="global" controller="NB2B_StockAvailabilityController">
+
+    <!-- ATTRIBUTES -->
+    <aura:Attribute name="showStock" type="Boolean" default="false"/>
+    <aura:Attribute name="showGreen" type="Boolean" default="false"/>
+    <aura:Attribute name="showYellow" type="Boolean" default="false"/>
+    <aura:Attribute name="showLabel" type="Boolean" default="false"/>
+    <aura:Attribute name="recordId" type="String"/>
+    <aura:Attribute name="showSpinner" type="Boolean" default="true"/>
+
+    <!-- HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <!-- CONTENT -->
+    <div class="slds-grid" style="width: 100%;">
+        <aura:if isTrue="{!v.showSpinner}">
+            <div style="position:relative; width: 1rem; height: 1rem;"><lightning:spinner alternativeText="Loading" size="small"/></div>
+            <span class="slds-var-m-left_small">{!$Label.c.NB2B_Checking_Stock}</span>
+        </aura:if>
+        <aura:if isTrue="{!v.showLabel}">
+            <aura:if isTrue="{!v.showStock}">
+                <aura:if isTrue="{!v.showGreen}">
+                    <div class="slds-col slds-size_1-of-1">
+                        <div>
+                            <span>
+                                <lightning:icon iconName="action:approval" alternativeText="In Stock" title="In Stock" size="xx-small" class="stockIcon"/>
+                            </span>
+                            <span style="margin-left: 3px;">
+                                <span class="stockValue in">
+                                    {!$Label.c.NB2B_InStock}
+                                </span>
+                            </span>
+                            <span class="slds-p-horizontal_small"> - </span>
+                            <span style="font-weight: bold; text-decoration:underline;">
+                                {!$Label.c.NB2B_Stock_green_flag}
+                            </span>
+                        </div>
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{!v.showYellow}">
+                    <div class="slds-col slds-size_1-of-1">
+                        <div>
+                            <span>
+                                <lightning:icon iconName="action:close" alternativeText="Out of stock" title="out of stock" size="xx-small" class="stockIcon"/>
+                            </span>
+                            <span style="margin-left: 3px;">
+                                <span class="stockValue out">
+                                    {!$Label.c.NB2B_OutStock}
+                                </span>
+                            </span>
+                            <span class="slds-p-horizontal_small"> - </span>
+                            <span style="font-weight: bold; text-decoration:underline;">
+                                {!$Label.c.NB2B_Stock_yellow_flag}
+                            </span>
+                        </div>
+                    </div>
+                </aura:if>
+                <aura:set attribute="else">
+                    <div class="slds-col slds-size_1-of-1">
+                        <div>
+                            <span>
+                                <lightning:icon iconName="action:close" alternativeText="Out of stock" title="out of stock" size="xx-small" class="stockIcon"/>
+                            </span>
+                            <span style="margin-left: 3px;">
+                                <span class="stockValue out">
+                                    {!$Label.c.NB2B_OutStock}
+                                </span>
+                            </span>
+                            <span class="slds-p-horizontal_small"> - </span>
+                            <span class="stockDates">
+                                {!$Label.c.NB2B_Stock_yellow_flag}
+                            </span>
+                        </div>                        
+            	    </div>
+                </aura:set>
+            </aura:if>
+       </aura:if>
+    </div>
+</aura:component>

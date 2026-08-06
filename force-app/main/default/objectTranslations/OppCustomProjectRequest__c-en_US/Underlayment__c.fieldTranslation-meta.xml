@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Underlayment --></label>
+    <name>Underlayment__c</name>
+    <picklistValues>
+        <masterLabel>Canada - Plywood MDF/Painted</masterLabel>
+        <translation><!-- Canada - Plywood MDF/Painted --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Outdoor Use - Marine Grade Plywood</masterLabel>
+        <translation><!-- Outdoor Use - Marine Grade Plywood --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Plywood/MDF</masterLabel>
+        <translation><!-- Plywood/MDF --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Plywood/MDF with Melamine</masterLabel>
+        <translation><!-- Plywood/MDF with Melamine --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Standard to match KRION/XTONE</masterLabel>
+        <translation><!-- Standard to match KRION/XTONE --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

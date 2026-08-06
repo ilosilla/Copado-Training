@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Activity_Level__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(RT_Name_ANA_Form__c=&apos;Private Customer&apos;, NULL, IF(NOW() - Last_Activity_Date__c &gt; 90, Image(&quot;/sfc/servlet.shepherd/version/renditionDownload?rendition=ORIGINAL_Png&amp;versionId=0681r00000KOIne&amp;operationContext=CHATTER&amp;contentId=05T1r000017F3XJ&quot;,&quot;Dormant&quot;),
+	IF(AND(NOW() - Last_Activity_Date__c &gt; 60,NOW() - Last_Activity_Date__c &lt;= 90),Image(&quot;/sfc/servlet.shepherd/version/renditionDownload?rendition=ORIGINAL_Png&amp;versionId=0681r00000KOInt&amp;operationContext=CHATTER&amp;contentId=05T1r000017F3Xd&quot;,&quot;Medium&quot;),
+		IF(ISBLANK(Last_Activity_Date__c), Image(&quot;/sfc/servlet.shepherd/version/renditionDownload?rendition=ORIGINAL_Png&amp;versionId=0681q000000Fzm0&amp;operationContext=CHATTER&amp;contentId=05T1q000006hJN9&quot;,&quot;NoActivity&quot;), Image(&quot;/sfc/servlet.shepherd/version/renditionDownload?rendition=ORIGINAL_Png&amp;versionId=0681r00000KOIno&amp;operationContext=CHATTER&amp;contentId=05T1r000017F3XY&quot;,&quot;High&quot;)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Activity Level</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

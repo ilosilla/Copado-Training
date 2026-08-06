@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Classificazzione dell&apos;Opportunità II</label>
+    <name>Opportunity_Classification_II__c</name>
+    <picklistValues>
+        <masterLabel>Car dealership</masterLabel>
+        <translation>Concessionario auto</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Casinos</masterLabel>
+        <translation><!-- Casinos --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cinema</masterLabel>
+        <translation>Cinema</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clothing store</masterLabel>
+        <translation>Negozio di abbigliamento</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cruise</masterLabel>
+        <translation><!-- Cruise --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Education</masterLabel>
+        <translation><!-- Education --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Financial institutions/Banks</masterLabel>
+        <translation>Società Finanziaria</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fitness Club</masterLabel>
+        <translation><!-- Fitness Club --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Government/ Public Building</masterLabel>
+        <translation><!-- Government/ Public Building --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hotels</masterLabel>
+        <translation><!-- Hotels --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Multi-unit</masterLabel>
+        <translation><!-- Multi-unit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Museum</masterLabel>
+        <translation><!-- Museum --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other store</masterLabel>
+        <translation>Altr tipi di Negozi</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Religious Buildings</masterLabel>
+        <translation><!-- Religious Buildings --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Restaurant</masterLabel>
+        <translation>Ristoranti</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Roll Out</masterLabel>
+        <translation><!-- Roll Out --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shopping centre/Mall/Leisure center</masterLabel>
+        <translation>Centro Commerciale</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Single Location</masterLabel>
+        <translation><!-- Single Location --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Single-family home</masterLabel>
+        <translation>Abbitazione monofamiliare</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sports Arena</masterLabel>
+        <translation>Centro di sportivo</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Supermarket/Grocery Stores</masterLabel>
+        <translation>Supermercato</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Theaters/Cinema</masterLabel>
+        <translation><!-- Theaters/Cinema --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

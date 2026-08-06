@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- A field to store the folder name generated during the object mapping process. --></help>
+    <label><!-- Folder Name --></label>
+    <name>dfsle__FolderName__c</name>
+</CustomFieldTranslation>

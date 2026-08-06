@@ -1,0 +1,52 @@
+:host {
+    --sds-c-card-color-background: #F0F0F0;
+}
+
+.error-message{
+    color: red;
+}
+
+.quickOrdeLineItemsContainer{
+    min-height: 180px;
+    max-height: 450px;
+    overflow-y: auto;
+    padding: 0px 15px;
+}
+
+.alert-error {
+    padding: 10px 5px;
+    color: #fff;
+    background-color: #d73a48;    
+    border: 1px solid #bfbfbf;
+}
+
+.alert-warning{   
+    padding: 10px 5px;
+    margin-top: 10px;
+    background-color: #fff3cd;
+    color:#2d2d2d;
+    border: 1px solid #e4e4e4;
+    box-shadow: 1px 1px 10px #e9e9e9;
+}
+
+.botonesQuick{            
+    background-color: transparent;
+    border: 2px solid #1c3241;
+    border-radius: 0px;
+    color: #1c3241;
+    font-size: 16px;
+    width: 300px;
+    min-height: 60px;
+    max-width: 50vw!important;
+    transition: all 300ms;
+
+    --slds-c-button-brand-color-background: transparent;
+    --slds-c-button-brand-color-background-hover: transparent;
+    --slds-c-button-brand-color-border: #1c3241;    
+    --slds-c-button-brand-text-color: #1c3241;
+}
+
+.botonesQuick:hover{
+    background-color: #1c3241;
+    color:#fff;
+}

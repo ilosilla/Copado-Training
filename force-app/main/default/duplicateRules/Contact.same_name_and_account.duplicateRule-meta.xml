@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DuplicateRule xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionOnInsert>Block</actionOnInsert>
+    <actionOnUpdate>Allow</actionOnUpdate>
+    <alertText>[C0001] You are trying to create a contact that already exists. Please use one of the following or contact you administrator</alertText>
+    <description>[C0001] Same Contact Name and Trade Account</description>
+    <duplicateRuleFilter>
+        <booleanFilter>(1 AND 2) OR 3</booleanFilter>
+        <duplicateRuleFilterItems>
+            <field>Username</field>
+            <operation>notContain</operation>
+            <value>apiuser</value>
+            <sortOrder>1</sortOrder>
+            <table>User</table>
+        </duplicateRuleFilterItems>
+        <duplicateRuleFilterItems>
+            <field>Username</field>
+            <operation>notContain</operation>
+            <value>loads.user</value>
+            <sortOrder>2</sortOrder>
+            <table>User</table>
+        </duplicateRuleFilterItems>
+        <duplicateRuleFilterItems>
+            <field>RecordType</field>
+            <operation>notEqual</operation>
+            <value>Private Customer</value>
+            <sortOrder>3</sortOrder>
+            <table>Account</table>
+        </duplicateRuleFilterItems>
+    </duplicateRuleFilter>
+    <duplicateRuleMatchRules>
+        <matchRuleSObjectType>Contact</matchRuleSObjectType>
+        <matchingRule>same_name_and_accont</matchingRule>
+        <objectMapping xsi:nil="true"/>
+    </duplicateRuleMatchRules>
+    <isActive>true</isActive>
+    <masterLabel>same name and account</masterLabel>
+    <operationsOnUpdate>Alert</operationsOnUpdate>
+    <operationsOnUpdate>Report</operationsOnUpdate>
+    <securityOption>BypassSharingRules</securityOption>
+    <sortOrder>4</sortOrder>
+</DuplicateRule>

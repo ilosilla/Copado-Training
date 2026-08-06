@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Type de la Piste</label>
+    <name>LeadType__c</name>
+    <picklistValues>
+        <masterLabel>Book an Appointment</masterLabel>
+        <translation>Rendez-vous au Magasin</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Business Trip</masterLabel>
+        <translation><!-- Business Trip --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Contact Form</masterLabel>
+        <translation>Formulaire de Contact</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Course Request</masterLabel>
+        <translation>Demande de Course</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EU Material Bank</masterLabel>
+        <translation><!-- EU Material Bank --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Google Ad</masterLabel>
+        <translation>Annonce Google</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Others</masterLabel>
+        <translation>Autres</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PDF Guide Download</masterLabel>
+        <translation>Téléchargement du Guide PDF</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Trade Show</masterLabel>
+        <translation>Salon du Commerce</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>US Material Bank</masterLabel>
+        <translation>Material Bank US</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>US Register Form</masterLabel>
+        <translation><!-- US Register Form --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

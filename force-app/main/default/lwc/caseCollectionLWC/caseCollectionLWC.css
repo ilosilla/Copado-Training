@@ -1,0 +1,56 @@
+.sideBar {
+    position:relative;
+    display:flex;
+    width:20rem;
+    height:100%;
+    z-index: 1; 
+    bottom:0;
+    background-color:yellow;
+}
+
+.c-container {
+    height: 1000px !important;
+    max-height: 100% !important;
+    min-height:1000px;
+    display: flex;
+    justify-content: center;
+    position:relative;
+}
+
+.recordFormDataSection {
+    overflow-y: auto;
+    /*height: calc(100% - 57px);*/
+}
+
+.buttonContainer {
+    margin: 0px auto;
+    text-align: center;
+	justify-content: space-between;
+	border: none;
+    padding: var(--lwc-spacingSmall, 0rem);
+}
+
+.buttonContainer * {
+    padding: 0rem var(--lwc-spacingXxxSmall, 0rem);
+}
+
+.buttonBar {
+	margin: 0px auto;
+    text-align: right;
+	justify-content: space-between;
+	border: none;
+    padding: var(--lwc-spacingXSmall, 0rem);
+}
+
+.buttonBar * {
+    padding: 0rem var(--lwc-spacingXxxSmall, 0rem);
+}
+
+.bold input {
+    font-weight: bold !important;
+}
+
+.text-area_large {
+    --sds-c-textarea-sizing-min-height: 8em;
+    min-height: 8em;
+}

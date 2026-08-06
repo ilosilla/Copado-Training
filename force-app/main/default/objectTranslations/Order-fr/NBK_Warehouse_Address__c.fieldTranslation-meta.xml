@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Adresse de la Collection</label>
+    <name>NBK_Warehouse_Address__c</name>
+    <relationshipLabel><!-- Orders --></relationshipLabel>
+</CustomFieldTranslation>

@@ -1,0 +1,10 @@
+.THIS #theModal {
+    width: 90% !important;
+    max-width:100% !important;
+    max-height: 100% !important;   
+    height: 90% !important;    
+}
+
+.THIS #theModal>.slds-modal__content  {
+    height: 90% !important;    
+}

@@ -1,0 +1,112 @@
+{
+  "version" : "53.0",
+  "nodes" : {
+    "LOAD_DATASET0" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "AccountId.Name", "AccountId", "Opportunity_Classification__c", "OwnerId.Name", "OwnerId.kunnr__c", "OwnerId.Default_Sales_Organization__c", "OwnerId.Sales_Office__c", "AccountId.Activity__c", "AccountId.SAP_id_formule__c", "AccountId.Account_Classification__c", "Name", "Product_Categories__c", "OwnerId.Id", "AccountId.Account_Status__c", "OwnerId", "AccountId.Id", "Id" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "USERS_BALMA",
+          "name" : "USERS_BALMA"
+        }
+      }
+    },
+    "JOIN0" : {
+      "action" : "join",
+      "sources" : [ "LOAD_DATASET0", "LOAD_DATASET2" ],
+      "schema" : {
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "OwnerId.kunnr__c" ],
+        "rightQualifier" : "Facturacio",
+        "rightKeys" : [ "Column2" ]
+      }
+    },
+    "LOAD_DATASET2" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "EUR", "Com_Responsable", "Column2" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Facturacion_francia",
+          "name" : "Facturacion_francia1"
+        }
+      }
+    },
+    "OUTPUT0" : {
+      "action" : "save",
+      "sources" : [ "JOIN0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Test Balma Javi",
+          "name" : "testbalmajavi",
+          "folderName" : "SharedApp"
+        }
+      }
+    }
+  },
+  "ui" : {
+    "nodes" : {
+      "LOAD_DATASET0" : {
+        "label" : "USERS_BALMA",
+        "type" : "LOAD_DATASET",
+        "top" : 112,
+        "left" : 112,
+        "graph" : {
+          "LOAD_DATASET0" : null
+        },
+        "connectors" : [ ],
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "JOIN0" : {
+        "label" : "Join",
+        "type" : "JOIN",
+        "top" : 112,
+        "left" : 252
+      },
+      "LOAD_DATASET2" : {
+        "label" : "Facturacion_francia",
+        "type" : "LOAD_DATASET",
+        "top" : 392,
+        "left" : 112,
+        "graph" : {
+          "LOAD_DATASET2" : null
+        },
+        "connectors" : [ ],
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "OUTPUT0" : {
+        "label" : "Output",
+        "type" : "OUTPUT",
+        "top" : 112,
+        "left" : 392
+      }
+    },
+    "connectors" : [ {
+      "source" : "LOAD_DATASET0",
+      "target" : "JOIN0"
+    }, {
+      "source" : "LOAD_DATASET2",
+      "target" : "JOIN0"
+    }, {
+      "source" : "JOIN0",
+      "target" : "OUTPUT0"
+    } ],
+    "hiddenColumns" : [ ]
+  }
+}

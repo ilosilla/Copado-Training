@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>
+        <!-- Choose how interactive filters should be applied: 
+ - ALL_URLS (persist across all pages), 
+ - BY_URL (persist by URL)
+ - NEVER (no persistence) -->
+    </help>
+    <label><!-- Interactive Filter Policy --></label>
+    <name>gmpkg__xInMemFilterPolicy__c</name>
+</CustomFieldTranslation>

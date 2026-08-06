@@ -1,0 +1,100 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="NewOpportunity_Controller">
+    
+    <!--Attributes-->
+    <aura:attribute name="newOpportunity" type="Opportunity" default="{'sobjectType':'Opportunity'}"/>
+    
+    <aura:attribute name="currentScreen" type="Integer" default="1"/>
+    <aura:attribute name="numberOfScreens" type="Integer" default="3"/>
+    
+    <aura:attribute name="pickedUpRadioOptions" type="List" default="[]"/>
+    <aura:attribute name="pickedUpRadioValue" type="String"/>
+    
+    <aura:attribute name="firstScreen" type="Boolean"/>
+    <aura:attribute name="lastScreen" type="Boolean"/>
+    <aura:attribute name="successFailureFinalScreen" type="Boolean"/>
+    <aura:attribute name="fieldsToUpdate" type="Map"/>
+    
+    <aura:attribute name="error" type="Boolean" default="false"/>
+    <aura:attribute name="finalMessage" type="String"/>
+    <aura:attribute name="taskCreatedId" type="String"/>
+    
+    <!--Methods-->
+    <aura:method name="changeScreen" action="{!c.changeScreen}" description="changeScreen"> 
+        <aura:attribute name="action" type="String"/>
+    </aura:method>
+    
+    <aura:method name="reloadStage" action="{!c.reloadStage}" description="reloadStage"></aura:method>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:if isTrue="{!v.currentScreen == 1}">
+        
+        <table class="slds-table slds-table_cell-buffer slds-size_4-of-12" style = "height: 7.75rem;">
+            <tr>
+                <th class="slds-text-title_caps slds-size_2-of-4">{!$Label.c.Account_Name}</th>
+                <td>{!v.newOpportunity.Account.Name}</td>
+            </tr>
+            <tr>
+                <th class="slds-text-title_caps">{!$Label.c.Order_Id}</th>
+                <td>{!v.newOpportunity.Order__c}</td>
+            </tr>
+            <tr>
+                <th class="slds-text-title_caps">Email</th>
+                <td>{!v.newOpportunity.Account.PersonEmail}</td>
+            </tr>
+        </table>
+        
+    </aura:if>
+    <!--El cliente respondió la llamada?-->
+    <aura:if isTrue="{!v.currentScreen == 2}">
+        <div style = "height: 7.75rem;">
+            <lightning:radioGroup aura:id="fieldToValidate" name="radioGroupRequired" label="{!$Label.c.Customer_picks_up_the_phone}" 
+                                  options="{!v.pickedUpRadioOptions}" value="{!v.pickedUpRadioValue}" 
+                                  type="radio" required="true" messageWhenValueMissing="{!$Label.c.Please_select_one_option}"/>
+        </div>
+    </aura:if>
+    <!--Mensaje Final-->
+    <aura:if isTrue="{!v.currentScreen == 3}">
+        
+        <div class="slds-align_absolute-center" style="height: 7.75rem;">
+            
+            <aura:if isTrue="{!v.finalMessage == 'Contacted'}">
+                
+                <h3>{!$Label.c.Customer_has_been_contacted}</h3>
+                
+            </aura:if>
+            
+            <aura:if isTrue="{!v.finalMessage == 'TaskCreated'}">
+                
+                <div class="slds-grid slds-grid_vertical slds-align_absolute-center">
+                    <div class="slds-col">
+                        <h3>{!$Label.c.A_task_has_been_scheduled_to_remind_you_to_call_the_customer_again_tomorrow}</h3>
+                    </div>
+                    <div class="slds-col">
+                        <h3>{!$Label.c.To_access_this_task_and_modify_any_of_the_parameters_click_on_the_following_link}</h3>
+                    </div>
+                    <div class="slds-col slds-p-top_small">
+                        <h3><a href="{!'/lightning/r/Task/' + v.taskCreatedId + '/view'}">Call customer back to check sample satisfaction</a></h3>
+                    </div>
+                </div>
+                
+            </aura:if>
+            
+            <aura:if isTrue="{!v.finalMessage == 'OpportunityLost'}">
+                
+                <div class="slds-grid slds-grid_vertical slds-align_absolute-center">
+                    <div class="slds-col">
+                        <h3>{!$Label.c.An_email_has_been_sent_to_the_customer_for_managing_the_in_store_appointment}</h3>
+                    </div>
+                    <div class="slds-col slds-p-top_small">
+                        <h3 style="color: #006dcc;">{!v.newOpportunity.Account.PersonEmail}</h3>
+                    </div>
+                </div>
+                
+            </aura:if>
+            
+        </div>
+        
+    </aura:if>
+    
+</aura:component>

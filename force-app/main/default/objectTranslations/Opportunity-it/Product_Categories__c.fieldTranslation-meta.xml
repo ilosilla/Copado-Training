@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Ceramica (incluso la piastrella, piastrella per pavimento, porcellana, etc)</help>
+    <label>Categorie di prodotti</label>
+    <name>Product_Categories__c</name>
+    <picklistValues>
+        <masterLabel>Adhesives and other compliments</masterLabel>
+        <translation>Adesivi ed Altri Complementi</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Altissima</masterLabel>
+        <translation><!-- Altissima --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bathroom accesories</masterLabel>
+        <translation>Accessiori Bagno</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bathroom furniture</masterLabel>
+        <translation>Mobili di Bagno</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bathtubs</masterLabel>
+        <translation>Vasca da bagno</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bonded Facades</masterLabel>
+        <translation>Facciate Incollate</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ceramics</masterLabel>
+        <translation>Ceramica</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Countertops</masterLabel>
+        <translation>Top</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fitwall</masterLabel>
+        <translation><!-- Fitwall --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kitchen furniture</masterLabel>
+        <translation>Mobili da cucina</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Krion</masterLabel>
+        <translation><!-- Krion --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Laminate</masterLabel>
+        <translation>Laminato</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Linkfloor</masterLabel>
+        <translation><!-- Linkfloor --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mosaics</masterLabel>
+        <translation>Mosaici</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Natural Stone</masterLabel>
+        <translation>Pietre Naturali</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OSM Facade</masterLabel>
+        <translation><!-- OSM Facade --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OSM Kitchens</masterLabel>
+        <translation><!-- OSM Kitchens --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OSM Pods</masterLabel>
+        <translation><!-- OSM Pods --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Offsite</masterLabel>
+        <translation><!-- Offsite --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Raised access flooring</masterLabel>
+        <translation>Pavimento Tecnico</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sanitaryware</masterLabel>
+        <translation>Sanitario</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shower products</masterLabel>
+        <translation>Materiali  per Doccia</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Taps</masterLabel>
+        <translation>Rubinetterie</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ventilated facades</masterLabel>
+        <translation>Facciate ventilate</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wallpaper</masterLabel>
+        <translation><!-- Wallpaper --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Washbasin</masterLabel>
+        <translation>Lavabo</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wood</masterLabel>
+        <translation>Legno</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Xtone</masterLabel>
+        <translation><!-- Xtone --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

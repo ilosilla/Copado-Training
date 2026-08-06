@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Custom_Projects_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Regla que permite a projects modificar las oportunidades de custom projects</description>
+        <label>Custom Projects Rule</label>
+        <sharedTo>
+            <group>ProductManagers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>InfoType__c</field>
+            <operation>equals</operation>
+            <value>Custom Project</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Facades_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Regla que pemite a los facade managers editar todas las opps de fachadas</description>
+        <label>Facades Rule</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Facades_USA</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>InfoType__c</field>
+            <operation>equals</operation>
+            <value>Facade</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Kitchens_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>regla que permite a los disenadores y managers de cocinas modificar las opps de cocinas</description>
+        <label>Kitchens Rule</label>
+        <sharedTo>
+            <group>Kitchens_USA</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>InfoType__c</field>
+            <operation>equals</operation>
+            <value>Kitchen</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Middle_East</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Projects in the middle east visibility for Nuño</description>
+        <label>Middle East</label>
+        <sharedTo>
+            <role>Porcelanosa_Middle_East</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>countryCode__c</field>
+            <operation>equals</operation>
+            <value>Egypt,Bahrain,Qatar,Saudi Arabia,Kuwait,Lebanon,Oman,Maldives,Syria,Jordan,United Arab Emirates,Iran,Iraq</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Projet_Protege</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shares these projects with all FR</description>
+        <label>Projet Protégé</label>
+        <sharedTo>
+            <roleAndSubordinates>Director_Regional_FR</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>ProjetReference__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Cita_en_Tienda</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Cita en Tienda</label>
+        <sharedTo>
+            <group>ALL_SALESFORCE</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>E_Commerce</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Exportaci_n_360</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Exportación 360</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>PorcelanosaExport</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>Manager</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Full_Visibility_UK</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Full Visibility UK</label>
+        <sharedTo>
+            <group>Porcelanosa_UK</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Porcelanosa_UK</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>International_projects</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>International projects</label>
+        <sharedTo>
+            <role>International_Projects</role>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Kitchens_US_Access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Kitchens US Access</label>
+        <sharedTo>
+            <group>Kitchens_USA</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>Porcelanosa_USA_Director_Regional</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Krion_FR</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Krion FR</label>
+        <sharedTo>
+            <roleAndSubordinates>Krion_FR</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Krion_FR</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Paris</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Paris</label>
+        <sharedTo>
+            <group>PORCELANOSA_PARIS_IDF</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>PORCELANOSA_PARIS_IDF</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Sociedad_Azurc_ramique</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Sociedad Azurcéramique</label>
+        <sharedTo>
+            <roleAndSubordinates>Sociedad_Azurceramique</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Sociedad_Azurceramique</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Sociedad_Euroceramique</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Inner role sharing rule</description>
+        <label>Sociedad Euroceramique SAS</label>
+        <sharedTo>
+            <roleAndSubordinates>Sociedad_Euroceramique</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Sociedad_Euroceramique</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Sociedad_Lorceram</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Sociedad Lorceram</label>
+        <sharedTo>
+            <roleAndSubordinates>Sociedad_Lorceram</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Sociedad_Lorceram</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Sociedad_Ouest</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Inner role sharing rule</description>
+        <label>Sociedad Ouest</label>
+        <sharedTo>
+            <roleAndSubordinates>Sociedad_Ouest</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Sociedad_Ouest</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Sociedad_P_S_O</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Inner role sharing rule</description>
+        <label>Sociedad P.S.O.</label>
+        <sharedTo>
+            <roleAndSubordinates>Sociedad_P_S_O</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Sociedad_P_S_O</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Sociedad_Paris</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Sociedad Paris</label>
+        <sharedTo>
+            <role>Sociedad_Paris_IDF</role>
+        </sharedTo>
+        <sharedFrom>
+            <group>PORCELANOSA_PARIS_IDF</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Sociedad_Socamed</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Inner role sharing rule</description>
+        <label>Sociedad Socamed</label>
+        <sharedTo>
+            <roleAndSubordinates>Sociedad_Socamed</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Sociedad_Socamed</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Sociedad_Western</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Inner role sharing rule</description>
+        <label>Sociedad Western</label>
+        <sharedTo>
+            <roleAndSubordinates>Sociedad_Western</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Sociedad_Western</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>X2_f_investrements</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>comerciales de Singapur, Vietnam, etc</description>
+        <label>2 f investrements</label>
+        <sharedTo>
+            <portalRole>x2FINVESTMENTSPTELTDPartnerUser</portalRole>
+        </sharedTo>
+        <sharedFrom>
+            <portalRole>x2FINVESTMENTSPTELTDPartnerUser</portalRole>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

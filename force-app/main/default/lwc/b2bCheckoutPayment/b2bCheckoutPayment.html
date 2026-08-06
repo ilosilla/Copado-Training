@@ -1,0 +1,138 @@
+<template>
+    <div class="checkout-payment">
+        <div class="checkout-section__header">
+            <div class="checkout-section__title">Payment & place order</div>
+            <template lwc:if={isSummary}>
+                <lightning-button
+                    variant="base"
+                    label="Complete order"
+                    onclick={handleChange}
+                    class="b2b-change-link">
+                </lightning-button>
+            </template>
+        </div>
+
+        <template lwc:if={isLoading}>
+            <div class="checkout-waiting">
+                <lightning-spinner size="small"></lightning-spinner>
+                <div class="checkout-waiting__text">
+                    Loading payment details...
+                </div>
+            </div>
+        </template>
+
+        <template lwc:elseif={priceValidationIssue}>
+            <div class="payment-warning">
+                <p class="payment-warning-title">{priceIssueTitle}</p>
+                <p class="payment-warning-text">{priceIssueBody}</p>
+                <p class="payment-warning-text">{priceIssueLine2}</p>
+                <p class="payment-warning-action">
+                    <lightning-button
+                        variant="base"
+                        label="Back to shopping"
+                        onclick={handleBackToShopping}
+                        class="b2b-action-link">
+                    </lightning-button>                                
+                </p>
+            </div>
+        </template>
+
+        <template lwc:else>
+            <!-- Credit info -->
+            <template lwc:if={showCreditBlock}>
+                <div class="payment--credit">
+                    <div class="payment--credit__title">
+                        {creditTitle}
+                    </div>
+                    <div class="payment--credit__line">
+                        {creditLine}
+                    </div>
+                </div>
+            </template>
+            <template lwc:if={isEditing}>
+                <!-- Payment options -->
+                <div class="payment-options-section">
+                    <div class="payment-options" role="radiogroup" aria-label="Payment method">
+                        <template lwc:if={showCreditOption}>
+                            <label class={creditOptionClass}>
+                                <input 
+                                    class="option-input" type="radio" 
+                                    name="paymentMethod" value="CREDIT" 
+                                    checked={isCreditSelected} 
+                                    disabled={isCreditDisabled}
+                                    onchange={handlePaymentMethodChange}/>
+                                <span class="option-body">
+                                    <span class="option-title">Pay on credit</span>
+                                    <span class="option-desc">{creditOptionText}</span>
+                                </span>
+                            </label>
+                        </template>
+                        <template lwc:if={showCardOption}>
+                            <label class="option">
+                                <input 
+                                    class="option-input" type="radio" 
+                                    name="paymentMethod" value="CARD" 
+                                    checked={isCardSelected}                            
+                                    onchange={handlePaymentMethodChange}/>
+                                <span class="option-body">
+                                    <span class="option-title">Credit card</span>
+                                    <span class="option-desc">You’ll be redirected to a secure payment page.<strong>{surchargeText}</strong></span>
+                                </span>
+                            </label>
+                        </template>
+                    </div>
+                </div>
+
+                <div class="final-step final-step--primary">                
+                    <div class="final-title">Place your order</div>
+                    <!--<div class="final-desc">
+                        Enter your PO number to proceed.
+                    </div>-->
+                    <div class="final-grid">
+                        <div class="final-po">
+                            <lightning-input label="PO Number"
+                                required
+                                value={st_customerReference}    
+                                onchange={handlePoNumberChange}
+                                placeholder="e.g., PO-12345"
+                                message-when-value-missing="Please enter a PO number."
+                                class="input-required">
+                            </lightning-input>
+                        </div>
+
+                        <div class="final-cta">
+                            <div class="final-cta__wrap">
+                                <lightning-button variant="brand"
+                                    label={ctaLabel}
+                                    onclick={handlePlaceOrderClick}
+                                    disabled={isCtaDisabled}
+                                    stretch>
+                                </lightning-button>
+                            </div>
+                        </div>
+                        <div></div>
+                        <div class="final-terms">
+                            <input type="checkbox"
+                                id="termsAccepted"
+                                class="final-terms__checkbox"
+                                checked={st_termsAccepted}
+                                onchange={handleTermsChange} />
+                            <label class="final-terms__label" for="termsAccepted">
+                                I have read and agree to the
+                                <a href="javascript:void(0);" onclick={handleOpenTerms}> Terms &amp; Conditions</a>.
+                            </label>
+                        </div>
+                    </div>
+                </div>  
+            </template>
+            <c-ux-modal-dialog></c-ux-modal-dialog>   
+            <c-b2b-terms-and-conditions
+                open={ui_showTerms}
+                onclose={handleCloseTerms}
+                title="Terms & Conditions"
+                dock="right"
+                size="L">
+            </c-b2b-terms-and-conditions>   
+        </template>
+    </div>
+</template>

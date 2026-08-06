@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ReasonNoInterest</fullName>
+    <active>false</active>
+    <description>La oportunidad no podrá pasar a &quot;Cerrada&quot; sin antes indicar la razón de no interés</description>
+    <errorConditionFormula>ISPICKVAL( StageName,&quot;Closed Lost&quot;)
+&amp;&amp;
+ISPICKVAL(Reason_Not_Interest__c, &quot;&quot;)</errorConditionFormula>
+    <errorDisplayField>Reason_Not_Interest__c</errorDisplayField>
+    <errorMessage>Debe especificarse el la razón de no interés para esta etapa</errorMessage>
+</ValidationRule>

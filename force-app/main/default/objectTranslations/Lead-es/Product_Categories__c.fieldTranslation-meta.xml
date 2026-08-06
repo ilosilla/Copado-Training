@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Categorias de Producto</label>
+    <name>Product_Categories__c</name>
+    <picklistValues>
+        <masterLabel>Adhesives and other compliments</masterLabel>
+        <translation>Adhesivos y otros complementos</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bathroom furniture</masterLabel>
+        <translation>Mobiliario de baño</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bathtubs</masterLabel>
+        <translation>Bañeras</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ceramics</masterLabel>
+        <translation>Ceramica</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Countertops</masterLabel>
+        <translation>Encimeras</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kitchen furniture</masterLabel>
+        <translation>Mobiliario de cocina</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Krion</masterLabel>
+        <translation><!-- Krion --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Laminate</masterLabel>
+        <translation>Laminado</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Linkfloor</masterLabel>
+        <translation><!-- Linkfloor --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mosaics</masterLabel>
+        <translation>Mosaicos</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Natural Stone</masterLabel>
+        <translation>Piedra Natural</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Raised access flooring</masterLabel>
+        <translation>Suelo elevado</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sanitaryware</masterLabel>
+        <translation>Sanitario</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shower products</masterLabel>
+        <translation>Productos de ducha</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Taps</masterLabel>
+        <translation>Grifos</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ventilated facades</masterLabel>
+        <translation>Fachadas Ventiladas</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Washbasin</masterLabel>
+        <translation>Lavabos</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wood</masterLabel>
+        <translation>Madera</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Xtone</masterLabel>
+        <translation><!-- Xtone --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

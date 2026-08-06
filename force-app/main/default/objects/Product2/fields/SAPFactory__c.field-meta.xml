@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAPFactory__c</fullName>
+    <description>Sets the factory code from the make name, for example, 001 for L&apos;ANTIC or 002 for PORCELANSOA</description>
+    <externalId>false</externalId>
+    <formula>CASE(
+        SAPMake__c,
+        &quot;L&quot;, &quot;001&quot;,
+        &quot;P&quot;, &quot;002&quot;,
+        &quot;N&quot;, &quot;006&quot;,
+        &quot;S&quot;, &quot;008&quot;,
+        &quot;G&quot;, &quot;009&quot;,
+        &quot;B&quot;, &quot;007&quot;,
+        &quot;X&quot;, &quot;002&quot;,
+        &quot;000&quot;  /* Default value for other cases */
+    )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>SAP Factory Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

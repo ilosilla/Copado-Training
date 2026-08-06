@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CLAIMS_Required_Field_Warranty</fullName>
+    <active>true</active>
+    <errorConditionFormula>IsClaim__c = true &amp;&amp; NOT(ISPICKVAL(Status, &apos;Consideration&apos;)) 
+&amp;&amp; NOT(ISPICKVAL(Status, &apos;Rejected&apos;)) &amp;&amp; ISBLANK(TEXT(Warranty__c))</errorConditionFormula>
+    <errorMessage>Please specify if the product is covered by our warranty terms</errorMessage>
+</ValidationRule>

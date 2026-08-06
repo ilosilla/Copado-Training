@@ -1,0 +1,20 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                 access="global">
+	<aura:Attribute name="showSelector" type="Boolean" default="false"/>
+    <aura:Attribute name="NB2B_SalesOrg" type="Object" />
+    <aura:Attribute name="salesName" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="change" value="{!v.NB2B_SalesOrg}" action="{!c.onValueChange}" />
+    
+    <aura:if isTrue="{!v.showSelector}">
+         <c:NB2B_SalesOrgPopUp NB2B_SalesOrg="{!v.NB2B_SalesOrg}"/>
+        <aura:set attribute="else">
+            <div>
+                <span>
+                    <!--<p>{!$Label.c.NB2B_YourSalesOrg}: {!v.salesName}</p>-->
+                </span>
+            </div>
+        </aura:set>
+    </aura:if>
+     
+</aura:component>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CollectionPoint__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Id of the Porcelanosa Address where the customer will collect the goods</description>
+    <label>Collection Point</label>
+    <referenceTo>PorcelanosaAddress__c</referenceTo>
+    <relationshipLabel>Cart Delivery Groups (Collection Point)</relationshipLabel>
+    <relationshipName>CartDeliveryGroups2</relationshipName>
+    <required>false</required>
+    <type>Lookup</type>
+</CustomField>

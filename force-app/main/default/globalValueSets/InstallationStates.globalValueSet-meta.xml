@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>New Request</fullName>
+        <default>true</default>
+        <label>New Request</label>
+    </customValue>
+    <customValue>
+        <fullName>Site Survey</fullName>
+        <default>false</default>
+        <label>Site Survey</label>
+    </customValue>
+    <customValue>
+        <fullName>3D Design</fullName>
+        <default>false</default>
+        <label>3D Design</label>
+    </customValue>
+    <customValue>
+        <fullName>Cost Estimation</fullName>
+        <default>false</default>
+        <label>Cost Estimation</label>
+    </customValue>
+    <customValue>
+        <fullName>Quote Preparation</fullName>
+        <default>false</default>
+        <label>Quote Preparation</label>
+    </customValue>
+    <customValue>
+        <fullName>Quote Sent</fullName>
+        <default>false</default>
+        <label>Quote Sent</label>
+    </customValue>
+    <customValue>
+        <fullName>Closed Won</fullName>
+        <default>false</default>
+        <label>Closed Won</label>
+    </customValue>
+    <customValue>
+        <fullName>Closed Lost</fullName>
+        <default>false</default>
+        <label>Closed Lost</label>
+    </customValue>
+    <customValue>
+        <fullName>Rejected</fullName>
+        <default>false</default>
+        <label>Rejected</label>
+    </customValue>
+    <description>States of Installation Requests</description>
+    <masterLabel>Installation States</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

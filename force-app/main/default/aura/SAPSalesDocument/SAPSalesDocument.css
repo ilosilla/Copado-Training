@@ -1,0 +1,19 @@
+.THIS .data-table {    
+    height:calc(100% - 128px) !important;    
+}
+
+.THIS dl dt {
+    padding-top: 1rem;
+}
+
+.THIS dl dt:first-child {
+    padding-top: 0rem;
+}
+
+.THIS .samples-flag {
+    text-align: center;
+    display:table-cell;
+    vertical-align:middle;
+    text-transform: uppercase;
+    padding-top:6px !important;
+}

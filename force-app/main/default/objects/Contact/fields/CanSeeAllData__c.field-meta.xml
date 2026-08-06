@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CanSeeAllData__c</fullName>
+    <description>Si true, puede ver el campo email y teléfono del contact</description>
+    <formula>OR(
+    TEXT(Owner.Default_Sales_Organization__c) = TEXT($User.Default_Sales_Organization__c),
+    $Permission.See_All_Contact_Data, 
+    OwnerId = $User.Id
+)</formula>
+    <label>Can see All Data</label>
+    <type>Checkbox</type>
+</CustomField>

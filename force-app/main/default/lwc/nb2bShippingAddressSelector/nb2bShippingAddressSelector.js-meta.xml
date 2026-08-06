@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <isExposed>true</isExposed>
+	<targets>
+		<target>lightning__FlowScreen</target>
+	</targets>
+	<targetConfigs>
+		<targetConfig targets="lightning__FlowScreen">
+			<property name="cartId" type="String" label="Cart Id" role="inputOnly"/>
+			<property name="daysToShow" type="Integer" label="Range of days" description="The range of days within the user can selected a delivery date" role="inputOnly" default="7"/>
+			<property name="selectedDate" type="Date" label="Selected date" description="The selected date" role="outputOnly"/>
+			<property name="addressId" type="String" label="contactPointId" description="contactPointId" role="outputOnly"/>
+			<property name="porcelanosaAddressId" type="String" label="porcelanosaAddressId" description="porcelanosaAddressId" role="outputOnly"/>
+
+			<property name="deliveryGroup" type="String" label="Delivery Group" role="inputOnly"/>
+			<property name="NB2B_PickupStore" type="Boolean" label="Click and collect Pickup Store" role="outputOnly"/>
+
+			<property name="order_Code" type="String" label="order_Code" description="order_Code" role="inputOnly"/>
+			<property name="NB2B_Order_Code" type="String" label="NB2B_Order_Code" description="NB2B_Order_Code" role="outputOnly"/>
+
+			<property name="delivery_Date" type="String" label="delivery_Date" description="delivery_Date" role="inputOnly"/>
+			<property name="NB2B_DeliveryDate" type="String" label="NB2B_DeliveryDate" description="NB2B_DeliveryDate" role="outputOnly"/>
+
+			<property name="NB2B_ContactPointAddress" type="String" label="NB2B_ContactPointAddress" description="NB2B_ContactPointAddress" />
+
+			<property name="cartDeliveryGroupId" type="String" label="cartDeliveryGroupId" description="cartDeliveryGroupId" />
+
+			<property name="deliveryInstructions" type="String" label="deliveryInstructions" description="deliveryInstructions" role="inputOnly"/>
+			<property name="NB2B_DeliveryInstructions" type="String" label="NB2B_DeliveryInstructions" description="NB2B_DeliveryInstructions"  />
+
+			<property name="totalAmount" type="String" label="Cart total amount" description="Cart total amount" role="inputOnly"/>
+
+		</targetConfig>
+	</targetConfigs>
+</LightningComponentBundle>

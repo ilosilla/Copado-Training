@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_All_Opportunities_2</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>City__c</columns>
+    <columns>LAST_EMAIL_DATE</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>OPPORTUNITY.RECORDTYPE</columns>
+    <columns>Amount_custom__c</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Opportunity_Classification__c</columns>
+    <columns>countryCode__c</columns>
+    <columns>LAST_ACTIVITY_DATETIME</columns>
+    <columns>Activity_Level__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Opportunities</label>
+    <sharedTo>
+        <portalRoleAndSubordinates>ETCSAGENCYPartnerUser</portalRoleAndSubordinates>
+        <portalRoleAndSubordinates>PORCTEKLTDPartnerUser</portalRoleAndSubordinates>
+        <portalRoleAndSubordinates>x2FINVESTMENTSPTELTDPartnerUser</portalRoleAndSubordinates>
+        <role>International_Projects</role>
+        <role>Manager</role>
+        <roleAndSubordinates>Director_Regional_UK</roleAndSubordinates>
+        <roleAndSubordinates>Porcelanosa_Deutschland_Regional_Manager</roleAndSubordinates>
+        <roleAndSubordinatesInternal>Porcelanosa_USA_Director_Regional</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

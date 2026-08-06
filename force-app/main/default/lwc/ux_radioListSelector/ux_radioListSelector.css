@@ -1,0 +1,139 @@
+:host {
+    /* Hooks públicos (valores por defecto) */
+    --ux-radio-list-border-color: #d8dde6;
+    --ux-radio-list-background-color: #ffffff;
+    --ux-radio-list-row-border-width: 0px;
+    --ux-radio-list-row-border-color: #f3f3f3;
+    --ux-radio-list-row-hover-bg: #f3f6fb;
+    --ux-radio-list-row-padding-y: 0.25rem;
+    --ux-radio-list-row-padding-x: 0.5rem;
+    --ux-radio-list-radius: 0.25rem;
+    --ux-radio-list-font-weight-label: 600;
+    --ux-radio-list-font-size: 0.9rem;
+    --ux-radio-list-text-color: #3e3e3c;
+    --ux-radio-list-text-color-secondary: #5f5f5f;
+    --ux-radio-list-selected-bg: #f3f6fb;
+    --ux-radio-list-selected-accent-color: #0176d3;
+    --ux-radio-list-selected-bold-weight: 600;
+    
+    --ux-radio-list-search-margin-top: 0.25rem;
+    --ux-radio-list-search-border-color: #d8dde6;
+    --ux-radio-list-search-bg: #ffffff;
+    --ux-radio-list-search-text-color: #444444;
+    --ux-radio-list-search-placeholder-color: #888888;
+    --ux-radio-list-search-radius: 0.25rem;
+}
+
+.radio-list-selector {
+    width: 100%;
+}
+
+/* Label superior */
+.group-label {
+    font-weight: var(--ux-radio-list-font-weight-label);
+}
+
+/* Contenedor con borde fijo */
+.options-container {
+    display: block;
+    border: 1px solid var(--ux-radio-list-border-color);
+    border-radius: var(--ux-radio-list-radius);
+    background: var(--ux-radio-list-background-color);
+}
+
+/* Contenedor que realmente scrolla */
+.options-scroll {
+    overflow-y: auto;
+}
+
+/* Cada fila de radio */
+.radio-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    border-bottom: var(--ux-radio-list-row-border-width) solid var(--ux-radio-list-row-border-color);
+    padding: var(--ux-radio-list-row-padding-y) var(--ux-radio-list-row-padding-x);
+}
+
+.radio-item:last-child {
+    border-bottom: none;
+}
+
+.radio-item:hover {
+    background: var(--ux-radio-list-row-hover-bg);
+}
+
+.radio-input {
+    margin-right: 0.5rem;
+    flex: 0 0 auto;
+}
+
+.text {
+    flex: 1 1 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: var(--ux-radio-list-font-size);
+    color: var(--ux-radio-list-text-color);
+}
+
+.bold {
+    font-weight: var(--ux-radio-list-selected-bold-weight);
+}
+
+.normal {
+    font-weight: 400;
+    color: var(--ux-radio-list-text-color-secondary);
+}
+.no-results {
+    font-style: italic;
+    color: #999999;
+}
+
+.actions-container lightning-button + lightning-button {
+    margin-left: 0.75rem;
+}
+
+/* Resaltar opción seleccionada: fondo sutil + acento */
+.radio-input:checked + .text {
+    background-color: var(--ux-radio-list-selected-bg);
+    border-radius: 2px;
+    padding: 0.15rem 0.25rem;
+    position: relative;
+}
+
+/* Acento a la izquierda (mini barra vertical) */
+.radio-input:checked + .text::before {
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 1.1em;
+    margin-right: 0.35rem;
+    background-color: var(--ux-radio-list-selected-accent-color);
+    vertical-align: middle;
+}
+
+.search-container {
+    margin-top: var(--ux-radio-list-search-margin-top);
+}
+
+/* Estilo de la <input> interna del lightning-input */
+.search-container lightning-input .slds-input {
+    border: 1px solid var(--ux-radio-list-search-border-color);
+    border-radius: var(--ux-radio-list-search-radius);
+    background-color: var(--ux-radio-list-search-bg);
+    font-size: var(--ux-radio-list-font-size);
+    color: var(--ux-radio-list-search-text-color);
+}
+
+/* Placeholder más suave */
+.search-container lightning-input .slds-input::placeholder {
+    color: var(--ux-radio-list-search-placeholder-color);
+}
+
+/* Opcional: focus suave coherente con el resto */
+.search-container lightning-input .slds-input:focus {
+    box-shadow: 0 0 0 2px rgba(22, 50, 92, 0.15);
+    border-color: var(--ux-radio-list-selected-accent-color);
+}

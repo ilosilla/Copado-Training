@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Relazione di Vendite</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Relazione di Vendite</value>
+    </caseValues>
+    <gender>Masculine</gender>
+    <layouts>
+        <layout>Edition Layout</layout>
+        <sections>
+            <label><!-- Account Status --></label>
+            <section>Account Status</section>
+        </sections>
+        <sections>
+            <label><!-- Administrative Data --></label>
+            <section>Administrative Data</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Informacion general --></label>
+            <section>Informacion general</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Organizacion Layout</layout>
+        <sections>
+            <label><!-- Account Status --></label>
+            <section>Account Status</section>
+        </sections>
+        <sections>
+            <label><!-- Administrative Data --></label>
+            <section>Administrative Data</section>
+        </sections>
+        <sections>
+            <label><!-- Informacion general --></label>
+            <section>Informacion general</section>
+        </sections>
+        <sections>
+            <label><!-- Vínculos personalizados --></label>
+            <section>Vínculos personalizados</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Nombre Organizaciones --></nameFieldLabel>
+    <recordTypes>
+        <description><!-- RecordType utilizado únicamente en la creación del registro --></description>
+        <label>Per Creazione</label>
+        <name>For_Creation</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Tipo de Registro para Editar registros --></description>
+        <label>Per Edizione</label>
+        <name>For_Edition</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage>Non può crare una nuova relazione di vendite perche il conto è cancellato o bloccato</errorMessage>
+        <name>Account_locked_or_delete</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Non può modificare questi campi</errorMessage>
+        <name>Cant_change_key_fields</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are not assigned to the selected Sales Org. Please choose another one. --></errorMessage>
+        <name>Check_User_Sales_Org</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Ampliar_organizacion --></label>
+        <name>Ampliar_organizacion</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- pruebaboton3 --></label>
+        <name>pruebaboton3</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Pallet Surcharge Mode --></label>
+    <name>PalletSurchargeMode__c</name>
+    <picklistValues>
+        <masterLabel>FIXED_BASES_002</masterLabel>
+        <translation><!-- FIXED_BASES_002 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NOT_APPLICABLE</masterLabel>
+        <translation><!-- NOT_APPLICABLE --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

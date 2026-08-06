@@ -1,0 +1,27 @@
+.THIS .slds-section__title{
+    margin-bottom: 10px!important;
+    margin-top: 10px!important;
+}
+
+.THIS .listRequests{
+    padding: 10px!important;
+}
+
+.THIS .docker {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.THIS .docked {
+    float: right;
+    z-index: 99;
+}
+
+.THIS .notes-height .slds-textarea{
+    height:15vh!important;
+}
+
+.THIS {
+    height: 50vh;
+}

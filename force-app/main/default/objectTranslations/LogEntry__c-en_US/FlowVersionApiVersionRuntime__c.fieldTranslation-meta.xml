@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The API version for running the flow. This value determines which versioned run-time behavior improvements are adopted by the flow version. --></help>
+    <label><!-- Flow API Version Runtime --></label>
+    <name>FlowVersionApiVersionRuntime__c</name>
+    <picklistValues>
+        <masterLabel>v52.0 - Summer &apos;21 Release</masterLabel>
+        <translation><!-- v52.0 - Summer &apos;21 Release --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>v53.0 - Winter &apos;22 Release</masterLabel>
+        <translation><!-- v53.0 - Winter &apos;22 Release --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

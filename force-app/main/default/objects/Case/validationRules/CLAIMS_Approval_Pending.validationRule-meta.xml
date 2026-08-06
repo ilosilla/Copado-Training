@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CLAIMS_Approval_Pending</fullName>
+    <active>true</active>
+    <description>CHecks cases pending approvan cannot be changed to other status than REJECTED or CONSIDERATION</description>
+    <errorConditionFormula>IsClaim__c &amp;&amp; NOT(ISBLANK( ApprovalRequested__c )) &amp;&amp; not(Approved__c) &amp;&amp; 
+NOT(ISPICKVAL(Status, &apos;Consideration&apos;)) &amp;&amp; NOT(ISPICKVAL(Status, &apos;Rejected&apos;))</errorConditionFormula>
+    <errorMessage>The claim must be approved before the status can be changed</errorMessage>
+</ValidationRule>

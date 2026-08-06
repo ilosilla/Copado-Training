@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Houston_In_Stock_List</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>Sales_Office__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Sales_Office__c</field>
+        <operation>contains</operation>
+        <value>HOUSTON</value>
+    </filters>
+    <filters>
+        <field>Account.Send_Mass_Email__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Houston In-Stock List</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>B_U_Manager_Houston</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

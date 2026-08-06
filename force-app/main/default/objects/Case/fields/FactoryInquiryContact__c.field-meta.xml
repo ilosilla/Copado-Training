@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FactoryInquiryContact__c</fullName>
+    <label>Factory Inquiry Contact</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>BUTECH</fullName>
+                <default>false</default>
+                <label>BUTECH</label>
+            </value>
+            <value>
+                <fullName>gustavo.escrig@butech.es</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>BUTECH - gustavo.escrig@butech.es</label>
+            </value>
+            <value>
+                <fullName>GAMA</fullName>
+                <default>false</default>
+                <label>GAMA DECOR</label>
+            </value>
+            <value>
+                <fullName>GAMA DECOR (aftersales1@gama-decor.com)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GAMA DECOR (aftersales1@gama-decor.com)</label>
+            </value>
+            <value>
+                <fullName>aftersales1@gama-decor.com</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GAMA DECOR - aftersales1@gama-decor.com</label>
+            </value>
+            <value>
+                <fullName>KRION</fullName>
+                <default>false</default>
+                <label>KRION</label>
+            </value>
+            <value>
+                <fullName>KRION (stecnico2@krion.com)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>KRION (stecnico2@krion.com)</label>
+            </value>
+            <value>
+                <fullName>stecnico2@krion.com</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>KRION - stecnico2@krion.com</label>
+            </value>
+            <value>
+                <fullName>LANTIC</fullName>
+                <default>false</default>
+                <label>L&apos;ANTIC</label>
+            </value>
+            <value>
+                <fullName>L’ANTIC (sat@anticcolonial.com)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>L’ANTIC (sat@anticcolonial.com)</label>
+            </value>
+            <value>
+                <fullName>sat@anticcolonial.com</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>L’ANTIC - sat@anticcolonial.com</label>
+            </value>
+            <value>
+                <fullName>NOKEN</fullName>
+                <default>false</default>
+                <label>NOKEN</label>
+            </value>
+            <value>
+                <fullName>NOKEN (sat.1@noken.com)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>NOKEN (sat.1@noken.com)</label>
+            </value>
+            <value>
+                <fullName>sat.1@noken.com</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>NOKEN - sat.1@noken.com</label>
+            </value>
+            <value>
+                <fullName>PORSA</fullName>
+                <default>false</default>
+                <label>PORCELANOSA</label>
+            </value>
+            <value>
+                <fullName>PORCELANOSA (export-uk@porcelanosa.com)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PORCELANOSA (export-uk@porcelanosa.com)</label>
+            </value>
+            <value>
+                <fullName>export-uk@porcelanosa.com</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PORCELANOSA - export-uk@porcelanosa.com</label>
+            </value>
+            <value>
+                <fullName>XTONE</fullName>
+                <default>false</default>
+                <label>XTONE</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

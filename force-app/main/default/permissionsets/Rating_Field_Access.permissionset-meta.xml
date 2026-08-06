@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Acceso al campo de Rating por los comerciales de Urbatek de España</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Rating</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Rating Field Access</label>
+    <license>Salesforce</license>
+    <recordTypeVisibilities>
+        <recordType>Account.Fabricator</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>Account.Third_party_Retailer_Reseller</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+</PermissionSet>

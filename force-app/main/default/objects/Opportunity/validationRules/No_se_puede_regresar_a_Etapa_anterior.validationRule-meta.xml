@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_se_puede_regresar_a_Etapa_anterior</fullName>
+    <active>false</active>
+    <errorConditionFormula>CASE(StageName,
+&quot;New&quot;, 1,
+&quot;Qualification&quot;, 2,
+&quot;Pending&quot;, 3,
+&quot;Closed Won&quot;, 4,
+&quot;Closed Lost&quot;, 5,
+0)
+&lt;
+CASE(PRIORVALUE(StageName),
+&quot;New&quot;, 1,
+&quot;Qualification&quot;, 2,
+&quot;Pending&quot;, 3,
+&quot;Closed Won&quot;, 4,
+&quot;Closed Lost&quot;, 5,
+0)</errorConditionFormula>
+    <errorMessage>Regresar a una Etapa anterior no está permitido</errorMessage>
+</ValidationRule>

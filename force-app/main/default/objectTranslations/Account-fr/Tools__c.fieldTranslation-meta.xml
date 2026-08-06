@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Outillage</label>
+    <name>Tools__c</name>
+    <picklistValues>
+        <masterLabel>Bridge Crane</masterLabel>
+        <translation>Bridge Crane</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bridge Disc</masterLabel>
+        <translation>Disque pont</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CNC</masterLabel>
+        <translation><!-- CNC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Edge Polisher</masterLabel>
+        <translation>Polisseuse de chants</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Invisible joint</masterLabel>
+        <translation>Joint invisible</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Others</masterLabel>
+        <translation>Autres</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Suction Cups</masterLabel>
+        <translation>Ventouses</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Waterjet</masterLabel>
+        <translation>Jet d&apos;eau</translation>
+    </picklistValues>
+</CustomFieldTranslation>

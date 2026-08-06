@@ -1,0 +1,43 @@
+<aura:component implements="lightning:actionOverride,lightning:isUrlAddressable,force:lightningQuickActionWithoutHeader,force:hasRecordId">
+ 
+
+    <aura:html tag="style">
+        .cuf-content { padding: 0 0rem !important; } 
+        .slds-p-around--medium {padding: 0px 0 0 0 !important; }         
+
+        .slds-modal__container{             
+            min-width: 100%;
+        }
+
+        slds_modal > .slds-modal__content {
+            min-height; 0px !important;  
+            height: 0px !important;    
+        }
+
+        .quick-actions-panel {
+            overflow-y: hidden !important;
+        }
+
+        .closeIcon {
+            display: none;
+        }   
+
+    </aura:html>
+
+    <aura:handler name="init" value="{!this}" action="{!c.handleInit}"/>
+    <aura:attribute name="recordId" type="Id"></aura:attribute>
+
+        <!-- <c:caseCollectionWrapper recordId="{!v.recordId}"/> -->
+        <c:caseCollectionEdit recordId="{!v.recordId}" onclose="{!c.handleClose}"> </c:caseCollectionEdit>
+</aura:component>
+
+<!--
+    container:
+        max-width:80rem !important; 
+        width:80% !important; 
+
+    content:
+    height: 90% !important;  
+
+
+-->

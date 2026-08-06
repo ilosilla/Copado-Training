@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="preselectedState" type="String" label="Pre-Selected State" role="inputOnly"/>
+            <property name="showPersonalInfo" type="Boolean" label="Show Personal Info" role="inputOnly"/>
+            <property name="showPicklists" type="Boolean" label="Show Picklists" role="inputOnly"/>
+            <property name="appointmentType" type="String" label="Appointment Type Disabled" role="outputOnly"/>
+            <property name="firstName" type="String" label="Name" role="outputOnly"/>
+            <property name="lastName" type="String" label="Last Name" role="outputOnly"/>
+            <property name="email" type="String" label="Email" role="outputOnly"/>
+            <property name="phone" type="String" label="Phone" role="outputOnly"/>
+            <property name="postalCode" type="String" label="Postal Code" role="outputOnly"/>
+            <property name="street" type="String" label="Street" role="outputOnly"/>
+            <property name="city" type="String" label="City" role="outputOnly"/>
+            <property name="help" type="String" label="How can we help you" role="outputOnly"/>
+            <property name="countrySelected" type="String" label="Country" role="outputOnly"/>
+            <property name="stateSelected" type="String" label="State" role="outputOnly"/>
+            <property name="profileSelected" type="String" label="Profile" role="outputOnly"/>
+            <property name="appointmentTypeSelected" type="String" label="Appointment Type" role="outputOnly"/>
+            <property name="hearAboutSelected" type="String" label="Hear about us" role="outputOnly"/>
+            <property name="productsSelected" type="String" label="Products Selected" role="outputOnly"/>
+            <property name="previousButton" type="Boolean" label="Back Button Clicked"/>
+            <property name="newsletterChecked" type="Boolean" label="Newsletter checked" role="outputOnly"/>
+            <property name="newsletter" type="String" label="Newsletter old" role="outputOnly"/>
+            <property name="thiscountry" type="String" label="Web country" role="inputOnly"/>
+
+            <property name="selectedDateS" type="String" label="selectedDateS" role="inputOnly"/>
+            <property name="storeName" type="String" label="storeName" role="inputOnly"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

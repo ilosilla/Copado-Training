@@ -1,0 +1,21 @@
+.list-header {
+    font-weight: bold;
+    border-bottom: 1px solid black; 
+}
+
+.custom-textarea  {
+    --slds-c-textarea-sizing-min-height: 6rem; /* Adjust height */
+}
+
+.custom-textarea-large  {
+    --slds-c-textarea-sizing-min-height: 9rem; /* Adjust height */
+}
+.warning {
+    background-color: var(--slds-g-color-palette-yellow-90);
+}
+
+.claim-solution-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}

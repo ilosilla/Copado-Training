@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Cooking Appliances --></label>
+    <name>CookingAppliances__c</name>
+    <picklistValues>
+        <masterLabel>Cooktop</masterLabel>
+        <translation><!-- Cooktop --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>N/A</masterLabel>
+        <translation><!-- N/A --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Range</masterLabel>
+        <translation><!-- Range --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Range Top</masterLabel>
+        <translation><!-- Range Top --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

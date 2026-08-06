@@ -1,0 +1,27 @@
+.THIS .stockValue{
+    font-size: 15px;
+    font-weight: bold;
+    vertical-align: middle;    
+}
+
+.THIS .stockValue.out{
+    color:rgb(137, 1, 1);
+}
+
+.THIS .stockValue.in{
+    color:rgb(13, 109, 0);
+}
+
+.THIS .stockDates{
+    text-decoration:underline;
+    display: inline-block;
+    line-height: 18px;
+    vertical-align: middle;
+    font-weight: 400;
+    color: #1c3241;
+    font-size: 15px;
+}
+
+.THIS .stockIcon{
+    transform:scale(0.6);
+}

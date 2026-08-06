@@ -1,0 +1,43 @@
+<aura:component implements="lightning:availableForFlowScreens,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" controller="InstallationOrderSummaryController">    
+	
+    <!-- Variables -->
+    <aura:attribute name="recordId" type="String"/>
+    
+    <!-- Handlers -->
+    <!--<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>-->
+    
+    <!-- Local attributes -->
+    <aura:attribute name="installationOrder" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+    <force:recordData aura:id="recordLoader"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      targetError="{!v.recordError}"
+                      targetFields="{!v.installationOrder}"
+                      recordUpdated="{!c.handleRecordUpdated}"
+                      mode="VIEW"/>    
+    
+    <!-- Markup -->
+            <div>
+                <lightning:recordEditForm recordId="{!v.installationOrder.Id}" objectApiName="InstallationOrder__c" >
+                    <div>
+                        <!--lightning:outputField fieldName="Name" / -->
+                        <lightning:outputField fieldName="State__c" />
+                        <div class="slds-grid">
+                            <div class="slds-col">
+                                <lightning:outputField fieldName="StartDate__c" />
+                            </div>
+                            <div class="slds-col">
+                                <lightning:outputField fieldName="EndDate__c"/>
+                            </div>
+                        </div>
+                        <lightning:outputField fieldName="Notes__c"/>                                        
+                    </div>	
+                </lightning:recordEditForm>    
+            </div>
+		
+            <footer class="slds-card__footer">            
+                <lightning:formattedUrl value="{! '/lightning/r/' + v.installationOrder.Id + '/view'}" 
+                                        label="{!$Label.c.app_view_details}" tooltip="Go to the Installation order page" />            
+            </footer>
+</aura:component>

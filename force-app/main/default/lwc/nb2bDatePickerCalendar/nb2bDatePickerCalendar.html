@@ -1,0 +1,38 @@
+<template>
+	<template if:false={showSpinner}>
+		<div class="dates">
+			<div class="buttonContainer">
+				<button class="link" type="button" onclick={goToday}>{todayButtonLabel}</button>
+				<p>{formattedSelectedDate}</p>
+				<p class="bold">{year}</p>
+			</div>
+			<div class="buttonContainer">
+				<button class="prev" type="button" onclick={previousMonth}>{prevButtonLabel}</button>
+				<span class="bold">{month}</span>
+				<button class="next" type="button" onclick={nextMonth}>{nextButtonLabel}</button>
+			</div>
+			<ul class="header">
+				<template for:each={weekDays} for:item="day">
+					<li key={day}>{day}</li>
+				</template>
+			</ul>
+			<ul class="datePickerHolder">
+				<template for:each={dates} for:item="date">
+					<li
+						key={date.key}
+						class={date.className}
+						data-date={date.formatted}
+						onclick={setSelected}
+					>
+						{date.text}
+					</li>
+				</template>
+			</ul>
+		</div>
+	</template>
+	<template if:true={showSpinner}>
+		<div class="dates">
+			<lightning-spinner  alternative-text="Spinner"></lightning-spinner>
+		</div>
+	</template>
+</template>

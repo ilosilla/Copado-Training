@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>ActionRequested__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Status__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Message__c</columns>
+    <columns>RequesterID__c</columns>
+    <columns>Response__c</columns>
+    <columns>ResponseCode__c</columns>
+    <columns>Retries__c</columns>
+    <columns>SAPAPIHandler__c</columns>
+    <columns>SAPEndpoint__c</columns>
+    <columns>SAPKey__c</columns>
+    <columns>Sequence__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Main Activity --></label>
+    <name>Main_Activity__c</name>
+    <picklistValues>
+        <masterLabel>Bathroom</masterLabel>
+        <translation><!-- Bathroom --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ceramic</masterLabel>
+        <translation>Ceramic</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kitchen</masterLabel>
+        <translation><!-- Kitchen --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

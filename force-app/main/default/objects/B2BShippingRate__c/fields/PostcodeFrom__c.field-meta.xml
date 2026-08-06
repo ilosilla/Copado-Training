@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PostcodeFrom__c</fullName>
+    <description>Starting postcode or postcode prefix (full postal code, outward code, or lower bound of a range). Example: 90210, SW1A 1AA, LS9, M4B, etc.</description>
+    <externalId>false</externalId>
+    <label>Postcode From</label>
+    <length>16</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

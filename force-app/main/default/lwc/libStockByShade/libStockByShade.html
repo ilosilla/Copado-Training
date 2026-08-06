@@ -1,0 +1,56 @@
+<template>
+    <c-lib-modal
+        show-modal={showModal}
+        variant="seamless"
+        show-negative-button="true"
+        negative-button-label="Close"
+        show-positive-button="false"
+        modal-size="small"
+        onclose={handleClose}
+        onnegative={handleClose}
+    >
+        <div slot="header" class="shade-header">
+            <div class="shade-eyebrow">Stock by shade</div>
+            <div class="shade-card">
+                <div class="shade-card-main">
+                    <span class="shade-name">{productName}</span>
+                    <template if:true={totalSurfaceDisplay}>
+                        <span class="shade-total">{totalSurfaceDisplay}</span>
+                    </template>
+                </div>
+                <div class="shade-details">
+                    <span>SKU# {sku}</span>
+                    <template if:true={packagingLine}>
+                        <span class="shade-sep">|</span>
+                        <span><span class="shade-pack-label">Packaging:</span> {packagingLine}</span>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <div slot="body">
+            <table class="shade-table">
+                <thead>
+                    <tr>
+                        <th class="shade-th shade-th-lote" scope="col">Shade</th>
+                        <th class="shade-th shade-th-qty" scope="col">{quantityHeader}</th>
+                        <template if:true={showSurfaceColumn}>
+                            <th class="shade-th shade-th-surface" scope="col">Surface</th>
+                        </template>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={rows} for:item="row">
+                        <tr key={row.lote}>
+                            <td class="shade-lote">{row.lote}</td>
+                            <td class="shade-qty">{row.quantity}</td>
+                            <template if:true={showSurfaceColumn}>
+                                <td class="shade-surface">{row.surfaceDisplay}</td>
+                            </template>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </c-lib-modal>
+</template>

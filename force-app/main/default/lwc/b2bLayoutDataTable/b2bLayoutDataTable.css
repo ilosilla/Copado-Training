@@ -1,0 +1,62 @@
+:host {
+    --layout-header-height: 70px;
+    display: block;
+}
+
+/* ================================
+   Layout Structure
+================================ */
+.layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ================================
+   Sticky Header
+================================ */
+.layout__header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* Inner header container aligned with max site width */
+.layout__header-inner {
+    max-width: var(--dxp-maxWidth);
+    margin: 0 auto;
+    height: var(--layout-header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+/* ================================
+   Main Content
+   IMPORTANT: no overflow here
+================================ */
+.layout__main {
+    flex: 1 1 auto;
+    min-height: 0;
+}
+
+/* ================================
+   Footer
+================================ */
+.layout__footer {
+    margin-top: auto;
+}
+
+/* ================================
+   Header Logo Styling
+================================ */
+.header-logo h4 {
+    color: var(--psa-color-logo, #4a4a4a) !important;
+    font-family: var(--psa-font-logo) !important;
+    font-size: 1.6rem;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+}

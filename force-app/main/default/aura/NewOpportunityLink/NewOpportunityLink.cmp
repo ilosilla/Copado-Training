@@ -1,0 +1,82 @@
+<aura:component
+    implements="flexipage:availableForAllPageTypes,force:hasSObjectName,force:hasRecordId,lightning:actionOverride,force:lightningQuickAction"
+	access="global"
+    controller="OpportunityLinkComponentController">
+    
+    <!-- Events -->
+    <aura:registerEvent name="closeComponent" type="c:eventCloseComponent" />
+    
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <aura:import library="lightning:alert" property="LightningAlert" />
+    
+    <!-- Attributes -->
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="buttons" type="OpportunityLinkComponentController.ButtonInfoDTO[]" default="[]" />
+    <aura:attribute name="currentUser" type="User"/>
+    <aura:attribute name="selectedOption" type="String" />
+    <aura:attribute name="isActive" type="Boolean" default="false"/>   
+    
+    <!-- UI Attributes -->
+    <aura:attribute name="showSpinner" type="Boolean" default="false"/>
+    <aura:attribute name="showOptions" type="Boolean" default="false"/>
+    <aura:attribute name="selectedOptionBoolean" type="Boolean" default = "false" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    
+    <aura:if isTrue="{!v.showSpinner}">
+        <div class="slds-align_absolute-center" style="width:100px; height: 100px;">              
+            <lightning:spinner size="large" alternativeText="Loading"/>            
+        </div>
+    </aura:if>
+       
+    <aura:if isTrue="{!v.isActive}">
+        <div class="slds-modal slds-fade-in-open" role="dialog">
+            <div class="slds-modal__container" style="width:100%">
+                <article class="slds-card">
+                    <header class="slds-border_bottom">
+                        <div class="slds-media slds-media_center slds-has-flexi-truncate slds-page-header slds-border_bottom" >
+                            <div class="slds-media__figure">
+                                <lightning:icon iconName="utility:collection_alt" size="small"/>
+                            </div>
+                            <div class="slds-media__body">
+                                <h2 class="slds-card__header-title">
+                                    <span class="slds-card__header-link slds-truncate" title="Accounts">
+                                        <span>{! $Label.c.opplink_select_option }</span>
+                                    </span>
+                                </h2>
+                            </div>
+                        </div>
+                    </header>
+                    
+                    <div class="slds-p-around--large slds-card__body_inner">
+                        <fieldset class="slds-form-element">
+                            <div class="slds-form-element__control slds-align_absolute-center">
+                                <aura:iteration items="{! v.buttons }" var="button">
+                                    <div class="slds-visual-picker slds-visual-picker_medium" onclick="{!c.onSelectOption}" id="{!concat('id-', button.internalValue)}">
+                                        <input type="radio" id="{!button.internalValue}" value="{!button.internalValue}" name="options"/>
+                                        <label for="{!button.internalValue}">
+                                            <span class="slds-visual-picker__figure slds-visual-picker__text slds-align_absolute-center">
+                                                <span>
+                                                    <div class="slds-text-heading_medium slds-m-bottom_x-small"><b>{!button.label}</b></div>
+                                                    <span class="slds-text-title"><aura:unescapedHtml value="{!button.description}"/></span>
+                                                </span>
+                                            </span>
+                                            <span class="slds-icon_container slds-visual-picker__text-check">
+                                                <lightning:icon iconName="utility:check" size="x-small" class="slds-icon-text-check" variant="inverse"/>
+                                            </span>
+                                        </label>
+                                    </div>            
+                                </aura:iteration>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <footer class="slds-card__footer">
+                        <lightning:button variant="neutral" label="{!$Label.c.dict_close}" onclick="{!c.closeComponent}"/>
+                        <lightning:button variant="brand" label="{!$Label.c.dict_open}" onclick="{!c.doByOption}" disabled="{! !v.selectedOptionBoolean}"/>
+                    </footer>
+                </article>
+            </div>
+        </div>
+    </aura:if>
+	
+</aura:component>

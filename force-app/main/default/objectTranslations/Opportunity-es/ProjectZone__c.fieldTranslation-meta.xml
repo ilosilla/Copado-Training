@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Zona de Proyecto</label>
+    <name>ProjectZone__c</name>
+    <picklistValues>
+        <masterLabel>Bathroom</masterLabel>
+        <translation>Baño</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dining room</masterLabel>
+        <translation>Comedor</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Flooring</masterLabel>
+        <translation>Revestimiento</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gym</masterLabel>
+        <translation>Gimnasio</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kitchen</masterLabel>
+        <translation>Cocina</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Living room</masterLabel>
+        <translation>Salón de estar</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Others</masterLabel>
+        <translation>Otros</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pavement</masterLabel>
+        <translation>Pavimentos</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Room</masterLabel>
+        <translation>Habitación</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Swimming pool</masterLabel>
+        <translation>Piscina</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Whole remodelation</masterLabel>
+        <translation>Remodelación completa</translation>
+    </picklistValues>
+</CustomFieldTranslation>

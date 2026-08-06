@@ -1,0 +1,10 @@
+{
+  "type" : "sfdc_cms__themeLayout",
+  "title" : "Commerce Layout",
+  "contentBody" : {
+    "component" : {
+      "children" : [ ]
+    }
+  },
+  "urlName" : "commerce-layout"
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BillingCountry_VATNumber_Required</fullName>
+    <active>false</active>
+    <description>Billing Country and VAT Number are required if record is not Person Account</description>
+    <errorConditionFormula>AND(
+ Potential__c = FALSE,
+ IsPersonAccount = FALSE, 
+ AND(
+    ISBLANK(BillingCountry ),
+    ISBLANK(VAT_Number__c ),
+    SAP_Id__c = &apos;1&apos;
+    )
+)</errorConditionFormula>
+    <errorMessage>Billing Country and VAT Number are required if record is not Person Account</errorMessage>
+</ValidationRule>

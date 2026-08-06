@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Payment Model --></label>
+    <name>PaymentModel__c</name>
+    <picklistValues>
+        <masterLabel>CREDIT</masterLabel>
+        <translation><!-- CREDIT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DEPOSIT</masterLabel>
+        <translation><!-- DEPOSIT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NONE</masterLabel>
+        <translation><!-- NONE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PREPAID</masterLabel>
+        <translation><!-- PREPAID --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

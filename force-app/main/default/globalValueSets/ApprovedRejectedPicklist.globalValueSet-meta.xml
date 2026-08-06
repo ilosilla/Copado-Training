@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Approved</fullName>
+        <default>false</default>
+        <label>Approved</label>
+    </customValue>
+    <customValue>
+        <fullName>Rejected</fullName>
+        <default>false</default>
+        <label>Rejected</label>
+    </customValue>
+    <description>List with two values: Approved and Rejected</description>
+    <masterLabel>ApprovedRejectedPicklist</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

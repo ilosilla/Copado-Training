@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ramsey</fullName>
+    <booleanFilter>((1 AND 2) OR (3 AND 4)) AND 5 AND 6</booleanFilter>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>Postcode__c</columns>
+    <columns>LeadSubtype__c</columns>
+    <columns>ExistingAccount__c</columns>
+    <columns>Sales_Office__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>AccountId__c</columns>
+    <columns>ContactId__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Postcode__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>10501</value>
+    </filters>
+    <filters>
+        <field>Postcode__c</field>
+        <operation>lessOrEqual</operation>
+        <value>10998</value>
+    </filters>
+    <filters>
+        <field>Postcode__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>12007</value>
+    </filters>
+    <filters>
+        <field>Postcode__c</field>
+        <operation>lessOrEqual</operation>
+        <value>14925</value>
+    </filters>
+    <filters>
+        <field>LEAD.CREATED_DATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>10/24/2022 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>Profile__c</field>
+        <operation>equals</operation>
+        <value>Consumer</value>
+    </filters>
+    <label>Ramsey</label>
+    <sharedTo>
+        <role>Ramsey_Showroom_manager</role>
+    </sharedTo>
+</ListView>

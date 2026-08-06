@@ -1,0 +1,143 @@
+<template>
+
+    <template lwc:if={isFullPage}>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-record-picker
+                    label="Account related"
+                    placeholder="Search Accounts..."
+                    object-api-name="Account"
+                    value={accountId}
+                    filter={filter}
+                    display-info={displayInfo}
+                    matching-info={matchingInfo}
+                    onchange={handleChangeAccount}
+                    required>
+                </lightning-record-picker>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-record-picker
+                    name="Main contact"
+                    label="Main contact"
+                    placeholder="Search Contacts..."
+                    object-api-name="Contact"
+                    value={selectedContactId}
+                    filter={filterContacts}
+                    display-info={displayInfoContact}
+                    matching-info={matchingInfo}
+                    onchange={handleChange}
+                    required>
+                </lightning-record-picker>
+            </div>
+        </div>
+    </template>
+
+    <template lwc:else>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-1">
+                <lightning-record-picker
+                    label="Account related"
+                    placeholder="Search Accounts..."
+                    value={accountId}
+                    object-api-name="Account"
+                    filter={filter}
+                    display-info={displayInfo}
+                    matching-info={matchingInfo}
+                    onchange={handleChangeAccount}
+                    required>
+                </lightning-record-picker>
+            </div>
+        </div>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-1">
+                <lightning-record-picker
+                    name="Main contact"
+                    label="Main contact"
+                    placeholder="Search Contacts..."
+                    object-api-name="Contact"
+                    value={selectedContactId}
+                    filter={filterContacts}
+                    display-info={displayInfoContact}
+                    matching-info={matchingInfo}
+                    onchange={handleChange}
+                    required>
+                </lightning-record-picker>
+            </div>
+        </div>
+    </template>
+
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-1">
+            <lightning-record-picker
+            lwc:ref="contactPickerRef"
+            label="Other contacts"
+            placeholder="Search Contacts..."
+            object-api-name="Contact"
+            filter={filterContacts}
+            display-info={displayInfoContact}
+            matching-info={matchingInfo}
+            onchange={handleChangeOtherContacts}>
+        </lightning-record-picker>
+        </div>
+    </div>
+    <div class="slds-grid slds-gutters slds-p-around--medium">
+        <div class="slds-col slds-size_1-of-1">
+            <div class="slds-form-element">
+                <div class="slds-form-element__control">
+                    <template for:each={selectedOtherContacts} for:item="contact" for:index="index">
+                        <lightning-button  key={contact.Id} label={contact.Name} data-id={contact.Id} icon-name="utility:contact" class="slds-m-left_x-small"></lightning-button>
+                        </template>
+                </div>
+                </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="slds-grid slds-gutters">
+        <div class="slds-size_1-of-2">
+            <lightning-button
+                label="New Account"
+                title={label.newAccountLabel}
+                onclick={handleNewAccount}
+                class="slds-var-m-left_small"
+                stretch="true">
+                </lightning-button>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-button
+                label="New Contact"
+                title={label.newContactLabel}
+                onclick={handleNewContact}
+                class="slds-var-m-left_small"
+                stretch="true">
+            </lightning-button>
+        </div>
+    </div>
+    <p></p>
+    
+        <div if:true={showNewAccountForm} class="slds-notify slds-m-top--medium slds-notify_alert slds-theme_alert-texture slds-theme_info" role="alert">
+            <span class="slds-assistive-text">New Account</span>
+            <span class="slds-icon_container slds-icon-utility-user slds-m-right_x-small" title="Description of icon when needed">
+                <lightning-icon icon-name='utility:company' alternative-text='company' size='x-small' title='company'></lightning-icon>
+            </span>
+            <h2>New Account</h2>
+          </div>
+        <c-account-creator
+            if:true={showNewAccountForm}
+            onaccountcreated={handleAccountCreated}
+            onaccountcancelled={handelAccountCancelled}>
+        </c-account-creator>
+        <div if:true={showNewContactForm} class="slds-notify slds-m-top--medium slds-notify_alert slds-theme_alert-texture slds-theme_info" role="alert">
+            <span class="slds-assistive-text">New Account</span>
+            <span class="slds-icon_container slds-icon-utility-user slds-m-right_x-small" title="Description of icon when needed">
+                <lightning-icon icon-name='utility:adduser' alternative-text='adduser' size='x-small' title='adduser'></lightning-icon>
+            </span>
+            <h2>New Contact</h2>
+          </div>
+          <c-contact-creator
+          if:true={showNewContactForm}
+          oncontactcreated={handleContactCreated}
+          oncontactcancelled={handelContactCancelled}>
+      </c-contact-creator>
+</template>

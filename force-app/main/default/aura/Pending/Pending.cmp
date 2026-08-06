@@ -1,0 +1,28 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <aura:attribute name="opportunity" type="Opportunity" default="{'sobjectType':'Opportunity'}"/>
+    
+    <aura:attribute name="currentScreen" type="Integer" default="1"/>
+    <aura:attribute name="numberOfScreens" type="Integer" default="1"/>
+    <aura:attribute name="fieldsToUpdate" type="Map" default="{}"/>
+    
+    <aura:attribute name="firstScreen" type="Boolean"/>
+    <aura:attribute name="lastScreen" type="Boolean"/>
+    <aura:attribute name="successFailureFinalScreen" type="Boolean" default="false"/>
+    
+    <aura:attribute name="error" type="Boolean" default="false"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <!--Methods--> 
+    <aura:method name="changeScreen" action="{!c.changeScreen}" description="changeScreen"> 
+        <aura:attribute name="action" type="String"/>
+    </aura:method>
+    
+    <aura:method name="reloadStage" action="{!c.reloadStage}" description="reloadStage"></aura:method>
+    
+    <div class="slds-align_absolute-center" style = "height: 6.25rem;">
+        <h3>{!$Label.c.The_opportunity_will_remain_pending_closure_until_the_user_performs_the_payment}</h3>
+    </div>
+    
+</aura:component>

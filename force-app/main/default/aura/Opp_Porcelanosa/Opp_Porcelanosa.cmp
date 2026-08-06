@@ -1,0 +1,178 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasSObjectName,force:hasRecordId,force:lightningQuickActionWithoutHeader,lightning:actionOverride" access="global" controller="MySalesRelationshipComponentController">
+    <aura:attribute name="accountId" type="String" default=""/>
+    <aura:attribute name="mode" type="String" default="{# ((v.sObjectName == 'Account' || empty(v.recordId)) ? 'New' : 'Edit') }"/>
+    <aura:attribute name="reRender" type="Boolean" default="true"/>
+    <aura:attribute name="userSalesOrgs" type="List" default="[{value:'000',text:'xxxx'}]"/>
+    <aura:attribute name="userSos" type="List" default ="[{value:'000',text:'xxxx',selected:true},{value:'111',text:'yyy',selected:false}]"/>
+
+    <aura:attribute name="showSpinner" type="Boolean" default="true"/>
+    <aura:attribute name="isFormDataLoaded" type="Boolean" default="false"/>
+    <aura:attribute name="isAccountDataLoaded" type="Boolean" default="false"/>
+    <aura:attribute name="isUserDataLoaded" type="Boolean" default="false"/>
+    <aura:attribute name="isSetUpFormExecuted" type="Boolean" default="false"/>
+    <aura:attribute name="showError" type="Boolean" default="false"/>
+
+    <lightning:notificationsLibrary aura:id="notificationsLibrary"/>
+    <lightning:workspaceAPI aura:id="workspace"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:html tag="style">
+        .cuf-content {
+        padding: 0 0rem !important;
+        }
+        .slds-p-around_medium {
+        padding: 0rem !important;
+        }
+        .slds-modal__content{
+        overflow-y: hidden;
+        height:unset !important;
+        max-height:unset !important;
+        }
+        .slds-modal__container{
+        width: 100%;
+        max-width: 52.5rem;
+        min-width: 20rem;
+        margin: 0 auto;
+        }
+    </aura:html>
+    <lightning:messages/> 
+
+    <aura:if isTrue="{!v.showSpinner}">
+            <div aura:id="spinnerId" class="slds-spinner_container">
+               <div class="slds-spinner_brand  slds-spinner slds-spinner_large slds-is-relative" role="alert">
+                 <span class="slds-assistive-text">Loading</span>
+                 <div class="slds-spinner__dot-a"></div>
+                 <div class="slds-spinner__dot-b"></div>
+               </div>
+            </div>
+    </aura:if>
+
+    <!--loads Account data-->
+    <aura:attribute name="account" type="Object"/>
+    <force:recordData recordId="{! (v.mode=='New' ? v.recordId : null) }"
+                      layoutType="FULL"
+                      targetFields="{!v.account}"
+                      recordUpdated="{!c.handleOnAccountLoad}"/>
+    
+    <!--Loads user data-->
+    <aura:attribute name="user" type="Object"/>
+    <force:recordData recordId="{!$SObjectType.CurrentUser.Id}"
+                      layoutType="FULL"
+                      targetFields="{!v.user}"
+                      recordUpdated="{!c.handleOnUserLoad}"/>       
+
+    <div class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <header class="slds-modal__header">
+                <lightning:buttonIcon alternativeText="Close" onclick="{!c.handleOnCancel}" iconName="utility:close" variant="bare" size="large" class="slds-modal__close slds-button_icon-inverse"/>
+                <h2 class="slds-text-heading_medium slds-hyphenate">{# v.mode + ' Sales Relationship'}</h2>
+            </header>
+                <div class="slds-modal__content slds-p-around_medium" style="overflow-y: auto !important; padding: 1rem 2rem;">
+    
+                    <lightning:recordEditForm aura:id="form"
+                                            recordId="{# (v.sObjectName == 'Account' ? null : v.recordId) }"
+                                            objectApiName="Sales_Relationship__c"     
+                                            onload="{!c.handleOnFormload}"   
+                                            onsubmit="{!c.handleOnSubmit}"                                  
+                                            onsuccess="{!c.handleOnSuccess}"
+                                            onerror="{!c.handleOnError}"
+                                            class="slds-card__body_inner">
+                        
+                                               
+                        
+                                <div class="slds-section slds-is-open">
+                                    <h3 class="slds-section__title slds-theme_shade">
+                                        General Information
+                                    </h3>
+                                    <div class="slds-section__content">                                        
+                                        <lightning:layout multipleRows="true">
+
+                                            <lightning:layoutItem size="6" flexibility="auto" padding="around-small">
+                                                <lightning:combobox aura:id="so" label="Sales Org" onchange="{!c.inputChange}" class="customRequired" options="{!v.userSos}"/>
+                                            </lightning:layoutItem>
+
+                                            <lightning:layoutItem size="6" flexibility="auto" padding="around-small">
+                                                <lightning:inputField fieldName="Name" aura:id="Name" disabled="true"/>
+                                            </lightning:layoutItem>
+                                            <lightning:layoutItem size="6" flexibility="auto" padding="around-small">
+                                                <lightning:inputField fieldName="Sales_Org__c" aura:id="Sales_Org__c" disabled="{# (v.mode=='Edit') }" class="{# v.mode ==  'Edit' ? 'customRequired' : 'slds-hide'}"/>
+                                                <!--<div class="{# v.mode ==  'Edit' ? 'slds-hide' : 'customRequired'}">-->
+                                                    <lightning:select aura:id="salesorg" name="salesorg" onchange="{!c.handleOnInputChange}" label="Sales Org" required="true" class="{# v.mode ==  'Edit' ? 'slds-hide' : 'customRequired'}">
+                                                        <option value="">--None--</option>
+                                                        <aura:iteration items="{!v.userSalesOrgs}" var="opt" indexVar="key">
+                                                            <option text="{!opt.text}" value="{!opt.value}" selected="{!opt.selected}"></option>
+                                                        </aura:iteration>
+                                                    </lightning:select>
+                                                    <div aura:id="formHelp-salesorg" class="slds-hide formElementHelp">This field is required</div>
+                                                <!--</div>-->
+                                            </lightning:layoutItem>
+
+                                            <lightning:layoutItem size="6" flexibility="auto" padding="around-small">
+                                                <lightning:inputField fieldName="Account_Org__c" aura:id="Account_Org__c"  onchange="{!c.handleOnInputChange}"  class="customRequired" disabled="true"/>
+                                                <div aura:id="formHelp-Account_Org__c" class="slds-hide formElementHelp">This field is required</div>
+                                            </lightning:layoutItem>
+                                            <aura:if isTrue="{!v.reRender}">
+                                                <lightning:layoutItem size="6" flexibility="auto" padding="around-small"> 
+                                                    <lightning:inputField fieldName="Sales_Office__c" aura:id="Sales_Office__c" onchange="{!c.handleOnInputChange}" class="{! v.showError==true ? 'slds-has-error customRequired' : 'customRequired'}" disabled="{# (v.mode=='Edit') }"/>
+                                                    <div aura:id="formHelp-Sales_Office__c" class="{! v.showError==true ? 'slds-show formElementHelp' : 'slds-hide'}">This field is required</div>
+                                                </lightning:layoutItem>
+                                            </aura:if>
+
+                                            <lightning:layoutItem size="6" flexibility="auto" padding="around-small"> 
+                                                <lightning:inputField fieldName="Commercial__c" aura:id="Commercial__c"/>               
+                                            </lightning:layoutItem>
+                                            <lightning:layoutItem size="6" flexibility="auto" padding="around-small">
+                                                <lightning:inputField fieldName="Distribution_Channel__c" aura:id="Distribution_Channel__c" onchange="{!c.handleOnInputChange}" class="customRequired" disabled="{# (v.mode=='Edit') }"/>     
+                                                <div aura:id="formHelp-Distribution_Channel__c" class="slds-hide formElementHelp">This field is required</div>
+                                            </lightning:layoutItem>
+
+                                            <lightning:layoutItem size="6" flexibility="auto" padding="around-small">
+                                                <lightning:inputField fieldName="Relationship__c" aura:id="Relationship__c"/>
+                                            </lightning:layoutItem>                                            
+                                        </lightning:layout>                     
+                                    </div>
+                                </div>
+                                <div class="slds-section slds-is-open">
+                                    <h3 class="slds-section__title slds-theme_shade">
+                                        Payment Information
+                                    </h3>
+                                    <div class="slds-section__content">
+                                        <lightning:layout multipleRows="true">
+                                            <lightning:layoutItem size="6" flexibility="auto" padding="around-small">
+                                                <lightning:inputField fieldName="Commission_Agent__c" aura:id="Commission_Agent__c" disabled="{# (v.mode=='Edit') }"/>
+                                            </lightning:layoutItem>
+                                            <lightning:layoutItem size="6" flexibility="auto" padding="around-small">
+                                                <lightning:inputField fieldName="Currency__c" aura:id="Currency__c"/>
+                                            </lightning:layoutItem>
+
+                                            <lightning:layoutItem size="6" flexibility="auto" padding="around-small">
+                                                <lightning:inputField fieldName="Requested_Credit_Limit__c" aura:id="Requested_Credit_Limit__c" disabled="{# (v.mode=='Edit') }"/>  
+                                            </lightning:layoutItem> 
+                                        </lightning:layout>                     
+                                    </div>
+                                </div>
+                                <div class="slds-section slds-is-open">
+                                    <h3 class="slds-section__title slds-theme_shade">
+                                        Other Information
+                                    </h3>
+                                    <div class="slds-section__content">
+                                        <lightning:layout multipleRows="true">
+                                            <lightning:layoutItem size="6" flexibility="auto" padding="around-small">
+                                                    <lightning:inputField fieldName="Notes__c" aura:id="Notes__c"/>
+                                            </lightning:layoutItem>
+                                        </lightning:layout>                     
+                                    </div>
+                                </div>            
+                                <footer class="modal-footer slds-modal__footer">
+                                    <!--<div class="slds-m-top_medium">-->
+                                    <div class="slds-align_absolute-center">
+                                        <lightning:button variant="neutral" label="Cancelar" onclick="{!c.handleOnCancel}"/>
+                                        <lightning:button variant="brand" label="Submit" type="submit"/>
+                                    </div>
+                                </footer>   
+                    </lightning:recordEditForm>
+                </div>
+            </div>
+        </div>
+</aura:component>

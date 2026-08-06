@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Cajas</fullName>
+        <default>false</default>
+        <label>Cajas</label>
+    </customValue>
+    <customValue>
+        <fullName>Metros</fullName>
+        <default>false</default>
+        <label>Metros</label>
+    </customValue>
+    <customValue>
+        <fullName>Pies</fullName>
+        <default>false</default>
+        <label>Pies</label>
+    </customValue>
+    <customValue>
+        <fullName>Sacos</fullName>
+        <default>false</default>
+        <label>Sacos</label>
+    </customValue>
+    <description>Maestro de unidades de Venta</description>
+    <masterLabel>Unidades Venta</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

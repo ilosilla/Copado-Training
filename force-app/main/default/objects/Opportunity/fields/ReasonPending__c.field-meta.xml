@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ReasonPending__c</fullName>
+    <description>El pedido ya está hecho por la plataforma de ecommerce o la cita en tienda ya está solicitada y la oportunidad se mantiene a la espera de una acción que el cliente tiene que finalizar</description>
+    <inlineHelpText>La oportunidad se mantiene a la espera de una acción que el cliente tiene que finalizar</inlineHelpText>
+    <label>ReasonPending</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>In shop date</fullName>
+                <default>false</default>
+                <label>In shop date</label>
+            </value>
+            <value>
+                <fullName>Pending checkout</fullName>
+                <default>false</default>
+                <label>Pending checkout</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

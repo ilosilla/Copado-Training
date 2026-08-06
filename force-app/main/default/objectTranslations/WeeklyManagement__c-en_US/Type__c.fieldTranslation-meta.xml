@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type --></label>
+    <name>Type__c</name>
+    <picklistValues>
+        <masterLabel>EVENT</masterLabel>
+        <translation><!-- EVENT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KEYACCOUNT</masterLabel>
+        <translation><!-- KEYACCOUNT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KEYACCOUNTCOMMENT</masterLabel>
+        <translation><!-- KEYACCOUNTCOMMENT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KEYOPPORTUNITY</masterLabel>
+        <translation><!-- KEYOPPORTUNITY --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KEYOPPORTUNITYCOMMENT</masterLabel>
+        <translation><!-- KEYOPPORTUNITYCOMMENT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REPORTSENT</masterLabel>
+        <translation><!-- REPORTSENT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TASK</masterLabel>
+        <translation><!-- TASK --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

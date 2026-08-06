@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Product Description --></label>
+    <name>ProductDescription__c</name>
+    <picklistValues>
+        <masterLabel>Kitchen Countertop</masterLabel>
+        <translation><!-- Kitchen Countertop --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kitchen Island</masterLabel>
+        <translation><!-- Kitchen Island --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other (Explain in Notes)</masterLabel>
+        <translation><!-- Other (Explain in Notes) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vanity Top</masterLabel>
+        <translation><!-- Vanity Top --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

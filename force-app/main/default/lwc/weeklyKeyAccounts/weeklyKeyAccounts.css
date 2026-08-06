@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    height: 500px;
+    border: 1px solid #d8dde6;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column; /* 🔥 fuerza lista vertical */
+    width: 20%;
+}
+
+.account-item {
+    display: block;        /* cada botón ocupa todo el ancho */
+    width: 100%;
+    margin-bottom: 0.25rem; /* un pequeño espacio entre ellos */
+}
+
+.account-item:hover {
+    background: #e5f1fb;
+}
+
+.account-item.selected {
+    background: #0176d3;
+    color: white;
+    font-weight: bold;
+}
+
+.detail {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.actions-dock {
+    margin-top: auto; /* empuja el dock hacia abajo */
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid #d8dde6;
+    padding-top: 0.75rem;
+}
+
+.action-btn {
+    min-width: 150px;
+    justify-content: flex-start;
+}

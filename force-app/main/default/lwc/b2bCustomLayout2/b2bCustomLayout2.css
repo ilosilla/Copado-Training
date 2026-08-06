@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main NO scrollea: lo hace la página */
+.layout__main {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: visible; /* clave */
+}
+
+/* Footer al final; si hay poco contenido queda abajo por flex+min-height */
+.layout__footer {
+  flex: 0 0 auto;
+}

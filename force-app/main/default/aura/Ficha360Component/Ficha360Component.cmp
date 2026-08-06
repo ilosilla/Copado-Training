@@ -1,0 +1,473 @@
+<!-- @obsolete Ramón 18.12.2020 -->
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" controller="Ficha360Controller">
+    
+    <aura:attribute name="salesOrgOptions" type="List" default="[]"/>
+    <aura:attribute name="generalTabInfo" type="Object"/>
+    <aura:attribute name="openOrders" type="Object"/>
+    <aura:attribute name="openItems" type="Object"/>
+    <aura:attribute name="openDeliveries" type="Object"/>
+    
+    <aura:attribute name="columnSize" type="Integer" default="{! $Browser.isPhone ? 12 : 6 }"/>
+    <aura:attribute name="spinner" type="Boolean" default="true" />
+    <aura:attribute name="hasSapId" type="Boolean" default="false" />
+    <aura:attribute name="initMessage" type="String" default="" />
+    
+    <aura:attribute name="showQuotings" type="Boolean" default="false" />
+    <aura:attribute name="showOpenItems" type="Boolean" default="false" />
+    <aura:attribute name="showOpenOrders" type="Boolean" default="false" />
+    <aura:attribute name="showFacturas" type="Boolean" default="false" />
+    
+    <!--<aura:attribute name="recordId" type="String" default="0011w000009p4oRAAQ" />-->
+    <!--Cuenta sin sap id: 0011w000002orzOAAQ-->
+    <!--Cuenta con sap id: 0011w000009p4oRAAQ-->
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <lightning:card variant="{! $Browser.isPhone ? 'Narrow' : 'brand' }" class="container" > 
+        <aura:set attribute="title">
+            <!-- <lightning:icon iconName="utility:connected_apps" size="small"/> -->
+        </aura:set>
+        
+        <aura:set attribute="footer">
+            
+        </aura:set>
+        
+        <div class="slds-grid grid_vertical-align-center slds-grid_align-center slds-gutters_medium">
+            
+            <div class="{! if( v.hasSapId, 'slds-hide', 'slds-show ') }">
+                <h5 class="slds-align_absolute-center"><b>{!v.initMessage}</b></h5>
+            </div>
+            <div class="slds-col">
+                <lightning:combobox aura:id="salesOrg" label="{!$Label.c.Ficha360_Sales_Org}" placeholder="{!$Label.c.Ficha360_Select_a_Sales_Org}" variant="brand" 
+                                    onchange="{! c.handleChangeSalesOrg }" options="{! v.salesOrgOptions }" disabled="{! v.spinner}"
+                                    class="{! if(!v.hasSapId, 'slds-hide', 'slds-has-error') }"/>
+            </div>
+            <div class="slds-col" style="padding-top: 1.4rem">
+                <lightning:button  variant="brand" label="{!$Label.c.Refresh}" title="{!$Label.c.Refresh}" iconName="utility:refresh" 
+                                  onclick="{! c.handleRefresh}" disabled="{! v.spinner}" class="{! if(!v.hasSapId, 'slds-hide', '') }"/>
+            </div>
+        </div>
+        <aura:if isTrue="{! !v.spinner }">
+            <aura:if isTrue="{! v.hasSapId }">
+                
+                <lightning:tabset>
+                    <lightning:tab label="General">
+                        <div class="slds-section slds-is-open">
+                            <h3 class="slds-section__title slds-theme--shade">{!$Label.c.Ficha360_General}</h3>
+                            <div class="slds-section__content">
+                                
+                                <lightning:layout multipleRows="true">
+                                    
+                                    <lightning:layoutItem size="{# v.columnSize }" flexibility="auto" padding="around-small" 
+                                                          ><!-- class="{# $Browser.isPhone ? 'slds-order_1' : ''}" -->
+                                        <div class="slds-form-element__label">{!$Label.c.Ficha360_Balance_to_pay}</div>
+                                        <lightning:formattedNumber value="{! v.generalTabInfo.balance_to_pay }" style="currency" currencyCode="{! v.generalTabInfo.currency}"/>
+                                    </lightning:layoutItem>
+                                    
+                                    <lightning:layoutItem size="{# v.columnSize }" flexibility="auto" padding="around-small" 
+                                                          ><!-- class="{# $Browser.isPhone ? 'slds-order_1' : ''}" -->
+                                        <div class="slds-form-element__label">{!$Label.c.Ficha360_Balance_to_refund}</div>
+                                        <lightning:formattedNumber value="{! v.generalTabInfo.balance_to_refund }" style="currency" currencyCode="{! v.generalTabInfo.currency}"/>
+                                    </lightning:layoutItem>
+                                    
+                                    <lightning:layoutItem size="{# v.columnSize }" flexibility="auto" padding="around-small" 
+                                                          ><!-- class="{# $Browser.isPhone ? 'slds-order_1' : ''}" -->
+                                        <div class="slds-form-element__label">{!$Label.c.Ficha360_Credit_limit}</div>
+                                        <lightning:formattedNumber value="{! v.generalTabInfo.credit_limit }" style="currency" currencyCode="{! v.generalTabInfo.currency}"/>
+                                    </lightning:layoutItem>
+                                    
+                                    <lightning:layoutItem size="{# v.columnSize }" flexibility="auto" padding="around-small" 
+                                                          ><!-- class="{# $Browser.isPhone ? 'slds-order_1' : ''}" -->
+                                        <div class="slds-form-element__label">{!$Label.c.Ficha360_Risk_exposure}</div>
+                                        <lightning:formattedNumber value="{! v.generalTabInfo.risk_exposure }" style="decimal"/>
+                                    </lightning:layoutItem>
+                                    
+                                    <lightning:layoutItem size="{# v.columnSize }" flexibility="auto" padding="around-small" 
+                                                          ><!-- class="{# $Browser.isPhone ? 'slds-order_1' : ''}" -->
+                                        <div class="slds-form-element__label">{!$Label.c.Ficha360_Credit_available}</div>
+                                        <lightning:formattedNumber value="{! v.generalTabInfo.credit_available}" style="currency" currencyCode="{! v.generalTabInfo.currency}"/>
+                                    </lightning:layoutItem>
+                                    
+                                    <lightning:layoutItem size="{# v.columnSize }" flexibility="auto" padding="around-small" 
+                                                          ><!-- class="{# $Browser.isPhone ? 'slds-order_1' : ''}" -->
+                                        <div class="slds-form-element__label">{!$Label.c.Ficha360_Currency}</div>
+                                        <b><lightning:formattedText value="{! v.generalTabInfo.currency}" /></b>
+                                    </lightning:layoutItem>
+                                    
+                                    <lightning:layoutItem size="{# v.columnSize }" flexibility="auto" padding="around-small" 
+                                                          ><!-- class="{# $Browser.isPhone ? 'slds-order_1' : ''}" -->
+                                        <div class="slds-form-element__label">{!$Label.c.Ficha360_Payment_terms}</div>
+                                        <lightning:formattedRichText label="{!$Label.c.Ficha360_Payment_terms}" value="{! v.generalTabInfo.payment_terms }" />
+                                    </lightning:layoutItem>
+                                    
+                                </lightning:layout>
+                            </div>
+                        </div>
+                        <div class="slds-section slds-is-open">
+                            <h3 class="slds-section__title slds-theme--shade">{!$Label.c.Ficha360_Total}</h3>
+                            <div class="slds-section__content">
+                                
+                                <lightning:layout multipleRows="true">
+                                    <lightning:layoutItem size="{# v.columnSize }" flexibility="auto" padding="around-small" 
+                                                          ><!-- class="{# $Browser.isPhone ? 'slds-order_1' : ''}" -->
+                                        <div class="slds-form-element__label">{!$Label.c.Ficha360}</div>
+                                        <lightning:formattedNumber value="{! v.generalTabInfo.totals.open_orders }" style="decimal"/>
+                                        
+                                    </lightning:layoutItem>
+                                    
+                                    <lightning:layoutItem size="{# v.columnSize }" flexibility="auto" padding="around-small" 
+                                                          ><!-- class="{# $Browser.isPhone ? 'slds-order_1' : ''}" -->
+                                        <div class="slds-form-element__label">{!$Label.c.Ficha360_Open_items}</div>
+                                        <lightning:formattedNumber label="{!$Label.c.Ficha360_Open_items}" value="{! v.generalTabInfo.totals.open_items }" style="decimal"/>
+                                        
+                                    </lightning:layoutItem>
+                                    
+                                    <lightning:layoutItem size="{# v.columnSize }" flexibility="auto" padding="around-small" 
+                                                          ><!-- class="{# $Browser.isPhone ? 'slds-order_1' : ''}" -->
+                                        <div class="slds-form-element__label">{!$Label.c.Ficha360_Deposits}</div>
+                                        <lightning:formattedNumber label="{!$Label.c.Ficha360_Deposits}" value="{! v.generalTabInfo.totals.deposits }" style="decimal" />
+                                        
+                                    </lightning:layoutItem>
+                                    
+                                    <lightning:layoutItem size="{# v.columnSize }" flexibility="auto" padding="around-small" 
+                                                          ><!-- class="{# $Browser.isPhone ? 'slds-order_1' : ''}" -->
+                                        <div class="slds-form-element__label">{!$Label.c.Ficha360_Overdue_items}</div>
+                                        <lightning:formattedNumber label="{!$Label.c.Ficha360_Overdue_items}" value="{! v.generalTabInfo.totals.overdue_items }" style="decimal"/>
+                                        
+                                    </lightning:layoutItem>
+                                    
+                                </lightning:layout>
+                            </div>
+                        </div>
+                    </lightning:tab>
+                    <lightning:tab label="{!$Label.c.Ficha360}">
+                        <ui:scrollerWrapper class="scrollerSize" aura:id="innerScroller">
+                            
+                            <div class=" slds-scrollable scrollerHeight">
+                                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                    <thead>
+                                        <tr class="slds-line-height_reset">
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Order_number}">{!$Label.c.Ficha360_Order_number}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Order_date}">{!$Label.c.Ficha360_Order_date}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Customer_reference}">{!$Label.c.Ficha360_Customer_reference}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Net_worth}">{!$Label.c.Ficha360_Net_worth}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Taxation}">{!$Label.c.Ficha360_Taxation}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Total}">{!$Label.c.Ficha360_Total}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Order_type}">{!$Label.c.Ficha360_Order_type}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Document_type}">{!$Label.c.Ficha360_Document_type}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Client_SAP_Id}">{!$Label.c.Ficha360_Client_SAP_Id}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Client_Name}">{!$Label.c.Ficha360_Client_Name}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Company}">{!$Label.c.Ficha360_Company}</div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                        <aura:iteration items="{! v.openOrders}" var="item"> 
+                                            
+                                            <tr class="slds-hint-parent">
+                                                <th data-label="vbeIn" scope="row">
+                                                    <div class="slds-truncate" title="{! item.vbeIn}"><h3>{! item.vbeIn}</h3></div>
+                                                </th>
+                                                <td data-label="audat">
+                                                    <div class="slds-truncate" title="{! item.audat}">{! item.audat}</div>
+                                                </td>
+                                                <td data-label="bstnk">
+                                                    <div class="slds-truncate" title="{! item.bstnk}">{! item.bstnk}</div>
+                                                </td>
+                                                <td data-label="netwr">
+                                                    <div class="slds-truncate" title="{! item.netwr}">{! item.netwr}</div>
+                                                </td>
+                                                <td data-label="mwsbp">
+                                                    <div class="slds-truncate" title="{! item.mwsbp}">{! item.mwsbp}</div>
+                                                </td>
+                                                <td data-label="total">
+                                                    <div class="slds-truncate" title="{! item.total}">{! item.total}</div>
+                                                </td>
+                                                <td data-label="vbtyp">
+                                                    <div class="slds-truncate" title="{! item.vbtyp}">{! item.vbtyp}</div>
+                                                </td>
+                                                <td data-label="auart">
+                                                    <div class="slds-truncate" title="{! item.auart}">{! item.auart}</div>
+                                                </td>
+                                                <td data-label="kunnr">
+                                                    <div class="slds-truncate" title="{! item.kunnr}">{! item.kunnr}</div>
+                                                </td>
+                                                <td data-label="name1">
+                                                    <div class="slds-truncate" title="{! item.name1}">{! item.name1}</div>
+                                                </td>
+                                                <td data-label="bukrs_vf">
+                                                    <div class="slds-truncate" title="{! item.bukrs_vf}">{! item.bukrs_vf}</div>
+                                                </td>
+                                                
+                                            </tr>
+                                            
+                                        </aura:iteration>  
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </ui:scrollerWrapper>
+                    </lightning:tab>
+                    <lightning:tab label="{!$Label.c.Ficha360_Open_Deliveries}">
+                        <ui:scrollerWrapper class="scrollerSize" aura:id="innerScroller">
+                            
+                            <div class=" slds-scrollable scrollerHeight">
+                                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                    <thead>
+                                        <tr class="slds-line-height_reset">
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Client}">{!$Label.c.Ficha360_Client}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Name}">{!$Label.c.Ficha360_Name}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Delivery_number}">{!$Label.c.Ficha360_Delivery_number}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Delivery_date}">{!$Label.c.Ficha360_Delivery_date}</div>
+                                            </th>
+                                            <!-- ## UNUSED ##
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="impor">Unused</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="antic">Unused</div>
+                                            </th>
+           -->
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Net_worth}">{!$Label.c.Ficha360_Net_worth}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Taxation}">{!$Label.c.Ficha360_Taxation}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Total}">{!$Label.c.Ficha360_Total}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Status}">{!$Label.c.Ficha360_Status}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Blocked_for_credit}">{!$Label.c.Ficha360_Blocked_for_credit}</div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                        <aura:iteration items="{! v.openDeliveries}" var="item"> 
+                                            
+                                            <tr class="slds-hint-parent">
+                                                <th data-label="Opportunity Name" scope="row">
+                                                    <div class="slds-truncate" title="{! item.kunag}"><h3>{! item.kunag}</h3></div>
+                                                </th>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.name1}">{! item.name1}</div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.vbeln}">{! item.vbeln}</div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.fkdat}">{! item.fkdat}</div>
+                                                </td>
+                                                <!-- ## UNUSED ##
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="Unused">Unused</div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="Unused">Unused</div>
+                                                </td>
+            -->
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.netwr}">{! item.netwr}</div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.mwsbp}">{! item.mwsbp}</div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.total}">{! item.total}</div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.lifsk}">{! item.lifsk}</div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.cmgst}">{! item.cmgst}</div>
+                                                </td>
+                                                
+                                            </tr>
+                                            
+                                        </aura:iteration>  
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </ui:scrollerWrapper>
+                    </lightning:tab>
+                    <lightning:tab label="{!$Label.c.Ficha360_Open_items}">
+                        <ui:scrollerWrapper class="scrollerSize" aura:id="innerScroller">
+                            
+                            <div class="slds-scrollable scrollerHeight">
+                                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                    <thead>
+                                        <tr class="slds-line-height_reset">
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Open_items}">{!$Label.c.Ficha360_Open_items}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Accounting_period}">{!$Label.c.Ficha360_Accounting_period}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_File_number}">{!$Label.c.Ficha360_File_number}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Line_number}">{!$Label.c.Ficha360_Line_number}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_CME_indicator}">{!$Label.c.Ficha360_CME_indicator}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Accounting_date}">{!$Label.c.Ficha360_Accounting_date}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Document_type}">{!$Label.c.Ficha360_Document_type}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Description}">{!$Label.c.Ficha360_Description}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Assignment}">{!$Label.c.Ficha360_Assignment}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_File_date}">{!$Label.c.Ficha360_File_date}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Expiration_date}">{!$Label.c.Ficha360_Expiration_date}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Expired_certificate}">{!$Label.c.Ficha360_Expired_certificate}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Bill_number}">{!$Label.c.Ficha360_Bill_number}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Amount}">{!$Label.c.Ficha360_Amount}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Pending_amount}">{!$Label.c.Ficha360_Pending_amount}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Currency}">{!$Label.c.Ficha360_Currency}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Commentary}">{!$Label.c.Ficha360_Commentary}</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="{!$Label.c.Ficha360_Deposit}">{!$Label.c.Ficha360_Deposit}</div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                        <aura:iteration items="{! v.openItems}" var="item"> 
+                                            
+                                            <tr class="slds-hint-parent">
+                                                <th data-label="Opportunity Name" scope="row">
+                                                    <div class="slds-truncate" title="{! item.bukrs}"><h3>{! item.bukrs}</h3></div>
+                                                </th>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.gjahr}">{! item.gjahr}</div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.belnr}">{! item.belnr}</div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.buzei}">{! item.buzei}</div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.umskz}">{! item.umskz}</div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.budat}">{! item.budat}</div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.blart}">{! item.blart}</div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.kind}">{! item.kind}</div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.zuonr}">{! item.zuonr}</div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.bldat}">{! item.bldat}</div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.fdtag}">{! item.fdtag}</div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.overdue}">{! item.overdue}</div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.vbeln}">{! item.vbeln}</div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.impte}">{! item.impte}</div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.ipdte}">{! item.ipdte}</div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.waers}">{! item.waers}</div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.sgtxt}">{! item.sgtxt}</div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" title="{! item.deposit}">{! item.deposit}</div>
+                                                </td>
+                                                
+                                            </tr>
+                                            
+                                        </aura:iteration>  
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </ui:scrollerWrapper>
+                    </lightning:tab>
+                </lightning:tabset>
+                
+                
+                
+            </aura:if>
+            
+            <aura:set attribute="else">
+                <div style="position: relative;">
+                    <lightning:spinner alternativeText="Loading" />
+                </div>
+            </aura:set>
+        </aura:if>
+    </lightning:card>
+   
+</aura:component>

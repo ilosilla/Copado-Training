@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Symptômes</label>
+    <name>Symptoms__c</name>
+    <picklistValues>
+        <masterLabel>BASIN NOT LEVEL</masterLabel>
+        <translation>LAVABO PAS À NIVEAU</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BASIN NOT LEVEL / MOVEMENT</masterLabel>
+        <translation>LAVABO PAS À NIVEAU / MOUVEMENT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BATH DRAIN NO LONGER OPEN/CLOSE</masterLabel>
+        <translation>ÉVACUATION DE BAIGNOIRE NE S&apos;OUVRE PLUS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BROKEN</masterLabel>
+        <translation>CASSÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CISTERN FRAME IMCOMPLETE</masterLabel>
+        <translation>CADRE DE CISTERNES INCOMPLET</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CISTERN OR PAN RUNNING CONTINOUSLY</masterLabel>
+        <translation>CISTERNES OU CUVE FONCTIONNENT EN CONTINU</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CRACKS WITHIN PRODUCT</masterLabel>
+        <translation>FISSURES À L&apos;INTÉRIEUR DU PRODUIT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DAMAGE ON CISTERN / FRAME</masterLabel>
+        <translation>DOMMAGE SUR CISTERNES / CADRE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DIVERTER DIFFICULT TO OPERATE</masterLabel>
+        <translation>DIVERTER DIFFICILE À MANIPULER</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DOOR MIS-ALIGNED / DROPPED</masterLabel>
+        <translation>PORTE MAL ALIGNÉE / TOMBE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DRAWERS NOT OPERATING SMOOTHLY</masterLabel>
+        <translation>TIROIRS NE FONCTIONNENT PAS LÉGÈREMENT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FLOOR SENSOR NOT WORKING</masterLabel>
+        <translation>CAPTEUR DE SOL NE FONCTIONNE PAS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GLASS DAMAGED</masterLabel>
+        <translation>VERRE ENDOMMAGÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GROUT CRACKING AFTER INSTALLATION</masterLabel>
+        <translation>JOINT DE CARRELAGE CRAQUANT APRÈS INSTALLATION</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GROUT INCORRECT COLOUR</masterLabel>
+        <translation>COULEUR DE JOINT INCORRECTE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HANDLE DIFFICULT TO OPERATE</masterLabel>
+        <translation>POIGNÉE DIFFICILE À MANIPULER</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HOT WATER PUMPED BACK TO COLD WATER</masterLabel>
+        <translation>EAU CHAUDE REVERSEE EN EAU FROIDE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INCOMPLETE</masterLabel>
+        <translation>INCOMPLET</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INCORRECT FLOW RATE AFTER INSTALLATION</masterLabel>
+        <translation>DÉBIT INCORRECT APRÈS INSTALLATION</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LEAKS</masterLabel>
+        <translation>FUITES</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NEWLY DEVELOPED STAINING</masterLabel>
+        <translation>TACHES NOUVELLEMENT DÉVELOPPÉES</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NEWLY DEVELOPED YELLOWING</masterLabel>
+        <translation>JAUNISSEMENT NOUVELLEMENT DÉVELOPPÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NOT CURING</masterLabel>
+        <translation>NON DURCISSANT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OTHER</masterLabel>
+        <translation>AUTRE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PARTS MISSING</masterLabel>
+        <translation>PIÈCES MANQUANTES</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PEELING OFF OR CORROSION</masterLabel>
+        <translation>DÉCOLLEMENT OU CORROSION</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCT CRACKED OR MALFORMED</masterLabel>
+        <translation>PRODUIT FENDU OU MALFORMÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCT DECOLORATED FROM START</masterLabel>
+        <translation>PRODUIT DÉCOLORÉ DÈS LE DÉBUT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCT DISCOLOURED FROM START</masterLabel>
+        <translation>PRODUIT DÉCOLORÉ DÈS LE DÉBUT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCT DOES NOT PERFORM AS EXPECTED</masterLabel>
+        <translation>LE PRODUIT NE FONCTIONNE PAS COMME ATTENDU</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCT HAS STAINS</masterLabel>
+        <translation>LE PRODUIT A DES TACHES</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCT LEAKS FROM HANDLE OR SPOUT</masterLabel>
+        <translation>LE PRODUIT FUITE PAR LA POIGNÉE OU LE GOUTTE À GOUTTE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCT LEAKS FROM UNDERNEATH THE BASIN</masterLabel>
+        <translation>LE PRODUIT FUITE PAR EN DESSOUS DU LAVABO</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCT MALFORMED ON SURFACE</masterLabel>
+        <translation>PRODUIT MALFORMÉ SUR LA SURFACE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REDUCTION IN WATER FLOW - AERATOR MODELS</masterLabel>
+        <translation>RÉDUCTION DU DÉBIT D&apos;EAU - MODÈLES AÉRATEURS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REDUCTION IN WATER FLOW - NON AERATOR MODELS</masterLabel>
+        <translation>RÉDUCTION DU DÉBIT D&apos;EAU - MODÈLES NON AÉRATEURS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SENSOR NOT WORKING CORRECTLY</masterLabel>
+        <translation>CAPTEUR NE FONCTIONNE PAS CORRECTEMENT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SHOWER NOZZLES BLOCKED</masterLabel>
+        <translation>PULVÉRISATEURS DE DOUCHE BLOQUÉS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SMART CABINET UNIT DAMAGED</masterLabel>
+        <translation>UNITÉ DE CABINET INTELLIGENTE ENDOMMAGÉE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SOFT CLOSE SEAT ISSUE</masterLabel>
+        <translation>PROBLÈME DE SIEGE À FERMETURE DOUCE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SURFACE DEFECT</masterLabel>
+        <translation>DÉFAUT DE SURFACE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>THERMOSTAT NOT WORKING</masterLabel>
+        <translation>THERMOSTAT NE FONCTIONNE PAS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TILES CRACKING AFTER INSTALLATION</masterLabel>
+        <translation>CARREAUX FISSURÉS APRÈS INSTALLATION</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TOWEL WARMER NOT WORKING</masterLabel>
+        <translation>RADIATEUR DE SERVIETTES NE FONCTIONNE PAS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRAY NOT LEVEL</masterLabel>
+        <translation>PLATEAU PAS NIVEAU</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRAY WARPED</masterLabel>
+        <translation>PLATEAU DÉFORMÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRIMS CANNOT BE INSTALLED CORRECTLY / KNOB FALLS OFF</masterLabel>
+        <translation>LES FINITIONS NE PEUVENT PAS ÊTRE INSTALLÉES CORRECTEMENT / LE BOUTON SE DÉTACHE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>UNIT DAMAGED</masterLabel>
+        <translation>UNITÉ ENDOMMAGÉE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>UNIT IS DELAMINATING</masterLabel>
+        <translation>UNITÉ EN TRAIN DE SE DÉLAMINER</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>UNIT IS PRODUCING ONLY VERY HOT OR COLD WATER</masterLabel>
+        <translation>L&apos;UNITÉ NE FOURNIT QUE DE L&apos;EAU TRÈS CHAUDE OU TRÈS FROIDE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>UNIT NOT DIVERTING</masterLabel>
+        <translation>UNITÉ NE DÉVISE PAS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>UNIT NOT SUPPLYING REQUIRED TEMPERTAURE OF WATER</masterLabel>
+        <translation>L&apos;UNITÉ NE FOURNIT PAS LA TEMPÉRATURE D&apos;EAU REQUISE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VISIBLE DAMAGE ON SURFACE</masterLabel>
+        <translation>DOMMAGE VISIBLE SUR LA SURFACE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WASTE NOT REMOVED</masterLabel>
+        <translation>DÉCHETS NON ÉLIMINÉS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WATER BACKING UP</masterLabel>
+        <translation>EAUX EN RETOUR</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WATER DOESN&apos;T DRAIN AWAY</masterLabel>
+        <translation>L&apos;EAU NE S&apos;ÉCOULE PAS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WATER REMAINING IN TRAY</masterLabel>
+        <translation>EAUX RESTANT DANS LE PLATEAU</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WORKTOP NOT LEVEL</masterLabel>
+        <translation>PLAN DE TRAVAIL PAS NIVEAU</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WORKTOP NOT LEVEL / MOVEMENT</masterLabel>
+        <translation>PLAN DE TRAVAIL PAS NIVEAU / MOUVEMENT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WRONG SHADING</masterLabel>
+        <translation>OMNIPRÉSENCE INCORRECTE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WRONG-PRODUCT</masterLabel>
+        <translation>PRODUIT INCORRECT</translation>
+    </picklistValues>
+</CustomFieldTranslation>

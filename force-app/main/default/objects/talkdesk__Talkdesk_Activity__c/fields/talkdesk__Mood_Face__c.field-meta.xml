@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>talkdesk__Mood_Face__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>CASE(
+            TEXT(talkdesk__Mood_PL__c),
+
+            &quot;happy&quot;, IMAGE(&quot;/resource/talkdesk__assets/mood_icons/mood--happy.png&quot;, &apos;Happy&apos;),
+
+            &quot;neutral&quot;, IMAGE(&quot;/resource/talkdesk__assets/mood_icons/mood--neutral.png&quot;, &apos;Neutral&apos;),
+
+            &quot;unhappy&quot;, IMAGE(&quot;/resource/talkdesk__assets/mood_icons/mood--unhappy.png&quot;, &apos;Unhappy&apos;),
+
+            &quot;not_applicable&quot;, IMAGE(&quot;/resource/talkdesk__assets/mood_icons/mood--na.png&quot;, &apos;N/A&apos;),
+
+            &quot;&quot;
+            )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Mood Face</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

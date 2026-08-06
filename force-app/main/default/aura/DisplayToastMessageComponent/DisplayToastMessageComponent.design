@@ -1,0 +1,7 @@
+<design:component>
+	<design:attribute name="message" Label="Toast Message"/>
+    <design:attribute name="title" Label="Toast Title"/>
+    <design:attribute name="type" Label="Message Type"/>
+    <design:attribute name="recordId" Label="Record Id"/>
+    <design:attribute name="IsRedirectToSObjectRecord" Label="Redirect To SObject Record"/>
+</design:component>

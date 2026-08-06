@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>BypassValidationRulesCP</name>
+    </customPermissions>
+    <description>PS to allow a user bypass a validation rule (for testing purposes mainly)</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Bypass Validation Rules Permission Set</label>
+</PermissionSet>

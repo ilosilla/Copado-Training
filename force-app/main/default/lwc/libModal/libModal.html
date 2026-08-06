@@ -1,0 +1,60 @@
+<!-- sldsValidatorIgnore -->
+<template>    
+    <template if:true={showModal}>
+        <div>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" class="slds-modal slds-fade-in-open">
+                
+                <lightning-spinner alternative-text="Loading..." variant="brand" if:true={showSpinner}>
+                </lightning-spinner>
+        
+                <div class={modalClass} style={style}>
+
+                    <!--div style="position:relative;top:0;bottom:0; right:0;width:400px;; background-color:white;border-left: 4px solid black;z-index:9999"></div -->
+
+                    <template if:true={_showHeader}>
+                        <header class={headerClass} style="width: 100%;">
+                            <template if:true={showClose}>
+                                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-bare"
+                                    title="Close" onclick={handleClose}>
+                                    <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"></lightning-icon>
+                                    <span class="slds-assistive-text">Close</span>
+                                </button>
+                            </template>
+                            <h2 class="slds-text-heading--medium slds-hyphenate">
+                                <slot name="header">
+                                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{headerText}</h2>
+                                </slot>    
+                            </h2>
+                        </header>
+                    </template>
+                    <div class={modalBodyClass} id="modal-content-id-1" style="width: 100%;">
+                        <slot name="body" class="body_slot">
+                            <div style="height:100%">
+                                <p>Body goes here.......</p>
+                            </div>
+                        </slot>
+                    </div>
+                    <footer class="slds-modal__footer slds-modal__footer_directional" style="width: 100%;">
+                        <lightning-layout horizontal-align="spread">
+                            <lightning-layout-item>
+                                <slot name="custom-actions">
+                                </slot>
+                            </lightning-layout-item>                            
+                            <lightning-layout-item>
+                                <slot name="footer">
+                                    <template if:true={showNegative}>
+                                        <button class="slds-button slds-button_neutral" onclick={handleNegative}>{negativeButtonLabel}</button>
+                                    </template>
+                                    <template if:true={showPositive}>
+                                        <button class="slds-button slds-button_brand" onclick={handlePositive}>{positiveButtonLabel}</button>
+                                    </template>
+                                </slot>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+    </template>
+</template>

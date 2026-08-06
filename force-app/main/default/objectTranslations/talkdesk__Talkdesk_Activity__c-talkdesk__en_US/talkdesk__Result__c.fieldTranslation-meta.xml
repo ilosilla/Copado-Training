@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Hangup --></label>
+    <name>talkdesk__Result__c</name>
+    <picklistValues>
+        <masterLabel>Handled</masterLabel>
+        <translation><!-- Handled --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hold</masterLabel>
+        <translation><!-- Hold --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IVR</masterLabel>
+        <translation><!-- IVR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Offered</masterLabel>
+        <translation><!-- Offered --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Transfer</masterLabel>
+        <translation><!-- Transfer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Waiting</masterLabel>
+        <translation><!-- Waiting --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

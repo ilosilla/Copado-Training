@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Dormant</masterLabel>
+        <translation>Activité faible</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>High</masterLabel>
+        <translation>Activité élevée</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Medium</masterLabel>
+        <translation>Activité moyenne</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

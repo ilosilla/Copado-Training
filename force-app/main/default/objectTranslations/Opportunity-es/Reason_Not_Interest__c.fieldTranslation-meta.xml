@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Razón No Interesado</label>
+    <name>Reason_Not_Interest__c</name>
+    <picklistValues>
+        <masterLabel>Cheaper in other company</masterLabel>
+        <translation>Más barato en la competencia</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>I don’t like it</masterLabel>
+        <translation>No me gusta</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>I&apos;ve changed my mind</masterLabel>
+        <translation>He cambiado de opinión</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>The product I like is not available</masterLabel>
+        <translation>El producto que me gusta no está disponible</translation>
+    </picklistValues>
+</CustomFieldTranslation>

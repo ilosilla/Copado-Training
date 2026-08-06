@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Grupo de permisos para usuarios de Francia en trade</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Trade FR users</label>
+    <mutingPermissionSets>Trade_FR_users_Muted</mutingPermissionSets>
+    <permissionSets>Private_Customers_for_Trade_Users</permissionSets>
+    <permissionSets>Projet_de_R_f_rence_Temporal</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

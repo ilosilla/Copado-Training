@@ -1,0 +1,41 @@
+<template>
+    <div class="slds-card slds-theme_shade slds-var-p-around_small">
+        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+            <div class="slds-media__figure">
+                <lightning-icon icon-name="standard:contract"></lightning-icon>
+            </div>
+            <div class="slds-media__body">
+                <h2 class="slds-card__header-title">
+                    <span>{label.dict_sap_invoice}</span> <!-- SAP Invoice -->
+                </h2>
+            </div>
+            <div class="slds-media__figure">
+                <lightning-button-icon alternative-test="Download Invoice" icon-name="utility:download" disabled={downloadDisabled} onclick={handleDownloadClick} variant="bare">                    
+                </lightning-button-icon>
+            </div>
+        </header>
+        <div class="slds-card__body slds-card__body_inner slds-grid slds-wrap" lwc:if={componentReady}>
+            <div class="slds-col slds-size_1-of-2">
+                <c-lib-form-element label={label.tr0004_001} value={invoiceString}></c-lib-form-element>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <c-lib-form-element label={label.dict_invoice_date} value={header.Date} format="date"></c-lib-form-element>
+            </div>
+            <div class="slds-col slds-size_2-of-2">
+                <c-lib-form-element label={label.dict_salesOrg} value={salesOrgString}></c-lib-form-element>
+            </div>
+            <div class="slds-col slds-size_2-of-2">
+                <c-lib-form-element label={label.dict_product} value={productString}></c-lib-form-element>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <c-lib-form-element label={label.dict_quantity} value={quantityString}></c-lib-form-element>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <c-lib-form-element label={label.dict_net_amount} value={amountString}></c-lib-form-element>
+            </div>
+            <div class="slds-col slds-size_2-of-2">
+                <c-lib-form-element label={label.dict_manufacturer} value={makeName}></c-lib-form-element>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,17 @@
+.slds-table td,
+.slds-table th {
+    padding: 0.25rem 0.5rem; /* menos espacio vertical */
+}
+
+.slds-truncate {
+    max-width: 200px; /* ajusta según el diseño */
+}
+
+.slds-table a {
+    color: #0070d2;
+    text-decoration: none;
+}
+
+.slds-table a:hover {
+    text-decoration: underline;
+}

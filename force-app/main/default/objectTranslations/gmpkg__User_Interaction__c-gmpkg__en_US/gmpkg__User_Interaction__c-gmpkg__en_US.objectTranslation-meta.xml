@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>GM - User Interaction</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>GM - User Interactions</value>
+    </caseValues>
+    <layouts>
+        <layout>User Interaction Layout</layout>
+        <sections>
+            <label><!-- Browser Information --></label>
+            <section>Browser Information</section>
+        </sections>
+        <sections>
+            <label><!-- Click Information --></label>
+            <section>Click Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Device Information --></label>
+            <section>Device Information</section>
+        </sections>
+        <sections>
+            <label><!-- Interaction Information --></label>
+            <section>Interaction Information</section>
+        </sections>
+        <sections>
+            <label><!-- Session Information --></label>
+            <section>Session Information</section>
+        </sections>
+        <sections>
+            <label><!-- URL Information --></label>
+            <section>URL Information</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,54 @@
+<!--
+    - @author 		Ramón Prades
+    - @date 		June 2021
+    - @group 		Tools
+    - @description 	Modal box to get a confirmation from the user
+                    Valid variants are:
+                    - OKCancel:     displays the text passed with OK and cancel buttons.
+                    - YesNo:        displays the text passed with Yes and No buttons.
+                    - DeleteFile:   predetermined dialog to confirm deletion. No params needed.
+-->
+<aura:component access="global">
+    <aura:attribute name="isOpen" type="Boolean" default="true"/>        
+    <aura:attribute name="command" type="String" default="MODAL-PROMPT" required="false"/>   
+    <aura:attribute name="title" type="String"/>    
+    <aura:attribute name="text" type="String"/>   
+    <aura:attribute name="variant" type="String" default="OKCancel"/>   
+    <aura:attribute name="trueButton" type="String"/>
+    <aura:attribute name="falseButton" type="String"/>
+        
+    <aura:handler name="init" value="{!this}" action="{!c.handleInit}"/>       
+    <aura:registerEvent name="cmpCommand" type="c:ComponentCommandEvent"/>
+
+        <aura:if isTrue="{!v.isOpen}">            
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close"
+                                            onclick="{! c.closeModal }"
+                                            alternativeText="close"
+                                            variant="bare-inverse"
+                                            class="slds-modal__close"/>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{!v.title}</h2>
+                    </header>
+
+                    <!--###### MODAL BOX BODY Part Start######-->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <p><aura:unescapedHtml value="{!v.text}"/></p>
+                    </div>
+                    <!--###### MODAL BOX FOOTER Part Start ######-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="brand" 
+                                        label="{!v.trueButton}"
+                                        onclick="{!c.userClickedOK}"/>
+                        <lightning:button variant="neutral" 
+                                        label="{!v.falseButton}"
+                                        onclick="{! c.userClickedCancel }"/>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+            <!--###### MODAL BOX Part END Here ######-->
+            
+        </aura:if>
+</aura:component>

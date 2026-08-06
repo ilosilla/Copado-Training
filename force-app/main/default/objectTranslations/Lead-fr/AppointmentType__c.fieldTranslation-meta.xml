@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Appointment Type --></label>
+    <name>AppointmentType__c</name>
+    <picklistValues>
+        <masterLabel>SHOWROOM</masterLabel>
+        <translation>SALLE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VIRTUAL</masterLabel>
+        <translation>VIRTUEL</translation>
+    </picklistValues>
+</CustomFieldTranslation>

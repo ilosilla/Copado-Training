@@ -1,0 +1,28 @@
+.productCarouselCard{
+    --sds-c-card-color-border:#fff!important;
+}
+
+.slds-large-size--2-of-12{width: 20%!important;}
+
+.productTitle{
+    display: block;
+    hyphens: auto;
+    margin: 5px 0;
+    word-wrap: break-word;
+    font-weight: 400;
+    font-size: 18px;
+    color: #1c3241;
+    text-transform: lowercase;
+}
+
+.productTitle::first-letter{
+    text-transform: uppercase;
+}
+
+.productImage{min-height: 210px;}
+
+@media (min-width: 768px){
+    .productDetails {
+        margin-top: 22px;
+    }
+}

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>203</fullName>
+        <default>false</default>
+        <label>Azurceramique NO USE</label>
+    </customValue>
+    <customValue>
+        <fullName>206</fullName>
+        <default>false</default>
+        <label>Lorceram NO USE</label>
+    </customValue>
+    <customValue>
+        <fullName>207</fullName>
+        <default>false</default>
+        <label>Euroceramique NO USE</label>
+    </customValue>
+    <customValue>
+        <fullName>208</fullName>
+        <default>false</default>
+        <label>Porce. Paris IDF NO USE</label>
+    </customValue>
+    <customValue>
+        <fullName>210</fullName>
+        <default>false</default>
+        <label>Porcelanosa Socamed NO USE</label>
+    </customValue>
+    <customValue>
+        <fullName>218</fullName>
+        <default>false</default>
+        <label>Porcelanosa Ouest NO USE</label>
+    </customValue>
+    <customValue>
+        <fullName>219</fullName>
+        <default>false</default>
+        <label>Porce. Sud-Ouest NO USE</label>
+    </customValue>
+    <customValue>
+        <fullName>502</fullName>
+        <default>false</default>
+        <label>Porce. South East</label>
+    </customValue>
+    <customValue>
+        <fullName>504</fullName>
+        <default>false</default>
+        <label>Porce. North West NO USE</label>
+    </customValue>
+    <customValue>
+        <fullName>505</fullName>
+        <default>false</default>
+        <label>Porce. Midlands NO USE</label>
+    </customValue>
+    <customValue>
+        <fullName>506</fullName>
+        <default>false</default>
+        <label>Porce. Scotland NO USE</label>
+    </customValue>
+    <customValue>
+        <fullName>507</fullName>
+        <default>false</default>
+        <label>Porce. Western LTD NO USE</label>
+    </customValue>
+    <customValue>
+        <fullName>508</fullName>
+        <default>false</default>
+        <label>Porce. Yorkshire NO USE</label>
+    </customValue>
+    <customValue>
+        <fullName>350</fullName>
+        <default>false</default>
+        <label>Porcelanosa Deutschland</label>
+    </customValue>
+    <customValue>
+        <fullName>950</fullName>
+        <default>false</default>
+        <label>Porcelanosa South Africa</label>
+    </customValue>
+    <customValue>
+        <fullName>585</fullName>
+        <default>false</default>
+        <label>Porcelanosa Denmark</label>
+    </customValue>
+    <customValue>
+        <fullName>008</fullName>
+        <default>false</default>
+        <label>Porcelanosa Exportación</label>
+    </customValue>
+    <customValue>
+        <fullName>900</fullName>
+        <default>false</default>
+        <label>Grupo Internacional</label>
+    </customValue>
+    <customValue>
+        <fullName>602</fullName>
+        <default>false</default>
+        <label>Porcelanosa Florida</label>
+    </customValue>
+    <customValue>
+        <fullName>604</fullName>
+        <default>false</default>
+        <label>Porcel San Francisco</label>
+    </customValue>
+    <customValue>
+        <fullName>603</fullName>
+        <default>false</default>
+        <label>Porcel. Los Angeles</label>
+    </customValue>
+    <customValue>
+        <fullName>605</fullName>
+        <default>false</default>
+        <label>Porcelanosa New York</label>
+    </customValue>
+    <customValue>
+        <fullName>608</fullName>
+        <default>false</default>
+        <label>Porcelanosa Texas</label>
+    </customValue>
+    <customValue>
+        <fullName>650</fullName>
+        <default>false</default>
+        <label>Porsa East CANADA</label>
+    </customValue>
+    <customValue>
+        <fullName>606</fullName>
+        <default>false</default>
+        <label>Porcelanosa Maryland</label>
+    </customValue>
+    <customValue>
+        <fullName>003</fullName>
+        <default>false</default>
+        <label>Porcelanosa España</label>
+    </customValue>
+    <customValue>
+        <fullName>004</fullName>
+        <default>false</default>
+        <label>Porcelanosa Portugal</label>
+    </customValue>
+    <customValue>
+        <fullName>303</fullName>
+        <default>false</default>
+        <label>Porcelanosa SPA</label>
+    </customValue>
+    <customValue>
+        <fullName>225</fullName>
+        <default>false</default>
+        <label>PORC.XTONE FR</label>
+    </customValue>
+    <customValue>
+        <fullName>525</fullName>
+        <default>false</default>
+        <label>PORC.XTONE UK NO USE</label>
+    </customValue>
+    <customValue>
+        <fullName>615</fullName>
+        <default>false</default>
+        <label>PORC.XTONE US</label>
+    </customValue>
+    <customValue>
+        <fullName>201</fullName>
+        <default>false</default>
+        <label>PORCELANOSA GROUPE</label>
+    </customValue>
+    <customValue>
+        <fullName>005</fullName>
+        <default>false</default>
+        <label>Porcelanosa Turkey</label>
+    </customValue>
+    <customValue>
+        <fullName>226</fullName>
+        <default>false</default>
+        <label>Azurceramique</label>
+    </customValue>
+    <customValue>
+        <fullName>227</fullName>
+        <default>false</default>
+        <label>Lorceram</label>
+    </customValue>
+    <customValue>
+        <fullName>228</fullName>
+        <default>false</default>
+        <label>Euroceramique</label>
+    </customValue>
+    <customValue>
+        <fullName>229</fullName>
+        <default>false</default>
+        <label>Porce. Paris IDF</label>
+    </customValue>
+    <customValue>
+        <fullName>230</fullName>
+        <default>false</default>
+        <label>Porcelanosa Socamed</label>
+    </customValue>
+    <customValue>
+        <fullName>231</fullName>
+        <default>false</default>
+        <label>Porcelanosa Ouest</label>
+    </customValue>
+    <customValue>
+        <fullName>232</fullName>
+        <default>false</default>
+        <label>Porce. Sud-Ouest</label>
+    </customValue>
+    <customValue>
+        <fullName>200</fullName>
+        <default>false</default>
+        <label>Porfrance</label>
+    </customValue>
+    <customValue>
+        <fullName>700</fullName>
+        <default>false</default>
+        <label>Porcelanosa Mexico</label>
+    </customValue>
+    <customValue>
+        <fullName>511</fullName>
+        <default>false</default>
+        <label>PORC.XTONE UK</label>
+    </customValue>
+    <customValue>
+        <fullName>514</fullName>
+        <default>false</default>
+        <label>Porce. North West</label>
+    </customValue>
+    <customValue>
+        <fullName>515</fullName>
+        <default>false</default>
+        <label>Porce. Midlands</label>
+    </customValue>
+    <customValue>
+        <fullName>516</fullName>
+        <default>false</default>
+        <label>Porce. Scotland</label>
+    </customValue>
+    <customValue>
+        <fullName>517</fullName>
+        <default>false</default>
+        <label>Porce. Western LTD</label>
+    </customValue>
+    <customValue>
+        <fullName>518</fullName>
+        <default>false</default>
+        <label>Porce. Yorkshire</label>
+    </customValue>
+    <customValue>
+        <fullName>330</fullName>
+        <default>false</default>
+        <label>Porce. Switzerland</label>
+    </customValue>
+    <customValue>
+        <fullName>250</fullName>
+        <default>false</default>
+        <label>Porcelanosa Belgium</label>
+    </customValue>
+    <customValue>
+        <fullName>850</fullName>
+        <default>false</default>
+        <label>Porcelanosa Australia</label>
+    </customValue>
+    <customValue>
+        <fullName>580</fullName>
+        <default>false</default>
+        <label>Porce. Scandinavia</label>
+    </customValue>
+    <customValue>
+        <fullName>920</fullName>
+        <default>false</default>
+        <label>Porcelanosa Israel</label>
+    </customValue>
+    <customValue>
+        <fullName>820</fullName>
+        <default>false</default>
+        <label>Porcelanosa Chile</label>
+    </customValue>
+    <customValue>
+        <fullName>720</fullName>
+        <default>false</default>
+        <label>Porcelanosa RD</label>
+    </customValue>
+    <customValue>
+        <fullName>500</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Porcelanosa Group</label>
+    </customValue>
+    <customValue>
+        <fullName>510</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Porce. Group LTD</label>
+    </customValue>
+    <masterLabel>sales_orgs</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Country_Required</fullName>
+    <active>false</active>
+    <description>DELETE THIS ONE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Country required for accounts except whe n potential is true</description>
+    <errorConditionFormula>AND(CONTAINS($User.Username, &apos;loads.user&apos;) = false,
+  Potential__c = false,
+  OR(
+    AND( 
+      IsPersonAccount = true , 
+      ISPICKVAL(PersonMailingCountryCode  , &apos;&apos;) ), 
+    AND( 
+      IsPersonAccount = false, 
+      ISPICKVAL(BillingCountryCode , &apos;&apos;)
+    )
+  )
+)</errorConditionFormula>
+    <errorMessage>Country is a required field</errorMessage>
+</ValidationRule>

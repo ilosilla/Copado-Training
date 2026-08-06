@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Store0ZSVg0000000Pb7OAE</fullName>
+    <columns>Name</columns>
+    <columns>SortOrder</columns>
+    <columns>IsNavigational</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Catalog</field>
+        <operation>equals</operation>
+        <value>Professional B2B Portal Catalog</value>
+    </filters>
+    <label>Professional B2B Portal Categories</label>
+</ListView>

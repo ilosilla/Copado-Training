@@ -1,0 +1,171 @@
+<!--
+    Aura component to display the SAP status of an opportunity
+    Ramón
+    March 2021
+-->
+<aura:component
+  implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName,forceCommunity:availableForAllPageTypes"
+  access="global"
+  controller="SAPStatusOppController">
+
+  <!-- Attributes -->
+  <aura:attribute name="spinner" type="Boolean" default="false" />
+  <aura:attribute name="sapData" type="Object" />
+  <aura:attribute name="currencyMode" type="String" default="symbol"/>
+  <aura:attribute name="componentEnabled" type="Boolean" default="true"/>
+  <aura:attribute name="errorList" type="List" default="[]"/>
+  <aura:attribute name="disable" type="Boolean" default="true"/>
+  <aura:attribute name="orgs" type="Object"/>
+
+
+  <aura:attribute name="sapId" type="String" />
+  <aura:attribute name="summaryColumns" type="List"/>
+  <aura:attribute name="statusText" type="String"/>
+  <aura:attribute name="subtitle1" type="String"/>
+  <aura:attribute name="subtitle2" type="String"/>
+
+  <!-- Attributes (read from SAP) -->
+  <aura:attribute name="summaryData" type="Object"/>
+  <aura:attribute name="creditInfo" type="Object"/>
+  <aura:attribute name="agedOrders" type="Object"/>
+
+  <!--  Event handlers -->
+  <aura:handler name="init" action="{!c.onLoad}" value="{!this}" />
+
+  <!-- html markup -->
+    <div class="spinnerHolder">
+      <aura:if isTrue="{!v.spinner }">
+          <lightning:spinner alternativeText="Loading" variant="brand"/>
+      </aura:if>
+  </div>
+
+  <lightning:notificationsLibrary aura:id="notifLib"/> 
+
+  <article class="slds-card slds-card_boundary headerBottomBorder forceRelatedListCardDesktop">
+      
+    <!-- Page header: Title, sales organisation, etc. -->
+    <!--
+    <div class="slds-page-header slds-grid">
+      <header class="slds-media slds-media_center slds-has-flexi-truncate">
+        <div class="slds-media__figure">
+          <span class="slds-icon_container slds-icon-standard-account"
+            title="account">
+            <lightning:icon iconName="standard:customer_360" />
+            <span class="slds-assistive-text">{!$Label.c.saps_documents}</span>
+          </span>
+        </div>
+        <div class="slds-media__body">
+            <div class="slds-page-header__name">
+                <div class="slds-page-header__name-title">
+                    <h1>
+                        <span class="slds-page-header__title slds-truncate">{!$Label.c.saps_documents}</span>
+                    </h1>
+                </div>
+            </div>
+            <p class="slds-page-header__name-meta">{!v.statusText}</p>
+        </div>        
+        <!- -
+        <div class="slds-no-flex">
+          <lightning:combobox aura:id="org"  placeholder="{!$Label.c.Ficha360_Select_a_Sales_Org}" variant="label-hidden" 
+              value = "{! v.selectedOrg }" options="{! v.orgOptions }" disabled="false" style="width:260px"
+              onchange="{!c.salesOrgChanged }"/>
+        </div>        
+        - -  >
+        <div class="slds-no-flex slds-p-left_xx-small ">
+          <lightning:buttonIcon  variant="border-filled" title="{!$Label.c.Refresh}" iconName="utility:refresh"
+                          onclick="{!c.handleRefresh}" disabled="{!v.disable}"/>
+        </div>
+      </header>      
+    </div>
+    -->
+    <!-- Error list component -->
+    <aura:if isTrue="{!v.errorList.length > 0}">
+      <div class="slds-box slds-theme_error slds-theme_alert-texture" role="status">
+          <div class="{!v.cssString}" role="status">
+              <h2 class="slds-text-heading_small slds-p-bottom_small">{!$Label.c.app_review_errors}</h2>
+              <ul class="slds-list--dotted">
+                  <aura:iteration items="{!v.errorList}" var="errorMessage">
+                      <li>{!errorMessage}</li>
+                  </aura:iteration>
+              </ul>
+          </div>        
+      </div>
+    </aura:if>        
+    <aura:if isTrue="{!v.errorList.length == 0}">                
+        <div class="slds-card__body slds-card__body_inner">
+            <div class="slds-grid slds-wrap slds-gutters_x-small">
+                <aura:iteration items="{!v.sapData}" var="sapItem">
+                    <div class="slds-col slds-size_1-of-3"> 
+                        <div class="slds-box"  style="padding: 0px !important">
+                            <div class="slds-theme_shade slds-text-heading_small slds-border_bottom slds-var-p-around_x-small">
+                                <h1>
+                                    <lightning:formattedUrl label="{!sapItem.title}" value="{!sapItem.url}" target="_self" />
+                                    <aura:if isTrue="{!sapItem.footNote}">
+                                        <span> (*)</span>
+                                    </aura:if>    
+                                </h1>
+                            </div>
+                            <div class="slds-var-p-around_x-small">
+                                <aura:if isTrue="{!sapItem.number == 0}">
+                                    {!$Label.c.saps_noOrders}
+                                    <aura:set attribute="else">
+                                        <dl class="slds-list_stacked">
+                                            <dt class="slds-item_label slds-text-color_weak slds-truncate slds-text-heading_medium" title="Total Orders">
+                                                <b><lightning:formattedNumber value="{!sapItem.total}" style="currency" currencyCode="{!sapItem.curr}" currencyDisplayAs="{!v.currencyMode}"/></b>
+                                            </dt>
+                                            <dd class="slds-item_detail slds-truncate">
+                                                {!sapItem.number}&nbsp;{!sapItem.title}
+                                            </dd>
+                                            <dd class="slds-item_detail slds-truncate">
+                                                <aura:if isTrue="{!sapItem.number > 0}">
+                                                    {!$Label.c.dict_lastDocument}&nbsp;<lightning:formattedDateTime value="{!sapItem.lastDoc}"/>
+                                                    <aura:set attribute="else">
+                                                        &nbsp;                                                    
+                                                    </aura:set>
+                                                </aura:if>
+                                            </dd>
+                                        </dl>
+                                    </aura:set>
+                                </aura:if>                            
+                            </div>                 
+                        </div>
+                    </div>
+                </aura:iteration>     
+                
+                <div class="slds-col slds-size_3-of-3 slds-p-top_small">            
+                    <lightning:tile label="" class="slds-box">
+                        <div class="slds-text-heading_small slds-m-bottom_x-small"><b>{!$Label.c.dict_salesOrgs}</b></div>
+                        <div class="slds-text-body_regular slds-m-bottom_x-small">{!$Label.c.saps_opps_text1}:</div>
+                        <aura:set attribute="media">
+                            <lightning:icon iconName="standard:store"/>
+                        </aura:set>
+                        <ul class="slds-list_dotted">
+                            <aura:iteration items="{!v.orgs}" var="org">
+                                <li>
+                                    {!org.name}
+                                    <aura:if isTrue="{org.permission == false}">
+                                        <lightning:icon iconName="utility:lock" size="xx-small"/>
+                                    </aura:if>
+                                </li>
+                            </aura:iteration>
+                        </ul>
+                    </lightning:tile>
+                </div>
+                <div class="slds-col slds-size_3-of-3 slds-p-top_small"> 
+                    (*) {!$Label.c.saps_opps_text2}.
+                </div>
+            </div> 
+            
+        </div>
+
+        <footer aura:id="creditButton" class="slds-card__footer">
+            <div class="slds-no-flex slds-p-left_xx-small ">
+                <span class="slds-page-header__name-meta">{!v.statusText}</span>
+                <lightning:buttonIcon  variant="border-filled" title="{!$Label.c.Refresh}" iconName="utility:refresh"
+                                onclick="{!c.handleRefresh}" disabled="{!v.disable}"/>
+            </div>      
+        </footer>
+      </aura:if>
+  </article>    
+
+</aura:component>

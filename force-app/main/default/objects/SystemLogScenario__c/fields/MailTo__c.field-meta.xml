@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MailTo__c</fullName>
+    <description>EMail a las direcciones indicadas (separar por punto y coma)</description>
+    <externalId>false</externalId>
+    <label>Mail To</label>
+    <length>200</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

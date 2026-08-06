@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuraDefinitionBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <description>Input field for SAP SD document number (eventually it might validate the number is correct by calling a WS)</description>
+</AuraDefinitionBundle>

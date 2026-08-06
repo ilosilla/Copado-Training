@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CheckDisplayMessageAndBlockOrder</fullName>
+    <active>true</active>
+    <description>If it is a blocking order case then Display Message should be checked.</description>
+    <errorConditionFormula>Block_Order__c &amp;&amp; !Display_Message__c</errorConditionFormula>
+    <errorDisplayField>Display_Message__c</errorDisplayField>
+    <errorMessage>If it is a blocking order case then Display Message should be checked.</errorMessage>
+</ValidationRule>

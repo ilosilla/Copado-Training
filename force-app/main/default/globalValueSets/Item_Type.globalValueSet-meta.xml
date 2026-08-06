@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Ceramic floor tile</fullName>
+        <default>false</default>
+        <label>Ceramic floor tile</label>
+    </customValue>
+    <customValue>
+        <fullName>Tile installation</fullName>
+        <default>false</default>
+        <label>Tile installation</label>
+    </customValue>
+    <customValue>
+        <fullName>Ceramic wall tile</fullName>
+        <default>false</default>
+        <label>Ceramic wall tile</label>
+    </customValue>
+    <customValue>
+        <fullName>Bathroom Accessories</fullName>
+        <default>false</default>
+        <label>Bathroom Accessories</label>
+    </customValue>
+    <customValue>
+        <fullName>Sanitaryware</fullName>
+        <default>false</default>
+        <label>Sanitaryware</label>
+    </customValue>
+    <customValue>
+        <fullName>Bath tap/faucet</fullName>
+        <default>false</default>
+        <label>Bath tap/faucet</label>
+    </customValue>
+    <description>List of all Item types</description>
+    <masterLabel>Item Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

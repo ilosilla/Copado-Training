@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NBK_Showrrom_Salesoffice</fullName>
+    <active>false</active>
+    <errorConditionFormula>INCLUDES(NBK_Address_Type__c, &apos;Showroom&apos;)
+&amp;&amp;
+NBK_SalesOffice__c &lt;&gt; null</errorConditionFormula>
+    <errorMessage>If you select Showroom Type, it&apos;s necesary select a Sales Office asociate.</errorMessage>
+</ValidationRule>

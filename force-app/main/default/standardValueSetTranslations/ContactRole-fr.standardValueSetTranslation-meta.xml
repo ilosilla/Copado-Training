@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Architect</masterLabel>
+        <translation>Architecte</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Bath installer</masterLabel>
+        <translation>Installateur de Bain</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Builder</masterLabel>
+        <translation>Constructeur</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Designer</masterLabel>
+        <translation>Designer</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Developer</masterLabel>
+        <translation>Développeur</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Engineering Consultant</masterLabel>
+        <translation>Consultant en Ingénierie</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Fabricator</masterLabel>
+        <translation>Transformateur</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Facade Consultant</masterLabel>
+        <translation>Consultant en Façades</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Facade Installer</masterLabel>
+        <translation>Installateur de Façades</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Flooring installer</masterLabel>
+        <translation>Carreleur</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Franchisor</masterLabel>
+        <translation>Franchiseur</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>General Contractor</masterLabel>
+        <translation>Promoteur Général</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>K&amp;B Dealer</masterLabel>
+        <translation>Distributeur K&amp;B</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kitchen Installer</masterLabel>
+        <translation>Installateur de Cuisine</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other Consultants</masterLabel>
+        <translation>Autres Consultants</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other Contractor</masterLabel>
+        <translation>Autre Promoteur</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Plumber</masterLabel>
+        <translation>Plombier</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pod Manufacturer</masterLabel>
+        <translation>Transformateur de Pods</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Private Customer</masterLabel>
+        <translation>Client Particulier</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Procurement Consultant</masterLabel>
+        <translation>Consultant d&apos;Approvisionnement</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Project Manager</masterLabel>
+        <translation><!-- Project Manager --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Quantity surveyor</masterLabel>
+        <translation>Métreur Quantitatif</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Real State Agent</masterLabel>
+        <translation>Agent Immobilier</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Reseller</masterLabel>
+        <translation>Revendeur</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Site Manager</masterLabel>
+        <translation>Gestionnaire de Site</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

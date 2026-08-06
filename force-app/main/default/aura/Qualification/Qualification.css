@@ -1,0 +1,44 @@
+.THIS span.slds-radio{
+    
+    padding: 0.25rem;
+    
+}
+
+/*.THIS .slds-form-element__label{
+	font-size: .8125rem;
+}*/
+
+
+.THIS .dualList .slds-dueling-list__options{
+	width: 31rem; 
+    height: 7rem;
+}
+
+.THIS .combobox{
+	width: 26rem;    
+}
+
+.THIS .text{
+	width: 26rem;    
+}
+
+/*.THIS .textArea{
+	width: 35rem;
+    height: 5.3rem;
+    resize: none;
+}*/
+
+.THIS .slds-textarea {
+  	height: 3.5rem;
+    width: 42rem;
+    resize: none;
+}
+
+.THIS .myClass .slds-listbox{
+    
+    max-height: calc(((0.8125rem * 1.5) + 1rem) * 4) !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: content-box;
+   
+}

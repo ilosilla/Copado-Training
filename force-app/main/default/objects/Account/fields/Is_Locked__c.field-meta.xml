@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Locked__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Información sobre si al cuenta se encuentra bloqueada</description>
+    <inlineHelpText>Information on whether the account is locked</inlineHelpText>
+    <label>Is Locked</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

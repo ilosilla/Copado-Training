@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_Lost__c</fullName>
+    <label>Reason Lost</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>AUTOMATICCLOSURE</fullName>
+                <default>false</default>
+                <label>Automatic closure</label>
+            </value>
+            <value>
+                <fullName>Customer not Ready</fullName>
+                <default>false</default>
+                <label>Customer not Ready</label>
+            </value>
+            <value>
+                <fullName>Duplicated Ecommerce Opportunity</fullName>
+                <default>false</default>
+                <label>Duplicated Ecommerce Opportunity</label>
+            </value>
+            <value>
+                <fullName>Lack of product availability</fullName>
+                <default>false</default>
+                <label>Lack of product availability</label>
+            </value>
+            <value>
+                <fullName>Lack of product</fullName>
+                <default>false</default>
+                <label>Lack of product range</label>
+            </value>
+            <value>
+                <fullName>Late in the process</fullName>
+                <default>false</default>
+                <label>Late in the process</label>
+            </value>
+            <value>
+                <fullName>No Decision / Non-Responsive</fullName>
+                <default>false</default>
+                <label>No Decision / Non-Responsive</label>
+            </value>
+            <value>
+                <fullName>Ordered through Trade Account</fullName>
+                <default>false</default>
+                <label>Ordered through Trade Account</label>
+            </value>
+            <value>
+                <fullName>Ordered Via Online</fullName>
+                <default>false</default>
+                <label>Ordered Via Online</label>
+            </value>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

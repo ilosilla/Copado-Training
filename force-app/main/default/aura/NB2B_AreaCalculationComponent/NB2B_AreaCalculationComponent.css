@@ -1,0 +1,16 @@
+.THIS .colProductInformation{
+    border-left: #e0e0e0;
+    border-left-style: solid;
+    background: #F0F0F0;
+    border-width: 1px;
+}
+
+.THIS .title{
+    font-size: 20px;
+    font-weight: 900;
+    border-bottom: 1px solid gainsboro;
+}
+
+.THIS .label{
+    font-weight: bold;
+}

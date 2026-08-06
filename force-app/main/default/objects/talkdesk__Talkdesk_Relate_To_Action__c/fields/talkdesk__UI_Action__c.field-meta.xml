@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>talkdesk__UI_Action__c</fullName>
+    <deprecated>false</deprecated>
+    <label>UI Action</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Nothing</fullName>
+                <default>true</default>
+                <label>Nothing</label>
+            </value>
+            <value>
+                <fullName>Show Widget</fullName>
+                <default>false</default>
+                <label>Show Widget</label>
+            </value>
+            <value>
+                <fullName>Pop Related Record</fullName>
+                <default>false</default>
+                <label>Pop Related Record</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

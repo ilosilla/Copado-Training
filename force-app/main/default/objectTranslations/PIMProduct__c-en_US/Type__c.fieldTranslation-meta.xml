@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type --></label>
+    <name>Type__c</name>
+    <picklistValues>
+        <masterLabel>ACCESSORIES</masterLabel>
+        <translation><!-- ACCESSORIES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BASINS AND COUNTERTOPS</masterLabel>
+        <translation><!-- BASINS AND COUNTERTOPS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BATHROOM FAUCETS (BRASSWARE)</masterLabel>
+        <translation><!-- BATHROOM FAUCETS (BRASSWARE) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BATHTUBS</masterLabel>
+        <translation><!-- BATHTUBS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CERAMIC TILES</masterLabel>
+        <translation><!-- CERAMIC TILES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>COMPACT BATHROOM FURNITURE</masterLabel>
+        <translation><!-- COMPACT BATHROOM FURNITURE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DECORATIVE PROFILES</masterLabel>
+        <translation><!-- DECORATIVE PROFILES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DECOUPLING</masterLabel>
+        <translation><!-- DECOUPLING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DRAINAGE GRILLES</masterLabel>
+        <translation><!-- DRAINAGE GRILLES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GROUTING MATERIALS</masterLabel>
+        <translation><!-- GROUTING MATERIALS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ADHESIVES</masterLabel>
+        <translation><!-- INSTALLATION ADHESIVES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KRION</masterLabel>
+        <translation><!-- KRION --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KRION INSTALLATION</masterLabel>
+        <translation><!-- KRION INSTALLATION --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LARGE FORMAT</masterLabel>
+        <translation><!-- LARGE FORMAT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LEVELING SYSTEMS</masterLabel>
+        <translation><!-- LEVELING SYSTEMS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MIRRORS</masterLabel>
+        <translation><!-- MIRRORS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MOSAICS AND DECORATIONS</masterLabel>
+        <translation><!-- MOSAICS AND DECORATIONS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SANITARYWARE</masterLabel>
+        <translation><!-- SANITARYWARE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SHOWER ENCLOSURES</masterLabel>
+        <translation><!-- SHOWER ENCLOSURES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TECHNICAL PROFILES</masterLabel>
+        <translation><!-- TECHNICAL PROFILES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VINYL FLOORING</masterLabel>
+        <translation><!-- VINYL FLOORING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WATERPROOFING</masterLabel>
+        <translation><!-- WATERPROOFING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WOOD FLOORING</masterLabel>
+        <translation><!-- WOOD FLOORING --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

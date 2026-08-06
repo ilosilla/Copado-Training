@@ -1,0 +1,255 @@
+<template>    
+
+    <template lwc:if={isSummary}>
+        <!-- DELIVERY ADDRESS (SUMMARY) -->
+        <div class="checkout-summary__header">
+            <div class="checkout-summary__title">Delivery address</div>
+            <lightning-button
+                variant="base"
+                label="Change"
+                onclick={handleChange}
+                class="b2b-change-link">
+            </lightning-button>
+        </div>
+
+        <div class="checkout-summary__body">
+            <div class="checkout-summary__block">
+                <template lwc:if={isDelivery}>
+                    <div>
+                        <span class="checkout-address-summary__name">{summaryAddressName}</span>
+                        <span class="checkout-address-summary__sep">—</span>
+                        <span class="checkout-address-summary__line">{summaryAddressLine}</span>
+                    </div>
+                    <div class="checkout-shipping-cost">{summaryCost}</div>
+                </template>
+                <template lwc:if={isPickup}>
+                    <div>
+                        <span class="checkout-pickup-summary__line">{pickupHours}</span>
+                        <span class="checkout-pickup-summary__sep">—</span>
+                        <span class="checkout-pickup-summary__line">{preparationMessage}</span>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </template>
+
+    <template lwc:else>
+
+        <div class="checkout-section__title">
+            {componentTitle}
+        </div>
+
+        <div class="checkout-section__intro">
+            {componentIntro}
+        </div>
+
+        <!-- TOAST MESSAGE -->
+        <div class="checkout-toast" lwc:if={ui_showToast}>
+            <div class={toastVariantClass}>
+                {st_toastMessage}
+            </div>
+        </div>
+
+        <!-- SELECTED ADDRESS SUMMARY -->
+        <template lwc:if={selectedAddress}>
+            <div class="checkout-selected">
+                <div class="checkout-selected__address">
+                    <div class="checkout-selected__header">
+                        <div class="checkout-selected__name">{selectedAddress.name}</div>
+                        <template lwc:if={selectedAddress.isDefault}>
+                            <span class="checkout-badge">Default address</span>
+                        </template>
+                    </div>                    
+                    <div class="checkout-selected__line">{selectedAddressLine}</div>
+                    <template lwc:if={hasSelectedContactInfo}>
+                        <div class="checkout-selected__line checkout-selected__contact">
+                            {selectedContactLine}
+                        </div>
+                    </template>
+                </div>
+                <div class="checkout-selected__links-row">
+                    <div class="checkout-selected__links">
+                        <template lwc:if={isDelivery}>
+                            <lightning-button variant="base" label="Select another address" class="b2b-action-link main-action" onclick={handleOpenExtendedPanel}></lightning-button>
+                            <span class="link-separator">·</span>
+                            <lightning-button variant="base" label="Edit address" class="b2b-action-link" onclick={handleEditAddress}></lightning-button>
+                            <span class="link-separator">·</span>
+                        </template>
+                        <lightning-button variant="base" label="View on map" class="b2b-action-link" onclick={handleViewOnMap}></lightning-button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DELIVERY COST -->
+             <template lwc:if={isDelivery}>
+                <div class="checkout-section">
+                    <div class="checkout-section__title">Shipping</div>
+
+                    <!-- Loading -->
+                    <template lwc:if={isRecalculating}>
+                        <div class="checkout-shipping-loading">
+                            <lightning-spinner size="small"></lightning-spinner>
+                            <div class="checkout-shipping-loading__text">
+                                Recalculating shipping cost...
+                            </div>
+                        </div>
+                    </template>
+
+                    <template lwc:else>
+                        <!-- SHipping error -->
+                        <template lwc:if={hasShippingError}>
+                            <div class="checkout-notice">
+                                <span class="checkout-notice__mark">!</span>
+                                <div class="checkout-notice__body">
+                                    <div class="checkout-notice__title">
+                                        Shipping cost unavailabe
+                                    </div>
+                                    <div class="checkout-notice__text">
+                                        We couldn’t calculate the shipping cost at the moment. Please try again or contact your sales representative.
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                        <!-- Shipping unavailable -->
+                        <template lwc:elseif={shippingUnavailable}>
+                            <div class="checkout-notice">
+                                <span class="checkout-notice__mark">!</span>
+                                <div class="checkout-notice__body">
+                                    <div class="checkout-notice__title">
+                                        Shipping to the selected address is not available.
+                                    </div>
+                                    <div class="checkout-notice__text">
+                                        Please review the address details or choose a different address. If you need assistance, please contact your sales representative.
+                                    </div>
+                                    <div>{st_deliveryCost.error}</div>
+                                </div>
+                            </div>
+                        </template>
+                        <!-- Shipping available -->
+                        <template lwc:else>
+                            <div class="checkout-shipping-summary">
+                                <div class="checkout-shipping-summary__headline">
+                                        {shippingHeadline}
+                                </div>
+                                <div class="checkout-shipping-summary__details">
+                                    {shippingDetails}
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+                </div>
+            </template> <!-- isDelivery -->
+            <template lwc:if={isPickup}>
+                <div class="pickup-details">
+                    <div class="pickup-details__title">
+                        Pickup details
+                    </div>
+                    <ul class="pickup-details__list">
+                        <li class="row" lwc:if={pickupHours}><span class="label">Pickup hours:</span> <span class="value">{pickupHours}</span></li>
+                        <li class="row" lwc:if={st_preparationMessage}><span class="label">Preparation time:</span> <span class="value">{st_preparationMessage}</span></li>
+                        <li class="row"><span class="label">Fees:</span> <span class="value">No shipping charges</span></li>
+                    </ul>                       
+                </div>   
+            </template>        
+        </template>
+        <template lwc:else>
+            <div class="checkout-selected checkout-selected__empty">No delivery address selected.</div>
+        </template>
+
+        <div class="checkout-actions">
+            <lightning-button
+                variant="brand"
+                label={confirmButtonLabel}
+                onclick={handleConfirm}
+                disabled={isConfirmDisabled}>
+            </lightning-button>
+        </div>
+
+        <c-b2b-checkout-address-form
+            open={st_showAddressPanel}
+            mode={st_addressFormMode}
+            account-id={accountId}
+            address={st_addressToEdit}
+            fix-country="US"
+            onsave={handleAddressSaved}
+            oncancel={handleCloseAddressPanel}>
+        </c-b2b-checkout-address-form>
+
+        <c-ux-side-panel 
+            open={st_showExtendedPanel} 
+            title="Delivery addresses" 
+            dock="right" 
+            size="M" 
+            positive-label="Select address"
+            negative-label="Cancel"
+            sticky-footer="true" 
+            onpositive={handleCloseExtendedPanel}
+            onnegative={handleCancelExtendedPanel}
+            onclose={handleCloseExtendedPanel}>
+            <div class="addr-panel">
+                <div class="addr-panel__toolbar">
+                    <lightning-input 
+                        type="search" 
+                        variant="label-hidden" 
+                        placeholder="Search by name or address…" 
+                        value={st_addressFilter} 
+                        onchange={handleAddressFilterChange}
+                        class="addr-panel__search">
+                    </lightning-input>
+                    <lightning-button 
+                        variant="base" 
+                        label="+ New address" 
+                        class="b2b-action-link main-action addr-panel__new" 
+                        onclick={handleCreateNewAddress}>
+                </lightning-button>
+                </div>
+                <div class="addr-panel__list">
+                    <template lwc:if={filteredAddresses.length}>
+                        <template for:each={filteredAddresses} for:item="address">
+                            <label key={address.id} class="addr-row">
+                                <input type="radio" name="deliveryAddressPanel" value={address.id} checked={address.isSelected} onchange={handleAddressChange} />
+                                <div class="addr-row__content">
+                                    <div class="addr-row__name-row">
+                                        <div class="addr-row__name">{address.name}</div>
+                                        <template lwc:if={address.isAccountAddress}>
+                                            <span class="checkout-badge checkout-badge--default">Account address</span>
+                                        </template>
+                                        <template lwc:elseif={address.isDefault}>
+                                            <span class="checkout-badge checkout-badge--default">Default address</span>
+                                        </template>
+                                    </div>
+                                    <div class="addr-row__line">{address.street}</div>
+                                    <div class="addr-row__line">{address.postCode} {address.city}, {address.stateCode}</div>
+
+                                    <div class="addr-row__actions">
+                                        <template lwc:if={address.isAccountAddress}>
+                                            <button type="button" class="b2b-action-link" data-id={address.id} onclick={handleViewOnMapFromRow}>View on map</button>
+                                        </template>
+                                        <template lwc:else>
+                                            <button type="button" class="b2b-action-link" data-id={address.id} onclick={handleEditAddressFromRow}>Edit</button>
+                                            <span class="link-separator">·</span>
+                                            <button type="button" class="b2b-action-link" data-id={address.id} onclick={handleViewOnMapFromRow}>View on map</button>
+                                        </template>
+                                    </div>
+                                </div>
+                            </label>
+                        </template>
+                    </template>
+                    <template lwc:else>
+                        <div class="addr-panel__empty">
+                            <div class="addr-panel__empty-text">No addresses found.</div>
+                            <lightning-button
+                                variant="base"
+                                label="+ New address"
+                                class="b2b-action-link addr-panel__empty-cta"
+                                onclick={handleCreateNewAddress}>
+                            </lightning-button>
+                        </div>
+                    </template>               
+                </div>
+            </div>
+        </c-ux-side-panel>
+
+    </template>
+
+</template>

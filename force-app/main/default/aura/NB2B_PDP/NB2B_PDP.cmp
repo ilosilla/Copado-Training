@@ -1,0 +1,258 @@
+<!--
+  @description       : 
+  @author            : EHG@nubika.com
+  @group             : 
+  @last modified on  : 02-15-2023
+  @last modified by  : EHG@nubika.com
+-->
+<aura:component access="global" controller="NB2B_AreaCalculationController" 
+                implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,forceCommunity:availableForAllPageTypes">
+
+    <aura:Attribute name="showUMV" type="Boolean" default="false" />
+    <aura:Attribute name="showButton" type="Boolean" default="false" />
+    <aura:Attribute name="showComponent" type="Boolean" default="false" />
+    <aura:Attribute name="recordId" type="String"/>
+    <aura:Attribute name="product" type="Object" default="{}" />
+    <aura:Attribute name="price"   type="Object"  default="{}" />
+    <aura:Attribute name="webStoreId"    type="String"  default="" />
+    <aura:Attribute name="shade"    type="String"  default="" />
+    <aura:Attribute name="showButtonCmp"    type="Boolean"  default="true" />
+    <aura:Attribute name="quantity"	type="Integer"  default="0" />
+    <aura:Attribute name="priceTotal"	type="Decimal"  default="0" />
+    <aura:Attribute name="weight"	type="Decimal"  default="0" />
+    <aura:Attribute name="squareMTotal"	type="Decimal"  default="0" />
+    <aura:Attribute name="originalPrice"	type="Decimal"  default="0" />
+    <aura:Attribute name="originalUnit"	type="String"  default="" />
+    <aura:Attribute name="salesPrice"	type="Decimal"  default="0" />
+    <aura:Attribute name="amount"	type="Decimal"  default="0" />
+    <aura:Attribute name="amountTxt"  type="String"  default="0" />
+    <aura:Attribute name="userLanguage"	type="String"  default="en_US" />
+    <aura:Attribute name="cartId"	type="String"  default="" />
+    <aura:Attribute name="unitPrice"	type="String"  default="" />
+    <aura:Attribute name="unitProductPrice"	type="String"  default="" />
+    <aura:Attribute name="unitProductPricePlural"	type="String"  default="" />
+    <aura:Attribute name="showButtonComp"	type="Boolean"/>
+    <aura:Attribute name="urlImageList"	type="List" default="[]"/>
+    <aura:Attribute name="showButtonList"	type="Boolean"/>
+    <aura:Attribute name="showForm" type="Boolean" default="false" />
+    <aura:Attribute name="hasActivePBEntry" type="Boolean" default="true" />
+    <aura:Attribute name="notPurchased" type="Boolean" default="true" />
+    <aura:Attribute name="total" type="Integer" default="0" />
+    <aura:Attribute name="totalAux" type="Integer" default="0" />
+    <aura:Attribute name="showSpinner" type="Boolean" default="false" />
+    <aura:Attribute name="showOriginalPrice" type="Boolean" default="false" />
+    <!--<aura:Attribute name="Product" type="Object" default="null" />-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" /><!--   -->
+    <!-- <aura:handler name="change" value="{!v.total}" type="String" /> -->
+    <aura:handler name="change" value="{!v.total}" action="{!c.calculateTotals}"/>
+
+    <div class="slds-grid slds-wrap slds-gutters">
+        <aura:if isTrue="{!v.showForm}">
+            <aura:if isTrue="{!v.showSpinner }">
+				<lightning:spinner alternativeText="Loading" />
+	        </aura:if>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                <div class="containerImageCarousel">
+                    <aura:if isTrue="{!v.urlImageList}">
+                        <c:nB2B_PDPCarousel urlImageList="{!v.urlImageList}"></c:nB2B_PDPCarousel>
+                    </aura:if>
+                </div>
+            </div>
+
+            <aura:if isTrue="{!v.showComponent}">
+                <c:NB2B_AreaCalculationComponent unitPrice="{!v.unitPrice}" unitProductPrice="{!v.unitProductPrice}" 
+                                                 unitProductPricePlural="{!v.unitProductPricePlural}" squareMTotalAux="{!v.squareMTotal}" 
+                                                 userLanguage="{!v.userLanguage}" recordId="{!v.recordId}" amount="{!v.amount}" 
+                                                 showComponent="{!v.showComponent}" product="{!v.product}" amountTxt = "{!v.amountTxt}"
+                                                 price="{!v.price}" webStoreId="{!v.webStoreId}" totalAux="{!v.total}"/>
+            </aura:if>
+
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                <span>
+                    <div>
+                        <div>
+                            <h1 class="productTitle" style="font-family:PorcelanosaRegular;font-size:30px;white-space:pre-line;">
+                            {!v.product.Name}
+                            </h1>
+                            <span class="tile-label">
+                                {!(v.product.Marca__c)? format($Label.c.NB2B_PDP_SellsIn_Dynamic, v.product.Marca__c) : $Label.c.NB2B_PDP_SellsIn}&nbsp; {!v.unitProductPricePlural}
+                            </span>
+                        </div>
+                        <aura:if isTrue="{!v.hasActivePBEntry}">
+                            <div class="productPriceContainer">
+                                <aura:if isTrue="{!v.showButtonCmp}">
+                                    <span class="salesPrice slds-p-right_large">
+                                        <b>
+                                            <lightning:formattedNumber value="{!v.salesPrice}" style="currency" currencyCode="{!v.price.CurrencyIsoCode}" currencyDisplayAs="symbol"/>
+                                            <span class="unitProductPrice">&#47;{!v.unitProductPrice}</span>
+                                        </b>
+                                    </span>
+                                    <aura:if isTrue="{!v.showOriginalPrice}">
+                                        <span class="oldPrice slds-p-left_large slds-p-vertical_small">
+                                            <lightning:formattedNumber value="{!v.originalPrice}" style="currency" currencyCode="{!v.price.CurrencyIsoCode}" currencyDisplayAs="symbol"/>
+                                            <span class="originalUnit">&#47;{!v.originalUnit}</span>
+                                        </span>
+                                    </aura:if>
+                                    <p style="font-size: smaller; color:grey;"><i>{!$Label.c.NB2B_TaxesWarning}</i></p>
+                                    <br/>
+                                    <aura:set attribute="else">
+                                        <span class="salesPrice">{!v.price.UnitPrice}&nbsp;{!v.price.CurrencyIsoCode}/<span class="unitProductPrice">{!v.unitPrice}</span>
+                                        <br/>
+                                        </span>
+                                    </aura:set>
+                                </aura:if>                            
+                            </div>
+                            <aura:if isTrue="{!v.notPurchased}">
+                                <aura:set attribute="else">
+                                    <!-- COMPRA REALIZADA -->
+                                 <div class="slds-p-around_medium lgc-bg">
+                                    <span>
+                                        <div class="slds-grid slds-wrap" style="align-items: center;">
+                                            <div class="slds-col slds-size_1-of-2">
+                                                <span>
+                                                    <p sytle="font-size: larger;">
+                                                        <h5 class="slds-text-heading_medium slds-m-bottom_medium" style="font-size: larger;"><b>Quantity: {!v.total}</b></h5>
+                                                        <br/>
+                                                        <h5 class="slds-text-heading_medium slds-m-bottom_medium" style="font-size: larger;color:green;"><b>Added to Cart</b></h5>
+                                                    </p>
+                                                </span>
+                                            </div>
+                                            <c:nB2B_UpdateCartCount  aura:id="UpdateCart"></c:nB2B_UpdateCartCount>
+                                            <div class="slds-col slds-size_1-of-2">
+                                                <span>
+                                                    <p sytle="font-size: larger;">
+                                                        <h5 class="slds-text-heading_medium slds-m-bottom_medium" style="font-size: larger;"><b>Cart subtotal : {!v.amountTxt}</b></h5>
+                                                        <br/>
+                                                        <button class="slds-button slds-button_brand"  onclick="{!c.viewCart}"
+                                                        style="background:#1c3241;color:white;border-radius:0px;">View Cart
+                                                        </button>
+                                                    </p>
+                                                </span>
+                                            </div>
+                                        </div>
+                                     </span>
+                                 </div>
+                                </aura:set>
+                                
+                                <div style="margin-top:30px;">
+                                    <div>
+                                        <!-- MODIFICADO EHG -->
+                                        
+                                        <div class="total-area-qty">
+                                            <div class="box">
+                                                <div class="content">
+                                                    {!v.unitProductPricePlural} 
+                                                </div>
+                                                <div class="qty">
+                                                    <lightning:buttonIcon iconName="utility:dash" variant="bare" onclick="{! c.lessTotal }" class="buttonsAdd"  />
+                                                    <lightning:input type="text" value="{!v.total}" class="inputTotal"/>
+                                                    <lightning:buttonIcon iconName="utility:add" variant="bare" onclick="{! c.moreTotal }" class="buttonsAdd"/>
+                                                </div>
+                                            </div>
+    
+                                            <aura:if isTrue="{!v.showButtonCmp}">
+                                                <div class="calculate">
+                                                    <img src="{!$Resource.calcuLogo}" onclick="{!c.showCalculator}"/>
+                                                    <a href="javascript:void(0)" onclick="{!c.showCalculator}">
+                                                        Not sure how many {!v.unitProductPrice} you need?
+                                                    </a>
+                                                </div>
+    
+                                                <div class="box">
+                                                    <div class="content">
+                                                        {!$Label.c.NB2B_Shade}
+                                                        <span class="toolTip-span">
+                                                            <lightning:helptext style="color:rgb(150, 150, 150); text-decoration: underline;" content="{!$Label.c.NB2B_WhatIsThis}"/>
+                                                        </span>
+                                                    </div>
+                                                    <div class="qty">
+                                                        <lightning:input type="text" value="{!v.shade}" class="inputShade"/>                                               
+                                                    </div>
+                                                </div>
+                                            </aura:if>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div style="margin-top: 30px;">
+                                    <!-- MODIFICADO EHG -->
+                                    <div style="background-color: rgb(28,50,65);">
+                                        <button class="slds-button slds-button_brand buttonGeneral"  onclick="{!c.createCartItem}" style="width: 100%;" disabled="{!v.total lt 1}">
+                                            <div style="display: flex;justify-content: flex-start;align-items: stretch;background-color: rgb(28,50,65); height:60px;width: 100%;">
+                                                <div style="width: 50%; background-color: rgb(28,50,65);height: 35px;margin-right: 2px;text-align: center;">
+                                                    <h5 style="font-size: x-large;color:white;margin-top: 13px;font-family: 'Lato';"><lightning:formattedNumber value="{!v.amountTxt}" style="currency" currencyCode="{!v.price.CurrencyIsoCode}" currencyDisplayAs="symbol"/></h5>
+                                                </div>
+                                                <div style="color: white;font-size: x-large;margin-top: 10px;">|</div>
+                                                <div style="width: 45%;font-size: 22px;display: flex;justify-content: space-evenly;align-items: center;">
+                                                    <h5 style="font-family: 'Lato';">{!$Label.c.NB2B_Add_to_Cart_Label}</h5>
+                                                </div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <!-- MODIFICADO EHG -->
+                                </div>
+                                <div class="product-detail-info slds-p-vertical_small">
+                                    <c:NB2B_StockAvailabilty recordId="{!v.recordId}"/>
+                                    
+                                    <div class="slds-col slds-size_1-of-1">
+                                        <span style="margin-left: 7px;">
+                                            <lightning:icon iconName="utility:percent" alternativeText="" title="" size="xx-small" class="percentIcon"/>
+                                        </span>
+                                        <span style="margin-left: 13px;vertical-align: middle;">
+                                            <span style="color: #1c3241;font-size: 15px;font-weight: 700;letter-spacing: 0.43px;">
+                                                {!$Label.c.NB2B_TaxesWarning}
+                                            </span>
+                                        </span>              
+                                    </div>
+    
+                                    <div class="slds-col slds-size_1-of-1">
+                                        <div class="slds-grid slds-wrap slds-m-top_medium slds-m-bottom_x-large">                                        
+                                            <div class="slds-col slds-size_1-of-2">
+                                                <span>
+                                                     <p>
+                                                         <aura:if isTrue="{!v.showButtonCmp}">
+                                                             {!$Label.c.NB2B_QuantityM2} : {!v.squareMTotal}
+                                                         </aura:if>
+                                                        <br/>
+                                                        {!$Label.c.NB2B_Line_Weight} : {!v.weight} Kg
+                                                    </p>
+                                                </span>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-2">
+                                                <span>
+                                                     <p>{!$Label.c.NB2B_Code}:  {!v.product.StockKeepingUnit}
+                                                        <br/>
+                                                        {!$Label.c.NB2B_Pieces_per_Box} : {!v.product.PcsXBox__c}
+                                                         <br/>
+                                                         <aura:if isTrue="{!v.showButtonCmp}">
+                                                            {!$Label.c.NB2B_M2Box}{!v.unitProductPrice} : <lightning:formattedNumber value="{!v.product.M2XBox__c}" maximumFractionDigits="2"/>
+                                                            <br/>
+                                                         </aura:if>
+                                                         {!$Label.c.NB2B_Weight + ': ' + ((v.product.PesoUMV__c)? (v.product.PesoUMV__c + ' ' + $Label.c.NB2B_Kg_Box + v.unitProductPrice) : $Label.c.NB2B_Not_Available)}
+                                                    </p>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </aura:if>
+    
+                            <aura:if isTrue="{!v.product.URL_PDF__c}">
+                                <div class="slds-p-around_medium lgc-bg">
+                                    <span>
+                                        <a href="{!v.product.URL_PDF__c}" target="blank_"><u>{!$Label.c.NB2B_Download_document}</u></a>
+                                    </span>
+                                </div>
+                            </aura:if>
+                            <aura:set attribute="else">
+                                <div class="slds-notify slds-notify_alert alert-error slds-var-m-around_small" role="alert">
+                                    <h2>Product Discontinued</h2>
+                                </div>
+                            </aura:set>
+                        </aura:if>
+                    </div>               
+                </span>
+            </div>
+        </aura:if>
+    </div>
+</aura:component>

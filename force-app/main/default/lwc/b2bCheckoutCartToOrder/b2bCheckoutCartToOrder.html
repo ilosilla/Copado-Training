@@ -1,0 +1,66 @@
+<template>
+    <!-- FULLSCREEN OVERLAY -->
+    <div class="cart-to-order-overlay">
+        <div class="cart-to-order-container">
+
+            <!-- HEADER -->
+            <div class="cart-to-order-header">
+                <h2 class="cart-to-order-title">
+                    {title}
+                </h2>
+            </div>
+
+            <!-- BODY -->
+            <div class="cart-to-order-content cart-to-order-grid">
+
+                <!-- LEFT: SPINNER or SUCCESS ICON -->
+                <div class="cart-to-order-left">
+                    <template lwc:if={isProcessing}>
+                        <div role="status"
+                             class="spinner-margin-fix slds-spinner slds-spinner_large slds-spinner_inline slds-spinner_brand cart-to-order-spinner">
+                            <span class="slds-assistive-text">Loading</span>
+                            <div class="slds-spinner__dot-a"></div>
+                            <div class="slds-spinner__dot-b"></div>
+                        </div>
+                    </template>
+
+                    <template lwc:if={isSuccess}>
+                        <div class="cart-to-order-success-icon" aria-hidden="true">
+                            ✓
+                        </div>
+                    </template>
+
+                    <template lwc:if={isError}>
+                        <div class="cart-to-order-error-icon" aria-hidden="true">
+                            ✕
+                        </div>
+                    </template>
+                    
+                </div>
+
+                <!-- RIGHT: TEXT -->
+                <div class="cart-to-order-right">
+                    <p class="cart-to-order-message cart-to-order-message--strong">
+                        {primaryMessage}
+                    </p>
+
+                    <p class="cart-to-order-message">
+                        {secondaryMessage}
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- FOOTER / ACTIONS (reserved space) -->
+            <div class="cart-to-order-actions">
+                <lightning-button
+                    variant="brand"
+                    label="Close"
+                    class={buttonClass}
+                    onclick={handleClose}>
+                </lightning-button>
+            </div>           
+
+        </div>
+    </div>
+</template>

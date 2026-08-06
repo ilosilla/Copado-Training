@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Symptoms__c</fullName>
+    <description>Description opf the problem</description>
+    <label>Symptoms</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>ReportedTypeProblem__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>BASIN NOT LEVEL</fullName>
+                <default>false</default>
+                <label>BASIN NOT LEVEL</label>
+            </value>
+            <value>
+                <fullName>BASIN NOT LEVEL / MOVEMENT</fullName>
+                <default>false</default>
+                <label>BASIN NOT LEVEL / MOVEMENT</label>
+            </value>
+            <value>
+                <fullName>BATH DRAIN NO LONGER OPEN/CLOSE</fullName>
+                <default>false</default>
+                <label>BATH DRAIN NO LONGER OPEN/CLOSE</label>
+            </value>
+            <value>
+                <fullName>BROKEN</fullName>
+                <default>false</default>
+                <label>BROKEN</label>
+            </value>
+            <value>
+                <fullName>CISTERN FRAME IMCOMPLETE</fullName>
+                <default>false</default>
+                <label>CISTERN FRAME IMCOMPLETE</label>
+            </value>
+            <value>
+                <fullName>CISTERN OR PAN RUNNING CONTINOUSLY</fullName>
+                <default>false</default>
+                <label>CISTERN OR PAN RUNNING CONTINOUSLY</label>
+            </value>
+            <value>
+                <fullName>CrackedToiletSeat</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CrackedToiletSeat</label>
+            </value>
+            <value>
+                <fullName>CRACKS WITHIN PRODUCT</fullName>
+                <default>false</default>
+                <label>CRACKS WITHIN PRODUCT</label>
+            </value>
+            <value>
+                <fullName>DAMAGE ON CISTERN / FRAME</fullName>
+                <default>false</default>
+                <label>DAMAGE ON CISTERN / FRAME</label>
+            </value>
+            <value>
+                <fullName>DIVERTER DIFFICULT TO OPERATE</fullName>
+                <default>false</default>
+                <label>DIVERTER DIFFICULT TO OPERATE</label>
+            </value>
+            <value>
+                <fullName>DivertingToBothOutputs</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>DivertingToBothOutputs</label>
+            </value>
+            <value>
+                <fullName>DOOR MIS-ALIGNED / DROPPED</fullName>
+                <default>false</default>
+                <label>DOOR MIS-ALIGNED / DROPPED</label>
+            </value>
+            <value>
+                <fullName>DRAWERS NOT OPERATING SMOOTHLY</fullName>
+                <default>false</default>
+                <label>DRAWERS NOT OPERATING SMOOTHLY</label>
+            </value>
+            <value>
+                <fullName>FaucetLeaksWater</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>FaucetLeaksWater</label>
+            </value>
+            <value>
+                <fullName>FLOOR SENSOR NOT WORKING</fullName>
+                <default>false</default>
+                <label>FLOOR SENSOR NOT WORKING</label>
+            </value>
+            <value>
+                <fullName>GLASS DAMAGED</fullName>
+                <default>false</default>
+                <label>GLASS DAMAGED</label>
+            </value>
+            <value>
+                <fullName>GROUT CRACKING AFTER INSTALLATION</fullName>
+                <default>false</default>
+                <label>GROUT CRACKING AFTER INSTALLATION</label>
+            </value>
+            <value>
+                <fullName>GROUT INCORRECT COLOUR</fullName>
+                <default>false</default>
+                <label>GROUT INCORRECT COLOUR</label>
+            </value>
+            <value>
+                <fullName>HANDLE DIFFICULT TO OPERATE</fullName>
+                <default>false</default>
+                <label>HANDLE DIFFICULT TO OPERATE</label>
+            </value>
+            <value>
+                <fullName>HotOrColdWater</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>HotOrColdWater</label>
+            </value>
+            <value>
+                <fullName>HOT WATER PUMPED BACK TO COLD WATER</fullName>
+                <default>false</default>
+                <label>HOT WATER PUMPED BACK TO COLD WATER</label>
+            </value>
+            <value>
+                <fullName>INCOMPLETE</fullName>
+                <default>false</default>
+                <label>INCOMPLETE</label>
+            </value>
+            <value>
+                <fullName>INCORRECT FLOW RATE AFTER INSTALLATION</fullName>
+                <default>false</default>
+                <label>INCORRECT FLOW RATE AFTER INSTALLATION</label>
+            </value>
+            <value>
+                <fullName>InsufficientHotColdWater</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>InsufficientHotColdWater</label>
+            </value>
+            <value>
+                <fullName>LEAKS</fullName>
+                <default>false</default>
+                <label>LEAKS</label>
+            </value>
+            <value>
+                <fullName>NEWLY DEVELOPED STAINING</fullName>
+                <default>false</default>
+                <label>NEWLY DEVELOPED STAINING</label>
+            </value>
+            <value>
+                <fullName>NEWLY DEVELOPED YELLOWING</fullName>
+                <default>false</default>
+                <label>NEWLY DEVELOPED YELLOWING</label>
+            </value>
+            <value>
+                <fullName>NOT CURING</fullName>
+                <default>false</default>
+                <label>NOT CURING</label>
+            </value>
+            <value>
+                <fullName>OTHER</fullName>
+                <default>false</default>
+                <label>OTHER</label>
+            </value>
+            <value>
+                <fullName>PARTS MISSING</fullName>
+                <default>false</default>
+                <label>PARTS MISSING</label>
+            </value>
+            <value>
+                <fullName>PEELING OFF OR CORROSION</fullName>
+                <default>false</default>
+                <label>PEELING OFF OR CORROSION</label>
+            </value>
+            <value>
+                <fullName>PoorFlushing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PoorFlushing</label>
+            </value>
+            <value>
+                <fullName>PressureLeaksWater</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PressureLeaksWater</label>
+            </value>
+            <value>
+                <fullName>PRODUCT CRACKED OR MALFORMED</fullName>
+                <default>false</default>
+                <label>PRODUCT CRACKED OR MALFORMED</label>
+            </value>
+            <value>
+                <fullName>ProductDamaged</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ProductDamaged</label>
+            </value>
+            <value>
+                <fullName>PRODUCT DECOLORATED FROM START</fullName>
+                <default>false</default>
+                <label>PRODUCT DECOLORATED FROM START</label>
+            </value>
+            <value>
+                <fullName>PRODUCT DISCOLOURED FROM START</fullName>
+                <default>false</default>
+                <label>PRODUCT DISCOLOURED FROM START</label>
+            </value>
+            <value>
+                <fullName>PRODUCT DOES NOT PERFORM AS EXPECTED</fullName>
+                <default>false</default>
+                <label>PRODUCT DOES NOT PERFORM AS EXPECTED</label>
+            </value>
+            <value>
+                <fullName>PRODUCT HAS STAINS</fullName>
+                <default>false</default>
+                <label>PRODUCT HAS STAINS</label>
+            </value>
+            <value>
+                <fullName>ProductIncomplete</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ProductIncomplete</label>
+            </value>
+            <value>
+                <fullName>PRODUCT LEAKS FROM HANDLE OR SPOUT</fullName>
+                <default>false</default>
+                <label>PRODUCT LEAKS FROM HANDLE OR SPOUT</label>
+            </value>
+            <value>
+                <fullName>PRODUCT LEAKS FROM UNDERNEATH THE BASIN</fullName>
+                <default>false</default>
+                <label>PRODUCT LEAKS FROM UNDERNEATH THE BASIN</label>
+            </value>
+            <value>
+                <fullName>PRODUCT MALFORMED ON SURFACE</fullName>
+                <default>false</default>
+                <label>PRODUCT MALFORMED ON SURFACE</label>
+            </value>
+            <value>
+                <fullName>ProductMismatch</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ProductMismatch</label>
+            </value>
+            <value>
+                <fullName>ReducedWaterFlow</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ReducedWaterFlow</label>
+            </value>
+            <value>
+                <fullName>REDUCTION IN WATER FLOW - AERATOR MODELS</fullName>
+                <default>false</default>
+                <label>REDUCTION IN WATER FLOW - AERATOR MODELS</label>
+            </value>
+            <value>
+                <fullName>REDUCTION IN WATER FLOW - NON AERATOR MODELS</fullName>
+                <default>false</default>
+                <label>REDUCTION IN WATER FLOW - NON AERATOR MODELS</label>
+            </value>
+            <value>
+                <fullName>SENSOR NOT WORKING CORRECTLY</fullName>
+                <default>false</default>
+                <label>SENSOR NOT WORKING CORRECTLY</label>
+            </value>
+            <value>
+                <fullName>SHOWER NOZZLES BLOCKED</fullName>
+                <default>false</default>
+                <label>SHOWER NOZZLES BLOCKED</label>
+            </value>
+            <value>
+                <fullName>SMART CABINET UNIT DAMAGED</fullName>
+                <default>false</default>
+                <label>SMART CABINET UNIT DAMAGED</label>
+            </value>
+            <value>
+                <fullName>SOFT CLOSE SEAT ISSUE</fullName>
+                <default>false</default>
+                <label>SOFT CLOSE SEAT ISSUE</label>
+            </value>
+            <value>
+                <fullName>SURFACE DEFECT</fullName>
+                <default>false</default>
+                <label>SURFACE DEFECT</label>
+            </value>
+            <value>
+                <fullName>TemperatureNotHot</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TemperatureNotHot</label>
+            </value>
+            <value>
+                <fullName>THERMOSTAT NOT WORKING</fullName>
+                <default>false</default>
+                <label>THERMOSTAT NOT WORKING</label>
+            </value>
+            <value>
+                <fullName>TILES CRACKING AFTER INSTALLATION</fullName>
+                <default>false</default>
+                <label>TILES CRACKING AFTER INSTALLATION</label>
+            </value>
+            <value>
+                <fullName>ToiletRunningConstantly</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ToiletRunningConstantly</label>
+            </value>
+            <value>
+                <fullName>TOWEL WARMER NOT WORKING</fullName>
+                <default>false</default>
+                <label>TOWEL WARMER NOT WORKING</label>
+            </value>
+            <value>
+                <fullName>TRAY NOT LEVEL</fullName>
+                <default>false</default>
+                <label>TRAY NOT LEVEL</label>
+            </value>
+            <value>
+                <fullName>TRAY WARPED</fullName>
+                <default>false</default>
+                <label>TRAY WARPED</label>
+            </value>
+            <value>
+                <fullName>TRIMS CANNOT BE INSTALLED CORRECTLY / KNOB FALLS OFF</fullName>
+                <default>false</default>
+                <label>TRIMS CANNOT BE INSTALLED CORRECTLY / KNOB FALLS OFF</label>
+            </value>
+            <value>
+                <fullName>TubLeaksWater</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TubLeaksWater</label>
+            </value>
+            <value>
+                <fullName>UNIT DAMAGED</fullName>
+                <default>false</default>
+                <label>UNIT DAMAGED</label>
+            </value>
+            <value>
+                <fullName>UNIT IS DELAMINATING</fullName>
+                <default>false</default>
+                <label>UNIT IS DELAMINATING</label>
+            </value>
+            <value>
+                <fullName>UNIT IS PRODUCING ONLY VERY HOT OR COLD WATER</fullName>
+                <default>false</default>
+                <label>UNIT IS PRODUCING ONLY VERY HOT OR COLD WATER</label>
+            </value>
+            <value>
+                <fullName>UNIT NOT DIVERTING</fullName>
+                <default>false</default>
+                <label>UNIT NOT DIVERTING</label>
+            </value>
+            <value>
+                <fullName>UnitNotShutOff</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>UnitNotShutOff</label>
+            </value>
+            <value>
+                <fullName>UNIT NOT SUPPLYING REQUIRED TEMPERTAURE OF WATER</fullName>
+                <default>false</default>
+                <label>UNIT NOT SUPPLYING REQUIRED TEMPERTAURE OF WATER</label>
+            </value>
+            <value>
+                <fullName>VISIBLE DAMAGE ON SURFACE</fullName>
+                <default>false</default>
+                <label>VISIBLE DAMAGE ON SURFACE</label>
+            </value>
+            <value>
+                <fullName>WASTE NOT REMOVED</fullName>
+                <default>false</default>
+                <label>WASTE NOT REMOVED</label>
+            </value>
+            <value>
+                <fullName>WATER BACKING UP</fullName>
+                <default>false</default>
+                <label>WATER BACKING UP</label>
+            </value>
+            <value>
+                <fullName>WATER DOESN&apos;T DRAIN AWAY</fullName>
+                <default>false</default>
+                <label>WATER DOESN&apos;T DRAIN AWAY</label>
+            </value>
+            <value>
+                <fullName>WATER REMAINING IN TRAY</fullName>
+                <default>false</default>
+                <label>WATER REMAINING IN TRAY</label>
+            </value>
+            <value>
+                <fullName>WORKTOP NOT LEVEL</fullName>
+                <default>false</default>
+                <label>WORKTOP NOT LEVEL</label>
+            </value>
+            <value>
+                <fullName>WORKTOP NOT LEVEL / MOVEMENT</fullName>
+                <default>false</default>
+                <label>WORKTOP NOT LEVEL / MOVEMENT</label>
+            </value>
+            <value>
+                <fullName>WRONG-PRODUCT</fullName>
+                <default>false</default>
+                <label>WRONG-PRODUCT</label>
+            </value>
+            <value>
+                <fullName>WRONG SHADING</fullName>
+                <default>false</default>
+                <label>WRONG SHADING</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>007-GRO-NOT-WORKING</controllingFieldValue>
+            <valueName>GROUT CRACKING AFTER INSTALLATION</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>007-GRO-NOT-WORKING</controllingFieldValue>
+            <valueName>GROUT INCORRECT COLOUR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>001-TUB-DETERORIATED</controllingFieldValue>
+            <controllingFieldValue>008-BAS-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>008-SHT-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-BAS-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>008-TOP-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>008-TUB-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>009-BAS-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-SAW-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>009-TOP-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-SHT-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-TUB-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>001-BAS-DETERORIATED</controllingFieldValue>
+            <valueName>CRACKS WITHIN PRODUCT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>001-TUB-DETERORIATED</controllingFieldValue>
+            <controllingFieldValue>008-TUB-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-SHT-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-TUB-DETERIORATED</controllingFieldValue>
+            <valueName>PARTS MISSING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>001-TUB-DETERORIATED</controllingFieldValue>
+            <controllingFieldValue>041-ALL-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>041-ALL-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>008-TUB-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-SHT-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-TUB-DETERIORATED</controllingFieldValue>
+            <valueName>SURFACE DEFECT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>007-HEA-NOT-WORKING</controllingFieldValue>
+            <valueName>FLOOR SENSOR NOT WORKING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>007-HEA-NOT-WORKING</controllingFieldValue>
+            <valueName>THERMOSTAT NOT WORKING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>001-TUB-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>006-TUB-NOT-WORKING</controllingFieldValue>
+            <valueName>BATH DRAIN NO LONGER OPEN/CLOSE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>007-TRI-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>008-ACC-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-ACC-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-BRW-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>009-ACC-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-SHC-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-SHH-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-SHV-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-TOW-DETERIORATED</controllingFieldValue>
+            <valueName>PEELING OFF OR CORROSION</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>007-TRI-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>008-ACC-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-ACC-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-BRW-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>009-ACC-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-SHC-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-SHH-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-SHV-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-TOW-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>008-SHE-DETERIORATED</controllingFieldValue>
+            <valueName>VISIBLE DAMAGE ON SURFACE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>008-ALL-BROKEN</controllingFieldValue>
+            <controllingFieldValue>041-ALL-BROKEN</controllingFieldValue>
+            <controllingFieldValue>006-ALL-BROKEN</controllingFieldValue>
+            <controllingFieldValue>000-ALL-BROKEN</controllingFieldValue>
+            <controllingFieldValue>002-ALL-BROKEN</controllingFieldValue>
+            <controllingFieldValue>009-ALL-BROKEN</controllingFieldValue>
+            <controllingFieldValue>001-ALL-BROKEN</controllingFieldValue>
+            <controllingFieldValue>007-ALL-BROKEN</controllingFieldValue>
+            <valueName>BROKEN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>008-ALL-INCOMPLETE</controllingFieldValue>
+            <controllingFieldValue>041-ALL-INCOMPLETE</controllingFieldValue>
+            <controllingFieldValue>006-ALL-INCOMPLETE</controllingFieldValue>
+            <controllingFieldValue>000-ALL-INCOMPLETE</controllingFieldValue>
+            <controllingFieldValue>002-ALL-INCOMPLETE</controllingFieldValue>
+            <controllingFieldValue>009-ALL-INCOMPLETE</controllingFieldValue>
+            <controllingFieldValue>001-ALL-INCOMPLETE</controllingFieldValue>
+            <controllingFieldValue>007-ALL-INCOMPLETE</controllingFieldValue>
+            <valueName>INCOMPLETE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>041-ALL-WRONG-PRODUCT</controllingFieldValue>
+            <controllingFieldValue>008-ALL-WRONG-PRODUCT</controllingFieldValue>
+            <controllingFieldValue>006-ALL-WRONG-PRODUCT</controllingFieldValue>
+            <controllingFieldValue>000-ALL-WRONG-PRODUCT</controllingFieldValue>
+            <controllingFieldValue>002-ALL-WRONG-PRODUCT</controllingFieldValue>
+            <controllingFieldValue>009-ALL-WRONG-PRODUCT</controllingFieldValue>
+            <controllingFieldValue>001-ALL-WRONG-PRODUCT</controllingFieldValue>
+            <controllingFieldValue>007-ALL-WRONG-PRODUCT</controllingFieldValue>
+            <valueName>WRONG-PRODUCT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>041-ALL-OTHERS</controllingFieldValue>
+            <controllingFieldValue>008-ALL-OTHERS</controllingFieldValue>
+            <controllingFieldValue>041-ALL-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>006-ALL-OTHERS</controllingFieldValue>
+            <controllingFieldValue>000-ALL-OTHERS</controllingFieldValue>
+            <controllingFieldValue>002-ALL-OTHERS</controllingFieldValue>
+            <controllingFieldValue>009-ALL-OTHERS</controllingFieldValue>
+            <controllingFieldValue>001-ALL-OTHERS</controllingFieldValue>
+            <controllingFieldValue>007-ALL-OTHERS</controllingFieldValue>
+            <valueName>OTHER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>041-ALL-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>002-TIL-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>001-ALL-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>001-TIL-DETERORIATED</controllingFieldValue>
+            <valueName>PRODUCT HAS STAINS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>041-ALL-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>002-TIL-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>001-ALL-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>001-TIL-DETERORIATED</controllingFieldValue>
+            <valueName>WRONG SHADING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>008-BAS-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-BAS-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>009-BAS-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>001-BAS-DETERORIATED</controllingFieldValue>
+            <valueName>BASIN NOT LEVEL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>008-BAS-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-BAS-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>009-BAS-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-SAW-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>001-BAS-DETERORIATED</controllingFieldValue>
+            <valueName>NEWLY DEVELOPED YELLOWING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>008-BAS-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-BAS-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>008-TOP-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>009-BAS-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>009-TOP-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>001-BAS-DETERORIATED</controllingFieldValue>
+            <valueName>PRODUCT DISCOLOURED FROM START</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>008-BAS-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-BAS-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>008-TOP-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>009-BAS-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-SAW-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>009-TOP-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>001-ALL-DETERIORATED</controllingFieldValue>
+            <valueName>PRODUCT MALFORMED ON SURFACE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>008-BAS-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>006-BAS-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>009-BAS-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>001-BAS-NOT-WORKING</controllingFieldValue>
+            <valueName>BASIN NOT LEVEL / MOVEMENT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>002-TIL-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>001-TIL-NOT-WORKING</controllingFieldValue>
+            <valueName>PRODUCT DOES NOT PERFORM AS EXPECTED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>002-TIL-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>001-TIL-NOT-WORKING</controllingFieldValue>
+            <valueName>TILES CRACKING AFTER INSTALLATION</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>008-FUR-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-FUR-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>009-FUR-DETERIORATED</controllingFieldValue>
+            <valueName>UNIT DAMAGED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>008-FUR-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-FUR-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>009-FUR-DETERIORATED</controllingFieldValue>
+            <valueName>UNIT IS DELAMINATING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>008-FUR-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>006-FUR-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>009-FUR-NOT-WORKING</controllingFieldValue>
+            <valueName>DRAWERS NOT OPERATING SMOOTHLY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>008-MIR-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-MIR-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>009-MIR-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>008-SHE-DETERIORATED</controllingFieldValue>
+            <valueName>GLASS DAMAGED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>008-MIR-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>006-MIR-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>009-MIR-DETERIORATED</controllingFieldValue>
+            <valueName>SMART CABINET UNIT DAMAGED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>008-MIR-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>009-MIR-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>008-SHE-NOT-WORKING</controllingFieldValue>
+            <valueName>DOOR MIS-ALIGNED / DROPPED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>008-MIR-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>006-MIR-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>009-MIR-NOT-WORKING</controllingFieldValue>
+            <valueName>SENSOR NOT WORKING CORRECTLY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>008-SHT-NOT-WORKING</controllingFieldValue>
+            <valueName>TRAY NOT LEVEL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>008-SHT-NOT-WORKING</controllingFieldValue>
+            <valueName>WATER REMAINING IN TRAY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>006-BRW-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>006-SHC-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>006-SHV-NOT-WORKING</controllingFieldValue>
+            <valueName>DIVERTER DIFFICULT TO OPERATE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>006-BRW-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>006-SHC-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>006-SHV-NOT-WORKING</controllingFieldValue>
+            <valueName>HANDLE DIFFICULT TO OPERATE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>006-BRW-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>006-SHC-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>006-SHV-NOT-WORKING</controllingFieldValue>
+            <valueName>HOT WATER PUMPED BACK TO COLD WATER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>006-BRW-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>006-SHC-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>006-SHV-NOT-WORKING</controllingFieldValue>
+            <valueName>INCORRECT FLOW RATE AFTER INSTALLATION</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>006-BRW-NOT-WORKING</controllingFieldValue>
+            <valueName>PRODUCT LEAKS FROM HANDLE OR SPOUT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>006-BRW-NOT-WORKING</controllingFieldValue>
+            <valueName>PRODUCT LEAKS FROM UNDERNEATH THE BASIN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>006-BRW-NOT-WORKING</controllingFieldValue>
+            <valueName>REDUCTION IN WATER FLOW - AERATOR MODELS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>006-BRW-NOT-WORKING</controllingFieldValue>
+            <valueName>REDUCTION IN WATER FLOW - NON AERATOR MODELS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>006-BRW-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>006-SHC-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>006-SHV-NOT-WORKING</controllingFieldValue>
+            <valueName>TRIMS CANNOT BE INSTALLED CORRECTLY / KNOB FALLS OFF</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>006-BRW-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>006-SHC-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>006-SHV-NOT-WORKING</controllingFieldValue>
+            <valueName>UNIT IS PRODUCING ONLY VERY HOT OR COLD WATER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>006-BRW-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>006-SHC-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>006-SHV-NOT-WORKING</controllingFieldValue>
+            <valueName>UNIT NOT DIVERTING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>006-BRW-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>006-SHC-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>006-SHV-NOT-WORKING</controllingFieldValue>
+            <valueName>UNIT NOT SUPPLYING REQUIRED TEMPERTAURE OF WATER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>002-TIL-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>001-TIL-DETERORIATED</controllingFieldValue>
+            <valueName>PRODUCT CRACKED OR MALFORMED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>008-TOP-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>009-TOP-DETERIORATED</controllingFieldValue>
+            <valueName>NEWLY DEVELOPED STAINING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>008-TOP-DETERIORATED</controllingFieldValue>
+            <controllingFieldValue>009-TOP-DETERIORATED</controllingFieldValue>
+            <valueName>WORKTOP NOT LEVEL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>008-TOP-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>009-TOP-NOT-WORKING</controllingFieldValue>
+            <valueName>WORKTOP NOT LEVEL / MOVEMENT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>006-INS-DETERIORATED</controllingFieldValue>
+            <valueName>CISTERN FRAME IMCOMPLETE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>006-INS-DETERIORATED</controllingFieldValue>
+            <valueName>DAMAGE ON CISTERN / FRAME</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>006-SAW-DETERIORATED</controllingFieldValue>
+            <valueName>PRODUCT DECOLORATED FROM START</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>006-SAW-NOT-WORKING</controllingFieldValue>
+            <valueName>CISTERN OR PAN RUNNING CONTINOUSLY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>006-SAW-NOT-WORKING</controllingFieldValue>
+            <valueName>SOFT CLOSE SEAT ISSUE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>006-SAW-NOT-WORKING</controllingFieldValue>
+            <valueName>WASTE NOT REMOVED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>006-SAW-NOT-WORKING</controllingFieldValue>
+            <valueName>WATER BACKING UP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>006-SHC-NOT-WORKING</controllingFieldValue>
+            <controllingFieldValue>006-SHH-NOT-WORKING</controllingFieldValue>
+            <valueName>SHOWER NOZZLES BLOCKED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>006-SHT-NOT-WORKING</controllingFieldValue>
+            <valueName>TRAY WARPED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>006-SHT-NOT-WORKING</controllingFieldValue>
+            <valueName>WATER DOESN&apos;T DRAIN AWAY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>006-TOW-NOT-WORKING</controllingFieldValue>
+            <valueName>TOWEL WARMER NOT WORKING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>007-ADH-NOT-WORKING</controllingFieldValue>
+            <valueName>NOT CURING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>008-SHE-NOT-WORKING</controllingFieldValue>
+            <valueName>LEAKS</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

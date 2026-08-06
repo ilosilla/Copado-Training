@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Nombre de salles de séjour, égal ou supérieur à 0</help>
+    <label>No. Salles de séjour</label>
+    <name>roomTypeLivingRoom__c</name>
+</CustomFieldTranslation>

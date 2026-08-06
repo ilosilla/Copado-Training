@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Enables INFO-level logging in Lightning Web Components developed by PORSA to trace high-level functional events.</description>
+    <isLicensed>false</isLicensed>
+    <label>PORSA – LWC Info Logging</label>
+</CustomPermission>

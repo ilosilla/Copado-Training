@@ -1,0 +1,43 @@
+<template>
+    <div class="slds-card slds-theme_shade slds-var-p-around_small">
+        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+            <div class="slds-media__figure">
+                <lightning-icon icon-name="custom:custom98"></lightning-icon>
+            </div>
+            <div class="slds-media__body">
+                <h2 class="slds-card__header-title">
+                    <span>{labels.tr0002_005}</span>
+                </h2>
+            </div>
+        </header>
+
+        <div class="slds-card__body slds-card__body_inner">
+            <c-lib-spinner visible={isLoading}></c-lib-spinner>
+
+            <div lwc:if={isCaseInSAP}>
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-2 slds-var-p-right_x-small">
+                        <c-lib-form-element data-id="returnsOrderField" label={labels.dict_returns_order} value={returnsOrder} download-button ondownload={handleDownloadOrder}></c-lib-form-element>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-var-p-left_x-small">                        
+                        <c-lib-form-element data-id="creditNoteField" label={labels.dict_creditNote} value={creditNote} download-button ondownload={handleDownloadCredit} lwc:if={creditNote}></c-lib-form-element>
+                    </div>
+
+                    <template lwc:if={showDeliveryInfo}>
+                        <div class="slds-col slds-size_1-of-2 slds-var-p-right_x-small slds-var-p-top_x-small">
+                            <c-lib-form-element data-id="deliverytNoteField" label={labels.dict_delivery_note} value={deliveryNote} download-button ondownload={handleDownloadDelivery} ></c-lib-form-element>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2 slds-var-p-left_x-small slds-var-p-top_x-small">
+                            <c-lib-form-element label={labels.delivery_status} value={currentStatus}></c-lib-form-element>
+                        </div>
+                    </template>
+    
+                </div>  
+
+            </div>
+            <div lwc:else>
+                <p>{labels.tr0002_006}</p>
+            </div>  
+        </div>  
+    </div>
+</template>

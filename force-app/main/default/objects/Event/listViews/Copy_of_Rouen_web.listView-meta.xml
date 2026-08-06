@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_Rouen_web</fullName>
+    <columns>START_DATE_TIME</columns>
+    <columns>END_DATE_TIME</columns>
+    <columns>SUBJECT</columns>
+    <columns>WHO_NAME</columns>
+    <columns>WHAT_NAME</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>ALL_DAY</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>TYPE</field>
+        <operation>equals</operation>
+        <value>E- Commerce Virtual Appointment,E-Commerce Showroom Appointment</value>
+    </filters>
+    <filters>
+        <field>OWNER_ROLE</field>
+        <operation>contains</operation>
+        <value>brest</value>
+    </filters>
+    <label>Brest (web)</label>
+    <sharedTo>
+        <role>Director_Regional_FR</role>
+        <role>Organizacion_Ouest</role>
+        <role>Sociedad_Ouest</role>
+    </sharedTo>
+</ListView>

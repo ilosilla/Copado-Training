@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EmaiCC__c</fullName>
+    <description>Lista de emails, separados por punto y coma, de los que van siempre en copia</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Email CC</label>
+    <length>1500</length>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

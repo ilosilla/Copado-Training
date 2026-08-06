@@ -1,0 +1,71 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Payment Gateway Response",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"1f4d3108-41dd-4658-b961-047c973acf88\",\"columns\":[{\"UUID\":\"5f9b6cd7-78e0-4530-a4bf-991cd3ad9e1c\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "dxpStyle" : { }
+              },
+              "definition" : "c:b2bPaymentGatewayResponse",
+              "id" : "46b218de-44dc-4bba-af05-8c68362be753",
+              "type" : "component"
+            } ],
+            "id" : "5f9b6cd7-78e0-4530-a4bf-991cd3ad9e1c",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "1f4d3108-41dd-4658-b961-047c973acf88",
+          "type" : "component"
+        } ],
+        "id" : "7562c45e-1e87-4fa3-a1cd-a1b6e2b123a9",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "dxpStyle" : { },
+            "pageTitle" : "Payment Gateway Response",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "c0ed7176-3487-4844-8300-b5f5910c214a",
+          "type" : "component"
+        } ],
+        "id" : "f8eb4f8f-a0b6-4dcd-818a-51c5a75fbad0",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "bedecb02-d51a-47b9-9f7d-14e781d0f752",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-payment-gateway-response"
+  },
+  "urlName" : "payment-gateway-response"
+}

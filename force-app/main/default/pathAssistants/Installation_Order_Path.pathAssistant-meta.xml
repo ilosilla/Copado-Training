@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>InstallationOrder__c</entityName>
+    <fieldName>State__c</fieldName>
+    <masterLabel>Installation Order Path</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>CustomerComments__c</fieldNames>
+        <info>&lt;p&gt;The installation works have been done and the customer is happy with the result.You can enter any customer comments here.&lt;/p&gt;</info>
+        <picklistValueName>Customer Satisfied</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>CustomerComments__c</fieldNames>
+        <info>&lt;p&gt;The installation has been done but the customer is not satisfied. Please explain the reason in the field provided here.&lt;/p&gt;</info>
+        <picklistValueName>Customer Unsatisfied</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Finished__c</fieldNames>
+        <info>&lt;p&gt;Please confirm the installation works have been done.&lt;/p&gt;</info>
+        <picklistValueName>Finished</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Notes__c</fieldNames>
+        <info>&lt;p&gt;Please enter any notes about the installation works here.&lt;/p&gt;</info>
+        <picklistValueName>New Installation</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;The system will automatically set this state the day the installation works will begin. Please make sure the installation dates are correct.&lt;/p&gt;</info>
+        <picklistValueName>Ongoing</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>StartDate__c</fieldNames>
+        <fieldNames>EndDate__c</fieldNames>
+        <info>&lt;p&gt;Please enter the installation dates as agreed with the customer. &lt;/p&gt;</info>
+        <picklistValueName>Scheduled</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

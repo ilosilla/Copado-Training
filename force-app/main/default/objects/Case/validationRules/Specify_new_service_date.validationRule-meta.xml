@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Specify_new_service_date</fullName>
+    <active>false</active>
+    <description>Every time the agent changes the technician service conclusion to Reschedule and he does not change the service date field, he will be asked for filling a new service date</description>
+    <errorConditionFormula>ISCHANGED(Technician_service_conclusion__c)  &amp;&amp;
+		ISPICKVAL(Technician_service_conclusion__c, &apos;Reschedule&apos;) &amp;&amp;
+		NOT(ISCHANGED( Service_date__c ))</errorConditionFormula>
+    <errorDisplayField>Service_date__c</errorDisplayField>
+    <errorMessage>You must specify a new service date</errorMessage>
+</ValidationRule>

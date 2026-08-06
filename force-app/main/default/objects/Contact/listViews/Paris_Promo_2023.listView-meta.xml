@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Paris_Promo_2023</fullName>
+    <columns>Account.Activity__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>Sales_Office__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>Account.Is_Locked__c</columns>
+    <columns>Account.Locked__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account.Is_Locked__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Sales_Office__c</field>
+        <operation>equals</operation>
+        <value>aubagne,cannes</value>
+    </filters>
+    <label>Paris Promo 2023</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>Director_Regional_FR</roleAndSubordinatesInternal>
+        <roleAndSubordinatesInternal>Sociedad_Paris_IDF</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

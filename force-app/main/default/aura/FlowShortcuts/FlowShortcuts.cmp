@@ -1,0 +1,32 @@
+<aura:component implements="lightning:availableForFlowScreens">
+    <!-- ATTRIBUTES -->
+    <aura:attribute name="shortcut_01" type="String" access="global"/>    
+    <aura:attribute name="shortcut_02" type="String" access="global"/>    
+    <aura:attribute name="shortcut_03" type="String" access="global"/>    
+	<aura:attribute name="result" type="String" access="global"/>  
+    
+    <!-- HTML MARKUP -->
+    <div class="slds-p-top_small">
+        <div class="slds-box slds-theme_shade"> 
+            <div class="slds-text-title_bold">{!$Label.c.insr_shortcut_heading}</div>
+            <div class="slds-text-title slds-m-bottom_x-small">{!$Label.c.insr_shortcut_heading_text}</div>
+            <ul class="slds-list_dotted">
+                <aura:if isTrue="{!not(empty(v.shortcut_01))}">
+                    <li class="slds-list__item">
+                        <a href="javascript:void(0)" onclick="{!c.setResult}" id="1">{!v.shortcut_01}</a>
+                    </li>
+               	</aura:if>
+                <aura:if isTrue="{!not(empty(v.shortcut_02))}">
+                    <li class="slds-list__item">
+                        <a href="javascript:void(0)" onclick="{!c.setResult}" id="2">{!v.shortcut_02}</a>
+                    </li>
+               	</aura:if>
+                <aura:if isTrue="{!not(empty(v.shortcut_03))}">
+                    <li class="slds-list__item">
+                        <a href="javascript:void(0)" onclick="{!c.setResult}" id="3">{!v.shortcut_03}</a>
+                    </li>
+               	</aura:if>                
+            </ul>
+        </div>       
+    </div>
+</aura:component>

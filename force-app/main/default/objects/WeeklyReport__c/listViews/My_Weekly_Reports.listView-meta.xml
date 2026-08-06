@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Weekly_Reports</fullName>
+    <columns>NAME</columns>
+    <columns>Extension__c</columns>
+    <columns>Type__c</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <filterScope>Mine</filterScope>
+    <label>My Weekly Reports</label>
+</ListView>

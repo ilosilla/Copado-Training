@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RoomType_selected_Retail</fullName>
+    <active>true</active>
+    <description>Only for Standard Retail, Standard Trade and Managers Profiles
+Only on Retail Opportunity.
+At least a room type value is greater or equal to 1</description>
+    <errorConditionFormula>AND(
+ISNEW(),
+OR(
+$Profile.Name = &quot;Managers&quot;,
+$Profile.Name = &quot;Standard Trade&quot;,
+$Profile.Name = &quot;Standard Retail&quot;
+),
+RecordType.Name = &quot;Project retail&quot;,
+roomTypeFilled__c = FALSE
+)</errorConditionFormula>
+    <errorMessage>One of the Room Types on Opportunity should have a value greater than 0</errorMessage>
+</ValidationRule>

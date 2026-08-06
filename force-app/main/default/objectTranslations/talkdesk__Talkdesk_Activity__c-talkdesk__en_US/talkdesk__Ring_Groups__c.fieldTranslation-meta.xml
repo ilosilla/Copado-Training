@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Ring Groups --></label>
+    <name>talkdesk__Ring_Groups__c</name>
+    <picklistValues>
+        <masterLabel>Admins</masterLabel>
+        <translation><!-- Admins --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Agents</masterLabel>
+        <translation><!-- Agents --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

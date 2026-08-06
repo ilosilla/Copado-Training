@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Manager</masterLabel>
+        <translation>Directeur/Diréctrice</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Owner</masterLabel>
+        <translation>Propriétaire</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Representative</masterLabel>
+        <translation>Répresentante</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

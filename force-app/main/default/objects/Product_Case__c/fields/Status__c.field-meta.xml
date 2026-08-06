@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(AND(TEXT(Type__c)=&quot;Product to send&quot;, Send__c),  IMAGE(&quot;/servlet/servlet.FileDownload?file=0156E000000H29Y&quot;, &quot;Send&quot; , 30 , 30),
+			
+			IF(AND(TEXT(Type__c)=&quot;Product to send&quot;,NOT(Send__c) ),IMAGE(&quot;/servlet/servlet.FileDownload?file=0156E000000H29d&quot;, &quot;Not Send&quot; , 30 , 30), 
+			
+			IF(AND(TEXT(Type__c)=&quot;Identify SKU&quot; ,NOT(Send__c)), IMAGE(&quot;/servlet/servlet.FileDownload?file=0156E000000H29T&quot;, &quot;Identify SKU&quot; , 30 , 30),
+						
+  IMAGE(&quot;/servlet/servlet.FileDownload?file=0156E000000H29T&quot;, &quot;Identify SKU&quot; , 30 , 30)
+				
+		)))</formula>
+    <label>Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

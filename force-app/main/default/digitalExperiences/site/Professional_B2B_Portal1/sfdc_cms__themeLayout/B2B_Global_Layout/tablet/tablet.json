@@ -1,0 +1,10 @@
+{
+  "type" : "sfdc_cms__themeLayout",
+  "title" : "B2B Global Layout",
+  "contentBody" : {
+    "component" : {
+      "children" : [ ]
+    }
+  },
+  "urlName" : "b2b-global-layout"
+}

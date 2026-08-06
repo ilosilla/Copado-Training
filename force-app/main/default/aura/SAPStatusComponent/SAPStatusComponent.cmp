@@ -1,0 +1,355 @@
+<!--
+  SAP Status
+  Displays sales documents and credit status of an account
+  Ramón, Nov 2020
+-->
+<aura:component
+  implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName,forceCommunity:availableForAllPageTypes"
+  access="global"
+  controller="SAPStatusController">
+
+  <!-- Attributes -->
+  <aura:attribute name="spinner" type="Boolean" default="false" />
+  <aura:attribute name="orgOptions" type="List" default="[]"/>
+  <aura:attribute name="selectedOrg" type="String" default=""/>
+  <aura:attribute name="errorList" type="List" default="[]"/>
+  <aura:attribute name="sapId" type="String" />
+  <aura:attribute name="disable" type="Boolean" default="true"/>
+  <aura:attribute name="summaryColumns" type="List"/>
+  <aura:attribute name="currencyMode" type="String" default="symbol"/>
+  <aura:attribute name="statusText" type="String"/>
+  <aura:attribute name="currentTitle" type="String" default="{!$Label.c.saps_title1}"/>
+  <aura:attribute name="subtitle1" type="String"/>
+  <aura:attribute name="subtitle2" type="String"/>
+  <aura:attribute name="componentEnabled" type="Boolean" default="true"/>
+
+  <!-- Attributes (read from SAP) -->
+  <aura:attribute name="summaryData" type="Object"/>
+  <aura:attribute name="creditInfo" type="Object"/>
+  <aura:attribute name="agedOrders" type="Object"/>
+
+  <!--  Event handlers -->
+  <aura:handler name="init" action="{!c.onLoad}" value="{!this}" />
+
+  <!-- html markup -->
+    <!-- html markup -->
+    <div class="spinnerHolder">
+      <aura:if isTrue="{!v.spinner }">
+          <lightning:spinner alternativeText="Loading" variant="brand"/>
+      </aura:if>
+  </div>
+
+  <lightning:notificationsLibrary aura:id="notifLib"/> 
+
+  <article class="slds-card slds-card_boundary headerBottomBorder forceRelatedListCardDesktop">
+      
+    <!-- Page header: Title, sales organisation, etc. -->
+    <div class="slds-page-header slds-grid">
+      <header class="slds-media slds-media_center slds-has-flexi-truncate">
+        <div class="slds-media__figure">
+          <span class="slds-icon_container slds-icon-standard-account"
+            title="account">
+            <lightning:icon iconName="standard:customer_360" />
+            <span class="slds-assistive-text">{!v.currentTitle}</span>
+          </span>
+        </div>
+        <div class="slds-media__body">
+            <div class="slds-page-header__name">
+                <div class="slds-page-header__name-title">
+                    <h1>
+                        <span class="slds-page-header__title slds-truncate" title="{!$Label.c.saps_title1}">{!v.currentTitle}</span>
+                    </h1>
+                </div>
+            </div>
+            <p class="slds-page-header__name-meta">{!v.statusText} · {!$Label.c.saps_sapCode}&nbsp;{! v.sapId }</p>
+        </div>        
+        <div class="slds-no-flex">
+          <lightning:combobox aura:id="org"  placeholder="{!$Label.c.Ficha360_Select_a_Sales_Org}" variant="label-hidden" 
+              value = "{! v.selectedOrg }" options="{! v.orgOptions }" disabled="{!v.disable}" style="width:260px"
+              onchange="{!c.salesOrgChanged }"/>
+        </div>        
+        <div class="slds-no-flex slds-p-left_xx-small ">
+          <lightning:buttonIcon  variant="border-filled" title="{!$Label.c.Refresh}" iconName="utility:refresh"
+                          onclick="{!c.handleRefresh}" disabled="{!v.disable}"/>
+        </div>
+      </header>      
+    </div>
+
+    <!-- Warning not enabled -->
+    <aura:if isTrue="{!v.componentEnabled == false}">
+      <div class="slds-box slds-theme_warning slds-theme_alert-texture" role="status">
+          <div class="{!v.cssString}" role="status">
+              <h2 class="slds-text-heading_small slds-p-bottom_small">{!$Label.c.dict_notAvailable}</h2>
+          </div>        
+      </div>
+    </aura:if>    
+
+    <!-- Error list component -->
+    <aura:if isTrue="{!v.errorList.length > 0}">
+      <div class="slds-box slds-theme_error slds-theme_alert-texture" role="status">
+          <div class="{!v.cssString}" role="status">
+              <h2 class="slds-text-heading_small slds-p-bottom_small">{!$Label.c.app_review_errors}</h2>
+              <ul class="slds-list--dotted">
+                  <aura:iteration items="{!v.errorList}" var="errorMessage">
+                      <li>{!errorMessage}</li>
+                  </aura:iteration>
+              </ul>
+          </div>        
+      </div>
+    </aura:if>        
+    
+    <aura:if isTrue="{!and(v.errorList.length == 0, v.componentEnabled == true )}">
+                
+      <div class="slds-card__body slds-card__body_inner">
+
+          <!-- Carousel with SAP information -->  
+          <div class="slds-carousel">
+            <div class="slds-carousel__stage">
+              <div aura:id="carousel-panels" class="slds-carousel__panels">
+
+                <!-- Slide 1: Open documents -->
+                <div aura:id="slide1" id="content-id-01" class="slds-carousel__panel" role="tabpanel" aria-hidden="false" aria-labelledby="indi01">          
+                  <div class="slds-border_top slds-border_right slds-border_bottom slds-border_left">            
+                    <lightning:datatable
+                            keyField="summaryTable"
+                            data="{! v.summaryData }"
+                            columns="{! v.summaryColumns }"
+                            onrowaction="{! c.handleRowAction }"
+                            hideCheckboxColumn="true"/>
+                  </div>                          
+                </div>
+
+                <!-- Slide 2: Order bank history -->
+                <div aura:id="slide2" id="content-id-02" class="slds-carousel__panel" role="tabpanel" aria-hidden="true" aria-labelledby="indi02">                
+                  <div class="slds-grid aged-orders">
+                    <aura:iteration items="{!v.agedOrders}" var="ageband">
+                      <div class="slds-col slds-box" style="padding: 0px !important"> 
+                        <div class="slds-theme_shade slds-text-heading_small slds-border_bottom slds-var-p-around_x-small">
+                          <a href="javascript:void(0);" class="dummy-link">
+                            <h1>{!ageband.title}</h1>
+                          </a>
+                        </div>
+                        <div class="slds-var-p-around_x-small">
+                          <aura:if isTrue="{!ageband.nDocuments == 0}">
+                            {!$Label.c.saps_noOrders}
+                            <aura:set attribute="else">
+                              <dl class="slds-list_stacked">
+                                <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Total Orders">
+                                  <a href="javascript:void(0);">{!$Label.c.saps_totalOrders}</a>
+                                </dt>
+                                <dd class="slds-item_detail slds-truncate">
+                                  <lightning:formattedNumber value="{!ageband.total}" style="currency" currencyCode="{!ageband.curr}" currencyDisplayAs="{!v.currencyMode}"/>
+                                </dd>
+                              </dl>
+                              <div class="slds-m-top_x-small">
+                                <span class="slds-item_label slds-text-color_weak slds-truncate">
+                                  {!ageband.nDocuments}&nbsp;{!$Label.c.dict_orders}
+                                </span>
+                              </div>
+                            </aura:set>
+                          </aura:if>                            
+                        </div>                 
+                      </div>
+                    </aura:iteration>                  
+                  </div>                
+                </div>
+              </div>
+                
+              <!-- Carousel indicators (dots) -->
+              <ul aura:id="carousel-indicators" class="slds-carousel__indicators" role="tablist">              
+                <li class="slds-carousel__indicator" role="presentation">
+                  <a aria:id="indi01" id="indi01" class="slds-carousel__indicator-action slds-is-active" onclick="{!c.carouselClick}" title="{!$Label.c.dict_openDocuments}" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="content-id-01" >
+                    <span class="slds-assistive-text">{!$Label.c.dict_openDocuments}</span>
+                  </a>
+                </li>
+                <li class="slds-carousel__indicator" role="presentation">
+                  <a aria:id="indi02" id="indi02" class="slds-carousel__indicator-action"  onclick="{!c.carouselClick}" title="{!$Label.c.dict_agedOrders}" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="content-id-02">
+                    <span class="slds-assistive-text">{!$Label.c.dict_agedOrders}</span>
+                  </a>
+                </li>
+              </ul>          
+            </div>
+
+        </div>  <!-- carousel -->
+
+      </div>
+
+      <footer aura:id="creditButton" class="slds-card__footer">
+        <lightning:button variant="brand" title="{!$Label.c.saps_sapcredit}" label="{!$Label.c.saps_sapcredit}" iconName="utility:money"
+        onclick="{!c.getSAPCredit}" disabled="{!v.disable}"/>    
+      </footer>
+
+      <article aura:id="creditContainer" class="slds-hide slds-card slds-card_boundary headerBottomBorder forceRelatedListCardDesktop">
+        
+        <header class="slds-card__header slds-media slds-media_center slds-has-flexi-truncate">
+          <div class="slds-media__figure">
+              <lightning:icon iconName="standard:resource_preference" />
+              <span class="slds-assistive-text">{!$Label.c.saps_creditinfo}</span>
+          </div>
+          <div class="slds-media__body">
+              <div class="slds-page-header__name">
+                  <div class="slds-page-header__name-title">
+                      <h1>
+                          <span class="slds-page-header__title slds-truncate" title="SAP Status">{!$Label.c.saps_creditinfo}</span>
+                      </h1>
+                  </div>
+              </div>
+              <p class="slds-page-header__name-meta">{!v.creditInfo.companyName}</p>
+          </div>        
+          <div class="slds-no-flex slds-p-left_xx-small ">
+            <lightning:buttonIcon  variant="border-filled" title="{!$Label.c.Refresh}" iconName="utility:refresh"
+                            onclick="{!c.handleRefreshCredit}" disabled="{!v.disable}"/>
+          </div>
+        </header>      
+
+        <div class="slds-card__body slds-card__body_inner">
+          <div class="slds-grid slds-gutters_x-small">
+            <div class="slds-col slds-size_1-of-2">
+              <article aura:id="creditSummary" class="z_box slds-box slds-theme_alert-texture">
+                <h3 class="slds-tile__title slds-truncate">
+                  <b>
+                    {!v.creditInfo.summaryTitle}
+                  </b>
+                </h3>
+                <div class="slds-tile__detail">
+                  {!v.creditInfo.summaryText}
+                </div>
+              </article>             
+            </div>
+
+            <div class="slds-col slds-size_1-of-2">
+              <article class="z_box slds-box slds-theme_shade slds-theme_alert-texture">
+                <h3 class="slds-tile__title slds-truncate"><a class="slds-text-title--caps" href="javascript:void(0);"><b>{!v.creditInfo.globalText}</b></a></h3>
+                  <lightning:formattedNumber value="{!v.creditInfo.globalBalance}" style="currency" currencyCode="{!v.creditInfo.currency}" currencyDisplayAs="{!v.currencyMode}"/>
+              </article>
+            </div>  
+          </div>
+            
+          <div class="slds-grid">
+            
+            <!-- Column 1: Totals -->
+            <div class="slds-col slds-size_1-of-5 slds-m-around_medium">
+
+              <article class="slds-tile">
+                <h3 class="slds-tile__title slds-truncate">
+                  <a href="javascript:void(0);">{!$Label.c.saps_zcli_creditLimit}</a>
+                </h3>
+                <div class="slds-tile__detail">
+                  <lightning:formattedNumber value="{!v.creditInfo.creditLimit}" style="currency" currencyCode="{!v.creditInfo.currency}" currencyDisplayAs="{!v.currencyMode}"/>
+                </div>
+              </article> 
+
+              <article class="slds-tile">
+                <h3 class="slds-tile__title slds-truncate"><a href="javascript:void(0);">{!$Label.c.saps_zcli_creditExposure}</a></h3>
+                <div class="slds-tile__detail">
+                  <lightning:formattedNumber value="{!v.creditInfo.creditExposure}" style="currency" currencyCode="{!v.creditInfo.currency}" currencyDisplayAs="{!v.currencyMode}"/>
+                </div>
+              </article> 
+              
+              <article class="slds-tile">
+                <h3 class="slds-tile__title slds-truncate"><a href="javascript:void(0);">{!$Label.c.saps_zcli_creditAvailable}</a></h3>
+                <div class="slds-tile__detail">
+                  <lightning:formattedNumber value="{!v.creditInfo.creditAvailable}" style="currency" currencyCode="{!v.creditInfo.currency}" currencyDisplayAs="{!v.currencyMode}"/>
+                </div>
+              </article> 
+
+            </div>
+
+            <!-- Column 2: SD information -->
+            <div class="slds-col slds-size_1-of-5 slds-m-around_medium">
+
+              <article class="slds-tile">
+                <h3 class="slds-tile__title slds-truncate"><a href="javascript:void(0);">{!$Label.c.dict_openOrders}</a></h3>
+                <div class="slds-tile__detail">
+                  <lightning:formattedNumber value="{!v.creditInfo.openOrders}" style="currency" currencyCode="{!v.creditInfo.currency}" currencyDisplayAs="{!v.currencyMode}"/>
+                </div>
+              </article> 
+
+              <article class="slds-tile">
+                <h3 class="slds-tile__title slds-truncate"><a href="javascript:void(0);">{!$Label.c.dict_deliveries}</a></h3>
+                <div class="slds-tile__detail">
+                  <lightning:formattedNumber value="{!v.creditInfo.openDeliveries}" style="currency" currencyCode="{!v.creditInfo.currency}" currencyDisplayAs="{!v.currencyMode}"/>
+                </div>
+              </article> 
+
+              <article class="slds-tile">
+                <h3 class="slds-tile__title slds-truncate"><a href="javascript:void(0);">{!$Label.c.dict_closedDeliveries}</a></h3>
+                <div class="slds-tile__detail">
+                  <lightning:formattedNumber value="{!v.creditInfo.closedDeliveries}" style="currency" currencyCode="{!v.creditInfo.currency}" currencyDisplayAs="{!v.currencyMode}"/>
+                </div>
+              </article> 
+            </div>
+
+            <!-- Column 3: Fi information -->
+            <div class="slds-col slds-size_1-of-5 slds-m-around_medium">
+              <article class="slds-tile">
+                <h3 class="slds-tile__title slds-truncate"><a href="javascript:void(0);">{!$Label.c.dict_openItemsFI}</a></h3>
+                <div class="slds-tile__detail">
+                  <lightning:formattedNumber value="{!v.creditInfo.openItems}" style="currency" currencyCode="{!v.creditInfo.currency}" currencyDisplayAs="{!v.currencyMode}"/>
+                </div>
+              </article> 
+              <article class="slds-tile">
+                <h3 class="slds-tile__title slds-truncate"><a href="javascript:void(0);">{!$Label.c.dict_deposits}</a></h3>
+                <div class="slds-tile__detail">
+                  <lightning:formattedNumber value="{!v.creditInfo.deposits}" style="currency" currencyCode="{!v.creditInfo.currency}" currencyDisplayAs="{!v.currencyMode}"/>
+                </div>
+              </article>           
+              <article class="slds-tile">
+                <h3 class="slds-tile__title slds-truncate"><a href="javascript:void(0);">{!$Label.c.dict_overdueItems}</a></h3>
+                <div class="slds-tile__detail">
+                  <lightning:formattedNumber value="{!v.creditInfo.overdueItems}" style="currency" currencyCode="{!v.creditInfo.currency}" currencyDisplayAs="{!v.currencyMode}"/>
+                </div>
+              </article>           
+            </div>
+
+            <!-- Column 4: Customer information -->
+            <div class="slds-col slds-size_2-of-5 slds-m-around_medium">        
+              
+              <article class="slds-tile">
+                <h3 class="slds-tile__title slds-truncate">
+                  <a href="javascript:void(0);">{!$Label.c.saps_zcli_customerBlocked}</a>
+                </h3>
+                <div class="slds-tile__detail slds-truncate">
+                  <aura:if isTrue="{!v.creditInfo.block}">
+                    <span>{!$Label.c.dict_yes}</span>
+                    <aura:set attribute="else">
+                      <span>{!$Label.c.dict_no}</span>
+                    </aura:set>
+                  </aura:if>
+                </div>
+              </article>
+              
+              <article class="slds-tile slds-truncate">
+                <h3 class="slds-tile__title slds-truncate">
+                  <a href="javascript:void(0);">{!$Label.c.saps_zcli_CreditGroup}</a>
+                </h3>
+                <div class="slds-tile__detail slds-truncate">
+                  {!v.creditInfo.creditGroup}
+                </div>
+              </article>
+
+
+              <article class="slds-tile">
+                <h3 class="slds-tile__title slds-truncate" title="Salesforce UX">
+                  <a href="javascript:void(0);">{!$Label.c.saps_zcli_paymentTerms}</a>
+                </h3>
+                <div class="slds-tile__detail slds-truncate">
+                  {!v.creditInfo.terms}
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+        </div>
+
+        <footer class="slds-card__footer">
+          {!$Label.c.saps_zcli_disclaimer}
+        </footer> 
+      </article>
+
+      </aura:if>
+  </article>    
+
+
+</aura:component>

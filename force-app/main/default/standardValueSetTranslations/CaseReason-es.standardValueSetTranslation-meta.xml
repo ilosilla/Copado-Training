@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Admin Error</masterLabel>
+        <translation><!-- Admin Error --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Commercial Agreement</masterLabel>
+        <translation><!-- Commercial Agreement --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Complex functionality</masterLabel>
+        <translation>Funcionalidad compleja</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Customer Error</masterLabel>
+        <translation><!-- Customer Error --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Damaged Product</masterLabel>
+        <translation><!-- Damaged Product --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Defective Product</masterLabel>
+        <translation><!-- Defective Product --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Exception</masterLabel>
+        <translation><!-- Exception --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Existing problem</masterLabel>
+        <translation>Problema previo</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Instructions not clear</masterLabel>
+        <translation>Instrucciones no claras</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>New problem</masterLabel>
+        <translation>Nuevo problema</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Not Suitable</masterLabel>
+        <translation><!-- Not Suitable --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Picking Error</masterLabel>
+        <translation><!-- Picking Error --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sales Error</masterLabel>
+        <translation><!-- Sales Error --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Surplus</masterLabel>
+        <translation><!-- Surplus --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>User didn&apos;t attend training</masterLabel>
+        <translation>Usuario no tiene formación</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

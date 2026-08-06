@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Kitchens_Interest_Appt</fullName>
+    <columns>Sales_Office__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>ExistingAccount__c</columns>
+    <columns>AppointmentType__c</columns>
+    <columns>City__c</columns>
+    <columns>State__c</columns>
+    <columns>LEAD.ZIP</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>Not contacted</value>
+    </filters>
+    <filters>
+        <field>LeadSubtype__c</field>
+        <operation>contains</operation>
+        <value>kitchen</value>
+    </filters>
+    <label>Kitchens Interest Appt</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>Kitchen_Manager_PEC</roleAndSubordinatesInternal>
+        <roleAndSubordinatesInternal>Kitchen_Manager_PFL</roleAndSubordinatesInternal>
+        <roleAndSubordinatesInternal>Kitchen_Manager_PLA</roleAndSubordinatesInternal>
+        <roleAndSubordinatesInternal>Kitchen_Manager_PMD</roleAndSubordinatesInternal>
+        <roleAndSubordinatesInternal>Kitchen_Manager_PSF</roleAndSubordinatesInternal>
+        <roleAndSubordinatesInternal>Kitchen_Manager_PTX</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

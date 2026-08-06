@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProductLine2__c</fullName>
+    <label>Product Line</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Discontinued Lines</fullName>
+                <default>false</default>
+                <label>Discontinued Lines</label>
+            </value>
+            <value>
+                <fullName>Emotion</fullName>
+                <default>false</default>
+                <label>Emotion</label>
+            </value>
+            <value>
+                <fullName>Emotion Wardrobes</fullName>
+                <default>false</default>
+                <label>Emotion Wardrobes</label>
+            </value>
+            <value>
+                <fullName>Fusion Wardrobes</fullName>
+                <default>false</default>
+                <label>Fusion Wardrobes</label>
+            </value>
+            <value>
+                <fullName>New Project</fullName>
+                <default>false</default>
+                <label>New Project</label>
+            </value>
+            <value>
+                <fullName>New Residence</fullName>
+                <default>false</default>
+                <label>New Residence</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

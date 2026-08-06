@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>La_Roche_Lead</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE_CODE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <filterScope>Queue</filterScope>
+    <label>La Roche File d&apos;Attente</label>
+    <queue>La_Roche</queue>
+    <sharedTo>
+        <role>B_U_Loire</role>
+        <role>Commercial_Ext_rieur_La_Roche</role>
+        <role>Responsable_Agence_La_Roche</role>
+        <role>Sociedad_Ouest</role>
+    </sharedTo>
+</ListView>

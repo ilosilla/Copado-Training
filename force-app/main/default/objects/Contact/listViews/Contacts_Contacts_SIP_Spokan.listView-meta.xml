@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contacts_Contacts_SIP_Spokan</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account.Account_Classification__c</field>
+        <operation>notEqual</operation>
+        <value>Agencia de Representación de Porcelanosa,Brand/Chain/Franchise,Distributor / 3rd party retailer/dealer,Engineering consultant,Facade consultant,Franchisee,Kitchen &amp; Bath store,Other</value>
+    </filters>
+    <filters>
+        <field>Account.Account_Classification__c</field>
+        <operation>notEqual</operation>
+        <value>Porcelanosa Associate,Porcelanosa Branch,Porcelanosa Employee,Private customer,Procurement company / Quantity surveyor,Public administration,Real State Agency,SCI (Société Civile Immobilière FR),Unclassified</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.ADDRESS1_STATE_CODE</field>
+        <operation>equals</operation>
+        <value>WA,ID</value>
+    </filters>
+    <label>Contacts - SIP Spokane</label>
+</ListView>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Other Cutouts --></label>
+    <name>OtherCutouts__c</name>
+    <picklistValues>
+        <masterLabel>Architectural Grilles</masterLabel>
+        <translation><!-- Architectural Grilles --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Electrical Outlets</masterLabel>
+        <translation><!-- Electrical Outlets --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Grommets</masterLabel>
+        <translation><!-- Grommets --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lighting</masterLabel>
+        <translation><!-- Lighting --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>N/A</masterLabel>
+        <translation><!-- N/A --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Special Design (Explain in Notes)</masterLabel>
+        <translation><!-- Special Design (Explain in Notes) --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

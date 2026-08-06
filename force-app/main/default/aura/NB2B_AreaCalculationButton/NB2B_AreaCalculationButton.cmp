@@ -1,0 +1,129 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                 access="global" controller="NB2B_AreaCalculationController">
+    
+    <aura:Attribute name="showUMV" type="Boolean" default="false" />
+    <aura:Attribute name="showButton" type="Boolean" default="false" />
+    <aura:Attribute name="showComponent" type="Boolean" default="false" />
+    <aura:Attribute name="recordId" type="String"/>
+    <aura:Attribute name="product" type="Object" default="{}" />
+    <aura:Attribute name="price"   type="Object"  default="{}" />
+    <aura:Attribute name="webStoreId"    type="String"  default="" />
+    <aura:Attribute name="showButtonCmp"    type="Boolean"  default="true" />
+    <aura:Attribute name="quantity"	type="Integer"  default="0" />
+    <aura:Attribute name="priceTotal"	type="Decimal"  default="0" />
+    <aura:Attribute name="priceTotalTxt"  type="String"  default="0" />
+    <aura:Attribute name="userLanguage"	type="String"  default="en_US" />
+    <aura:Attribute name="unitPrice"	type="String"  default="en_US" />
+    <aura:Attribute name="showButtonComp"	type="Boolean"/>
+    <aura:Attribute name="showButtonList"	type="Boolean"/>
+    
+    <aura:Attribute name="unitProductPrice"	type="String"  default="en_US" />
+    <aura:handler name="change" value="{!v.quantity}" action="{!c.onValueChange}" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:if isTrue="{!v.showButtonCmp}">
+        <aura:if isTrue="{!v.showComponent}">
+            <c:NB2B_AreaCalculationComponent unitPrice="{!v.unitPrice}" unitProductPrice="{!v.unitProductPrice}"  userLanguage="{!v.userLanguage}" recordId="{!v.recordId}" showComponent="{!v.showComponent}" product="{!v.product}" price="{!v.price}" webStoreId="{!v.webStoreId}"/>
+        </aura:if>
+        <aura:if isTrue="{!v.showButtonComp == true}">
+            <div class="slds-grid slds-gutters" style="padding-top: 10%;"><!--float: right;-->
+                <aura:if isTrue="{!v.showButton}">
+                    <div class="slds-col slds-size_1-of-1">
+                        <span style="">
+                            <button name="lead" class="slds-button slds-button_brand" style="font-size: 16px;height:40px;display:grid;background-color: rgb(28, 50, 65);color: white;" onclick="{! c.openModalBox }">
+                                <p>
+                                    <!--<img src="{!$Resource.NB2B_AreaCalculatorIcon}" style="height:75px"/>-->
+                                    
+                                    {!$Label.c.NB2B_AreaCalculator}
+                                </p>
+                            </button>
+                        </span>
+                        &nbsp;&nbsp;&nbsp;
+                        <span>
+                            <p style="font-size: 125%;font-weight: bold;">Unit of sale:  </p>
+                            <h2 style="font-size: 200%;">
+                                <aura:text value="{!v.price.UnitPrice}"/>&nbsp;<aura:text value="{!v.price.CurrencyIsoCode}"/>&nbsp;/&nbsp;<aura:text value="{!v.unitPrice}"/>
+                            </h2>
+                        </span>
+                        &nbsp;&nbsp;&nbsp;
+                        <span>
+                            <h2 style="font-size: 200%;color: gray;">
+                                <aura:text value="{!$Label.c.NB2B_PiecesPerBox}"/>&nbsp;:&nbsp;<aura:text value="{!v.product.UmbCj__c}"/>
+                            </h2>
+                        </span>
+
+                        
+                    </div>
+                </aura:if>
+            </div>
+        </aura:if>
+        <!--<div>
+            <aura:if isTrue="{!v.showButton}">
+                <button name="lead" class="slds-button" style="display:grid;left:66%" onclick="{! c.openModalBox }">
+                    <span>
+                        <img src="{!$Resource.NB2B_AreaCalculatorIcon}" style="height:75px"/>
+                    </span>
+                    <span>
+                       {!$Label.c.NB2B_AreaCalculator}
+                    </span>
+                </button>
+            </aura:if>
+        </div>
+        <aura:if isTrue="{!v.showComponent}">
+            <c:NB2B_AreaCalculationComponent recordId="{!v.recordId}" showComponent="{!v.showComponent}" product="{!v.product}" price="{!v.price}" webStoreId="{!v.webStoreId}"/>
+        </aura:if>
+        <div style="padding-left: 243px">
+            <p style="font-size: 125%;font-weight: bold;">Unit of sale:  </p>
+            <h2 style="font-size: 200%;">
+                <aura:text value="{!v.price.UnitPrice}"/>&nbsp;<aura:text value="{!v.price.CurrencyIsoCode}"/>&nbsp;/&nbsp;<aura:text value="{!v.price.Uprice__c}"/>
+            </h2>
+        </div>-->
+    <aura:set attribute="else">
+        <aura:if isTrue="{!v.showButtonList == true}">
+            <div class="slds-grid slds-gutters" style="width: 75%;float: none;display: -webkit-box;">
+              <div class="slds-col" style="text-align: right;">
+                <span>
+                    <h2 style="font-size: 175%;font-weight: bold;">
+                        <aura:text value="{!v.price.UnitPrice}"/>&nbsp;<aura:text value="{!v.price.CurrencyIsoCode}"/>&nbsp;/&nbsp;<aura:text value="{!v.unitPrice}"/>
+                    </h2>
+                  </span>
+              </div>
+              <div class="slds-col" style="text-align: right;display: contents;">
+                    <div class="slds-col" style="text-align: right;">
+                    <span>
+                        <button class="slds-button slds-button_neutral" onclick="{! c.downBoxes }" style="height: 35px;">
+                            <lightning:icon iconName="utility:chevrondown" alternativeText="chevrondown" title="chevrondown" />
+                        </button>
+                    </span>
+                    </div>
+                    <div class="slds-col" style="text-align: center;max-width: 150px;">
+                    <span style="height: 35px;">
+                        
+                            <ui:inputNumber value="{!v.quantity}" updateOn="keyup" />
+                        
+                        <!--<lightning:input  style="width: 150px;left: 220px;border-radius:5px;padding-bottom: 10px;"
+                        onchange="{! c.calculateMts }"  step=",01" value="{!v.squareM}" type="Decimal" min="0" max="1000" disabled="false"/>-->
+                    </span>
+                </div>
+                <div class="slds-col" style="text-align: left;">
+                    <span>
+                        <button class="slds-button slds-button_neutral" onclick="{! c.upBoxes }" style="height: 35px;">
+                            <lightning:icon iconName="utility:chevronup" alternativeText="chevronup" title="chevronup" />
+                        </button>
+                    </span>
+                </div>
+                  &nbsp;&nbsp;
+                  <button class="slds-button slds-button_brand" style="font-size: 13px;height:35px;display:grid;background-color: rgb(28, 50, 65);color: white;" onclick="{! c.createCartItem }">ADD TO CART</button>
+              </div>
+              <div class="slds-col" style="text-align: right;">
+                <span>
+                    <h2 style="font-size: 175%;font-weight: bold;">
+                        <aura:text value="{!v.priceTotalTxt}"/>&nbsp;<aura:text value="{!v.price.CurrencyIsoCode}"/>
+                    </h2>
+                </span>
+              </div>
+            </div>
+        </aura:if>
+    </aura:set>
+    </aura:if>
+</aura:component>

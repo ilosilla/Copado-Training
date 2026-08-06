@@ -1,0 +1,37 @@
+<template>
+    <div class="parent">
+        <div class="titulo">
+            {labels.nBK_selectedShowroom}
+        </div>
+        </br>        
+        <div class="section slds-grid slds-gutters slds-wrap">
+            <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                <div class="containerAddress">
+                    <div class="descrip">
+                        <p class="titulo"> <lightning-icon icon-name="utility:store" class="slds-p-right_small"></lightning-icon> {store.NBK_Address__City__s}</p>
+                        <p>{store.Name}</p>
+                        <p>{store.NBK_Address__Street__s}</p>
+                        <p>{store.NBK_Address__PostalCode__s}</p>
+                        <p>{store.NBK_Address__StateCode__s}</p>
+                    </div>
+                    <div class="containerContactInfo">                        
+                        <div class="descrip slds-p-vertical_xx-small">
+                            <lightning-icon icon-name="utility:call" class="slds-p-right_small" size="small"></lightning-icon> {store.NBK_Phone__c}
+                        </div>                        
+                        <div class="descrip slds-p-vertical_xx-small">
+                            <lightning-icon icon-name="utility:email" class="slds-p-right_small" size="small"></lightning-icon> {store.NBK_Showroom_Email__c}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                <div class="descrip">
+                    <img class="imagen" src={imagenUrl} alt={imagenUrl} />
+                </div>
+            </div>
+        </div>
+        <div class="urldes slds-p-vertical_small">
+            <a href={store.NBK_GeolocationShowroom__c} target=" blank" class="urldes">Click here to see this showroom in Google Maps</a>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAPInvoice__c</fullName>
+    <description>Invoice Number of the goods to be collected</description>
+    <inlineHelpText>Please enter the invoice number of the goods to be collected</inlineHelpText>
+    <label>SAP Invoice</label>
+    <length>10</length>
+    <referenceTo>Facturas_cabeceraSet__x</referenceTo>
+    <relationshipLabel>Cases</relationshipLabel>
+    <relationshipName>Cases</relationshipName>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>ExternalLookup</type>
+</CustomField>

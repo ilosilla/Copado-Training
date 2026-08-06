@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Cajas</masterLabel>
+        <translation>Cajas</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Metros</masterLabel>
+        <translation>Metros</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pies</masterLabel>
+        <translation>Pies</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sacos</masterLabel>
+        <translation>Sacos</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

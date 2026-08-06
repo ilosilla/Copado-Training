@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR03_Customer_Unsatisfied</fullName>
+    <active>true</active>
+    <description>Transition to customer unsatisfied</description>
+    <errorConditionFormula>ISPICKVAL( State__c , &apos;Customer Unsatisfied&apos;)
+&amp;&amp; 
+isblank(text( failReason__c ))</errorConditionFormula>
+    <errorMessage>please enter the reasons why the customer is not satisfied</errorMessage>
+</ValidationRule>

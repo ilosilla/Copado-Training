@@ -1,0 +1,25 @@
+<!-- b2bAuthShell.html -->
+<template>
+    <div class="auth" data-f6-region style={ui_shellStyle}>
+
+        <div class="auth__wrap">
+
+            <div class="auth__brand">
+                <div class="auth__logo header-logo" aria-hidden="true"><h4>PORCELANOSA</h4></div>
+                <div class="auth__title">Professional B2B Portal</div>
+                <div class="auth__subtitle">{subtitle}</div>
+            </div>
+
+            <div class="auth__card" data-f6-region>
+                <slot name="main"></slot>
+            </div>
+
+            <div class="auth__help">
+                <div class="auth__help-title">Need help signing in?</div>
+                <div class="auth__help-text">Contact your Sales Representative or Customer Service.</div>                
+            </div>
+
+        </div>
+
+    </div>
+</template>

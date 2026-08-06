@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Détails des symptômes</label>
+    <name>SymptomsDetails__c</name>
+    <picklistValues>
+        <masterLabel>ADHESIVE NOT WORKING</masterLabel>
+        <translation>ADHÉSIF NE FONCTIONNE PAS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ADJUSTABLE SCREW HAS FALLEN OUT OF THE DRAIN CAP</masterLabel>
+        <translation>VIS AJUSTABLE EST TOMBÉE DU CAPUCHON D&apos;ÉVACUATION</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>AERATOR OBSTRUCTED</masterLabel>
+        <translation>AÉRATEUR OBSTRUÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BASIN WARPED / NOT LEVEL</masterLabel>
+        <translation>LAVABO DÉFORMÉ / PAS NIVEAU</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BROKEN</masterLabel>
+        <translation>CASSÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CARRIER BOLTS TOO FAR OUT</masterLabel>
+        <translation>BOLTS DE TRANSPORT TROP ENCORE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CHROME / PAINT DELAMINATING / COMING AWAY FROM ITEM</masterLabel>
+        <translation>CHROME / PEINTURE SE DÉLAMINE / SE DÉTACHE DE L&apos;OBJET</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CHROME DELAMINATING / COMING AWAY FROM TAP</masterLabel>
+        <translation>CHROME SE DÉLAMINE / SE DÉTACHE DU ROBINET</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CRACKS DEVELOPED AFTER INSTALLATION</masterLabel>
+        <translation>FISSURES APPARUES APRÈS INSTALLATION</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CRACKS VISIBLE PRIOR TO INSTALLATION</masterLabel>
+        <translation>FISSURES VISIBLES AVANT INSTALLATION</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DEBRIS / DAMAGE IN CARTRIDGE</masterLabel>
+        <translation>DÉBRIS / DOMMAGE DANS LA CARTOUCHE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DEBRIS IN DIVERTER OR DAMAGED</masterLabel>
+        <translation>DÉBRIS DANS LE DIVERTEUR OU ENDOMMAGÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DEFECTIVE DRAWER GLIDES</masterLabel>
+        <translation>GLISSIÈRES DE TIROIR DÉFECTUEUSES</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DIVERTER OBSTRUCTED OR DAMAGED</masterLabel>
+        <translation>DIVERTEUR OBSTRUÉ OU ENDOMMAGÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DOESN&apos;T HEAT UP</masterLabel>
+        <translation>NE CHAUFFE PAS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DRAIN CABLE DISCONNECTED (IF SMALL BRASS SCREW STILL IN PLACED)</masterLabel>
+        <translation>CÂBLE D&apos;ÉVACUATION DÉCONNECTÉ (SI LA PETITE VIS EN LAITON EST ENCORE EN PLACE)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FLEXIBLE HOSE DEGRADED</masterLabel>
+        <translation>TUBE FLEXIBLE DÉGRADÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GENERAL PROBLEM AFFECTING ENTIRE PROPERTY</masterLabel>
+        <translation>PROBLÈME GÉNÉRAL AFFECTANT L&apos;ENSEMBLE DE LA PROPRIÉTÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GLASS CHIPPED / DAMAGED / SCRATCHED</masterLabel>
+        <translation>VERRE ÉBRÉCHÉ / ENDOMMAGÉ / RAYÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GLASS SCRATCHED OR MARKED</masterLabel>
+        <translation>VERRE RAYÉ OU MARQUÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HAIRLINE CRACK WITH UNDERFLOOR HEATING</masterLabel>
+        <translation>FISSURE CHEVILLE AVEC CHAUFFAGE AU SOL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HANDLES DAMAGED</masterLabel>
+        <translation>POIGNÉES ENDOMMAGÉES</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HINGES DROPPED / NOT LEVEL</masterLabel>
+        <translation>CHARNIÈRES DÉGRADÉES / PAS NIVEAU</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IMPROPER CLEANING OR MAINTENACE</masterLabel>
+        <translation>NETTOYAGE OU ENTRETIEN INAPPROPRIÉS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INCOMPLETE</masterLabel>
+        <translation>INCOMPLET</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSUFFICIENT WATER PRESSURE</masterLabel>
+        <translation>PRESSION D&apos;EAU INSUFFISANTE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LEAKING FROM HANDLE OR SPOUT</masterLabel>
+        <translation>FUITE PAR LA POIGNÉE OU LE GOUTTE À GOUTTE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LEAKING THROUGH CRACKS</masterLabel>
+        <translation>FUITE PAR LES FISSURES</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LIFTING VALVE DOES NOT STOP THE FLOW</masterLabel>
+        <translation>LA VALVE DE LEVAGE NE STOPPE PAS LE FLUX</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LIFTING VALVE STOPS FLOW</masterLabel>
+        <translation>LA VALVE DE LEVAGE ARRÊTE LE FLUX</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LOGO INCORRECTLY PLACED</masterLabel>
+        <translation>LOGO MAL POSITIONNÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MARKED / DISCOLOURATION</masterLabel>
+        <translation>MARQUÉ / DÉCOLORATION</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MOVEMENT IN SUBSTRATE</masterLabel>
+        <translation>MOUVEMENT DANS LE SUPPORT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>N/A</masterLabel>
+        <translation>N/A</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NK LOGO INCORRECTLY PLACED</masterLabel>
+        <translation>LOGO NK MAL POSITIONNÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NOT FITTED CORRECTLY</masterLabel>
+        <translation>NON INSTALLÉ CORRECTEMENT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NOT REACHING CORRECT TEMPERATURE</masterLabel>
+        <translation>N&apos;ATTEINT PAS LA TEMPÉRATURE CORRECTE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OBSTRUCTED CARTRIDGE</masterLabel>
+        <translation>CARTOUCHE OBSTRUÉE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OBSTRUCTED FLOW RESTRICTOR</masterLabel>
+        <translation>RESTRICTEUR D&apos;ÉCOULEMENT OBSTRUÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OBSTRUCTED WASTE PIPE</masterLabel>
+        <translation>TUYAU D&apos;ÉVACUATION OBSTRUÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ORDER ERROR</masterLabel>
+        <translation>ERREUR DE COMMANDE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OTHER TAPS IN THE PROPERTY WORK CORRECTLY</masterLabel>
+        <translation>D&apos;AUTRES ROBINETS DANS LA PROPRIÉTÉ FONCTIONNENT CORRECTEMENT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OTHERS</masterLabel>
+        <translation>AUTRES</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PART OF THE CISTERN FRAME IS DAMAGED OR CRACKED</masterLabel>
+        <translation>UNE PARTIE DU CADRE DE LA CUVE EST ENDOMMAGÉE OU FENDUE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PART OF THE CISTERN FRAME IS MISSING</masterLabel>
+        <translation>UNE PARTIE DU CADRE DE LA CUVE MANQUE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PATCHING OR DRYING LIGHTER</masterLabel>
+        <translation>PATCHAGE OU SÉCHAGE PLUS CLAIR</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PIPE AT THE WALL OUTLET DOES NOT FEEL HOT ON THE LEFT AND COLD ON THE RIGHT</masterLabel>
+        <translation>LE TUYAU À LA SORTIE DU MUR NE SE SENT PAS CHAUD À GAUCHE ET FROID À DROITE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PIPE AT THE WALL OUTLET FEEL HOT ON THE LEFT AND COLD ON THE RIGHT</masterLabel>
+        <translation>LE TUYAU À LA SORTIE DU MUR SE SENT CHAUD À GAUCHE ET FROID À DROITE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCT BECOMING MARKED OR STAINED</masterLabel>
+        <translation>LE PRODUIT DEVIENT MARQUÉ OU TACHÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCT DEFECT</masterLabel>
+        <translation>DÉFAUT DU PRODUIT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCT IMPERFECTION</masterLabel>
+        <translation>IMPERFECTION DU PRODUIT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCT INSTALLED NOT PER SPECS.</masterLabel>
+        <translation>PRODUIT INSTALLÉ NON CONFORMÉ AUX SPÉCIFICATIONS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCTION ERROR</masterLabel>
+        <translation>ERREUR DE PRODUCTION</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RUST ON SURFACE</masterLabel>
+        <translation>ROUILLE SUR LA SURFACE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SCRATCHES / DEFECT ON SURFACE</masterLabel>
+        <translation>RAYURES / DÉFAUT SUR LA SURFACE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SENSOR NOT REACTING TO TOUCH</masterLabel>
+        <translation>CAPTEUR NE RÉAGIT PAS AU TOUCHER</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SOFT CLOSE FUNCTION NOT WORKING</masterLabel>
+        <translation>FONCTION DE FERMETURE DOUCE NE FONCTIONNE PAS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SOFT CLOSE SEAT CRACKED</masterLabel>
+        <translation>SIEGE À FERMETURE DOUCE FENDU</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SOME COLD AREAS</masterLabel>
+        <translation>QUELQUES ZONES FROIDES</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SUPPLY HOSES OBSTRUCTING MOVEMENT</masterLabel>
+        <translation>TUYAUX D&apos;ALIMENTATION OBSTRUANT LE MOUVEMENT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SUPPLY LINES NOT FLUSHED PRIOR TO INSTALLATION</masterLabel>
+        <translation>LIGNES D&apos;ALIMENTATION NON PURGÉES AVANT INSTALLATION</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SURFACE IS SCRATCHED OR MARKED</masterLabel>
+        <translation>LA SURFACE EST RAYÉE OU MARQUÉE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SURFACE NOT SMOOTH</masterLabel>
+        <translation>SURFACE PAS LISSE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TAP SURFACE IS SCRATCHED OR MARKED</masterLabel>
+        <translation>LA SURFACE DU ROBINET EST RAYÉE OU MARQUÉE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TOWEL WARMER HAS BECOME DEFORMED OVER TIME</masterLabel>
+        <translation>RADIATEUR DE SERVIETTES S&apos;EST DÉFORMÉ AU FIL DU TEMPS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TOWEL WARMER HAS STARTED TO LEAK</masterLabel>
+        <translation>RADIATEUR DE SERVIETTES A COMMENCÉ À FUITE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRAY NOT LEVEL / WARPED / OUT OF TOLERANCE</masterLabel>
+        <translation>PLATEAU PAS NIVEAU / DÉFORMÉ / HORS TOLÉRANCE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRAY WARPED / NOT LEVEL</masterLabel>
+        <translation>PLATEAU DÉFORMÉ / PAS NIVEAU</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRIMS SCRATCHED OR MARKED</masterLabel>
+        <translation>MOULURES RAYÉES OU MARQUÉES</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>UNIT DAMAGED</masterLabel>
+        <translation>UNITÉ ENDOMMAGÉE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>UNIT EXPOSED TO HIGH HUMIDITY OR WATER</masterLabel>
+        <translation>UNITÉ EXPOSEE À UNE HUMIDITÉ ÉLEVÉE OU À L&apos;EAU</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>UNIT OBSTRUCTED</masterLabel>
+        <translation>UNITÉ OBSTRUÉE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VALVE INSTALLED TOO FAR INTO THE WALL</masterLabel>
+        <translation>VALVE INSTALLÉE TROP EN DANS LE MUR</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VALVE OBSTRUCTED</masterLabel>
+        <translation>VALVE OBSTRUÉE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VISIBLE CRACKS IN TILES</masterLabel>
+        <translation>FISSURES VISIBLES DANS LES CARREAUX</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WASTE COVER MISSING</masterLabel>
+        <translation>COUVERCLE D&apos;ÉVACUATION MANQUANT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WATER LEAKING FROM TOP OF SHOWER HEAD</masterLabel>
+        <translation>EAUX FUITE PAR LE HAUT DE LA TÊTE DE DOUCHE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WATER LEAKING THROUGH DOOR OR SEALS</masterLabel>
+        <translation>FUITE D’EAU À TRAVERS LA PORTE OU LES JOINTS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WATER NOT DRAINING AWAY</masterLabel>
+        <translation>EAUX NE S&apos;ÉCOULENT PAS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WATER NOT FLOWING FROM EVERY NOZZLE</masterLabel>
+        <translation>L&apos;EAU NE COULER PAS DE CHAQUE PULVÉRISATEUR</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WATER REMAINING IN TRAY CONSTANTLY</masterLabel>
+        <translation>EAUX RESTANT DANS LE PLATEAU CONSTANTÉMENT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WIRED INCORRECTLY</masterLabel>
+        <translation>CÂBLAGE INCORRECT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WORKED WELL PREVIOULSLY - ISSUE DEVELOPED SINCE INSTALLATION</masterLabel>
+        <translation>FONCTIONNAIT BIEN AU PARAVANT - PROBLÈME APPARU DEPUIS L&apos;INSTALLATION</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WORKTOP WARPED / NOT LEVEL</masterLabel>
+        <translation>PLAN DE TRAVAIL DÉFORMÉ / PAS NIVEAU</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WRONG COLOUR SUPPLIED</masterLabel>
+        <translation>MAUVAISE COULEUR FOURNIE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WRONG-PRODUCT</masterLabel>
+        <translation>PRODUIT INCORRECT</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,283 @@
+<template>
+
+    <!-- Loading / error -->
+    <template lwc:if={ui_isLoading}>
+        <div class="orders__loading">
+            <lightning-spinner size="medium" variant="brand" alternative-text="Loading"></lightning-spinner>
+        </div>
+    </template>
+
+    <div class="orders" data-f6-region>
+
+        <!-- Tabs -->
+        <div class="orders__tabs">
+            <button class={tabOpenClass} data-tab="open" onclick={handleTabChange}>Open Orders</button>
+            <button class={tabHistoryClass} data-tab="history" onclick={handleTabChange}>Order History</button>
+        </div>
+
+        <!-- Toolbar / title -->
+        <div class="orders__toolbar">
+            <div class="orders__toolbar-left">
+                <template lwc:if={st_accountName}>
+                    <div class="orders__subtitle">{st_accountName}</div>
+                </template>
+                <template lwc:if={ui_lastUpdatedLabel}>
+                    <div class="orders__meta">Updated {ui_lastUpdatedLabel}</div>
+                </template>
+            </div>
+
+            <div class="orders__toolbar-right">
+                <lightning-input
+                    class="orders__search"
+                    type="search"
+                    variant="label-hidden"
+                    placeholder="Search in this page"
+                    value={ui_searchText}
+                    onchange={handleSearchChange}
+                    oninput={handleSearchInput}>
+                </lightning-input>
+
+                <template lwc:if={isHistory}>
+                    <lightning-combobox
+                        class="orders__filter"
+                        variant="label-hidden"
+                        value={ui_period}
+                        options={ui_periodOptions}
+                        onchange={handlePeriodChange}>
+                    </lightning-combobox>
+                </template>
+
+                <lightning-combobox
+                    class="orders__filter"
+                    variant="label-hidden"
+                    value={ui_channel}
+                    options={ui_channelOptions}
+                    onchange={handleChannelChange}>
+                </lightning-combobox>
+
+                <!--
+                <lightning-combobox
+                    class="orders__filter"
+                    variant="label-hidden"
+                    value={ui_dateRange}
+                    options={ui_dateRangeOptions}
+                    onchange={handleDateRangeChange}>
+                </lightning-combobox>
+
+
+                <lightning-combobox
+                    class="orders__filter"
+                    variant="label-hidden"
+                    value={ui_sort}
+                    options={ui_sortOptions}
+                    onchange={handleSortChange}>
+                </lightning-combobox>
+                -->
+
+                <lightning-button-icon
+                    class="orders__icon"
+                    icon-name="utility:refresh"
+                    variant="bare-inverse"
+                    alternative-text="Refresh"
+                    title="Refresh"
+                    size="large"
+                    onclick={handleRefresh}>
+                </lightning-button-icon>
+
+
+                <!--
+                <lightning-button
+                    class="orders__export"
+                    label="Export"
+                    variant="neutral"
+                    onclick={handleExport}>
+                </lightning-button>
+                -->
+            </div>
+        </div>
+
+        <template if:true={ui_showTruncationNotice}>
+            <div class="orders__notice">
+                {ui_truncationNotice}
+            </div>
+        </template>
+
+        <!-- Main layout: list + detail -->
+        <div class="orders__layout">
+
+            <!-- LIST -->
+            <section class="orders__list">
+
+                <template lwc:if={st_error}>
+                    <div class="orders__error">
+                        <lightning-icon icon-name="utility:error" variant="error" size="x-small"></lightning-icon>
+                        <div class="orders__error-text">{st_error}</div>
+                        <lightning-button
+                            class="orders__retry"
+                            label="Retry"
+                            variant="neutral"
+                            onclick={handleRefresh}>
+                        </lightning-button>
+                    </div>
+                </template>
+
+                <!-- Table -->
+                 <div class="orders__list-body">
+                    <div class="orders__table-wrap">
+
+                        <!-- OPEN ORDERS table -->
+                        <template lwc:if={isOpen}>
+                            <table class="orders__table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Order Date</th>
+                                        <th scope="col">Delivery Date</th>
+                                        <th scope="col">PO Number</th>
+                                        <th scope="col">Our Number</th>
+                                        <th scope="col">B2B Order</th>
+                                        <th scope="col">Entry Channel</th>
+                                        <th scope="col" class="num">Total</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template lwc:if={ui_hasRows}>
+                                        <template for:each={ui_visibleRows} for:item="row">
+                                            <tr key={row.sapNumber} class="orders__row" role="button" tabindex="0"
+                                                onclick={handleRowClick} onkeydown={handleRowKeyDown}
+                                                data-sap={row.sapNumber} data-orderid={row.orderId}
+                                                data-entry={row.entryChannel} aria-label="Open order details">
+                                                <td>{row.orderDateLabel}</td>
+                                                <td>{row.deliveryDateLabel}</td>
+                                                <td class="cell--strong">{row.poNumber}</td>
+                                                <td class="cell--strong">{row.sapNumber}</td>
+                                                <td>{row.webOrderNumber}</td>
+                                                <td>{row.entryChannel}</td>
+                                                <td class="num cell--strong">{row.totalLabel}</td>
+                                                <td>
+                                                    <span class={row.statusClass}>{row.statusLabel}</span>
+                                                    <span class={row.deliveryClass}>{row.deliveryStatusLabel}</span>
+                                                </td>
+                                            </tr>
+                                        </template>
+                                    </template>
+                                    <template lwc:if={ui_isEmpty}>
+                                        <tr><td colspan="8" class="orders__empty">No orders found for the selected filters.</td></tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </template>
+
+                        <!-- ORDER HISTORY table -->
+                        <template lwc:else>
+                            <table class="orders__table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Order Date</th>
+                                        <th scope="col">PO Number</th>
+                                        <th scope="col">Our Number</th>
+                                        <th scope="col">B2B Order</th>
+                                        <th scope="col">Entry Channel</th>
+                                        <th scope="col" class="num">Total</th>
+                                        <th scope="col">Invoice</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template lwc:if={ui_hasRows}>
+                                        <template for:each={ui_visibleRows} for:item="row">
+                                            <tr key={row.sapNumber} class="orders__row" role="button" tabindex="0"
+                                                onclick={handleRowClick} onkeydown={handleRowKeyDown}
+                                                data-sap={row.sapNumber} data-orderid={row.orderId}
+                                                data-entry={row.entryChannel} aria-label="Open order details">
+                                                <td>{row.orderDateLabel}</td>
+                                                <td class="cell--strong">{row.poNumber}</td>
+                                                <td class="cell--strong">{row.sapNumber}</td>
+                                                <td>{row.webOrderNumber}</td>
+                                                <td>{row.entryChannel}</td>
+                                                <td class="num cell--strong">{row.totalLabel}</td>
+                                                <td>{row.invoiceNumber}</td>
+                                            </tr>
+                                        </template>
+                                    </template>
+                                    <template lwc:if={ui_isEmpty}>
+                                        <tr><td colspan="7" class="orders__empty">No orders found for the selected filters.</td></tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </template>
+
+                    </div>
+                
+                    <!-- Pagination -->
+                    <div class="orders__pager">
+                        <div class="orders__pager-left">{ui_rangeLabel}</div>
+
+                        <div class="orders__pager-right">
+                            <lightning-button
+                                label="Prev"
+                                variant="neutral"
+                                disabled={ui_prevDisabled}
+                                onclick={handlePrevPage}>
+                            </lightning-button>
+
+                            <div class="orders__page">Page {ui_pageNumber}</div>
+
+                            <lightning-button
+                                label="Next"
+                                variant="neutral"
+                                disabled={ui_nextDisabled}
+                                onclick={handleNextPage}>
+                            </lightning-button>
+
+                            <lightning-combobox
+                                class="orders__page-size"
+                                variant="label-hidden"
+                                value={ui_pageSize}
+                                options={ui_pageSizeOptions}
+                                onchange={handlePageSizeChange}>
+                            </lightning-combobox>
+                        </div>
+                    </div>
+
+                    <!-- Info message -->
+                    <div class="orders__footer-msg">
+                        <template lwc:if={ui_toast}>
+                            <span class="orders__footer-msg--warning">{ui_toast.message}</span>
+                        </template>
+                        <template lwc:else>
+                            <span class="orders__footer-msg--info">Click on any row to view the order details.</span>
+                        </template>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </div>
+
+    <template lwc:if={ui_isDetailOpen}>
+        <c-ux-side-panel
+            open={ui_isDetailOpen}
+            title="Order detail"
+            dock="right"
+            size="L"
+            onclose={handleCloseDetail}
+            class="order-details__panel">
+            <div slot="title" class="orders__detail-title">
+                <span>Order {ui_detailNumber}</span>
+                <span class="orders__pill orders__pill--draft">{ui_selectedEntryChannel}</span>
+                <template lwc:if={ui_isDraft}>
+                    <span class="orders__pill orders__pill--draft">DRAFT</span>
+                </template>
+            </div>
+
+            <c-b2b-sales-doc-detail
+                doc-type="ORDER"
+                sap-number={ui_selectedSapNumber}
+                order-id={ui_selectedOrderId}
+                account-id={st_accountId}
+                onclose={handleCloseDetail}>
+            </c-b2b-sales-doc-detail>
+        </c-ux-side-panel>
+    </template>
+</template>

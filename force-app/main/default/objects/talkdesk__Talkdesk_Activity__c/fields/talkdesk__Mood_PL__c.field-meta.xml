@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>talkdesk__Mood_PL__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Mood</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>happy</fullName>
+                <default>false</default>
+                <label>happy</label>
+            </value>
+            <value>
+                <fullName>unhappy</fullName>
+                <default>false</default>
+                <label>unhappy</label>
+            </value>
+            <value>
+                <fullName>neutral</fullName>
+                <default>false</default>
+                <label>neutral</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

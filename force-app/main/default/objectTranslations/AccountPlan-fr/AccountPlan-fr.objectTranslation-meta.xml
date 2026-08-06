@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Account Plan Layout</layout>
+        <sections>
+            <label>Plans d&apos;action</label>
+            <section>Action Plans</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Swot Client</label>
+            <section>SWOT Client</section>
+        </sections>
+        <sections>
+            <label><!-- SWOT Porcelanosa &amp; Client --></label>
+            <section>SWOT Porcelanosa &amp; Client</section>
+        </sections>
+        <sections>
+            <label>Opérations stratégiques</label>
+            <section>Strategic Operations</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <description><!-- Account Plan Report --></description>
+        <label><!-- Account Plan Report --></label>
+        <name>Account_Plan_Report</name>
+    </recordTypes>
+</CustomObjectTranslation>

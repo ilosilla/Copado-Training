@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gmpkg__Record_Related_Layout__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Record Related Layout</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Stacked</fullName>
+                <default>false</default>
+                <label>Stacked</label>
+            </value>
+            <value>
+                <fullName>Accordion</fullName>
+                <default>false</default>
+                <label>Accordion</label>
+            </value>
+            <value>
+                <fullName>Tabs</fullName>
+                <default>false</default>
+                <label>Tabs</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

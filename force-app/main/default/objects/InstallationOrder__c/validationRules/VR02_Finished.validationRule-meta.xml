@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR02_Finished</fullName>
+    <active>true</active>
+    <description>Transition to Finished state</description>
+    <errorConditionFormula>ISPICKVAL( State__c , &apos;Finished&apos;) &amp;&amp;
+ Finished__c = false</errorConditionFormula>
+    <errorMessage>Please set the installation order as finished</errorMessage>
+</ValidationRule>

@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NBK_AllShowrooms__c</fullName>
+    <label>All Showrooms</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>NB2B_States__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Anaheim - 1301 South State College Boulevard - CA</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Anaheim - 1301 South State College Boulevard - CA</label>
+            </value>
+            <value>
+                <fullName>Anaheim - 1301 South State College Boulevard Suite E - CA</fullName>
+                <default>false</default>
+                <label>Anaheim - 1301 South State College Boulevard Suite E - CA</label>
+            </value>
+            <value>
+                <fullName>Atlanta, Buckhead Square - 3255 Peachtree Road Northeast - GA</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Atlanta, Buckhead Square - 3255 Peachtree Road Northeast - GA</label>
+            </value>
+            <value>
+                <fullName>Atlanta - 3255 Peachtree Road NE Suite B - GA</fullName>
+                <default>false</default>
+                <label>Atlanta - 3255 Peachtree Road NE Suite B - GA</label>
+            </value>
+            <value>
+                <fullName>Austin - 1000 East 50th Street - TX</fullName>
+                <default>false</default>
+                <label>Austin - 1000 East 50th Street - TX</label>
+            </value>
+            <value>
+                <fullName>Boston, Boston Design Center - 17 Drydock Avenue - MA</fullName>
+                <default>false</default>
+                <label>Boston, Boston Design Center - 17 Drydock Avenue - MA</label>
+            </value>
+            <value>
+                <fullName>Brooklyn – Industry City - 33 35th Street Suite A-101 - NY</fullName>
+                <default>false</default>
+                <label>Brooklyn – Industry City - 33 35th Street Suite A-101 - NY</label>
+            </value>
+            <value>
+                <fullName>Chestnut Hill at The Street - 55 Boylston Street - MA</fullName>
+                <default>false</default>
+                <label>Chestnut Hill at The Street - 55 Boylston Street - MA</label>
+            </value>
+            <value>
+                <fullName>Chicago, Luxe Home at the Merchandise Mart - 222 West Merchandise Mart Plaza - IL</fullName>
+                <default>false</default>
+                <label>Chicago, Luxe Home at the Merchandise Mart - 222 West Merchandise Mart Plaza - IL</label>
+            </value>
+            <value>
+                <fullName>Chicago (Lincoln Park) - 1001 West North Avenue - IL</fullName>
+                <default>false</default>
+                <label>Chicago (Lincoln Park) - 1001 West North Avenue - IL</label>
+            </value>
+            <value>
+                <fullName>CUSTOMER COLLECTS BRISTOL WAREHOUSE - Lysander Road - BL</fullName>
+                <default>false</default>
+                <label>CUSTOMER COLLECTS BRISTOL WAREHOUSE - Lysander Road - BL</label>
+            </value>
+            <value>
+                <fullName>CUSTOMER COLLECTS MARSTON GREEN - Starley Way - WM,CUSTOMER COLLECTIONS BRAEHEAD - 2 Rocep Drive - RE</fullName>
+                <default>false</default>
+                <label>CUSTOMER COLLECTS MARSTON GREEN - Starley Way - WM,CUSTOMER COLLECTIONS BRAEHEAD - 2 Rocep Drive - RE</label>
+            </value>
+            <value>
+                <fullName>CUSTOMER COLLECTS WATFORD - Otterspool Way - HT,CUSTOMER COLLECTS WARRINGTON - 850 Europa Boulevard, westbrook - CH</fullName>
+                <default>false</default>
+                <label>CUSTOMER COLLECTS WATFORD - Otterspool Way - HT,CUSTOMER COLLECTS WARRINGTON - 850 Europa Boulevard, westbrook - CH</label>
+            </value>
+            <value>
+                <fullName>Dallas – Emerald Street - 11639 Emerald Street - TX</fullName>
+                <default>false</default>
+                <label>Dallas – Emerald Street - 11639 Emerald Street - TX</label>
+            </value>
+            <value>
+                <fullName>Dallas – Hi Line Drive Decorative Design Center - 1617 Hi Line Drive - TX</fullName>
+                <default>false</default>
+                <label>Dallas – Hi Line Drive Decorative Design Center - 1617 Hi Line Drive - TX</label>
+            </value>
+            <value>
+                <fullName>Denver - 601 South Broadway Suite A - CO</fullName>
+                <default>false</default>
+                <label>Denver - 601 South Broadway Suite A - CO</label>
+            </value>
+            <value>
+                <fullName>Denver Denver Design District - 601 South Broadway - CO</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Denver Denver Design District - 601 South Broadway - CO</label>
+            </value>
+            <value>
+                <fullName>East Brunswick - 252 New Jersey 18 - NJ</fullName>
+                <default>false</default>
+                <label>East Brunswick - 252 New Jersey 18 - NJ</label>
+            </value>
+            <value>
+                <fullName>Houston - 4006 Richmond Avenue - TX</fullName>
+                <default>false</default>
+                <label>Houston - 4006 Richmond Avenue - TX</label>
+            </value>
+            <value>
+                <fullName>King Of Prussia - 645 West Dekalb Pike - PA</fullName>
+                <default>false</default>
+                <label>King Of Prussia - 645 West Dekalb Pike - PA</label>
+            </value>
+            <value>
+                <fullName>Manhattan FLAGSHIP SHOWROOM - 202 5th Avenue - NY</fullName>
+                <default>false</default>
+                <label>Manhattan FLAGSHIP SHOWROOM - 202 5th Avenue - NY</label>
+            </value>
+            <value>
+                <fullName>Miami - 8700 N.W. 13th Terrace - FL</fullName>
+                <default>false</default>
+                <label>Miami - 8700 N.W. 13th Terrace - FL</label>
+            </value>
+            <value>
+                <fullName>Miami - 8700 Northwest 13th Terrace - FL</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Miami - 8700 Northwest 13th Terrace - FL</label>
+            </value>
+            <value>
+                <fullName>Miami Design District - 3705 Biscayne Boulevard - FL</fullName>
+                <default>false</default>
+                <label>Miami Design District - 3705 Biscayne Boulevard - FL</label>
+            </value>
+            <value>
+                <fullName>North Bethesda - 11500 Rockville Pike - MD</fullName>
+                <default>false</default>
+                <label>North Bethesda - 11500 Rockville Pike - MD</label>
+            </value>
+            <value>
+                <fullName>Paramus - New Jersey 17 - NJ</fullName>
+                <default>false</default>
+                <label>Paramus - New Jersey 17 - NJ</label>
+            </value>
+            <value>
+                <fullName>Pompano Beach - 3400 North Powerline Road - FL</fullName>
+                <default>false</default>
+                <label>Pompano Beach - 3400 North Powerline Road - FL</label>
+            </value>
+            <value>
+                <fullName>Pompano Beach - 3400 North Powerline Road Pompano - FL</fullName>
+                <default>false</default>
+                <label>Pompano Beach - 3400 North Powerline Road Pompano - FL</label>
+            </value>
+            <value>
+                <fullName>Montreal, Quebec - 6090 Chemin de la Côte-Saint-Luc - QC</fullName>
+                <default>false</default>
+                <label>Quebec - 6090 Chemin de la Côte-Saint-Luc - QC</label>
+            </value>
+            <value>
+                <fullName>Ramsey - Corporate - 600 NJ-17 - NJ</fullName>
+                <default>false</default>
+                <label>Ramsey - Corporate - 600 NJ-17 - NJ</label>
+            </value>
+            <value>
+                <fullName>Riverside - 1063 East Putnam Avenue - CT</fullName>
+                <default>false</default>
+                <label>Riverside - 1063 East Putnam Avenue - CT</label>
+            </value>
+            <value>
+                <fullName>San Diego - 8996 Miramar Road - CA</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>San Diego - 8996 Miramar Road - CA</label>
+            </value>
+            <value>
+                <fullName>San Diego - 8996 Miramar Road Suite 100 - CA</fullName>
+                <default>false</default>
+                <label>San Diego - 8996 Miramar Road Suite 100 - CA</label>
+            </value>
+            <value>
+                <fullName>San Francisco - 78 Division Street - CA</fullName>
+                <default>false</default>
+                <label>San Francisco - 78 Division Street - CA</label>
+            </value>
+            <value>
+                <fullName>San Jose - 391 East Brokaw Road - CA</fullName>
+                <default>false</default>
+                <label>San Jose - 391 East Brokaw Road - CA</label>
+            </value>
+            <value>
+                <fullName>Seattle - 88 Spring Street - WA</fullName>
+                <default>false</default>
+                <label>Seattle - 88 Spring Street - WA</label>
+            </value>
+            <value>
+                <fullName>Toronto, Ontario - 735 Caledonia Road - ON</fullName>
+                <default>false</default>
+                <label>Toronto, Ontario - 735 Caledonia Road - ON</label>
+            </value>
+            <value>
+                <fullName>Tysons - 8180 Leesburg Pike - VA</fullName>
+                <default>false</default>
+                <label>Tysons - 8180 Leesburg Pike - VA</label>
+            </value>
+            <value>
+                <fullName>Walnut Creek - 1401 N. Broadway - CA</fullName>
+                <default>false</default>
+                <label>Walnut Creek - 1401 N. Broadway - CA</label>
+            </value>
+            <value>
+                <fullName>Walnut Creek - 1401 North Broadway - CA</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Walnut Creek - 1401 North Broadway - CA</label>
+            </value>
+            <value>
+                <fullName>Washington DC - 1000 Connecticut Avenue Northwest - DC</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Washington DC - 1000 Connecticut Avenue Northwest - DC</label>
+            </value>
+            <value>
+                <fullName>Washington DC - 1000 Connecticut Avenue - WA</fullName>
+                <default>false</default>
+                <label>Washington DC -1000 Connecticut Avenue NW, DC</label>
+            </value>
+            <value>
+                <fullName>Westbury - 775 Old Country Road - NY</fullName>
+                <default>false</default>
+                <label>Westbury - 775 Old Country Road - NY</label>
+            </value>
+            <value>
+                <fullName>West Hollywood - 8900 Beverly Boulevard - CA</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>West Hollywood - 8900 Beverly Boulevard - CA</label>
+            </value>
+            <value>
+                <fullName>West Hollywood - 8900 Beverly Boulevard Suite 101 West Hollywood - CA</fullName>
+                <default>false</default>
+                <label>West Hollywood - 8900 Beverly Boulevard Suite 101 West Hollywood - CA</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>New York</controllingFieldValue>
+            <valueName>Brooklyn – Industry City - 33 35th Street Suite A-101 - NY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New York</controllingFieldValue>
+            <valueName>Manhattan FLAGSHIP SHOWROOM - 202 5th Avenue - NY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New York</controllingFieldValue>
+            <valueName>Westbury - 775 Old Country Road - NY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pennsylvania</controllingFieldValue>
+            <valueName>King Of Prussia - 645 West Dekalb Pike - PA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Texas</controllingFieldValue>
+            <valueName>Dallas – Emerald Street - 11639 Emerald Street - TX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Texas</controllingFieldValue>
+            <valueName>Dallas – Hi Line Drive Decorative Design Center - 1617 Hi Line Drive - TX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Texas</controllingFieldValue>
+            <valueName>Houston - 4006 Richmond Avenue - TX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Virginia</controllingFieldValue>
+            <valueName>Tysons - 8180 Leesburg Pike - VA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Washington</controllingFieldValue>
+            <valueName>Seattle - 88 Spring Street - WA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CANADA</controllingFieldValue>
+            <valueName>Montreal, Quebec - 6090 Chemin de la Côte-Saint-Luc - QC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CANADA</controllingFieldValue>
+            <valueName>Toronto, Ontario - 735 Caledonia Road - ON</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>California</controllingFieldValue>
+            <valueName>Anaheim - 1301 South State College Boulevard Suite E - CA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>California</controllingFieldValue>
+            <valueName>San Diego - 8996 Miramar Road Suite 100 - CA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>California</controllingFieldValue>
+            <valueName>San Francisco - 78 Division Street - CA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>California</controllingFieldValue>
+            <valueName>San Jose - 391 East Brokaw Road - CA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>California</controllingFieldValue>
+            <valueName>Walnut Creek - 1401 N. Broadway - CA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>California</controllingFieldValue>
+            <valueName>West Hollywood - 8900 Beverly Boulevard Suite 101 West Hollywood - CA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Colorado</controllingFieldValue>
+            <valueName>Denver - 601 South Broadway Suite A - CO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Connecticut</controllingFieldValue>
+            <valueName>Riverside - 1063 East Putnam Avenue - CT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Florida</controllingFieldValue>
+            <valueName>Miami - 8700 N.W. 13th Terrace - FL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Florida</controllingFieldValue>
+            <valueName>Miami Design District - 3705 Biscayne Boulevard - FL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Florida</controllingFieldValue>
+            <valueName>Pompano Beach - 3400 North Powerline Road - FL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Georgia</controllingFieldValue>
+            <valueName>Atlanta - 3255 Peachtree Road NE Suite B - GA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Illinois</controllingFieldValue>
+            <valueName>Chicago, Luxe Home at the Merchandise Mart - 222 West Merchandise Mart Plaza - IL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Illinois</controllingFieldValue>
+            <valueName>Chicago (Lincoln Park) - 1001 West North Avenue - IL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Maryland</controllingFieldValue>
+            <valueName>North Bethesda - 11500 Rockville Pike - MD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Massachusetts</controllingFieldValue>
+            <valueName>Boston, Boston Design Center - 17 Drydock Avenue - MA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Massachusetts</controllingFieldValue>
+            <valueName>Chestnut Hill at The Street - 55 Boylston Street - MA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Jersey</controllingFieldValue>
+            <valueName>East Brunswick - 252 New Jersey 18 - NJ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Jersey</controllingFieldValue>
+            <valueName>Paramus - New Jersey 17 - NJ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Jersey</controllingFieldValue>
+            <valueName>Ramsey - Corporate - 600 NJ-17 - NJ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>District of Columbia</controllingFieldValue>
+            <valueName>Washington DC - 1000 Connecticut Avenue - WA</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

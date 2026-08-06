@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Auto opp layout</layout>
+        <sections>
+            <label><!-- Admin Data --></label>
+            <section>Admin Data</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Datos automáticos --></label>
+            <section>Datos automáticos</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Main Information --></label>
+            <section>Main Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Layout Porcelanosa Default</layout>
+        <sections>
+            <label>Campos</label>
+            <section>Campos</section>
+        </sections>
+        <sections>
+            <label>Datos Automáticos</label>
+            <section>Datos automáticos</section>
+        </sections>
+        <sections>
+            <label>Datos cita</label>
+            <section>Datos cita</section>
+        </sections>
+        <sections>
+            <label>Datos pedido</label>
+            <section>Datos pedido</section>
+        </sections>
+        <sections>
+            <label>Datos proyecto</label>
+            <section>Datos proyecto</section>
+        </sections>
+        <sections>
+            <label>Vínculos Externos</label>
+            <section>Vínculos externos</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Project Trade</layout>
+        <sections>
+            <label><!-- Address --></label>
+            <section>Address</section>
+        </sections>
+        <sections>
+            <label><!-- Admin Data --></label>
+            <section>Admin Data</section>
+        </sections>
+        <sections>
+            <label>Vínculos Personalizados</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label>Información Principal</label>
+            <section>Main Information</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Lifecycle Event --></label>
+            <section>Opportunity Lifecycle Event</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity description --></label>
+            <section>Opportunity description</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Project retail</layout>
+        <sections>
+            <label><!-- Address --></label>
+            <section>Address</section>
+        </sections>
+        <sections>
+            <label><!-- Admin Data --></label>
+            <section>Admin Data</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label>Vínculos Externos</label>
+            <section>External Links</section>
+        </sections>
+        <sections>
+            <label>Campos</label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Main Information --></label>
+            <section>Main Information</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Lifecycle Event --></label>
+            <section>Opportunity Lifecycle Event</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity description --></label>
+            <section>Opportunity description</section>
+        </sections>
+        <sections>
+            <label><!-- Room Information --></label>
+            <section>Room Information</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Cierre Cita Compo --></label>
+        <name>Cierre_Cita_Compo</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Cierre Cita en Tienda --></label>
+        <name>Cierre_Cita_en_Tienda</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Samples Order --></label>
+        <name>NBK_CreateSamplesOrder</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Sales Tools --></label>
+        <name>New_Sales_tool</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Price Request --></label>
+        <name>Price_Request</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Pedir instalación</label>
+        <name>Request_Installation2</name>
+    </quickActions>
+    <recordTypes>
+        <description><!-- Available only for administrators --></description>
+        <label><!-- Automatic Opportunity --></label>
+        <name>Automatic_Opportunity</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Oportunidad eCommerce</label>
+        <name>Oportunidad_neoris</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Oportunidad Retail</label>
+        <name>Project_retail</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Oportunidad Trade</label>
+        <name>Project_trade</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- The opportunity amount is required --></errorMessage>
+        <name>Amount_Custom_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Fecha de cierre no puede ocurrir antes de HOY</errorMessage>
+        <name>Close_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Change not permitted. SAP will automatically set this stage when an order is processed. --></errorMessage>
+        <name>Closed_Won_for_System_Administrator</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Confirme que la cotización ha sido aceptada para moverse al siguiente estado</errorMessage>
+        <name>Condition_stage_awating_retail</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Confirme que la cotización ha sido aceptada para pasar al siguiente estado</errorMessage>
+        <name>Condition_stage_awating_trade</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Debes seleccionar una razón de pérdida del proyecto</errorMessage>
+        <name>Condition_stage_lost</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must fill in a budget to move on to the next stage --></errorMessage>
+        <name>Condition_stage_quotation_retail</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Confirma que Porcelanosa ha sido incluida en la especificación par pasar al siguiente estado</errorMessage>
+        <name>Condition_stage_quotation_trade</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>En el momento de la creación, debería especificar la Cuenta relacionada</errorMessage>
+        <name>Creacion_nueva_oportunidad_Cuenta</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>En el momento de la creación, La estapa debería de tener el valor &quot;Nueva&quot;</errorMessage>
+        <name>Creacion_nueva_oportunidad_Etapa</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>En el momento de la creación, la probabilidad debería de ser 20%</errorMessage>
+        <name>Creacion_nueva_oportunidad_Probabilidad</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Dummy contact cannot be chosen --></errorMessage>
+        <name>Dummy_Contact</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must select the firtst stage --></errorMessage>
+        <name>First_stage_OPP_trade_and_retail</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- El Record Type de la oportunidad solamente puede ser Trade --></errorMessage>
+        <name>Lead_converted_RT</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Debe especificarse el motivo para esta etapa --></errorMessage>
+        <name>Loss_reason</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Regresar a una Etapa anterior no está permitido --></errorMessage>
+        <name>No_se_puede_regresar_a_Etapa_anterior</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Registre la otra clasificación antes de guardar</errorMessage>
+        <name>Other_classification</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invalid Switzerland post code for Account --></errorMessage>
+        <name>Postal_code_CH</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- In this stage, you must enter an amount to save the record --></errorMessage>
+        <name>Quantity_not_required_on_first_stage</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Debe especificarse el la razón de no interés para esta etapa --></errorMessage>
+        <name>ReasonNoInterest</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please, enter the other reason lost before save --></errorMessage>
+        <name>Reason_Others</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- One of the Room Types on Opportunity should have a value greater than 0 --></errorMessage>
+        <name>RoomType_selected_Retail</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- At least one of the room types on Room Information is not a valid value (empty or positive number). --></errorMessage>
+        <name>RoomType_valid_values_Retail</name>
+    </validationRules>
+    <webLinks>
+        <label>Comprobar Oportunidad</label>
+        <name>Check_project</name>
+    </webLinks>
+    <webLinks>
+        <label>Cita en tienda</label>
+        <name>Cita_en_tienda</name>
+    </webLinks>
+    <webLinks>
+        <label>Crear PDF</label>
+        <name>Crear_PDF</name>
+    </webLinks>
+    <webLinks>
+        <label>Plataforma ecommerce</label>
+        <name>Plataforma_ecommerce</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Related_Leads --></label>
+        <name>Related_Leads</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SendWithDocuSign --></label>
+        <name>SendWithDocuSign</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Smart_Dialer --></label>
+        <name>talkdesk__Smart_Dialer</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Factory Status --></label>
+    <name>FactoryStatus__c</name>
+    <picklistValues>
+        <masterLabel>ACTIVE</masterLabel>
+        <translation><!-- ACTIVE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DISCONTINUED</masterLabel>
+        <translation><!-- DISCONTINUED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REMOVED</masterLabel>
+        <translation><!-- REMOVED --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

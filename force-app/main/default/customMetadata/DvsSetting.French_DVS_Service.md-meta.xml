@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>French DVS Service</label>
+    <protected>false</protected>
+    <values>
+        <field>BatchSize__c</field>
+        <value xsi:type="xsd:double">10.0</value>
+    </values>
+    <values>
+        <field>CountryCode__c</field>
+        <value xsi:type="xsd:string">FR</value>
+    </values>
+    <values>
+        <field>DvsId__c</field>
+        <value xsi:type="xsd:string">1f896932-20e9-4c79-8969-3220e9cc7934</value>
+    </values>
+    <values>
+        <field>DvsSecret__c</field>
+        <value xsi:type="xsd:string">yjyDpk3Fa1_mIZ06KbhRRIzsonca</value>
+    </values>
+    <values>
+        <field>DvsTokenUrl__c</field>
+        <value xsi:type="xsd:string">https://api.insee.fr/api-sirene/3.11/token?grant_type=client_credentials</value>
+    </values>
+    <values>
+        <field>DvsUrl__c</field>
+        <value xsi:type="xsd:string">https://api.insee.fr/api-sirene/3.11</value>
+    </values>
+    <values>
+        <field>DvsWaitingTime__c</field>
+        <value xsi:type="xsd:string">2000</value>
+    </values>
+    <values>
+        <field>IsActif__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+</CustomMetadata>

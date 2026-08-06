@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FRANCE_PRICEBOOKS</fullName>
+    <columns>PRICEBOOK2.NAME</columns>
+    <columns>PRICEBOOK2.IS_ACTIVE</columns>
+    <columns>Bzirk__c</columns>
+    <columns>IsRetailReferencePricebook__c</columns>
+    <columns>SAPSync__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ExecutionContext__c</field>
+        <operation>equals</operation>
+        <value>FR</value>
+    </filters>
+    <label>FRANCE PRICEBOOKS</label>
+</ListView>

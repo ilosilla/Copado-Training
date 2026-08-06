@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Relation to account</description>
+    <externalDeveloperName>id18</externalDeveloperName>
+    <isFilteringDisabled>false</isFilteringDisabled>
+    <isNameField>false</isNameField>
+    <isSortingDisabled>false</isSortingDisabled>
+    <label>Account</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Ofertas_cabeceraSet</relationshipLabel>
+    <relationshipName>Ofertas_cabeceraSet</relationshipName>
+    <required>false</required>
+    <type>Lookup</type>
+</CustomField>

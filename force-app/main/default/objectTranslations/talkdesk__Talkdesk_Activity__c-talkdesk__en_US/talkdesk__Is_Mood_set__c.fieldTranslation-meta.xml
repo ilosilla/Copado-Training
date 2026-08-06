@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Is Mood set --></label>
+    <name>talkdesk__Is_Mood_set__c</name>
+</CustomFieldTranslation>

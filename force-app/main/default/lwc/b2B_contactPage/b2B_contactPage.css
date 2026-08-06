@@ -1,0 +1,42 @@
+.tittle {
+    text-align: center;
+    font-size: xxx-large;
+}
+
+.commentText {
+    /* padding-top: 4%; */
+    padding-left: 20%;
+    margin-right: 20%;
+}
+
+.subtitle {
+    font-size: larger;
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align: center;
+}
+
+.checkPrivacy {
+    padding-left: 20%;
+    padding-top: 2%;
+    padding-bottom: 5%;
+    margin-right: 20%;
+}
+
+.colorLink {
+    color: rgba(45,127,183,255);
+}
+
+.buttonPosition {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.textAreaName {
+    padding-left: 20%;
+    padding-top: 5%;
+    font-size: medium;
+    font-weight: bold;
+}

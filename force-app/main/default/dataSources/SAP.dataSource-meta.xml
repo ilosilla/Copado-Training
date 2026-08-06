@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExternalDataSource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customConfiguration>{&quot;inlineCountEnabled&quot;:&quot;true&quot;,&quot;requestCompression&quot;:&quot;false&quot;,&quot;pagination&quot;:&quot;CLIENT&quot;,&quot;noIdMapping&quot;:&quot;true&quot;,&quot;format&quot;:&quot;ATOM&quot;,&quot;searchFunc&quot;:&quot;&quot;,&quot;compatibility&quot;:&quot;DEFAULT&quot;,&quot;csrfTokenEnabled&quot;:&quot;false&quot;,&quot;timeout&quot;:&quot;120&quot;,&quot;searchEnabled&quot;:&quot;true&quot;}</customConfiguration>
+    <customHttpHeaders>
+        <description>Identificación del usuario realizando la consulta</description>
+        <headerFieldName>user</headerFieldName>
+        <headerFieldValue>$User.Email</headerFieldValue>
+        <isActive>true</isActive>
+    </customHttpHeaders>
+    <endpoint>https://mobile.porcelanosagrupo.com:44301/sap/opu/odata/SAP/Z31SD_T_SF_INTERF_SRV/</endpoint>
+    <isWritable>false</isWritable>
+    <label>SAP</label>
+    <principalType>NamedUser</principalType>
+    <protocol>Password</protocol>
+    <type>OData</type>
+    <username>b2bconnect</username>
+</ExternalDataSource>

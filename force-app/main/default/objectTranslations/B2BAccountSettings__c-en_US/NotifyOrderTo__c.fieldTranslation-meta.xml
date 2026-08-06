@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Notify Order To --></label>
+    <name>NotifyOrderTo__c</name>
+    <picklistValues>
+        <masterLabel>BOTH</masterLabel>
+        <translation><!-- BOTH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CUSTOMER</masterLabel>
+        <translation><!-- CUSTOMER --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NONE</masterLabel>
+        <translation><!-- NONE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REP</masterLabel>
+        <translation><!-- REP --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

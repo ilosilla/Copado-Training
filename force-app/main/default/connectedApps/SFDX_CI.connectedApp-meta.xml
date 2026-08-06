@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>david.martinez@nubika.com</contactEmail>
+    <label>SFDX_CI</label>
+    <oauthConfig>
+        <callbackUrl>http://localhost:1717/OauthRedirect</callbackUrl>
+        <certificate>MIIFjDCCA3QCCQDEbOCQeskViTANBgkqhkiG9w0BAQsFADCBhzELMAkGA1UEBhMCRVMxDzANBgNVBAgMBk1hZHJpZDEPMA0GA1UEBwwGTWFkcmlkMQ8wDQYDVQQKDAZOdWJpa2ExGTAXBgNVBAsMEERldmVsb3BtZW50X0NvZGUxKjAoBgkqhkiG9w0BCQEWG2FsYmVydG8ubWFydGluZXpAbnViaWthLmNvbTAeFw0yMDA0MDIxMTI5NTVaFw0yMTA0MDIxMTI5NTVaMIGHMQswCQYDVQQGEwJFUzEPMA0GA1UECAwGTWFkcmlkMQ8wDQYDVQQHDAZNYWRyaWQxDzANBgNVBAoMBk51YmlrYTEZMBcGA1UECwwQRGV2ZWxvcG1lbnRfQ29kZTEqMCgGCSqGSIb3DQEJARYbYWxiZXJ0by5tYXJ0aW5lekBudWJpa2EuY29tMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAomh3vCeXxws+xcdOB5/avZo0/wUYxzYX52N2Id19okN4Vljlbvuy8K1JldRHQIlxWxTGsQKHZ9BCk0rmXC0nzgpIjQMi34kvB1PzF7gn+AAf8MoLUeoxdYi1JDkE7XAmFS1gFlIqKRZ6DfMvZC+ZGkQp5fVIM70rco8+IuhvaT+rq7U2Cs3t2DOthhxDSdbmWyGqrppMsLdvd/h4nK0wGHZg+58XWcRw/T2pdUqF3Y1yCQDQ0W5Bd22NKNtELmVoL1uFsarYp7rwa3UQOwmXykGUccB8lfCrZrZgWYceEEa7CB3U6BNnebAmEMfBZL3IH80QWJN0KFP6ZU91i1wzMO1VtcFXTv+Do2zcbWEf9P/o8ELsYDxOnR+kO/qLFfFRVIpNbHIyhGaSkf+hldFSmGhxiWZEu35utwNsB8CH5WF/z3IWwTlaalkT/yfQzh01ZEz5FfkC73BSv+SQ3+JdUEuEsBz97IeWe/KzRCO630+OMdUIKqqN5uci/a+aSB3z23O3c2Hr0nVXtpTLEf6LWKiuX1H8ATtTPUoceb0zGPb8F+RizaiDWyFv4yIR/mBBT/k+KzkhBNs6kM4tOvLqAo96G6zmRofjufRK2jsIvM8HlYHpHDKmBvAAOk+GTrEGgsG1LWLwTsstRLAbwI3cn4NNj5AyHsqDeUIhNg8FR8ECAwEAATANBgkqhkiG9w0BAQsFAAOCAgEAf9e2JxsoPnW8g/cEdvz9fr4bWlEDJrgxu9jT0JqWrCo5S1PJKJgq1UCtXITHDpl7vg4bLnMFlG1qDL2JI09o4tjF65BAmd08GmKRldWbdJZEVDp9y33iDCmmRc67FH25tGqt4oh5SjhAjqgIJGqxXc8G8maBVg4vHp3gGivdHY8QAvY+ehHiwd0bb7xJV7r637YEHmUcu8Pz+ZguNAH71cNn6w2DCINS82BeO1suA0A9c+/gby2Z4lH/OV4TxOgO9ukyp/u1Y0RDBou7cjvxSewBjt1u0RhDdoBhH4StHMEY5DNf5Cw995k+kygl7spj6p9c0WLTssUpB4FE5aLUBfNmDnHm9HOjtAJHPf6m2mlnCAMQdmDPMJ5Oi+fB8XAWtFkVXd77We5bUsKiDSFJ6HTRssDZb6iIh56Axu8VSHQeQtPsbRB3euYMZlTTkKhOLSwQdoBVnoTAUcdal29AeWgE7jHzdXm/ctZJvfUzNz/V2pW3H5GtCbjWg3Mm/bcnTyMw54hNdf2X9LsZY0LovEY7MXm/XB+eMnZGdvCHbZQAAkpe6n/ZQSHNgfcCdEo+307f7vep+GorjpSRr8dIv/QuWY+w89Gre430Tiz/FOCClW2wNX9iMo7eBsFFEA6+eCRm3CfC2d/myF30IWZdC1S3h/kQM9Ku9j3vaWFoa4w=</certificate>
+        <consumerKey>3MVG9tcCvHQpYCVzmPXaaiauIKBRWxI60rnCF8QQ8NKTL.qNJYf9ni3KQ4fmwzkpxUZQxafmHO3bJlJC7nUt.</consumerKey>
+        <isAdminApproved>true</isAdminApproved>
+        <isClientCredentialEnabled>false</isClientCredentialEnabled>
+        <isCodeCredentialEnabled>false</isCodeCredentialEnabled>
+        <isCodeCredentialPostOnly>false</isCodeCredentialPostOnly>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isNamedUserJwtEnabled>false</isNamedUserJwtEnabled>
+        <isPkceRequired>false</isPkceRequired>
+        <isRefreshTokenRotationEnabled>false</isRefreshTokenRotationEnabled>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
+        <isSecretRequiredForTokenExchange>false</isSecretRequiredForTokenExchange>
+        <isTokenExchangeEnabled>false</isTokenExchangeEnabled>
+        <scopes>Api</scopes>
+        <scopes>Web</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <isTokenExchangeFlowEnabled>false</isTokenExchangeFlowEnabled>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+    <profileName>System Administrator</profileName>
+    <profileName>Standard User</profileName>
+    <profileName>API Only</profileName>
+</ConnectedApp>

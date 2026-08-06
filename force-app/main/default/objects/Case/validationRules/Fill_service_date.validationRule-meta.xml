@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fill_service_date</fullName>
+    <active>true</active>
+    <description>Si se pasa del estado de service date a otro más avanzado se debe especificar la fecha de servicio</description>
+    <errorConditionFormula>ISBLANK(Service_date__c) &amp;&amp; ISCHANGED(Status) &amp;&amp; ISPICKVAL(PRIORVALUE(Status),&apos;9&apos;) &amp;&amp; VALUE(TEXT(PRIORVALUE(Status))) &lt; VALUE(TEXT(Status))</errorConditionFormula>
+    <errorDisplayField>Service_date__c</errorDisplayField>
+    <errorMessage>Please specify the service date</errorMessage>
+</ValidationRule>

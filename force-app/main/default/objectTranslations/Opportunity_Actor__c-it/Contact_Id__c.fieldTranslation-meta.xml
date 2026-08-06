@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Related Contact as Opportunity Actor --></help>
+    <label><!-- Contact Id --></label>
+    <lookupFilter>
+        <errorMessage>Il Contatto non abbina con il Conto</errorMessage>
+    </lookupFilter>
+    <name>Contact_Id__c</name>
+    <relationshipLabel>Attori dell&apos;Opportunità</relationshipLabel>
+</CustomFieldTranslation>

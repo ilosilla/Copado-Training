@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>West_Hollywood_Crawl</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>Sales_Office__c</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>CONTACT.CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account.Account_Classification__c</field>
+        <operation>equals</operation>
+        <value>Architectural firm</value>
+    </filters>
+    <filters>
+        <field>Account.Account_Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>Inactive_Contact__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Sales_Office__c</field>
+        <operation>contains</operation>
+        <value>west hwood,orange county</value>
+    </filters>
+    <filters>
+        <field>Account.Activity_Level__c</field>
+        <operation>contains</operation>
+        <value>high,medium</value>
+    </filters>
+    <label>West Hollywood Crawl</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>B_U_Manager_West_Hollywood</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

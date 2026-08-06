@@ -1,0 +1,41 @@
+<!--
+  @description       : 
+  @author            : EHG@nubika.com
+  @group             : 
+  @last modified on  : 02-06-2023
+  @last modified by  : EHG@nubika.com
+-->
+<template>
+    <div class="slds-p-horizontal_medium">
+        <div class="slds-wrap header ">       
+            <lightning-input-field
+                field-name="searchTerm" 
+                value={searchTerm}></lightning-input-field>      
+
+        <lightning-button
+        class="slds-m-top_small"
+        variant="brand"
+        type="submit"
+        label="Search"></lightning-button>
+        </div>
+        <template if:true={cartItem.showProductData}>
+            <!--AQUI METEMOS LA INFORMACIÓN DEL PRODUCTO Y EL PRECIO-->
+            <div>
+                {cartItem.product.Name}
+                {cartItem.product.NB2B_Sales_Unit__c}
+                {cartItem.price.priceUnit}
+                {cartItem.price.CurrencyIsoCode}
+            </div>
+            <!--AQUI METEMOS EL IMPUT PARA LAS CANTIDADES-->
+            <div>
+                <lightning-input-field onchange={calculateTotals}
+                field-name="quantity" value={cartItem.quantity}></lightning-input-field> 
+            </div>
+            <!--AQUÍ METEMOS EL TOTAL CALCULADO-->
+            <div>
+                {cartItem.total}
+                {cartItem.price.CurrencyIsoCode}
+            </div>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_change_key_fields</fullName>
+    <active>true</active>
+    <description>Stops the user from changing the fields: Sales_Org__c, Distribution_Channel__c, Account_Org__c and Custom_Id__c excepts if the Custom_Id__c is previously empty</description>
+    <errorConditionFormula>AND($Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+OR(
+ISCHANGED(Sales_Org__c), 
+ISCHANGED(Distribution_Channel__c), 
+ISCHANGED(Account_Org__c),
+AND(
+NOT(ISBLANK(PRIORVALUE(Custom_Id__c))), 
+ISCHANGED(Custom_Id__c))
+))</errorConditionFormula>
+    <errorMessage>You cannot change this fields</errorMessage>
+</ValidationRule>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Edge --></label>
+    <name>Edge__c</name>
+    <picklistValues>
+        <masterLabel>ALTISSIMA Demi-Bullnose</masterLabel>
+        <translation><!-- ALTISSIMA Demi-Bullnose --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ALTISSIMA Eased Edge</masterLabel>
+        <translation><!-- ALTISSIMA Eased Edge --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ALTISSIMA ¼ Bevel</masterLabel>
+        <translation><!-- ALTISSIMA ¼ Bevel --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KRION Demi-Bullnosed</masterLabel>
+        <translation><!-- KRION Demi-Bullnosed --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KRION Eased Edge</masterLabel>
+        <translation><!-- KRION Eased Edge --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KRION ¼ Beveled</masterLabel>
+        <translation><!-- KRION ¼ Beveled --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other (Explain in Notes)</masterLabel>
+        <translation><!-- Other (Explain in Notes) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>XTONE Eased (Only for ½ in)</masterLabel>
+        <translation><!-- XTONE Eased (Only for ½ in) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>XTONE Square Mitered Edge</masterLabel>
+        <translation><!-- XTONE Square Mitered Edge --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

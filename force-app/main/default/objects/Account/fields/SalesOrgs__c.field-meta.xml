@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SalesOrgs__c</fullName>
+    <label>SalesOrgs</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Company_List__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>sales_orgs</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>502</controllingFieldValue>
+            <valueName>502</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

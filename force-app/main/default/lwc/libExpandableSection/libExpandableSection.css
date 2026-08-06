@@ -1,0 +1,6 @@
+.transparent-background {
+    background-color: transparent !important;
+}
+.rounded-borders {
+    border-radius: var(--slds-c-card-radius-border, var(--sds-c-card-radius-border, var(--lwc-borderRadiusMedium,0.25rem)));
+}

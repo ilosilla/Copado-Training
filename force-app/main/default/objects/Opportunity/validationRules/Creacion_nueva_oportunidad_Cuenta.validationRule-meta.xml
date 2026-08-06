@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Creacion_nueva_oportunidad_Cuenta</fullName>
+    <active>true</active>
+    <description>Al momento de la creación, debe especificarse la Cuenta relacionada</description>
+    <errorConditionFormula>AND( 
+ISNEW(), 
+AccountId = NULL
+)</errorConditionFormula>
+    <errorDisplayField>AccountId</errorDisplayField>
+    <errorMessage>Al momento de la creación, debe especificarse la Cuenta relacionada</errorMessage>
+</ValidationRule>

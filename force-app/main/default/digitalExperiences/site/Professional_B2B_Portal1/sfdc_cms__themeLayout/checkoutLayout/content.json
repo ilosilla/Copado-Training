@@ -1,0 +1,73 @@
+{
+  "type" : "sfdc_cms__themeLayout",
+  "title" : "Checkout Layout",
+  "contentBody" : {
+    "component" : {
+      "attributes" : { },
+      "children" : [ {
+        "id" : "866baa92-b67e-4c37-b6a7-64d6b719a99b",
+        "name" : "header",
+        "title" : "Header",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "0rem",
+            "dxpStyle" : {
+              "padding" : {
+                "bottom" : "0rem",
+                "left" : "0rem",
+                "right" : "0rem",
+                "top" : "0rem"
+              }
+            },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"7a2d697f-cbe1-43d9-b4a7-e7323fa0d038\",\"columns\":[{\"UUID\":\"ad57fd2a-ba20-43ce-bf5a-7ffd77241e6f\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "dxpStyle" : {
+                  "margin" : {
+                    "bottom" : "1rem",
+                    "left" : "1rem",
+                    "right" : "1rem",
+                    "top" : "1rem"
+                  }
+                },
+                "variant" : "FULL"
+              },
+              "definition" : "c:b2bCorporateFooter",
+              "id" : "73382acc-bdb1-4c42-a4ef-972380ace64a",
+              "type" : "component"
+            } ],
+            "id" : "ad57fd2a-ba20-43ce-bf5a-7ffd77241e6f",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "customCssClasses" : "footer-container",
+          "definition" : "community_layout:section",
+          "id" : "7a2d697f-cbe1-43d9-b4a7-e7323fa0d038",
+          "type" : "component"
+        } ],
+        "id" : "ce27e719-1c45-4c56-97a8-ecad165c4110",
+        "name" : "footer",
+        "title" : "Footer",
+        "type" : "region"
+      } ],
+      "definition" : "commerce:layoutSiteSimple",
+      "id" : "32da50fb-939b-4401-a8eb-03de7baf46d6",
+      "type" : "component"
+    }
+  },
+  "urlName" : "checkout-layout"
+}

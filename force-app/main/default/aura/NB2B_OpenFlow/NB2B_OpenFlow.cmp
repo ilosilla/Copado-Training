@@ -1,0 +1,39 @@
+<aura:component implements="forceCommunity:searchInterface,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,lightning:availableForFlowActions" 
+                access="global" controller="NB2B_SearchSku" >
+	<aura:Attribute name="flowName" type="String"/>
+    <aura:Attribute name="url" type="String"/>
+    <aura:Attribute name="urlSearch" type="String"/>
+    <aura:Attribute name="textBox" type="String" default=""/>
+    <aura:Attribute name="showButton" type="Boolean" default="true"/>
+    
+    <!--<aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <lightning:flow aura:id="flowData" />-->
+    <aura:if isTrue="{!v.showButton}">
+        <div class="slds-grid slds-gutters" style="align-items: center; ">
+            <div class="slds-col slds-size_1-of-9" style="    text-align: end;">
+                <span>
+                </span>
+            </div>
+            <div class="slds-col slds-size_1-of-9" style="text-align: end;">
+                <span>
+                    {!$Label.c.NB2B_SearchBySku}
+                </span>
+            </div>
+            <div class="slds-col slds-size_5-of-9" style="width: 70%;">
+                <span>
+                    <ui:inputText value="{!v.textBox}" updateOn="keyup" placeholder="{!$Label.c.NB2B_Search_Placeholder}"/>
+                </span>
+            </div>
+            <div class="slds-col slds-size_1-of-9">
+                <span >
+                	<button style="background: #1c3241; color: white;border-radius: 0px;" class="slds-button slds-button_brand" onclick="{! c.init }">Search</button>
+                </span>
+            </div>
+            <div class="slds-col slds-size_1-of-9" style="    text-align: end;">
+                <span>
+                </span>
+            </div>
+        </div>
+    </aura:if>
+    <br/><br/><br/>
+</aura:component>

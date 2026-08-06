@@ -1,0 +1,160 @@
+/*Para ocultar los spinner buttons del input number*/
+/*Mantiene la funcionalidad de las teclas UP-DOWN*/
+/*.THIS input[type=number]::-webkit-inner-spin-button, 
+.THIS input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+.THIS .slds-form-element__label{   
+    font-size: .8125rem;    
+}
+
+.THIS .slds-form-element__static{
+    font-size: .875rem;    
+}
+
+.THIS .slds-form-element_readonly{
+    border-bottom: none;    
+}
+
+.THIS .slds-checkbox .slds-form-element__label{    
+    display: none;    
+}*/
+
+.THIS .slds-theme--shade {
+    
+    background-color: rgb(243, 242, 242);
+    
+}
+
+.THIS .relative {
+    
+    position: relative;
+    height: 100px;
+    z-index: 0;
+    
+}
+
+.THIS .whiteBackground {
+    
+    background-color: #FFFFFF;
+  
+}
+
+.THIS.noPaddingTop{
+    
+    padding-top: 1rem !important;
+    
+}
+
+/*.THIS .modal-container{
+    
+    width: 70%;
+    max-width: 840px;
+    min-width: 480px;
+    
+}*/
+
+.THIS .formElementHelp{
+    
+    color: rgb(194, 57, 52);
+    font-size: .75rem;
+    margin-top: 0.5rem;
+    display: block;
+    
+}
+
+.THIS .slds-has-error .slds-input__icon{
+    
+    color: rgb(112, 110, 107);
+    
+}
+
+.THIS .slds-has-error .slds-input:focus{
+    
+    /*border: 0 0 3px #0070d2;*/
+    border-color: rgb(21,137,238) !important;
+    box-shadow: 0 0 3px #0070d2;
+    background: rgb(255,255,255);
+    
+}
+
+.THIS .customRequired{
+    
+    font-weight: normal;
+    
+}
+
+.THIS lightning-input-field.noButton button{
+    
+    display:none;
+    
+}
+
+.THIS .slds-textarea {
+  	height: 7.5rem !important; 
+    resize: none !important; 
+}
+
+.THIS .customRequired:before{  
+    
+    content: "*";
+    margin: 0 0.125rem 0 0.125rem;
+    color: rgb(194, 57, 52);
+    float: left;
+    
+}
+
+.THIS .slds-has-error .slds-input{
+
+    border-color: rgb(194, 57, 52) !important;
+    box-shadow: rgb(194, 57, 52);
+
+}
+
+.THIS abbr.slds-required, .THIS .slds-form-element__help, .THIS .none{
+    
+    display: none;
+    
+}
+
+.THIS div.customReadOnly input{
+    
+    border: 0;
+    background: 0;
+    margin-left: -13px;
+    cursor: auto;
+    
+}
+
+.THIS .contenedorFlex{
+    display: flex;
+    flex-direction: column;
+    min-height: 3rem;
+    justify-content: space-between;
+}
+
+.THIS .marginLeft12{
+    margin-left: 12px;
+}
+
+.THIS.ocultar{
+    display: none;
+}
+
+.THIS .exampleHolder{
+    position: relative;
+    display: inline-block;
+    margin-left: 1rem;
+    width: 3.4rem;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.THIS .mobilePosition{
+    padding-top: 0;
+    
+}

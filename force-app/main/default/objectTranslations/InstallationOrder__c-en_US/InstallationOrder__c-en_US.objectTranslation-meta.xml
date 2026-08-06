@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Installation Order</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Installation Orders</value>
+    </caseValues>
+    <layouts>
+        <layout>Installation Order Community Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Installation Status --></label>
+            <section>Installation Status</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Installation Order Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Installation Details --></label>
+            <section>Installation Details</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- Start and End date required to set the installation order as &quot;Scheduled&quot; --></errorMessage>
+        <name>VR01_Scheduled</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please set the installation order as finished --></errorMessage>
+        <name>VR02_Finished</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- please enter the reasons why the customer is not satisfied --></errorMessage>
+        <name>VR03_Customer_Unsatisfied</name>
+    </validationRules>
+</CustomObjectTranslation>

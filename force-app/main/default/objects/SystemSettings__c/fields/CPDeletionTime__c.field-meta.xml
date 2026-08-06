@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CPDeletionTime__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>Time in hours before the system deletes custom projects with no files attached (0=Disabled)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Time in hours before the system deletes custom projects with no files attached (0=Disabled)</inlineHelpText>
+    <label>CP Deletion Time (hours)</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

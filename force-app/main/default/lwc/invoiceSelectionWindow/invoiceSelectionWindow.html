@@ -1,0 +1,101 @@
+<template>    
+    <!--
+    <c-lib-modal 
+        modal-size="auto"
+        show-modal=true
+        header-text = "SAP Invoice"
+        show-close-icon="false"
+        show-positive-button="true"
+        show-negative-button="true"
+        positive-button-label="Next"
+        onpositive={handleContinue}
+        onnegative={handleCancel}        
+        width="850px">
+    -->
+    <div class="sideBar slds-float_left">
+        <div class="slds-split-view_container slds-is-open">    
+            <div aria-hidden="false" id="split-view-id" class="slds-split-view slds-grid slds-grid_vertical slds-grow slds-scrollable">                    
+                <header class="slds-split-view__header">
+                    <div class="slds-grid slds-grid_vertical-align-center slds-m-bottom_xx-small">
+                        <div class="slds-has-flexi-truncate">
+                            <div class="slds-media slds-media_center">
+                                <div class="slds-media__figure">
+                                    <lightning-icon icon-name="standard:case"></lightning-icon>
+                                </div>
+                                <div class="slds-media__body">
+                                    <h1 class="slds-page-header__title slds-text-color_default slds-p-right_x-small slds-p-bottom_xxx-small">Open a Claim</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="slds-grow slds-has-flexi-truncate">
+                    <div class="slds-col slds-size_2-of-2">
+                        <p class="slds-text-body_small slds-text-color_weak">Please select an invoice to start the process</p>
+                    </div>
+                    <div class="slds-grid slds-grid_vertical slds-scrollable">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input
+                            data-id="invoiceNumber"
+                            type="search"
+                            autocomplete = "on"
+                            max-length = "10"
+                            label="SAP Invoice"
+                            data-name="sapInvoice"
+                            value={invoiceNumber}
+                            is-loading={isLoading}
+                            required="false"
+                            onchange={handleInvoiceChange}
+                            onkeypress={handleEnter}
+                        ></lightning-input>
+    
+                        </div>
+    
+                    </div>
+                    <div class="slds-split-view__list-header docs-header">
+                        <div class="slds-split-view__list-item-action slds-grow slds-has-flexi-truncate">
+                            <div class="slds-grid slds-wrap">
+                                <span id="hNumber" class="slds-truncate clickable-header" title="Label.c.dict_docNumber" onclick={changeOrder}>Esto es algo</span>
+                            </div>
+                        </div>
+                        <div class="slds-grid slds-wrap">
+                            Esto debería ser el grid
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+    <div class="mainContent">
+        <!--
+        <div class="message-box">
+            <div class="slds-box slds-p-around_medium slds-theme_error slds-theme_alert-texture" role="status">
+                <h2 class="slds-text-heading_small slds-p-bottom_small">{!$Label.c.app_review_errors}</h2>
+                <ul class="slds-list--dotted">
+                    <aura:iteration items="{!v.errorList}" var="errorMessage">
+                        <li>{!errorMessage}</li>
+                    </aura:iteration>
+                </ul>
+            </div>
+        </div>            
+        -->
+
+        <!--
+        <div class="message-box">
+                <div class="slds-box slds-p-around_medium slds-theme_warning slds-theme_alert-texture" role="status">
+                    <h2 class="slds-text-heading_small">format( Label.c.saps_emptyDocs, v.breadcrumb1, v.breadcrumb2)</h2>
+                </div>
+            </div>            
+        -->    
+            
+        <!--
+        <aura:if isTrue="{!v.showDocument}">
+            <c:SAPSalesDocument aura:id="documentComp"></c:SAPSalesDocument>
+        </aura:if>
+        -->
+        
+    </div>
+    <!-- </c-lib-modal> -->
+</template>

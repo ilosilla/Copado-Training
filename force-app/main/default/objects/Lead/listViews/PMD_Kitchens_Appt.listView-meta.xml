@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PMD_Kitchens_Appt</fullName>
+    <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+    <columns>Sales_Office__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>ExistingAccount__c</columns>
+    <columns>AppointmentType__c</columns>
+    <columns>City__c</columns>
+    <columns>State__c</columns>
+    <columns>LEAD.ZIP</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Sales_Office__c</field>
+        <operation>contains</operation>
+        <value>ROCKVILLE,WASHINGTON DC,MARYLAND,NORTH CAR.,TYSONS CORNER</value>
+    </filters>
+    <filters>
+        <field>LeadSubtype__c</field>
+        <operation>contains</operation>
+        <value>kitchen</value>
+    </filters>
+    <filters>
+        <field>Product_Categories__c</field>
+        <operation>includes</operation>
+        <value>Countertops,Kitchen furniture</value>
+    </filters>
+    <label>PMD Kitchens Appt</label>
+    <sharedTo>
+        <role>Kitchen_Manager_PFL</role>
+        <role>Kitchen_Rep_PMD</role>
+    </sharedTo>
+</ListView>

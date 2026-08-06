@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Role__c</fullName>
+    <description>Indica el rol con el que va a actuar el Actor (contacto) en el Proyecto (Oportunidad)</description>
+    <inlineHelpText>Indicates the role with which the Actor will act (contact) in the Opportunity</inlineHelpText>
+    <label>Contact Role</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Admin. de Fincas</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Admin. de Fincas</label>
+            </value>
+            <value>
+                <fullName>Administrativo de obra</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Administrativo de obra</label>
+            </value>
+            <value>
+                <fullName>Albañil</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Albañil</label>
+            </value>
+            <value>
+                <fullName>Aparejador</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Aparejador</label>
+            </value>
+            <value>
+                <fullName>Architect</fullName>
+                <default>false</default>
+                <label>Architect</label>
+            </value>
+            <value>
+                <fullName>Architect of record</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Architect of record</label>
+            </value>
+            <value>
+                <fullName>Bath Installer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bath Installer</label>
+            </value>
+            <value>
+                <fullName>Carpintero</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Carpintero</label>
+            </value>
+            <value>
+                <fullName>Chapador</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Chapador</label>
+            </value>
+            <value>
+                <fullName>Comisionista</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Comisionista</label>
+            </value>
+            <value>
+                <fullName>Commission agent</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Commission agent</label>
+            </value>
+            <value>
+                <fullName>Constructor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Constructor</label>
+            </value>
+            <value>
+                <fullName>Constructores</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Constructores</label>
+            </value>
+            <value>
+                <fullName>Consultant</fullName>
+                <default>false</default>
+                <label>Consultant</label>
+            </value>
+            <value>
+                <fullName>Contacto de obra</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Contacto de obra</label>
+            </value>
+            <value>
+                <fullName>Contract</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Contract</label>
+            </value>
+            <value>
+                <fullName>Contractor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Contractor</label>
+            </value>
+            <value>
+                <fullName>Coordinador</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Coordinador</label>
+            </value>
+            <value>
+                <fullName>Designer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Designer</label>
+            </value>
+            <value>
+                <fullName>Developer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Developer</label>
+            </value>
+            <value>
+                <fullName>Developer  / Owner</fullName>
+                <default>false</default>
+                <label>Developer  / Owner</label>
+            </value>
+            <value>
+                <fullName>Diseñador</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Diseñador</label>
+            </value>
+            <value>
+                <fullName>Distribuidor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Distribuidor</label>
+            </value>
+            <value>
+                <fullName>Electricista</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Electricista</label>
+            </value>
+            <value>
+                <fullName>Encargado de Obra</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Encargado de Obra</label>
+            </value>
+            <value>
+                <fullName>Fábrica</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Fábrica</label>
+            </value>
+            <value>
+                <fullName>Fabricante</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Fabricante</label>
+            </value>
+            <value>
+                <fullName>Fabricator</fullName>
+                <default>false</default>
+                <label>Fabricator</label>
+            </value>
+            <value>
+                <fullName>Facade consultant</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Facade consultant</label>
+            </value>
+            <value>
+                <fullName>Facade installer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Facade installer</label>
+            </value>
+            <value>
+                <fullName>Flooring installer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Flooring installer</label>
+            </value>
+            <value>
+                <fullName>Fontanero</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Fontanero</label>
+            </value>
+            <value>
+                <fullName>General (main) contractor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>General (main) contractor</label>
+            </value>
+            <value>
+                <fullName>Gestor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Gestor</label>
+            </value>
+            <value>
+                <fullName>Instaladoras agua</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Instaladoras agua</label>
+            </value>
+            <value>
+                <fullName>Instalador energía solar</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Instalador energía solar</label>
+            </value>
+            <value>
+                <fullName>Instalador Fachadas</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Instalador Fachadas</label>
+            </value>
+            <value>
+                <fullName>Installer</fullName>
+                <default>false</default>
+                <label>Installer</label>
+            </value>
+            <value>
+                <fullName>Interior designer</fullName>
+                <default>false</default>
+                <label>Interior designer</label>
+            </value>
+            <value>
+                <fullName>Investor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Investor</label>
+            </value>
+            <value>
+                <fullName>Jefe técnico</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Jefe técnico</label>
+            </value>
+            <value>
+                <fullName>Kithchen installer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kithchen installer</label>
+            </value>
+            <value>
+                <fullName>Marmolista</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Marmolista</label>
+            </value>
+            <value>
+                <fullName>Montador</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Montador</label>
+            </value>
+            <value>
+                <fullName>Other (indicate)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other (indicate)</label>
+            </value>
+            <value>
+                <fullName>Prensa</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Prensa</label>
+            </value>
+            <value>
+                <fullName>Procurement consultant</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Procurement consultant</label>
+            </value>
+            <value>
+                <fullName>Project Manager</fullName>
+                <default>false</default>
+                <label>Project Manager</label>
+            </value>
+            <value>
+                <fullName>Promotor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Promotor</label>
+            </value>
+            <value>
+                <fullName>Promotores</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Promotores</label>
+            </value>
+            <value>
+                <fullName>Proveedor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Proveedor</label>
+            </value>
+            <value>
+                <fullName>Proyectista</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Proyectista</label>
+            </value>
+            <value>
+                <fullName>Proyectista, prescristor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Proyectista, prescristor</label>
+            </value>
+            <value>
+                <fullName>Reformista</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Reformista</label>
+            </value>
+            <value>
+                <fullName>Reseller</fullName>
+                <default>false</default>
+                <label>Reseller</label>
+            </value>
+            <value>
+                <fullName>Responsable de Zona</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Responsable de Zona</label>
+            </value>
+            <value>
+                <fullName>Site Manager</fullName>
+                <default>false</default>
+                <label>Site Manager</label>
+            </value>
+            <value>
+                <fullName>Subcontratistas</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Subcontratistas</label>
+            </value>
+            <value>
+                <fullName>Tienda Cocinas</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Tienda Cocinas</label>
+            </value>
+            <value>
+                <fullName>Transportista</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Transportista</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

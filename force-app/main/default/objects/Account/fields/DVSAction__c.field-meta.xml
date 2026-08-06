@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DVSAction__c</fullName>
+    <description>Discarded: Se quedan con los datos de Salesforce
+Accepted: Se quedan con los datos del DVS
+Unknown: No ha habido resultados al buscar por el dvs.
+Confirmed: Contabilidad ha aceptado la validación.</description>
+    <label>DVS Action</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ACCEPTED</fullName>
+                <default>false</default>
+                <label>Accepted</label>
+            </value>
+            <value>
+                <fullName>DISCARDED</fullName>
+                <default>false</default>
+                <label>Discarded</label>
+            </value>
+            <value>
+                <fullName>UNKNOWN</fullName>
+                <default>false</default>
+                <label>Unknown</label>
+            </value>
+            <value>
+                <fullName>CONFIRMED</fullName>
+                <default>false</default>
+                <label>Confirmed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

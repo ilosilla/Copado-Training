@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Status --></label>
+    <name>Status__c</name>
+    <picklistValues>
+        <masterLabel>BLOCKED</masterLabel>
+        <translation><!-- BLOCKED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ERROR</masterLabel>
+        <translation><!-- ERROR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EXCEPTION</masterLabel>
+        <translation><!-- EXCEPTION --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PROCESSED</masterLabel>
+        <translation><!-- PROCESSED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>QUEUED</masterLabel>
+        <translation><!-- QUEUED --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

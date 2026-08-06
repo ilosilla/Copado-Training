@@ -1,0 +1,34 @@
+<template>
+    <section class="rc-section">
+        <div class="rc-section-header">
+            <h2>Related Products {numberOfRelated}</h2>
+            <span class="toggle no-select rc-section-symbol" onclick={toggleOpen}>
+                <lightning-icon icon-name={toggleSymbol} size="small"></lightning-icon>
+            </span>
+        </div>
+
+        <div class={bodyClass}>
+            <div class="rc-scroll-btn left">
+                <lightning-icon icon-name="utility:chevronleft" size="medium"></lightning-icon>
+            </div>
+            <div class="rc-section-content">                
+                <template for:each={renderItems} for:item="item" lwc:if={hasRelated}>
+                    <article key={item.Id} class="rc-card small" role="listitem" tabindex="0" data-id={item.Id}>
+                        <a href={item.Slug}>
+                            <div class="rc-image-wrap no-select">
+                                <img src={item.Image} alt={item.Name} class="rc-image"/>
+                            </div>
+                            <div class="rc-info">
+                                <div class="rc-name" title={item.Name}>{item.Name}</div>
+                                <div class="rc-type">{item.Tag}</div>
+                            </div>
+                        </a>
+                    </article>
+                </template>
+            </div>
+            <div class="rc-scroll-btn right">
+                <lightning-icon icon-name="utility:chevronright" size="medium"></lightning-icon>
+            </div>
+        </div>
+    </section>
+</template>

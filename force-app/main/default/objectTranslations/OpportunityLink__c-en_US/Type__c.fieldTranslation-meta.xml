@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type --></label>
+    <name>Type__c</name>
+    <picklistValues>
+        <masterLabel>Counter Top</masterLabel>
+        <translation><!-- Counter Top --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Moodboard</masterLabel>
+        <translation><!-- Moodboard --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Select</masterLabel>
+        <translation><!-- Select --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tile Planner</masterLabel>
+        <translation><!-- Tile Planner --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

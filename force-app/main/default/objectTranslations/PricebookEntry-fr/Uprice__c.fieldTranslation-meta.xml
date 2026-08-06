@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Unité du prix</label>
+    <name>Uprice__c</name>
+    <picklistValues>
+        <masterLabel>Bag</masterLabel>
+        <translation>Saco</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Box</masterLabel>
+        <translation>Boîte</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Can</masterLabel>
+        <translation>Bidón</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Case</masterLabel>
+        <translation><!-- Case --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Centimeter</masterLabel>
+        <translation>Centimètre</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Item</masterLabel>
+        <translation>Pièce</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kilogram</masterLabel>
+        <translation>Kilogramme</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Liter</masterLabel>
+        <translation>Litre</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Meter</masterLabel>
+        <translation>Mètre</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mililiter</masterLabel>
+        <translation>Millilitre</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pallet</masterLabel>
+        <translation>Palette</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Piece</masterLabel>
+        <translation>Piece</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Roll</masterLabel>
+        <translation>Rôle</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Square centimeter</masterLabel>
+        <translation>Centimètre carré</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Square decimeter</masterLabel>
+        <translation>Dentimètre carré</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Square foot</masterLabel>
+        <translation>Pied carré</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Square meter</masterLabel>
+        <translation>Mètre carré</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Square meters</masterLabel>
+        <translation>Mètre carré</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unit</masterLabel>
+        <translation>Pièce</translation>
+    </picklistValues>
+</CustomFieldTranslation>

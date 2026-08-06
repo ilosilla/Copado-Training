@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Condition_stage_quotation_retail</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(  CONTAINS($User.Username, &apos;loads.user&apos;) = false,RecordType.Name  = &quot;Project retail&quot;,
+
+			 ISPICKVAL(StageName , &quot;Cotización&quot;),
+				ISCHANGED(StageName),
+    ISPICKVAL(Have_you_sent_a_quote__c,&quot;&quot;)
+   	)</errorConditionFormula>
+    <errorDisplayField>Have_you_sent_a_quote__c</errorDisplayField>
+    <errorMessage>You must fill in a budget to move on to the next stage</errorMessage>
+</ValidationRule>

@@ -1,0 +1,53 @@
+/* Backdrop */
+.sidebar-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    z-index: 900;
+}
+
+/* Sidebar dock panel */
+.sidebar-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 450px;
+    height: 100vh;
+    background: white;
+    padding: 1rem;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+    z-index: 999;
+    overflow-y: auto;
+    animation: slideIn 0.2s ease-out;
+    border-left: 1px solid #ddd;
+}
+
+/* Header */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: .5rem;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); }
+    to   { transform: translateX(0); }
+}
+
+.wrap-text {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}

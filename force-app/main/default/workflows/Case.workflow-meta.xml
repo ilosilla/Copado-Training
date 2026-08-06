@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Financial_Department_Case_status_pending_solution_and_compensation</fullName>
+        <ccEmails>financialdepartment@example.com</ccEmails>
+        <description>Financial Department - Case status pending solution and compensation</description>
+        <protected>false</protected>
+        <senderAddress>auto.sf.response@gmail.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>USA_Templates/Compensation_defined</template>
+    </alerts>
+    <alerts>
+        <fullName>Owner_Case_reopened</fullName>
+        <description>Owner - Case reopened</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>auto.sf.response@gmail.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>USA_Templates/Case_reopen</template>
+    </alerts>
+    <alerts>
+        <fullName>Reporter_Accept_proposed_solution</fullName>
+        <description>Reporter - Accept proposed solution</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactId</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>auto.sf.response@gmail.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>USA_Templates/Accept_solution</template>
+    </alerts>
+    <alerts>
+        <fullName>Reporter_Accepted_proposed_solution</fullName>
+        <description>Reporter - Accepted proposed solution</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactId</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>auto.sf.response@gmail.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>USA_Templates/Solution_accepted</template>
+    </alerts>
+    <alerts>
+        <fullName>Reporter_Attach_photos_site_link</fullName>
+        <description>Reporter - Attach photos site link</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>auto.sf.response@gmail.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>USA_Templates/Link_to_attach_photos</template>
+    </alerts>
+    <alerts>
+        <fullName>Reporter_Case_closed</fullName>
+        <description>Reporter - Case closed</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>auto.sf.response@gmail.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>USA_Templates/Case_status_change</template>
+    </alerts>
+    <alerts>
+        <fullName>Reporter_Case_created</fullName>
+        <description>Reporter - Case created</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SuppliedEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>auto.sf.response@gmail.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>USA_Templates/Case_created</template>
+    </alerts>
+    <alerts>
+        <fullName>Reporter_Case_delivery_date_filled</fullName>
+        <description>Reporter - Case delivery date filled</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>auto.sf.response@gmail.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>USA_Templates/Case_delivery_date_filled</template>
+    </alerts>
+    <alerts>
+        <fullName>Reporter_Case_qualified_as_others</fullName>
+        <description>Reporter - Case qualified as others</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>auto.sf.response@gmail.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>USA_Templates/Case_qualified_as_others</template>
+    </alerts>
+    <alerts>
+        <fullName>Reporter_Edit_case_Porcelanosa_web_link</fullName>
+        <description>Reporter - Edit case Porcelanosa web link</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SuppliedEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>auto.sf.response@gmail.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>USA_Templates/Link_to_edit_case_Porcelanosa_web_page</template>
+    </alerts>
+    <alerts>
+        <fullName>Reporter_Identify_invoices_lines_site_link</fullName>
+        <description>Reporter - Identify invoices lines site link</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>auto.sf.response@gmail.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>USA_Templates/Link_to_identify_invoices_lines</template>
+    </alerts>
+    <alerts>
+        <fullName>Reporter_Service_date_filled</fullName>
+        <description>Reporter - Service date filled</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>auto.sf.response@gmail.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>USA_Templates/Case_service_date_filled</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Assign_to_USA_Global_queue_omni</fullName>
+        <field>OwnerId</field>
+        <lookupValue>USA_Global</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Assign to USA Global queue (omni)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_status_to_pending_approval</fullName>
+        <field>Status</field>
+        <literalValue>6</literalValue>
+        <name>Change status to pending approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_status_to_pending_consideration</fullName>
+        <field>Status</field>
+        <literalValue>5</literalValue>
+        <name>Change status to pending consideration</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_status_to_pending_solution</fullName>
+        <field>Status</field>
+        <literalValue>7</literalValue>
+        <name>Change status to pending solution</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Check_Attach_SKU_photos_email_sent</fullName>
+        <field>Attach_SKU_photos_email_sent__c</field>
+        <formula>now()</formula>
+        <name>Check Attach SKU photos email sent</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Check_reporter_refused_to_attach_photo</fullName>
+        <field>Reporter_refuse_to_attach_photos__c</field>
+        <literalValue>1</literalValue>
+        <name>Check reporter refused to attach photo</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Delivery_done</fullName>
+        <field>Delivery_done__c</field>
+        <literalValue>1</literalValue>
+        <name>Delivery done</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Fill_Date_case_form_link_email_sent</fullName>
+        <field>Date_case_form_link_email_sent__c</field>
+        <formula>now()</formula>
+        <name>Fill Date case form link email sent</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Mark_as_approved</fullName>
+        <field>Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>Mark as approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Mark_as_service_done</fullName>
+        <field>Service_done__c</field>
+        <literalValue>1</literalValue>
+        <name>Mark as service done</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Mark_as_stopped</fullName>
+        <field>Case_Stopped__c</field>
+        <literalValue>1</literalValue>
+        <name>Mark as stopped</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Case approved and compensation defined</fullName>
+        <actions>
+            <name>Financial_Department_Case_status_pending_solution_and_compensation</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Compensation__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Approved__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Email notification to the financial department when a compensation is defined and it has been approved by the delegated approver</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case assigned to global queue</fullName>
+        <actions>
+            <name>Reporter_Edit_case_Porcelanosa_web_link</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Fill_Date_case_form_link_email_sent</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.OwnerId</field>
+            <operation>equals</operation>
+            <value>USA Unknown</value>
+        </criteriaItems>
+        <description>Once these cases are assigned to the global queue, an auto response email will be sent with a form link to a Porcelanosa web page.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case changes status to pending solution</fullName>
+        <actions>
+            <name>Reporter_Accept_proposed_solution</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>If the cases status changes to pending solution and the customer has not agree the suggested solution --&gt; Send email</description>
+        <formula>ISCHANGED(Status) &amp;&amp; ISPICKVAL(Status,&apos;7&apos;) &amp;&amp;  NOT(Customer_agrees_with_the_solution__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case customer conclusion is not ok</fullName>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Case.Customer_service_conclusion__c</field>
+            <operation>equals</operation>
+            <value>No ok</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Customer_service_conclusion__c</field>
+            <operation>equals</operation>
+            <value>Ok but unsatisfied</value>
+        </criteriaItems>
+        <description>If the Customer service conclusion is “No Ok” or “Ok but unsatisfied”,task to charles</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case customer identified and reporter refuses</fullName>
+        <actions>
+            <name>Reporter_Identify_invoices_lines_site_link</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>If the reporter refuses to attach photos and the customer is identified, send email to identify invoices</description>
+        <formula>NOT(ISBLANK(Customer__c )) &amp;&amp; 	Reporter_refuse_to_attach_photos__c &amp;&amp; Customer__c == ContactId</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case customer not identified and reporter refuses</fullName>
+        <actions>
+            <name>Reporter_refuses_to_attach_photo_and_customer_not_identified</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <description>If the reporter refuses to attach photos and the customer is not identified, task to charles</description>
+        <formula>ISBLANK(Customer__c ) &amp;&amp; 	Reporter_refuse_to_attach_photos__c</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case delivery date filled</fullName>
+        <actions>
+            <name>Reporter_Case_delivery_date_filled</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Email notification to the customer when the estimated delivery date in the claim is filled</description>
+        <formula>NOT(ISBLANK(Estimated_delivery_date__c)) &amp;&amp; 	ISCHANGED(Estimated_delivery_date__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case form email sent and not filled</fullName>
+        <active>true</active>
+        <description>Once the case by email has been created, sent the web form link and not filled by customer in 48 hours, it will be assigned to USA global queue (omni) in order to be manage by an agent.</description>
+        <formula>NOT(ISBLANK(Date_case_form_link_email_sent__c )) &amp;&amp; 	 ISBLANK(Date_reporter_filled_the_form__c )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Assign_to_USA_Global_queue_omni</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Case.CreatedDate</offsetFromField>
+            <timeLength>48</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Case is created via email-to-case</fullName>
+        <actions>
+            <name>Reporter_Case_created</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Email notification to the customer when a case is correctly created and assigned to him via email-to-case system</description>
+        <formula>ISPICKVAL(Origin,&apos;Email&apos;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case is reopened</fullName>
+        <actions>
+            <name>Owner_Case_reopened</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Reopened__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Email notification to the owner when his case has been reopened</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case photos not attached and reporter refuses</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Date_Photos_attached__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Date_reporter_called_to_attach_photos__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>24 hours since the agent checks the reporter called field and photos has not been attached</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Check_reporter_refused_to_attach_photo</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Case.Date_reporter_called_to_attach_photos__c</offsetFromField>
+            <timeLength>24</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Case qualified as Others</fullName>
+        <actions>
+            <name>Reporter_Case_qualified_as_others</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>When a case qualification is updated to Others, notify reporter</description>
+        <formula>ISCHANGED(Other_qualification__c) &amp;&amp; NOT(ISBLANK(Other_qualification__c))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case service date filled</fullName>
+        <actions>
+            <name>Reporter_Service_date_filled</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Email notification to the customer when the service date in the claim is filled</description>
+        <formula>NOT(ISBLANK(Service_date__c)) &amp;&amp; ISCHANGED(Service_date__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case status changed and not closed</fullName>
+        <active>true</active>
+        <booleanFilter>1 and 2</booleanFilter>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>notEqual</operation>
+            <value>9</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>notEqual</operation>
+            <value>8</value>
+        </criteriaItems>
+        <description>If a case remains in the same status more than 1 week, it is going to be automatically checked by the system as “Stopped”.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Mark_as_stopped</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Case.Date_last_status_change__c</offsetFromField>
+            <timeLength>7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Case status changed from qualification to SKU</fullName>
+        <actions>
+            <name>Reporter_Attach_photos_site_link</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Check_Attach_SKU_photos_email_sent</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>3</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Attach_SKU_photos_email_sent__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>When a case change from “Request pending to be qualified” to “Claim pending SKU identification”, and email with a link to a site will be sent</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case status changed to Claim pending execution</fullName>
+        <actions>
+            <name>Reporter_Accepted_proposed_solution</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>8</value>
+        </criteriaItems>
+        <description>Email notification to the customer when case status change to Claim pending execution</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case status changed to Closed</fullName>
+        <actions>
+            <name>Reporter_Case_closed</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>9</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.ParentId</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Email notification every time a case is closed</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case technician conclusion is No Ok</fullName>
+        <actions>
+            <name>Technician_Service_conclusion_No_Ok</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <description>If the Technician service conclusion is “No Ok”,task to charles</description>
+        <formula>ISCHANGED(Technician_service_conclusion__c) &amp;&amp; 	 ISPICKVAL(Technician_service_conclusion__c, &apos;No Ok&apos;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Delivery date filled</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Estimated_delivery_date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>If Delivery date is filled, the day of the deilvery, &quot;delivery done&quot; field is going to be checked automatically</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Delivery_done</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Service date filled</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Service_date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>If service date is filled, the day of the service, &quot;service done&quot; field is going to be checked automatically</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Mark_as_service_done</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Case.Service_date__c</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <tasks>
+        <fullName>Claim_consideration_approved</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Claim consideration approved</subject>
+    </tasks>
+    <tasks>
+        <fullName>Claim_consideration_rejected</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Claim consideration rejected</subject>
+    </tasks>
+    <tasks>
+        <fullName>Contact_reporter_after_sending_attach_SKU_photos_email</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>2</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Contact reporter after sending attach SKU photos email</subject>
+    </tasks>
+    <tasks>
+        <fullName>Contact_reporter_since_form_was_sent</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Contact reporter since form was sent</subject>
+    </tasks>
+    <tasks>
+        <fullName>Contact_reporter_to_confirm_service</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Contact reporter to confirm service</subject>
+    </tasks>
+    <tasks>
+        <fullName>Contact_technician_to_confirm_service</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Contact technician to confirm service</subject>
+    </tasks>
+    <tasks>
+        <fullName>Contact_technician_to_enter_service_date</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Contact technician to enter service date</subject>
+    </tasks>
+    <tasks>
+        <fullName>Customer_agrees_with_the_solution</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Customer agrees with the solution</subject>
+    </tasks>
+    <tasks>
+        <fullName>Fill_estimated_delivery_date</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Fill estimated delivery date</subject>
+    </tasks>
+    <tasks>
+        <fullName>Fill_service_date</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Fill service date</subject>
+    </tasks>
+    <tasks>
+        <fullName>Manage_the_claim_after_attaching_SKU_photos</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Manage the claim after attaching SKU photos</subject>
+    </tasks>
+    <tasks>
+        <fullName>Reporter_filled_the_form</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Reporter filled the form</subject>
+    </tasks>
+    <tasks>
+        <fullName>Reporter_identified_invoice_lines</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Reporter identified invoice lines</subject>
+    </tasks>
+    <tasks>
+        <fullName>Reporter_refuses_to_attach_photo_and_customer_not_identified</fullName>
+        <assignedTo>bsales@porcelanosa-usa.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Reporter refuses to attach photo and customer not identified</subject>
+    </tasks>
+    <tasks>
+        <fullName>Technician_Service_conclusion_No_Ok</fullName>
+        <assignedTo>bsales@porcelanosa-usa.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Technician Service conclusion No Ok</subject>
+    </tasks>
+</Workflow>

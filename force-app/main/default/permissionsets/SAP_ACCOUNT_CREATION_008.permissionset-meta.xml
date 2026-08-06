@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Gives the permission to create accounts on the org 008</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Sap Account Creation 008</label>
+    <license>Salesforce</license>
+</PermissionSet>

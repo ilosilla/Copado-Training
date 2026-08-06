@@ -1,0 +1,48 @@
+<!-- b2bPaymentGatewayResponse.html -->
+<template>
+    <div class="pg-container">
+        <template if:true={isWaitingOrProcessing}>
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+        </template>
+
+        <div class="pg-content">
+            <div class="pg-title">{title}</div>
+
+            <template lwc:if={isRecovery}>
+                <div class="pg-subtitle pg-subtitle--recovery">
+                    <p class="pg-paragraph">We’re currently experiencing a temporary outage. Your order will be created in the next few minutes.</p>
+                    <p class="pg-paragraph"><b>No action is required — you’ll receive an email shortly.</b></p>
+                </div>
+            </template>
+            <template lwc:else>
+                <div class="pg-subtitle">{subtitle}</div>
+            </template>
+
+            <template if:true={isSuccess}>
+                <div class="pg-order">Order <span class="pg-orderNumber">{orderNumber}</span></div>
+                <div class="pg-actions">
+                    <button class="pg-btn" onclick={handleContinueShopping}>Continue shopping</button>
+                </div>
+            </template>
+
+            <template if:true={isError}>
+                <div class="pg-actions">
+                    <button class="pg-btn" onclick={handleBackToCheckout}>Back to checkout</button>
+                </div>
+            </template>
+
+            <template if:true={isTimeout}>
+                <div class="pg-actions">
+                    <button class="pg-btn" onclick={handleRefresh}>Refresh</button>
+                </div>
+            </template>
+
+            <template if:true={isRecovery}>
+                <div class="pg-actions">
+                    <button class="pg-btn" onclick={handleContinueShopping}>Continue shopping</button>
+                </div>
+            </template>
+
+        </div>
+    </div>
+</template>

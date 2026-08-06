@@ -1,0 +1,38 @@
+.col-header-1 {    
+    font-weight: bold;
+}
+
+.col-header-2 {    
+}
+
+.table-row-even {
+}
+
+.table-row-odd {
+    background-color: var(--lwc-colorBackgroundRowSelected);
+}
+
+.selection-box {
+    cursor: hand;
+}
+
+textarea {
+    resize: none;
+    height: 6rem !important;
+}
+
+:host {
+    --slds-c-textarea-sizing-min-height: 140px;
+}
+
+.spinnerDiv {
+    z-index: 999999;
+    position:fixed;
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background:rgba(255,255,255,0.1);
+}

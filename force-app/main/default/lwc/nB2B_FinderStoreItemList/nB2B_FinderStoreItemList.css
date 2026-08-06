@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'porcelanosafont';
+    src: url('/B2B/s/sfsites/c/resource/PorcelanosaRegular.ttf') format('ttf');
+}
+
+.namecat{
+    font-size: medium;
+    font-weight: bold;
+    color: #223141;
+    font-family:'porcelanosafont';
+}
+.buttonview{
+    
+    font-size: x-small;
+    display: flex;
+    justify-content: flex-end;
+}
+.slds-button{
+    color: #929292;
+    border-color: #929292;
+    font-size: 11px;   
+    line-height: 17px; 
+}
+.slds-button:hover{
+    color: #f0f0f0;
+    border-color: #929292;
+    background-color: #929292;
+    font-size: 11px;
+}
+
+.descriptioncat{
+    font-size: small;
+    font-family:'porcelanosafont';
+    color:#929292;
+    font-weight: normal;
+}
+
+.lineSeparator{
+    margin-left: 2%;
+    border-bottom: 1px solid;
+    border-color: lightgray;
+}

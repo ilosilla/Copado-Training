@@ -1,0 +1,24 @@
+<template>
+    <div class={classes}>
+        <span class="slds-form-element__label">{label}</span>
+        <div class="slds-form-element__control">
+          <div class="slds-form-element__static">
+            <span if:true={isDate}><lightning-formatted-date-time value={value}></lightning-formatted-date-time></span>
+            <span if:true={isEMail}><lightning-formatted-email value={value}></lightning-formatted-email></span>
+            <span if:true={isCurrency}><lightning-formatted-number format-style="currency" currency-code={currency} value={value}></lightning-formatted-number></span>
+            <span if:true={isDecimal}><lightning-formatted-number format-style="decimal" minimum-fractino-digits={digits} value={value}></lightning-formatted-number></span>
+            <span if:true={isPhone}><lightning-formatted-phone value={value}></lightning-formatted-phone></span>
+            <span if:true={isUrl}><lightning-formatted-url value={value}></lightning-formatted-url></span>
+            <span if:true={isPlain}>{value}</span>
+            <span if:true={isBadge}><lightning-badge label={value} class="slds-badge_inverse"></lightning-badge></span>
+            <span lwc:if={downloadButton}>
+              <span class="slds-float_right">                
+                <lightning-icon icon-name="utility:clock" lwc:if={isDownloading} size="x-small"></lightning-icon>
+                <lightning-button-icon icon-name="utility:download" variant="bare" onclick={handleIconClick} lwc:else></lightning-button-icon>
+              </span>
+            </span>
+            <lightning-helptext content={tooltip} class="slds-var-m-left_x-small" lwc:if={hasTooltip}></lightning-helptext>
+          </div>
+        </div>
+    </div>
+</template>

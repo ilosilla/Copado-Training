@@ -1,0 +1,2154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAPClaimsCase</fullName>
+    <active>true</active>
+    <businessProcess>Claims Support Process</businessProcess>
+    <compactLayoutAssignment>SAP_Case_Compact_Layout</compactLayoutAssignment>
+    <description>SAP Claims</description>
+    <label>SAP Claims Case</label>
+    <picklistValues>
+        <picklist>Customer_no_ok_service_cause__c</picklist>
+        <values>
+            <fullName>Agent did not appeared</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect solution</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_service_conclusion__c</picklist>
+        <values>
+            <fullName>No ok</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ok</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ok but unsatisfied</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FactoryInquiryContact__c</picklist>
+        <values>
+            <fullName>BUTECH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GAMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KRION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LANTIC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NOKEN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PORSA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XTONE</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Liability__c</picklist>
+        <values>
+            <fullName>G1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>G2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>G3</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LikelyCause__c</picklist>
+        <values>
+            <fullName>COMPANY LIABILITY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CUSTOMER ISSUE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CUSTOMER MIS-USE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CUSTOMER MIS-USE %281%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CUSTOMER MIS-USE %282%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DAMAGED IN TRANSIT %2F ON SITE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DAMAGED IN TRANSPORT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GROUT HAS NOT BEEN MIXED CORRECTLY - TOO MUCH WATER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IMPROPER CLEANING OR MAINTENANCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IMPROPER CLEANING OR MAINTENANCE %281%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %281%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %2810%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %2811%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %2812%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %2814%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %2815%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %2816%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %2817%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %2818%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %2819%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %282%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %2820%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %2821%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %2822%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %2823%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %2824%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %2825%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %283%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %284%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %285%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %286%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %287%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %288%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION ISSUE %289%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NOT MIXED PROPERLY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PICKING OR ADMIN ERROR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCT ISSUE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCT ISSUE %281%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCT ISSUE %282%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCT UNSUITABLE FOR INTENDED USE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCTION ISSUE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCTION ISSUE %281%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCTION ISSUE %2810%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCTION ISSUE %282%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCTION ISSUE %283%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCTION ISSUE %284%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCTION ISSUE %285%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCTION ISSUE %286%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCTION ISSUE %287%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCTION ISSUE %288%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCTION ISSUE %289%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SALES ISSUE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATER SUPPLY ISSUE</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exception</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LiveAgent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Problem__c</picklist>
+        <values>
+            <fullName>BROKEN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INCOMPLETE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WRONG-PRODUCT</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ProductType__c</picklist>
+        <values>
+            <fullName>ACC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ADH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ALL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BRW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FUR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GRO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MIR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SHC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SHH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SHT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SHV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TIL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TOP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TRI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TUB</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>Commercial Agreement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complex functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E04</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E05</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E05_1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E07</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E07_1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E08</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E08_1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E11</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exception</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instructions not clear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User didn%27t attend training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RecommendedCure__c</picklist>
+        <values>
+            <fullName>ACCEPT RETURN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ADJUST VALVE TO LOWER SETTING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CHECK DATE ON PACKAGING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CHECK ELECTRICTITY IS CONNECTED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CHECK ORIGINAL ORDER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CHECK THERMOSTAT OR HEATING ELEMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CHECK WITH ELECTRICIAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CHECK WITH INSTALLER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CLEAN EACH NOZZLE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CLEAR OBSTRUCTION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CLOSE CLAIM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CONTACT HELPLINE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CONTACT INSTALLER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CONTACT PLUMBER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENSURE SENSOR IS PRESSED FIRMLY SO RECOGNISES A FINGERPRINT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EVALUATE ANOTHER PRODUCT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FIND OUT AND QUALIFY THE PROBLEM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALL EXTENSION KIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLER MUST THREAD BOLTS IN TO CORRECT DEPTH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NO BLEEDING DONE DURING INSTALLATION - INTERNAL DAMAGE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PLUMBER TO CLEAR DRAIN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REFIT VALVE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REMOVE AIR - NO BLEEDING DONE DURING INSTALLATION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REMOVE DEBRIS FROM AERATOR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REMOVE OBSTRUCTION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REMOVE P%2FB CARTRIDGE AND CLEAN LINES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REPLACE CARTRIDGE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REPLACE DIVERTER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REPLACE DRAIN CAP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REPLACE DRAWER GLIDES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REPLACE FLOW RESTRICTOR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REPLACE MISSING PART</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REPLACE ONE OR EITHER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REPLACE PRODUCT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REPLACE PRODUCT %28GOOD WILL%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REPLACE SOFT CLOSE HINGES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REPLACE SUPPLY LINE %2F FLEXIBLE HOSE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REPLACE THERMOSTATIC CARTRIDGE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REPLACE VALVE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SUPPLY CORRECT SHADE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SUPPLY REPLACEMENT DRAIN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATER SUPPLIES MUST BE REVERSED IN THE WALL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ReplacementOrderClass__c</picklist>
+        <values>
+            <fullName>REPLACE_FULL</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>REPLACE_PART</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ReportedMakeProblem__c</picklist>
+        <values>
+            <fullName>000-BROKEN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>000-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>000-INCOMPLETE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>000-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>000-OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>000-WRONG-PRODUCT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>001-BROKEN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>001-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>001-INCOMPLETE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>001-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>001-OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>001-WRONG-PRODUCT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>002-BROKEN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>002-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>002-INCOMPLETE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>002-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>002-OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>002-WRONG-PRODUCT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-BROKEN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-INCOMPLETE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-WRONG-PRODUCT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>007-BROKEN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>007-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>007-INCOMPLETE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>007-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>007-OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>007-WRONG-PRODUCT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-BROKEN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-INCOMPLETE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-WRONG-PRODUCT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>009-BROKEN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>009-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>009-INCOMPLETE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>009-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>009-OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>009-WRONG-PRODUCT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>040-BROKEN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>040-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>040-INCOMPLETE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>040-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>040-OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>040-WRONG-PRODUCT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>041-BROKEN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>041-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>041-INCOMPLETE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>041-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>041-OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>041-WRONG-PRODUCT</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ReportedTypeProblem__c</picklist>
+        <values>
+            <fullName>000-ALL-BROKEN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>000-ALL-INCOMPLETE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>000-ALL-OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>000-ALL-WRONG-PRODUCT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>001-ALL-BROKEN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>001-ALL-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>001-ALL-INCOMPLETE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>001-ALL-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>001-ALL-OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>001-ALL-WRONG-PRODUCT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>001-BAS-DETERORIATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>001-BAS-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>001-TIL-DETERORIATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>001-TIL-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>001-TUB-DETERORIATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>001-TUB-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>002-ALL-BROKEN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>002-ALL-INCOMPLETE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>002-ALL-OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>002-ALL-WRONG-PRODUCT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>002-TIL-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>002-TIL-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-ACC-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-ALL-BROKEN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-ALL-INCOMPLETE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-ALL-OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-ALL-WRONG-PRODUCT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-BAS-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-BAS-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-BRW-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-BRW-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-FUR-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-FUR-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-INS-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-MIR-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-MIR-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-SAW-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-SAW-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-SHC-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-SHC-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-SHH-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-SHH-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-SHT-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-SHT-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-SHV-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-SHV-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-TOW-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-TOW-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-TUB-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>006-TUB-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>007-ADH-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>007-ALL-BROKEN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>007-ALL-INCOMPLETE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>007-ALL-OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>007-ALL-WRONG-PRODUCT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>007-GRO-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>007-HEA-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>007-TRI-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-ACC-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-ALL-BROKEN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-ALL-INCOMPLETE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-ALL-OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-ALL-WRONG-PRODUCT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-BAS-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-BAS-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-FUR-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-FUR-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-MIR-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-MIR-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-SHE-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-SHE-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-SHT-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-SHT-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-TOP-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-TOP-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>008-TUB-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>009-ACC-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>009-ALL-BROKEN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>009-ALL-INCOMPLETE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>009-ALL-OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>009-ALL-WRONG-PRODUCT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>009-BAS-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>009-BAS-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>009-FUR-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>009-FUR-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>009-MIR-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>009-MIR-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>009-TOP-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>009-TOP-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>041-ALL-BROKEN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>041-ALL-DETERIORATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>041-ALL-INCOMPLETE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>041-ALL-NOT-WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>041-ALL-OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>041-ALL-WRONG-PRODUCT</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>State__c</picklist>
+        <values>
+            <fullName>California</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Florida</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Illinois</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Michigan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minnesota</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missouri</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Jersey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New York</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pennsylvania</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rhode Island</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Utah</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wisconsin</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SymptomsDetails__c</picklist>
+        <values>
+            <fullName>ADHESIVE NOT WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ADJUSTABLE SCREW HAS FALLEN OUT OF THE DRAIN CAP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AERATOR OBSTRUCTED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BASIN WARPED %2F NOT LEVEL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BROKEN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CARRIER BOLTS TOO FAR OUT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CHROME %2F PAINT DELAMINATING %2F COMING AWAY FROM ITEM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CHROME DELAMINATING %2F COMING AWAY FROM TAP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CRACKS DEVELOPED AFTER INSTALLATION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CRACKS VISIBLE PRIOR TO INSTALLATION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DEBRIS %2F DAMAGE IN CARTRIDGE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DEBRIS IN DIVERTER OR DAMAGED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DEFECTIVE DRAWER GLIDES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DIVERTER OBSTRUCTED OR DAMAGED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DOESN%27T HEAT UP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DRAIN CABLE DISCONNECTED %28IF SMALL BRASS SCREW STILL IN PLACED%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FLEXIBLE HOSE DEGRADED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GENERAL PROBLEM AFFECTING ENTIRE PROPERTY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GLASS CHIPPED %2F DAMAGED %2F SCRATCHED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HAIRLINE CRACK WITH UNDERFLOOR HEATING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HANDLES DAMAGED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HINGES DROPPED %2F NOT LEVEL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IMPROPER CLEANING OR MAINTENACE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INCOMPLETE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSUFFICIENT WATER PRESSURE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LEAKING FROM HANDLE OR SPOUT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LEAKING THROUGH CRACKS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LIFTING VALVE DOES NOT STOP THE FLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LIFTING VALVE STOPS FLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOGO INCORRECTLY PLACED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MARKED %2F DISCOLOURATION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MOVEMENT IN SUBSTRATE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NK LOGO INCORRECTLY PLACED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NOT FITTED CORRECTLY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NOT REACHING CORRECT TEMPERATURE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OBSTRUCTED CARTRIDGE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OBSTRUCTED FLOW RESTRICTOR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OBSTRUCTED WASTE PIPE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ORDER ERROR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHER TAPS IN THE PROPERTY WORK CORRECTLY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PART OF THE CISTERN FRAME IS DAMAGED OR CRACKED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PART OF THE CISTERN FRAME IS MISSING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCHING OR DRYING LIGHTER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PIPE AT THE WALL OUTLET DOES NOT FEEL HOT ON THE LEFT AND COLD ON THE RIGHT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PIPE AT THE WALL OUTLET FEEL HOT ON THE LEFT AND COLD ON THE RIGHT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCT BECOMING MARKED OR STAINED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCT DEFECT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCT IMPERFECTION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCT INSTALLED NOT PER SPECS%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCTION ERROR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RUST ON SURFACE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SCRATCHES %2F DEFECT ON SURFACE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SENSOR NOT REACTING TO TOUCH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SOFT CLOSE FUNCTION NOT WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SOFT CLOSE SEAT CRACKED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SOME COLD AREAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SUPPLY HOSES OBSTRUCTING MOVEMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SUPPLY LINES NOT FLUSHED PRIOR TO INSTALLATION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SURFACE IS SCRATCHED OR MARKED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SURFACE NOT SMOOTH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TAP SURFACE IS SCRATCHED OR MARKED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TOWEL WARMER HAS BECOME DEFORMED OVER TIME</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TOWEL WARMER HAS STARTED TO LEAK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TRAY NOT LEVEL %2F WARPED %2F OUT OF TOLERANCE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TRAY WARPED %2F NOT LEVEL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNIT DAMAGED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNIT EXPOSED TO HIGH HUMIDITY OR WATER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNIT OBSTRUCTED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VALVE INSTALLED TOO FAR INTO THE WALL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VALVE OBSTRUCTED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VISIBLE CRACKS IN TILES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WASTE COVER MISSING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATER LEAKING FROM TOP OF SHOWER HEAD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATER NOT DRAINING AWAY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATER NOT FLOWING FROM EVERY NOZZLE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATER REMAINING IN TRAY CONSTANTLY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WIRED INCORRECTLY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WORKED WELL PREVIOULSLY - ISSUE DEVELOPED SINCE INSTALLATION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WORKTOP WARPED %2F NOT LEVEL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WRONG COLOUR SUPPLIED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WRONG-PRODUCT</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Symptoms__c</picklist>
+        <values>
+            <fullName>BASIN NOT LEVEL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BASIN NOT LEVEL %2F MOVEMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BATH DRAIN NO LONGER OPEN%2FCLOSE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BROKEN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CISTERN FRAME IMCOMPLETE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CISTERN OR PAN RUNNING CONTINOUSLY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CRACKS WITHIN PRODUCT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DAMAGE ON CISTERN %2F FRAME</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DIVERTER DIFFICULT TO OPERATE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DOOR MIS-ALIGNED %2F DROPPED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DRAWERS NOT OPERATING SMOOTHLY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FLOOR SENSOR NOT WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GLASS DAMAGED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GROUT CRACKING AFTER INSTALLATION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GROUT INCORRECT COLOUR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HANDLE DIFFICULT TO OPERATE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOT WATER PUMPED BACK TO COLD WATER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INCOMPLETE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INCORRECT FLOW RATE AFTER INSTALLATION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LEAKS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NEWLY DEVELOPED STAINING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NEWLY DEVELOPED YELLOWING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NOT CURING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PARTS MISSING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PEELING OFF OR CORROSION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCT CRACKED OR MALFORMED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCT DECOLORATED FROM START</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCT DISCOLOURED FROM START</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCT DOES NOT PERFORM AS EXPECTED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCT HAS STAINS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCT LEAKS FROM HANDLE OR SPOUT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCT LEAKS FROM UNDERNEATH THE BASIN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCT MALFORMED ON SURFACE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REDUCTION IN WATER FLOW - AERATOR MODELS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REDUCTION IN WATER FLOW - NON AERATOR MODELS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SENSOR NOT WORKING CORRECTLY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SHOWER NOZZLES BLOCKED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SMART CABINET UNIT DAMAGED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SOFT CLOSE SEAT ISSUE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SURFACE DEFECT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>THERMOSTAT NOT WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TILES CRACKING AFTER INSTALLATION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TOWEL WARMER NOT WORKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TRAY NOT LEVEL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TRAY WARPED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TRIMS CANNOT BE INSTALLED CORRECTLY %2F KNOB FALLS OFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNIT DAMAGED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNIT IS DELAMINATING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNIT IS PRODUCING ONLY VERY HOT OR COLD WATER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNIT NOT DIVERTING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNIT NOT SUPPLYING REQUIRED TEMPERTAURE OF WATER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VISIBLE DAMAGE ON SURFACE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WASTE NOT REMOVED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATER BACKING UP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATER DOESN%27T DRAIN AWAY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WATER REMAINING IN TRAY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WORKTOP NOT LEVEL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WORKTOP NOT LEVEL %2F MOVEMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WRONG SHADING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WRONG-PRODUCT</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Technician_no_ok_service_cause__c</picklist>
+        <values>
+            <fullName>Incorrect solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Claims</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Technician_service_conclusion__c</picklist>
+        <values>
+            <fullName>No ok</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ok</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reschedule</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Exception</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feature Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Question</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAP Collection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAP Price Adjustment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAP Quality Claim</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Unit__c</picklist>
+        <values>
+            <fullName>BID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DM2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>L</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>M2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ML</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MT2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PZS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ROL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SQF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UN</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Warranty__c</picklist>
+        <values>
+            <fullName>NO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YES</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>XXXProductFamily__c</picklist>
+        <values>
+            <fullName>ACCESSORIES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ADHESIVES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ALL FAMILIES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BASINS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BATHROOM FURNITURE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BATHTUBS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BRASSWARE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GROUTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTALLATION SYSTEMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MIRRORS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SANITARYWARE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SHOWER COLUMNS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SHOWER HEADS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SHOWER TRAYS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SHOWER VALVES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TILES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TOWEL WARMERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TRIMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNDERFLOOR HEATING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WORKTOPS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

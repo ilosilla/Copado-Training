@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CollectDefectiveProducts__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field indicates whether defective products associated with a customer claim need to be collected. When set to true, it signifies that arrangements should be made to retrieve the products from the customer for further inspection or processing.</description>
+    <label>Collect Defective Products</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

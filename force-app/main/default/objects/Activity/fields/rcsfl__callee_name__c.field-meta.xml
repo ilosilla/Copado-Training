@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>rcsfl__callee_name__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Callee&apos;s directory name or caller ID.</description>
+    <externalId>false</externalId>
+    <label>Callee Name</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

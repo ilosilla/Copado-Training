@@ -1,0 +1,6 @@
+<design:component label="FlowShortcuts: Shortcuts panel for flows">
+    <design:attribute name="shortcut_01" label="Shortcut #1" />        
+    <design:attribute name="shortcut_02" label="Shortcut #2" />        
+    <design:attribute name="shortcut_03" label="Shortcut #3" />        
+	<design:attribute name="result" label="Result" />        
+</design:component>

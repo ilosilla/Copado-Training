@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- SAPCode --></label>
+    <name>SAPCode__c</name>
+    <picklistValues>
+        <masterLabel>100089141 - KITCHEN COUNTERTOP KRION</masterLabel>
+        <translation><!-- 100089141 - KITCHEN COUNTERTOP KRION --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>100089146 - PROYECTO OTHERS KRION</masterLabel>
+        <translation><!-- 100089146 - PROYECTO OTHERS KRION --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>100223200 - PROYECTO OTHERS XTONE</masterLabel>
+        <translation><!-- 100223200 - PROYECTO OTHERS XTONE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>100224050 - KITCHEN COUNTERTOP XTONE</masterLabel>
+        <translation><!-- 100224050 - KITCHEN COUNTERTOP XTONE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>100236636 -VANITY COUNTERTOP XTONE</masterLabel>
+        <translation><!-- 100236636 -VANITY COUNTERTOP XTONE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>100288217 - VANITY COUNTERTOP KRION</masterLabel>
+        <translation><!-- 100288217 - VANITY COUNTERTOP KRION --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

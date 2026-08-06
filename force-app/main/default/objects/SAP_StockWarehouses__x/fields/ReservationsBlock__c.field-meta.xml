@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ReservationsBlock__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>ReservationsBlock</description>
+    <externalDeveloperName>ReservationsBlock</externalDeveloperName>
+    <isFilteringDisabled>false</isFilteringDisabled>
+    <isNameField>false</isNameField>
+    <isSortingDisabled>false</isSortingDisabled>
+    <label>ReservationsBlock</label>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,77 @@
+.store-tile {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;
+    flex-wrap: wrap;
+    padding: 1% 1% 9%;
+    height: 100%;
+}
+
+.image-container {
+    width: 100%;
+    
+}
+.imagen {
+    /*border-radius: 15px;*/
+    height: 170px;
+}
+
+.details {
+    text-align: center;
+    background-color: #f0f0f0;
+    width: 100%;
+
+}
+
+@font-face {
+    font-family: 'porcelanosafont';
+    src: url('/B2B/s/sfsites/c/resource/PorcelanosaRegular.ttf') format('ttf');
+}
+
+.namecat {
+    font-size: medium;
+    font-weight: bold;
+    margin-top: 5%;
+    height: 50px;
+    font-family: 'porcelanosafont';
+    color: #223141;
+}
+
+.descriptioncat{
+    font-size: small;
+    font-family:'porcelanosafont';
+    color:#929292;
+    font-weight: normal;
+}
+
+.imagen {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+    width: 100%;
+}
+
+.buttonview{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.seeallbut{
+    text-decoration: underline;
+    color: #223141;
+    font-family:'porcelanosafont';
+    font-size: large;
+}
+
+.slds-button{
+    color: #929292;
+    border-color: #929292;
+    font-size: 11px;
+}
+.slds-button:hover{
+    color: #f0f0f0;
+    border-color: #929292;
+    background-color: #929292;
+    font-size: 11px;
+}

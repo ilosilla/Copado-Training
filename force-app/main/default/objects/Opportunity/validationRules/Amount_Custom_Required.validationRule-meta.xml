@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amount_Custom_Required</fullName>
+    <active>false</active>
+    <description>Obliga a que los usuario de un rol determinado (San Francisco Outside Sales) pongan el importe de la oportunidad</description>
+    <errorConditionFormula>AND(
+  OR (
+    Amount_custom__c &lt;= 0,
+    ISNULL(Amount_custom__c) 
+  ),
+ $UserRole.Name = &apos;San Francisco Outside Sales Rep&apos;
+)</errorConditionFormula>
+    <errorDisplayField>Amount_custom__c</errorDisplayField>
+    <errorMessage>The opportunity amount is required</errorMessage>
+</ValidationRule>

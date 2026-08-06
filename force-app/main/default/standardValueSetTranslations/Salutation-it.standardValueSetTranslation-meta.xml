@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Dr.</masterLabel>
+        <translation><!-- Dr. --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mr.</masterLabel>
+        <translation>Sig</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mr. &amp; Mrs.</masterLabel>
+        <translation>Sig &amp; Sig.ra</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mrs.</masterLabel>
+        <translation><!-- Mrs. --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Ms.</masterLabel>
+        <translation><!-- Ms. --></translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

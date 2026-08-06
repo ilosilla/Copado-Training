@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>B2B: US Dealers Header</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Page_Layout</target>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Theme_Layout</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property
+                name="showTopBar"
+                type="Boolean"
+                label="Show Top Bar"
+                description="Toggles the display of the site’s top bar."
+                default="true" />
+            <property
+                name="showNavigationBar"
+                type="Boolean"
+                label="Show Navigation Bar"
+                description="Toggles the display of the site’s navigation bar."
+                default="false" />
+        </targetConfig>
+    </targetConfigs>
+    <capabilities>
+        <capability>lightningCommunity__RelaxedCSP</capability>
+    </capabilities>
+</LightningComponentBundle>

@@ -1,0 +1,69 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName,forceCommunity:availableForAllPageTypes" access="global" controller="FlashCardInsRequestController">
+    
+    <!-- attributes -->
+    <aura:attribute name="visible" type="Boolean" default="false"/>
+    <aura:attribute name="request" type="Object"/>    
+    <aura:attribute name="installer" type="Object"/>    
+    
+    <!-- account fields -->
+    
+	<!-- data reading -->        
+    <!-- force:recordData recordId="{!v.request.InstallerAccount__c}"
+                      layoutType="FULL"
+                      targetFields="{!v.installer}"
+                      / -->                
+    
+    <!-- global events -->
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <aura:handler event="force:refreshView" action="{!c.reload}"/>    
+	    
+    <aura:if isTrue="{!v.visible}">
+        <article class="slds-card"> 
+            <header class="slds-border_bottom">
+                <div class="slds-media slds-media_center slds-has-flexi-truncate slds-page-header slds-border_bottom" >
+                    <div class="slds-media__figure">
+                        <lightning:icon iconName="custom:custom44" size="small"/>
+                    </div>
+                    <div class="slds-page-header__name-title ">
+                        <h2>
+                            <p>{!$Label.c.dic_insr_name}</p>
+                            <aura:if isTrue="{! v.request }">
+                                <span class="slds-card__header-title slds-truncate" title="{!v.request.Name}">  
+                                    <lightning:formattedUrl 
+                                                            class="slds-card__header-link"
+                                                            value="{!'/lightning/r/' + v.request.Id + '/view'}" 
+                                                            label="{!v.request.Name}" tooltip="Go to the Installation Request page" /> 
+                                </span>
+                            	<aura:set attribute="else">
+                                    <span class="slds-card__header-title slds-truncate slds-card__header-link">  
+                                        No Installation Request
+                                    </span>                                    
+                                </aura:set>
+                            </aura:if>
+                        </h2>
+                    </div>                    
+                </div>
+            </header>
+            <aura:if isTrue="{! v.request }">
+                <div class="slds-card__body slds-card__body_inner">
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col">                    
+                            <lightning:input
+                                             label="{!$Label.c.ins_installer_label}" 
+                                             value="{!v.installer.Name}" 
+                                             readonly="true">
+                            </lightning:input>
+                      </div>
+                      <div class="slds-col">
+                          <lightning:input 
+                                           label="{!$Label.c.ins_state_label}" 
+                                           value="{!v.request.State__c}" 
+                                           readonly="true">
+                          </lightning:input>                                      
+                      </div>
+                    </div>
+                </div>
+            </aura:if>
+        </article>	
+	</aura:if>        
+</aura:component>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Service Required --></label>
+    <name>ServiceRequired__c</name>
+    <picklistValues>
+        <masterLabel>Fabrication and Installation</masterLabel>
+        <translation><!-- Fabrication and Installation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Material and Fabrication Only</masterLabel>
+        <translation><!-- Material and Fabrication Only --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other (Explain in Notes)</masterLabel>
+        <translation><!-- Other (Explain in Notes) --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

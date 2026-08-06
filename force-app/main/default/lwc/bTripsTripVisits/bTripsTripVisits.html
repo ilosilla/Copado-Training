@@ -1,0 +1,243 @@
+<template>
+    <!-- Overlay de loading -->
+    <template if:true={isLoading}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <div class="slds-modal slds-fade-in-open" style="display: flex; align-items: center; justify-content: center;">
+            <lightning-spinner alternative-text="Loading..." size="large"></lightning-spinner>
+        </div>
+    </template>
+
+    <lightning-layout multiple-rows >
+        <lightning-layout-item size="12" flexibility="auto" padding="horizontal-small" class="slds-text-align_right">
+            <lightning-button-group>
+                <lightning-button label="Nueva visita" title="Download action" icon-name="utility:add" onclick={handleNewEvent} class="slds-m-left_x-small"></lightning-button>
+            </lightning-button-group>
+        </lightning-layout-item>
+    </lightning-layout>
+
+    <br/>
+
+    <table class="slds-table slds-table_cell-buffer slds-table--striped">
+        <thead>
+          <tr class="slds-line-height_reset">
+            <th class="slds-size--2-of-12" scope="col">
+                <div class="slds-truncate" title="Completed">Fecha</div>
+              </th>
+            <th class="slds-size--2-of-12" scope="col">
+                <div class="slds-truncate" title="Completed">Título</div>
+              </th>
+            <th class="slds-size--3-of-12" scope="col">
+              <div class="slds-truncate" title="Opportunity Name">Comentario</div>
+            </th>
+            <th class="slds-size--2-of-12" scope="col">
+                <div class="slds-truncate" title="Close Date">Cliente</div>
+              </th>
+              <th class="slds-size--2-of-12" scope="col">
+                <div class="slds-truncate" title="Close Date">Lead</div>
+              </th>
+              <th class="slds-size--2-of-12" scope="col">
+                <div class="slds-truncate" title="Close Date">Acciones</div>
+              </th>
+              <th class="slds-size--2-of-12" scope="col">
+                <div class="slds-truncate" title="Close Date">Solicitudes</div>
+              </th>
+              <th class="slds-size--2-of-12" scope="col">
+                <div class="slds-truncate" title="Close Date">Eventos</div>
+              </th>
+              <th class="slds-cell_action-mode slds-size--1-of-12" scope="col" style="width:3.25rem">
+                <div class="slds-truncate slds-assistive-text" title="Actions">Actions</div>
+              </th>
+          </tr>
+        </thead>
+        <tbody>
+            <template for:each={visits} for:item="event">
+                <tr class="slds-hint-parent" key={event.Id}>
+                    <th data-label="Account Name" scope="row">
+                        <lightning-formatted-date-time
+                            value={event.Date__c}
+                            year="numeric"
+                            month="short"
+                            day="2-digit">
+                        </lightning-formatted-date-time>
+                    </th>
+                    <td data-label="Comment">
+                        <div class="slds-truncate" title="Name">
+                            {event.Title__c}
+                        </div>
+                    </td>
+                    <td data-label="Comment">
+                        <div class="slds-truncate" title="Name">
+                            {event.Comment__c}
+                        </div>
+                    </td>
+                    <td data-label="Comment">
+                        <div class="slds-truncate" title="Account Name">
+                            <a href={event.accountLink} target="_blank" >{event.accountName}</a>
+                          </div>
+                    </td>
+                    <td data-label="Comment">
+                        <div class="slds-truncate" title="Account Name">
+                            <a href={event.leadLink} target="_blank" >{event.LeadName}</a>
+                          </div>
+                    </td>
+                    <td data-label="Comment">
+                        <div class="slds-truncate" title="Account Name">
+                            {event.requestCount}
+                          </div>
+                    </td>
+                    <td data-label="Comment">
+                        <div class="slds-truncate" title="Account Name">
+                            {event.actionCount}
+                          </div>
+                    </td>
+                    <td data-label="Comment">
+                        <div class="slds-truncate" title="Account Name">
+                            {event.eventCount}
+                          </div>
+                    </td>
+
+                      <td data-label="Comment">
+                        <lightning-button-menu alternative-text="Show menu">
+                            <lightning-menu-item value="VIEW" label="Ver" onclick={handleRowActionShow} data-id={event.Id}></lightning-menu-item>
+                            <lightning-menu-item value="EDIT" label="Editar" onclick={handleRowActionEdit} data-id={event.Id}></lightning-menu-item>
+                            <lightning-menu-item value="DELETE" label="Eliminar" onclick={handleRowActionDelete} data-id={event.Id}></lightning-menu-item>
+                        </lightning-button-menu>
+                    </td>
+                </tr>
+            </template>
+        </tbody>
+      </table>
+
+      <template if:true={isModalOpenCreateEvent}>
+        <div class="slds-backdrop slds-backdrop_open">
+        <!-- Modal -->
+            <section role="dialog" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    
+                    <!-- Header con "X" -->
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                title="Cerrar"
+                                onclick={handleCloseModal}>
+                            <lightning-icon icon-name="utility:close" size="small" alternative-text="Cerrar"></lightning-icon>
+                        </button>
+                        <h2 class="slds-text-heading_medium">Visita de viaje</h2>
+                    </header>
+
+                    <!-- Contenido -->
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <lightning-flow
+                            flow-api-name="Business_trip_visit"
+                            flow-input-variables={inputVariables}
+                            onstatuschange={handleFlowStatusChange}>
+                        </lightning-flow>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </template>
+
+    <template if:true={isModalOpenDeleteEvent}>
+        <div class="slds-backdrop slds-backdrop_open">
+        <!-- Modal -->
+            <section role="dialog" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    
+                    <!-- Header con "X" -->
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                title="Cerrar"
+                                onclick={handleCloseModal}>
+                            <lightning-icon icon-name="utility:close" size="small" alternative-text="Cerrar"></lightning-icon>
+                        </button>
+                        <h2 class="slds-text-heading_medium">Eliminar visita</h2>
+                    </header>
+
+                    <!-- Contenido -->
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <lightning-flow
+                            flow-api-name="Delete_Business_Trip_Visit"
+                            flow-input-variables={inputVariables}
+                            onstatuschange={handleFlowStatusChange}>
+                        </lightning-flow>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </template>
+
+    <template if:true={isModalOpenShowEvent}>
+        <div class="slds-backdrop slds-backdrop_open">
+        <!-- Modal -->
+            <section role="dialog" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    
+                    <!-- Header con "X" -->
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                title="Cerrar"
+                                onclick={handleCloseModal}>
+                            <lightning-icon icon-name="utility:close" size="small" alternative-text="Cerrar"></lightning-icon>
+                        </button>
+                        <h2 class="slds-text-heading_medium">Visita de viaje</h2>
+                    </header>
+
+                    <!-- Contenido -->
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <lightning-record-view-form
+                            object-api-name="BusinessTripVisit__c"
+                            record-id={selectedEvent}
+                            onload={handleLoad}
+                        >
+
+                        <lightning-layout multiple-rows="true" class="slds-var-m-bottom_small">
+                            <lightning-layout-item size="6" class="slds-var-p-horizontal_x-small">
+                                <label class="slds-form-element__label"><b>Título</b></label>
+                                <lightning-output-field field-name="Title__c" variant="label-hidden"></lightning-output-field>
+                            </lightning-layout-item>
+
+                            <lightning-layout-item size="4" class="slds-var-p-horizontal_x-small">
+                                <label class="slds-form-element__label"><b>Fecha</b></label>
+                                <lightning-output-field field-name="Date__c" variant="label-hidden"></lightning-output-field>
+                            </lightning-layout-item>
+
+                            <lightning-layout-item size="3" class="slds-var-p-horizontal_x-small">
+                                <label class="slds-form-element__label"><b>Canal</b></label>
+                                <lightning-output-field field-name="Channel__c" variant="label-hidden"></lightning-output-field>
+                            </lightning-layout-item>
+
+                            <lightning-layout-item size="12" class="slds-var-p-horizontal_x-small">
+                                <label class="slds-form-element__label"><b>Comentario</b></label>
+                                <lightning-output-field field-name="Comment__c" variant="label-hidden"></lightning-output-field>
+                            </lightning-layout-item>
+
+                            <hr>
+
+                            <lightning-layout-item size="6" class="slds-var-p-horizontal_x-small">
+                                <label class="slds-form-element__label"><b>Cliente</b></label>
+                                <lightning-output-field field-name="Account__c" variant="label-hidden"></lightning-output-field>
+                            </lightning-layout-item>
+
+                            <lightning-layout-item size="6" class="slds-var-p-horizontal_x-small">
+                                <label class="slds-form-element__label"><b>Oportunidad</b></label>
+                                <lightning-output-field field-name="Opportunity__c" variant="label-hidden"></lightning-output-field>
+                            </lightning-layout-item>
+
+                            <lightning-layout-item size="6" class="slds-var-p-horizontal_x-small">
+                                <label class="slds-form-element__label"><b>Lead</b></label>
+                                <lightning-output-field field-name="Lead__c" variant="label-hidden"></lightning-output-field>
+                            </lightning-layout-item>
+
+                        </lightning-layout>
+                        <!--<lightning-output-field field-name="Channel__c"> </lightning-output-field>
+                        <lightning-output-field field-name="Comment__c"> </lightning-output-field>
+                        <lightning-output-field field-name="Account__c"> </lightning-output-field>
+                        <lightning-output-field field-name="Opportunity__c"> </lightning-output-field>
+                        <lightning-output-field field-name="Lead__c"> </lightning-output-field>-->
+                    </lightning-record-view-form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </template>
+</template>

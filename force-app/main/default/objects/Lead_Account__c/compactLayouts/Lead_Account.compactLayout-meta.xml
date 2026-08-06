@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Account</fullName>
+    <fields>Name</fields>
+    <fields>Other_Phone__c</fields>
+    <fields>Billing_Country_Code__c</fields>
+    <fields>Billing_City__c</fields>
+    <fields>Billing_Zip_Postal_Code__c</fields>
+    <fields>Converted__c</fields>
+    <fields>Converted_Account__c</fields>
+    <label>Lead Account</label>
+</CompactLayout>

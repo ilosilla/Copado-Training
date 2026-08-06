@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>207</fullName>
+        <default>false</default>
+        <label>EUROCERAMIQUE SARL</label>
+    </customValue>
+    <customValue>
+        <fullName>208</fullName>
+        <default>false</default>
+        <label>PORCELANOSA PARIS IDF</label>
+    </customValue>
+    <customValue>
+        <fullName>210</fullName>
+        <default>false</default>
+        <label>SOCAMED SARL</label>
+    </customValue>
+    <customValue>
+        <fullName>218</fullName>
+        <default>false</default>
+        <label>PORCELANOSA OUEST SAS</label>
+    </customValue>
+    <customValue>
+        <fullName>219</fullName>
+        <default>false</default>
+        <label>PORCELANOSA SUD-OUEST</label>
+    </customValue>
+    <customValue>
+        <fullName>502</fullName>
+        <default>false</default>
+        <label>PORCELANOSA SOUTHEAST LTD</label>
+    </customValue>
+    <customValue>
+        <fullName>504</fullName>
+        <default>false</default>
+        <label>PORCELANOSA NORTHWEST LTD</label>
+    </customValue>
+    <customValue>
+        <fullName>505</fullName>
+        <default>false</default>
+        <label>PORCELANOSA MIDLANDS LTD</label>
+    </customValue>
+    <customValue>
+        <fullName>506</fullName>
+        <default>false</default>
+        <label>PORCELANOSA SCOTLAND LTD</label>
+    </customValue>
+    <customValue>
+        <fullName>507</fullName>
+        <default>false</default>
+        <label>PORCELANOSA WESTERN LTD</label>
+    </customValue>
+    <customValue>
+        <fullName>508</fullName>
+        <default>false</default>
+        <label>PORCELANOSA YORKSHIRE LTD</label>
+    </customValue>
+    <customValue>
+        <fullName>500</fullName>
+        <default>false</default>
+        <label>PORCELANOSA GRUPO</label>
+    </customValue>
+    <customValue>
+        <fullName>201</fullName>
+        <default>false</default>
+        <label>PORCELANOSA GROUPE SAS</label>
+    </customValue>
+    <masterLabel>company_list</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

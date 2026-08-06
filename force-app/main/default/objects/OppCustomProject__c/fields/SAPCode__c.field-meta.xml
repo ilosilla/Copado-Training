@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAPCode__c</fullName>
+    <label>SAPCode</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>100089141 - KITCHEN COUNTERTOP KRION</fullName>
+                <default>false</default>
+                <label>100089141 - KITCHEN COUNTERTOP KRION</label>
+            </value>
+            <value>
+                <fullName>100288217 - VANITY COUNTERTOP KRION</fullName>
+                <default>false</default>
+                <label>100288217 - VANITY COUNTERTOP KRION</label>
+            </value>
+            <value>
+                <fullName>100089146 - PROYECTO OTHERS KRION</fullName>
+                <default>false</default>
+                <label>100089146 - PROYECTO OTHERS KRION</label>
+            </value>
+            <value>
+                <fullName>100224050 - KITCHEN COUNTERTOP XTONE</fullName>
+                <default>false</default>
+                <label>100224050 - KITCHEN COUNTERTOP XTONE</label>
+            </value>
+            <value>
+                <fullName>100236636 -VANITY COUNTERTOP XTONE</fullName>
+                <default>false</default>
+                <label>100236636 -VANITY COUNTERTOP XTONE</label>
+            </value>
+            <value>
+                <fullName>100223200 - PROYECTO OTHERS XTONE</fullName>
+                <default>false</default>
+                <label>100223200 - PROYECTO OTHERS XTONE</label>
+            </value>
+            <value>
+                <fullName>100236636 - VANITY COUNTERTOP XTONE</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>100236636 - VANITY COUNTERTOP XTONE</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

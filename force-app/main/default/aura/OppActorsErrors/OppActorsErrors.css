@@ -1,0 +1,211 @@
+.THIS .customModalContent{
+    
+    overflow-y: auto !important; 
+    padding: 1rem 2rem;
+    min-height: 25.8125rem;
+    
+}
+
+.THIS .customSection{
+    
+    padding-left: .75rem;
+    
+}
+
+.THIS .slds-theme--shade {
+    
+    background-color: rgb(243, 242, 242);
+    
+}
+
+.THIS .relative {
+    
+    position: relative;
+    height: 100px;
+    z-index: 0;
+    
+}
+
+.THIS .whiteBackground {
+    
+    background-color: #FFFFFF;
+  
+}
+
+.THIS.noPaddingTop{
+    
+    padding-top: 1rem !important;
+    
+}
+
+.THIS .customHeader{
+    
+    color: #080707;
+    font-weight: inherit;
+    
+}
+
+/*table*/
+
+.THIS .row{
+    
+    border-top: 1px solid #dddbda;
+    
+}
+
+@media (max-width: 768px) {
+    
+    .THIS .row{
+        
+        flex-direction: column;
+        flex: 1;
+        
+    }
+    
+    .THIS .row .cell{
+        
+        border-bottom: 1px solid #dddbda;
+        
+    }
+    
+}
+
+.THIS div.indexCell {
+    
+    flex: 0 0 5%;
+    text-align: center;
+    
+}
+
+@media (max-width: 768px) {
+    
+    .THIS div.indexCell{
+        
+        display: none;
+        
+    }
+    
+}
+
+.THIS .header .cell{
+    
+    text-transform: uppercase;
+    color: #514F4D;
+    font-weight: 700;
+    
+}
+
+
+@media (max-width: 768px) {
+    
+    .THIS .header .cell{
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top: 1px solid #dddbda;
+        
+    }
+    
+    .THIS .header div:last-of-type{
+        
+        border-bottom: 1px solid #dddbda;
+        
+    }
+    
+}
+
+.THIS div.cell {
+    
+    flex: 0 0 33%;
+    display: flex;
+    align-items: center;
+    
+}
+
+.THIS div.row > div.cell {
+    
+    min-height: 3.164375rem;
+    
+}
+
+@media (max-width: 768px) {
+    
+    .THIS div.cell {
+        
+        min-height: 3.164375rem;
+    }
+    
+}
+
+.THIS div.indexHeader{
+    
+    display: none;
+        
+}
+
+@media (max-width: 768px) {
+    
+    .THIS div.indexHeader{
+        
+        display: block;
+        text-align: center;
+        margin-bottom: 1em;
+        
+    }
+    
+}
+
+.THIS .table{
+    
+    margin-bottom: 1em;
+    
+}
+
+.THIS .cellPadding{
+    
+    padding: .125em;
+    
+}
+
+.THIS .customButton{
+    
+    left: 2px;
+    
+}
+
+@media (max-width: 768px) {
+    
+    .THIS .container{
+        
+        /*max-width: 500px;
+        margin: 0 auto;*/
+        
+        display: flex;
+        margin-bottom: 1em;
+        
+    }    
+    
+    .THIS .header{
+        
+        display: flex !important;
+        flex-direction: column;
+        flex: 1;
+        
+    }
+    
+}
+
+.THIS .innerCell{
+    /*border: 1px solid rgb(221, 219, 218);
+    border-radius: .25rem;*/
+    /*min-height: 1.5rem;*/
+    /*cursor: text;*/
+    
+}
+
+.THIS .buttonContainer{
+    
+    text-align: center;
+    
+}

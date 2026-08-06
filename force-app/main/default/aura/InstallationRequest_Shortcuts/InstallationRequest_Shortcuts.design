@@ -1,0 +1,6 @@
+<design:component label="InstallationRequest_Shortcuts: Shortcuts panel for next action flow">
+    <design:attribute name="closedWonDisabled" label="Closed Won Disabled" />        
+    <design:attribute name="closedLostDisabled" label="Closed Lost Disabled" />            
+    <design:attribute name="gotoClosedWon" label="gotoClosedWon" />
+    <design:attribute name="gotoClosedLost" label="gotoClosedLost" />    
+</design:component>

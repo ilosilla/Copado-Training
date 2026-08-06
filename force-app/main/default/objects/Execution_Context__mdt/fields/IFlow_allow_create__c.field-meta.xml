@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IFlow_allow_create__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Allows the creation of accounts and contacts in login flow</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Allows the creation of accounts and contacts in login flow</inlineHelpText>
+    <label>Login flow allow create</label>
+    <type>Checkbox</type>
+</CustomField>

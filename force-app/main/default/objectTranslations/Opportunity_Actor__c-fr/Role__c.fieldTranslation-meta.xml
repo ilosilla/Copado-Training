@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Contact associé en tant qu&apos;acteur du projet</help>
+    <label>Rôle</label>
+    <name>Role__c</name>
+    <picklistValues>
+        <masterLabel>Architect</masterLabel>
+        <translation>Architecte</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Consultant</masterLabel>
+        <translation><!-- Consultant --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Developer  / Owner</masterLabel>
+        <translation>Promoteur</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fabricator</masterLabel>
+        <translation>Transformateur</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Installer</masterLabel>
+        <translation><!-- Installer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Interior designer</masterLabel>
+        <translation>Décorateur d&apos;intérieur</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Project Manager</masterLabel>
+        <translation>Chef Projet</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reseller</masterLabel>
+        <translation>Revendeur</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Site Manager</masterLabel>
+        <translation>Administrateur de Site</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Call to Action --></label>
+    <name>CallToAction__c</name>
+    <picklistValues>
+        <masterLabel>GREEN</masterLabel>
+        <translation><!-- GREEN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RED</masterLabel>
+        <translation><!-- RED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>YELLOW</masterLabel>
+        <translation><!-- YELLOW --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

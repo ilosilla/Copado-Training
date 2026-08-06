@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsRetailReferencePricebook__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If check, it&apos;s the Reference Pricebook for the context</description>
+    <label>Is Retail Reference Pricebook</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

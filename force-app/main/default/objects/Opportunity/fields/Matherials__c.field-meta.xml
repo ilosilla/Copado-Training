@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Matherials__c</fullName>
+    <label>Materials</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Furniture</fullName>
+                <default>false</default>
+                <label>Furniture</label>
+            </value>
+            <value>
+                <fullName>Taps</fullName>
+                <default>false</default>
+                <label>Taps</label>
+            </value>
+            <value>
+                <fullName>Countertops</fullName>
+                <default>false</default>
+                <label>Countertops</label>
+            </value>
+            <value>
+                <fullName>Bathtubs</fullName>
+                <default>false</default>
+                <label>Bathtubs</label>
+            </value>
+            <value>
+                <fullName>Shower</fullName>
+                <default>false</default>
+                <label>Shower</label>
+            </value>
+            <value>
+                <fullName>Shower tray</fullName>
+                <default>false</default>
+                <label>Shower tray</label>
+            </value>
+            <value>
+                <fullName>Shower column</fullName>
+                <default>false</default>
+                <label>Shower column</label>
+            </value>
+            <value>
+                <fullName>Sprinklers</fullName>
+                <default>false</default>
+                <label>Sprinklers</label>
+            </value>
+            <value>
+                <fullName>Bulkheads</fullName>
+                <default>false</default>
+                <label>Bulkheads</label>
+            </value>
+            <value>
+                <fullName>Washbasins</fullName>
+                <default>false</default>
+                <label>Washbasins</label>
+            </value>
+            <value>
+                <fullName>Sanitary</fullName>
+                <default>false</default>
+                <label>Sanitary</label>
+            </value>
+            <value>
+                <fullName>Radiators</fullName>
+                <default>false</default>
+                <label>Radiators</label>
+            </value>
+            <value>
+                <fullName>Bathroom accessories</fullName>
+                <default>false</default>
+                <label>Bathroom accessories</label>
+            </value>
+            <value>
+                <fullName>Wardrobe</fullName>
+                <default>false</default>
+                <label>Wardrobe</label>
+            </value>
+            <value>
+                <fullName>Dressing room</fullName>
+                <default>false</default>
+                <label>Dressing room</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DuplicateRule xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionOnInsert>Allow</actionOnInsert>
+    <actionOnUpdate>Allow</actionOnUpdate>
+    <alertText>[C0006] Your are trying to create a contact that already exists. Please change it or contact you administrator.</alertText>
+    <description>[C0006] Duplicate Contact</description>
+    <duplicateRuleFilter>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <duplicateRuleFilterItems>
+            <field>Username</field>
+            <operation>notContain</operation>
+            <value>apiuser</value>
+            <sortOrder>1</sortOrder>
+            <table>User</table>
+        </duplicateRuleFilterItems>
+        <duplicateRuleFilterItems>
+            <field>Account_Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+            <sortOrder>2</sortOrder>
+            <table>Account</table>
+        </duplicateRuleFilterItems>
+        <duplicateRuleFilterItems>
+            <field>Username</field>
+            <operation>notContain</operation>
+            <value>loads.user</value>
+            <sortOrder>3</sortOrder>
+            <table>User</table>
+        </duplicateRuleFilterItems>
+    </duplicateRuleFilter>
+    <duplicateRuleMatchRules>
+        <matchRuleSObjectType>Contact</matchRuleSObjectType>
+        <matchingRule>Standard_Contact_Match_Rule_v1_1</matchingRule>
+        <objectMapping xsi:nil="true"/>
+    </duplicateRuleMatchRules>
+    <isActive>false</isActive>
+    <masterLabel>Duplicate Contacts Postal code</masterLabel>
+    <operationsOnInsert>Alert</operationsOnInsert>
+    <operationsOnInsert>Report</operationsOnInsert>
+    <operationsOnUpdate>Alert</operationsOnUpdate>
+    <operationsOnUpdate>Report</operationsOnUpdate>
+    <securityOption>BypassSharingRules</securityOption>
+    <sortOrder>3</sortOrder>
+</DuplicateRule>

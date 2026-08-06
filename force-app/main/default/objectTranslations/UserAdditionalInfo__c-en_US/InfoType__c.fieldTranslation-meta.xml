@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Info type --></label>
+    <name>InfoType__c</name>
+    <picklistValues>
+        <masterLabel>DVSACCOUNTSMANAGED</masterLabel>
+        <translation><!-- DVSACCOUNTSMANAGED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>POPUPLASTTIME</masterLabel>
+        <translation><!-- POPUPLASTTIME --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

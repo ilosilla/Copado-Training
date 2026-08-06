@@ -1,0 +1,185 @@
+<apex:page Controller="OppController3" renderAs="pdf" language="{!salesOfficeLanguage}">
+    
+    <apex:stylesheet value="{!$Resource.porcelanosaStyle}"/>
+    
+    <apex:param name="salesOfficeCode" value="{!salesOfficeCode}"/>
+    <apex:param name="salesOfficeLanguage" value="{!salesOfficeLanguage}"/>
+    
+    <body style="background-color:#FAFAFA;">
+        <center>
+      
+      <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" id="bodyTable" style="height:100%;">
+        <tbody><tr>
+          <td align="center" valign="top" id="bodyCell">
+            
+            <!-- // TEMPLATE // -->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tbody>
+              
+                  <tr>
+                      <!-- // PREHEADER // -->
+                      <td id="templatePreheader" align="center" valign="top">
+                          
+                          <table class="templateContainer" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:#fAfAfA !important;">
+                              <tbody><tr>
+                                  <td valign="top" style="padding-top:12px;padding-right:24px;padding-bottom:12px;padding-left:24px;text-align:right;">
+                                      <!--<em><a style="font-weight:normal;" href="*|ARCHIVE|*" target="_blank">View in browser</a></em>-->
+                                  </td>
+                                  </tr>
+                              </tbody></table>
+                      </td>
+                  </tr>
+                  
+                  <tr>
+                          <!-- // COLUMNS // -->
+                          <td align="center" valign="top">
+                            <table class="templateContainer" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                              <tbody><tr>
+                                <td valign="top" style="padding-right:24px;padding-left:24px; padding-bottom:24px;">
+                                    
+                                    <apex:variable value="{!1}" var="count"/>
+                                    <apex:repeat value="{!oppList}" var="opp">
+
+                                  <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tbody><tr>
+                                        
+                                      <td valign="top" style="padding-top:24px;">
+                                              
+                                              <table style="{!IF(MOD(count,3) == 0, 'page-break-after:always; width: 100%; text-align: left;', 'width: 100%; text-align: left;')}">
+                                                  <tr>
+                                                      <th style="background-color: #0070c0; color: #FFFFFF; border: thin solid black; padding: 5px; padding-left: 7px;
+                                                                 font-size: 18px; font-weight: normal" colspan="2">
+                                                          {!opp.name}
+                                                      </th>
+                                                  </tr>
+                                                  <tr>
+                                                      <th style="background-color: #deeaf6; border: thin solid black; padding-left: 7px; font-size: 15px;" colspan="2">
+                                                          {!$Label.PersonalDetails}
+                                                      </th> 
+                                                  </tr>
+                                                  <tr>
+                                                      <td style="border: thin solid black; padding-left: 7px; font-size: 15px;" width="40%">{!$Label.Name}</td>
+                                                      <td style="border: thin solid black; padding-left: 7px; font-size: 15px;" width="60%">{!opp.Account.Name}</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td style="border: thin solid black; padding-left: 7px; font-size: 15px;" width="40%">{!$Label.Address}</td>
+                                                      <td style="border: thin solid black; padding-left: 7px; font-size: 15px;" width="60%">{!opp.Account.Address__c}</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td style="border: thin solid black; padding-left: 7px; font-size: 15px;">{!$Label.PersonMobilePhone}</td>
+                                                      <td style="border: thin solid black; padding-left: 7px; font-size: 15px;">{!opp.Account.PersonMobilePhone}</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td style="border: thin solid black; padding-left: 7px; font-size: 15px;">{!$Label.Email}</td>
+                                                      <td style="border: thin solid black; padding-left: 7px; font-size: 15px;">{!opp.Account.PersonEmail}</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <!--<td style="border: thin solid black; padding-left: 7px; font-size: 15px;">{!$Label.Profesional}</td>
+                                                      <td style="border: thin solid black; padding-left: 7px; font-size: 15px;">{!opp.Account.Profesional__c}</td>-->
+                                                  </tr>
+                                                  <tr>
+                                                      <!--<td style="border: thin solid black; padding-left: 7px; font-size: 15px;">{!$Label.Recomendado_por_Profesional}</td>
+                                                      <td style="border: thin solid black; padding-left: 7px; font-size: 15px;">{!opp.ContractorConsulting__c}</td>-->
+                                                  </tr>
+                                                  <tr>
+                                                      <th style="background-color: #deeaf6; border: thin solid black; padding-left: 7px; font-size: 15px;" colspan="2">{!$Label.Datos_de_la_Cita}</th>
+                                                  </tr>                                                              
+                                                  <tr>
+                                                      <!--<td style="border: thin solid black; padding-left: 7px; font-size: 15px;">{!$Label.Sociedad}</td>
+                                                      <td style="border: thin solid black; padding-left: 7px; font-size: 15px;">{!opp.CompanyDate__c}</td>-->
+                                                  </tr>
+                                                  <tr>
+                                                      <td style="border: thin solid black; padding-left: 7px; font-size: 15px;">{!$Label.Organizacion}</td>
+                                                      <td style="border: thin solid black; padding-left: 7px; font-size: 15px;">{!opp.Sales_Org_Date__c}</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td style="border: thin solid black; padding-left: 7px; font-size: 15px;">{!$Label.Oficina_de_Ventas}</td>
+                                                      <td style="border: thin solid black; padding-left: 7px; font-size: 15px;">{!opp.Sales_Office_Date__c}</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td style="border: thin solid black; padding-left: 7px;">{!$Label.Fecha_de_contacto}</td>
+                                                      <td style="border: thin solid black; padding-left: 7px; font-size: 15px;"><apex:outputText value="{0,date,dd/MM/yyy}">
+                                                          <apex:param value="{!opp.Appointment_Date__c}"/> 
+                                                          </apex:outputText>
+                                                      </td>
+                                                  </tr> 
+                                                  <tr>
+                                                      <td style="border: thin solid black; padding-left: 7px;">{!$Label.Fecha_solicitada}</td>
+                                                      <td style="border: thin solid black; padding-left: 7px; font-size: 15px;"><apex:outputText value="{0,date,dd/MM/yyy}">
+                                                          <apex:param value="{!opp.Request_Store_Appointment__c}"/>
+                                                          </apex:outputText>
+                                                      </td>
+                                                  </tr>
+                                                  <tr>
+                                                      <th style="background-color: #deeaf6; border: thin solid black; padding-left: 7px; font-size: 15px;" colspan="2">{!$Label.Detalle_de_la_Oportunidad}</th>
+                                                  </tr>                                                              
+                                                  <tr>
+                                                      <td style="border: thin solid black; padding-left: 7px; font-size: 15px;">{!$Label.Zona_de_Proyecto}</td>
+                                                      <td style="border: thin solid black; padding-left: 7px; font-size: 15px;">{!opp.Project_Zone__c}</td>
+
+                                                  </tr>
+                                                  <tr>
+                                                      <td style="border: thin solid black; padding-left: 7px; font-size: 15px;">{!$Label.Materiales_de_Interes}</td>
+                                                      <td style="border: thin solid black; padding-left: 7px; font-size: 15px;">{!opp.Materials__c}</td>
+
+                                                  </tr>
+                                                  <tr>
+                                                      <td style="border: thin solid black; padding-left: 7px;">{!$Label.Fecha_de_inicio}</td>
+                                                      <td style="border: thin solid black; padding-left: 7px;"><apex:outputText value="{0,date,dd/MM/yyy}">
+                                                          <apex:param value="{!opp.Start_Project_Date__c}"/> 
+                                                          </apex:outputText>
+                                                      </td>
+                                                  </tr>                                                  
+                                                  <tr>
+                                                      <td style="border: thin solid black; padding-left: 7px;">{!$Label.Fecha_de_finalizacion}</td>
+                                                      <td style="border: thin solid black; padding-left: 7px;"><apex:outputText value="{0,date,dd/MM/yyy}">
+                                                          <apex:param value="{!opp.End_Project_Date__c}"/> 
+                                                          </apex:outputText>
+                                                      </td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td style="border: thin solid black; padding-left: 7px;">{!$Label.Reason}</td>
+                                                      <td style="border: thin solid black; padding-left: 7px;">{!opp.ReasonProject__c}</td>
+                                                  </tr>
+                                          </table>
+                                    
+                                          </td>
+                                            
+                                        </tr>
+                                      </tbody></table>
+                                    
+                                        <apex:variable value="{!count + 1}" var="count"/>
+                                        
+                                    </apex:repeat>
+                                    
+                                    </td>
+                                  </tr>
+                                </tbody></table>
+                              </td>
+                            </tr>
+                            <!-- // END : COLUMNS // -->
+                            <tr>
+                              <!-- // FOOTER // -->
+                              <td id="templateFooter" align="center" valign="top" style="">
+                                <table class="templateContainer" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                  <tbody>
+                                      <tr>
+                                    <td valign="top" style="padding-right:24px;padding-left:24px; padding-bottom:12px;">
+                                        <img class="logoPrincipe mcnImage" alt="" src="{!URLFOR($Resource.porcelanosaFooter)}"/>
+                                    </td>
+                                  </tr>
+                                </tbody></table>
+                              </td>
+                            </tr>
+                            <!-- // END : FOOTER // -->
+                          </tbody>
+                          </table>
+                          <!-- // END : TEMPLATE // -->
+                        </td>
+                      </tr>
+                    </tbody></table>
+                  </center>
+                
+</body>
+    
+</apex:page>

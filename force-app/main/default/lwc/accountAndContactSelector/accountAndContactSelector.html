@@ -1,0 +1,77 @@
+<!--
+  @description       : 
+  @author            : Andrea Da Silva
+  @group             : 
+  @last modified on  : 04-13-2024
+  @last modified by  : Andrea Da Silva
+-->
+<template>
+    <lightning-layout multiple-rows="true" vertical-align="end">
+        <lightning-layout-item size={comboboxLayoutSize} if:true={renderLookup}>
+            <lightning-record-picker
+                if:true={showAccountsCombo}
+                label="Accounts"
+                placeholder="Search Accounts..."
+                object-api-name="Account"
+                filter={filter}
+                display-info={displayInfo}
+                matching-info={matchingInfo}
+                onchange={handleChangeAccount}
+                required>
+            </lightning-record-picker>
+        </lightning-layout-item>
+        <lightning-layout-item if:true={showNewAccountButton} size="3">
+            <lightning-button
+                label={label.newLabel}
+                title={label.newAccountLabel}
+                onclick={handleNewAccount}
+                class="slds-var-m-left_small">
+            </lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item size="12">
+            <c-account-creator
+                if:true={showNewAccountForm}
+                onaccountcreated={handleAccountCreated}
+                onaccountcancelled={handelAccountCancelled}>
+            </c-account-creator>
+            <template if:true={showNewAccountInfo}>
+                <p><b>{label.accountLabel}:</b> {accountName}</p>
+            </template>
+        </lightning-layout-item>
+        <lightning-layout-item size={comboboxLayoutSize}>
+            <lightning-combobox
+                if:true={showContactsCombo}
+                name="contact"
+                label={label.contactLabel}
+                placeholder={label.chooseContactLabel}
+                value={selectedContactId}
+                onchange={handleChange}
+                options={contactOptions}
+                disabled={disabled}
+                required={requireContact}>
+            </lightning-combobox>
+        </lightning-layout-item>
+        <lightning-layout-item if:true={showNewContactButton} size="3">
+            <lightning-button
+                label={label.newLabel}
+                title={label.newContactLabel}
+                onclick={handleNewContact}
+                class="slds-var-m-left_small">
+            </lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item size="12">
+            <c-contact-creator
+                if:true={showNewContactForm}
+                account-id={accountId}
+                oncontactcreated={handleContactCreated}
+                oncontactcancelled={handelContactCancelled}>
+            </c-contact-creator>
+            <template if:true={showNewContactInfo}>
+                <p><b>{label.contactLabel}:</b> {contactName}</p>
+            </template>
+            <template if:true={personAccount}>
+                <p>* Person account</p>
+            </template>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

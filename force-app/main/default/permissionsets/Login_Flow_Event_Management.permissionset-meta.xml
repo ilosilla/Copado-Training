@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>EVENT_MANAGEMENT_LOGIN_FLOW</name>
+    </customPermissions>
+    <description>Si el usuario lo tiene, se le bloquea salesforce si no ha completado el weekly report de la semana anterior</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Login Flow Event Management</label>
+    <license>Salesforce</license>
+</PermissionSet>

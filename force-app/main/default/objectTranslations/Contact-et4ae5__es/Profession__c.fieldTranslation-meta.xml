@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Profession --></label>
+    <name>Profession__c</name>
+    <picklistValues>
+        <masterLabel>Architects &amp; interior designers</masterLabel>
+        <translation><!-- Architects &amp; interior designers --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Builders and installers</masterLabel>
+        <translation><!-- Builders and installers --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fabricators and distributors</masterLabel>
+        <translation><!-- Fabricators and distributors --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Façades</masterLabel>
+        <translation><!-- Façades --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>talkdesk__Abandoned__c</fullName>
+    <deprecated>false</deprecated>
+    <formula>AND(CONTAINS(LOWER(TEXT(talkdesk__Type__c)), &quot;abandoned&quot;), NOT(CONTAINS(LOWER(TEXT(talkdesk__Type__c)), &quot;short&quot;)))</formula>
+    <label>Is Abandoned</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

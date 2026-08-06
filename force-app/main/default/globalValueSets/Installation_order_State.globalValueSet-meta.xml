@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>New Installation</fullName>
+        <default>true</default>
+        <label>New Installation</label>
+    </customValue>
+    <customValue>
+        <fullName>Scheduled</fullName>
+        <default>false</default>
+        <label>Scheduled</label>
+    </customValue>
+    <customValue>
+        <fullName>Ongoing</fullName>
+        <default>false</default>
+        <label>Ongoing</label>
+    </customValue>
+    <customValue>
+        <fullName>Finished</fullName>
+        <default>false</default>
+        <label>Finished</label>
+    </customValue>
+    <customValue>
+        <fullName>Customer Satisfied</fullName>
+        <default>false</default>
+        <label>Customer Satisfied</label>
+    </customValue>
+    <customValue>
+        <fullName>Customer Unsatisfied</fullName>
+        <default>false</default>
+        <label>Customer Unsatisfied</label>
+    </customValue>
+    <description>InstallationOrder states picklist</description>
+    <masterLabel>Installation order State</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

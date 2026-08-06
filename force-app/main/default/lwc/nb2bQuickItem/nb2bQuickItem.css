@@ -1,0 +1,9 @@
+lightning-input{
+    --slds-c-input-radius-border: 3rem;
+    --slds-c-input-color-border: #d6d6d6;
+}
+
+.quick-item-layout {
+    display: flex;
+    align-items: center;
+}

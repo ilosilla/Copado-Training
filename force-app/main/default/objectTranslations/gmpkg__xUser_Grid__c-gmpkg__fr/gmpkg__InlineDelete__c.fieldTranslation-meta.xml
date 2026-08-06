@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Inline Delete --></label>
+    <name>gmpkg__InlineDelete__c</name>
+    <picklistValues>
+        <masterLabel>Disable</masterLabel>
+        <translation><!-- Disable --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Enable</masterLabel>
+        <translation><!-- Enable --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Inherited</masterLabel>
+        <translation><!-- Inherited --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

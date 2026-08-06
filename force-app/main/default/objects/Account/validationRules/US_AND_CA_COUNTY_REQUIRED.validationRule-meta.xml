@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>US_AND_CA_COUNTY_REQUIRED</fullName>
+    <active>true</active>
+    <description>US and CA addresses require the STate for Sovos to calculate tax properly</description>
+    <errorConditionFormula>AND (
+CONTAINS($User.Username, &apos;loads.user&apos;) = false,
+CONTAINS($User.Username, &apos;ivan&apos;) = false,
+  IsPersonAccount = false,
+  Potential__c = false,
+  OR(
+    ISPICKVAL(BillingCountryCode, &apos;US&apos;), 
+    ISPICKVAL(BillingCountryCode, &apos;CA&apos;)
+  ),
+  ISPICKVAL(BillingStateCode, &apos;&apos;)
+)</errorConditionFormula>
+    <errorMessage>State required for US and Canada accounts</errorMessage>
+</ValidationRule>

@@ -1,0 +1,35 @@
+<template>
+  <header data-f6-region class="custom-header">
+    <div class="header-section top-section">
+        <!-- Fila 1 -->
+        <div class="header-row top-bar" lwc:if={showTopBar}>
+            <ul class="top-links">
+                <template for:each={topLinks} for:item="link">
+                    <li key={link.label}><a href={link.href}>{link.label}</a></li>
+                </template>
+            </ul>
+        </div>
+    </div>
+
+    <div class="header-section">
+        <!-- Fila 2 -->        
+        <div class="header-row middle-bar">
+            <div class="cell logo"><slot name="logo"><h3 class="header-logo">PORCELANOSA</h3></slot></div>
+            <div class="cell search">
+                <slot name="search-bar">
+                    <lightning-button-icon icon-name="utility:search" variant="bare"></lightning-button-icon>
+                </slot>
+            </div>
+            <div class="cell profile"><slot name="profile-menu"></slot></div>
+            <div class="cell cart"><slot name="cart-icon"></slot></div>
+        </div>        
+    </div>
+
+    <div class="header-section" lwc:if={showNavigationBar}>
+        <!-- Fila 3 -->
+        <div class="header-row nav-bar">
+            <slot name="main-navigation"></slot>
+        </div>
+    </div>
+  </header>  
+</template>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>US_Followed_Accounts_TEXAS</fullName>
+    <columns>Account__c</columns>
+    <columns>AccountSapId__c</columns>
+    <columns>AccountActivityDate__c</columns>
+    <columns>AccountActivity__c</columns>
+    <columns>AccountClassification__c</columns>
+    <columns>AccountStatus__c</columns>
+    <columns>PersonAccount__c</columns>
+    <columns>AccountOwnerSalesOrg__c</columns>
+    <columns>AccountOwner__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>AccountOwnerSalesOrg__c</field>
+        <operation>equals</operation>
+        <value>608</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Follow__c.Account</value>
+    </filters>
+    <filters>
+        <field>OWNER.ALIAS</field>
+        <operation>contains</operation>
+        <value>Mprio</value>
+    </filters>
+    <label>US Followed Accounts - TEXAS</label>
+</ListView>

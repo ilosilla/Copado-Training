@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Payment Gateway Response",
+  "contentBody" : {
+    "activeViewId" : "Payment_Gateway_Response",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-payment-gateway-response",
+    "urlPrefix" : "payment-gateway-response"
+  },
+  "urlName" : "payment-gateway-response"
+}

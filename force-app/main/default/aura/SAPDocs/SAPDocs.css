@@ -1,0 +1,33 @@
+.THIS.sideBar {    
+    display:flex;
+    width:20rem;
+    height:100%;
+    z-index: 1; 
+}
+
+.THIS.mainContent {
+    margin-left: 20.5rem !important;
+    height:100%;  
+    max-height:100%; 
+    background-color: white;
+}
+
+.THIS .message-box {
+    width: 100%;
+    padding: 30px;
+}
+
+.THIS .docs-header {
+    border-bottom-width: 2px; 
+}
+
+.THIS .tooltiper {
+    padding-left: 0.6rem;
+    padding-top:8.2rem;
+    position:relative;
+}
+
+.THIS .clickable-header:hover {
+    cursor: pointer;
+    text-decoration: underline; 
+}

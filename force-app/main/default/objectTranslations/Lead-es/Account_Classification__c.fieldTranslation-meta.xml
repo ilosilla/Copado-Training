@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Clasificación de la Cuenta</label>
+    <name>Account_Classification__c</name>
+    <picklistValues>
+        <masterLabel>Architectural firm</masterLabel>
+        <translation>Firma de arquitectura</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Brand/Franchise</masterLabel>
+        <translation>Franquicia</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Building company</masterLabel>
+        <translation><!-- Building company --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Construction company</masterLabel>
+        <translation>Constructor</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Custom home builder</masterLabel>
+        <translation>Constructor Residencial</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Developer/investor</masterLabel>
+        <translation>Promotor</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Engineering consultant</masterLabel>
+        <translation>Consultor Ingeniero</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fabricator/Stonemason</masterLabel>
+        <translation>Transformador</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Facade consultant</masterLabel>
+        <translation>Consultor de Fachadas</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fit-out company (commercial contract)</masterLabel>
+        <translation><!-- Fit-out company (commercial contract) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Franchisee</masterLabel>
+        <translation>Franquiciado</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Interior design firm</masterLabel>
+        <translation>Firma de Diseño de Interiores</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kitchen instalation company</masterLabel>
+        <translation>Empresa de instalación de cocinas</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>National House Builders</masterLabel>
+        <translation><!-- National House Builders --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation>Otro</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Plumbing company</masterLabel>
+        <translation>Empresa de fontanería</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Private customer</masterLabel>
+        <translation>Cliente Particular</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Procurement company / Quantity surveyor</masterLabel>
+        <translation>Empresa de Producción / Aparejador</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Public administration</masterLabel>
+        <translation>Administración Pública</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tile instalation company</masterLabel>
+        <translation>Empresa instaladora de azulejos</translation>
+    </picklistValues>
+</CustomFieldTranslation>

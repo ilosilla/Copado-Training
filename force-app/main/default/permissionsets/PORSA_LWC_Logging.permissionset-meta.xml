@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>PORSA_LWC_LOG_DEBUG</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>PORSA_LWC_LOG_INFO</name>
+    </customPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>PORSA_LWC_Logging</label>
+</PermissionSet>

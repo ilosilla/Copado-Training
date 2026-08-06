@@ -1,0 +1,710 @@
+<apex:page renderAs="pdf" applyBodyTag="false" applyHtmlTag="false" showHeader="false" controller="BusinessTripPdfController">
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>
+        <apex:outputText value="Informe - {!header.Name}" rendered="{!NOT(ISNULL(header))}" />
+        <apex:outputText value="Informe - Business Trip" rendered="{!ISNULL(header)}" />
+    </title>
+
+    <style type="text/css">
+        @page { 
+            size: A4 portrait; 
+            margin: 2cm;
+            @bottom-center {
+                content: "Viaje {!header.Name} - " counter(page) " de " counter(pages);
+            }
+        }
+        a {text-decoration: none; /* Quita el subrayado de todos los enlaces */}
+
+        body { font-family: Arial, Helvetica, sans-serif; font-size:11px; color:#222; margin:0; }
+        h1 { font-size:18px; margin:0 0 6px 0; text-align:center; letter-spacing:0.4px; }
+        .subtitle { text-align:center; font-size:10px; color:#666; margin-top:2px; margin-bottom:12px; }
+        h2 { font-size:13px; color:#0b3b5a; margin:18px 0 8px 0; border-bottom:1px solid #d0d7db; padding-bottom:6px; }
+        h3 { font-size:12px; color:#333; margin:12px 0 6px 0; }
+
+        .container { width:100%; }
+        .card { background:#fff; border:1px solid #d7d7d7; border-radius:3px; padding:10px; margin-bottom:12px; }
+        .muted { color:#666; font-size:10px; }
+
+        .section-table { width:100%; border-collapse:collapse; margin-top:6px; }
+        .section-table th {
+            text-align:left; vertical-align:top; padding:8px 10px; background:#f4f6f8; border:1px solid #e0e0e0;
+            width:20%; font-weight:600; font-size:11px;
+        }
+        .section-table td {
+            padding:8px 10px; border:1px solid #e0e0e0; vertical-align:top; font-size:11px;
+        }
+
+        .subtable { width:100%; border-collapse:collapse; margin-top:8px; }
+        .subtable th {
+            padding:6px 8px; background:#f0f2f4; border:1px solid #dcdcdc; font-size:11px; text-align:left;
+        }
+        .subtable td {
+            padding:8px; border:1px solid #dcdcdc; vertical-align:top; font-size:11px;
+        }
+
+        .w-20 { width:20%; }
+        .w-60 { width:60%; }
+
+        a.pdf-link { color:#0b4270; text-decoration:underline; word-break:break-all; font-size:11px; }
+        .prewrap { white-space: pre-wrap; }
+        .page-break { page-break-after: always; }
+
+        .footer-space { height:28px; }
+
+        tr, td, th { page-break-inside: avoid; }
+
+        .no-break { page-break-inside: avoid;page-break-before: auto;page-break-after: auto;}
+
+        /* Pie de página fijo */
+        .pdf-footer { position: fixed; bottom: 0; right: 0; font-size:9px; color:#666; }
+    </style>
+</head>
+
+<body>
+
+    <!-- Title -->
+    <div class="container">
+        <h1>Informe de viaje comercial</h1>
+        <div class="subtitle">Resumen ejecutivo del viaje y actividades</div>
+    </div>
+
+    <!-- Summary -->
+    <div class="container">
+        <div class="card">
+            <div class="no-break">
+                <table class="section-table">
+                    <tr>
+                        <th>Código de viaje</th>
+                        <td>
+                            <a target="_blank" href="{! baseUrl & '/' & header.Id }">{!header.Name}</a>
+                        </td>
+                        <th>Area Manager</th>
+                        <td>{!header.Owner.Name}</td>
+                    </tr>
+                    <tr>
+                        <th>Título</th>
+                        <td>{!header.Title__c}</td>
+                        <th>Fechas</th>
+                        <td>
+                            <apex:outputText value="{0,date,dd/MM/yyyy}">
+                                <apex:param value="{!header.StartDate__c}"/>
+                            </apex:outputText>
+                            – 
+                            <apex:outputText value="{0,date,dd/MM/yyyy}">
+                                <apex:param value="{!header.EndDate__c}"/>
+                            </apex:outputText>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Última visita</th>
+                        <td colspan="3">
+                            <apex:outputText value="{0,date,dd/MM/yyyy}">
+                                <apex:param value="{!header.LastVisit__c}"/>
+                            </apex:outputText>
+                        </td>
+                    </tr>
+
+                    <tr><th>Mercado / País</th><td colspan="3">{!header.Countries__c}</td></tr>
+                    <tr><th>Objetivos principales</th><td colspan="3" class="prewrap">{!header.MainObjectives__c}</td></tr>
+                    <tr><th>Riesgos principales</th><td colspan="3" class="prewrap">{!header.MainRisks__c}</td></tr>
+                    <tr>
+                        <th>Archivos adjuntos</th>
+                        <td colspan="3">
+                            <ul>
+                                <apex:repeat value="{!files[header.Id]}" var="f">
+                                    <li>
+                                        <a class="pdf-link" target="_blank" href="{!baseurl & '/sfc/servlet.shepherd/document/download/' & f.ContentDocumentId}">
+                                            {!f.ContentDocument.Title}
+                                        </a>
+                                    </li>
+                                </apex:repeat>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Observaciones -->
+    <div class="container">
+        <h2>Observaciones estratégicas</h2>
+        <div class="card">
+            <div class="no-break">
+                <table class="section-table">
+                    <tr><th>Comentarios del Area Manager</th></tr>
+                    <tr><td class="prewrap">{!header.Comments__c}</td></tr>
+                    <tr><th>Oportunidades futuras</th></tr>
+                    <tr><td class="prewrap">{!header.FutureOpportunities__c}</td></tr>
+                    <tr><th>Material utilizado</th></tr>
+                    <tr><td class="prewrap">{!header.MaterialUsedComment__c}</td></tr>
+                    <tr><th>Aspectos positivos</th></tr>
+                    <tr><td class="prewrap">{!header.Comments2__c}</td></tr>
+                    <tr><th>Aspectos a mejorar</th></tr>
+                    <tr><td class="prewrap">{!header.Comments3__c}</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="page-break"></div>
+
+    <!-- Visits -->
+    <div class="container">
+        <!-- Title -->
+        <div class="container">
+            <h1>Resumen de visitas clave y proyectos</h1>
+            <!--<div class="subtitle">Resumen ejecutivo del viaje y actividades</div>-->
+        </div>
+        <apex:outputPanel rendered="{!visitWrappers == null || visitWrappers.size < 1}">
+            <div class="card">
+                <p style="text-align:center; color:#666;">No se han registrado visitas para este viaje.</p>
+            </div>
+        </apex:outputPanel>
+        <apex:repeat value="{!visitWrappers}" var="vw">
+            <div class="card">
+                <div class="no-break">
+                    <table class="section-table">
+                        <tr>
+                            <th colspan="4" style="text-align:center;">Visita: <a target="_blank" href="{! baseUrl & '/' & vw.visit.Id }">{!vw.visit.Name}</a></th>
+                        </tr>
+                        <tr>
+                            <th>Título</th>
+                            <td>{!vw.visit.Title__c}</td>
+                            <th>Fecha</th>
+                            <td>
+                                <apex:outputText value="{0,date,dd/MM/yyyy}">
+                                    <apex:param value="{!vw.visit.Date__c}"/>
+                                </apex:outputText>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>País</th><td>{!vw.visit.Country__c}</td>
+                            <th>Canal</th><td colspan="3">{!vw.visit.Channel__c}</td>
+                        </tr>
+                        <tr>
+                            <th>Cliente</th>
+                            <td>
+                                <a href="{! IF(NOT(ISNULL(vw.visit.Account__c)), baseUrl & '/lightning/r/Account/' & vw.visit.Account__c & '/view', '') }">{!IF(NOT(ISNULL(vw.visit.Account__r)), vw.visit.Account__r.Name, '')}</a>
+                            </td>
+                            <th>Oportunidad</th>
+                            <td>
+                                <a href="{! IF(NOT(ISNULL(vw.visit.Opportunity__c)), baseUrl & '/lightning/r/Opportunity/' & vw.visit.Opportunity__c & '/view', '') }">{!IF(NOT(ISNULL(vw.visit.Opportunity__r)), vw.visit.Opportunity__r.Name, '')}</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Lead</th>
+                            <td colspan="3">
+                                <a href="{! IF(NOT(ISNULL(vw.visit.Lead__c)), baseUrl & '/lightning/r/Lead/' & vw.visit.Lead__c & '/view', '') }">{!IF(NOT(ISNULL(vw.visit.Lead__r)), vw.visit.Lead__r.Name, '')}</a>
+                            </td>
+                        </tr>
+                        <tr><th colspan="4">Comentario</th></tr>
+                        <tr><td colspan="4" class="prewrap"><apex:outputText value="{!vw.visit.Comment__c}"></apex:outputText></td></tr>
+                        <tr><th colspan="4">Archivos adjuntos</th></tr>
+                        <tr>
+                            <td colspan="4">
+                                <ul>
+                                    <apex:repeat value="{!files[vw.visit.Id]}" var="f">
+                                        <li>
+                                            <a class="pdf-link" target="_blank" href="{!baseurl & '/sfc/servlet.shepherd/document/download/' & f.ContentDocumentId}">
+                                                {!f.ContentDocument.Title}.{!f.ContentDocument.FileExtension}
+                                            </a>
+                                        </li>
+                                    </apex:repeat>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Actions -->
+                <apex:outputPanel rendered="{!vw.actions != null && vw.actions.size > 0}">                  
+                    <apex:repeat value="{!vw.actions}" var="a">
+                        <div class="no-break">
+                            <table class="subtable">
+                                <tr>
+                                    <th class="w-20" colspan="2">Accion: <a target="_blank" href="{! baseUrl & '/' & a.Id }">{!a.Name}</a></th>
+                                </tr>
+                                <tr>
+                                    <th class="w-20">Título</th>
+                                    <th class="w-20">Prioridad</th>
+                                </tr>
+                                <tr>
+                                    <td>{!a.Title__c}</td>
+                                    <td>{!a.Priority__c}</td>
+                                </tr>
+                                <tr>
+                                    <th class="w-20" colspan="2">Comentario</th>
+                                </tr>
+                                <tr>
+                                    <td class="prewrap" colspan="2"><apex:outputText value="{!a.Comment__c}"></apex:outputText></td>
+                                </tr>
+                                <tr>
+                                    <th class="w-20" colspan="2">Archivos Adjuntos</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <ul>
+                                            <apex:repeat value="{!files[a.Id]}" var="f">
+                                                <li>
+                                                    <a class="pdf-link" target="_blank" href="{!baseurl & '/sfc/servlet.shepherd/document/download/' & f.ContentDocumentId}">
+                                                        {!f.ContentDocument.Title}.{!f.ContentDocument.FileExtension}
+                                                    </a>
+                                                </li>
+                                            </apex:repeat>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </apex:repeat>
+                </apex:outputPanel>
+
+                <!-- Events -->
+                <apex:outputPanel rendered="{!vw.events != null && vw.events.size > 0}">                    
+                    <apex:repeat value="{!vw.events}" var="e">
+                        <div class="no-break">
+                            <table class="subtable">
+                                <tr>
+                                    <th class="w-20" colspan="2">Evento: <a target="_blank" href="{! baseUrl & '/' & e.Id }">{!e.Name}</a></th>
+                                </tr>
+                                <tr>
+                                    <th class="w-20">Tipo</th>
+                                    <th class="w-20">Estado</th>
+                                </tr>
+                                <tr>
+                                    <td>{!e.Type__c} {! IF(NOT(ISBLANK(e.OtherType__c)), ' - ' & e.OtherType__c, '')}</td>
+                                    <td>{!e.Status__c}</td>
+                                </tr>
+                                <tr>
+                                    <th class="w-20" colspan="2">Descripción</th>
+                                </tr> 
+                                <tr>
+                                    <td class="prewrap" colspan="2"><apex:outputText value="{!e.Description__c}"></apex:outputText></td>
+                                </tr>
+                                <tr>
+                                    <th class="w-20" colspan="2">Acuerdo</th>
+                                </tr>
+                                <tr>
+                                    <td class="prewrap" colspan="2"><apex:outputText value="{!e.Agreement__c}"></apex:outputText></td>
+                                </tr>
+                                <tr>
+                                    <th class="w-20" colspan="2">Archivos Adjuntos</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <ul>
+                                            <apex:repeat value="{!files[e.Id]}" var="f">
+                                                <li>
+                                                    <a class="pdf-link" target="_blank" href="{!baseurl & '/sfc/servlet.shepherd/document/download/' & f.ContentDocumentId}">
+                                                        {!f.ContentDocument.Title}.{!f.ContentDocument.FileExtension}
+                                                    </a>
+                                                </li>
+                                            </apex:repeat>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </apex:repeat>
+                </apex:outputPanel>
+
+                <!-- Requests -->
+                <apex:outputPanel rendered="{!vw.requests != null && vw.requests.size > 0}">                    
+                    <apex:repeat value="{!vw.requests}" var="r">
+                        <div class="no-break">
+                            <table class="subtable">
+                                <tr>
+                                    <th class="w-20" colspan="2">Solicitud a Dirección: <a target="_blank" href="{! baseUrl & '/' & r.Id }">{!r.Name}</a></th>
+                                </tr>
+                                <tr>
+                                    <th class="w-20" >Título</th>
+                                    <th class="w-20" >Prioridad</th>
+                                </tr>
+                                <tr>
+                                    <td>{!r.Title__c}</td>
+                                    <td>{!r.Priority__c}</td>
+                                </tr>
+                                <tr>
+                                    <th class="w-20" colspan="2">Comentario</th>
+                                </tr>
+                                <tr>
+                                    <td class="prewrap" colspan="2"><apex:outputText value="{!r.Comment__c}"></apex:outputText></td>
+                                </tr>
+                                <tr>
+                                    <th class="w-20" colspan="2">Archivos Adjuntos</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <ul>
+                                            <apex:repeat value="{!files[r.Id]}" var="f">
+                                                <li>
+                                                    <a class="pdf-link" target="_blank" href="{!baseurl & '/sfc/servlet.shepherd/document/download/' & f.ContentDocumentId}">
+                                                        {!f.ContentDocument.Title}.{!f.ContentDocument.FileExtension}
+                                                    </a>
+                                                </li>
+                                            </apex:repeat>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </apex:repeat>
+                </apex:outputPanel>
+            </div>
+        </apex:repeat>
+        <div class="footer-space"></div>
+    </div>    
+
+    <!-- Strategies -->
+    <div class="container">
+        <div class="container">
+            <h1>Resumen Oportunidades Estratégicas y Tendencias de Mercado</h1>
+            <!--<div class="subtitle">Resumen ejecutivo del viaje y actividades</div>-->
+        </div>
+        <apex:outputPanel rendered="{!strategyWrappers == null || strategyWrappers.size < 1}">
+            <div class="card">
+                <p style="text-align:center; color:#666;">No se han registrado oportunidades estratégicas para este viaje.</p>
+            </div>
+        </apex:outputPanel>
+        <apex:repeat value="{!strategyWrappers}" var="sw">
+            <div class="card">
+                <div class="no-break">
+                    <table class="section-table">
+                        <tr>
+                            <th colspan="4" style="text-align:center;">Oportunidad estratégica: <a target="_blank" href="{! baseUrl & '/' & sw.strategy.Id }">{!sw.strategy.Name}</a></th>
+                        </tr>
+                        <tr><th>Título</th><td colspan="3">{!sw.strategy.Title__c}</td></tr>
+                        <tr>
+                            <th>País</th><td>{!sw.strategy.Country__c}</td>
+                            <th>Fecha</th>
+                            <td>
+                                <apex:outputField value="{!sw.strategy.Impact__c}">
+                                </apex:outputField>
+                            </td>
+                        </tr>
+                        <tr><th>Comentario</th><td colspan="3" class="prewrap"><apex:outputText value="{!sw.strategy.Comment__c}"></apex:outputText></td></tr>
+
+                        <tr>
+                            <th>Cliente</th>
+                            <td colspan="3">
+                                <a href="{! IF(NOT(ISNULL(sw.strategy.Account__c)), baseUrl & '/lightning/r/Account/' & sw.strategy.Account__c & '/view', '') }">{!IF(NOT(ISNULL(sw.strategy.Account__r)), sw.strategy.Account__r.Name, '')}</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="w-20" colspan="4">Archivos Adjuntos</th>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <ul>
+                                    <apex:repeat value="{!files[sw.strategy.Id]}" var="f">
+                                        <li>
+                                            <a class="pdf-link" target="_blank" href="{!baseurl & '/sfc/servlet.shepherd/document/download/' & f.ContentDocumentId}">
+                                                {!f.ContentDocument.Title}.{!f.ContentDocument.FileExtension}
+                                            </a>
+                                        </li>
+                                    </apex:repeat>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Actions -->
+                <apex:outputPanel rendered="{!sw.actions != null && sw.actions.size > 0}">                   
+                    <apex:repeat value="{!sw.actions}" var="a">
+                        <div class="no-break">
+                            <table class="subtable">
+                                <tr>
+                                    <th class="w-20" colspan="2">Acción: <a target="_blank" href="{! baseUrl & '/' & a.Id }">{!a.Name}</a></th>
+                                </tr>
+                                <tr>
+                                    <th class="w-20">Título</th>
+                                    <th class="w-20">Prioridad</th>
+                                </tr>
+                                <tr>
+                                    <td>{!a.Title__c}</td>
+                                    <td>{!a.Priority__c}</td>
+                                </tr>
+                                <tr>
+                                    <th class="w-20" colspan="2">Comentario</th>
+                                </tr>
+                                <tr>
+                                    <td class="prewrap" colspan="2"><apex:outputText value="{!a.Comment__c}"></apex:outputText></td>
+                                </tr>
+                                <tr>
+                                    <th class="w-20" colspan="2">Archivos Adjuntos</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <ul>
+                                            <apex:repeat value="{!files[a.Id]}" var="f">
+                                                <li>
+                                                    <a class="pdf-link" target="_blank" href="{!baseurl & '/sfc/servlet.shepherd/document/download/' & f.ContentDocumentId}">
+                                                        {!f.ContentDocument.Title}.{!f.ContentDocument.FileExtension}
+                                                    </a>
+                                                </li>
+                                            </apex:repeat>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </apex:repeat>
+                </apex:outputPanel>
+
+                 <!-- Requests -->
+                <apex:outputPanel rendered="{!sw.requests != null && sw.requests.size > 0}">                    
+                    <apex:repeat value="{!sw.requests}" var="r">
+                        <div class="no-break">
+                            <table class="subtable">
+                                <tr>
+                                    <th class="w-20" colspan="2">Solicitud a Dirección: <a target="_blank" href="{! baseUrl & '/' & r.Id }">{!r.Name}</a></th>
+                                </tr>
+                                <tr>
+                                    <th class="w-20" >Título</th>
+                                    <th class="w-20" >Prioridad</th>
+                                </tr>
+                                <tr>
+                                    <td>{!r.Title__c}</td>
+                                    <td>{!r.Priority__c}</td>
+                                </tr>
+                                <tr>
+                                    <th class="w-20" colspan="2">Comentario</th>
+                                </tr>
+                                <tr>
+                                    <td class="prewrap" colspan="2"><apex:outputText value="{!r.Comment__c}"></apex:outputText></td>
+                                </tr>
+                                <tr>
+                                    <th class="w-20" colspan="2">Archivos Adjuntos</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <ul>
+                                            <apex:repeat value="{!files[r.Id]}" var="f">
+                                                <li>
+                                                    <a class="pdf-link" target="_blank" href="{!baseurl & '/sfc/servlet.shepherd/document/download/' & f.ContentDocumentId}">
+                                                        {!f.ContentDocument.Title}.{!f.ContentDocument.FileExtension}
+                                                    </a>
+                                                </li>
+                                            </apex:repeat>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </apex:repeat>
+                </apex:outputPanel>
+            </div>
+        </apex:repeat>
+        <div class="footer-space"></div>
+    </div>
+
+    <!-- Visits -->
+    <div class="container">
+         <div class="container">
+            <h1>Listado general de Acciones a tomar</h1>
+            <!--<div class="subtitle">Resumen ejecutivo del viaje y actividades</div>-->
+        </div>
+        <apex:outputPanel rendered="{!visitWrappers == null || visitWrappers.size < 1}">
+            <div class="card">
+                <p style="text-align:center; color:#666;">No se han registrado acciones para ninguna visita.</p>
+            </div>
+        </apex:outputPanel>
+        <apex:repeat value="{!visitWrappers}" var="vw">                       
+            <apex:repeat value="{!vw.actions}" var="a">
+                <div class="no-break">
+                    <table class="subtable">
+                        <tr>
+                            <th class="w-20" style="text-align:center;" colspan="3">Acción <a target="_blank" href="{! baseUrl & '/' & a.Id }">{!a.Name}</a></th>
+                        </tr>
+                        <tr>
+                            <th class="w-20" >Vísita</th>
+                            <th class="w-20" >Título</th>
+                            <th class="w-20" >Prioridad</th>
+                        </tr>
+                        <tr>
+                            <td class="w-20"><a target="_blank" href="{! baseUrl & '/' & a.BusinessTripVisit__r.Id }">{!a.BusinessTripVisit__r.Name}</a></td>
+                            <td>{!a.Title__c}</td>
+                            <td>{!a.Priority__c}</td>
+                        </tr>
+                        <tr>
+                            <th class="w-20" colspan="3">Comentario</th>
+                        </tr>
+                        <tr>
+                            <td class="prewrap" colspan="3"><apex:outputText value="{!a.Comment__c}"></apex:outputText></td>
+                        </tr>
+                        <tr>
+                            <th class="w-20" colspan="3">Archivos Adjuntos</th>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <ul>
+                                    <apex:repeat value="{!files[a.Id]}" var="f">
+                                        <li>
+                                            <a class="pdf-link" target="_blank" href="{!baseurl & '/sfc/servlet.shepherd/document/download/' & f.ContentDocumentId}">
+                                                {!f.ContentDocument.Title}.{!f.ContentDocument.FileExtension}
+                                            </a>
+                                        </li>
+                                    </apex:repeat>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </apex:repeat>
+        </apex:repeat>
+       
+        <apex:repeat value="{!strategyWrappers}" var="sw">           
+            <apex:repeat value="{!sw.actions}" var="a">
+                <div class="no-break">
+                    <table class="subtable">
+                        <tr>
+                            <th class="w-20" style="text-align:center;" colspan="3">Acción <a target="_blank" href="{! baseUrl & '/' & a.Id }">{!a.Name}</a></th>
+                        </tr>
+                        <tr>
+                            <th class="w-20" >Estratégia</th>
+                            <th class="w-20" >Título</th>
+                            <th class="w-20" >Prioridad</th>
+                        </tr>
+                        <tr>
+                            <td class="w-20"><a target="_blank" href="{! baseUrl & '/' & a.BusinessTripStrategy__r.Id }">{!a.BusinessTripStrategy__r.Name}</a></td>
+                            <td>{!a.Title__c}</td>
+                            <td>{!a.Priority__c}</td>
+                        </tr>
+                        <tr>
+                            <th class="w-20" colspan="3">Comentario</th>
+                        </tr>
+                        <tr>
+                            <td class="prewrap" colspan="3"><apex:outputText value="{!a.Comment__c}"></apex:outputText></td>
+                        </tr>
+                        <tr>
+                            <th class="w-20" colspan="3">Archivos Adjuntos</th>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <ul>
+                                    <apex:repeat value="{!files[a.Id]}" var="f">
+                                        <li>
+                                            <a class="pdf-link" target="_blank" href="{!baseurl & '/sfc/servlet.shepherd/document/download/' & f.ContentDocumentId}">
+                                                {!f.ContentDocument.Title}.{!f.ContentDocument.FileExtension}
+                                            </a>
+                                        </li>
+                                    </apex:repeat>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </apex:repeat>
+        </apex:repeat>
+        <div class="footer-space"></div>
+    </div>    
+
+    <!-- Visits -->
+    <div class="container">
+        <div class="container">
+            <h1>Listado general de Solicitudes específicas de Apoyo o Decisión a Dirección</h1>
+            <!--<div class="subtitle">Resumen ejecutivo del viaje y actividades</div>-->
+        </div>
+        <apex:outputPanel rendered="{!visitWrappers == null || visitWrappers.size < 1}">
+            <div class="card">
+                <p style="text-align:center; color:#666;">No se han registrado Solicitudes para ninguna visita.</p>
+            </div>
+        </apex:outputPanel>
+        <apex:repeat value="{!visitWrappers}" var="vw">                    
+            <apex:repeat value="{!vw.requests}" var="r">
+                <div class="no-break">
+                    <table class="subtable">
+                        <tr>
+                            <th style="background-color:{!
+                            IF(r.Priority__c='HIGH', '#FFCFC4', 
+                            IF(r.Priority__c='MEDIUM', '#FFFEC7', 
+                            IF(r.Priority__c='LOW', '#f0f0f0', '#f0f0f0')))};text-align:center;" class="w-20" colspan="3">Solicitud <a target="_blank" href="{! baseUrl & '/' & r.Id }">{!r.Name}</a></th>
+                        </tr>
+                        <tr>
+                            <th class="w-20" >Vísita</th>
+                            <th class="w-20" >Título</th>
+                            <th class="w-20" >Prioridad</th>
+                        </tr>
+                        <tr>
+                            <td class="w-20"><a target="_blank" href="{! baseUrl & '/' & r.BusinessTripVisit__r.Id }">{!r.BusinessTripVisit__r.Name}</a></td>
+                            <td>{!r.Title__c}</td>
+                            <td>{!r.Priority__c}</td>
+                        </tr>
+                        <tr>
+                            <th class="w-20" colspan="3">Comentario</th>
+                        </tr>
+                        <tr>
+                            <td class="prewrap" colspan="3"><apex:outputText value="{!r.Comment__c}"></apex:outputText></td>
+                        </tr>
+                        <tr>
+                            <th class="w-20" colspan="3">Archivos Adjuntos</th>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <ul>
+                                    <apex:repeat value="{!files[r.Id]}" var="f">
+                                        <li>
+                                            <a class="pdf-link" target="_blank" href="{!baseurl & '/sfc/servlet.shepherd/document/download/' & f.ContentDocumentId}">
+                                                {!f.ContentDocument.Title}.{!f.ContentDocument.FileExtension}
+                                            </a>
+                                        </li>
+                                    </apex:repeat>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </apex:repeat>
+        </apex:repeat>
+       
+        <apex:repeat value="{!strategyWrappers}" var="sw">            
+            <apex:repeat value="{!sw.requests}" var="r">
+                <div class="no-break">
+                    <table class="subtable">
+                        <tr>
+                            <th style="background-color:{!IF(r.Priority__c='HIGH', '#FFCFC4', IF(r.Priority__c='MEDIUM', '#FFFEC7', IF(r.Priority__c='LOW', '#f0f0f0', '#f0f0f0')))};text-align:center;" class="w-20" colspan="3">Solicitud <a target="_blank" href="{! baseUrl & '/' & r.Id }">{!r.Name}</a></th>
+                        </tr>
+                        <tr>
+                            <th class="w-20" >Estratégia</th>
+                            <th class="w-20" >Título</th>
+                            <th class="w-20" >Prioridad</th>
+                        </tr>
+                        <tr>
+                            <td class="w-20"><a target="_blank" href="{! baseUrl & '/' & r.BusinessTripStrategy__r.Id }">{!r.BusinessTripStrategy__r.Name}</a></td>
+                            <td>{!r.Title__c}</td>
+                            <td>{!r.Priority__c}</td>
+                        </tr>
+                        <tr>
+                            <th class="w-20" colspan="3">Comentario</th>
+                        </tr>
+                        <tr>
+                            <td class="prewrap" colspan="3"><apex:outputText value="{!r.Comment__c}"></apex:outputText></td>
+                        </tr>
+                        <tr>
+                            <th class="w-20" colspan="3">Archivos Adjuntos</th>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <ul>
+                                    <apex:repeat value="{!files[r.Id]}" var="f">
+                                        <li>
+                                            <a class="pdf-link" target="_blank" href="{!baseurl & '/sfc/servlet.shepherd/document/download/' & f.ContentDocumentId}">
+                                                {!f.ContentDocument.Title}.{!f.ContentDocument.FileExtension}
+                                            </a>
+                                        </li>
+                                    </apex:repeat>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>    
+            </apex:repeat>
+        </apex:repeat>
+    </div>
+
+</body>
+</html>
+</apex:page>

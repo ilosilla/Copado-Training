@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Motiva della Perdita</label>
+    <name>Reason_Lost__c</name>
+    <picklistValues>
+        <masterLabel>Automatic closure</masterLabel>
+        <translation><!-- Automatic closure --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer not Ready</masterLabel>
+        <translation>Cliente non pronto</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Duplicated Ecommerce Opportunity</masterLabel>
+        <translation>Opportunità Ecommerce Duplicata</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lack of product availability</masterLabel>
+        <translation>Mancanza nella Disponibilità dei Prodotti</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lack of product range</masterLabel>
+        <translation>Mancanza nella Gamma di Prodotti</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Late in the process</masterLabel>
+        <translation>Tardi nel processo</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Decision / Non-Responsive</masterLabel>
+        <translation>Nessuna Decisione</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ordered Via Online</masterLabel>
+        <translation>Ordinato Online</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ordered through Trade Account</masterLabel>
+        <translation>Ordnato via Conto Professionale</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Price</masterLabel>
+        <translation>Prezzo</translation>
+    </picklistValues>
+</CustomFieldTranslation>

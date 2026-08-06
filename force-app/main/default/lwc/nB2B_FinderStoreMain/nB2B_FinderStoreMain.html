@@ -1,0 +1,197 @@
+<!--
+  @description       :
+  @author            : EHG@nubika.com
+  @group             :
+  @last modified on  : 06-29-2023
+  @last modified by  : EHG@nubika.com
+-->
+<template>
+    <!-- NUEVO BUSCADOR -->
+    <lightning-spinner if:true={loaded} alternative-text="Loading"></lightning-spinner>
+    <template if:false={showAllStores}>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col distanceLabel">
+                <lightning-icon icon-name="utility:location" class="slds-p-right_small"></lightning-icon>{labels.distanceCalculateFrom} {calculateFrom}
+            </div>
+            <div class="slds-col">
+                <div class="seeAllLabel">
+                    <a class="seeallbut" onclick={seeAllStoresEvent}>{labels.seeAllStores}</a>
+                    <!--<lightning-button variant="base" label={labels.seeAllStores} title={labels.seeAllStores} onclick={seeAllStoresEvent} class="slds-m-left_x-small seeallbut"></lightning-button>-->
+                </div>
+            </div>
+        </div>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_2-of-5">
+                <div class="listStoresParent">
+                    <div class="cajaBuscador">
+                        <div class="buscador">
+                            <lightning-input-address
+                                    class="direccionentrada"
+                                    street-label="Calle"
+                                    city-label="Ciudad"
+                                    country-label="País"
+                                    province-label="Provincia"
+                                    postal-code-label="Código Postal"
+                                    onchange={handleChangeAddress}
+                                    street={selStreet}
+                                    city={selCity}
+                                    country={selCountry}
+                                    province={selProvince}
+                                    postal-code={selPostalCode}
+																		value={valuebus}
+                                    show-address-lookup
+                                    address-lookup-placeholder={labels.ziporcity}>
+                                </lightning-input-address>
+                        </div>
+                    </div>
+                    <!--<div class="tit1">
+                        {labels.appointmentInStore}
+                    </div>
+                    <div class="lineSeparator"></div>-->
+                    <div class="tit1">
+                        <lightning-icon icon-name="utility:store" class="slds-p-right_small"></lightning-icon>
+                        {labels.storelisting} <span>({numberStores})</span>
+                    </div>
+                    <div class="lineSeparator"></div>
+                    <!--LISTADO DE TIENDAS-->
+                    <div class="parentListado" tabindex="0">
+                        <!--<template lwc:if={isUnitedStates}>
+                            <template for:each={associateList} for:item="associate">
+                                <div key={associate.Name}>
+                                    <div class="slds-grid slds-wrap slds-p-vertical_small">
+                                        <div class="slds-col slds-size_1-of-2 slds-small-size_1-of-2 slds-medium-size_1-of-2 slds-large-size_5-of-8">
+                                            <a onclick={handlechangepositionAssociates} data-id={associate.address.Id} data-name={associate.address.Name} >
+                                                <div class="namecat_list">{associate.address.Name} <span class="descriptioncat">{associate.distance} Mi </span></div>
+                                                <div class="namecat_list"><i>Temporary closed</i></div>
+                                                <div class="descriptioncat">{associate.address.NBK_Address__Street__s}</div>
+                                                <div class="descriptioncat">{associate.address.NBK_Address__PostalCode__s}, {associate.address.NBK_Address__City__s}</div>
+                                            </a>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2 slds-small-size_1-of-2 slds-medium-size_1-of-2 slds-large-size_3-of-8" >
+                                            <div class="buttonview_list slds-m-vertical_xx-small">
+                                                <a disabled class="slds-button_list slds-button_neutral communityButton" style="pointer-events: none">Grand Reopening September 11th</a>
+                                            </div>
+                                
+                                        </div>
+                                    </div>
+                                    <div class="lineSeparator"></div>
+                                </div>
+                            </template>
+                        </template>-->
+
+                        <template for:each={storeList} for:item="store">
+                            <div key={store.Id}>
+                                <c-n-b2-b_-finder-store-item-list onchangeposition={handlechangeposition} onselectedstore={handleselectedstore}  store={store}></c-n-b2-b_-finder-store-item-list>
+                            </div>
+                        </template>
+                        <template lwc:if={isFrance}>
+                            <template for:each={associateList} for:item="associate">
+                                <div key={associate.Name}>
+                                    <div class="slds-grid slds-wrap slds-p-vertical_small">
+                                        <div class="slds-col slds-size_1-of-2 slds-small-size_1-of-2 slds-medium-size_1-of-2 slds-large-size_5-of-8">
+                                            <a onclick={handlechangepositionAssociates} data-id={associate.address.Id} data-name={associate.address.Name} >
+                                                <div class="namecat_list">{associate.address.Name} <span class="descriptioncat">{associate.distance} Km </span></div>
+                                                <div class="descriptioncat">{associate.address.NBK_Address__Street__s}</div>
+                                                <div class="descriptioncat">{associate.address.NBK_Address__PostalCode__s} {associate.address.NBK_Address__City__s}</div>
+                                            </a>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2 slds-small-size_1-of-2 slds-medium-size_1-of-2 slds-large-size_3-of-8" >
+                                            <div class="buttonview_list slds-m-vertical_xx-small">
+                                                <a href={associate.address.NBK_Showroom_Email__c} class="slds-button_list slds-button_neutral communityButton">Envoyer un courriel</a>
+                                            </div>
+                                
+                                        </div>
+                                    </div>
+                                    <div class="lineSeparator"></div>
+                                </div>
+                            </template>
+                        </template>
+
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_3-of-5 colMap">
+                <!--MAPA-->
+                <div class="map-container">
+                    <lightning-map map-markers={mapMarkers} zoom-level={zoomLevel} center={center} options={mapOptions} list-view="hidden"></lightning-map>
+                </div>
+            </div>
+        </div>
+    </template>
+    <!--TODAS LAS TIENDAS-->
+    <template if:true={showAllStores}>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+
+            </div>
+            <div class="slds-col">
+                <div class="seeAllLabel">
+                    <a class="seeallbut" onclick={seeAllStoresBack}>{labels.back} </a>
+                    <!--<lightning-button variant="base" label={labels.back} title={labels.back} onclick={seeAllStoresBack} class="slds-m-left_x-small"></lightning-button>-->
+                </div>
+            </div>
+        </div>
+        <!-- MUESTRA TODAS LAS TIENDAS -->
+        <div class="slds-grid slds-gutters allStoresdiv">
+            <div class="slds-col">
+                <div class="slds-grid slds-wrap">
+                    <template for:each={storeList} for:item="store">
+                        <div key={store.Id} class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+                            <c-n-b2-b_-finder-store-item onselectedstore={handleselectedstore} store={store} country={country}></c-n-b2-b_-finder-store-item>
+                        </div>
+                    </template>
+                    <template lwc:if={isFrance}>
+                        <template for:each={associateList} for:item="associate">
+                            <div key={associate.Id} class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+                                <div class="store-tile_item">
+                                    <div class="image-container">
+                                        <img class="imagen_item" src={imagenUrl} alt={imagenUrl} />
+                                        <!-- <img src="https://www.lladro.com/media/weltpixel/owlcarouselslider/images/d/e/desk_heritage_1.jpg" alt="HERITAGE"/> -->
+                                    </div>
+                                    <div class="details">
+                                        <div class="namecat_item">{associate.address.Name}</div>
+                                        <div class="descriptioncat">{associate.address.NBK_Address__Street__s}</div>
+                                        <div class="descriptioncat">{associate.address.NBK_Address__PostalCode__s}, {associate.address.NBK_Address__City__s}, {associate.address.NBK_Address__StateCode__s}</div>
+                                        </br>
+                                        <div class="buttonview_item">
+                                            <a href={associate.address.NBK_Showroom_Email__c} class="slds-button_list slds-button_neutral communityButton">Envoyer un courriel</a>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </template>
+
+		<!-- TOAST MENSAJE -->
+		<template if:true={showToastBar}>
+			<div class="slds-notify_container">
+					<div class="slds-notify slds-notify_toast slds-theme_warning toastCont" role="status">
+							<span class="slds-assistive-text">{type}</span>
+							<span class="slds-icon_container slds-icon-utility-warning slds-m-right_small slds-no-flex slds-align-top" title="mensaje">
+									<lightning-icon icon-name="utility:info" alternative-text="icon" styleclass="slds-icon slds-icon_small" variant="inverse" size="small"></lightning-icon>
+							</span>
+							<div class="slds-notify__content">
+									<h2 class="slds-text-heading_small">
+											<lightning-formatted-rich-text value={label1}>
+											</lightning-formatted-rich-text>
+									</h2>
+									<h2>
+										<lightning-formatted-rich-text value={label2}>
+										</lightning-formatted-rich-text>
+										<lightning-button variant="base" label="HERE" title="HERE" onclick={toastSeeAllStores} class="slds-m-left_x-small" style="color:white;"></lightning-button>
+									</h2>
+							</div>
+
+							<div class="slds-notify__close">
+									<lightning-button-icon icon-name="utility:close" size="small" variant="border-filled" class="slds-button slds-button_icon slds-button_icon-inverse" alternative-text="next" onclick={closeModelToast} ></lightning-button-icon>
+							</div>
+					</div>
+			</div>
+	</template>
+
+</template>

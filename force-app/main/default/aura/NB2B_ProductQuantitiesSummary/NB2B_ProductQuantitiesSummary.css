@@ -1,0 +1,59 @@
+.THIS .principal {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+
+.THIS .div1 { 
+    grid-area: 1 / 1 / 2 / 2;
+    border-width: 1px;
+    border-style: solid;
+    border-color: lightgrey;
+}
+.THIS .div2 { 
+    grid-area: 1 / 2 / 2 / 3;
+    border-width: 1px;
+    border-style: solid;
+    border-color: lightgrey;
+}
+
+.THIS .negrita15{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.THIS .underlineBlue{
+    text-decoration: underline;
+    color: blue;
+}
+
+.THIS .margintop20{
+    margin-top: 20px;
+}
+
+.THIS .paddingBottom10px{
+    padding-bottom: 10px;
+}
+
+.THIS .paddingleft10{
+    padding-left: 10px;;
+}
+
+.THIS .borderGrey{
+    border-width: 1px;
+    border-style: solid;
+    border-color: lightgrey;
+}
+
+.THIS .backyellow{
+    background-color: burlywood;
+}
+
+.THIS .capa2{
+    border-width: 1px;
+    border-style: solid;
+    border-color: lightgrey;
+    background-color: burlywood;
+}

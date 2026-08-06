@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Canal de Autorización</label>
+    <name>AuthChannel__c</name>
+    <picklistValues>
+        <masterLabel>ALL</masterLabel>
+        <translation><!-- ALL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EML</masterLabel>
+        <translation><!-- EML --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FBK</masterLabel>
+        <translation><!-- FBK --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ING</masterLabel>
+        <translation><!-- ING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LIN</masterLabel>
+        <translation><!-- LIN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SMS</masterLabel>
+        <translation><!-- SMS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TWI</masterLabel>
+        <translation><!-- TWI --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

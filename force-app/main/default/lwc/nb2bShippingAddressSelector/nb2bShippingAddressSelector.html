@@ -1,0 +1,77 @@
+<!--
+  @description       : 
+  @author            : EHG@nubika.com
+  @group             : 
+  @last modified on  : 02-09-2023
+  @last modified by  : EHG@nubika.com
+-->
+<template>
+	<c-nb2b-shipping-address 
+		record-id={cartId} 
+		delivery-group={deliveryGroup} 
+		onselection={handleAddressSelection}
+		onselectionpickup={handleAddressSelectionPickup}
+		oncheckpickup={handleSelectPickup}>
+	</c-nb2b-shipping-address>
+	<c-nb2b-dialog title={modalTitle}>
+		<c-nb2b-create-contact-point-address onclose={closeModal} onsuccess={handleSave} account-id={accountId}></c-nb2b-create-contact-point-address>
+	</c-nb2b-dialog>
+	<!--<template if:true={showCalendar}>-->
+		<div class="column">
+			<!-- <div class="deliveryButton"> -->
+			<!-- <lightning-layout>Delivery Date *</lightning-layout> -->
+			<c-nb2b-date-picker
+				onselection={handleDateSelection}
+				onwarningvaluechange={updateWarningDate}
+				date-format={dateFormat}
+				postal-code={postalCode}
+				days-to-show={daysToShow}
+				show-warning-date={showWarningDate}
+				sel-format-date-aux={_delivery_Date}>
+				<!-- valid-dates={validDates} -->
+			</c-nb2b-date-picker>
+			<br/>
+			<br/>
+			<br/>
+			<div>
+				<lightning-input width="50%" label="Your reference/PO *" onchange={orderCodeChange} value={order_Code}></lightning-input>
+			</div>
+			<div>
+				<lightning-textarea width="50%" label="Delivery Instructions" onchange={deliveryInstChange} value={deliveryInstructions}></lightning-textarea>
+			</div>
+		</div>
+		
+	<!--</template>-->
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	
+	<div if:true={showWarning} class="slds-notify slds-notify_alert slds-alert_warning warning" style="margin-top: 20px;" role="alert">
+		<span class="slds-assistive-text">warning</span>
+		<span class="slds-icon_container slds-icon-utility-warning slds-m-right_x-small" title="Description of icon when needed">
+			<svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+				<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#warning"></use>
+			</svg>
+		</span>
+		<h2>
+			{labels.feeWarning}
+		</h2>
+	</div>
+	<br/>
+	<div if:true={showWarningDate} class="slds-notify slds-notify_alert slds-alert_warning warning" style="margin-top: 20px;" role="alert">
+		<span class="slds-assistive-text">warning</span>
+		<span class="slds-icon_container slds-icon-utility-warning slds-m-right_x-small" title="Description of icon when needed">
+			<svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+				<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#warning"></use>
+			</svg>
+		</span>
+		<h2>
+			{labels.dateWarning}
+		</h2>
+	</div>
+	<div class="slds-card__footer" style="margin-top: 100px;">
+		<lightning-button label="Go to Cart" onclick={goToCart} style="margin-right: 10px;"></lightning-button>
+		<lightning-button variant="brand" label="Next" onclick={validateAndGo}></lightning-button>
+	</div>
+</template>

@@ -1,0 +1,27 @@
+<aura:component implements="lightning:availableForFlowScreens">
+    <!-- ATTRIBUTES -->
+    <aura:attribute name="gotoClosedWon" type="Boolean" default="false" access="global"/>    
+	<aura:attribute name="gotoClosedLost" type="Boolean" default="false" access="global"/>    
+    <aura:attribute name="closedWonDisabled" type="Boolean" default="false" access="global"/>    
+	<aura:attribute name="closedLostDisabled" type="Boolean" default="false" access="global"/>    
+    
+    <!-- HTML MARKUP -->
+    <div class="slds-p-top_small">
+        <div class="slds-box slds-theme_shade"> 
+            <div class="slds-text-title_bold">{!$Label.c.insr_shortcut_heading}</div>
+            <div class="slds-text-title slds-m-bottom_x-small">{!$Label.c.insr_shortcut_heading_text}</div>
+            <ul class="slds-list_dotted">
+                <aura:if isTrue="{!not(v.closedWonDisabled)}">
+                    <li class="slds-list__item">
+                        <a href="javascript:void(0)" onclick="{!c.setClosedWon}">{!$Label.c.insr_shortcut_gotoClosedWon}</a>
+                    </li>
+               	</aura:if>
+				<aura:if isTrue="{!not(v.closedLostDisabled)}">                
+                    <li class="slds-list__item">
+                        <a href="javascript:void(0)" onclick="{!c.setClosedLost}">{!$Label.c.insr_shortcut_gotoClosedLost}</a>
+                    </li>                
+                </aura:if>
+            </ul>
+        </div>       
+    </div>
+</aura:component>

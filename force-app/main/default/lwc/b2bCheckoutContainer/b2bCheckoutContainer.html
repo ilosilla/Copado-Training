@@ -1,0 +1,142 @@
+<template>
+
+    <template lwc:if={showSpinner}>
+        <div class="checkout-overlay">
+            <lightning-spinner size="medium" alternative-text="Loading..."></lightning-spinner>
+        </div>
+    </template>
+
+    <!-- Header minimal checkout -->
+    <c-b2b-checkout-header
+        oncontinueshopping={handleContinueShopping}>
+    </c-b2b-checkout-header>
+
+    <div class="checkout-layout">
+
+        <template lwc:if={ui_isOrdering}>
+            <c-b2b-checkout-cart-to-order
+                cart-id={bootstrapData.cartId}      
+                webstore-id={bootstrapData.webstoreId}         
+                payment-method={st_selectedMethod}
+                po-number={st_customerReference}
+                card-surcharge={st_cardSurcharge}
+                card-surcharge-pct ={st_cardSurchargePct}
+                cart-amount={st_cartGrandTotal}
+                onclose={handleCloseCartToOrder}>
+            </c-b2b-checkout-cart-to-order >
+        </template>
+        
+        <!-- Main process column -->
+        <div class="checkout-main">
+            <div>
+                <h1 class="checkout-page-title">
+                    Order checkout
+                </h1>
+            </div>
+
+            <!-- Critical checkout error (integrated) -->
+            <template lwc:if={hasError}>
+                <div class="checkout-critical">
+                    <div class="checkout-critical__icon">
+                        <lightning-icon icon-name="utility:error" variant="error" size="small"></lightning-icon>
+                    </div>
+
+                    <div class="checkout-critical__content">
+                        <div class="checkout-critical__title">{ui_errorState.title}</div>
+                        <div class="checkout-critical__message">{ui_errorState.message}</div>
+                        <template lwc:if={ui_errorState.technicalDetails}>
+                            <div class="checkout-critical__details">
+                                <div class="checkout-critical__details-title">Technical details</div>
+                                <code class="checkout-critical__details-code">{ui_errorState.technicalDetails}</code>
+                            </div>
+                        </template>                    
+                    </div>
+
+                    <template lwc:if={canDismissError}>
+                        <div class="checkout-critical__close">
+                            <lightning-button-icon
+                                icon-name="utility:close"
+                                variant="bare"
+                                alternative-text="Close"
+                                onclick={handleDismissError}>
+                            </lightning-button-icon>
+                        </div>
+                    </template>
+                </div>
+            </template>
+
+             <!-- Checkout steps (hidden when blocking error) -->
+            <template lwc:if={showCheckoutContent}>
+            
+                <!-- STEP 0: Delivery method -->
+                <section class={deliveryMethodSectionClass} lwc:if={sMethodShow}>
+                    <c-b2b-checkout-delivery-method
+                        mode={sMethodMode}    
+                        delivery-method={st_deliveryMethod}
+                        onconfirmdata={handleConfirmDeliveryMethod}
+                        onchangedata={handleDeliveryMethodEditRequest}>
+                    </c-b2b-checkout-delivery-method>
+                </section>
+
+                <!-- STEP 1: Delivery address/Pickup Details -->
+                <!--<template if:true={isShipToCustomer}>-->
+                    <section class={deliveryAddressSectionClass} lwc:if={sAddressShow}>
+                        <c-b2b-checkout-delivery-address
+                            mode={sAddressMode}
+                            account-id={cartAccountId}
+                            delivery-method={st_deliveryMethod}
+                            selected-address-id={st_selectedAddressId}
+                            addresses={availableAddresses}
+                            delivery-cost={st_deliveryCost}
+                            preparation-message={preparationTimeMessage}
+                            onaddresschange={handleDeliveryAddressChange}
+                            onconfirmdata={handleConfirmDeliveryAddress}
+                            onchangedata={handleDeliveryAddressEditRequest}
+                            >  
+                        </c-b2b-checkout-delivery-address>
+                    </section>
+                <!--</template>-->
+
+                <!-- STEP 2: Delivery details -->
+                <template if:true={isShipToCustomer}>
+                    <section class={deliveryDetailsSectionClass} lwc:if={sDetailsShow}>
+                        <c-b2b-checkout-delivery-details
+                            mode={sDetailsMode}
+                            delivery-date={st_deliveryDate}
+                            delivery-instructions={st_deliveryInstructions}
+                            delivery-requirement={st_deliveryRequirement}
+                            logistics-context={bootstrapData.logisticsContext}
+                            onconfirmdata={handleConfirmDeliveryDetails}
+                            onchangedata={handleDeliveryDetailsEditRequest}>
+                        </c-b2b-checkout-delivery-details>
+                    </section>
+                </template>
+
+                <!-- STEP 3: Payment & Order -->
+                 <template lwc:if={sPaymentShow}>
+                    <section class="checkout-section">
+                        <c-b2b-checkout-payment
+                            mode={sPaymentMode}
+                            cart-total={cartTotal}
+                            is-ready-to-order={isReadyToOrder}
+                            customer-reference={st_customerReference}
+                            credit-info={st_creditInfo}
+                            prices-info={st_sapPrices}
+                            account-settings={bootstrapData.accountSettings}
+                            onconfirmdata={handleConfirmPayment}
+                            onchangedata={handlePaymentEditRequest}>>
+                        </c-b2b-checkout-payment>
+                    </section>
+                 </template>
+
+            </template>
+        </div>
+
+        <!-- Summary column 
+        <div class="checkout-summary">
+            <c-b2b-checkout-summary>
+            </c-b2b-checkout-summary>
+        </div>
+    -->
+    </div>
+</template>

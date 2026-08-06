@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Followed_Accounts_227</fullName>
+    <booleanFilter>1 AND 2 AND (3 OR 4)</booleanFilter>
+    <columns>Account__c</columns>
+    <columns>AccountSapId__c</columns>
+    <columns>AccountActivityDate__c</columns>
+    <columns>AccountActivity__c</columns>
+    <columns>AccountClassification__c</columns>
+    <columns>AccountStatus__c</columns>
+    <columns>PersonAccount__c</columns>
+    <columns>AccountOwnerSalesOrg__c</columns>
+    <columns>AccountOwner__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Follow__c.Account</value>
+    </filters>
+    <filters>
+        <field>AccountOwnerSalesOrg__c</field>
+        <operation>equals</operation>
+        <value>227</value>
+    </filters>
+    <filters>
+        <field>OWNER.ALIAS</field>
+        <operation>contains</operation>
+        <value>sseg</value>
+    </filters>
+    <filters>
+        <field>OWNER.ALIAS</field>
+        <operation>equals</operation>
+        <value>PSimar</value>
+    </filters>
+    <label>FR Followed Accounts - LORCERAM</label>
+</ListView>

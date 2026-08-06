@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>European_Community__c</fullName>
+    <formula>/*ISPICKVAL(PersonMailingCountryCode, &quot;FR:BE:BG:CZ:DK:DE:EE:IE:EL:ES:FR:HR:IT:CY:LV:LT:LU:HU:MT:NL:AT:PL:PT:RO:SI:SK:FI:SE:GB&quot;)*/
+OR (
+    ISPICKVAL(PersonMailingCountryCode, &quot;FR&quot;),
+    ISPICKVAL(PersonMailingCountryCode, &quot;BE&quot;),
+    ISPICKVAL(PersonMailingCountryCode, &quot;BG&quot;),
+    ISPICKVAL(PersonMailingCountryCode, &quot;CZ&quot;),
+    ISPICKVAL(PersonMailingCountryCode, &quot;DK&quot;),
+	ISPICKVAL(PersonMailingCountryCode, &quot;DE&quot;),
+	ISPICKVAL(PersonMailingCountryCode, &quot;EE&quot;),
+	ISPICKVAL(PersonMailingCountryCode, &quot;IE&quot;),
+	ISPICKVAL(PersonMailingCountryCode, &quot;EL&quot;),
+	ISPICKVAL(PersonMailingCountryCode, &quot;ES&quot;),
+	ISPICKVAL(PersonMailingCountryCode, &quot;HR&quot;),
+	ISPICKVAL(PersonMailingCountryCode, &quot;IT&quot;),
+	ISPICKVAL(PersonMailingCountryCode, &quot;CY&quot;),
+	ISPICKVAL(PersonMailingCountryCode, &quot;LV&quot;),
+	ISPICKVAL(PersonMailingCountryCode, &quot;LT&quot;),
+	ISPICKVAL(PersonMailingCountryCode, &quot;LU&quot;),
+	ISPICKVAL(PersonMailingCountryCode, &quot;HU&quot;),
+	ISPICKVAL(PersonMailingCountryCode, &quot;MT&quot;),
+	ISPICKVAL(PersonMailingCountryCode, &quot;NL&quot;),
+	ISPICKVAL(PersonMailingCountryCode, &quot;AT&quot;),
+	ISPICKVAL(PersonMailingCountryCode, &quot;PL&quot;),
+	ISPICKVAL(PersonMailingCountryCode, &quot;PT&quot;),
+	ISPICKVAL(PersonMailingCountryCode, &quot;RO&quot;),
+	ISPICKVAL(PersonMailingCountryCode, &quot;SI&quot;),
+	ISPICKVAL(PersonMailingCountryCode, &quot;SK&quot;),
+	ISPICKVAL(PersonMailingCountryCode, &quot;FI&quot;),
+	ISPICKVAL(PersonMailingCountryCode, &quot;SE&quot;),
+	ISPICKVAL(PersonMailingCountryCode, &quot;GB&quot;)	
+	)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>European Community</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

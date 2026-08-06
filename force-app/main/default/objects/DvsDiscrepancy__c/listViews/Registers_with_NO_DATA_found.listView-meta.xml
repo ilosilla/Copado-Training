@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Registers_with_NO_DATA_found</fullName>
+    <columns>Account__c</columns>
+    <columns>DvsName__c</columns>
+    <columns>SalesforceStreet__c</columns>
+    <columns>DvsStreet__c</columns>
+    <columns>SameStreet__c</columns>
+    <columns>SalesforcePostalCode__c</columns>
+    <columns>DvsPostalCode__c</columns>
+    <columns>SalesforceCity__c</columns>
+    <columns>DvsCity__c</columns>
+    <columns>SalesforceId__c</columns>
+    <columns>DvsId__c</columns>
+    <columns>SalesforceId2__c</columns>
+    <columns>DvsId2__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>DvsName__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Registers with NO DATA found</label>
+</ListView>

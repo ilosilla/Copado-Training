@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assetIcon>/analytics/wave/web/proto/images/app/icons/16.png</assetIcon>
+    <description>App created from template &apos;Sentiment Analysis&apos; via Data Manager</description>
+    <folder>Lead_test</folder>
+    <masterLabel>USA App</masterLabel>
+    <shares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>AllInternalUsers</sharedTo>
+        <sharedToType>Organization</sharedToType>
+    </shares>
+    <shares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>bsales@porcelanosa-usa.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </shares>
+    <templateOrigin>sfdc_internal__Sentiment_Analysis_Base</templateOrigin>
+    <templateVersion>1.0</templateVersion>
+</WaveApplication>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>ZW04</fullName>
+        <default>true</default>
+        <label>Materials Order</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Z017</fullName>
+        <default>false</default>
+        <label>Service Order</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Z011</fullName>
+        <default>false</default>
+        <label>Free Samples</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Z018</fullName>
+        <default>false</default>
+        <label>Customer Returns</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Z051</fullName>
+        <default>false</default>
+        <label>Replacement Order</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Z018_F</fullName>
+        <default>false</default>
+        <label>Free Collection</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Z016</fullName>
+        <default>false</default>
+        <label>Credit Request</label>
+    </standardValue>
+</StandardValueSet>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_SAP__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Check this option when the user works in a context connected to SAP</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Check this option if you need to connect to SAP from Salesforce</inlineHelpText>
+    <label>Has SAP</label>
+    <type>Checkbox</type>
+</CustomField>

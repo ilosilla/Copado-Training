@@ -1,0 +1,9 @@
+<aura:component
+    implements="flexipage:availableForAllPageTypes,force:hasRecordId,lightning:hasPageReference,lightning:isUrlAddressable,lightning:actionOverride,force:lightningQuickActionWithoutHeader" 
+    access="global">
+
+    <lightning:workspaceAPI aura:id="workspace"/>
+
+    <c:caseCollectionEdit onclose="{!c.handleCancel}"> </c:caseCollectionEdit>
+
+</aura:component>

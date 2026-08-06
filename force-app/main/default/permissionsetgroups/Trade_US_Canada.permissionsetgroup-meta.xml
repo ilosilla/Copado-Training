@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>permisos para los usuarios de trade de USA y Canada</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Trade US_Canada</label>
+    <permissionSets>Additional_Info_tabs</permissionSets>
+    <permissionSets>Facade_Fields</permissionSets>
+    <permissionSets>Private_Customers_for_Trade_Users</permissionSets>
+    <permissionSets>Rating_Field_Access</permissionSets>
+    <permissionSets>tile_planner_permission</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

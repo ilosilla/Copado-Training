@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Indique si un vendeur est responsable ou non du point de vente.</help>
+    <label>Organisation de Vente par Défaut</label>
+    <name>Default_Sales_Organization__c</name>
+</CustomFieldTranslation>

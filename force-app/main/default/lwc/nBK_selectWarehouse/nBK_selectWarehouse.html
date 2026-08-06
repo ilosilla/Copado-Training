@@ -1,0 +1,78 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 01-19-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+
+
+    <div class="parentDiv">
+      <div class="addressGrid" id="flecha">
+      <!-- Picklist states -->
+        <lightning-combobox
+        name="State"
+        label="State"
+        value={stateVal}
+        placeholder="Select the appointment state"
+        options={optionsStates}
+        onchange={getPorcelanosaAdresses} 
+        style="width:75%">
+        </lightning-combobox>
+        <div class="slds-scrollable--y"><!--parentAddresses -->
+          <!-- Lista de Porcelanosa Addresses -->
+          <template for:each={warehousesList} for:item="showroom"><!-- class="container" -->
+              <div data-id={showroom.Name}
+                  data-name={showroom.NBK_Name_with_adress__c}
+                  style="padding-top:4%; width:65%;"
+                  key={showroom.Name}
+                  onclick={handleChooseWarehouse}>
+                <div class="line-1"></div>
+                </br>
+                <p><b>{showroom.Name}</b></p>
+                <p>{showroom.NBK_Address__Street__s}, {showroom.NBK_Address__City__s}, {showroom.NBK_Address__StateCode__s}, {showroom.NBK_Address__PostalCode__s}</p>
+                <div style="height: 40px;
+                            width: 100%;
+                            position: relative;
+                            bottom: 70px;
+                            left: 10px;
+                            display: flex;
+                            justify-content: flex-end;">
+                  <lightning-icon style="margin-top:11%;" icon-name="utility:chevronright" size="small"></lightning-icon>
+                </div>
+                <div class="line-1"></div>
+              </div>
+              <!--class="divIcon"-->
+              <!-- <div key={showroom.Name} >
+                <lightning-icon style="margin-top:11%;" icon-name="utility:chevronright" size="small"></lightning-icon>
+              </div> -->
+              <div key={showroom.Name}>
+            </div>
+          </template>
+        </div>
+      </div>
+    
+      <div class="mapGrid">
+        <div class="mapContainer slds-float_right">
+        <!-- Mapa -->
+          <template if:true={showMap}>
+              <!-- <div class="mapContainer slds-float_right"> -->
+                <lightning-map
+                  map-markers={markers}
+                  zoom-level="3">
+                </lightning-map>
+            <!-- </div> -->
+          </template>
+          <template if:true={showMapSelection}>
+            <!-- <div class="mapContainer slds-float_right"> -->
+              <lightning-map
+                map-markers={selectedMarkers}
+                zoom-level="10">
+              </lightning-map>
+            <!-- </div> -->
+          </template>
+        </div>
+      </div>
+  </div>
+</template>

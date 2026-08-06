@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>prueba_cita_en_tienda_cuenta</fullName>
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>prueba cita en tienda cuenta</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>https://www.neoris.com/</url>
+</WebLink>

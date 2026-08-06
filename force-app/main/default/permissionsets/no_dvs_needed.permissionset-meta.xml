@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Quien tenga este permiso, no es necesario que el Account haya pasado por el data validationpara el envío a SAP</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>No DVS Needed</label>
+    <license>Salesforce</license>
+</PermissionSet>

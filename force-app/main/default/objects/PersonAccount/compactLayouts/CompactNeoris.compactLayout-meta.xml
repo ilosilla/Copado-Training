@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CompactNeoris</fullName>
+    <fields>Name</fields>
+    <fields>Phone</fields>
+    <fields>PersonEmail</fields>
+    <fields>Locked__c</fields>
+    <fields>Country_formula__c</fields>
+    <fields>SAP_id_formule__c</fields>
+    <fields>OwnerId</fields>
+    <label>CompactNeoris</label>
+</CompactLayout>

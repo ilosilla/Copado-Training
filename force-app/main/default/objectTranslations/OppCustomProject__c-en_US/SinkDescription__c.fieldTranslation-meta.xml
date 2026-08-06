@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Sink Description --></label>
+    <name>SinkDescription__c</name>
+    <picklistValues>
+        <masterLabel>Apron</masterLabel>
+        <translation><!-- Apron --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Overmount</masterLabel>
+        <translation><!-- Overmount --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Undermount</masterLabel>
+        <translation><!-- Undermount --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vessel</masterLabel>
+        <translation><!-- Vessel --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

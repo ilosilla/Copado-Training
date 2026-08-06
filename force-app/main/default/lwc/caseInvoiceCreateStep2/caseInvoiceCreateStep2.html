@@ -1,0 +1,57 @@
+<template>
+    <div class="slds-var-p-horizontal_medium slds-var-m-top_medium">
+        <p class="slds-var-m-bottom_medium"><b>{introText}</b></p>
+    </div>
+    <div class="slds-var-p-horizontal_medium slds-scrollable_x">
+        <c-lib-error-panel errors={errorObject} theme="error"></c-lib-error-panel>
+        <lightning-layout horizontal-align="spread"  class="slds-table slds-theme_info slds-table_bordered slds-var-p-horizontal_small" >                                        
+            <lightning-layout-item class="slds-border_right slds-var-p-around_xx-small" size="5">
+                <h3 class="col-header-1">{labels.dict_product}</h3>
+                <h3 class="col-header-2">{labels.dictQuantityInvoiced}</h3>
+            </lightning-layout-item>
+            <lightning-layout-item size="5" class="slds-border_right slds-var-p-around_xx-small" >                                                                                       
+                <h3 class="col-header-1">{labels.dictProblemDescription}</h3>
+            </lightning-layout-item>
+            <lightning-layout-item size="2" class="slds-var-p-around_xx-small" >
+                <h3 class="col-header-1">{labels.caseAffectedUnits}</h3> 
+            </lightning-layout-item>
+        </lightning-layout>                                
+        <template for:each={invoiceLines} for:item="line">
+            <lightning-layout key={line.Orderlin__c} class={line.className} >
+
+                <lightning-layout-item size="5" class="slds-var-p-around_xx-small">
+                    <div>{line.Name__c}</div>
+                    <div>{line.Sku__c} · {line.Quantity__c} {line.salesUnitName}</div>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="5" class="slds-var-p-around_xx-small">
+                    <div class="slds-theme_warning slds-var-p-around_xx-small" lwc:if={line.isInvalid}>{labels.tr0009_019}</div>        
+                    <lightning-select
+                        data-index={line.index}
+                        value={line.problem}
+                        options={defectOptions}
+                        onchange={handleProblemChange}
+                        variant="label-hidden"
+                        disabled={componentLoading}
+                        lwc:else
+                    >
+                    </lightning-select>                     
+                </lightning-layout-item>                                    
+
+                <lightning-layout-item size="2" class="slds-var-p-around_xx-small">
+                    <lightning-input 
+                        data-id={line.inputId} 
+                        data-index={line.index}
+                        value={line.defective}
+                        max={line.Quantity__c}
+                        min="0"
+                        type="number" 
+                        disabled={line.disabled} 
+                        onchange={handleQuantityChange}
+                        variant="label-hidden"></lightning-input>
+                </lightning-layout-item>    
+                
+            </lightning-layout>
+        </template>
+    </div>
+</template>

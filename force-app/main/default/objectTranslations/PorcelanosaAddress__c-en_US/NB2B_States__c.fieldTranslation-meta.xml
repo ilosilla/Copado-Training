@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- States --></label>
+    <name>NB2B_States__c</name>
+    <picklistValues>
+        <masterLabel>CANADA</masterLabel>
+        <translation><!-- CANADA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>California</masterLabel>
+        <translation><!-- California --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Colorado</masterLabel>
+        <translation><!-- Colorado --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Connecticut</masterLabel>
+        <translation><!-- Connecticut --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>District of Columbia</masterLabel>
+        <translation><!-- District of Columbia --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Florida</masterLabel>
+        <translation><!-- Florida --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Georgia</masterLabel>
+        <translation><!-- Georgia --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Illinois</masterLabel>
+        <translation><!-- Illinois --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Maryland</masterLabel>
+        <translation><!-- Maryland --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Massachusetts</masterLabel>
+        <translation><!-- Massachusetts --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New Jersey</masterLabel>
+        <translation><!-- New Jersey --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New York</masterLabel>
+        <translation><!-- New York --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pennsylvania</masterLabel>
+        <translation><!-- Pennsylvania --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Texas</masterLabel>
+        <translation><!-- Texas --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Virginia</masterLabel>
+        <translation><!-- Virginia --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Washington</masterLabel>
+        <translation><!-- Washington --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

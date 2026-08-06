@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>プルリクエスト</value>
+    </caseValues>
+    <layouts>
+        <layout>Pull Request Layout</layout>
+        <sections>
+            <label>カスタムリンク</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>その他の情報</label>
+            <section>Other Information</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>プルリクエスト名</nameFieldLabel>
+</CustomObjectTranslation>

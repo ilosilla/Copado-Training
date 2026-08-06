@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DataGrid Preference</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DataGrid Preferences</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- DataGrid Filter FieldSet --></label>
+        <name>gmpkg__DataGrid_Filter_FieldSet</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- DataGrid Link FieldSet --></label>
+        <name>gmpkg__DataGrid_Link_FieldSet</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- DataGrid Template FieldSet --></label>
+        <name>gmpkg__DataGrid_Template_FieldSet</name>
+    </fieldSets>
+    <layouts>
+        <layout>DataGrid Preference Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Pref. Description --></label>
+            <section>Pref. Description</section>
+        </sections>
+        <sections>
+            <label><!-- Pref. Value --></label>
+            <section>Pref. Value</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PaymentRequest__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>PaymentRequest</label>
+    <referenceTo>PaymentRequest__c</referenceTo>
+    <relationshipLabel>B2B Order Recoveries</relationshipLabel>
+    <relationshipName>B2B_Order_Recoveries</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

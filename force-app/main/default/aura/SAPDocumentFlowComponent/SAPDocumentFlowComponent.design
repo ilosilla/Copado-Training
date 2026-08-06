@@ -1,0 +1,5 @@
+<design:component label="SAPDocumentFlowComponentDesign">
+    <design:attribute name="docType" label="Document Type" datasource="SALES_QUOTE,SALES_ORDER,SALES_INVOICE,PURCHASE_ORDER"/>	    
+    <design:attribute name="docNumber" label="Document Number"/>	    
+    <design:attribute name="required" label="Document Required"/>
+</design:component>

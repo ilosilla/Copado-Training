@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>B2B: USD Cart Summary</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Page_Layout</target>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Theme_Layout</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">                        
+            <property name="checkoutDetails" type="String" label="Checkout Expression" default="{!Checkout.Details}"/>
+            <property name="showSummary" type="Boolean" label="Show  Cart Summary" default="true"/>
+            <property name="showDetail" type="Boolean" label="Show Cart Detail" default="true"/>
+            <property name="allowPlaceOrder" type="Boolean" label="Allow Place Order" default="true"/>
+        </targetConfig>
+    </targetConfigs>
+    <capabilities>
+        <capability>lightningCommunity__RelaxedCSP</capability>
+    </capabilities>
+</LightningComponentBundle>

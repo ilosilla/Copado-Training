@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LikelyCause__c</fullName>
+    <label>Likely Cause</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>SymptomsDetails__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>CartridgeNotAdjusted</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CartridgeNotAdjusted</label>
+            </value>
+            <value>
+                <fullName>CloggedAerator</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CloggedAerator</label>
+            </value>
+            <value>
+                <fullName>COMPANY LIABILITY</fullName>
+                <default>false</default>
+                <label>COMPANY LIABILITY</label>
+            </value>
+            <value>
+                <fullName>CrackedToiletSeat</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CrackedToiletSeat</label>
+            </value>
+            <value>
+                <fullName>CUSTOMER ISSUE</fullName>
+                <default>false</default>
+                <label>CUSTOMER ISSUE</label>
+            </value>
+            <value>
+                <fullName>Customer misplaced/Item not in original package</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Customer misplaced/Item not in original package</label>
+            </value>
+            <value>
+                <fullName>CUSTOMER MIS-USE</fullName>
+                <default>false</default>
+                <label>CUSTOMER MIS-USE</label>
+            </value>
+            <value>
+                <fullName>CUSTOMER MIS-USE (1)</fullName>
+                <default>false</default>
+                <label>CUSTOMER MIS-USE (1)</label>
+            </value>
+            <value>
+                <fullName>CUSTOMER MIS-USE (2)</fullName>
+                <default>false</default>
+                <label>CUSTOMER MIS-USE (2)</label>
+            </value>
+            <value>
+                <fullName>CUSTOMER MIS-USE (3)</fullName>
+                <default>false</default>
+                <label>CUSTOMER MIS-USE (3)</label>
+            </value>
+            <value>
+                <fullName>DamagedCartridge-F</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>DamagedCartridge-F</label>
+            </value>
+            <value>
+                <fullName>DamagedCartridge-PB</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>DamagedCartridge-PB</label>
+            </value>
+            <value>
+                <fullName>DamagedCartridge-T</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>DamagedCartridge-T</label>
+            </value>
+            <value>
+                <fullName>DamagedCartridge-TF</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>DamagedCartridge-TF</label>
+            </value>
+            <value>
+                <fullName>DamagedFillingValve</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>DamagedFillingValve</label>
+            </value>
+            <value>
+                <fullName>DamagedFlushValve</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>DamagedFlushValve</label>
+            </value>
+            <value>
+                <fullName>DAMAGED IN TRANSIT / ON SITE</fullName>
+                <default>false</default>
+                <label>DAMAGED IN TRANSIT / ON SITE</label>
+            </value>
+            <value>
+                <fullName>DAMAGED IN TRANSPORT</fullName>
+                <default>false</default>
+                <label>DAMAGED IN TRANSPORT</label>
+            </value>
+            <value>
+                <fullName>DiverterCartridgeDamaged</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>DiverterCartridgeDamaged</label>
+            </value>
+            <value>
+                <fullName>DiverterDamaged/</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>DiverterDamaged/</label>
+            </value>
+            <value>
+                <fullName>FlushButtonsNotAdjusted</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>FlushButtonsNotAdjusted</label>
+            </value>
+            <value>
+                <fullName>GROUT HAS NOT BEEN MIXED CORRECTLY - TOO MUCH WATER</fullName>
+                <default>false</default>
+                <label>GROUT HAS NOT BEEN MIXED CORRECTLY - TOO MUCH WATER</label>
+            </value>
+            <value>
+                <fullName>HotFeedingColdSupply line</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>HotFeedingColdSupply line</label>
+            </value>
+            <value>
+                <fullName>IMPROPER CLEANING OR MAINTENANCE</fullName>
+                <default>false</default>
+                <label>IMPROPER CLEANING OR MAINTENANCE</label>
+            </value>
+            <value>
+                <fullName>IMPROPER CLEANING OR MAINTENANCE (1)</fullName>
+                <default>false</default>
+                <label>IMPROPER CLEANING OR MAINTENANCE (1)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (1)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (1)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (10)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (10)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (11)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (11)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (12)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (12)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (14)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (14)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (15)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (15)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (16)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (16)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (17)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (17)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (18)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (18)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (19)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (19)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (2)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (2)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (20)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (20)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (21)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (21)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (22)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (22)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (23)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (23)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (24)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (24)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (25)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (25)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (3)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (3)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (4)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (4)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (5)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (5)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (6)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (6)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (7)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (7)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (8)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (8)</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION ISSUE (9)</fullName>
+                <default>false</default>
+                <label>INSTALLATION ISSUE (9)</label>
+            </value>
+            <value>
+                <fullName>LooseSupplyLine</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>LooseSupplyLine</label>
+            </value>
+            <value>
+                <fullName>NOT MIXED PROPERLY</fullName>
+                <default>false</default>
+                <label>NOT MIXED PROPERLY</label>
+            </value>
+            <value>
+                <fullName>OTHERS</fullName>
+                <default>false</default>
+                <label>OTHERS</label>
+            </value>
+            <value>
+                <fullName>PICKING OR ADMIN ERROR</fullName>
+                <default>false</default>
+                <label>PICKING OR ADMIN ERROR</label>
+            </value>
+            <value>
+                <fullName>Product damaged during transport</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Product damaged during transport</label>
+            </value>
+            <value>
+                <fullName>PRODUCTION ISSUE</fullName>
+                <default>false</default>
+                <label>PRODUCTION ISSUE</label>
+            </value>
+            <value>
+                <fullName>PRODUCTION ISSUE (1)</fullName>
+                <default>false</default>
+                <label>PRODUCTION ISSUE (1)</label>
+            </value>
+            <value>
+                <fullName>PRODUCTION ISSUE (10)</fullName>
+                <default>false</default>
+                <label>PRODUCTION ISSUE (10)</label>
+            </value>
+            <value>
+                <fullName>PRODUCTION ISSUE (2)</fullName>
+                <default>false</default>
+                <label>PRODUCTION ISSUE (2)</label>
+            </value>
+            <value>
+                <fullName>PRODUCTION ISSUE (3)</fullName>
+                <default>false</default>
+                <label>PRODUCTION ISSUE (3)</label>
+            </value>
+            <value>
+                <fullName>PRODUCTION ISSUE (4)</fullName>
+                <default>false</default>
+                <label>PRODUCTION ISSUE (4)</label>
+            </value>
+            <value>
+                <fullName>PRODUCTION ISSUE (5)</fullName>
+                <default>false</default>
+                <label>PRODUCTION ISSUE (5)</label>
+            </value>
+            <value>
+                <fullName>PRODUCTION ISSUE (6)</fullName>
+                <default>false</default>
+                <label>PRODUCTION ISSUE (6)</label>
+            </value>
+            <value>
+                <fullName>PRODUCTION ISSUE (7)</fullName>
+                <default>false</default>
+                <label>PRODUCTION ISSUE (7)</label>
+            </value>
+            <value>
+                <fullName>PRODUCTION ISSUE (8)</fullName>
+                <default>false</default>
+                <label>PRODUCTION ISSUE (8)</label>
+            </value>
+            <value>
+                <fullName>PRODUCTION ISSUE (9)</fullName>
+                <default>false</default>
+                <label>PRODUCTION ISSUE (9)</label>
+            </value>
+            <value>
+                <fullName>PRODUCT ISSUE</fullName>
+                <default>false</default>
+                <label>PRODUCT ISSUE</label>
+            </value>
+            <value>
+                <fullName>PRODUCT ISSUE (1)</fullName>
+                <default>false</default>
+                <label>PRODUCT ISSUE (1)</label>
+            </value>
+            <value>
+                <fullName>PRODUCT ISSUE (2)</fullName>
+                <default>false</default>
+                <label>PRODUCT ISSUE (2)</label>
+            </value>
+            <value>
+                <fullName>PRODUCT UNSUITABLE FOR INTENDED USE</fullName>
+                <default>false</default>
+                <label>PRODUCT UNSUITABLE FOR INTENDED USE</label>
+            </value>
+            <value>
+                <fullName>SALES ISSUE</fullName>
+                <default>false</default>
+                <label>SALES ISSUE</label>
+            </value>
+            <value>
+                <fullName>ServiceStopNotOpen</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ServiceStopNotOpen</label>
+            </value>
+            <value>
+                <fullName>SuppliesReversedInWall</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SuppliesReversedInWall</label>
+            </value>
+            <value>
+                <fullName>UserError</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>UserError</label>
+            </value>
+            <value>
+                <fullName>ValveIssue</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ValveIssue</label>
+            </value>
+            <value>
+                <fullName>WATER SUPPLY ISSUE</fullName>
+                <default>false</default>
+                <label>WATER SUPPLY ISSUE</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>SURFACE IS SCRATCHED OR MARKED</controllingFieldValue>
+            <controllingFieldValue>GLASS SCRATCHED OR MARKED</controllingFieldValue>
+            <controllingFieldValue>TAP SURFACE IS SCRATCHED OR MARKED</controllingFieldValue>
+            <controllingFieldValue>UNIT DAMAGED</controllingFieldValue>
+            <controllingFieldValue>CRACKS DEVELOPED AFTER INSTALLATION</controllingFieldValue>
+            <controllingFieldValue>CRACKS VISIBLE PRIOR TO INSTALLATION</controllingFieldValue>
+            <controllingFieldValue>GLASS CHIPPED / DAMAGED / SCRATCHED</controllingFieldValue>
+            <controllingFieldValue>HANDLES DAMAGED</controllingFieldValue>
+            <controllingFieldValue>LEAKING THROUGH CRACKS</controllingFieldValue>
+            <controllingFieldValue>SCRATCHES / DEFECT ON SURFACE</controllingFieldValue>
+            <valueName>DAMAGED IN TRANSIT / ON SITE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SURFACE IS SCRATCHED OR MARKED</controllingFieldValue>
+            <controllingFieldValue>TAP SURFACE IS SCRATCHED OR MARKED</controllingFieldValue>
+            <controllingFieldValue>CHROME / PAINT DELAMINATING / COMING AWAY FROM ITEM</controllingFieldValue>
+            <controllingFieldValue>CHROME DELAMINATING / COMING AWAY FROM TAP</controllingFieldValue>
+            <controllingFieldValue>PRODUCT BECOMING MARKED OR STAINED</controllingFieldValue>
+            <controllingFieldValue>WATER LEAKING FROM TOP OF SHOWER HEAD</controllingFieldValue>
+            <controllingFieldValue>RUST ON SURFACE</controllingFieldValue>
+            <valueName>IMPROPER CLEANING OR MAINTENANCE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SURFACE IS SCRATCHED OR MARKED</controllingFieldValue>
+            <controllingFieldValue>SURFACE NOT SMOOTH</controllingFieldValue>
+            <controllingFieldValue>WATER LEAKING THROUGH DOOR OR SEALS</controllingFieldValue>
+            <controllingFieldValue>TAP SURFACE IS SCRATCHED OR MARKED</controllingFieldValue>
+            <controllingFieldValue>TRAY NOT LEVEL / WARPED / OUT OF TOLERANCE</controllingFieldValue>
+            <controllingFieldValue>TRAY WARPED / NOT LEVEL</controllingFieldValue>
+            <controllingFieldValue>UNIT DAMAGED</controllingFieldValue>
+            <controllingFieldValue>BASIN WARPED / NOT LEVEL</controllingFieldValue>
+            <controllingFieldValue>CHROME / PAINT DELAMINATING / COMING AWAY FROM ITEM</controllingFieldValue>
+            <controllingFieldValue>CHROME DELAMINATING / COMING AWAY FROM TAP</controllingFieldValue>
+            <controllingFieldValue>CRACKS DEVELOPED AFTER INSTALLATION</controllingFieldValue>
+            <controllingFieldValue>GLASS CHIPPED / DAMAGED / SCRATCHED</controllingFieldValue>
+            <controllingFieldValue>HANDLES DAMAGED</controllingFieldValue>
+            <controllingFieldValue>HINGES DROPPED / NOT LEVEL</controllingFieldValue>
+            <controllingFieldValue>LOGO INCORRECTLY PLACED</controllingFieldValue>
+            <controllingFieldValue>MARKED / DISCOLOURATION</controllingFieldValue>
+            <controllingFieldValue>NK LOGO INCORRECTLY PLACED</controllingFieldValue>
+            <controllingFieldValue>ORDER ERROR</controllingFieldValue>
+            <controllingFieldValue>PART OF THE CISTERN FRAME IS DAMAGED OR CRACKED</controllingFieldValue>
+            <controllingFieldValue>PRODUCT DEFECT</controllingFieldValue>
+            <controllingFieldValue>PRODUCT IMPERFECTION</controllingFieldValue>
+            <controllingFieldValue>VISIBLE CRACKS IN TILES</controllingFieldValue>
+            <controllingFieldValue>WASTE COVER MISSING</controllingFieldValue>
+            <controllingFieldValue>WATER REMAINING IN TRAY CONSTANTLY</controllingFieldValue>
+            <controllingFieldValue>RUST ON SURFACE</controllingFieldValue>
+            <controllingFieldValue>SCRATCHES / DEFECT ON SURFACE</controllingFieldValue>
+            <controllingFieldValue>WORKTOP WARPED / NOT LEVEL</controllingFieldValue>
+            <controllingFieldValue>SENSOR NOT REACTING TO TOUCH</controllingFieldValue>
+            <controllingFieldValue>SOFT CLOSE SEAT CRACKED</controllingFieldValue>
+            <valueName>PRODUCTION ISSUE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WRONG-PRODUCT</controllingFieldValue>
+            <controllingFieldValue>INCOMPLETE</controllingFieldValue>
+            <valueName>PICKING OR ADMIN ERROR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TRIMS SCRATCHED OR MARKED</controllingFieldValue>
+            <valueName>CUSTOMER MIS-USE (3)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TRIMS SCRATCHED OR MARKED</controllingFieldValue>
+            <controllingFieldValue>WATER LEAKING THROUGH DOOR OR SEALS</controllingFieldValue>
+            <controllingFieldValue>UNIT EXPOSED TO HIGH HUMIDITY OR WATER</controllingFieldValue>
+            <controllingFieldValue>CRACKS DEVELOPED AFTER INSTALLATION</controllingFieldValue>
+            <controllingFieldValue>HAIRLINE CRACK WITH UNDERFLOOR HEATING</controllingFieldValue>
+            <controllingFieldValue>HINGES DROPPED / NOT LEVEL</controllingFieldValue>
+            <controllingFieldValue>LEAKING THROUGH CRACKS</controllingFieldValue>
+            <controllingFieldValue>MARKED / DISCOLOURATION</controllingFieldValue>
+            <controllingFieldValue>MOVEMENT IN SUBSTRATE</controllingFieldValue>
+            <controllingFieldValue>NOT FITTED CORRECTLY</controllingFieldValue>
+            <controllingFieldValue>PIPE AT THE WALL OUTLET FEEL HOT ON THE LEFT AND COLD ON THE RIGHT</controllingFieldValue>
+            <controllingFieldValue>PRODUCT INSTALLED NOT PER SPECS.</controllingFieldValue>
+            <controllingFieldValue>VISIBLE CRACKS IN TILES</controllingFieldValue>
+            <controllingFieldValue>WATER NOT DRAINING AWAY</controllingFieldValue>
+            <controllingFieldValue>WATER REMAINING IN TRAY CONSTANTLY</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TOWEL WARMER HAS BECOME DEFORMED OVER TIME</controllingFieldValue>
+            <controllingFieldValue>TOWEL WARMER HAS STARTED TO LEAK</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (10)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TRAY WARPED / NOT LEVEL</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (5)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UNIT OBSTRUCTED</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (8)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VALVE INSTALLED TOO FAR INTO THE WALL</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (9)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VALVE OBSTRUCTED</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (6)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ADHESIVE NOT WORKING</controllingFieldValue>
+            <valueName>NOT MIXED PROPERLY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ADHESIVE NOT WORKING</controllingFieldValue>
+            <valueName>PRODUCT ISSUE (1)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ADJUSTABLE SCREW HAS FALLEN OUT OF THE DRAIN CAP</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (21)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AERATOR OBSTRUCTED</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (15)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BROKEN</controllingFieldValue>
+            <valueName>DAMAGED IN TRANSPORT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CARRIER BOLTS TOO FAR OUT</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (11)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CRACKS DEVELOPED AFTER INSTALLATION</controllingFieldValue>
+            <controllingFieldValue>IMPROPER CLEANING OR MAINTENACE</controllingFieldValue>
+            <controllingFieldValue>LEAKING THROUGH CRACKS</controllingFieldValue>
+            <controllingFieldValue>PART OF THE CISTERN FRAME IS DAMAGED OR CRACKED</controllingFieldValue>
+            <controllingFieldValue>PART OF THE CISTERN FRAME IS MISSING</controllingFieldValue>
+            <controllingFieldValue>SOFT CLOSE SEAT CRACKED</controllingFieldValue>
+            <valueName>CUSTOMER MIS-USE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DEBRIS / DAMAGE IN CARTRIDGE</controllingFieldValue>
+            <controllingFieldValue>OBSTRUCTED CARTRIDGE</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (18)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DEBRIS / DAMAGE IN CARTRIDGE</controllingFieldValue>
+            <controllingFieldValue>LEAKING FROM HANDLE OR SPOUT</controllingFieldValue>
+            <controllingFieldValue>OBSTRUCTED CARTRIDGE</controllingFieldValue>
+            <valueName>PRODUCTION ISSUE (1)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DEBRIS IN DIVERTER OR DAMAGED</controllingFieldValue>
+            <controllingFieldValue>DIVERTER OBSTRUCTED OR DAMAGED</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (20)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DEBRIS IN DIVERTER OR DAMAGED</controllingFieldValue>
+            <controllingFieldValue>DIVERTER OBSTRUCTED OR DAMAGED</controllingFieldValue>
+            <valueName>PRODUCTION ISSUE (4)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DEFECTIVE DRAWER GLIDES</controllingFieldValue>
+            <valueName>PRODUCTION ISSUE (5)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DOESN&apos;T HEAT UP</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (2)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DRAIN CABLE DISCONNECTED (IF SMALL BRASS SCREW STILL IN PLACED)</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (23)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FLEXIBLE HOSE DEGRADED</controllingFieldValue>
+            <valueName>PRODUCTION ISSUE (7)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GENERAL PROBLEM AFFECTING ENTIRE PROPERTY</controllingFieldValue>
+            <valueName>WATER SUPPLY ISSUE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INSUFFICIENT WATER PRESSURE</controllingFieldValue>
+            <controllingFieldValue>OTHER TAPS IN THE PROPERTY WORK CORRECTLY</controllingFieldValue>
+            <controllingFieldValue>PIPE AT THE WALL OUTLET FEEL HOT ON THE LEFT AND COLD ON THE RIGHT</controllingFieldValue>
+            <valueName>PRODUCTION ISSUE (8)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LIFTING VALVE DOES NOT STOP THE FLOW</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (25)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LIFTING VALVE STOPS FLOW</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (1)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>N/A</controllingFieldValue>
+            <valueName>PRODUCT UNSUITABLE FOR INTENDED USE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NOT REACHING CORRECT TEMPERATURE</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (7)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NOT REACHING CORRECT TEMPERATURE</controllingFieldValue>
+            <valueName>PRODUCT ISSUE (2)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OBSTRUCTED FLOW RESTRICTOR</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (19)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OBSTRUCTED FLOW RESTRICTOR</controllingFieldValue>
+            <valueName>PRODUCTION ISSUE (3)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OBSTRUCTED WASTE PIPE</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (12)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ORDER ERROR</controllingFieldValue>
+            <valueName>COMPANY LIABILITY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OTHERS</controllingFieldValue>
+            <valueName>OTHERS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PART OF THE CISTERN FRAME IS MISSING</controllingFieldValue>
+            <valueName>PRODUCTION ISSUE (2)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PATCHING OR DRYING LIGHTER</controllingFieldValue>
+            <valueName>GROUT HAS NOT BEEN MIXED CORRECTLY - TOO MUCH WATER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PIPE AT THE WALL OUTLET DOES NOT FEEL HOT ON THE LEFT AND COLD ON THE RIGHT</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (24)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PIPE AT THE WALL OUTLET FEEL HOT ON THE LEFT AND COLD ON THE RIGHT</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (22)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PRODUCTION ERROR</controllingFieldValue>
+            <valueName>PRODUCTION ISSUE (10)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WASTE COVER MISSING</controllingFieldValue>
+            <valueName>CUSTOMER ISSUE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WATER NOT FLOWING FROM EVERY NOZZLE</controllingFieldValue>
+            <valueName>IMPROPER CLEANING OR MAINTENANCE (1)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WIRED INCORRECTLY</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (4)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WORKED WELL PREVIOULSLY - ISSUE DEVELOPED SINCE INSTALLATION</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (3)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WORKED WELL PREVIOULSLY - ISSUE DEVELOPED SINCE INSTALLATION</controllingFieldValue>
+            <valueName>PRODUCTION ISSUE (9)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SENSOR NOT REACTING TO TOUCH</controllingFieldValue>
+            <valueName>CUSTOMER MIS-USE (1)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WRONG COLOUR SUPPLIED</controllingFieldValue>
+            <valueName>SALES ISSUE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SOFT CLOSE FUNCTION NOT WORKING</controllingFieldValue>
+            <valueName>CUSTOMER MIS-USE (2)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SOFT CLOSE FUNCTION NOT WORKING</controllingFieldValue>
+            <valueName>PRODUCTION ISSUE (6)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SOME COLD AREAS</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (14)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SUPPLY HOSES OBSTRUCTING MOVEMENT</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (17)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SUPPLY LINES NOT FLUSHED PRIOR TO INSTALLATION</controllingFieldValue>
+            <valueName>INSTALLATION ISSUE (16)</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

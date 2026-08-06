@@ -1,0 +1,74 @@
+<template>
+    <div class="slds-var-p-around_medium">
+        <p><b>{labels.tr0009_011}</b></p>
+        <lightning-layout class="slds-var-m-vertical_x-small" vertical-align="start">
+            <lightning-layout-item>
+                <lightning-input 
+                    data-id="invoiceNumber"
+                    label={labels.dictInvoiceNo}
+                    type="text"
+                    minlength="7"
+                    maxlength="10"
+                    value={invoiceNumber}
+                    pattern="\d{7,10}"
+                    required></lightning-input>                                             
+            </lightning-layout-item>
+            <lightning-layout-item class="slds-var-p-top_large">
+                <lightning-button variant="brand"  label={labels.dictButtonOK} onclick={handleInvoiceOK} class="slds-var-m-horizontal_xx-small"></lightning-button>
+                <lightning-button label={labels.dict_extended_search} variant="neutral" onclick={handleSearch} class="slds-var-m-left_large"></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+    <div class="" style="border-top: 6px solid var(--lwc-colorBorderSeparatorAlt)" lwc:if={invoiceOK}>
+        <p class="slds-var-p-around_medium slds-theme_error" lwc:if={isInvalidInvoice}>{invalidErrorMessage}</p>
+        <p class="slds-var-p-around_medium slds-theme_warning" lwc:elseif={hasWarning}>{warningMessage}</p>
+        <p class="slds-var-p-around_small" lwc:else>{labels.caseCheckInvoice}</p>
+        <div class="">
+            
+            <div class="slds-var-p-around_medium slds-grid slds-wrap slds-theme_shade">
+                <div class="slds-col slds-size_1-of-2 slds-var-p-right_x-small">
+                    <c-lib-form-element label={labels.dictInvoiceNumber} value={_caseData.invoiceHeader.Ordernum__c}></c-lib-form-element>
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-var-p-left_x-small">
+                    <c-lib-form-element label={labels.dictInvoiceDate} value={_caseData.invoiceHeader.Orderdate__c} format="date"></c-lib-form-element>
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-var-p-right_x-small slds-var-p-top_x-small">
+                    <c-lib-form-element label={labels.dictInvoiceAmount} value={_caseData.invoiceHeader.Dtotal__c} currency={_caseData.invoiceHeader.Dcurr__c} 
+                        format="currency"></c-lib-form-element>
+                </div>
+
+                <div class="slds-col slds-size_1-of-2 slds-var-p-left_x-small slds-var-p-top_x-small">
+                    <c-lib-form-element label={labels.dict_number_lines} value={numberOfLines}></c-lib-form-element>
+                </div>
+                <div class="slds-col slds-size_2-of-2 slds-var-p-top_x-small">
+                    <c-lib-form-element label={labels.dictCustomer} value={accountString}></c-lib-form-element>
+                </div>
+                <div class="slds-col slds-size_2-of-2 slds-var-p-top_x-small">
+                    <c-lib-form-element label={labels.dictSalesOrg} value={salesOrgString}></c-lib-form-element>
+                </div>
+
+                <div if:true={_caseData.invoiceHeader.policyWarning} class="slds-col slds-size_2-of-2 slds-theme_warning slds-var-p-around_small slds-var-m-top_small slds-text-align_center">
+                    <b>{returnsPolicyMessage}</b>
+                </div>
+    
+            </div>
+        </div>    
+    </div>
+
+    <div class="" lwc:if={accessDenied}>
+        <lightning-layout class="slds-theme_shade slds-var-p-around_large slds-var-m-around_medium" vertical-align="start">
+            <lightning-layout-item padding="horizontal-small">
+                <lightning-icon icon-name="utility:lock" size="large"></lightning-icon>
+            </lightning-layout-item>
+            <lightning-layout-item padding="horizontal-small">
+                <div class="slds-text-color_weak">
+                    <p class="slds-text-heading_medium slds-var-m-bottom_x-small ">Access Denied</p>
+                    <p>{errorMessage}</p>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+
+    <!-- lightning-spinner lwc:if={showSpinner}></lightning-spinner -->
+
+</template>

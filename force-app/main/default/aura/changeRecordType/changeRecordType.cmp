@@ -1,0 +1,87 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" controller="AccountRecordTypeChangeHandler">
+    
+    <aura:attribute name="disableButtons" type="Boolean" access="private" default="true"/>
+    <aura:attribute name="recordTypeOptions" type="List" access="private" default="[]"/>
+    <aura:attribute name="message" type="String" access="private" default=""/>
+    <lightning:navigation aura:id="navService"/>
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:html tag="style">
+        .cuf-content {
+        padding: 0 0rem !important;
+        }
+        .slds-p-around--medium {
+        padding: 0rem !important;
+        }
+        .slds-modal__content{
+        overflow-y: hidden;
+        height:unset !important;
+        max-height:unset !important;
+        }
+        .slds-modal__container{
+        width: 100%;
+        max-width: 52.5rem;
+        min-width: 20rem;
+        margin: 0 auto;
+        }
+    </aura:html>
+    
+    <!--<aura:attribute name="recordId" type="String" default="0011w000002muxHAAQ"/>-->
+    
+    <div class="slds-modal slds-fade-in-open">
+        
+        <div class="{! $Browser.formFactor != 'DESKTOP' ? 'slds-modal__container mobilePosition' : 'slds-modal__container'}">
+            <header class="slds-modal__header">
+                <aura:if isTrue="{! $Browser.formFactor == 'DESKTOP'}">
+                    <lightning:buttonIcon alternativeText="Close" onclick="{!c.handleCancel}" disabled="{!v.disableButtons}" iconName="utility:close" variant="bare" size="large" class="slds-modal__close slds-button_icon-inverse"/>
+                </aura:if>
+                <h2 class="slds-text-heading_medium slds-hyphenate">{#$Label.c.Change_Account_Record_Type}</h2>
+            </header>
+            <ui:scrollerWrapper class="scrollerSize" aura:id="innerScroller">
+                <div class="slds-modal__content slds-p-around_medium" style="overflow-y: auto !important; padding: 1rem 2rem;">
+                    
+                    <aura:if isTrue="{! !v.disableButtons}">
+                        
+                        <div class="slds-align_absolute-center">
+                            <lightning:radioGroup aura:id="recordTypeRadio"
+                                                  name="radioGroup"
+                                                  label="Select a record type"
+                                                  options="{! v.recordTypeOptions }"
+                                                  type="radio"
+                                                  required="true"
+                                                  />
+                        </div>
+                        
+                    </aura:if>
+                    
+                    <aura:if isTrue="{! v.disableButtons }">
+                        
+                        <div class="slds-align_absolute-center" style="display: grid">
+                            <div>
+                                <h1 style="font-weight: bold; font-size: x-large;">{!v.message}</h1>
+                            </div>
+                            <div style="position: relative; height: 5rem;justify-content: center;align-content: center;align-items: center;">
+                                <lightning:spinner alternativeText="Loading" size="medium" variant="brand"/>
+                            </div>
+                            
+                        </div>
+                    </aura:if>
+                    
+                    
+                </div>
+            </ui:scrollerWrapper>
+            <footer class="modal-footer slds-modal__footer">
+                <div class="slds-align_absolute-center">
+                    
+                    <lightning:button variant="brand" label="Cancel" title="Cancel" onclick="{! c.handleCancel }" disabled="{!v.disableButtons}"/>
+                    <lightning:button variant="brand" label="Next" title="Next" onclick="{! c.handleNext }" disabled="{!v.disableButtons}"/>
+                    
+                </div>
+            </footer>
+        </div>
+    </div>
+    
+    
+</aura:component>

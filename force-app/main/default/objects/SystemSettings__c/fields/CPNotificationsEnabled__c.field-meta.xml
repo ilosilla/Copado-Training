@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CPNotificationsEnabled__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Custom Projects email notifications enabled</inlineHelpText>
+    <label>CP Enable Notifications</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gmpkg__xCSV_Separator__c</fullName>
+    <defaultValue>&apos;,&apos;</defaultValue>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>Column separator when exporting to CSV file it could be  &apos;,&apos; or &apos;;&apos;</inlineHelpText>
+    <label>CSV Separator</label>
+    <length>1</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

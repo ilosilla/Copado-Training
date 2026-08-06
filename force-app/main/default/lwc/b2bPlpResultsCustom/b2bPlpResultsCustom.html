@@ -1,0 +1,51 @@
+<template>
+
+    <template lwc:if={ui_isLoading}>
+        <div class="plp-loading">
+            Loading results…
+        </div>
+    </template>
+    <template lwc:elseif={hasItems}>
+        <div class="plp-grid">
+            <template for:each={st_items} for:item="item">
+                <article key={item.productId} class="plp-card">
+                    <a
+                        href={item.url}                        
+                        data-id={item.productId}
+                        class="plp-card-link"
+                    >
+                        <div class="plp-image-wrapper">
+                            <img
+                                src={item.imageUrl}
+                                alt={item.imageAlt}
+                                loading="lazy"
+                            />
+                        </div>
+
+                        <div class="plp-card-body">
+                            <div class="plp-name">{item.name}</div>
+                            <div class="plp-sku">{item.sku}</div>
+                            <template if:true={item.displayPrice}>
+                                <div class="plp-price-row">
+                                    <div class="plp-price">
+                                        {item.displayPrice}
+                                    </div>
+
+                                    <template if:true={item.stockStatus}>
+                                        <div class={item.stockClass}>
+                                            {item.stockLabel}
+                                        </div>
+                                    </template>
+                                </div>
+                            </template>                        
+                        </div>
+                    </a>
+                </article>
+            </template>
+        </div>
+    </template>
+
+    <template lwc:else>
+        <div>No results</div>
+    </template>
+</template>

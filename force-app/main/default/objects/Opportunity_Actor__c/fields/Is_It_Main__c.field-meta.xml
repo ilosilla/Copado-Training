@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_It_Main__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indica si se trata de un actor principal, es decir, si en principio se va a poder generar para él una Quote (Pedido SAP) o todavía no.</description>
+    <inlineHelpText>It indicates if it is a main actor, that is to say, if in principle it is going to be able to generate for him a Quote (SAP Purchase Order) or not yet.</inlineHelpText>
+    <label>Will this client be invoiced?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

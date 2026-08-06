@@ -1,0 +1,20 @@
+.deliveryButton {
+	margin-top: 3px;
+}
+
+.column{
+	/* display: flex;
+	align-items: right; */
+	float:left;
+    width: 50%;
+	justify-content: center;
+}
+.warning {
+    /* width: 50%; */
+	/* display: flex; */
+	/* margin-left: 25%; */
+
+	
+	/* justify-content: center;
+	align-items: center; */
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WeeklyCompleted__c</fullName>
+    <description>Fecha en la que se ha completado el registro y el usuario ha puesto un comentario</description>
+    <label>Weekly Completed</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

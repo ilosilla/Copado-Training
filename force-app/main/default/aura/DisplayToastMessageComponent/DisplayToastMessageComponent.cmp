@@ -1,0 +1,12 @@
+<aura:component implements="lightning:availableForFlowScreens">
+    
+    <aura:attribute name="message" type="String"/>
+    <aura:attribute name="title" type="String"/>
+    <aura:attribute name="type" type="String"/>
+    <aura:attribute name="recordId" type="String"/>
+    <!-- This is used to either call NEXT of FINISH on the flow -->
+    <aura:attribute name="IsRedirectToSObjectRecord" type="Boolean"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.displayToastMessage}"/>
+	
+</aura:component>

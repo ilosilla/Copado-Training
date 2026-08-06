@@ -1,0 +1,19 @@
+<template>
+    <div class="layout" data-f6-region>
+
+        <!-- Región superior: aquí arrastras TU header con slots -->
+        <header class="layout__header" data-f6-region>
+            <slot name="header"></slot>
+        </header>
+
+        <!-- Contenido de la página -->
+        <main class="layout__main" data-f6-region>
+            <slot></slot>
+        </main>
+
+        <!-- Footer -->
+        <footer class="layout__footer" data-f6-region>
+            <slot name="footer"></slot>
+        </footer>
+    </div>
+</template>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Obligatorio_correo</fullName>
+    <active>false</active>
+    <description>Obligatorio correo cuando el RecordType es Customer, no Business Account</description>
+    <errorConditionFormula>ISBLANK( PersonEmail ) &amp;&amp; RecordType.Name = &apos;Private Customer&apos;</errorConditionFormula>
+    <errorMessage>El campo &apos;PersonEmail&apos; no puede quedar vacío</errorMessage>
+</ValidationRule>

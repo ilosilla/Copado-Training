@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Envelop verloopt/wordt ongeldig gemaakt over N dag(en)</label>
+    <name>dfsle__ExpireAfterDays__c</name>
+</CustomFieldTranslation>

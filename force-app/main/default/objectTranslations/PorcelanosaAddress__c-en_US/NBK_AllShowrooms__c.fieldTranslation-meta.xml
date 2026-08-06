@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- All Showrooms --></label>
+    <name>NBK_AllShowrooms__c</name>
+    <picklistValues>
+        <masterLabel>Anaheim - 1301 South State College Boulevard Suite E - CA</masterLabel>
+        <translation><!-- Anaheim - 1301 South State College Boulevard Suite E - CA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Atlanta - 3255 Peachtree Road NE Suite B - GA</masterLabel>
+        <translation><!-- Atlanta - 3255 Peachtree Road NE Suite B - GA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Austin - 1000 East 50th Street - TX</masterLabel>
+        <translation><!-- Austin - 1000 East 50th Street - TX --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Boston, Boston Design Center - 17 Drydock Avenue - MA</masterLabel>
+        <translation><!-- Boston, Boston Design Center - 17 Drydock Avenue - MA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Brooklyn – Industry City - 33 35th Street Suite A-101 - NY</masterLabel>
+        <translation><!-- Brooklyn – Industry City - 33 35th Street Suite A-101 - NY --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CUSTOMER COLLECTS BRISTOL WAREHOUSE - Lysander Road - BL</masterLabel>
+        <translation><!-- CUSTOMER COLLECTS BRISTOL WAREHOUSE - Lysander Road - BL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CUSTOMER COLLECTS MARSTON GREEN - Starley Way - WM,CUSTOMER COLLECTIONS BRAEHEAD - 2 Rocep Drive - RE</masterLabel>
+        <translation><!-- CUSTOMER COLLECTS MARSTON GREEN - Starley Way - WM,CUSTOMER COLLECTIONS BRAEHEAD - 2 Rocep Drive - RE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CUSTOMER COLLECTS WATFORD - Otterspool Way - HT,CUSTOMER COLLECTS WARRINGTON - 850 Europa Boulevard, westbrook - CH</masterLabel>
+        <translation><!-- CUSTOMER COLLECTS WATFORD - Otterspool Way - HT,CUSTOMER COLLECTS WARRINGTON - 850 Europa Boulevard, westbrook - CH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chestnut Hill at The Street - 55 Boylston Street - MA</masterLabel>
+        <translation><!-- Chestnut Hill at The Street - 55 Boylston Street - MA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chicago (Lincoln Park) - 1001 West North Avenue - IL</masterLabel>
+        <translation><!-- Chicago (Lincoln Park) - 1001 West North Avenue - IL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chicago, Luxe Home at the Merchandise Mart - 222 West Merchandise Mart Plaza - IL</masterLabel>
+        <translation><!-- Chicago, Luxe Home at the Merchandise Mart - 222 West Merchandise Mart Plaza - IL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dallas – Emerald Street - 11639 Emerald Street - TX</masterLabel>
+        <translation><!-- Dallas – Emerald Street - 11639 Emerald Street - TX --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dallas – Hi Line Drive Decorative Design Center - 1617 Hi Line Drive - TX</masterLabel>
+        <translation><!-- Dallas – Hi Line Drive Decorative Design Center - 1617 Hi Line Drive - TX --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Denver - 601 South Broadway Suite A - CO</masterLabel>
+        <translation><!-- Denver - 601 South Broadway Suite A - CO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>East Brunswick - 252 New Jersey 18 - NJ</masterLabel>
+        <translation><!-- East Brunswick - 252 New Jersey 18 - NJ --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Houston - 4006 Richmond Avenue - TX</masterLabel>
+        <translation><!-- Houston - 4006 Richmond Avenue - TX --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>King Of Prussia - 645 West Dekalb Pike - PA</masterLabel>
+        <translation><!-- King Of Prussia - 645 West Dekalb Pike - PA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Manhattan FLAGSHIP SHOWROOM - 202 5th Avenue - NY</masterLabel>
+        <translation><!-- Manhattan FLAGSHIP SHOWROOM - 202 5th Avenue - NY --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Miami - 8700 N.W. 13th Terrace - FL</masterLabel>
+        <translation><!-- Miami - 8700 N.W. 13th Terrace - FL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Miami Design District - 3705 Biscayne Boulevard - FL</masterLabel>
+        <translation><!-- Miami Design District - 3705 Biscayne Boulevard - FL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>North Bethesda - 11500 Rockville Pike - MD</masterLabel>
+        <translation><!-- North Bethesda - 11500 Rockville Pike - MD --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Paramus - New Jersey 17 - NJ</masterLabel>
+        <translation><!-- Paramus - New Jersey 17 - NJ --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pompano Beach - 3400 North Powerline Road - FL</masterLabel>
+        <translation><!-- Pompano Beach - 3400 North Powerline Road - FL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pompano Beach - 3400 North Powerline Road Pompano - FL</masterLabel>
+        <translation><!-- Pompano Beach - 3400 North Powerline Road Pompano - FL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Quebec - 6090 Chemin de la Côte-Saint-Luc - QC</masterLabel>
+        <translation><!-- Quebec - 6090 Chemin de la Côte-Saint-Luc - QC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ramsey - Corporate - 600 NJ-17 - NJ</masterLabel>
+        <translation><!-- Ramsey - Corporate - 600 NJ-17 - NJ --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Riverside - 1063 East Putnam Avenue - CT</masterLabel>
+        <translation><!-- Riverside - 1063 East Putnam Avenue - CT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>San Diego - 8996 Miramar Road Suite 100 - CA</masterLabel>
+        <translation><!-- San Diego - 8996 Miramar Road Suite 100 - CA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>San Francisco - 78 Division Street - CA</masterLabel>
+        <translation><!-- San Francisco - 78 Division Street - CA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>San Jose - 391 East Brokaw Road - CA</masterLabel>
+        <translation><!-- San Jose - 391 East Brokaw Road - CA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Seattle - 88 Spring Street - WA</masterLabel>
+        <translation><!-- Seattle - 88 Spring Street - WA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Toronto, Ontario - 735 Caledonia Road - ON</masterLabel>
+        <translation><!-- Toronto, Ontario - 735 Caledonia Road - ON --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tysons - 8180 Leesburg Pike - VA</masterLabel>
+        <translation><!-- Tysons - 8180 Leesburg Pike - VA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Walnut Creek - 1401 N. Broadway - CA</masterLabel>
+        <translation><!-- Walnut Creek - 1401 N. Broadway - CA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Washington DC -1000 Connecticut Avenue NW, DC</masterLabel>
+        <translation><!-- Washington DC -1000 Connecticut Avenue NW, DC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>West Hollywood - 8900 Beverly Boulevard Suite 101 West Hollywood - CA</masterLabel>
+        <translation><!-- West Hollywood - 8900 Beverly Boulevard Suite 101 West Hollywood - CA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Westbury - 775 Old Country Road - NY</masterLabel>
+        <translation><!-- Westbury - 775 Old Country Road - NY --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

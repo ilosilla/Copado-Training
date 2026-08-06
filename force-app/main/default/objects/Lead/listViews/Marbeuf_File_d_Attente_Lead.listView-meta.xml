@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marbeuf_File_d_Attente_Lead</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE_CODE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <filterScope>Queue</filterScope>
+    <label>Marbeuf File d&apos;Attente</label>
+    <queue>Marbeuf_File_d_Attente</queue>
+    <sharedTo>
+        <role>B_U_Centre_Paris_IDF</role>
+        <role>Sales_Office_Bureaux_Hoche_Fa_ade</role>
+        <role>Sociedad_Paris_IDF</role>
+    </sharedTo>
+</ListView>

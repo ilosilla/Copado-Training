@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CLAIMS_Required_Field_Invoice</fullName>
+    <active>true</active>
+    <errorConditionFormula>IsClaim__c &amp;&amp; ( ISBLANK(SAPInvoice__c) || ISBLANK(SAPInvoiceLine__c))</errorConditionFormula>
+    <errorMessage>SAP Invoice information is requried</errorMessage>
+</ValidationRule>

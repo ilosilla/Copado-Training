@@ -1,0 +1,83 @@
+<template>
+    <template lwc:if={caseCreated}>
+        <div class="slds-modal__container" lwc:if={caseCreated}>            
+            <div class="slds-card" style="padding:0px;min-width:60%;width:600px;">
+                <header class="slds-theme_success slds-theme_alert-texture slds-var-p-horizontal_large" style="padding-top: 4rem; padding-bottom: 0.5rem;">
+                    <h3 class="slds-text-heading_large">{caseCreatedTitle}</h3>
+                </header>
+                <div class="slds-var-p-around_large slds-text-align_center">
+                    <p class="slds-text-heading_small"><lightning-formatted-rich-text value={caseCreatedBody}></lightning-formatted-rich-text></p>
+                    <div class="slds-var-p-top_x-large">
+                         <lightning-button label={labels.dictButtonClose} variant="brand" onclick={handleCancel}></lightning-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>        
+    <template lwc:else>
+        <section role="dialog" class={topClass}>        
+            <lightning-spinner lwc:if={showSpinner} variant="brand" alternative-text="Loading" size="medium"></lightning-spinner>
+            <div class="slds-modal__container">
+                <div class="slds-modal__content" style="height:600px;">
+                    <c-case-invoice-create-step0 case-type={caseData.caseType} oncancel={handleCancel} onstart={handleStart} lwc:if={showSplash}></c-case-invoice-create-step0>                
+                    <template lwc:else>
+                        <div class="container">
+                            <div class="left-column slds-var-p-around_medium">
+                                <c-case-invoice-create-index case-type={caseData.caseType} step={currentStep}></c-case-invoice-create-index>
+                            </div>
+
+                            <div class="right-column slds-var-p-around_medium">
+                                <div class="slds-modal__header slds-var-p-top_xx-small slds-text-align_left">
+                                    <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{headerText}</h1>
+                                </div>
+                                <div class="content-body">
+                                    <template lwc:if={apiDataReady}>
+                                        <div lwc:if={isStep1}>  
+                                            <c-case-invoice-create-step1 case-data={caseData} onstepready={handleStepReady} onshowspinner={handleSpinner}></c-case-invoice-create-step1>
+                                        </div>  
+                                        <div lwc:if={isStep2}>  
+                                            <c-case-invoice-create-step2 case-data={caseData} onstepready={handleStepReady} onshowspinner={handleSpinner}></c-case-invoice-create-step2>
+                                        </div>  
+                                        <div lwc:if={isStep3}>  
+                                            <c-case-invoice-create-step3 case-data={caseData} substep={substep} onstepready={handleStepReady} onshowspinner={handleSpinner}></c-case-invoice-create-step3>
+                                        </div>  
+                                        <div lwc:if={isStep4}>  
+                                            <c-case-invoice-create-step4 case-data={caseData} ></c-case-invoice-create-step4>
+                                        </div>  
+                                        <div class="" lwc:if={isFatalError}>
+                                            <lightning-layout class="slds-theme_error slds-var-p-around_large slds-var-m-around_medium" vertical-align="start">
+                                                <lightning-layout-item padding="horizontal-small">
+                                                    <lightning-icon icon-name="utility:error" size="large" variant="inverse"></lightning-icon>
+                                                </lightning-layout-item>
+                                                <lightning-layout-item padding="horizontal-small">
+                                                    <div>
+                                                        <p class="slds-text-heading_medium slds-var-m-bottom_x-small ">Fatal Error</p>
+                                                        <p>{fatalErrorMessage}</p>
+                                                    </div>
+                                                </lightning-layout-item>
+                                            </lightning-layout>
+                                        </div>                                    
+                                    </template>
+                                
+                                </div>
+                            </div>
+                        </div>    <!-- container -->
+                    </template>
+                </div> <!-- modal content -->
+                <div class="slds-modal__footer" lwc:if={showFooter}>
+                    <lightning-layout horizontal-align="spread">
+                        <lightning-layout-item>
+                            <lightning-button class="slds-button" label={labels.dictButtonCancel} onclick={handleCancel}></lightning-button>
+                        </lightning-layout-item>                            
+                        <lightning-layout-item>
+                            <lightning-button class="slds-button" label={labels.dictButtonPrevious} onclick={handlePrevious} disabled={disablePrevious} lwc:if={showPrevious}></lightning-button>
+                            <lightning-button class="slds-button" label={nextLabel} onclick={handleNext} variant="brand" disabled={disableNext}></lightning-button>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </div>
+            </div> <!-- modal container -->        
+        </section>    
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>    
+    </template>
+
+</template>

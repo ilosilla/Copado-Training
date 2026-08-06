@@ -1,0 +1,28 @@
+<!--
+  @description       : 
+  @author            : EHG@nubika.com
+  @group             : 
+  @last modified on  : 06-19-2023
+  @last modified by  : EHG@nubika.com
+-->
+<template>
+    <div class="store-tile">
+        <div class="image-container">
+            <img class="imagen" src={imagenUrl} alt={imagenUrl} />
+            <!-- <img src="https://www.lladro.com/media/weltpixel/owlcarouselslider/images/d/e/desk_heritage_1.jpg" alt="HERITAGE"/> -->
+        </div>
+        <div class="details">
+            <div class="namecat">{store.address.Name}</div>
+            <div class="descriptioncat">{store.address.NBK_Address__c.street}</div>
+            <div class="descriptioncat">{store.address.NBK_Address__c.postalCode}, {store.address.NBK_Address__c.city}, {store.address.NBK_Address__c.state}</div>
+
+            </br>
+            <!--<div class="descriptioncat">Distancia a la tienda: {store.distance} Km</div>-->
+            <div class="buttonview">
+                <!--<lightning-button label={labels.bookAndAppointment} onclick={handleCategoryClick}></lightning-button>-->
+                <button class="slds-button slds-button_neutral" onclick={handleCategoryClick}>{labels.bookAndAppointment}</button>
+            </div>
+            
+        </div>
+    </div>
+</template>

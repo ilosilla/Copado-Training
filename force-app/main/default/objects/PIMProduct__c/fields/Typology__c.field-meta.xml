@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Typology__c</fullName>
+    <label>Typology</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>001</fullName>
+                <default>false</default>
+                <label>BATHROOM ACCESSORIES</label>
+            </value>
+            <value>
+                <fullName>131</fullName>
+                <default>false</default>
+                <label>FAUCET ACCESSORIES</label>
+            </value>
+            <value>
+                <fullName>091</fullName>
+                <default>false</default>
+                <label>BASIN ACCESSORIES</label>
+            </value>
+            <value>
+                <fullName>130</fullName>
+                <default>false</default>
+                <label>SANITARYWARE ACCESSORIES</label>
+            </value>
+            <value>
+                <fullName>013</fullName>
+                <default>false</default>
+                <label>BATHTUBS</label>
+            </value>
+            <value>
+                <fullName>012</fullName>
+                <default>false</default>
+                <label>CERAMIC TILES</label>
+            </value>
+            <value>
+                <fullName>122</fullName>
+                <default>false</default>
+                <label>XLIGHT CERAMIC</label>
+            </value>
+            <value>
+                <fullName>162</fullName>
+                <default>false</default>
+                <label>DECOUPLING MEMBRANES</label>
+            </value>
+            <value>
+                <fullName>022</fullName>
+                <default>false</default>
+                <label>MIRRORS</label>
+            </value>
+            <value>
+                <fullName>120</fullName>
+                <default>false</default>
+                <label>MANUFACTURING - GROUTING MATERIALS</label>
+            </value>
+            <value>
+                <fullName>031</fullName>
+                <default>false</default>
+                <label>WATERPROOFING</label>
+            </value>
+            <value>
+                <fullName>090</fullName>
+                <default>false</default>
+                <label>KRION ACCESSORIES</label>
+            </value>
+            <value>
+                <fullName>088</fullName>
+                <default>false</default>
+                <label>KRION BASINS</label>
+            </value>
+            <value>
+                <fullName>084</fullName>
+                <default>false</default>
+                <label>KRION PANELS</label>
+            </value>
+            <value>
+                <fullName>034</fullName>
+                <default>false</default>
+                <label>BASINS</label>
+            </value>
+            <value>
+                <fullName>109</fullName>
+                <default>false</default>
+                <label>LINKFLOOR</label>
+            </value>
+            <value>
+                <fullName>092</fullName>
+                <default>false</default>
+                <label>GLASS LISTELLOS</label>
+            </value>
+            <value>
+                <fullName>036</fullName>
+                <default>false</default>
+                <label>SHOWER ENCLOSURES</label>
+            </value>
+            <value>
+                <fullName>085</fullName>
+                <default>false</default>
+                <label>SETTING MATERIALS (ADHESIVES)</label>
+            </value>
+            <value>
+                <fullName>038</fullName>
+                <default>false</default>
+                <label>GROUTING MATERIALS</label>
+            </value>
+            <value>
+                <fullName>041</fullName>
+                <default>false</default>
+                <label>WOOD MOSAICS</label>
+            </value>
+            <value>
+                <fullName>042</fullName>
+                <default>false</default>
+                <label>MIXED MOSAICS</label>
+            </value>
+            <value>
+                <fullName>045</fullName>
+                <default>false</default>
+                <label>GLASS MOSAICS</label>
+            </value>
+            <value>
+                <fullName>040</fullName>
+                <default>false</default>
+                <label>CERAMIC MOSAICS &amp; DECORATIONS</label>
+            </value>
+            <value>
+                <fullName>043</fullName>
+                <default>false</default>
+                <label>NATURAL STONE MOSAICS &amp; DECORATIONS</label>
+            </value>
+            <value>
+                <fullName>046</fullName>
+                <default>false</default>
+                <label>BATHROOM FURNITURE</label>
+            </value>
+            <value>
+                <fullName>049</fullName>
+                <default>false</default>
+                <label>WOOD FLOORING (PARQUET)</label>
+            </value>
+            <value>
+                <fullName>172</fullName>
+                <default>false</default>
+                <label>DECORATIVE PROFILES</label>
+            </value>
+            <value>
+                <fullName>173</fullName>
+                <default>false</default>
+                <label>CORNER &amp; FINISHING PROFILES</label>
+            </value>
+            <value>
+                <fullName>170</fullName>
+                <default>false</default>
+                <label>TECHNICAL PROFILES</label>
+            </value>
+            <value>
+                <fullName>167</fullName>
+                <default>false</default>
+                <label>DRAINAGE GRILLES</label>
+            </value>
+            <value>
+                <fullName>057</fullName>
+                <default>false</default>
+                <label>SANITARYWARE</label>
+            </value>
+            <value>
+                <fullName>059</fullName>
+                <default>false</default>
+                <label>TRAPS &amp; DRAINS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

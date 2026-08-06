@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Numero conto</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Numeri conti</value>
+    </caseValues>
+    <gender>Masculine</gender>
+    <name>account_number</name>
+    <startsWith>Vowel</startsWith>
+</CustomFieldTranslation>

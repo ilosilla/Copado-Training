@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RoomType_valid_values_Retail</fullName>
+    <active>true</active>
+    <description>Only on Retail Opportunity. All room types have a valid value (empty or greater/equal than 0)</description>
+    <errorConditionFormula>AND(
+RecordType.Name = &quot;Project retail&quot;,
+OR(
+AND(
+ISBLANK(roomTypeFullHouse__c) = FALSE,
+roomTypeFullHouse__c &lt; 0
+),
+AND(
+ISBLANK(roomTypeBathroom__c) = FALSE,
+roomTypeBathroom__c &lt; 0
+),
+AND(
+ISBLANK(roomTypeKitchen__c) = FALSE,
+roomTypeKitchen__c &lt; 0
+),
+AND(
+ISBLANK(roomTypeLivingRoom__c) = FALSE,
+roomTypeLivingRoom__c &lt; 0
+),
+AND(
+ISBLANK(roomTypeBedroom__c) = FALSE,
+roomTypeBedroom__c &lt; 0
+),
+AND(
+ISBLANK(roomTypeFireplace__c) = FALSE,
+roomTypeFireplace__c &lt; 0
+),
+AND(
+ISBLANK(roomTypeFoyer__c) = FALSE,
+roomTypeFoyer__c &lt; 0
+),
+AND(
+ISBLANK(roomTypeOutdoorPatio__c) = FALSE,
+roomTypeOutdoorPatio__c &lt; 0
+),
+AND(
+ISBLANK(roomTypeSwimmingPool__c) = FALSE,
+roomTypeSwimmingPool__c &lt; 0
+),
+AND(
+ISBLANK(roomTypeLaundryRoom__c) = FALSE,
+roomTypeLaundryRoom__c &lt; 0
+),
+AND(
+ISBLANK(roomTypeOther__c) = FALSE,
+roomTypeOther__c &lt; 0
+)
+)
+)</errorConditionFormula>
+    <errorMessage>At least one of the room types on Room Information is not a valid value (empty or positive number).</errorMessage>
+</ValidationRule>

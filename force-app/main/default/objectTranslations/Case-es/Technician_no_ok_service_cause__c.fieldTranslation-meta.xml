@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Technician no ok service cause --></label>
+    <name>Technician_no_ok_service_cause__c</name>
+    <picklistValues>
+        <masterLabel>Incorrect solution</masterLabel>
+        <translation><!-- Incorrect solution --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other Claims</masterLabel>
+        <translation><!-- Other Claims --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

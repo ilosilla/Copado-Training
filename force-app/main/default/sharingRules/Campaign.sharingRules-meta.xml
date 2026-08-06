@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Visitas</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>visitas registradas por Jose Manuel Sanchis</description>
+        <label>Visitas</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <sharedFrom>
+            <role>International_Projects</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

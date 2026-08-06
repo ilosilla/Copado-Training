@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailServicesFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apexClass>EmailServicePorsamarket</apexClass>
+    <attachmentOption>None</attachmentOption>
+    <authenticationFailureAction>Discard</authenticationFailureAction>
+    <authorizationFailureAction>Discard</authorizationFailureAction>
+    <authorizedSenders>porsareport@porcelanosagrupo.com,ivan.losilla@porcelanosagrupo.com</authorizedSenders>
+    <functionInactiveAction>Discard</functionInactiveAction>
+    <functionName>porsamarket</functionName>
+    <isActive>true</isActive>
+    <isAuthenticationRequired>false</isAuthenticationRequired>
+    <isErrorRoutingEnabled>false</isErrorRoutingEnabled>
+    <isTextAttachmentsAsBinary>false</isTextAttachmentsAsBinary>
+    <isTlsRequired>false</isTlsRequired>
+    <overLimitAction>Discard</overLimitAction>
+</EmailServicesFunction>

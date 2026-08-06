@@ -1,0 +1,127 @@
+<template>
+    <template if:true={isLoading}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <div class="slds-modal slds-fade-in-open" style="display: flex; align-items: center; justify-content: center;">
+            <lightning-spinner alternative-text="Cargando..." size="large"></lightning-spinner>
+        </div>
+    </template>
+
+    <div class="slds-grid slds-wrap slds-m-bottom--large">
+        <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+        </div>
+
+        <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12 slds-p-left--large">
+        </div>
+
+        <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+            <template if:true={userIsAdmin}>
+                <lightning-combobox
+                    label="User"
+                    options={usersUnder}
+                    value={ownerId}
+                    onchange={handleChangeOwner}>
+                </lightning-combobox>
+            </template>
+        </div>
+    </div>
+
+    <template if:true={keyAccounts}>
+        <table class="slds-table slds-table_cell-buffer" aria-label="Example default base table of Opportunities">
+            <thead>
+              <tr class="slds-line-height_reset">
+                <th class="slds-size--3-of-12" scope="col">
+                    <div class="slds-truncate" title="Completed">{label.labelName}</div>
+                  </th>
+                <th class="slds-size--2-of-12" scope="col">
+                  <div class="slds-truncate" title="Opportunity Name">{label.labeClassification}</div>
+                </th>
+                <th class="slds-size--2-of-12" scope="col">
+                    <div class="slds-truncate" title="Close Date">{label.labelLastActivity}</div>
+                  </th>
+                  <th class="slds-size--2-of-12" scope="col">
+                    <div class="slds-truncate" title="Close Date">{label.labelPhone}</div>
+                  </th>
+                  <th class="slds-size--2-of-12" scope="col">
+                    <div class="slds-truncate" title="Close Date">{label.labelMail}</div>
+
+                  </th>
+                  <th class="slds-cell_action-mode slds-size--1-of-12" scope="col" style="width:3.25rem">
+                    <div class="slds-truncate slds-assistive-text" title="Actions">Actions</div>
+                  </th>
+              </tr>
+            </thead>
+            <tbody>
+                <template for:each={keyAccounts} for:item="keyAccount">
+                    <tr class="slds-hint-parent" key={keyAccount.Id}>
+                        <th data-label="Account Name" scope="row">
+                            <div class="slds-truncate" title="Name">
+                                <!--<a href={keyAccount.accountLink} target="_blank" >{keyAccount.Name}</a>-->
+                                {keyAccount.Name}
+                            </div>
+                        </th>
+                        <td data-label="Sales Maturity">
+                          <div class="slds-truncate" title="Opportunity Name">
+                            {keyAccount.Account_Classification__c}
+                          </div>
+                        </td>
+                        <td data-label="Comment">
+                            <lightning-formatted-date-time 
+                                value={keyAccount.Last_Activity_Date__c}
+                                year="numeric"
+                                month="short"
+                                day="2-digit"
+                                hour="2-digit"
+                                minute="2-digit">
+                            </lightning-formatted-date-time>
+                        </td>
+                        <td data-label="Sales Maturity">
+                            <div class="slds-truncate" title="Opportunity Name">
+                                <lightning-formatted-phone value={keyAccount.Phone} ></lightning-formatted-phone>
+                            </div>
+                          </td>
+                          <td data-label="Sales Maturity">
+                            <div class="slds-truncate" title="Opportunity Name">
+                                <lightning-formatted-email value={keyAccount.Business_Email__c}></lightning-formatted-email>
+                            </div>
+                          </td>
+                          <td data-label="Comment">
+                            <lightning-button-menu alternative-text="Show menu">
+                                <lightning-menu-item value="Reminder" label={label.labelCreateReminder} onclick={handleRowAction} data-id={keyAccount.Id}></lightning-menu-item>
+                            </lightning-button-menu>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+          </table>
+    </template>
+
+    <template if:true={isModalOpen}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <!-- Modal -->
+        <section role="dialog" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                
+                <!-- Header con "X" -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Cerrar"
+                            onclick={handleCloseModal}>
+                        <lightning-icon icon-name="utility:close" size="small" alternative-text="Cerrar"></lightning-icon>
+                    </button>
+                    <h2 class="slds-text-heading_medium">{label.labelCreateReminder}</h2>
+                </header>
+
+                <!-- Contenido -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-flow
+                        flow-api-name="Create_Account_Reminder"
+                        flow-input-variables={inputVariables}
+                        onstatuschange={handleFlowStatusChange}>
+                    </lightning-flow>
+                </div>
+            </div>
+        </section>
+    </template>
+</template>

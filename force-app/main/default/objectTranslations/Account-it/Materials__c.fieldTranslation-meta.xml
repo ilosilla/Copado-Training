@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Materiali</label>
+    <name>Materials__c</name>
+    <picklistValues>
+        <masterLabel>Aluminium</masterLabel>
+        <translation>Alluminio</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Natural Stone</masterLabel>
+        <translation>Pietre Naturale</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Porcelain</masterLabel>
+        <translation><!-- Porcelain --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Quartz</masterLabel>
+        <translation>Quarzo</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sintered Stone</masterLabel>
+        <translation>Pietre Minerali</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Solid Surface</masterLabel>
+        <translation><!-- Solid Surface --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Steel</masterLabel>
+        <translation>Metallo</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wood</masterLabel>
+        <translation>Legno</translation>
+    </picklistValues>
+</CustomFieldTranslation>

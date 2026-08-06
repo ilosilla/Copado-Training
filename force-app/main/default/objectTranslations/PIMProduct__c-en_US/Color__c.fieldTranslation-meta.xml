@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Color --></label>
+    <name>Color__c</name>
+    <picklistValues>
+        <masterLabel>ANTHRACITE</masterLabel>
+        <translation><!-- ANTHRACITE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BEIGE</masterLabel>
+        <translation><!-- BEIGE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BLACK</masterLabel>
+        <translation><!-- BLACK --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BROWN</masterLabel>
+        <translation><!-- BROWN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CEMENT</masterLabel>
+        <translation><!-- CEMENT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CREAM</masterLabel>
+        <translation><!-- CREAM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CROMADO</masterLabel>
+        <translation><!-- CROMADO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GOLD</masterLabel>
+        <translation><!-- GOLD --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GREY</masterLabel>
+        <translation><!-- GREY --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HONEY</masterLabel>
+        <translation><!-- HONEY --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IVORY</masterLabel>
+        <translation><!-- IVORY --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LIMESTONE</masterLabel>
+        <translation><!-- LIMESTONE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MIRROR</masterLabel>
+        <translation><!-- MIRROR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SILVER</masterLabel>
+        <translation><!-- SILVER --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>STEEL</masterLabel>
+        <translation><!-- STEEL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WHITE</masterLabel>
+        <translation><!-- WHITE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WOOD</masterLabel>
+        <translation><!-- WOOD --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

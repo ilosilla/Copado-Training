@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Problem</fullName>
+        <default>false</default>
+        <label>Problem</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Feature Request</fullName>
+        <default>false</default>
+        <label>Feature Request</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Question</fullName>
+        <default>false</default>
+        <label>Question</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Exception</fullName>
+        <default>false</default>
+        <label>Exception</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SAP Collection</fullName>
+        <default>false</default>
+        <label>SAP Collection</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SAP Price Adjustment</fullName>
+        <default>false</default>
+        <label>SAP Price Adjustment</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SAP Quality Claim</fullName>
+        <default>false</default>
+        <label>SAP Quality Claim</label>
+    </standardValue>
+</StandardValueSet>

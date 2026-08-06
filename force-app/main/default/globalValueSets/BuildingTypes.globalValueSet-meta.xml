@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Private Residence</fullName>
+        <default>false</default>
+        <label>Private Residence</label>
+    </customValue>
+    <customValue>
+        <fullName>Residential Building</fullName>
+        <default>false</default>
+        <label>Residential Building</label>
+    </customValue>
+    <customValue>
+        <fullName>Commercial Building</fullName>
+        <default>false</default>
+        <label>Commercial Building</label>
+    </customValue>
+    <masterLabel>Building Types</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

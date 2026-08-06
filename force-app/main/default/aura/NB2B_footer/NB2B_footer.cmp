@@ -1,0 +1,19 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes">
+	<div class="slds-grid slds-wrap" style="clear: both;
+    position: relative;
+    height: 200px;
+    margin-top: 200px;">
+        <!--height: 20px;
+    margin-top: 50px;
+    margin-bottom: 20px;-->
+      <div class="slds-col slds-size_1-of-3" style="text-align: center">
+        <span><!--COVID-19 FAQs | Website Terms of Use | Privacy Policy--></span>
+      </div>
+      <div class="slds-col slds-size_1-of-3" style="text-align: center">
+        <span>{!$Label.c.NB2B_Footer}<!--<img src="{!$Resource.NB2B_FooterLogo}"/>--></span>
+      </div>
+      <div class="slds-col slds-size_1-of-3" style="text-align: center">
+        <span></span>
+      </div>
+    </div> 
+</aura:component>

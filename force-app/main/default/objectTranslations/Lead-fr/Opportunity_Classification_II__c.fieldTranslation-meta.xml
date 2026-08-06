@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Classification de l&apos;opportunité II</label>
+    <name>Opportunity_Classification_II__c</name>
+    <picklistValues>
+        <masterLabel>Car dealership</masterLabel>
+        <translation>Concessionaires de Voitures</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cinema</masterLabel>
+        <translation>Cinema</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clothing store</masterLabel>
+        <translation>Boutique de Vêtements</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Financial institutions</masterLabel>
+        <translation>Institutions Financières</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Multi-unit</masterLabel>
+        <translation><!-- Multi-unit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other store</masterLabel>
+        <translation>Autres magasins</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Restaurant</masterLabel>
+        <translation>Restaurants</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shopping centre/Mall/Leisure center</masterLabel>
+        <translation>Galerie Commercial</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Single-family home</masterLabel>
+        <translation><!-- Single-family home --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sports center</masterLabel>
+        <translation>Centre d&apos;sports</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Supermarket</masterLabel>
+        <translation>Supermarché</translation>
+    </picklistValues>
+</CustomFieldTranslation>

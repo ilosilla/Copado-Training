@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Abierta</masterLabel>
+        <translation>Ouverte</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Closed</masterLabel>
+        <translation>Fermé</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Closed Lost</masterLabel>
+        <translation>Fermé perdu</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Closed Won</masterLabel>
+        <translation>Gagné</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Concepción</masterLabel>
+        <translation>Conception</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Contacted</masterLabel>
+        <translation><!-- Contacted --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cotización</masterLabel>
+        <translation>Devis</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Especificación</masterLabel>
+        <translation>Prescription</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Esperando pedido</masterLabel>
+        <translation>Commande en Attente</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Lost</masterLabel>
+        <translation>Perdu</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>New</masterLabel>
+        <translation>Nouveau</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Oferta</masterLabel>
+        <translation>Commande</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pendiente de decisión</masterLabel>
+        <translation>Pending decision</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pending</masterLabel>
+        <translation>En attendant</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Qualification</masterLabel>
+        <translation>Qualification</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

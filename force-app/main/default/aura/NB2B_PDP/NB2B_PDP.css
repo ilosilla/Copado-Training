@@ -1,0 +1,288 @@
+.THIS .productTitle{
+  font-size: 30px;
+  line-height: 1.1;
+  margin-bottom: 5px;
+}
+
+.THIS .tile-label{
+  color: #1c3241;
+  font-family: 'Lato',sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  margin-bottom: 1rem;
+} 
+
+.THIS .productPriceContainer{
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-top: 10px;  
+  padding: 15px 0px;
+}
+
+.THIS .salesPrice, .THIS .oldPrice{
+  
+}
+
+.THIS .oldPrice{
+  border-left: 1px solid gray;
+  font-size: 18px;
+  font-weight: 400;
+  color: #939393;
+
+}
+
+.THIS .salesPrice{
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.THIS .unitProductPrice{
+  font-size: 16px;
+}
+
+.THIS .originalUnit{
+  font-size: 12px;
+}
+
+.THIS .total-area-qty{
+  justify-content: center;
+  -webkit-align-items: flex-start;
+  -ms-align-items: flex-start;
+  align-items: flex-start;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  color: #1c3241;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.THIS .box {
+    outline: 1px solid #d5d5d5!important;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    height: 70px;    
+}
+
+.THIS .box .content{
+  position: relative;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: block;  
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  width:100%;
+  margin-top:5px;
+}
+
+.THIS .box .qty{
+  margin: 0 auto;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100px;
+  margin-top: -12px;
+}
+
+.THIS .toolTip-span{
+  position: absolute;
+  top: -4px;
+  margin-left: 2px;
+}
+
+.THIS .qty .inputTotal{
+  width: 50%;
+  --slds-c-input-color-border: #fff!important;
+}
+
+.THIS .qty .inputTotal input {
+  border: none !important;
+  text-align: center;
+}
+
+.THIS .buttonsAdd svg {
+  margin-top: 22px;
+}
+
+.THIS .calculate{
+  background-color: #F0F0F0;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 70px;
+  padding: 10px 10px;
+  border: 2px solid #dfdfdf;
+}
+
+.THIS .calculate a{
+  font-size: 12px;
+}
+
+.THIS img{
+  display: block;
+  margin:0 auto;
+  margin-bottom: 5px;
+}
+
+.THIS .inputShade input {
+  border: none !important;
+  border-bottom: 1px solid #b5b4b4 !important;
+  border-radius: 0px;
+  text-align: center;
+}
+
+.THIS .content-container {
+    display: none;
+}
+.THIS .slds-popover__body{
+    color:white;
+}
+.THIS .slds-popover__body {
+    background: #FF0000; /* background color */
+    color: #444444; /* text color */
+}
+.THIS .slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.THIS .mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.THIS .prev {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.THIS .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.THIS .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.THIS .prev:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.THIS .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+/* Caption text */
+.THIS .text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.THIS .numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.THIS .dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.THIS .active {
+  background-color: #717171;
+}
+/* .THIS .slds-button:hover {
+  background-color: rgb(28,50,65);
+} */
+
+.THIS .buttonsAdd:hover{
+  background-color: rgb(255, 255, 255);
+}
+.THIS .buttonGeneral:hover{
+  background-color: rgb(28,50,65);
+}
+.THIS .buttonGeneral:disabled{
+    padding: 0;
+}
+
+/* Fading animation */
+.THIS .fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@font-face {
+  font-family: 'PorcelanosaRegular';
+  src: url('/B2B/s/sfsites/c/resource/PorcelanosaRegular.ttf') format('ttf');
+}
+.THIS .dot:hover {
+  background-color: #717171;
+}
+
+.THIS .alert-error {
+    padding: 10px 5px;
+    color: #fff;
+    background-color: #d73a48;    
+    border: 1px solid #bfbfbf;
+}

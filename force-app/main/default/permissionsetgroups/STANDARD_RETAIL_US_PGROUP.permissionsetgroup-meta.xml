@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Functional role for retail users in the United States.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>STANDARD_RETAIL_US_PGROUP</label>
+    <permissionSets>CASE_RETURNS_EDIT_PSET</permissionSets>
+    <permissionSets>CASE_RETURNS_USER_PSET</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

@@ -1,0 +1,297 @@
+/* =========================================================
+ * DELIVERY ADDRESS — SECTION
+ * ========================================================= */
+.checkout-payment {
+    font-family: var(--b2b-checkout-font-family, inherit);
+    font-size: var(--b2b-checkout-base-size);
+    font-weight: var(--b2b-checkout-base-weight);
+    color: var(--b2b-checkout-base-color);
+    line-height: var(--b2b-checkout-line-height);
+}
+
+.checkout-section__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.checkout-section__title {
+    font-size: var(--b2b-checkout-section-title-size);
+    font-weight: var(--b2b-checkout-section-title-weight);
+    color: var(--b2b-checkout-strong-color);
+    margin-bottom: 0.75rem;
+}
+
+.checkout-section__intro {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: var(--b2b-checkout-base-color);
+}
+
+/* =========================================================
+ * CREDIT INFO — SECTION
+ * ========================================================= */
+
+.payment--credit {
+    padding: 0.75rem var(--b2b-checkout-gutter-total, 1.5rem);
+    margin-bottom: 2px;
+    background-color: var(--b2b-checkout-callout-bg-color);
+}
+
+.payment--credit__title {
+    font-weight: 600;
+    color: var(--b2b-checkout-strong-color);    
+    font-size: 0.92rem;
+}
+
+.payment--credit__line {
+    color: var(--b2b-checkout-base-color);
+}
+
+/* =========================================================
+ * PAYMENT METHOD — SECTION
+ * ========================================================= */
+.payment-options-section {
+    margin-top: 1rem;
+    padding: 0.2rem  var(--b2b-checkout-gutter-total);
+    font-size: var(--b2b-checkout-base-size);
+ }
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+/* Each option reads like a line (no card look) */
+.option {
+    display: flex;
+    align-items: flex-start; /* radio aligned to top */
+    gap: 0.6rem;
+    padding: 0;
+    margin: 0;
+}
+
+/* Radio alignment */
+.option-input {
+    flex: 0 0 auto;
+    margin: 0.12rem 0 0 0; 
+}
+
+.option-body {
+    position: relative;
+    top:0.02rem;
+}
+
+.option-title,
+.option-desc {
+    line-height: 1.35;
+}
+
+/* Bold title */
+.option-title {
+    font-weight: 600;
+}
+
+/* Muted description, same size */
+.option-desc {
+    color: var(--b2b-checkout-base-color);
+}
+
+/* Add ": " between title and description */
+.option-title::after {
+    content: ": ";
+    font-weight: 400;
+    color: inherit;
+}
+
+/* Remove any default spacing if spans become blocks somewhere */
+.option-title,
+.option-desc {
+    display: inline;
+}
+
+/* Disabled look */
+.option--disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+.option--disabled .option-desc {
+    color: var(--b2b-checkout-muted-color, #666);
+}
+
+.option--disabled:hover {
+    border-color: transparent;
+}
+
+/* =========================================================
+    PAYMENT SECTION
+ * =========================================================  */
+.final-step {
+    margin-top: 1rem;
+    padding: 0.75rem var(--b2b-checkout-gutter-total, 1.5rem);
+    background: var(--b2b-checkout-callout-bg, #eef4ff);
+    border-radius: 2px;
+}
+
+.final-title {
+    font-weight: 600;
+    color: var(--b2b-checkout-strong-color);
+    font-size: 0.92rem;
+}
+
+
+.final-desc {
+    /*color: var(--lwc-colorTextLabel, #666);*/
+    margin-bottom: 0.75rem;
+}
+
+.final-grid {
+    margin-top: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.2rem 2rem;
+    align-items: start;
+}
+
+.final-po {
+    width: 100%;
+    min-width: 0;
+}
+
+.final-cta {
+    display: flex;
+    justify-content: center;
+    min-width: 0;
+}
+
+.final-cta__wrap {
+    max-width:280px;
+    width: 100%;
+    margin-top: 20px;   /* a ojo para alinear con el input */
+    padding: 0
+}
+
+.final-terms {
+    display: flex;
+    justify-content: center;
+    min-width: 0;
+}
+
+.final-terms__label {
+    margin-left: 0.2rem;
+}
+
+.final-terms * {
+    --dxp-s-form-element-label-font-size: 0.75rem !important;
+    --dxp-g-spacing-medium: 0;
+    font-size: 0.8rem;
+}
+
+
+/* Responsive */
+@media (max-width: 700px) {
+    .final-grid {
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+    }
+
+    .final-cta lightning-button {
+        width: 100%;
+        max-width: none;
+    }
+}
+/* =========================================================
+    INPUT FIELDS
+ * =========================================================  */
+ .checkout-payment lightning-input {
+    
+    /* Labels */
+    --dxp-s-form-element-label-font-size: var(--b2b-field-label-font-size);
+    --dxp-s-form-element-label-font-weight: var(--b2b-field-label-font-weight);
+    --dxp-s-form-element-label-color: var(--b2b-field-label-text-color-dark);
+    
+    /* Values */
+    --dxp-c-input-text-font-size: var(--b2b-field-value-font-size);
+    --dxp-s-form-element-text-font-weight: var(--b2b-field-value-font-weight-weak);
+    --dxp-s-form-element-text-color: var(--b2b-field-value-text-color);   
+    --dxp-c-textarea-text-font-size: var(--b2b-field-value-font-size);
+
+    /* Others */
+    --dxp-s-form-element-color-border: var(--b2b-field-border-color);
+    --dxp-s-form-element-radius-border: var(--b2b-field-border-radius);
+    --dxp-g-spacing-medium: var(--b2b-field-spacing-medium);
+    --dxp-s-form-element-color-border-focus: var(--b2b-field-border-color-focus);
+    --dxp-s-form-element-text-font-family: var(--b2b-field-font-family);
+
+    --slds-c-checkbox-color-background-checked: #ffffff;
+    --slds-c-checkbox-color-border-checked: #1C3241;
+    --slds-c-checkbox-mark-color-foreground: #1C3241;  /* tick oscuro sobre fondo blanco */
+}
+
+.checkout-form lightning-input.input-required {
+    --dxp-s-form-element-label-font-weight: var(--b2b-checkout-required-label-font-weight);
+}
+
+/* =========================================================
+    WARNINGS
+ * =========================================================  */
+ .payment-warning {
+    padding: 1rem 1.25rem;
+    border-radius: 0.25rem;
+    background: var(--b2b-checkout-warning-bg-color, #fff6e5);
+}
+
+.payment-warning-title {
+    margin: 0 0 0.35rem 0;
+    font-weight: 700;
+    color: var(--b2b-checkout-strong-color);
+}
+
+.payment-warning p {
+    margin: 0 0 0.35rem 0;
+    color: var(--b2b-checkout-strong-color);
+    line-height: 1.4;
+}
+
+.payment-warning p:last-child {
+    margin-bottom: 0;
+}
+
+.payment-warning-text {
+    margin-left: 1rem !important;
+}
+
+.payment-warning-action {
+    margin-top: 0.75rem;
+}
+
+/* =========================================================
+   SHIPPING (loading)
+   ========================================================= */
+
+.checkout-waiting {
+    position: relative;      /* ancla el lightning-spinner */
+    margin-left: 0.75rem;
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    /* Ajusta altura para que no “salte” al mostrar/ocultar */
+    min-height: 56px;        /* ~2 líneas compactas */
+    padding: 0.15rem 0;
+}
+
+.checkout-waiting lightning-spinner {
+    transform: scale(1.25);
+    transform-origin: left center;
+    position: relative;
+}
+
+.checkout-waiting__text{
+    color: var(--b2b-checkout-muted-color);
+    line-height: 1.35;
+    margin-left: 1.5rem;
+}

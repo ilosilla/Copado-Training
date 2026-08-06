@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Barbour (UK Users Only)</masterLabel>
+        <translation>Barbour (Royaume-Uni)</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Explore (FR utilisateurs SEULEMENT)</masterLabel>
+        <translation>Explore (France)</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Houzz</masterLabel>
+        <translation><!-- Houzz --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other Online Research</masterLabel>
+        <translation>Autre Recherche en Ligne</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Porsamarket</masterLabel>
+        <translation><!-- Porsamarket --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Web Request</masterLabel>
+        <translation>Demande sur Internet</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Website</masterLabel>
+        <translation>Site web</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

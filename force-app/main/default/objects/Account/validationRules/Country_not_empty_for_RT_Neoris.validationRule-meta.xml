@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Country_not_empty_for_RT_Neoris</fullName>
+    <active>false</active>
+    <description>El campo Country__c no puede estar vacío para recordType Customer</description>
+    <errorConditionFormula>AND(CONTAINS($User.Username, &apos;loads.user&apos;) = false, 
+$RecordType.Name = &quot;Customer&quot;, 
+ISBLANK(Country__c)
+)</errorConditionFormula>
+    <errorDisplayField>Country__c</errorDisplayField>
+    <errorMessage>El campo Country__c no puede estar vacío para recordType Customer</errorMessage>
+</ValidationRule>

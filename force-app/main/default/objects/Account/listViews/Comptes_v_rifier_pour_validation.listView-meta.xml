@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Comptes_v_rifier_pour_validation</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE_CODE</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>DVSAcceptedBy__c</columns>
+    <columns>DVSAcceptedDate__c</columns>
+    <columns>DVSAction__c</columns>
+    <columns>VAT_Number__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>DVSAction__c</field>
+        <operation>equals</operation>
+        <value>DISCARDED,UNKNOWN</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.ADDRESS1_COUNTRY_CODE</field>
+        <operation>equals</operation>
+        <value>FR</value>
+    </filters>
+    <filters>
+        <field>Account_Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Fabricator,Account.Third_party_Retailer_Reseller,Account.Trade_and_Specificators</value>
+    </filters>
+    <label>Comptes à vérifier pour validation</label>
+    <sharedTo>
+        <group>accounting_department_fr</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Indicates whether or not a commercial is the store manager. There can be several people in charge in the same store</help>
+    <label>Store Manager</label>
+    <name>Team_Manager__c</name>
+</CustomFieldTranslation>

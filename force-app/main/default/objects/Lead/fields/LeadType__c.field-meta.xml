@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LeadType__c</fullName>
+    <label>Lead Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Contact Form</fullName>
+                <default>false</default>
+                <label>Contact Form</label>
+            </value>
+            <value>
+                <fullName>PDF Guide Download</fullName>
+                <default>false</default>
+                <label>PDF Guide Download</label>
+            </value>
+            <value>
+                <fullName>US Material Bank</fullName>
+                <default>false</default>
+                <label>US Material Bank</label>
+            </value>
+            <value>
+                <fullName>EU Material Bank</fullName>
+                <default>false</default>
+                <label>EU Material Bank</label>
+            </value>
+            <value>
+                <fullName>Course Request</fullName>
+                <default>false</default>
+                <label>Course Request</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Book an Appointment</fullName>
+                <default>false</default>
+                <label>Book an Appointment</label>
+            </value>
+            <value>
+                <fullName>Google Ad</fullName>
+                <default>false</default>
+                <label>Google Ad</label>
+            </value>
+            <value>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+                <label>Trade Show</label>
+            </value>
+            <value>
+                <fullName>US Register Form</fullName>
+                <default>false</default>
+                <label>US Register Form</label>
+            </value>
+            <value>
+                <fullName>Business Trip</fullName>
+                <default>false</default>
+                <label>Business Trip</label>
+            </value>
+            <value>
+                <fullName>Contact Form;Contact Form</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Contact Form;Contact Form</label>
+            </value>
+            <value>
+                <fullName>Showroom Appointment</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Showroom Appointment</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

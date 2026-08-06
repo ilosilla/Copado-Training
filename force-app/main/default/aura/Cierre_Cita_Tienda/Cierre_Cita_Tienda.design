@@ -1,0 +1,9 @@
+<design:component>
+   
+    <design:attribute name="errorMessage" label="errorMessage"/>
+    <design:attribute name="companySelected" label="companySelected"/>
+    <design:attribute name="salesOrgSelected" label="salesOrgSelected"/>
+    <design:attribute name="salesOfficeSelected" label="salesOfficeSelected"/>
+    <design:attribute name="recordId" label="recordId"/>
+	
+</design:component>

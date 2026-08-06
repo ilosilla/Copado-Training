@@ -1,0 +1,1 @@
+<aura:event type="COMPONENT" description="Sends an event to close the component" />

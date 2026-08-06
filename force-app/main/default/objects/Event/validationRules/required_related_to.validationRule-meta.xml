@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>required_related_to</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND( ISBLANK(WhatId ) , 
+OR(ISPICKVAL(Type, &quot;Opportunity Follow Up Meeting&quot;),ISPICKVAL(Type, &quot;Claim Visit&quot;),ISPICKVAL(Type, &quot;Site Visit&quot;)) 
+)</errorConditionFormula>
+    <errorDisplayField>WhatId</errorDisplayField>
+    <errorMessage>You must select a related to</errorMessage>
+</ValidationRule>

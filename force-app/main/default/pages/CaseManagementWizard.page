@@ -1,0 +1,89 @@
+<apex:page showHeader="false" sidebar="false" docType="html-5.0"  lightningStylesheets="true" standardcontroller="Case"  applyBodyTag="false" applyHtmlTag="false" >
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <head>
+      <apex:slds /> 
+
+    <style>
+    /* */
+        body
+        {
+        background-color:white!important;
+        }
+
+    /* Aplicamos estilo lightning a los inputs */
+        /*input, textarea
+        {
+            border-color:white!important;
+            border-bottom:1px solid rgb(221, 219, 218)!important;
+        }*/
+
+        input:not([class*="btn slds-button"]), textarea
+        {
+            border-color:white!important;
+            border-bottom:1px solid rgb(221, 219, 218)!important;
+            font-size: 14px !important;
+            color: #2b2826 !important;
+        }
+
+        /*input:focus[type=text], textarea {
+            outline: solid 5px #ffffff!important;
+            border-bottom:4px solid rgb(221, 219, 218)!important;
+        }*/
+
+        /*
+        .slds-button{
+            background-color:       rgb(82, 82, 82)     !important;
+            color:                  rgb(255, 255, 255)  !important;
+            border-bottom-color:    rgb(82, 82, 82)     !important;
+            border-left-color:      rgb(82, 82, 82)     !important;
+            border-right-color:     rgb(82, 82, 82)     !important;
+            border-top-color:       rgb(82, 82, 82)     !important;
+        }
+        */
+
+        .prclnsa-button
+        {
+            background-color:       rgb(82, 82, 82)     !important;
+            color:                  white               !important;
+            border-bottom-color:    rgb(82, 82, 82)     !important;
+            border-left-color:      rgb(82, 82, 82)     !important;
+            border-right-color:     rgb(82, 82, 82)     !important;
+            border-top-color:       rgb(82, 82, 82)     !important;
+        }
+
+
+        /* Aplicamos estilo al porcentaje */
+        [id*=headerProgress] {
+            height: 50px;
+            width: 50px;
+            background-color: #7dc37d;
+            border-radius: 50%;
+            display: inline-block;
+            border-color:#54698d;
+            border-width: 1px;
+            border-style: solid;
+            text-align:center;
+            display:table;
+            margin-left: auto;
+            margin-right: auto;
+
+            
+        }
+
+        [id*=headerProgress]>p { 
+            margin-top:14px;
+            color: white!important;
+        }
+
+
+    </style>
+
+    </head>
+        <body class="slds-scope">
+
+            
+        </body>
+   
+    </html>
+</apex:page>

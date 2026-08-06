@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Factory Inquiry Contact --></label>
+    <name>FactoryInquiryContact__c</name>
+    <picklistValues>
+        <masterLabel>BUTECH</masterLabel>
+        <translation><!-- BUTECH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GAMA DECOR</masterLabel>
+        <translation><!-- GAMA DECOR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KRION</masterLabel>
+        <translation><!-- KRION --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>L&apos;ANTIC</masterLabel>
+        <translation><!-- L&apos;ANTIC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NOKEN</masterLabel>
+        <translation><!-- NOKEN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PORCELANOSA</masterLabel>
+        <translation><!-- PORCELANOSA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>XTONE</masterLabel>
+        <translation><!-- XTONE --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

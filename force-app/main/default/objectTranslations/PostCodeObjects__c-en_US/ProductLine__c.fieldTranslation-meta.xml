@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>
+        <!-- Opciones aceptadas:
+KRION
+FAÇADE
+KITCHEN -->
+    </help>
+    <label><!-- Product Line --></label>
+    <name>ProductLine__c</name>
+</CustomFieldTranslation>

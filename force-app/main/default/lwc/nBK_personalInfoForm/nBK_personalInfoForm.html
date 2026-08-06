@@ -1,0 +1,215 @@
+<!--
+  @description       :
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             :
+  @last modified on  : 01-24-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+
+    <div class="detallesParent">
+<h2 class="headerPage">{label.appointmentDetails}</h2>
+</br>
+<div class="headerDetails">
+    <div class="slds-grid slds-wrap slds-gutters">
+        <div class="slds-col slds-size_1-of-1 colStoreName">
+            <div class="container-infodetails">
+                <div style="font-weight: bold;"> {label.selectedShowroom}</div> <div><lightning-icon icon-name="utility:store" class="slds-p-right_small" size="medium"> </lightning-icon> {storeName}</div>
+                <div style="font-weight: bold;"> {label.selectedDate}</div> <div> <lightning-icon icon-name="utility:date_input" class="slds-p-right_small" size="medium"> </lightning-icon> {selectedDateS}</div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</br>
+    <div class="formParent">
+        <div class="containerForm">
+    <h2 class="headerPage slds-p-bottom_small">{label.enterDetails}</h2>
+    <div class="divFields">
+        <div class="slds-grid slds-grid_vertical">
+            <div class="slds-col">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <lightning-input data-id='name' type="text" label={label.firstNameLabel} value={firstName} onchange={handleInputName} required></lightning-input>
+                    </div>
+                    <div class="slds-col">
+                        <lightning-input data-id='lastName' type="text" label={label.lastNameLabel} onchange={handleInputName} required></lightning-input>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <lightning-input data-id='email' type="email" label={label.emailLabel} onchange={handleInputName}  required></lightning-input>
+                                                    <!--<div if:true={isEmailInvalid} class="slds-text-color_error">Por favor, ingrese una dirección de correo electrónico válida.</div>-->
+                                                </div>
+                    <div class="slds-col">
+                        <lightning-input data-id='phone' type="tel" label={label.phoneLabel} onchange={handleInputName} required></lightning-input>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            <template lwc:if={isUs}>
+                <div class="textArea">
+                        <lightning-input-address
+                            address-label={label.customerAddress}
+                            required
+                            street-label={label.streetLabel}
+                            city-label={label.cityLabel}
+                            country-label={label.countryLabel}
+                            province-label={label.stateProvince}
+                            postal-code-label={label.zipPostalCode}
+                            onchange={handleChangeAddress}
+                            street={street}
+                            city={city}
+                            country={country}
+                            province={province}
+                            postal-code={postalCode}
+                            show-address-lookup class="inputAddress">
+                        </lightning-input-address>
+                        <!--<lightning-textarea data-id='street' name="input1" label={label.streetLabel} onchange={handleInputName} required></lightning-textarea>-->
+                </div>
+            </template>
+            <template lwc:else>
+                <lightning-input-address
+                    address-label={label.customerAddress}
+                    required
+                    street-label={label.streetLabel}
+                    city-label={label.cityLabel}
+                    country-label={label.countryLabel}
+                    postal-code-label={label.zipPostalCode}
+                    province-label={label.stateProvince}
+                    onchange={handleChangeAddress}
+                    street={street}
+                    city={city}
+                    country={country}
+                    postal-code={postalCode}
+                    hide-province="true"
+                    show-address-lookup class="inputAddress">
+                    </lightning-input-address>
+            </template>
+    <div class="parent">
+        <div class="div1">
+            <!--<lightning-input data-id='city' type="text" label={label.cityLabel} onchange={handleInputName} required></lightning-input>-->
+        </div>
+        <div class="div2">
+            <!--<lightning-input data-id='postalCode' type="text" label={label.zipPostalCode} onchange={handleInputName} required></lightning-input>-->
+        </div>
+    </div>
+
+    <div class="divFields">
+        <div class="slds-grid slds-grid_vertical">
+            <div class="slds-col">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                            <lightning-combobox
+                            name="Profile"
+                            label={label.profileLabel}
+                            data-id="profile"
+                            value={profileSelected}
+                            placeholder={label.selectCustomerProfile}
+                            options={optionsProfile}
+                            onchange={handleChangePicklist} required>
+                        </lightning-combobox>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                            <lightning-combobox
+                            name="hearAbout"
+                            label={label.howAboutUs}
+                            value={hearAboutSelected}
+                            data-id="hearAbout"
+                            options={optionsHearAbout}
+                            onchange={handleChangePicklist} required>
+                        </lightning-combobox>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <template lwc:if={showAppointmentTypeEditable}>
+                            <lightning-combobox
+                                name="Appointment Type"
+                                label={label.appointmentTypeLabel}
+                                data-id="appointmentType"
+                                value={appointmentTypeSelected}
+                                options={optionsAppointmentType}
+                                onchange={handleChangePicklist}
+                                required>
+                            </lightning-combobox>
+                        </template>
+                        <template lwc:else>
+                            <lightning-combobox
+                                disabled="true"
+                                name="Appointment Type"
+                                label={label.appointmentTypeLabel}
+                                data-id="appointmentType"
+                                value={appointmentTypeSelected}
+                                options={optionsAppointmentType}
+                                onchange={handleChangePicklist}
+                                required>
+                            </lightning-combobox>
+                        </template>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="textArea">
+        <lightning-textarea data-id='help' name="input1" onchange={handleInputName} label={label.howHelpYou}></lightning-textarea>
+    </div>
+    <div class="parent2">
+        <div class="div1">
+            <lightning-checkbox-group
+                name="Products interested"
+                label={label.productsInterested}
+                options={options}
+                value={productsValue}
+                onchange={handleChangeProducts}>
+            </lightning-checkbox-group><!-- onchange={handleChange}> -->
+        </div>
+        <div class="div3">
+            <div class="slds-form-element div31">
+                <div class="slds-form-element__control">
+                    <div class="slds-checkbox">
+                        <input type="checkbox" name="options" data-id="newsletter" id="checkbox-unique-id-82" onchange={handleInputName}/>
+                        <label class="slds-checkbox__label" for="checkbox-unique-id-82">
+                            <span class="slds-checkbox_faux"></span>
+                            <span class="slds-form-element__label">{label.suscribeNewsLetter}</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="div3">
+            <div class="slds-form-element div32">
+                <div class="slds-form-element__control">
+                    <div class="slds-checkbox">
+                        <input type="checkbox" name="options" data-id="privacyPolicies" id="checkbox-unique-id-81" onchange={handleInputName} required/>
+                        <label class="slds-checkbox__label" for="checkbox-unique-id-81">
+                            <span class="slds-checkbox_faux"></span>
+                            <span class="slds-form-element__label"><span style="color:rgb(234, 0, 30)">* </span>{label.accept} <a href={policyPrivacyLink}>{label.privacyPolicies}</a></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--<div>
+<c-re-c-a-p-t-c-h-a-l-w-c oncaptchareceived={handleCaptchaReceived}></c-re-c-a-p-t-c-h-a-l-w-c>
+</div>-->
+
+<div class="line-1"></div>
+<div>
+    <footer class="slds-card__footer">
+        <lightning-button label={label.back} title="Non-primary action" onclick={handleBack} class="slds-m-left_x-small"></lightning-button>
+        <lightning-button variant="brand" label={label.nextLabel} title="Primary action" onclick={handleNext} class="slds-m-left_x-small"></lightning-button>
+    </footer>
+</div>
+</template>

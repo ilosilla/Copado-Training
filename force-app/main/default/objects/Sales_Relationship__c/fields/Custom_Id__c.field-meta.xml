@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Custom_Id__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>id_de_sap del account + org. ventas + canal (revisar)</description>
+    <externalId>true</externalId>
+    <inlineHelpText>SAP ID, PK of 3 grouped values: Customer Sap ID + Sales Organization + Distribution Channel</inlineHelpText>
+    <label>Custom Id</label>
+    <length>80</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

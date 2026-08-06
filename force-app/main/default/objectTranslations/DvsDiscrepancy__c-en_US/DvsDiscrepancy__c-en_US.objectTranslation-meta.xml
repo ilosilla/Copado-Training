@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DVS Discrepancy</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DVS Discrepancies</value>
+    </caseValues>
+    <layouts>
+        <layout>DVS Discrepancy Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Correct_Discrepancies --></label>
+        <name>Correct_Discrepancies</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- IgnoreDiscrepancies --></label>
+        <name>IgnoreDiscrepancies</name>
+    </webLinks>
+</CustomObjectTranslation>

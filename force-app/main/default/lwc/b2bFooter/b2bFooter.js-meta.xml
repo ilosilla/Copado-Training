@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <description>B2BFooter</description>
+    <isExposed>true</isExposed>
+    <masterLabel>B2BFooter</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property label="Facebook Link" name="facebookLink" type="String" default="https://www.facebook.com/"/>
+            <property label="Linkedin Link" name="linkedinLink" type="String" default="https://www.linkedin.com/"/>
+            <property label="Instagram Link" name="instagramLink" type="String" default="https://www.instagram.com/"/>
+            <property label="Company Link" name="companyLink" type="String" default=""/>
+
+            <property label="Company Address" name="companyAddress" type="String" default=""/>
+            <property label="Menu Label" name="menuLabel" type="String" default=""/>
+            <property label="Copyright Label" name="copyrightLabel" type="String" default="@ 2021 Company All rights reserved"/>
+            <property label="Phone Number" name="companyPhone" type="String" default="+1 123-342-5566"/>
+
+            <property label="Facebook Logo" name="facebookIcon" type="ContentReference"/>
+            <property label="Instagram Logo" name="instagramIcon" type="ContentReference"/>
+            <property label="LinkedIn Logo" name="linkedinIcon" type="ContentReference"/>
+            <property label="Company Logo" name="companyIcon" type="ContentReference"/>
+            <property label="Pin Logo" name="pinIcon" type="ContentReference"/>
+            <property label="Phone Logo" name="phoneIcon" type="ContentReference"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

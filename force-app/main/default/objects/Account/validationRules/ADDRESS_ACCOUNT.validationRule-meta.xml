@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ADDRESS_ACCOUNT</fullName>
+    <active>true</active>
+    <description>Validates the account address</description>
+    <errorConditionFormula>AND(
+not($Permission.BypassValidationRulesCP),
+  IsPersonAccount = false, 
+  Potential__c = false,
+  OR(
+    ISBLANK(BillingPostalCode), 
+    ISBLANK(BillingCity),
+    ISPICKVAL(BillingCountryCode, &apos;&apos;)
+  )
+)</errorConditionFormula>
+    <errorMessage>Address in Account is required (Country, postcode and city)</errorMessage>
+</ValidationRule>

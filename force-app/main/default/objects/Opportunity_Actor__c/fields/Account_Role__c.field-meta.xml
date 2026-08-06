@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Role__c</fullName>
+    <label>Account Role</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Architect</fullName>
+                <default>false</default>
+                <label>Architect</label>
+            </value>
+            <value>
+                <fullName>Bath installer</fullName>
+                <default>false</default>
+                <label>Bath installer / plumber</label>
+            </value>
+            <value>
+                <fullName>Designer</fullName>
+                <default>false</default>
+                <label>Designer/Interior Designer</label>
+            </value>
+            <value>
+                <fullName>Developer / Owner</fullName>
+                <default>false</default>
+                <label>Developer / Owner</label>
+            </value>
+            <value>
+                <fullName>Fabricator</fullName>
+                <default>false</default>
+                <label>Fabricator</label>
+            </value>
+            <value>
+                <fullName>Facade consultant</fullName>
+                <default>false</default>
+                <label>Facade consultant</label>
+            </value>
+            <value>
+                <fullName>Facade Installer</fullName>
+                <default>false</default>
+                <label>Facade Installer</label>
+            </value>
+            <value>
+                <fullName>Flooring installer</fullName>
+                <default>false</default>
+                <label>Flooring installer / tiler</label>
+            </value>
+            <value>
+                <fullName>General / Main Contactor</fullName>
+                <default>false</default>
+                <label>General / Main Contactor</label>
+            </value>
+            <value>
+                <fullName>Kitchen installer</fullName>
+                <default>false</default>
+                <label>Kitchen installer / fitter</label>
+            </value>
+            <value>
+                <fullName>Procurement Consultant</fullName>
+                <default>false</default>
+                <label>Procurement Consultant</label>
+            </value>
+            <value>
+                <fullName>Reseller</fullName>
+                <default>false</default>
+                <label>Reseller</label>
+            </value>
+            <value>
+                <fullName>Other Consultants</fullName>
+                <default>false</default>
+                <label>Other Consultants</label>
+            </value>
+            <value>
+                <fullName>Interior designer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Interior designer</label>
+            </value>
+            <value>
+                <fullName>Other (indicate)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other (indicate)</label>
+            </value>
+            <value>
+                <fullName>Site Manager</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Site Manager</label>
+            </value>
+            <value>
+                <fullName>Various Subcontractors</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Various Subcontractors</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

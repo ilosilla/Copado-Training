@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>talkdesk__SLA__c</fullName>
+    <deprecated>false</deprecated>
+    <formula>if(  ISPICKVAL(talkdesk__Channel__c , &quot;Voice&quot;), if(talkdesk__Wait_Time_sec__c &lt; 20,true,false), false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>SLA</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Business Trip</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Business Trips</value>
+    </caseValues>
+    <layouts>
+        <layout>Commercial Travel Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Other information --></label>
+            <section>Other information</section>
+        </sections>
+        <sections>
+            <label><!-- Strategic observations --></label>
+            <section>Strategic observations</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Convert to Trip --></label>
+        <name>Convert_to_Trip</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Request approval --></label>
+        <name>Request_approval</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Send report --></label>
+        <name>Send_report</name>
+    </quickActions>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Download_Report --></label>
+        <name>Download_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- PDF_Report --></label>
+        <name>PDF_Report</name>
+    </webLinks>
+</CustomObjectTranslation>

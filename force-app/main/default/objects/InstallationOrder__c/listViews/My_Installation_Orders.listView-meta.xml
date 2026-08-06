@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Installation_Orders</fullName>
+    <columns>NAME</columns>
+    <columns>State__c</columns>
+    <columns>StartDate__c</columns>
+    <columns>EndDate__c</columns>
+    <columns>Finished__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>My Installation Orders</label>
+</ListView>

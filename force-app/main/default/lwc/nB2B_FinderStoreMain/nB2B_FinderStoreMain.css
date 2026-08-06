@@ -1,0 +1,296 @@
+.store-list {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: #f0f0f0;
+
+}
+
+.containerclass{
+    width: 30%;
+    margin: 1%;
+}
+
+.titleC{
+    background-color: #f0f0f0;
+    font-size: 5vmin;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.encuentra{
+    background-color: rgb(243, 243, 243);
+
+}
+.textencuentra{
+    font-size: 4vmin;
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+    margin-left: 5%;
+}
+.buttonSearch{
+    display: flex;
+    justify-content: flex-end;
+}
+.generalbuscador{
+    display: inline-flex;
+    align-items: center;
+    width:90%
+}
+.labelbuscador{
+    width: 30%;
+    margin-left: 5%;
+    margin-top: 2%;
+    font-size: 3vmin;
+}
+.butAllStores{
+    margin-left: 5%;
+    margin-top: 2%;
+    width: 10%;
+}
+.buscador{
+    width: 100%;
+}
+.tiendasen{
+    font-size: 5vmin;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+/*NUEVO BUSCADOR*/
+@font-face {
+    font-family: 'porcelanosafont';
+    src: url('/B2B/s/sfsites/c/resource/PorcelanosaRegular.ttf') format('ttf');
+}
+
+.listStoresParent{
+    background-color: #f0f0f0;
+    width: calc(100% - 5px) !important;
+    border: 1px solid #dedede;
+}
+.cajaBuscador{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 6%;
+    margin-right: 6%;
+}
+.tit1{
+    margin-top: 10px;
+    padding: 0px 20px;
+    font-size: large;
+    font-weight: bold;
+    color: #223141;
+    font-family:'porcelanosafont';
+}
+.tit1 span{
+    font-size: 14px;
+}
+.lineSeparator{
+    margin-top: 10px;
+    padding: 0px 20px;
+    border-bottom: 1px solid;
+    border-color: lightgray;
+}
+@media only screen and (min-width: 1451px)  {
+    .parentListado{
+        background-color: #f0f0f0;
+        padding: 0px 20px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        height:340px;
+        margin: 10px 0px;
+    }
+}
+
+@media only screen and (max-width: 1450px)  {
+    .parentListado{
+        background-color: #f0f0f0;
+        padding: 0px 20px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        height:330px;
+        margin: 10px 0px;
+    }
+}
+
+.seeAllLabel{
+    margin-bottom: 10px;
+    font-size: medium;
+    font-weight: bold;
+    font-family:'porcelanosafont';
+    color: #223141;
+    display: flex;
+    justify-content: flex-end;
+}
+.seeallbut{
+    text-decoration: underline;
+    color: #223141;
+    font-family:'porcelanosafont';
+    font-size: large;
+}
+.allStoresdiv{
+    background-color: white;
+}
+.distanceLabel{
+    color: #223141;
+    font-family:'porcelanosafont';
+    font-size: medium;
+    margin-bottom: 10px;
+}
+.map-container {
+    filter: grayscale(100%); /* Aplicar escala de grises al 100% */
+}
+
+.colMap{margin: auto;}
+
+.toastCont{
+	color: #1c3241 !important;
+	background: white;
+	border: 1px solid #1c3241;
+}
+
+
+/*.slds-form_compound .slds-form-element__row+.slds-form-element__row, .slds-form--compound .slds-form-element__row+.slds-form-element__row {*/
+
+.store-tile {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;
+    flex-wrap: wrap;
+    padding: 1% 1% 9%;
+    height: 100%;
+}
+
+.store-tile_item {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;
+    flex-wrap: wrap;
+    padding: 1% 1% 9%;
+    height: 100%;
+}
+
+.image-container {
+    width: 100%;
+    
+}
+.imagen {
+    /*border-radius: 15px;*/
+    height: 170px;
+}
+
+.imagen_item {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+    width: 100%;
+    height: 170px;
+}
+
+.details {
+    text-align: center;
+    background-color: #f0f0f0;
+    width: 100%;
+
+}
+
+@font-face {
+    font-family: 'porcelanosafont';
+    src: url('/B2B/s/sfsites/c/resource/PorcelanosaRegular.ttf') format('ttf');
+}
+
+.descriptioncat{
+    font-size: small;
+    font-family:'porcelanosafont';
+    color:#929292;
+    font-weight: normal;
+}
+
+.buttonview{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.slds-button{
+    color: #929292;
+    border-color: #929292;
+    font-size: 11px;
+}
+.slds-button:hover{
+    color: #f0f0f0;
+    border-color: #929292;
+    background-color: #929292;
+    font-size: 11px;
+}
+
+.namecat_item {
+    font-size: medium;
+    font-weight: bold;
+    margin-top: 5%;
+    height: 50px;
+    font-family: 'porcelanosafont';
+    color: #223141;
+}
+
+.namecat_list{
+    font-size: medium;
+    font-weight: bold;
+    color: #223141;
+    font-family:'porcelanosafont';
+}
+
+.store-tile_item {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;
+    flex-wrap: wrap;
+    padding: 1% 1% 9%;
+    height: 100%;
+}
+
+.buttonview_item{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.seeallbut_item{
+    text-decoration: underline;
+    color: #223141;
+    font-family:'porcelanosafont';
+    font-size: large;
+}
+
+.slds-button_item{
+    color: #929292;
+    border-color: #929292;
+    font-size: 11px;
+}
+.slds-button_item:hover{
+    color: #f0f0f0;
+    border-color: #929292;
+    background-color: #929292;
+    font-size: 11px;
+}
+
+.buttonview_list{
+    
+    font-size: x-small;
+    display: flex;
+    justify-content: flex-end;
+}
+.slds-button_list{
+    color: #929292;
+    border-color: #929292;
+    font-size: 11px;   
+    line-height: 17px; 
+}
+.slds-button_list:hover{
+    color: #f0f0f0;
+    border-color: #929292;
+    background-color: #929292;
+    font-size: 11px;
+}

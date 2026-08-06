@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dealer_Rule</fullName>
+    <active>true</active>
+    <description>rule to avoid conversion of consumer Leads associated to Dealers</description>
+    <errorConditionFormula>NOT(ISBLANK(Dealer__c )) &amp;&amp; (ISPICKVAL( Status , &quot;Converted&quot;))</errorConditionFormula>
+    <errorMessage>This Leads is associated to a Dealer and doesn&apos;t need to be Converted into a Private Customer</errorMessage>
+</ValidationRule>

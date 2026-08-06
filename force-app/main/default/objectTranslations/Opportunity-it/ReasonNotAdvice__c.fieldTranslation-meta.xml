@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- ReasonNotAdvice --></label>
+    <name>ReasonNotAdvice__c</name>
+    <picklistValues>
+        <masterLabel>Deferred payment</masterLabel>
+        <translation><!-- Deferred payment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>I am checking some other options</masterLabel>
+        <translation><!-- I am checking some other options --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>I don&apos;t have any time at this moment</masterLabel>
+        <translation><!-- I don&apos;t have any time at this moment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>I doubt if I&apos;m making the best choices</masterLabel>
+        <translation><!-- I doubt if I&apos;m making the best choices --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>I have just bought other materials</masterLabel>
+        <translation><!-- I have just bought other materials --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>I have little time to manage the project</masterLabel>
+        <translation><!-- I have little time to manage the project --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>I want to consult it</masterLabel>
+        <translation><!-- I want to consult it --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>I&apos;m stressed about the project</masterLabel>
+        <translation><!-- I&apos;m stressed about the project --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Material collection</masterLabel>
+        <translation><!-- Material collection --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>The product range does not fit my needs</masterLabel>
+        <translation><!-- The product range does not fit my needs --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>What if I don&apos;t like the final result</masterLabel>
+        <translation><!-- What if I don&apos;t like the final result --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

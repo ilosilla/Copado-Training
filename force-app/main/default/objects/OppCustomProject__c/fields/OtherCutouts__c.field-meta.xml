@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OtherCutouts__c</fullName>
+    <label>Other Cutouts</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Lighting</fullName>
+                <default>false</default>
+                <label>Lighting</label>
+            </value>
+            <value>
+                <fullName>Grommets</fullName>
+                <default>false</default>
+                <label>Grommets</label>
+            </value>
+            <value>
+                <fullName>Architectural Grilles</fullName>
+                <default>false</default>
+                <label>Architectural Grilles</label>
+            </value>
+            <value>
+                <fullName>Electrical Outlets</fullName>
+                <default>false</default>
+                <label>Electrical Outlets</label>
+            </value>
+            <value>
+                <fullName>Special Design (Explain in Notes)</fullName>
+                <default>false</default>
+                <label>Special Design (Explain in Notes)</label>
+            </value>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>Architectural Gilles</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Architectural Gilles</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

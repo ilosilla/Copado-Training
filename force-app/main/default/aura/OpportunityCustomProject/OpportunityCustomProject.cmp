@@ -1,0 +1,553 @@
+<!--
+    - @author 		Ramón Prades
+    - @date 		May 2021
+    - @group 		Opportunities
+    - @description 	Component to edit a custom project (US) in a modal window
+                    
+        This is a fairly complex form with the following parts:
+            - A tabset with three tabs: One for details, one for the lines of the request form and one for the attachments.
+            - A sliding panel to add/edit a request line (part o fthe request tab).
+            - A sliding panel to upload a file
+            - A bottom bar with SAVE and CANCEL buttons
+
+        The main variables used are:
+            - customProjectId: Id of the custom project itself.    
+            - opportunityId: Id of the opportunity the custom project belongs to.
+            - requestLines: Lines of the request form
+            - currentRequest: line being creqated or edited.
+            - attachments: List of attachments
+
+        And the behavior of the form is controlled with this variables:
+            - isActive: Shows/hides the whole form.
+            - isExpanded: Shows/hides the request edit panel.
+            - isUploading: Shows/hides the upload panel
+            - currentPhase: Helps decide when to get data form the server or when to refresh the calculated fields:
+                            * init - First time showing the form
+                            * loaded - Date read from server
+                            * commit - A commit operation is in progress
+                            The sequence is init -> loaded -> commit -> loaded etc.
+            - createMode: true when creating a new custom project
+            - showSpinner: Displays the spinner
+        
+            Also, the form shows different fields if the user is an admin, a product manager or a member of the projects department 
+            (variable "hasFUllAccess")
+            
+-->
+<aura:component description="Component to edit a custom project (US) in a modal window" access="global" controller="OpportunityCustomProjectController">    
+    
+    <!-- interface -->
+    <aura:attribute name="isActive" type="Boolean" default="false" required="true" />
+    <aura:attribute name="opportunityId" type="String" required="true" />
+    <aura:attribute name="customProjectId" type="String" required="false" />
+    <aura:attribute name="variant" type="String" default="EDIT" required="false" />
+
+    <!-- control variables -->
+    <aura:attribute name="errorList" type="String[]" access="global"/>
+    <aura:attribute name="isExpanded" type="Boolean" default="false"/>
+    <aura:attribute name="isUploading" type="Boolean" default="false"/>
+    <aura:attribute name="createMode" type="Boolean" default="false"/>
+    <aura:attribute name="currentPhase" type="String" default="init"/> 
+    <aura:attribute name="location" type="String"/>
+    <aura:attribute name="showSpinner" type="Boolean" default="true"/>
+    <aura:attribute name="showFileDelete" type="Boolean" default="false"/>
+
+    <!-- form dynamics variables -->
+    <aura:attribute name="title" type="String" default="{!$Label.c.opp_customProject}"/>
+    <aura:attribute name="isKrionSink" type="Boolean" default="false"/>
+    <aura:attribute name="isCustomSink" type="Boolean" default="false"/>
+    <aura:attribute name="hasFullAccess" type="Boolean" default="false"/>
+    <aura:attribute name="hasEdge" type="Boolean" default="false"/>
+    <aura:attribute name="hasBacksplash" type="Boolean" default="false"/>
+
+    <!-- data variables -->
+    <aura:attribute name="hasQuote" type="String" default="false"/>
+    <aura:attribute name="hasDrawing" type="String" default="false"/>    
+    <aura:attribute name="yesnoOptions" type="List" access="PRIVATE"/>
+    <aura:attribute name="productManager" type="String"/> 
+    <aura:attribute name="managers" type="List"/>   
+    <aura:attribute name="submitRequestLabel" type="String" default="{!$Label.c.dict_addItem}"/>
+    <aura:attribute name="requestLines" type="List"/> 
+    <aura:attribute name="currentRequest" type="Object"/> 
+    <aura:attribute name="dtColumns" type="List"/>
+    <aura:attribute name="oppOwner" type="String"/>
+    <aura:attribute name="attachments" type="List"/> 
+    <aura:attribute name="attColumns" type="List"/>
+    <aura:attribute name="selectedContentType" type="String" default=""/>
+    <aura:attribute name="userName" type="String"/>
+
+    <!-- events -->
+    <aura:registerEvent name="cmpCommand" type="c:ComponentCommandEvent"/>
+    <aura:handler name="init" value="{!this}" action="{!c.onPageInit}" />
+    <aura:handler name="cmpCommand" event="c:ComponentCommandEvent" action="{!c.onModalPromptEvent}"/>    
+    <aura:handler name="change" value="{!v.isActive}" action="{!c.handleOnIsActiveChange}"/>
+    
+    <!-- html markup -->  
+
+    <aura:html tag="style">
+        .toastMessage.forceActionsText{
+        white-space : pre-line !important;
+        }
+    </aura:html>    
+
+    <div>
+        <lightning:notificationsLibrary aura:id="notifLib"/>
+        <!-- File deletion confirmation component -->
+        <aura:renderIf isTrue="{!v.isActive}">        
+
+            <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">    
+
+                <!-- Spinner -->
+                <aura:if isTrue="{!v.showSpinner }">
+                    <lightning:spinner/>    
+                </aura:if>
+                <c:ModalPrompt isOpen="{!v.showFileDelete}" variant="DeleteFile" command="DELETE-FILE"/>    
+
+                <div id="theModal" class="slds-modal__container">
+                    <!-- 
+                        **************** HEADER *******************
+                    -->
+                    <header class="{!'slds-modal__header' + (empty(v.title) ? ' slds-modal__header slds-modal__header_empty' : '')}">
+                        <lightning:buttonIcon alternativeText="Close" onclick="{!c.handleClose}" iconName="utility:close" variant="bare" size="large" class="slds-modal__close slds-button_icon-inverse" />
+                        <aura:renderIf isTrue="{!not(empty(v.title))}">
+                            <h2 class="slds-text-heading_medium slds-hyphenate">{!v.title}</h2>
+                        </aura:renderIf>
+                    </header>
+
+                        <!-- Error box -->
+                        <div class="{!'slds-box slds-theme_error slds-theme_alert-texture ' + (v.errorList.length == 0 ? 'slds-hide' : '')}" role="status">
+                            <div class="{!v.cssString}" role="status">
+                                <h2 class="slds-text-heading_small"><b>{!$Label.c.app_review_errors}</b></h2>
+                                <ul class="slds-list--dotted">
+                                    <aura:iteration items="{!v.errorList}" var="errorMessage">
+                                        <li>{!errorMessage}</li>
+                                    </aura:iteration>
+                                </ul>
+                            </div>        
+                        </div>                    
+
+                    <!-- 
+                        **************** BODY *******************
+                    -->                    
+                    <div class="slds-modal__content slds-is-relative docker" id="modal-content-id-1">
+                
+                        <!-- ============================================= -->
+                        <!-- Request Form item form (right floating panel) -->
+                        <!-- ============================================= -->
+                        <div class="{!'slds-panel slds-size_medium slds-panel_docked slds-panel_docked-right docked slds-is-absolute' + (v.isExpanded ? ' slds-is-open' : '')}">
+                            <div class="slds-panel__header">
+                                <lightning:buttonIcon iconName="utility:chevronleft" class="slds-panel__back" variant="bare" onclick="{!c.closeEditionPanel}"/>
+                                <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">
+                                    <aura:if isTrue="{!v.currentRequest.lineNo == -1}">
+                                        {!$Label.c.opp_cpAddRequestItem}
+                                        <aura:set attribute="else">
+                                            {!$Label.c.opp_cpEditRequestItem}
+                                        </aura:set>
+                                    </aura:if>
+                                </h2>
+                                <div class="slds-panel__header-actions">
+                                    <lightning:buttonIcon iconName="utility:close" class="slds-panel__close" onclick="{!c.closeEditionPanel}"/>
+                                </div>
+                            </div>
+                            <div class="slds-panel__body">
+                                <lightning:recordEditForm aura:id="itemForm" objectApiName="OppCustomProjectRequest__c" onsubmit="{!c.handleRequestSubmit}" >
+                                    <lightning:messages aura:id="formMessage"/>
+                                    <lightning:inputField fieldName="ProductDescription__c" required="true" value="{!v.currentRequest.ProductDescription__c}"/>
+                                    <lightning:inputField fieldName="ColorName__c" value="{!v.currentRequest.ColorName__c}" required="true"/>
+                                    <lightning:inputField fieldName="Finish__c" value="{!v.currentRequest.Finish__c}" required="true"/>
+                                    <lightning:inputField aura:id="Edge__c" fieldName="Edge__c" value="{!v.currentRequest.Edge__c}" onchange="{!c.handleRequestChange}"/>
+                                    <lightning:inputField aura:id="EdgeThickness__c" fieldName="EdgeThickness__c" value="{!v.currentRequest.EdgeThickness__c}"/>
+                                    <lightning:inputField aura:id="BacksplashDetail__c" fieldName="BacksplashDetail__c" value="{!v.currentRequest.BacksplashDetail__c}" onchange="{!c.handleRequestChange}"/>
+                                    <lightning:inputField aura:id="BacksplashHeight__c" fieldName="BacksplashHeight__c" value="{!v.currentRequest.BacksplashHeight__c}"/>
+                                    <lightning:inputField fieldName="Underlayment__c" value="{!v.currentRequest.Underlayment__c}" required="true"/>
+                                    <!-- <lightning:button label="Add Item" variant="brand" class="slds-m-top_large"/> -->
+                                    <lightning:button class="slds-m-top_small" type="submit" label="{!v.submitRequestLabel}" variant="brand" />
+                                    <lightning:button class="slds-m-top_small" label="{!$Label.c.dict_button_cancel}" onclick="{!c.closeEditionPanel}"/>
+                                </lightning:recordEditForm>
+                            </div>
+                        </div>    
+
+                        <!-- ============================================= -->
+                        <!-- Upload Form  (right floating panel)           -->
+                        <!-- ============================================= -->
+                        <div class="{!'slds-panel slds-size_medium slds-panel_docked slds-panel_docked-right docked slds-is-absolute' + (v.isUploading ? ' slds-is-open' : '')}">
+                            <div class="slds-panel__header">
+                                <lightning:buttonIcon iconName="utility:chevronleft" class="slds-panel__back" variant="bare" onclick="{!c.closeEditionPanel}"/>
+                                <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">
+                                    {!$Label.c.dict_uploadFile}
+                                </h2>
+                                <div class="slds-panel__header-actions">                                   
+                                    <lightning:buttonIcon iconName="utility:close" class="slds-panel__close" onclick="{!c.closeEditionPanel}"/>
+                                </div>
+                            </div>
+                            <div class="slds-panel__body">
+                                <lightning:messages aura:id="formMessage2"/>
+                                <lightning:select name="selectDocType" label="Content Type" value="{!v.selectedContentType}">
+                                    <aura:if isTrue="{!v.hasFullAccess == true}">
+                                        <option value="QUOTE">{!$Label.c.opp_cpFileQuote}</option>
+                                        <option value="DRAWING">{!$Label.c.opp_cpFileDrawing}</option>
+                                    </aura:if>
+                                    <option value="SIGNED">{!$Label.c.opp_cpFileSigned}</option>
+                                    <option value="OTHER">{!$Label.c.opp_cpFileOther}</option>
+                                </lightning:select>  
+                                <lightning:fileUpload aura:id="uploader"
+                                    label="{!$Label.c.dict_uploadFile}"
+                                    disabled="{!v.selectedContentType == ''}"
+                                    name="fileUploader"
+                                    multiple="true"
+                                    recordId="{!v.customProjectId}"
+                                    onuploadfinished="{!c.handleUploader}" />                                                
+                            </div>
+                        </div>    
+
+                        <!-- ============================================= -->
+                        <!-- Tabset                                        -->
+                        <!-- ============================================= -->
+                        <lightning:tabset aura:id="tabset1" selectedTabId="CPDetailsTab" class="the-tabset" onselect="{!c.handleTabClick}">
+                            
+                            <!-- ============================================= -->
+                            <!-- Custom project details tab                    -->
+                            <!-- ============================================= -->
+    
+                            <lightning:tab label="Details" id="CPDetailsTab" class="slds-scrollable_y slds-p-horizontal_small project-tab">
+
+                                <lightning:recordEditForm aura:id="dataForm" recordId="{!v.customProjectId}" objectApiName="OppCustomProject__c"
+                                    onload="{!c.onRecordLoad}"
+                                    onsubmit="{!c.handleMainSubmit}"
+                                    onsuccess="{!c.handleOnSuccess}"
+                                    onerror="{!c.handleOnError}"
+                                    >
+                                    <input aura:id="submitButton" type="submit" class="slds-hide" />
+                                    <lightning:messages/>
+                                    <!-- section 'project details'-->
+                                    <div class="slds-section slds-is-open">
+                                        <h3 class="slds-section__title slds-theme--shade slds-p-horizontal_medium">
+                                            {!$Label.c.opp_customProjectDetails}
+                                        </h3>
+                                        <div class="slds-section__content slds-grid slds-wrap slds-p-horizontal_medium">
+                                            <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                                                <lightning:inputField aura:id="ProjectType__c" fieldName="ProjectType__c" onchange="{!c.handleTypeChange}"/>
+                                                <lightning:inputField aura:id="SemiCustom__c" fieldName="SemiCustom__c"  onchange="{!c.handleTypeChange}"/>
+                                                <ul class="slds-list_horizontal slds-form-element__control">
+                                                    <lightning:inputField aura:id="VanityType__c" fieldName="VanityType__c" onchange="{!c.handleVanityChange}"/>
+                                                    <lightning:inputField aura:id="VanityBy__c" fieldName="VanityBy__c" />
+                                                </ul>
+                                                <lightning:inputField aura:id="Stage__c" fieldName="Stage__c" required="true" onchange="{!c.handleStageChange}"/>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                                                <lightning:input aura:id="oppOwner" type="String" name="oppOwner" label="{!$Label.c.dict_opportunityOwner}" 
+                                                    value="{!v.oppOwner}" disabled="true"/>
+                                                <lightning:select aura:id="pmanager" label="{!$Label.c.dict_productManager}" value="{!v.productManager}" required="true">
+                                                    <option text="" value=""/>
+                                                    <aura:iteration items="{!v.managers}" var="pman">
+                                                        <option text="{!pman.Name}" value="{!pman.Id}"/>
+                                                    </aura:iteration>
+                                                </lightning:select>
+                                                <ul class="slds-list_horizontal slds-form-element__control">
+                                                    <li><lightning:inputField fieldName="Amount__c" /></li>
+                                                    <li><lightning:inputField aura:id='currencyCode' fieldName="CurrencyIsoCode" /></li>
+                                                </ul> 
+                                                <lightning:inputField fieldName="DeliveryDate__c"/>
+                                            </div>
+                                        </div>
+                                    </div> <!-- section 'project details'-->
+
+                                    <!-- Project location section -->
+                                    <div class="slds-section slds-is-open">
+                                        <h3 class="slds-section__title slds-theme--shade slds-p-horizontal_medium">
+                                            {!$Label.c.opp_customProjectLocationS}
+                                        </h3>
+                                        <div class="slds-section__content slds-grid slds-wrap slds-p-horizontal_medium">
+                                            <!-- Left column -->
+                                            <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                                                <lightning:textarea label="Project Address" value="{!v.location}" disabled = "true"/>
+                                            </div>
+
+                                            <!-- Right column -->
+                                            <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                                                <lightning:inputField aura:id="BuildingType__c" fieldName="BuildingType__c" onchange="{!c.handleBuildingChange}"/>
+                                                <ul class="slds-list_horizontal slds-form-element__control">
+                                                    <li><lightning:inputField aura:id="FloorNumber__c" fieldName="FloorNumber__c"/></li>
+                                                    <li><lightning:inputField aura:id="Elevator__c" fieldName="Elevator__c"/></li>
+                                                </ul>
+                                                <lightning:inputField fieldName="DeliveryInstructions__c"/>
+                                            </div>
+
+                                        </div>                                                
+                                    </div> <!-- Project location section -->           
+
+                                    <!-- Project stage-dependent fields section -->
+                                    <div class="{!'slds-section slds-is-open slds-theme_shade'}">
+                                        <h3 class="slds-section__title slds-theme--shade slds-p-horizontal_medium slds-theme_alert-texture">
+                                            {!$Label.c.opp_customProjectStageS} (*)
+                                        </h3>
+                                        <div class="slds-section__content slds-grid slds-wrap slds-p-horizontal_medium">
+                                            <!-- Left column -->
+                                            <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                                                <lightning:select label="Shop Drawings Uploaded?" value="{!v.hasDrawing}" disabled="true" class="{! 'slds-form-element_horizontal slds-form-element ' + (v.hasFullAccess ? '': 'slds-hide') }" variant="label-inline">     
+                                                    <aura:iteration items="{!v.yesnoOptions}" var="option">
+                                                        <option text="{!option.label}" value="{!option.id}"/>
+                                                    </aura:iteration>                                                
+                                                </lightning:select>
+                                                <lightning:inputField aura:id="IsMaterialInStock__c" fieldName="IsMaterialInStock__c" variant="label-inline" disabled="{! v.hasFullAccess == false }"/>                                            
+                                                <lightning:inputField aura:id="MaterialReleased__c" fieldName="MaterialReleased__c" variant="label-inline" disabled="{! v.hasFullAccess == false }"
+                                                    onchange="{!c.handleMaterialChange}"/>        
+                                                    <lightning:inputField aura:id="MaterialOrdered__c" fieldName="MaterialOrdered__c" variant="label-inline" disabled="true"/>                                      
+                                                    <lightning:inputField aura:id='FabricatorSAPOrder__c' fieldName="FabricatorSAPOrder__c" variant="label-inline" class="{! (v.hasFullAccess ? '': 'slds-hide') }"/>
+                                                    <lightning:inputField fieldName="FabricatorSAPOrder2__c" variant="label-inline" class="{! (v.hasFullAccess ? '': 'slds-hide') }"/>
+                                            </div>
+
+                                            <!-- Right column -->
+                                            <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                                                <lightning:inputField aura:id="MatReleaseDetails__c" fieldName="MatReleaseDetails__c" class="{! (v.hasFullAccess ? '': 'slds-hide') }"/>
+                                            </div>
+                                            <!--<div class="slds-text-body_small slds-p-bottom_medium">(*) {!$Label.c.opp_customProjectViz}</div> -->  
+                                        </div>
+                                    </div> <!-- Project stage-dependent fields section -->
+
+                                    <!-- Fabricator quote section -->
+                                    <div class="{!'slds-section slds-is-open slds-theme_shade ' + (v.hasFullAccess ? '': 'slds-hide')}">                                        
+                                        <h3 class="slds-section__title slds-theme--shade slds-p-horizontal_medium slds-theme_alert-texture">
+                                            {!$Label.c.opp_customProjectQuote} (*)
+                                        </h3>
+                                        <div class="slds-section__content slds-grid slds-wrap slds-p-horizontal_medium">
+                                            <!-- Left column -->                                            
+                                            <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">                                                
+                                                <lightning:select label="Quote Attached?" value="{!v.hasQuote}" disabled="true" class="slds-form-element_stacked slds-form-element">     
+                                                    <aura:iteration items="{!v.yesnoOptions}" var="option">
+                                                        <option text="{!option.label}" value="{!option.id}"/>
+                                                    </aura:iteration>                                                
+                                                </lightning:select>
+                                                <lightning:inputField fieldName="Slabs__c"/>                                 
+                                            </div>
+
+                                            <!-- Right column -->
+                                            <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                                                <lightning:inputField fieldName="Fabricator__c"/>
+                                                <lightning:inputField fieldName="SpecialOrder__c"/>
+                                            </div>
+
+                                            <div class="slds-text-body_small slds-p-bottom_medium">(*) {!$Label.c.opp_customProjectViz}</div>
+                                        </div>
+                                    </div> <!-- Fabricator quote section -->
+
+                                    <!-- Sink and faucet info quote section -->
+                                    <div class="slds-section slds-is-open">
+                                        <h3 class="slds-section__title slds-theme--shade slds-p-horizontal_medium">
+                                            {!$Label.c.opp_customProjectSinkS}
+                                        </h3>
+                                        <div class="slds-section__content slds-grid slds-wrap slds-p-horizontal_medium">
+                                            <!-- Left column -->
+                                            <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">                                                
+                                                <lightning:inputField aura:id="SinkType__c" fieldName="SinkType__c"  onchange="{!c.handleSinkTypeChange}"/>
+                                                <!-- KRION sink -->
+                                                <lightning:inputField aura:id="SinkDescription__c" fieldName="SinkDescription__c" class="{!(v.isKrionSink ? '': 'slds-hide')}"/>
+                                                <lightning:inputField aura:id="SinkModelNo__c" fieldName="SinkModelNo__c" class="{!(v.isKrionSink ? '': 'slds-hide')}"/>
+                                                <!-- Custom sink -->
+                                                <lightning:inputField aura:id="CustomSinkSize__c" fieldName="CustomSinkSize__c" class="{!(v.isCustomSink ? '': 'slds-hide')}"/>
+                                                <lightning:inputField aura:id="SinkOverflow__c" fieldName="SinkOverflow__c" class="{!(v.isCustomSink ? '': 'slds-hide')}" onchange="{!c.handleSinkOverflowChange}"/>
+                                                <lightning:inputField aura:id="OverflowLocation__c" fieldName="OverflowLocation__c" class="{!(v.isCustomSink ? '': 'slds-hide')}" disabled="true"/>
+                                            </div>
+
+                                            <!-- Right column -->
+                                            <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                                                <lightning:inputField aura:id="FaucetHoles__c" fieldName="FaucetHoles__c" onchange="{!c.handleHolesChange}"/>                                                
+                                                <lightning:inputField aura:id="FaucetSpread__c" fieldName="FaucetSpread__c"/>
+                                            </div>
+                                        </div>
+                                    </div> <!-- Sink and faucet info quote section -->
+
+                                    <!-- More details and service info section -->
+                                    <div class="slds-section slds-is-open">
+                                        <h3 class="slds-section__title slds-theme--shade slds-p-horizontal_medium">
+                                            {!$Label.c.opp_customProjectInfoS   }
+                                        </h3>
+                                        <div class="slds-section__content slds-grid slds-wrap slds-p-horizontal_medium">
+                                            <!-- Left column -->
+                                            <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">                                                
+                                                <lightning:inputField aura:id="CustomCabinetry__c" fieldName="CustomCabinetry__c" onchange="{!c.handleCabinetryChange}"/>
+                                                <lightning:inputField aura:id="RelatedOpportunity__c" fieldName="RelatedOpportunity__c" />
+                                                <lightning:inputField aura:id="WaterfallLegs__c" fieldName="WaterfallLegs__c" onchange="{!c.handleWaterfallChange}"/>
+                                                <lightning:inputField aura:id="LegsNumber__c" fieldName="LegsNumber__c"/>
+                                            </div>
+
+                                            <!-- Right column -->
+                                            <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                                                <lightning:inputField aura:id="CookingAppliances__c" fieldName="CookingAppliances__c"/>
+                                                <lightning:inputField aura:id="OtherCutouts__c" fieldName="OtherCutouts__c"/>
+                                                <lightning:inputField aura:id="ServiceRequired__c" fieldName="ServiceRequired__c"/>
+                                                <lightning:inputField aura:id="SAPCode__c" fieldName="SAPCode__c"/>
+                                            </div>
+                                        </div>
+                                    </div> <!-- More details and service info section -->
+
+                                    <!-- Project notes and special instructions section -->
+                                    <div class="slds-section slds-is-open">
+                                        <h3 class="slds-section__title slds-theme--shade slds-p-horizontal_medium">
+                                            {!$Label.c.opp_customProjectNotesS   }
+                                        </h3>
+                                        <div class="slds-section__content slds-grid slds-wrap slds-p-horizontal_medium">
+                                            <div class="slds-col slds-size_1-of-1 slds-p-left_small slds-p-right_small">
+                                                <lightning:inputField aura:id="ProjectNotes__c" fieldName="ProjectNotes__c" variant="label-hidden" class="project-notes"/>
+                                            </div>
+                                        </div>
+                                    </div> <!--- Project notes and special instructions section -->
+
+                                    <!-- Breaks requried for scrolling -->
+                                    <br/>
+                                    <br/>
+                                    <br/>
+
+                                </lightning:recordEditForm>  
+
+                            </lightning:tab>   
+
+                        <!-- ============================================= -->
+                        <!-- Request Form tab                              -->
+                        <!-- ============================================= -->
+                        <lightning:tab label="Request Form" id="CPLinesTab" class="slds-scrollable_y slds-p-horizontal_small">
+                                <!-- Custom project request form section -->
+                                    
+                                <!-- header -->
+                                <div class="slds-page-header slds-grid">
+                                    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container slds-icon-standard-account">
+                                                <lightning:icon iconName="standard:product_request" />
+                                            </span>
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <div class="slds-page-header__name">
+                                                <div class="slds-page-header__name-title">
+                                                    <h1>
+                                                        <span class="slds-page-header__title slds-truncate" title="{!$Label.c.opp_customProjectReqForm}">
+                                                            {!$Label.c.opp_customProjectReqForm}
+                                                        </span>
+                                                    </h1>
+                                                </div>
+                                            </div>
+                                            <p class="slds-page-header__name-meta"><!--Texto de status--></p>
+                                        </div>        
+                                        <div class="slds-no-flex slds-p-left_xx-small ">
+                                            <lightning:buttonIcon  variant="border-filled" 
+                                                title="Add row" 
+                                                iconName="utility:add"
+                                                onclick="{!c.addRequestLine}" 
+                                                disabled="{!or(v.disable, v.isExpanded)}"/>
+                                        </div>
+                                    </header>      
+                                </div>   <!-- end of header -->   
+                                
+                                <div class="slds-m-top_small">
+                                    <lightning:datatable data="{! v.requestLines }"
+                                        class="data-table"
+                                        columns="{! v.dtColumns }"
+                                        keyField="id"
+                                        hideCheckboxColumn="true"
+                                        showRowNumberColumn="false"
+                                        columnWidthsMode="fixed"
+                                        onrowaction="{! c.handleRowAction }"/>
+                                </div>
+
+                            </lightning:tab>  
+
+                            <!-- ============================================= -->
+                            <!-- Attachments tab                              -->
+                            <!-- ============================================= -->
+                            <lightning:tab label="{!$Label.c.dict_files}" id="CPFilesTab" aura:id="CPFilesTab" class="slds-p-horizontal_small slds-scrollable_y">
+                                <!-- header -->
+                                <div class="slds-page-header slds-grid">
+                                    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container slds-icon-standard-account">
+                                                <lightning:icon iconName="standard:folder" />
+                                            </span>
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <div class="slds-page-header__name">
+                                                <div class="slds-page-header__name-title">
+                                                    <h1>
+                                                        <span class="slds-page-header__title slds-truncate" title="{!$Label.c.opp_customProjectReqForm}">
+                                                            {!$Label.c.opp_customProjectFiles}
+                                                        </span>
+                                                    </h1>
+                                                </div>
+                                            </div>
+                                            <p class="slds-page-header__name-meta"><!--Texto de status--></p>
+                                        </div>    
+                                        <aura:if isTrue="{!v.customProjectId != null}">
+                                            <div class="slds-no-flex slds-p-left_xx-small ">
+                                                <lightning:button 
+                                                    variant="brand"
+                                                    iconName="utility:upload"
+                                                    label="{!$Label.c.dict_uploadFile}"
+                                                    onclick="{!c.handleUploadFile}"
+                                                    class="{!v.isUploading == true ? 'slds-hide' : ''}"/>
+                                                <lightning:buttonIcon 
+                                                    iconName="utility:delete"                               
+                                                    variant="brand" 
+                                                    onclick="{!c.handleDeleteFileClick}"
+                                                    title="{!$Label.c.dict_deleteFiles}"
+                                                    class="{!v.isUploading == true ? 'slds-hide' : ''}"/>                 
+                                                <lightning:buttonIcon 
+                                                    iconName="utility:download"                               
+                                                    variant="brand" 
+                                                    onclick="{!c.handleDownloadFileClick}"
+                                                    title="{!v.dict_downloadFiles}"
+                                                    class="{!v.isUploading == true ? 'slds-hide' : ''}"/>                                 
+                                            </div>
+                                        </aura:if>
+                                        <a id="fakeLink" aura:id="fakeLink" href="void" class="slds-hide">hidden link</a>
+                                    </header>      
+                                </div>   <!-- end of header -->   
+                                    
+                                <div class="slds-m-top_small">
+                                    <aura:if isTrue="{!v.customProjectId == null}">
+                                        <div class="slds-text-body_regular slds-m-around_medium">{!$Label.c.opp_cpAttDisabled}</div>
+                                        <aura:set attribute="else">
+                                            <lightning:datatable aura:id="attachmentsDT"
+                                                data="{! v.attachments }"
+                                                columns="{! v.attColumns }"
+                                                keyField="id"
+                                                hideCheckboxColumn="false"
+                                                showRowNumberColumn="true"
+                                                columnWidthsMode="fixed"
+                                                onrowaction="{! c.handleFileAction }"/>
+                                        </aura:set>
+                                    </aura:if>
+                                    
+                                    <!-- Breaks required for scrolling -->
+                                    <br/>
+                                    <br/>
+
+                                </div>
+
+
+                            </lightning:tab>  
+
+                        </lightning:tabset>
+
+                    </div> <!-- body -->
+                
+                    <!-- 
+                        **************** FOOTER *******************
+                    -->
+                    <footer class="slds-modal__footer">
+                        <aura:if isTrue="{!v.variant == 'EDIT'}">
+                            <lightning:button variant="brand" label="{!$Label.c.dict_save}" onclick="{!c.handleSave}" disabled="{!or(v.isExpanded, v.isUploading)}" />
+                            <lightning:button variant="neutral" label="{!$Label.c.dict_button_cancel}" onclick="{!c.handleClose}" disabled="{!or(v.isExpanded, v.isUploading)}"/>
+                        </aura:if>
+                        <aura:if isTrue="{!v.variant == 'VIEW'}">
+                            <lightning:button variant="neutral" label="{!$Label.c.dict_button_close}" onclick="{!c.handleClose}" />
+                        </aura:if>
+                    </footer>
+                </div>
+            </section>
+
+
+        </aura:renderIf>
+
+        <div class="{!'slds-backdrop ' + ((v.isActive) ? 'slds-backdrop_open' : 'slds-backdrop_close')}"></div>
+
+    </div>
+
+</aura:component>

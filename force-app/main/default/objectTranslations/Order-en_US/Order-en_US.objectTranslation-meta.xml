@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Commerce Order Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>NB2B Order Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>NBK Order Samples Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Order Layout</layout>
+        <sections>
+            <label><!-- Amount --></label>
+            <section>Amount</section>
+        </sections>
+        <sections>
+            <label><!-- ID Integrations --></label>
+            <section>ID Integrations</section>
+        </sections>
+        <sections>
+            <label><!-- Org --></label>
+            <section>Org</section>
+        </sections>
+        <sections>
+            <label><!-- Product --></label>
+            <section>Product</section>
+        </sections>
+        <sections>
+            <label><!-- Shipping Information --></label>
+            <section>Shipping Information</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Check Stock/Process Order --></label>
+        <name>Check_Stock</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Edit Order --></label>
+        <name>EditOrder</name>
+    </quickActions>
+    <recordTypes>
+        <description><!-- Customer returns order --></description>
+        <label><!-- Collection Order V1 --></label>
+        <name>CollectionOrder_V1</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- B2B --></label>
+        <name>NBK_rt_B2B</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Samples --></label>
+        <name>NBK_rt_samples</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Record Type form standard sales orders --></description>
+        <label><!-- Standard Order V1 --></label>
+        <name>StandardOrder_V1</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- An order reason is required for collections --></errorMessage>
+        <name>REASON_required_in_collections</name>
+    </validationRules>
+</CustomObjectTranslation>

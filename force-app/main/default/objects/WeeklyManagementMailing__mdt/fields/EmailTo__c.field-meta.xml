@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EmailTo__c</fullName>
+    <description>correos, separados por comas</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Email to</label>
+    <required>false</required>
+    <type>TextArea</type>
+</CustomField>

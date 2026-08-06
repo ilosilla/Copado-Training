@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Base date from which events with missing fields are displayed in login flow --></help>
+    <label><!-- Login flow start date --></label>
+    <name>lFlow_startDate__c</name>
+</CustomFieldTranslation>

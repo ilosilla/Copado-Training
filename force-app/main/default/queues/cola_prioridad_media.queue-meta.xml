@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesIncludeBosses>true</doesIncludeBosses>
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>cola prioridad media</name>
+    <queueMembers>
+        <users>
+            <user>alvaro.rodriguezd@porcelanosa.com</user>
+            <user>neoris@porcelanosa.com</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>enrutamiento2</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

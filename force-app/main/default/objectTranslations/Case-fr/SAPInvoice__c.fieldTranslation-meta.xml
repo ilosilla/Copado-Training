@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Please enter the invoice number of the goods to be collected --></help>
+    <label><!-- SAP Invoice --></label>
+    <name>SAPInvoice__c</name>
+    <relationshipLabel><!-- Cases --></relationshipLabel>
+</CustomFieldTranslation>

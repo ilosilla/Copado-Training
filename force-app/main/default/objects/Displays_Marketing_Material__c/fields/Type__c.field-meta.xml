@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <label>Type</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Settings</fullName>
+                <default>false</default>
+                <label>Settings</label>
+            </value>
+            <value>
+                <fullName>Dakkar Panel Stand</fullName>
+                <default>false</default>
+                <label>Dakkar Panel Stand</label>
+            </value>
+            <value>
+                <fullName>Highker Stand</fullName>
+                <default>false</default>
+                <label>Highker Stand</label>
+            </value>
+            <value>
+                <fullName>Kitchen</fullName>
+                <default>false</default>
+                <label>Kitchen</label>
+            </value>
+            <value>
+                <fullName>Krion countertop</fullName>
+                <default>false</default>
+                <label>Krion countertop</label>
+            </value>
+            <value>
+                <fullName>Krion tower</fullName>
+                <default>false</default>
+                <label>Krion tower</label>
+            </value>
+            <value>
+                <fullName>Starwood Zone</fullName>
+                <default>false</default>
+                <label>Starwood Zone</label>
+            </value>
+            <value>
+                <fullName>Xlight tower</fullName>
+                <default>false</default>
+                <label>Xlight tower</label>
+            </value>
+            <value>
+                <fullName>Xtone Countertop</fullName>
+                <default>false</default>
+                <label>Xtone Countertop</label>
+            </value>
+            <value>
+                <fullName>Xtone tower</fullName>
+                <default>false</default>
+                <label>Xtone tower</label>
+            </value>
+            <value>
+                <fullName>Cuna parker</fullName>
+                <default>false</default>
+                <label>Cuna parker</label>
+            </value>
+            <value>
+                <fullName>Table Display Rack XTONE</fullName>
+                <default>false</default>
+                <label>Table Display Rack XTONE</label>
+            </value>
+            <value>
+                <fullName>Boxtone</fullName>
+                <default>false</default>
+                <label>BOXTONE</label>
+            </value>
+            <value>
+                <fullName>Exp. Tower Xtone 30x60</fullName>
+                <default>false</default>
+                <label>Exp. Tower Xtone 30x60</label>
+            </value>
+            <value>
+                <fullName>Ex. Tower Xtone 25x28</fullName>
+                <default>false</default>
+                <label>Ex. Tower Xtone 25x28</label>
+            </value>
+            <value>
+                <fullName>Binder</fullName>
+                <default>false</default>
+                <label>Binder</label>
+            </value>
+            <value>
+                <fullName>Table Display Rack Altissima</fullName>
+                <default>false</default>
+                <label>Table Display Rack Altissima</label>
+            </value>
+            <value>
+                <fullName>Countertop Altissima</fullName>
+                <default>false</default>
+                <label>Countertop Altissima</label>
+            </value>
+            <value>
+                <fullName>Krion Box</fullName>
+                <default>false</default>
+                <label>Krion Box</label>
+            </value>
+            <value>
+                <fullName>Xtone Setting</fullName>
+                <default>false</default>
+                <label>Xtone Setting</label>
+            </value>
+            <value>
+                <fullName>Altissima Setting</fullName>
+                <default>false</default>
+                <label>Altissima Setting</label>
+            </value>
+            <value>
+                <fullName>Xtone Pantonier</fullName>
+                <default>false</default>
+                <label>Xtone Pantonier</label>
+            </value>
+            <value>
+                <fullName>Xtone Catalogue</fullName>
+                <default>false</default>
+                <label>Xtone Catalogue</label>
+            </value>
+            <value>
+                <fullName>Sample classifier Xtone 10x20</fullName>
+                <default>false</default>
+                <label>Sample classifier Xtone 10x20</label>
+            </value>
+            <value>
+                <fullName>Xtone Packtool</fullName>
+                <default>false</default>
+                <label>Xtone Packtool</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

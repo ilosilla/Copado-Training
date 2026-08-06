@@ -1,0 +1,113 @@
+<template>
+    <!-- <template if:true={accounts}>
+        <lightning-datatable
+            key-field="Id"
+            data={accounts}
+            columns={columnsAccount}
+            onrowaction={handleRowAction}
+            hide-checkbox-column>
+        </lightning-datatable>
+    </template> -->
+
+    <template if:true={comments}>
+        <table class="slds-table slds-table_cell-buffer" aria-label="Example default base table of Opportunities">
+            <thead>
+              <tr class="slds-line-height_reset">
+                <th class="slds-size--1-of-12" scope="col">
+                    <div class="slds-truncate" title="Completed">{label.labelCompleted}</div>
+                  </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Opportunity Name">{label.labelName}</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Account Name">{label.labelSalesMaturity}</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Close Date">Comment</div>
+                </th>
+                <template if:false={isreadonly}>
+                  <th class="slds-cell_action-mode" scope="col" style="width:3.25rem">
+                    <div class="slds-truncate slds-assistive-text" title="Actions">Actions</div>
+                  </th>
+                </template>
+              </tr>
+            </thead>
+            <tbody>
+                <template for:each={comments} for:item="comment">
+                    <tr class="slds-hint-parent" key={comment.Id}>
+                        <th data-label="Comment" class="slds-align--absolute-center">
+                            <div class="slds-truncate" title="Comment">
+                                <template if:true={comment.WeeklyCompleted__c}>
+                                    <lightning-icon icon-name='utility:switch' alternative-text='switch' size='xx-small' title='switch'></lightning-icon>
+                                  </template>
+                            </div>
+                        </th>
+                        <td data-label="Account Name" scope="row">
+                          <div class="slds-truncate" title="Account Name">
+                              <template if:true={completed}>
+                                <a href={comment.accountLink} target="_blank" >{comment.Account__r.Name}</a>
+                            </template>
+                            <template if:false={completed}>
+                                {comment.Account__r.Name}
+                            </template>
+                          </div>
+                        </td>
+                        <td data-label="Sales Maturity">
+                          <div class="slds-truncate" title="Sales Maturiry">{comment.Account__r.SalesMaturity__c}</div>
+                        </td>
+                        <td data-label="Comment" style="max-width: 250px;">
+                          <div style="
+                              display: -webkit-box;
+                              -webkit-line-clamp: 3;
+                              -webkit-box-orient: vertical;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                              white-space: normal;
+                          " title={comment.Value__c}>
+                            {comment.Value__c}
+                          </div>
+                        </td>
+                        <template if:false={isreadonly}>
+                          <td data-label="Comment">
+                            <lightning-button-menu alternative-text="Show menu">
+                                <lightning-menu-item value={label.labelEdit} label={label.labelEdit} onclick={handleRowAction} data-id={comment.Id}></lightning-menu-item>
+                            </lightning-button-menu>
+                        </td>
+                        </template>
+                    </tr>
+                </template>
+            </tbody>
+          </table>
+    </template>
+
+
+    <template if:true={isModalOpen}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <!-- Modal -->
+    <section role="dialog" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            
+            <!-- Header con "X" -->
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Cerrar"
+                        onclick={handleCloseModal}>
+                    <lightning-icon icon-name="utility:close" size="small" alternative-text="Cerrar"></lightning-icon>
+                </button>
+                <h2 class="slds-text-heading_medium">{label.labelEditComment}</h2>
+            </header>
+
+            <!-- Contenido -->
+            <div class="slds-modal__content slds-p-around_medium">
+                <lightning-flow
+                    flow-api-name="Edit_Key_Account_Comment"
+                    flow-input-variables={inputVariables}
+                    onstatuschange={handleFlowStatusChange}>
+                </lightning-flow>
+            </div>
+        </div>
+    </section>
+        
+    </template>
+
+</template>

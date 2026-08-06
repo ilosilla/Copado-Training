@@ -1,0 +1,81 @@
+<template>
+    <div class="radio-list-selector">
+
+        <!-- Label del grupo -->
+        <template if:true={label}>
+            <div class="group-label slds-m-bottom_x-small">
+                {label}
+            </div>
+        </template>
+
+        <!-- Lista scrollable -->
+        <div class="options-container" role="radiogroup">
+            <div class="options-scroll" style={optionsListStyle}>
+                <template lwc:if={hasOptions}>
+                    <template for:each={filteredOptions} for:item="opt">
+                        <label key={opt.value} class="radio-item slds-p-xx-small">
+                            
+                            <input
+                                type="radio"
+                                class="radio-input"
+                                name="ux-radio-list-selector"
+                                value={opt.id}
+                                checked={opt.checked}
+                                onchange={handleRadioChange}
+                            />
+
+                            <span class="text">
+                                <span class="bold">{opt.label}</span>
+                                <template lwc:if={opt.description}>
+                                    <span class="normal"> - {opt.description}</span>
+                                </template>
+                            </span>
+
+                        </label>
+                    </template>
+                </template>
+
+                <template lwc:else>
+                    <div class="no-results slds-p-xx-small">
+                        No options found
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <!-- Buscador -->
+        <template lwc:if={isSearchEnabled}>
+            <div class="search-container">
+                <lightning-input
+                    type="search"
+                    variant="label-hidden"
+                    value={searchTerm}
+                    onchange={handleSearchChange}>
+                </lightning-input>
+            </div>
+        </template>
+
+        <!-- Botones -->
+        <div class="actions-container slds-m-top_small slds-grid slds-grid_align-spread">
+
+            <template lwc:if={isEditEnabled}>
+                <lightning-button
+                    label={editButtonLabel}
+                    variant="neutral"
+                    onclick={handleEditClick}
+                    disabled={isEditDisabled}>
+                </lightning-button>
+            </template>
+
+            <template lwc:if={isNewEnabled}>
+                <lightning-button
+                    label={newButtonLabel}
+                    variant="brand-outline"
+                    onclick={handleNewClick}>
+                </lightning-button>
+            </template>
+
+        </div>
+
+    </div>
+</template>

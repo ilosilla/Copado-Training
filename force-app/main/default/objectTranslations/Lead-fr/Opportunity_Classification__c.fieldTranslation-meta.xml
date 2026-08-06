@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Classification de l&apos;opportunité</label>
+    <name>Opportunity_Classification__c</name>
+    <picklistValues>
+        <masterLabel>Airport</masterLabel>
+        <translation>Aéroport</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Commercial</masterLabel>
+        <translation>Commercial</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Health care</masterLabel>
+        <translation>Santé</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hotels and other hospitality</masterLabel>
+        <translation>Hôtels ou similaires</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Office</masterLabel>
+        <translation>Bureau</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Public building</masterLabel>
+        <translation>Batiment Public</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Residential</masterLabel>
+        <translation>Résidentiel</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Residential (Retail)</masterLabel>
+        <translation><!-- Residential (Retail) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Transport</masterLabel>
+        <translation>Gares de Transport</translation>
+    </picklistValues>
+</CustomFieldTranslation>

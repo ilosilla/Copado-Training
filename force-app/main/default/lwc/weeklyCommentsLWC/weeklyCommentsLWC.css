@@ -1,0 +1,32 @@
+.email-preview {
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background: #fff;
+    max-width: 900px;
+    margin: auto;
+}
+.email-preview p {
+    margin: 0.2rem 0;
+}
+
+.custom-tabset-container {
+    background-color: white; /* Fondo blanco */
+    padding: 1rem;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+}
+
+.custom-tabset ::slotted(.slds-tabs_default__nav) {
+    justify-content: center; /* Centra las pestañas del tabset */
+}
+
+.wrap-text {
+    word-wrap: break-word; /* rompe palabras largas */
+    overflow-wrap: break-word; 
+    white-space: normal;   /* permite salto de línea */
+    max-width: 100%;       /* evita que sobrepase el contenedor */
+}
+
+.slds-template__default {
+    padding: none;
+}

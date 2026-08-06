@@ -1,0 +1,30 @@
+.xcustom-modal {
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 1rem;    
+}
+
+.xportrait {
+    width: 40%;
+}
+
+.xlandscape {
+    width: 70%;
+}
+
+.xsmall {
+    height: 30vh;
+}
+
+.xmedium {
+    height: 60vh;
+}
+
+.xlarge {
+    height: 90vh;
+}
+
+.xfull {
+    max-width: 100%;
+    height: 100vh;
+}

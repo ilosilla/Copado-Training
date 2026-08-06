@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gmpkg__xEnable_UserGrid_Interactive_Filter__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Enable Interactive Filters for User Grids.</description>
+    <inlineHelpText>Check this option to enable Interactive Filters for User Grids</inlineHelpText>
+    <label>Enable UserGrid Interactive Filter</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

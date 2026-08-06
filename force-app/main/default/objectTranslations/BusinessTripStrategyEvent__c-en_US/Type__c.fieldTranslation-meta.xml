@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type --></label>
+    <name>Type__c</name>
+    <picklistValues>
+        <masterLabel>Aroma Bar</masterLabel>
+        <translation><!-- Aroma Bar --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Aromatherapy Workshop</masterLabel>
+        <translation><!-- Aromatherapy Workshop --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Art exhibition</masterLabel>
+        <translation><!-- Art exhibition --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Blooming tiles</masterLabel>
+        <translation><!-- Blooming tiles --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cooking class</masterLabel>
+        <translation><!-- Cooking class --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Covers and paint</masterLabel>
+        <translation><!-- Covers and paint --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cuisinies with wine pairing</masterLabel>
+        <translation><!-- Cuisinies with wine pairing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dress your table</masterLabel>
+        <translation><!-- Dress your table --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Feng shui</masterLabel>
+        <translation><!-- Feng shui --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Floral arrangement Workshop</masterLabel>
+        <translation><!-- Floral arrangement Workshop --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Interior design photography with a smartphone</masterLabel>
+        <translation><!-- Interior design photography with a smartphone --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lettering workshop</masterLabel>
+        <translation><!-- Lettering workshop --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lunch and learn</masterLabel>
+        <translation><!-- Lunch and learn --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Make your own blend</masterLabel>
+        <translation><!-- Make your own blend --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mommy and My</masterLabel>
+        <translation><!-- Mommy and My --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Moodboard making</masterLabel>
+        <translation><!-- Moodboard making --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Open days</masterLabel>
+        <translation><!-- Open days --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Opening event showrooms</masterLabel>
+        <translation><!-- Opening event showrooms --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Seasonal materials and colours</masterLabel>
+        <translation><!-- Seasonal materials and colours --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Texture wall art workshop</masterLabel>
+        <translation><!-- Texture wall art workshop --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wellness open day</masterLabel>
+        <translation><!-- Wellness open day --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wine and cheese</masterLabel>
+        <translation><!-- Wine and cheese --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wood customization workshop</masterLabel>
+        <translation><!-- Wood customization workshop --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

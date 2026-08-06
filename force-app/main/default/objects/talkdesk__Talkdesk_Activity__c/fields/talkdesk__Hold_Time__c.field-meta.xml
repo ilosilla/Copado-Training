@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>talkdesk__Hold_Time__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF(FLOOR(ROUND(talkdesk__Hold_TIme_sec__c,0)/(60*60))&lt;10, &quot;0&quot;&amp;TEXT(FLOOR(ROUND(talkdesk__Hold_TIme_sec__c,0)/(60*60))),TEXT(FLOOR(ROUND(talkdesk__Hold_TIme_sec__c,0)/(60*60))))
+            &amp;&quot;:&quot; &amp;
+            IF(MOD(FLOOR(ROUND(talkdesk__Hold_TIme_sec__c,0)/60),60)&lt;10, &quot;0&quot;&amp;TEXT(MOD(FLOOR(ROUND(talkdesk__Hold_TIme_sec__c,0)/60),60)),TEXT(MOD(FLOOR(ROUND(talkdesk__Hold_TIme_sec__c,0)/60),60)))
+            &amp;&quot;:&quot; &amp;
+            IF(MOD(ROUND(talkdesk__Hold_TIme_sec__c,0),(60))&lt;10, &quot;0&quot;&amp; TEXT(FLOOR(MOD(ROUND(talkdesk__Hold_TIme_sec__c,0),(60)))), TEXT(FLOOR(MOD(ROUND(talkdesk__Hold_TIme_sec__c,0),(60)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Hold Time</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Followed_Events</fullName>
+    <columns>Account__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>ActivityLink__c</columns>
+    <columns>EventStartDate__c</columns>
+    <columns>EventEndDate__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Follow__c.Event</value>
+    </filters>
+    <label>My Followed Events</label>
+</ListView>

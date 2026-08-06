@@ -1,0 +1,282 @@
+<template>
+    <c-lib-store-context-provider
+        oncontextreceived={handleContextReceived}
+        oncontexterror={handleContextError}>
+    </c-lib-store-context-provider>
+
+    <div class="pdp-loading-overlay" lwc:if={showSpinner}>
+        <lightning-spinner
+            alternative-text="Loading"
+            size="medium">
+        </lightning-spinner>
+    </div>
+
+    <!-- TOAST MESSAGE -->
+    <div class="pdp-toast" lwc:if={showToastMessage}>
+        <div class={toastVariantClass}>
+            {toastMessage}
+        </div>
+    </div>
+
+    <div class="pdp-container">
+        <div class="pdp-header">
+            <div class="product-code">SKU# {productCode}</div>
+            <div class="product-name">{productName}</div>
+            <div class="product-unit-text">{productSoldBy}</div>
+            <div class="pdp-properties">
+                <template for:each={propertyFlags} for:item="flag">
+                    <span key={flag.id} class="pdp-property">
+                        {flag.value}
+                    </span>
+                </template>
+            </div>
+        </div>
+
+        <div class="pdp-body">
+            <div class="section">
+                <div lwc:if={isPriceAvailable}>
+                    <div class="pdp-price-area" lwc:if={dataReady}>
+                        <div class="pdp-main-price__value">
+                            {mainPriceValue}
+                            <span class="pdp-main-price__unit">{mainPriceUnit}</span>
+                        </div>
+                        <div class="pdp-aux-price__value" lwc:if={displaySecondPrice}>
+                            {auxPriceValue}
+                            <span class="pdp-aux-price__unit">{auxPriceUnit}</span>
+                        </div>
+                    </div>
+                    <template lwc:if={dataReady}>
+                        <template for:each={priceConditionLines} for:item="line">
+                            <div key={line.id} class="pdp-price-condition">{line.text}</div>
+                        </template>
+                    </template>
+                </div>
+                <div lwc:else>
+                    <div class="pdp-price-warning">
+                        <div class="pdp-price-warning-title">
+                            This product is not available for online purchase.
+                        </div>
+                        <div class="pdp-price-warning-message">
+                            Please contact your sales representative to place an order.
+                        </div>
+                        <div class="pdp-price-warning-ref">
+                            Ref. {priceWarningRef}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════════════════════════════════════════════
+                 QUANTITY — single consolidated block.
+                 Only Row 1 (inputs) varies by customer/product type.
+                 ═══════════════════════════════════════════════════════ -->
+            <template lwc:if={showQuantitySection}>
+                <div class="section section-quantity">
+                    <div class="pdp-surcharge-banner" lwc:if={showPalletSurchargeNotice}>
+                        <lightning-icon
+                            icon-name="utility:info"
+                            size="x-small"
+                            alternative-text="">
+                        </lightning-icon>
+                        <span>Quantities below a full pallet carry a <strong>{palletSurcharge}% partial pallet surcharge</strong>, added at checkout.</span>
+                    </div>
+
+                    <h2>Select quantity:</h2>
+
+                    <!-- F1: quantity inputs + calculator -->
+                    <div class="input-fields">
+
+                        <!-- Direct customer + tile: pallets + boxes -->
+                        <template lwc:if={isDirectTile}>
+                            <c-b2b-input-quantity
+                                class="pdp-input-quantity"
+                                label="Pallets"
+                                type="integer"
+                                digits="5"
+                                max-digits="8"
+                                negatives="false"
+                                step="1"
+                                value={selectedPallets}
+                                onchange={handleChangePallets}
+                                onerror={handlePalletsError}
+                            ></c-b2b-input-quantity>
+                            <c-b2b-input-quantity
+                                class="pdp-input-quantity"
+                                label="Boxes"
+                                type="integer"
+                                digits="5"
+                                max-digits="8"
+                                negatives="false"
+                                step="1"
+                                value={selectedBoxes}
+                                onchange={handleChangeBoxes}
+                                onerror={handleBoxesError}
+                            ></c-b2b-input-quantity>
+                        </template>
+
+                        <!-- Otherwise (non-tile, or filial ceramics): sales units -->
+                        <template lwc:else>
+                            <c-b2b-input-quantity
+                                class="pdp-input-quantity"
+                                label={salesUnitPlural}
+                                type="integer"
+                                digits="5"
+                                max-digits="8"
+                                negatives="false"
+                                step="1"
+                                value={selectedUnits}
+                                onchange={handleChangeUnits}
+                                onerror={handleUnitsError}
+                            ></c-b2b-input-quantity>
+                        </template>
+
+                        <!-- Surface calculator (tiles only) -->
+                        <button
+                            lwc:if={showCalculatorButton}
+                            class="pdp-calculator-trigger"
+                            type="button"
+                            title="Calculate boxes from surface"
+                            aria-label="Calculate boxes from surface"
+                            onclick={handleOpenCalculator}>
+                            <lightning-icon
+                                icon-name="utility:expand"
+                                size="small"
+                                alternative-text="">
+                            </lightning-icon>
+                        </button>
+                    </div>
+
+                    <!-- F2: shade (if enabled) + add to cart -->
+                    <div class="input-fields slds-var-m-top_x-small">
+                        <div class="pdp-shade-wrapper" lwc:if={showShade}>
+                            <span class="pdp-shade-label">Shade</span>
+                            <input type="text" class="pdp-shade-field" maxlength="12" value={selectedShade} onchange={handleChangeShade}>
+                        </div>
+                        <button
+                            type="submit"
+                            title="Add to Cart"
+                            onclick={handleAddToCart}
+                            class="add-to-cart-button"
+                            disabled={isAddToCartDisabled}>
+                                <span>
+                                    <strong class="button-price-title">{itemTotalAmount}</strong>
+                                    <span class="button-separator">|</span>
+                                    <span class="button-title button-istile">Add to Cart</span>
+                                </span>
+                        </button>
+                    </div>
+
+                    <div id={errorId} class={errorClass}>{inputErrorMessage}</div>
+
+                    <!-- F3: quantity / price info block -->
+                    <div class="pdp-quantity-summary">
+                        <ul class="pdp-notes">
+                            <li class="pdp-note" lwc:if={isTile}>Total surface: <strong>{selectedSurfaceDisplay}</strong></li>
+                            <li class="pdp-note" lwc:if={showOrderWeight}>Estimated order weight: <strong>{itemTotalWeight}</strong></li>
+                            <li class="pdp-note" lwc:if={showCutWasteNote}>We recommend adding ~10% extra for cuts and waste.</li>
+                        </ul>
+                        <template lwc:if={showDynamicNotes}>
+                            <div class="pdp-notes-divider"></div>
+                            <ul class="pdp-notes">
+                                <li class="pdp-note" lwc:if={showPalletSurchargeWarning}>{palletSurchargeWarningText}</li>
+                                <li class="pdp-note" lwc:if={showStockShortfallWarning}>{stockShortfallMessage}</li>
+                            </ul>
+                        </template>
+                    </div>
+                    <p class="pdp-rep-note" lwc:if={showStockShortfallWarning}>Please contact your sales representative for more information.</p>
+
+                    <div class="section" lwc:if={stockReady}>
+                        <div class="pdp-stock-tag">
+                            <lightning-icon
+                                icon-name={stockIcon}
+                                alternative-text="Stock status"
+                                size="small"
+                                >
+                            </lightning-icon>
+                            <div class="pdp-stock-text">
+                                <template if:true={stockLabel}>
+                                    <span class="pdp-stock-label">{stockLabel}</span>
+                                </template>
+                                <span class={stockClass}>{stockText}</span>
+                                <template if:true={stockSubText}>
+                                    <span class="pdp-stock-sub">{stockSubText}</span>
+                                </template>
+                                <template if:true={hasShadeStockBreakdown}>
+                                    <a href="#" class="pdp-secondary-link pdp-stock-shade-link" onclick={openShadeStockModal}>
+                                        View stock by shade
+                                    </a>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+
+                    <c-lib-stock-by-shade
+                        show-modal={ui_showShadeStockModal}
+                        product={shadeProduct}
+                        shades={stockByLote}
+                        unit-system={unitSystem}
+                        locale={locale}
+                        onclose={closeShadeStockModal}
+                    ></c-lib-stock-by-shade>
+
+                </div>  <!-- quantity container -->
+            </template> <!-- showQuantitySection -->
+
+            <div class="pdp-specs section" lwc:if={hasSpecifications}>
+
+                <div class="specs-header">
+                    <h2>Product specs:</h2>
+                    <lightning-radio-group name="radioGroup"
+                        label="Radio Group"
+                        options={unitSystemOptions}
+                        value={unitSystem}
+                        onchange={handleUnitSystemChange}
+                        type="button"
+                        style="border-width: 0px; --dxp-s-button-font-size: 12px;--dxp-g-spacing-medium: 0:"
+                        variant="label-hidden"></lightning-radio-group>
+                </div>
+
+                <div class="pdp-specs-container">
+                    <ul class="pdp-spec-grid">
+                        <template for:each={specifications} for:item="itemSpec">
+                            <li class="spec-item" key={itemSpec.id}>
+                                <!-- <lightning-icon icon-name={itemSpec.icon} size="small" class="pdp-icon" alternative-text={itemSpec.label}></lightning-icon> -->
+                                <span class="spec-label">{itemSpec.label}</span>
+                                <span class="spec-value">{itemSpec.displayValue}</span>
+                            </li>
+                        </template>
+                    </ul>
+                    <div class="pdp-specs-footer">
+                        <a
+                            href={productFinderUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="pdp-secondary-link"
+                        >
+                            View full product sheet (photos & technical downloads)
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pdp-related section" lwc:if={hasRelated}>
+                <!--<h2>Related products</h2>-->
+
+                <c-b2b-pdp-related-products
+                    product-id={productId}
+                    pricebook-entry-id={pricebookEntryId}
+                    related-codes={relatedCodes}>
+                </c-b2b-pdp-related-products>
+            </div>
+
+        </div>
+    </div>
+
+    <c-ux-surface-calculator
+        open={ui_showCalculator}
+        product-info={calcProductInfo}
+        onclose={handleCalculatorClose}
+        onconfirm={handleCalculatorConfirm}>
+    </c-ux-surface-calculator>
+
+</template>

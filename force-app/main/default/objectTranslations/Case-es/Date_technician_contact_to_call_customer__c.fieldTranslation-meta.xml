@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Date technician contact to call customer --></label>
+    <name>Date_technician_contact_to_call_customer__c</name>
+</CustomFieldTranslation>

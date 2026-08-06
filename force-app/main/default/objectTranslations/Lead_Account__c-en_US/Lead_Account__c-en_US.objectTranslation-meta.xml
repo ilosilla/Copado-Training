@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Lead Account</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Lead Account</value>
+    </caseValues>
+    <layouts>
+        <layout>Lead Actor Layout</layout>
+        <sections>
+            <label><!-- Address --></label>
+            <section>Address</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You cannot edit a converted record --></errorMessage>
+        <name>Cannot_edit_converted_record</name>
+    </validationRules>
+</CustomObjectTranslation>

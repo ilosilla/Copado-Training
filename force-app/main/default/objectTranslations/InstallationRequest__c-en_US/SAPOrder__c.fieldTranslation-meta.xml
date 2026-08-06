@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Please enter the order number where this installation has been included --></help>
+    <label><!-- SAP Sales Order --></label>
+    <name>SAPOrder__c</name>
+</CustomFieldTranslation>

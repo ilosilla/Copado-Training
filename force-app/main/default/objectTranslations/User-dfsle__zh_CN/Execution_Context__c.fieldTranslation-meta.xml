@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Execution Context --></label>
+    <name>Execution_Context__c</name>
+    <picklistValues>
+        <masterLabel>AUSTRALIA</masterLabel>
+        <translation><!-- AUSTRALIA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BELGIUM</masterLabel>
+        <translation><!-- BELGIUM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CANADA</masterLabel>
+        <translation><!-- CANADA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CHILE</masterLabel>
+        <translation><!-- CHILE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DENMARK</masterLabel>
+        <translation><!-- DENMARK --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DEUTSCHLAND</masterLabel>
+        <translation><!-- DEUTSCHLAND --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FRANCE</masterLabel>
+        <translation><!-- FRANCE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ISRAEL</masterLabel>
+        <translation><!-- ISRAEL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ITALY</masterLabel>
+        <translation><!-- ITALY --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>JAPAN</masterLabel>
+        <translation><!-- JAPAN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>POLAND</masterLabel>
+        <translation><!-- POLAND --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PORCELANOSA EXPORT</masterLabel>
+        <translation><!-- PORCELANOSA EXPORT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REPUBLICA DOMINICANA</masterLabel>
+        <translation><!-- REPUBLICA DOMINICANA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SCANDINAVIA</masterLabel>
+        <translation><!-- SCANDINAVIA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SOUTH AFRICA</masterLabel>
+        <translation><!-- SOUTH AFRICA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SPAIN</masterLabel>
+        <translation><!-- SPAIN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SWITZERLAND</masterLabel>
+        <translation><!-- SWITZERLAND --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>UNITED KINGDOM</masterLabel>
+        <translation><!-- UNITED KINGDOM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>UNITED STATES</masterLabel>
+        <translation><!-- UNITED STATES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VOID</masterLabel>
+        <translation><!-- VOID --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

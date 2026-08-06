@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Classification__c</fullName>
+    <label>Account Classification</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Agence immobiliÃ¨re</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Agence immobiliÃ¨re</label>
+            </value>
+            <value>
+                <fullName>Agencia de Representación de Porcelanosa</fullName>
+                <default>false</default>
+                <label>Agencia de Representación de Porcelanosa</label>
+            </value>
+            <value>
+                <fullName>Architectural firm</fullName>
+                <default>false</default>
+                <label>Architectural Firm</label>
+            </value>
+            <value>
+                <fullName>Architectural Firms</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Architectural Firms</label>
+            </value>
+            <value>
+                <fullName>Brand/Chain/Franchise</fullName>
+                <default>false</default>
+                <label>Brand/Franchise</label>
+            </value>
+            <value>
+                <fullName>Brands and Franchises</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Brands and Franchises</label>
+            </value>
+            <value>
+                <fullName>Building company</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Building company</label>
+            </value>
+            <value>
+                <fullName>Construction company</fullName>
+                <default>false</default>
+                <label>Construction Company</label>
+            </value>
+            <value>
+                <fullName>Custom home builder</fullName>
+                <default>false</default>
+                <label>Custom Home Builder</label>
+            </value>
+            <value>
+                <fullName>Custom home designer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Custom home designer</label>
+            </value>
+            <value>
+                <fullName>Design-Build company</fullName>
+                <default>false</default>
+                <label>Design-Build Company</label>
+            </value>
+            <value>
+                <fullName>Developer</fullName>
+                <default>false</default>
+                <label>Developer/Investor</label>
+            </value>
+            <value>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Distributor</label>
+            </value>
+            <value>
+                <fullName>Distributor / 3rd party retailer/dealer</fullName>
+                <default>false</default>
+                <label>Distributor / Dealer</label>
+            </value>
+            <value>
+                <fullName>Engineering consultant</fullName>
+                <default>false</default>
+                <label>Engineering Consultant</label>
+            </value>
+            <value>
+                <fullName>Fabricator</fullName>
+                <default>false</default>
+                <label>Fabricator/Stonemason</label>
+            </value>
+            <value>
+                <fullName>Fabricators</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Fabricators</label>
+            </value>
+            <value>
+                <fullName>Facade consultant</fullName>
+                <default>false</default>
+                <label>Facade Consultant</label>
+            </value>
+            <value>
+                <fullName>Facade Contractor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Facade Contractor</label>
+            </value>
+            <value>
+                <fullName>Facade Installer</fullName>
+                <default>false</default>
+                <label>Facade Installer</label>
+            </value>
+            <value>
+                <fullName>Fit-out</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Fit-out</label>
+            </value>
+            <value>
+                <fullName>Fit-out company (commercial contract)</fullName>
+                <default>false</default>
+                <label>Fit-Out Company (Commercial Contract)</label>
+            </value>
+            <value>
+                <fullName>Franchisee</fullName>
+                <default>false</default>
+                <label>Franchisee</label>
+            </value>
+            <value>
+                <fullName>Furniture Company</fullName>
+                <default>false</default>
+                <label>Furniture Company</label>
+            </value>
+            <value>
+                <fullName>Interior Design</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Interior Design</label>
+            </value>
+            <value>
+                <fullName>Interior design firm</fullName>
+                <default>false</default>
+                <label>Interior Design Firm</label>
+            </value>
+            <value>
+                <fullName>Kitchen &amp; Bath store</fullName>
+                <default>false</default>
+                <label>Kitchen &amp; Bath Store (XTONE only)</label>
+            </value>
+            <value>
+                <fullName>Kitchen &amp; Bath Store XTONE</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kitchen &amp; Bath Store XTONE</label>
+            </value>
+            <value>
+                <fullName>Kitchen instalation company</fullName>
+                <default>false</default>
+                <label>Kitchen Installation Company</label>
+            </value>
+            <value>
+                <fullName>National House Builders</fullName>
+                <default>false</default>
+                <label>National House Builders</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Other construction services</fullName>
+                <default>false</default>
+                <label>Other construction services</label>
+            </value>
+            <value>
+                <fullName>Plumbing company</fullName>
+                <default>false</default>
+                <label>Plumbing Company</label>
+            </value>
+            <value>
+                <fullName>Pod manufacturer</fullName>
+                <default>false</default>
+                <label>Pod Manufacturer</label>
+            </value>
+            <value>
+                <fullName>Porcelanosa Associate</fullName>
+                <default>false</default>
+                <label>Porcelanosa Associate</label>
+            </value>
+            <value>
+                <fullName>Porcelanosa Branch</fullName>
+                <default>false</default>
+                <label>Porcelanosa Branch</label>
+            </value>
+            <value>
+                <fullName>Porcelanosa Employee</fullName>
+                <default>false</default>
+                <label>Porcelanosa Employee</label>
+            </value>
+            <value>
+                <fullName>Private customer</fullName>
+                <default>false</default>
+                <label>Private Customer</label>
+            </value>
+            <value>
+                <fullName>Procurement company / Quantity surveyor</fullName>
+                <default>false</default>
+                <label>Procurement Company / Quantity Surveyor</label>
+            </value>
+            <value>
+                <fullName>Public administration</fullName>
+                <default>false</default>
+                <label>Public Administration</label>
+            </value>
+            <value>
+                <fullName>Quality Surveyor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Quality Surveyor</label>
+            </value>
+            <value>
+                <fullName>Real State Agency</fullName>
+                <default>false</default>
+                <label>Real State Agency</label>
+            </value>
+            <value>
+                <fullName>SCI (Société Civile Immobilière FR)</fullName>
+                <default>false</default>
+                <label>SCI (Société Civile Immobilière FR)</label>
+            </value>
+            <value>
+                <fullName>Small Trade</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Small Trade</label>
+            </value>
+            <value>
+                <fullName>Stonemason</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Stonemason</label>
+            </value>
+            <value>
+                <fullName>Tile instalation company</fullName>
+                <default>false</default>
+                <label>Tile Installation Company</label>
+            </value>
+            <value>
+                <fullName>Unclassified</fullName>
+                <default>false</default>
+                <label>Unclassified</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

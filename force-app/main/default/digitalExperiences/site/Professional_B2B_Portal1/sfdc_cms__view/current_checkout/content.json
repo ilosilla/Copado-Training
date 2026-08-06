@@ -1,0 +1,158 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Checkout",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "0rem",
+            "dxpStyle" : {
+              "margin" : {
+                "bottom" : "0%",
+                "left" : "0%",
+                "right" : "0%",
+                "top" : "0%"
+              },
+              "padding" : {
+                "bottom" : "",
+                "left" : "30px",
+                "right" : "15px",
+                "top" : ""
+              }
+            },
+            "layoutDirectionDesktop" : "column",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "0rem",
+            "sectionConfig" : "{\"UUID\":\"3c5c75fb-596c-495f-bdfe-588d0a7e13be\",\"columns\":[{\"UUID\":\"1517723d-bdfa-45ce-837d-cc9ce2fe96c2\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "1px",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "dxpStyle" : { }
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "3rem",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "",
+                        "left" : "",
+                        "right" : "",
+                        "top" : ""
+                      },
+                      "padding" : {
+                        "bottom" : "1.5rem",
+                        "left" : "1.5rem",
+                        "right" : "1.5rem",
+                        "top" : "1.5rem"
+                      }
+                    },
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"cbfd8fb7-2c52-4a4a-8942-cd1350c66f19\",\"columns\":[{\"UUID\":\"f142d688-aea0-428e-8eb7-131dd832d1c8\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"8\",\"seedComponents\":[]},{\"UUID\":\"e75ba731-82ba-4daf-8e67-a4f044cce3c3\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"4\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "checkoutDetails" : "{!Checkout.Details}",
+                        "dxpStyle" : { }
+                      },
+                      "definition" : "c:b2bCheckoutContainer",
+                      "id" : "fb427718-e0ab-4948-9663-a28f84b3bbc1",
+                      "type" : "component"
+                    } ],
+                    "id" : "f142d688-aea0-428e-8eb7-131dd832d1c8",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "allowPlaceOrder" : true,
+                        "checkoutDetails" : "{!Checkout.Details}",
+                        "dxpStyle" : { },
+                        "showDetail" : true,
+                        "showSummary" : true
+                      },
+                      "definition" : "c:b2b_UsCartSummary",
+                      "id" : "4ec5f7a9-bf10-4ca9-84ca-716d0059d102",
+                      "type" : "component"
+                    } ],
+                    "id" : "e75ba731-82ba-4daf-8e67-a4f044cce3c3",
+                    "name" : "col2",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "cbfd8fb7-2c52-4a4a-8942-cd1350c66f19",
+                  "type" : "component"
+                } ],
+                "id" : "b91bd57e-0b4b-441e-9869-e9a070729833",
+                "name" : "content",
+                "title" : "Content",
+                "type" : "region"
+              } ],
+              "customCssClasses" : "checkout-main-column",
+              "definition" : "commerce_builder:checkoutLayoutOnePageDual",
+              "id" : "d2cf6648-c6ba-48be-bc3e-a6247c92280c",
+              "type" : "component",
+              "dataProviders" : [ {
+                "definition" : "sfdc_cms__commerceCartDataProvider",
+                "sfdcExpressionKey" : "Cart",
+                "attributes" : { }
+              } ]
+            } ],
+            "id" : "1517723d-bdfa-45ce-837d-cc9ce2fe96c2",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "customCssClasses" : "site-full-width",
+          "definition" : "community_layout:section",
+          "id" : "3c5c75fb-596c-495f-bdfe-588d0a7e13be",
+          "type" : "component"
+        } ],
+        "id" : "2524e54e-056a-47ef-b7be-893778f7a168",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "dxpStyle" : { },
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "4427096c-7b26-41c3-b536-99a84ad82f85",
+          "type" : "component"
+        } ],
+        "id" : "110d0fa6-9934-4954-b2bd-13a7c21777af",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "92d91508-1957-4a05-a0c7-17f9620ec98d",
+      "type" : "component"
+    },
+    "dataProviders" : [ {
+      "definition" : "sfdc_cms__commerceCheckoutDataProvider",
+      "sfdcExpressionKey" : "Checkout",
+      "attributes" : { }
+    } ],
+    "themeLayoutType" : "Checkout",
+    "viewType" : "current-checkout"
+  },
+  "urlName" : "checkout"
+}

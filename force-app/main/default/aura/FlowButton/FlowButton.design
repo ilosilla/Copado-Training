@@ -1,0 +1,4 @@
+<design:component label="Flow Button">
+    <design:attribute name="label" label="Button Label"/>
+    <design:attribute name="action" label="Flow Action"/>
+</design:component>

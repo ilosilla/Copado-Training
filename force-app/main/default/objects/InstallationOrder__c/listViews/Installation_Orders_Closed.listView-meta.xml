@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Installation_Orders_Closed</fullName>
+    <columns>NAME</columns>
+    <columns>State__c</columns>
+    <columns>Installation_Request__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>State__c</field>
+        <operation>equals</operation>
+        <value>Finished,Customer Satisfied,Customer Unsatisfied</value>
+    </filters>
+    <label>Installation Orders - Closed</label>
+</ListView>

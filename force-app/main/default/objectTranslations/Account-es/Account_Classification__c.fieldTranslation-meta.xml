@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Clasificación de Cuenta</label>
+    <name>Account_Classification__c</name>
+    <picklistValues>
+        <masterLabel>Agencia de Representación de Porcelanosa</masterLabel>
+        <translation><!-- Agencia de Representación de Porcelanosa --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Architectural Firm</masterLabel>
+        <translation>Firma de Arquitectura</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Brand/Franchise</masterLabel>
+        <translation>Franquicia</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Construction Company</masterLabel>
+        <translation>Constructor</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Custom Home Builder</masterLabel>
+        <translation>Constructor Residencial</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Design-Build Company</masterLabel>
+        <translation><!-- Design-Build Company --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Developer/Investor</masterLabel>
+        <translation>Promotor</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Distributor / Dealer</masterLabel>
+        <translation>Distribuidor</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Engineering Consultant</masterLabel>
+        <translation>Consultor Ingeniero</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fabricator/Stonemason</masterLabel>
+        <translation>Transformador</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Facade Consultant</masterLabel>
+        <translation>Consultor de Fachadas</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Facade Installer</masterLabel>
+        <translation><!-- Facade Installer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fit-Out Company (Commercial Contract)</masterLabel>
+        <translation>Empresa de Instalación</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Franchisee</masterLabel>
+        <translation>Franquiciado</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Furniture Company</masterLabel>
+        <translation><!-- Furniture Company --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Interior Design Firm</masterLabel>
+        <translation>Firma de diseño de interiores</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kitchen &amp; Bath Store (XTONE only)</masterLabel>
+        <translation>Tienda de Cocina y Baño</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kitchen Installation Company</masterLabel>
+        <translation>Compañía instaladora de cocinas</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>National House Builders</masterLabel>
+        <translation><!-- National House Builders --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other construction services</masterLabel>
+        <translation><!-- Other construction services --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Plumbing Company</masterLabel>
+        <translation>Compañía de fontanería</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pod Manufacturer</masterLabel>
+        <translation>Fabricante de unidades pre-fabricadas</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Porcelanosa Associate</masterLabel>
+        <translation>Asociados</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Porcelanosa Branch</masterLabel>
+        <translation><!-- Porcelanosa Branch --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Porcelanosa Employee</masterLabel>
+        <translation><!-- Porcelanosa Employee --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Private Customer</masterLabel>
+        <translation>Cliente particular</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Procurement Company / Quantity Surveyor</masterLabel>
+        <translation>Empresa de Producción / Aparejador</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Public Administration</masterLabel>
+        <translation>Administración pública</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Real State Agency</masterLabel>
+        <translation>Agencia Immobiliaria</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SCI (Société Civile Immobilière FR)</masterLabel>
+        <translation><!-- SCI (Société Civile Immobilière FR) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tile Installation Company</masterLabel>
+        <translation>Empresa instaladora de azulejos</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unclassified</masterLabel>
+        <translation><!-- Unclassified --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

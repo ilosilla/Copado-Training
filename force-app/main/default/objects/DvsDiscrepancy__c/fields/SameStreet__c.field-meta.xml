@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SameStreet__c</fullName>
+    <description>Same street found</description>
+    <formula>AND( ISBLANK(DvsStreet__c) = FALSE,  UPPER(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SalesforceStreet__c, &apos;.&apos;,&apos;&apos;), &apos;ê&apos;,&apos;e&apos;), &apos;û&apos;,&apos;u&apos;), &apos;é&apos;,&apos;e&apos;)) =  DvsStreet__c )</formula>
+    <label>Same street</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

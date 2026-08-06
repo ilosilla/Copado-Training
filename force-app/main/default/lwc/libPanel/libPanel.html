@@ -1,0 +1,27 @@
+<!-- sldsValidatorIgnore -->
+<template>    
+    <template if:true={showPanel}>        
+        <div class="overlay" lwc:if={_modal}></div>
+        <div class={containerClass} style={containerStyle}>
+            <div class={panelClass}>                
+                <slot name="header">                    
+                    <div class="slds-card__header slds-grid" lwc:if={title}>
+                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                            <div class="slds-media__figure" lwc:if={icon}>
+                                <lightning-icon icon-name={icon}></lightning-icon>
+                            </div>
+                            <div class="slds-media__body">
+                                <h2 class="slds-card__header-title">
+                                    <span>{title}</span>
+                                </h2>
+                            </div>
+                        </header>
+                    </div>
+                </slot>
+                <slot name="body" class="body_slot">
+                    SIDEBAR INVOICE IIII
+                </slot>
+            </div>
+        </div>
+    </template>
+</template>

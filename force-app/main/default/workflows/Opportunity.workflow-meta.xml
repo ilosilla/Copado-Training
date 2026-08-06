@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Alerta_a_comerciales_cuando_una_oportunidad_est_a_punto_de_cerrar</fullName>
+        <description>Cose Date Reminder Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>salesforce@porcelanosagrupo.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Opportunities/Opp_Close_Date_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>Ecommerce_Sample_Opp</fullName>
+        <description>Ecommerce Sample Opp</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>salesforce@porcelanosagrupo.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Opportunities/Ecommerce_Samples_Opps</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Switzerland_Opportunity</fullName>
+        <description>New Switzerland Opportunity</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>hector.muniesa@porcelanosagrupo.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>salesforce@porcelanosagrupo.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Opportunities/newCHOpportunity</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunities_Out_of_country_alert</fullName>
+        <description>Opportunities Out of country alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>marta.monfort@porcelanosagrupo.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>salesforce@porcelanosagrupo.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Opportunities/Out_of_Country_Template</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Actualizacion_Contacto</fullName>
+        <field>Contact__c</field>
+        <literalValue>No contact</literalValue>
+        <name>Actualización Contacto</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cambio_de_Etapa_a_Clasificacion_NS</fullName>
+        <field>StageName</field>
+        <literalValue>Qualification</literalValue>
+        <name>Cambio de Etapa a Clasificacion NS</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cambio_de_Etapa_a_Clasificacion_S</fullName>
+        <field>StageName</field>
+        <literalValue>Qualification</literalValue>
+        <name>Cambio de Etapa a Clasificacion S</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cambio_de_Etapa_a_Closed_Lost</fullName>
+        <field>StageName</field>
+        <literalValue>Closed Lost</literalValue>
+        <name>Cambio de Etapa a Closed Lost</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cambio_de_Etapa_a_Closed_Won</fullName>
+        <field>StageName</field>
+        <literalValue>Closed Won</literalValue>
+        <name>Cambio de Etapa a Closed Won</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cambio_de_Etapa_a_Cualificacion</fullName>
+        <field>StageName</field>
+        <literalValue>Qualification</literalValue>
+        <name>Cambio de Etapa a Cualificacion</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cambio_de_Etapa_a_Pending</fullName>
+        <field>StageName</field>
+        <literalValue>Pending</literalValue>
+        <name>Cambio de Etapa a Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cambio_de_Etapa_a_Pending_Date</fullName>
+        <field>StageName</field>
+        <literalValue>Pending</literalValue>
+        <name>Cambio de Etapa a Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cambio_de_Etapa_a_Pending_Date2</fullName>
+        <field>StageName</field>
+        <literalValue>Pending</literalValue>
+        <name>Cambio de Etapa a Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cambio_de_Fecha_de_cierre</fullName>
+        <field>CloseDate</field>
+        <formula>TODAY() + 15</formula>
+        <name>Cambio de Fecha de cierre</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cambio_de_Valor_State</fullName>
+        <field>Satisfaction__c</field>
+        <literalValue>Not Defined</literalValue>
+        <name>Cambio de Valor State</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Currency_Update</fullName>
+        <field>Currency__c</field>
+        <literalValue>EUR</literalValue>
+        <name>Currency Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PM_Delete</fullName>
+        <field>ProjectType__c</field>
+        <formula>&quot;PMDELETE&quot;</formula>
+        <name>PM Delete</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PM_Locked</fullName>
+        <field>ProjectType__c</field>
+        <formula>&quot;PMLOCKED&quot;</formula>
+        <name>PM Locked</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PM_Unlock</fullName>
+        <field>ProjectType__c</field>
+        <name>PM Unlock</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>Close_Date_Reminder</fullName>
+        <apiVersion>48.0</apiVersion>
+        <endpointUrl>https://porcelanosa.lightning.force.com</endpointUrl>
+        <fields>CloseDate</fields>
+        <fields>Id</fields>
+        <fields>OwnerId</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>bsales@porcelanosa-usa.com</integrationUser>
+        <name>Close Date Reminder</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Alerta Asociados</fullName>
+        <active>true</active>
+        <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Postcode__c</field>
+            <operation>equals</operation>
+            <value>6230,6310,6340,6380,6390,6440,6500,7130,7300,7340,7370,11560,13460,26000,26100,26110,26120,26130,26140,26150</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Postcode__c</field>
+            <operation>equals</operation>
+            <value>26160,26170,26190,26200,26210,26220,26230,26240,26250,26260,26270,26290,26300,26310,26320,26330,26340,26350,26380,26390,26400,26410,26420,26450,26460,26470,26500,26510,26530,26540,26560,26570,26600,26620,26700,26730,26740,26750,26760,26770,26780,26790</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Postcode__c</field>
+            <operation>equals</operation>
+            <value>26800,42017,42140,42160,42170,42190,42210,42220,42222,42240,42246,42290,42300,42310,42380,42430,42440,42570,42600,42670,42920,51700,52500,54150,54280,54530,54700,54800,54980,57050,57070,57120,57130,57140,57155,57160,57220,57245,57255,57280,57365,57420</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Postcode__c</field>
+            <operation>equals</operation>
+            <value>57525,57530,57580,57590,57640,57645,57680,57685,57860,57865,57950,66046,66110,66140,66150,66170,66180,66200,66210,66220,66230,66250,66260,66290,66300,66320,66340,66400,66420,66440,66460,66480,66500,66650,66690,66740,66750,66760,66800,66820,73600</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

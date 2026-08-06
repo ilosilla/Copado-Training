@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Account Layout</layout>
+        <sections>
+            <label><!-- Account Summary --></label>
+            <section>Account Summary</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Layout Account Porcelanosa</layout>
+        <sections>
+            <label><!-- Campos --></label>
+            <section>Campos</section>
+        </sections>
+        <sections>
+            <label><!-- Vínculos personalizados --></label>
+            <section>Vínculos personalizados</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Layout Bussines Fabricator</layout>
+        <sections>
+            <label><!-- Address --></label>
+            <section>Address</section>
+        </sections>
+        <sections>
+            <label><!-- Admin Data --></label>
+            <section>Admin Data</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fabricator Information --></label>
+            <section>Fabricator Information</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Main Information --></label>
+            <section>Main Information</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Layout Bussines Retailer</layout>
+        <sections>
+            <label><!-- Address --></label>
+            <section>Address</section>
+        </sections>
+        <sections>
+            <label><!-- Admin Data --></label>
+            <section>Admin Data</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Distributor Information --></label>
+            <section>Distributor Information</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Main Information --></label>
+            <section>Main Information</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Layout Bussines account</layout>
+        <sections>
+            <label><!-- Address --></label>
+            <section>Address</section>
+        </sections>
+        <sections>
+            <label><!-- Admin Data --></label>
+            <section>Admin Data</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Main Information --></label>
+            <section>Main Information</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Layout personAccount Admin</layout>
+        <layoutType>PersonAccount</layoutType>
+        <sections>
+            <label><!-- Admin Data --></label>
+            <section>Admin Data</section>
+        </sections>
+        <sections>
+            <label><!-- Campos --></label>
+            <section>Campos</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Other Information --></label>
+            <section>Other Information</section>
+        </sections>
+        <sections>
+            <label><!-- Personal Address --></label>
+            <section>Personal Address</section>
+        </sections>
+        <sections>
+            <label><!-- Personal Information --></label>
+            <section>Personal Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Layout personAccount Porcelanosa</layout>
+        <layoutType>PersonAccount</layoutType>
+        <sections>
+            <label><!-- Admin Data --></label>
+            <section>Admin Data</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Other Information --></label>
+            <section>Other Information</section>
+        </sections>
+        <sections>
+            <label><!-- Personal Address --></label>
+            <section>Personal Address</section>
+        </sections>
+        <sections>
+            <label><!-- Personal Information --></label>
+            <section>Personal Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>LayoutForTesting-Edition Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Person Account Layout</layout>
+        <layoutType>PersonAccount</layoutType>
+        <sections>
+            <label><!-- Account Summary --></label>
+            <section>Account Summary</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>USA</layout>
+        <sections>
+            <label><!-- Account Summary --></label>
+            <section>Account Summary</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Child Account --></label>
+        <name>Child_Account</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Convert to Business Account --></label>
+        <name>Convert_to_Business_Account</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Convert to Person Account --></label>
+        <name>Convert_to_Person_Account</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Data Validation --></label>
+        <name>Search_DVS</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Send Review SMS --></label>
+        <name>SendReviewSMS</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Send to Finance Dpt --></label>
+        <name>Send_to_SAP</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- The Sales Relationship --></label>
+        <name>The_Sales_Relationship</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Quick Opportunity --></label>
+        <name>quick_opp_retail</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Quick Opportunity --></label>
+        <name>quick_opp_trade</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Call with RingCentral --></label>
+        <name>rcsfl__Call_with_RingCentral</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- SMS with RingCentral --></label>
+        <name>rcsfl__SMS_with_RingCentral</name>
+    </quickActions>
+    <recordTypes>
+        <description><!-- Form used for fabricators, stonemasons and craftsmen involved in product manufacturing --></description>
+        <label><!-- Fabricator --></label>
+        <name>Fabricator</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Form used for dealers and distribuitors of Porcelanosa products (B2B) --></description>
+        <label><!-- Third party Retailer / Reseller --></label>
+        <name>Third_party_Retailer_Reseller</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Form used for trade specifications and other professionals involved in projects (B2B) --></description>
+        <label><!-- Trade and Specificators --></label>
+        <name>Trade_and_Specificators</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- USA Business Account --></label>
+        <name>USAbusinessaccount</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Address in Account is required (Country, postcode and city) --></errorMessage>
+        <name>ADDRESS_ACCOUNT</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Address in Account is required (Country, postcode and city) --></errorMessage>
+        <name>ADDRESS_PERSON_ACCOUNT</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only an admin can change the name field --></errorMessage>
+        <name>Admin_change_name</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Billing Country and VAT Number are required if record is not Person Account --></errorMessage>
+        <name>BillingCountry_VATNumber_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invalid CIF --></errorMessage>
+        <name>CIF_GB</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Country is a required field --></errorMessage>
+        <name>Country_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- El campo Country__c no puede estar vacío para recordType Customer --></errorMessage>
+        <name>Country_not_empty_for_RT_Neoris</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must select in at least one Fabricator --></errorMessage>
+        <name>Fabricator_required_for_reseller</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Type of Brand/Franchise must be filled --></errorMessage>
+        <name>Franchise_type_required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only an administrator can select this option. Please, contact with your system administrator. --></errorMessage>
+        <name>National_house_builder_only_admin</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- El campo &apos;PersonEmail&apos; no puede quedar vacío --></errorMessage>
+        <name>Obligatorio_correo</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please write a valid format for the Phone field --></errorMessage>
+        <name>Phone_Restrictions_France</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please write a valid format for the Phone field --></errorMessage>
+        <name>Phone_Restrictions_UK</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invalid CA post code for Account --></errorMessage>
+        <name>Postal_code_billing_CA</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invalid Swotzerland post code for Account --></errorMessage>
+        <name>Postal_code_billing_CH</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invalid FR post code for Account --></errorMessage>
+        <name>Postal_code_billing_FR</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invalid GB post code for Trade Account --></errorMessage>
+        <name>Postal_code_billing_GB</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invalid US post code for Account --></errorMessage>
+        <name>Postal_code_billing_US</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invalid CA personAccount post code --></errorMessage>
+        <name>Postal_code_personal_CA</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invalid Switzerland personAccount post code --></errorMessage>
+        <name>Postal_code_personal_CH</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invalid FR personAccount post code --></errorMessage>
+        <name>Postal_code_personal_FR</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invalid GB postal code for a personAccount --></errorMessage>
+        <name>Postal_code_personal_GB</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invalid US personAccount post code --></errorMessage>
+        <name>Postal_code_personal_US</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invalid post code --></errorMessage>
+        <name>Postal_code_shipping_GB</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Faltan campos requeridos --></errorMessage>
+        <name>Prueba_campos_requeridos</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Salutation and FirstName fields should be required for Person Account. --></errorMessage>
+        <name>Salutation_FirstName_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Subclassification is required --></errorMessage>
+        <name>Subclassification_if_Brand_Franchise</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- State required for US and Canada accounts --></errorMessage>
+        <name>US_AND_CA_COUNTY_REQUIRED</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- State required for US and Canada accounts --></errorMessage>
+        <name>US_AND_CA_COUNTY_REQUIRED_PERSON</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Sólo se permite una autorización por Cliente --></errorMessage>
+        <name>Unica_autorizacion</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- VAT Number needed --></errorMessage>
+        <name>VAT_Number_Mandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invalid VAT number --></errorMessage>
+        <name>Vat_number_FR</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invalid VAT Number. Correct format: 123456789 --></errorMessage>
+        <name>Vat_number_GB</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- No se puede introducir un campo erróneo. --></errorMessage>
+        <name>country_character</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Código de país incorrecto --></errorMessage>
+        <name>pais_correcto</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Deca4B6M000001ZSkAUAW --></label>
+        <name>Deca4B6M000001ZSkAUAW</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Deca4BVg0000005KvlMAE --></label>
+        <name>Deca4BVg0000005KvlMAE</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Deca4BVg0000007gaPMAQ --></label>
+        <name>Deca4BVg0000007gaPMAQ</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Related_Leads --></label>
+        <name>Related_Leads</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SendWithDocuSign --></label>
+        <name>SendWithDocuSign</name>
+    </webLinks>
+    <webLinks>
+        <label>Marketing Cloud-Abonnement erneuern</label>
+        <name>et4ae5__ExactTarget_Resubscribe</name>
+    </webLinks>
+    <webLinks>
+        <label>Marketing Cloud-Abonnement abbestellen</label>
+        <name>et4ae5__ExactTarget_Unsubscribe</name>
+    </webLinks>
+    <webLinks>
+        <label>Marketing Cloud-E-Mail senden</label>
+        <name>et4ae5__Send_ExactTarget_Email</name>
+    </webLinks>
+    <webLinks>
+        <label>Marketing Cloud-Analysen anzeigen</label>
+        <name>et4ae5__View_ExactTarget_Analytics</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- prueba_cita_en_tienda_cuenta --></label>
+        <name>prueba_cita_en_tienda_cuenta</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Smart_Dialer --></label>
+        <name>talkdesk__Smart_Dialer</name>
+    </webLinks>
+    <workflowTasks>
+        <description><!-- NUEVO CLIENTE DE CITA EN TIENDA CREADO --></description>
+        <name>Nueva_Cliente_Web_Creado</name>
+        <subject><!-- Nueva Cliente Web Creado --></subject>
+    </workflowTasks>
+</CustomObjectTranslation>

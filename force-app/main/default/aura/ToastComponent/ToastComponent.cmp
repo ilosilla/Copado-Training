@@ -1,0 +1,19 @@
+<aura:component >
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <div class="slds-theme--info slds-notify--toast slds-notify slds-notify--toast forceToastMessage" role="alert" data-aura-rendered-by="10204:0" data-aura-class="forceToastMessage">
+        <div class="toastContent slds-notify__content" data-aura-rendered-by="10206:0">
+            <div class="slds-align-middle slds-hyphenate" data-aura-rendered-by="10207:0">
+                <div class="toastTitle slds-text-heading--small" data-aura-rendered-by="10209:0">
+                    Success!
+                </div>
+                <span class="toastMessage forceActionsText" data-aura-rendered-by="10215:0" data-aura-class="forceActionsText">
+                    The record has been updated successfully. 5
+                </span>
+            </div>
+        </div>
+        <lightning:buttonIcon alternativeText="Close" iconName="utility:close" variant="bare" size="large" class="slds-button toastClose slds-notify__close slds-button--icon-inverse slds-button_icon-bare"/>
+    </div>
+    
+</aura:component>

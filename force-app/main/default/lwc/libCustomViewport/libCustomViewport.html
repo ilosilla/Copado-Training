@@ -1,0 +1,70 @@
+<!-- sldsValidatorIgnore -->
+<template>    
+    <template lwc:if={_showViewport}>
+        <div class="windowViewMode-maximized active lafPageHost">
+            <section tabindex="-1" aria-modal="true" class="slds-modal slds-fade-in-open">                
+
+                <lightning-spinner alternative-text="Loading..." variant="brand" if:true={showSpinner}>
+                </lightning-spinner>        
+                
+                <div class="viewport-container slds-modal__container slds-var-p-around_medium">   
+                    
+                    <div class="content-container slds-theme_default">
+                    
+                        <slot name="left-bar" class="side-bar"></slot>
+
+                        <div class="content-main">
+
+                            <slot name="header">
+                                <template if:true={_showHeader}>
+                                    <header class="slds-modal__header">
+                                        <h2 class="slds-text-heading--medium slds-hyphenate">
+                                            <span>
+                                                <h2 class="slds-text-heading_medium slds-hyphenate">{headerText}</h2>
+                                            </span>    
+                                        </h2>
+                                    </header>
+                                </template>
+                            </slot>
+                            <div class="slds-modal__content content-body" >
+                                <slot name="body" class="body_slot slds-var-p-around_medium">
+                                    <p>Body goes here..1</p>
+                                </slot>
+                            </div>
+                    
+                    <!-- footer class="slds-modal__footer slds-modal__footer_directional" style="width: 100%;" -->
+                    <footer class="slds-modal__footer">
+                        <lightning-layout horizontal-align="spread">
+                            <lightning-layout-item>
+                                <slot name="custom-actions">
+                                </slot>
+                            </lightning-layout-item>                            
+                            <lightning-layout-item>
+                                <slot name="footer">
+                                    <template if:true={showNegative}>
+                                        <lightning-button onclick={handleNegative} label={negativeButtonLabel}></lightning-button>
+                                    </template>
+                                    <template if:true={showPositive}>
+                                        <lightning-button variant="brand" onclick={handlePositive} label={positiveButtonLabel}></lightning-button>
+                                    </template>
+                                </slot>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </footer>
+                    </div>    
+                    
+                    <slot name="right-bar" class="slds-theme_default" style="side-bar"></slot>
+                    </div>
+                </div>
+
+                <template lwc:if={_showDocked}>
+                    <div class="backdrop"></div>
+                    <div class="slds-var-m-around_medium slds-theme_default right-docked-panel" style="">
+                        <slot name="docked-panel"></slot> 
+                    </div>
+                </template>
+            </section>    
+            <div class="slds-backdrop slds-backdrop_open" lwc:if={isModalorDocked}></div>
+        </div>
+    </template>
+</template>

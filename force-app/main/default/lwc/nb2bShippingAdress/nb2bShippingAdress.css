@@ -1,0 +1,11 @@
+:host .container {
+    display: block;
+}
+​
+:host .slds-map_container{max-height: 200px!important;}
+​
+.iconBlue {
+    --lwc-colorTextIconDefault: #116baf;
+}
+​
+.blue{color:#116baf;}

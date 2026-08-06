@@ -1,0 +1,12 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                 access="global" >
+	<div style="background: beige;">
+    <p style="text-align: center;">
+        {!$Label.c.NB2B_Stock_Program_Alert}
+        </p>
+            <p style="text-align: center;">
+        {!$Label.c.NB2B_StockProgram_banner2}
+        </p>
+         
+    </div>
+</aura:component>

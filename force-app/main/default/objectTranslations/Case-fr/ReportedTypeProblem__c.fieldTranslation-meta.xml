@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Problème signalé par type de produit</label>
+    <name>ReportedTypeProblem__c</name>
+    <picklistValues>
+        <masterLabel>000-ALL-BROKEN</masterLabel>
+        <translation>000-TOUS CASSÉS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>000-ALL-INCOMPLETE</masterLabel>
+        <translation>000-TOUS INCOMPLETS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>000-ALL-OTHERS</masterLabel>
+        <translation>000-TOUS AUTRES</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>000-ALL-WRONG-PRODUCT</masterLabel>
+        <translation>000-TOUS PRODUITS INCORRECTS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>001-ALL-BROKEN</masterLabel>
+        <translation><!-- 001-ALL-BROKEN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>001-ALL-DETERIORATED</masterLabel>
+        <translation><!-- 001-ALL-DETERIORATED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>001-ALL-INCOMPLETE</masterLabel>
+        <translation><!-- 001-ALL-INCOMPLETE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>001-ALL-NOT-WORKING</masterLabel>
+        <translation><!-- 001-ALL-NOT-WORKING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>001-ALL-OTHERS</masterLabel>
+        <translation><!-- 001-ALL-OTHERS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>001-ALL-WRONG-PRODUCT</masterLabel>
+        <translation><!-- 001-ALL-WRONG-PRODUCT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>001-BAS-DETERORIATED</masterLabel>
+        <translation><!-- 001-BAS-DETERORIATED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>001-BAS-NOT-WORKING</masterLabel>
+        <translation><!-- 001-BAS-NOT-WORKING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>001-TIL-DETERORIATED</masterLabel>
+        <translation><!-- 001-TIL-DETERORIATED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>001-TIL-NOT-WORKING</masterLabel>
+        <translation><!-- 001-TIL-NOT-WORKING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>001-TUB-DETERORIATED</masterLabel>
+        <translation><!-- 001-TUB-DETERORIATED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>001-TUB-NOT-WORKING</masterLabel>
+        <translation><!-- 001-TUB-NOT-WORKING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>002-ALL-BROKEN</masterLabel>
+        <translation>002-TOUS CASSÉS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>002-ALL-INCOMPLETE</masterLabel>
+        <translation>002-TOUS INCOMPLETS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>002-ALL-OTHERS</masterLabel>
+        <translation>002-TOUS AUTRES</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>002-ALL-WRONG-PRODUCT</masterLabel>
+        <translation>002-TOUS PRODUITS INCORRECTS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>002-TIL-DETERIORATED</masterLabel>
+        <translation>002-TIL-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>002-TIL-NOT-WORKING</masterLabel>
+        <translation>002-TIL-NON FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-ACC-DETERIORATED</masterLabel>
+        <translation>006-ACC-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-ALL-BROKEN</masterLabel>
+        <translation>006-TOUS CASSÉS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-ALL-INCOMPLETE</masterLabel>
+        <translation>006-TOUS INCOMPLETS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-ALL-OTHERS</masterLabel>
+        <translation>006-TOUS AUTRES</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-ALL-WRONG-PRODUCT</masterLabel>
+        <translation>006-TOUS PRODUITS INCORRECTS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-BAS-DETERIORATED</masterLabel>
+        <translation>006-BAS-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-BAS-NOT-WORKING</masterLabel>
+        <translation>006-BAS-NON FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-BRW-DETERIORATED</masterLabel>
+        <translation>006-BRW-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-BRW-NOT-WORKING</masterLabel>
+        <translation>006-BRW-NON FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-FUR-DETERIORATED</masterLabel>
+        <translation>006-FUR-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-FUR-NOT-WORKING</masterLabel>
+        <translation>006-FUR-NON FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-INS-DETERIORATED</masterLabel>
+        <translation>006-INS-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-MIR-DETERIORATED</masterLabel>
+        <translation>006-MIR-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-MIR-NOT-WORKING</masterLabel>
+        <translation>006-MIR-NON FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-SAW-DETERIORATED</masterLabel>
+        <translation>006-SAW-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-SAW-NOT-WORKING</masterLabel>
+        <translation>006-SAW-NON-FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-SHC-DETERIORATED</masterLabel>
+        <translation>006-SHC-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-SHC-NOT-WORKING</masterLabel>
+        <translation>006-SHC-NON-FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-SHH-DETERIORATED</masterLabel>
+        <translation>006-SHH-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-SHH-NOT-WORKING</masterLabel>
+        <translation>006-SHH-NON-FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-SHT-DETERIORATED</masterLabel>
+        <translation>006-SHT-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-SHT-NOT-WORKING</masterLabel>
+        <translation>006-SHT-NON-FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-SHV-DETERIORATED</masterLabel>
+        <translation>006-SHV-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-SHV-NOT-WORKING</masterLabel>
+        <translation>006-SHV-NON-FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-TOW-DETERIORATED</masterLabel>
+        <translation>006-TOW-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-TOW-NOT-WORKING</masterLabel>
+        <translation>006-TOW-NON-FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-TUB-DETERIORATED</masterLabel>
+        <translation>006-BAC-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-TUB-NOT-WORKING</masterLabel>
+        <translation>006-BAC-NON-FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>007-ADH-NOT-WORKING</masterLabel>
+        <translation>007-ADH-NON-FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>007-ALL-BROKEN</masterLabel>
+        <translation>007-TOUS-CASSÉS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>007-ALL-INCOMPLETE</masterLabel>
+        <translation>007-TOUS-INCOMPLETS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>007-ALL-OTHERS</masterLabel>
+        <translation>007-TOUS-AUTRES</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>007-ALL-WRONG-PRODUCT</masterLabel>
+        <translation>007-TOUS-PRODUITS-ERRONÉS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>007-GRO-NOT-WORKING</masterLabel>
+        <translation>007-GRO-NON-FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>007-HEA-NOT-WORKING</masterLabel>
+        <translation>007-HEA-NON-FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>007-TRI-DETERIORATED</masterLabel>
+        <translation>007-TRI-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-ACC-DETERIORATED</masterLabel>
+        <translation>008-ACC-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-ALL-BROKEN</masterLabel>
+        <translation>008-TOUS-CASSÉS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-ALL-INCOMPLETE</masterLabel>
+        <translation>008-TOUS-INCOMPLETS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-ALL-OTHERS</masterLabel>
+        <translation>008-TOUS-AUTRES</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-ALL-WRONG-PRODUCT</masterLabel>
+        <translation>008-TOUS-PRODUITS-ERRONÉS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-BAS-DETERIORATED</masterLabel>
+        <translation>008-BAS-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-BAS-NOT-WORKING</masterLabel>
+        <translation>008-BAS-NON-FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-FUR-DETERIORATED</masterLabel>
+        <translation>008-FUR-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-FUR-NOT-WORKING</masterLabel>
+        <translation>008-FUR-NON-FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-MIR-DETERIORATED</masterLabel>
+        <translation>008-MIROIR-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-MIR-NOT-WORKING</masterLabel>
+        <translation>008-MIROIR-NON-FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-SHE-DETERIORATED</masterLabel>
+        <translation><!-- 008-SHE-DETERIORATED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-SHE-NOT-WORKING</masterLabel>
+        <translation><!-- 008-SHE-NOT-WORKING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-SHT-DETERIORATED</masterLabel>
+        <translation>008-SHT-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-SHT-NOT-WORKING</masterLabel>
+        <translation>008-SHT-NON-FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-TOP-DETERIORATED</masterLabel>
+        <translation>008-HAUT-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-TOP-NOT-WORKING</masterLabel>
+        <translation>008-HAUT-NON-FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-TUB-DETERIORATED</masterLabel>
+        <translation>008-BAC-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>009-ACC-DETERIORATED</masterLabel>
+        <translation>009-ACC-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>009-ALL-BROKEN</masterLabel>
+        <translation>009-TOUS-CASSÉS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>009-ALL-INCOMPLETE</masterLabel>
+        <translation>009-TOUS-INCOMPLETS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>009-ALL-OTHERS</masterLabel>
+        <translation>009-TOUS-AUTRES</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>009-ALL-WRONG-PRODUCT</masterLabel>
+        <translation>009-TOUS-PRODUITS-ERRONÉS</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>009-BAS-DETERIORATED</masterLabel>
+        <translation>009-BAS-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>009-BAS-NOT-WORKING</masterLabel>
+        <translation>009-BAS-NON-FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>009-FUR-DETERIORATED</masterLabel>
+        <translation>009-FUR-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>009-FUR-NOT-WORKING</masterLabel>
+        <translation>009-FUR-NON-FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>009-MIR-DETERIORATED</masterLabel>
+        <translation>009-MIROIR-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>009-MIR-NOT-WORKING</masterLabel>
+        <translation>009-MIROIR-NON-FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>009-TOP-DETERIORATED</masterLabel>
+        <translation>009-HAUT-DÉTÉRIORÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>009-TOP-NOT-WORKING</masterLabel>
+        <translation>009-HAUT-NON-FONCTIONNEL</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>041-ALL-BROKEN</masterLabel>
+        <translation><!-- 041-ALL-BROKEN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>041-ALL-DETERIORATED</masterLabel>
+        <translation><!-- 041-ALL-DETERIORATED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>041-ALL-INCOMPLETE</masterLabel>
+        <translation><!-- 041-ALL-INCOMPLETE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>041-ALL-NOT-WORKING</masterLabel>
+        <translation><!-- 041-ALL-NOT-WORKING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>041-ALL-OTHERS</masterLabel>
+        <translation><!-- 041-ALL-OTHERS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>041-ALL-WRONG-PRODUCT</masterLabel>
+        <translation><!-- 041-ALL-WRONG-PRODUCT --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

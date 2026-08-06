@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>パイプライン接続</value>
+    </caseValues>
+    <layouts>
+        <layout>Deployment Flow Step Layout</layout>
+        <sections>
+            <label>カスタムリンク</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Copadoによって更新されたフィールド</label>
+            <section>Fields Updated By Copado</section>
+        </sections>
+        <sections>
+            <label>ステージ情報</label>
+            <section>Stage Information</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>パイプライン接続リファレンス</nameFieldLabel>
+    <validationRules>
+        <errorMessage><!-- Source Environment and Destination Environment must be different. --></errorMessage>
+        <name>cmcSf__Different_Environments_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Platform for pipeline and Environment must match --></errorMessage>
+        <name>copado__EnvironmentAndPipelinePlatformMustBeSame</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Select_Branch --></label>
+        <name>copado__Select_Branch</name>
+    </webLinks>
+</CustomObjectTranslation>

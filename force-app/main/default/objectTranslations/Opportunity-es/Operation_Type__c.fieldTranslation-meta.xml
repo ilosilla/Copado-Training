@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Tipo de Operación</label>
+    <name>Operation_Type__c</name>
+    <picklistValues>
+        <masterLabel>New construction</masterLabel>
+        <translation>Nueva Construcción</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Refurbishment</masterLabel>
+        <translation>Renovación</translation>
+    </picklistValues>
+</CustomFieldTranslation>

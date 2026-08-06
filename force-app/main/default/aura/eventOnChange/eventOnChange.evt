@@ -1,0 +1,1 @@
+<aura:event type="COMPONENT" description="Emits if the component has changed" />

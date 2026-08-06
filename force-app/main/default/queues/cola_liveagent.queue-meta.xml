@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesIncludeBosses>true</doesIncludeBosses>
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>cola_liveagent</name>
+    <queueMembers>
+        <users>
+            <user>aorosia@porcelanosa.com</user>
+            <user>alvaro.rodriguezd@porcelanosa.com</user>
+            <user>danielalonsosafont@gmail.com</user>
+            <user>neoris@porcelanosa.com</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>enrutamiento1</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>LiveAgentSession</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>LiveChatTranscript</sobjectType>
+    </queueSobject>
+</Queue>

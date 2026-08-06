@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Formato Miembro del equipo de oportunidades</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <validationRules>
+        <errorMessage><!-- The percentage must be less than 100. A future code will check the total percentages of an opportunity. --></errorMessage>
+        <name>Validate_percentages</name>
+    </validationRules>
+</CustomObjectTranslation>

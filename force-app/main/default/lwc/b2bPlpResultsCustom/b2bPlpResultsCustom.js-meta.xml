@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>B2B: US Dealers Product List Page</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Page_Layout</target>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Theme_Layout</target>    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property
+                name="results"
+                type="String"
+                label="Search Results"
+                description="Search.Results"
+                default="{!Search.Results}"
+            />
+            <property
+                name="loading"
+                type="String"
+                label="Loading state"
+                description="Search.ClientState.loading"
+                default="{!Search.ClientState.loading}"
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

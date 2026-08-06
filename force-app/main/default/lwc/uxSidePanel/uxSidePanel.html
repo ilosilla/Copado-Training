@@ -1,0 +1,67 @@
+<template>
+    <div class={overlayClass}>
+        <div class={panelClass} style={panelStyle} onclick={stopPropagation}>
+
+            <!-- =========================
+                 Header
+                 ========================= -->
+            <header class="ux-sidepanel__header">
+
+                <div class="ux-sidepanel__header-left">
+                    <template lwc:if={showBack}>
+                        <button class="ux-sidepanel__back" onclick={handleBack} aria-label={backLabel}>
+                            ‹
+                        </button>
+                    </template>
+                    <h2 class="ux-sidepanel__title">
+                        <slot name="title">{title}</slot>
+                    </h2>
+                </div>
+
+                <button class="ux-sidepanel__close" onclick={handleClose} aria-label="Close panel">
+                    ✕
+                </button>
+            </header>
+
+            <!-- =========================
+                 Loading Overlay
+                 ========================= -->
+            <template lwc:if={loading}>
+                <div class="ux-sidepanel__loading-overlay" onclick={stopPropagation}>
+                    <lightning-spinner size="medium"></lightning-spinner>
+                </div>
+            </template>
+
+            <!-- =========================
+                 Content
+                 ========================= -->
+            <div class={contentClass}>
+                <slot></slot>
+            </div>
+
+            <template lwc:if={showFooter}>
+                <footer class={footerClass}>
+
+                    <template lwc:if={footerVariantIsCustom}>
+                        <slot name="footer"></slot>
+                    </template>
+
+                    <template lwc:else>
+                        <template lwc:if={showNegative}>
+                            <lightning-button variant="base" label={negativeLabelResolved} onclick={handleNegative} disabled={isNegativeDisabled}></lightning-button>
+                        </template>
+                        <!-- Spacer: si NO hay negativo, empuja el positivo a la derecha -->
+                        <template lwc:if={showPositiveSpacer}>
+                            <span class="ux-sidepanel__footer-spacer" aria-hidden="true"></span>
+                        </template>
+                        <template lwc:if={showPositive}>
+                            <lightning-button variant="brand" label={positiveLabelResolved} onclick={handlePositive} disabled={isPositiveDisabled}></lightning-button>
+                        </template>
+                    </template>
+
+                </footer>
+            </template>                   
+
+        </div>
+    </div>
+</template>

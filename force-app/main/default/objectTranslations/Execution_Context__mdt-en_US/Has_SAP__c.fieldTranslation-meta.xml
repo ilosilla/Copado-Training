@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Check this option if you need to connect to SAP from Salesforce --></help>
+    <label><!-- Has SAP --></label>
+    <name>Has_SAP__c</name>
+</CustomFieldTranslation>

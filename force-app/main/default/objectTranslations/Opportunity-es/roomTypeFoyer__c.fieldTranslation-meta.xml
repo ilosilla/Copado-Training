@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Number of foyers, equal or greater than 0 --></help>
+    <label><!-- No. Foyers (Entry Area) --></label>
+    <name>roomTypeFoyer__c</name>
+</CustomFieldTranslation>

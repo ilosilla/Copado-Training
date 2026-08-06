@@ -1,0 +1,180 @@
+{
+  "version" : "56.0",
+  "nodes" : {
+    "LOAD_DATASET0" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "PersonContactId.OwnerId.Name", "BillingCity", "PersonContactId", "PersonContactId.Name", "RT_Name_ANA_Form__c", "PersonContactId.LastName", "PersonContactId.Email", "Name", "Postcode__c", "PersonContactId.OwnerId", "PersonContactId.Id", "Activity_Level__c", "PersonContactId.LastActivityDate", "LastContactDateTime__c", "PersonContactId.Specialization__c", "BillingPostalCode", "PersonMailingCity", "PersonMailingCountry", "PersonMailingState", "et4ae5__Mobile_Country_Code__pc", "Town__c", "Account_Subclassification__c", "LastOrderDateTime__c", "Account_Classification__c", "Tools__c", "BillingStateCode", "SAP_Id__c", "CreatedDate", "Id", "LastName", "LastQuoteDateTime__c", "PersonEmail", "BillingState", "Business_Email__c", "SAP_id_formule__c", "LastEmailDateTime__c", "OwnerId.Default_Sales_Organization__c", "BillingCountryCode", "Materials__c", "OwnerId.Sales_Office__c", "Activity__c", "Account_Status__c", "LastEventDateTime__c", "PersonContactId.OwnerId.Sales_Office_Text__c", "PersonContactId.FirstName", "LastOpportunityDateTime__c", "OwnerId", "PersonContactId.OwnerId.Default_Sales_Organization__c", "PersonMailingPostalCode", "Account_ID18__c", "OwnerId.Name", "FirstName", "Last_Activity_Date__c", "OwnerId.Sales_Office_Text__c", "Number_Of_Projects__c", "IsPersonAccount" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Accounts",
+          "name" : "Accounts"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET1" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "AccountId.Account_ID18__c", "AccountId.Name", "Reason_Lost__c", "AccountId", "Opportunity_Classification__c", "Name", "Postcode__c", "Product_Categories__c", "HasOpenActivity", "City__c", "AccountId.Account_Status__c", "countryCode__c", "Activity_Level__c", "ContactId__c.Id", "ContactId__c.Inactive_Contact__c", "ecommerce__c", "LastOrderDateTime__c", "Opportunity_Classification_II__c", "SAP_Status__c", "Contact__c", "LeadSource", "CreatedDate", "Id", "LastQuoteDateTime__c", "Operation_Type__c", "Description", "LastEmailDateTime__c", "OwnerId.Default_Sales_Organization__c", "OwnerId.Sales_Office__c", "Activity__c", "ContactId__c.IsPersonAccount", "LastEventDateTime__c", "ContactId__c.Name", "AccountId.Account_Classification__c", "InfoType__c", "ContactId__c", "OwnerId", "IsWon", "RecordTypeId", "ContactId__c.Title", "OwnerId.Name", "StageName", "Last_Activity_Date__c", "Project_Type__c", "OwnerId.Sales_Office_Text__c", "AccountId.Activity__c", "Address__c", "ProjetReference__c", "LastStageChangeDate", "Type" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Opportunities_V2",
+          "name" : "Opportunities_V2"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "FILTER0" : {
+      "action" : "filter",
+      "sources" : [ "LOAD_DATASET0" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "OwnerId.Default_Sales_Organization__c",
+          "operator" : "EQUAL",
+          "operands" : [ "602", "603", "604", "605", "606", "608", "615", "650" ]
+        }, {
+          "type" : "TEXT",
+          "field" : "Account_Status__c",
+          "operator" : "EQUAL",
+          "operands" : [ "Active" ]
+        } ]
+      }
+    },
+    "JOIN0" : {
+      "action" : "join",
+      "sources" : [ "FILTER0", "FILTER2" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "OUTER",
+        "leftKeys" : [ "Account_ID18__c", "OwnerId.Default_Sales_Organization__c", "OwnerId.Sales_Office__c" ],
+        "rightQualifier" : "Opportunit",
+        "rightKeys" : [ "AccountId.Account_ID18__c", "OwnerId.Default_Sales_Organization__c", "OwnerId.Sales_Office__c" ]
+      }
+    },
+    "OUTPUT0" : {
+      "action" : "save",
+      "sources" : [ "JOIN0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Accts & Opps (Recipe)",
+          "name" : "Accts_Opps_Recipe",
+          "folderName" : "Lead_test"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "FILTER1" : {
+      "action" : "filter",
+      "sources" : [ "LOAD_DATASET1" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "OwnerId.Default_Sales_Organization__c",
+          "operator" : "EQUAL",
+          "operands" : [ "602", "603", "604", "605", "606", "608", "615", "650" ]
+        } ]
+      }
+    },
+    "FILTER2" : {
+      "action" : "sqlFilter",
+      "sources" : [ "FILTER1" ],
+      "parameters" : {
+        "sqlFilterExpression" : "NOT(contains(Name, 'SAP OPP'))"
+      }
+    }
+  },
+  "ui" : {
+    "nodes" : {
+      "LOAD_DATASET0" : {
+        "label" : "Accounts",
+        "type" : "LOAD_DATASET",
+        "top" : 112,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET1" : {
+        "label" : "Opportunities_V2",
+        "type" : "LOAD_DATASET",
+        "top" : 252,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "FILTER0" : {
+        "label" : "AccountsFilter",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 112,
+        "left" : 252
+      },
+      "JOIN0" : {
+        "label" : "Join 0",
+        "type" : "JOIN",
+        "top" : 112,
+        "left" : 392
+      },
+      "OUTPUT0" : {
+        "label" : "Output 0",
+        "type" : "OUTPUT",
+        "top" : 112,
+        "left" : 532
+      },
+      "FILTER1" : {
+        "label" : "OppsFilter1",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 252,
+        "left" : 252
+      },
+      "FILTER2" : {
+        "label" : "OppsFilter2",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 252,
+        "left" : 392
+      }
+    },
+    "connectors" : [ {
+      "source" : "LOAD_DATASET0",
+      "target" : "FILTER0"
+    }, {
+      "source" : "FILTER0",
+      "target" : "JOIN0"
+    }, {
+      "source" : "FILTER2",
+      "target" : "JOIN0"
+    }, {
+      "source" : "JOIN0",
+      "target" : "OUTPUT0"
+    }, {
+      "source" : "LOAD_DATASET1",
+      "target" : "FILTER1"
+    }, {
+      "source" : "FILTER1",
+      "target" : "FILTER2"
+    } ],
+    "hiddenColumns" : [ ]
+  }
+}

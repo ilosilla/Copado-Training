@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Creacion_nueva_oportunidad_Etapa</fullName>
+    <active>true</active>
+    <description>Al momento de la creación, sólo se permite el valor &apos;New&apos; para el campo StageName</description>
+    <errorConditionFormula>AND(
+ISNEW(),
+TEXT(StageName) &lt;&gt; &quot;New&quot;,
+RecordType.Name &lt;&gt; &apos;Project retail&apos;,
+RecordType.Name &lt;&gt; &apos;Project trade&apos;,
+RecordType.Name &lt;&gt; &apos;Automatic Opportunity&apos;
+)</errorConditionFormula>
+    <errorDisplayField>StageName</errorDisplayField>
+    <errorMessage>Al momento de la creación, la etapa debe tener el valor &quot;Nueva&quot;</errorMessage>
+</ValidationRule>

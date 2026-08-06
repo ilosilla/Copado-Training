@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FactoryInvoice__c</fullName>
+    <description>Factory invoice number for the sale of the claimed product to the factory.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Factory invoice number for the sale of the claimed product to the factory.</inlineHelpText>
+    <label>Factory Invoice</label>
+    <length>10</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

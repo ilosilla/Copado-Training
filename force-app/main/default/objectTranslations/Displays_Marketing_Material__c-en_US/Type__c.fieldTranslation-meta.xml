@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type --></label>
+    <name>Type__c</name>
+    <picklistValues>
+        <masterLabel>Altissima Setting</masterLabel>
+        <translation><!-- Altissima Setting --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BOXTONE</masterLabel>
+        <translation><!-- BOXTONE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Binder</masterLabel>
+        <translation><!-- Binder --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Countertop Altissima</masterLabel>
+        <translation><!-- Countertop Altissima --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cuna parker</masterLabel>
+        <translation><!-- Cuna parker --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dakkar Panel Stand</masterLabel>
+        <translation><!-- Dakkar Panel Stand --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ex. Tower Xtone 25x28</masterLabel>
+        <translation><!-- Ex. Tower Xtone 25x28 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Exp. Tower Xtone 30x60</masterLabel>
+        <translation><!-- Exp. Tower Xtone 30x60 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Highker Stand</masterLabel>
+        <translation><!-- Highker Stand --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kitchen</masterLabel>
+        <translation><!-- Kitchen --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Krion Box</masterLabel>
+        <translation><!-- Krion Box --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Krion countertop</masterLabel>
+        <translation><!-- Krion countertop --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Krion tower</masterLabel>
+        <translation><!-- Krion tower --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sample classifier Xtone 10x20</masterLabel>
+        <translation><!-- Sample classifier Xtone 10x20 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Settings</masterLabel>
+        <translation><!-- Settings --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Starwood Zone</masterLabel>
+        <translation><!-- Starwood Zone --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Table Display Rack Altissima</masterLabel>
+        <translation><!-- Table Display Rack Altissima --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Table Display Rack XTONE</masterLabel>
+        <translation><!-- Table Display Rack XTONE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Xlight tower</masterLabel>
+        <translation><!-- Xlight tower --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Xtone Catalogue</masterLabel>
+        <translation><!-- Xtone Catalogue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Xtone Countertop</masterLabel>
+        <translation><!-- Xtone Countertop --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Xtone Packtool</masterLabel>
+        <translation><!-- Xtone Packtool --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Xtone Pantonier</masterLabel>
+        <translation><!-- Xtone Pantonier --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Xtone Setting</masterLabel>
+        <translation><!-- Xtone Setting --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Xtone tower</masterLabel>
+        <translation><!-- Xtone tower --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

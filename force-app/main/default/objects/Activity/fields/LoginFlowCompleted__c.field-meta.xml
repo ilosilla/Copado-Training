@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LoginFlowCompleted__c</fullName>
+    <description>Fecha y hora de cuando un evento es completado en el login flow</description>
+    <label>Login Flow Completed</label>
+    <required>false</required>
+    <type>DateTime</type>
+</CustomField>

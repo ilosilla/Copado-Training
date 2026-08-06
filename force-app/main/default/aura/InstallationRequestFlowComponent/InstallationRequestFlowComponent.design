@@ -1,0 +1,13 @@
+<design:component label="Installation Request Flow Componenent ">
+    <design:attribute name="installationName" label="Installation Name"/>	    
+    <design:attribute name="numberOfBathrooms" label="Number of Bathrooms"/>	
+    <design:attribute name="numberOfKitchens" label="Number of Kitchens"/>	
+    <design:attribute name="numberOfOthers" label="Number of Others"/>	
+    <design:attribute name="installationDescription" label="Installation Description"/>	    
+    <design:attribute name="opportunityName" label="Opportunity Name"/>	    
+    <design:attribute name="opportunityOwner" label="Opportunity Owner Name"/>	    
+    <design:attribute name="accountName" label="Account Name"/>	  
+    <design:attribute name="installersJSON" label="List of possible installers (JSON)"/>	  
+    <design:attribute name="installer" label="Selected Installer"/>	  
+    <design:attribute name="errorList" label="Error List"/>	    
+</design:component>

@@ -1,0 +1,33 @@
+<template>
+    <div class="slds-welcome-mat slds-welcome-mat_splash">
+        <div class="slds-welcome-mat__content slds-grid">                            
+            <div class="slds-welcome-mat__info slds-size_1-of-1" role="region" style="background-image: none;">
+                <div class="slds-welcome-mat__info-content">
+                    <h2 class="slds-welcome-mat__info-title" id="welcome-mat-200-label">Create Claims/Returns</h2>
+                    <div class="slds-welcome-mat__info-description slds-text-longform">
+                        <p>Welcome to the Claims and Returns Wizard! In the following steps, you will select the invoice and specific products related to the customer request. You will also have the option to attach photos or videos to support your case.</p>
+                        <p>As the first step, please choose whether you would like to create a claim or return. This selection will determine the process steps that follow to address the customer case efficiently.</p>
+                        <div class="slds-text-align_left slds-var-m-vertical_large slds-var-p-vertical_medium slds-var-p-horizontal_x-large slds-border_top slds-border_bottom">                            
+                            <lightning-radio-group name="radioGroup"
+                                variant="label-hidden"
+                                options={caseOptions}      
+                                onchange={handleCaseTypeChanged}
+                                value={selectedCaseType}                                         
+                                type="radio"></lightning-radio-group>
+                        </div>
+                    </div>
+                    <div class="slds-welcome-mat__info-actions">
+                        <lightning-layout horizontal-align="spread">
+                            <lightning-layout-item>
+                                <lightning-button label="Cancel" onclick={handleCancel}></lightning-button>
+                            </lightning-layout-item>                            
+                            <lightning-layout-item>
+                                <lightning-button variant="brand" label="Start" onclick={handleStart}></lightning-button>
+                            </lightning-layout-item>
+                        </lightning-layout>                                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

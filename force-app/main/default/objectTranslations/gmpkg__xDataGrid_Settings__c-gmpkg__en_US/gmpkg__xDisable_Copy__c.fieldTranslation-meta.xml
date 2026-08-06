@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Disable copy of any grid --></help>
+    <label><!-- Disable Copy --></label>
+    <name>gmpkg__xDisable_Copy__c</name>
+</CustomFieldTranslation>

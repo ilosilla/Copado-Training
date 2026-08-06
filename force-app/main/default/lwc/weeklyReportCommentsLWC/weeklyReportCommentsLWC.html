@@ -1,0 +1,215 @@
+<template>
+    <div lwc:if={isLoading}>
+        <lightning-spinner size="xx-small"></lightning-spinner>
+    </div>
+    <div if:true={invalidForm} class="slds-text-color_error slds-m-bottom_small">
+        {errorMessage}
+      </div>
+    <template if:true={loaded}>
+        <template lwc:if={hasKeyRecords}>
+            <lightning-textarea
+                class="custom-textarea" 
+                rows="15"
+                label="Comments"
+                required="true"
+                value={mainComments}
+                placeholder={MainCommentText}
+                onchange={changeMainComment}
+            >
+            </lightning-textarea>
+            <br/>
+            <template lwc:if={hasKeyAccounts}>
+                <template lwc:if={isLoginFlow}>
+                    <div class="slds-section slds-is-open">
+                        <h3 class="slds-section__title slds-p-around--xx-small" style="background-color: #f4f6f9;">
+                            <span class="slds-truncate slds-p-left--large" title="Section Title">{keyAccsSection}</span>
+                        </h3>
+                        <div aria-hidden="false" class="slds-section__content" id="expando-unique-id">
+                            <h4 class="slds-p-around--small slds-p-left--large">{keyAccsText}</h4>
+                        <template for:each={keyAccounts} for:item="keyAccount" for:index="index"> 
+                            <div class="slds-form" role="list" key={keyAccount.id}>
+                                <div class="slds-form__row" role="listitem">
+                                    <div class="slds-form__item" role="listitem">
+                                        <div class="slds-form-element slds-form-element_stacked slds-is-editing">
+                                            <span class="slds-form-element__label">
+                                                <abbr class="slds-required" title="required">* </abbr>Account Name
+                                            </span>
+                                            <div class="slds-form-element__control">
+                                                <div class="slds-form-element__static slds-p-around--small">
+                                                    <b>{keyAccount.name}</b>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="slds-form__item" role="listitem">
+                                        <div class="slds-form-element slds-form-element_stacked slds-is-editing">
+                                            <div class="slds-form-element__control">
+                                                <div class="slds-form-element__static">
+                                                    <lightning-select
+                                                    name="tickets"
+                                                    value={keyAccount.rating}
+                                                    label={SalesMaturityText}
+                                                    options={options}
+                                                    data-index={index}
+                                                    onchange={handleChangeKeyAccountRating}></lightning-select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="slds-form__row" role="listitem">
+                                    <div class="slds-form__item" role="listitem">
+                                        <div class="slds-form-element slds-form-element_stacked slds-is-editing">
+                                            <div class="slds-form-element__control">
+                                                <div class="slds-form-element__static">
+                                                    <lightning-textarea label="Comment" required name="input3" data-index={index} value={keyAccount.comment} onchange={handleChangeKeyAccountComment}></lightning-textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <hr>
+                            </div>
+                        </template>
+                    </div>
+                    </div>
+                </template>
+                <template lwc:else>
+                    <div class="slds-section slds-is-open">
+                        <h3 class="slds-section__title slds-p-around--xx-small" style="background-color: #f4f6f9;">
+                            <span class="slds-truncate slds-p-left--large" title="Section Title">{keyAccsSection}</span>
+                        </h3>
+                        <div aria-hidden="false" class="slds-section__content" id="expando-unique-ide">
+                            <h4 class="slds-p-around--small slds-p-left--large">{keyAccsText}</h4>
+                            <table class="slds-table slds-table_cell-buffer">
+                                <thead>
+                                    <tr class="slds-line-height_reset">
+                                      <th class="" scope="col" style="width: 20%;">
+                                        <div class="slds-truncate" title="Opportunity Name">Account Name</div>
+                                      </th>
+                                      <th class="" scope="col" style="width: 15%;">
+                                        <div class="slds-truncate" title="Account Name">{SalesMaturityText}</div>
+                                      </th>
+                                      <th class="" scope="col" style="width: 65%;">
+                                        <div class="slds-truncate" title="Close Date">Comments</div>
+                                      </th>
+                                    </tr>
+                                  </thead>
+                                <template for:each={keyAccounts} for:item="keyAccount" for:index="index">  
+                                    <tr key={keyAccount.id}>
+                                        <td>{keyAccount.name}</td>
+                                        <td><lightning-select
+                                            name="tickets"
+                                            value={keyAccount.rating}
+                                            options={options}
+                                            data-index={index}
+                                            onchange={handleChangeKeyAccountRating}></lightning-select>
+                                        </td>
+                                        <td>
+                                            <lightning-input type="text" data-index={index} value={keyAccount.comment} onchange={handleChangeKeyAccountComment}></lightning-input>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </table>
+                        </div>
+                      </div>
+                </template>
+            </template>
+            <br/>
+            <template lwc:if={hasKeyOpportunities}>
+                <template lwc:if={isLoginFlow}>
+                    <div class="slds-section slds-is-open">
+                        <h3 class="slds-section__title slds-p-around--xx-small" style="background-color: #f4f6f9;">
+                            <span class="slds-truncate slds-p-left--large" title="Section Title">{keyOppsSection}</span>
+                        </h3>
+                        <div aria-hidden="false" class="slds-section__content" id="expando-unique-idd">
+                            <h4 class="slds-p-around--small">{keyOppsText}</h4>
+                            <template for:each={keyOpportunities} for:item="keyOpp" for:index="index"> 
+                                        <div class="slds-form" role="list" key={keyOpp.id}>
+                                            <div class="slds-form__row" role="listitem">
+                                                <div class="slds-form__item" role="listitem">
+                                                    <div class="slds-form-element slds-form-element_stacked slds-is-editing">
+                                                        <span class="slds-form-element__label">
+                                                            <abbr class="slds-required" title="required">* </abbr>Opportunity Name
+                                                        </span>
+                                                        <div class="slds-form-element__control">
+                                                            <div class="slds-form-element__static slds-p-around--small">
+                                                                <b>{keyOpp.name}</b>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                    
+                                            <div class="slds-form__row" role="listitem">
+                                                <div class="slds-form__item" role="listitem">
+                                                    <div class="slds-form-element slds-form-element_stacked slds-is-editing">
+                                                        <div class="slds-form-element__control">
+                                                            <div class="slds-form-element__static">
+                                                                <lightning-textarea label="Comment" required name="input3" data-index={index} value={keyOpp.comment} onchange={handleChangeKeyOppComment}></lightning-textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                    
+                                            <hr>
+                                        </div>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+                <template lwc:else>
+                    <div class="slds-section slds-is-open">
+                        <h3 class="slds-section__title slds-p-around--xx-small" style="background-color: #f4f6f9;">
+                            <span class="slds-truncate slds-p-left--large" title="Section Title">{keyOppsSection}</span>
+                        </h3>
+                        <div aria-hidden="false" class="slds-section__content" id="expando-unique-iddt">
+                            <h4 class="slds-p-around--small">{keyOppsText}</h4>
+                            <table class="slds-table slds-table_cell-buffer">
+                                <thead>
+                                    <tr class="slds-line-height_reset">
+                                    <th class="" scope="col" style="width: 20%;">
+                                        <div class="slds-truncate" title="Opportunity Name"> Opportunity Name</div>
+                                    </th>
+                                    <th class="" scope="col" style="width: 80%;">
+                                        <div class="slds-truncate" title="Close Date">Comments</div>
+                                    </th>
+                                    </tr>
+                                </thead>
+                                <template for:each={keyOpportunities} for:item="keyOpp" for:index="index">  
+                                    <tr key={keyOpp.id}>
+                                        <td>{keyOpp.name}</td>
+                                        <td>
+                                            <lightning-input type="text" data-index={index} value={keyOpp.comment} onchange={handleChangeKeyOppComment}></lightning-input>
+                                        </td>
+                                    </tr>
+                                </template>
+                                </table>
+                        </div>
+                    </div>
+                </template>
+            </template>
+        </template>
+        <template lwc:else>
+            <lightning-textarea
+                class="custom-textarea" 
+                value={mainComments}
+                rows="15"
+                label="Comments"
+                placeholder={MainCommentText}
+                required="true"
+                onchange={changeMainComment}
+            >
+            </lightning-textarea>
+        </template>
+
+        <div style="text-align: end;">
+            <lightning-button variant="base" label="Previous" onclick={handlePrevious} class="slds-m-left_x-small"></lightning-button>
+            <lightning-button variant="base" label="Next" onclick={handleSubmit} class="slds-m-left_x-small"></lightning-button>
+        </div>
+    </template>
+</template>

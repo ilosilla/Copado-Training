@@ -1,0 +1,148 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" controller="AccountSapErrorsController">
+    
+    <aura:attribute name="showTable" type="Boolean" default="false"/>
+    <aura:attribute name="spinner" type="Boolean" default="true"/>
+    <aura:attribute name="disableButtons" type="Boolean" default="true"/>
+    <aura:attribute name="showSendingMessage" type="Boolean" default="false"/>
+    <aura:attribute name="waitMessage" type="String" default="{# $Label.c.ErrorCMP_WaitMessage}"/>
+    <aura:attribute name="accountSapErrors" type="Sales_Relationship__c[]"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" access="global"/>
+    
+    <aura:attribute name="accountRecord" type="Object"/>
+    <force:recordData aura:id="recordData"
+                      recordId="{!v.recordId}"
+                      fields="SAP_Id__c, Sales_Rels_with_errors__c"
+                      targetFields="{!v.accountRecord}"
+                      recordUpdated="{!c.recordUpdated}"
+                      />
+    
+    <aura:attribute name="salesRelRecord" type="Object"/>
+    <force:recordData aura:id="recordData_SalesRel"
+                      fields="Sap_Status__c"
+                      targetFields="{!v.salesRelRecord}"
+                      recordUpdated="{!c.salesRelUpdated}"
+                      />
+    
+    <aura:if isTrue="{! and(!v.showSendingMessage, !v.showTable) }">
+        <div class="exampleHolder" style="position: relative; height: 5rem">
+            <lightning:spinner alternativeText="Loading" size="medium" />
+        </div>
+    </aura:if>
+    
+    <aura:if isTrue="{!v.showSendingMessage}">
+        <div class="slds-grid" style="padding-right: 10%; padding-left: 10%; padding-top: 1%; 
+                                      padding-bottom: 1%; min-width: 3rem; background-color: #d8edff; 
+                                      border-radius: 10px; border-color: #1589ee">
+            <div class="slds-col">
+                <p><b>{# $Label.c.Sending_To_SAP} ... </b></p>
+                <p>{# $Label.c.ErrorCMP_ContactAdmin}</p>
+            </div>
+            <div class="slds-col " style="width: 5%; z-index: 0; position: relative;">
+                <lightning:spinner alternativeText="Loading" size="medium" variant="brand"/>
+            </div>
+        </div>
+        
+    </aura:if>
+    
+    <aura:if isTrue="{!v.showTable}">
+        <lightning:card>
+            <aura:set attribute="title">
+                
+                <div class="slds-grid">
+                    <div class="slds-col_bump-right">
+                        <lightning:icon iconName="utility:close" size="small" variant="error"/>
+                        <b>{# $Label.c.ErrorCMP_Header}</b><!--Error creating an automatic SAP Accounting Info-->
+                    </div>
+                    <div>
+                        <lightning:button  label="{! $Browser.formFactor != 'Desktop' ? $Label.c.Refresh : ''}" title="Refresh" iconName="utility:refresh" onclick="{! c.handleRefresh}" disabled="{! or(v.disableButtons,v.spinner)}"/>
+                    </div>
+                </div>
+                
+            </aura:set>
+            <aura:set attribute="footer">
+                <div style="padding-left: 1rem">{# $Label.c.ErrorCMP_Instructions}</div>
+            </aura:set>
+            <!-- Card Body -->
+            <aura:if isTrue="{!v.spinner }">
+                
+                <div class="exampleHolder" style="position: relative">
+                    <lightning:spinner alternativeText="Loading" size="medium" />
+                </div>
+                
+                <aura:set attribute="else">
+                    <aura:if isTrue="{!v.showTable }">
+                        <div class="table">
+                            
+                            <aura:iteration items="{!v.accountSapErrors}" var="sapError" indexVar="index">
+                                
+                                <div class="indexHeader">{!index+1}</div>
+                                
+                                <div class="container">
+                                    
+                                    <div class="header" style="{! (index == 0) ? 'display: flex' : 'display: none'}">
+                                        
+                                        <div class="indexCell cellPadding"></div>
+                                        <div class="cell cellPadding">{# $Label.c.Name}</div>
+                                        <div class="cell cellPadding">{# $Label.c.ErrorCMP_ReasonCreation}</div>
+                                        <div class="cell cellPadding">{# $Label.c.Date_Time}</div>
+                                        <div class="descriptionCell cellPadding">{# $Label.c.Description}</div>
+                                        <div class="indexCell cellPadding">{# $Label.c.Retry}</div>
+                                        
+                                    </div>
+                                    
+                                    <div class="row" style="display: flex;">
+                                        
+                                        <div class="indexCell cellPadding">{!index+1}</div>
+                                        <div class="cell cellPadding">
+                                            <div class="innerCell">
+                                                <a href="{!'/lightning/r/Sales_Relationship__c/' + sapError.Id + '/view'}">{!sapError.Name}</a>
+                                            </div>                                    
+                                        </div>
+                                        <div class="cell cellPadding">
+                                            <div class="innerCell">
+                                                {!sapError.Reason_of_creation__c}
+                                            </div>                                    
+                                        </div>
+                                        <div class="cell cellPadding">
+                                            <div class="innerCell">
+                                                {!sapError.CreatedDate}
+                                            </div>
+                                        </div>
+                                        <div class="descriptionCell cellPadding">
+                                            <div class="innerCell">
+                                                
+                                                <aura:unescapedHtml value="{! sapError.Sap_Status__c == 'Undefined' ? v.waitMessage : sapError.Error_Message__c}" />
+                                            </div>
+                                        </div>
+                                        <div class="indexCell cellPadding">
+                                            <div class="innerCell">
+                                                
+                                                    <lightning:button variant="brand" name="{!sapError.Id}" label="Retry" title="Retry" onclick="{! c.handleRetry }" disabled="{! or(v.disableButtons, sapError.Sap_Status__c != 'Error') }"/>
+                                            <aura:if isTrue="{! sapError.Sap_Status__c == 'Error' }">    
+                                            </aura:if>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                
+                            </aura:iteration>
+                            
+                        </div>
+                        
+                        <aura:set attribute="else">
+                            <div class="slds-align_absolute-center">
+                                <b>There are no errors to show.</b>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                    
+                </aura:set>
+            </aura:if>
+            
+            
+        </lightning:card>
+    </aura:if>
+    
+</aura:component>

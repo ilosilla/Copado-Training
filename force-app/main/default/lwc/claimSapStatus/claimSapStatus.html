@@ -1,0 +1,81 @@
+<template>
+    <div class="slds-card slds-theme_shade">
+        <header class="slds-media slds-media_center slds-has-flexi-truncate slds-var-p-horizontal_small slds-var-p-top_small">
+            <div class="slds-media__figure">
+                <lightning-icon icon-name="standard:case_milestone"></lightning-icon>
+            </div>
+            <div class="slds-media__body">
+                <h2 class="slds-card__header-title">
+                    <span>{label.tr0002_001}</span>
+                </h2>
+            </div>
+        </header>
+        <div class="slds-var-p-horizontal_small slds-var-p-vertical_x-small slds-scrollable_y" style="max-height: 18rem;">
+            <div lwc:if={isLoading}>
+                <lightning-spinner size="xx-small"></lightning-spinner>
+            </div>
+            <div class="slds-grid slds-wrap slds-var-p-bottom_small" lwc:else>
+                <lightning-layout vertical-align="stretch" multiple-rows="true">
+
+                    <!-- Replacement Order -->
+                    <lightning-layout-item size="12" padding="horizontal-small" class="slds-var-m-top_x-small">
+                        <span><b>{label.tr0002_002}</b></span> <!-- Replacement Order -->
+                    </lightning-layout-item>
+                    <template lwc:if={hasReplacement}>
+                        <lightning-layout-item size="6" padding="horizontal-small">
+                            <c-lib-form-element label={label.dict_order_number_label} value={replacementOrder.orderNumber}></c-lib-form-element>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="6" padding="horizontal-small">
+                            <c-lib-form-element label={label.dict_sap_status} data-id="replacement-status" value={replacementOrder.sapValue} tooltip={replacementOrder.sapMessage}
+                                download-button={showOrderDownload} ondownload={handleDownloadReplacement}></c-lib-form-element>                            
+                        </lightning-layout-item>
+                    </template>
+                    <template lwc:else>                                            
+                        <lightning-layout-item size="12" padding="horizontal-small">
+                            <span>{label.dict_not_applicable}</span>
+                        </lightning-layout-item>
+                    </template>
+
+                    <!-- Collection Order -->
+                    <lightning-layout-item size="12" padding="horizontal-small" class="slds-var-m-top_medium" vertical-align="end">
+                        <span><b>{label.tr0002_004}</b></span>
+                    </lightning-layout-item>                    
+                    <template lwc:if={hasCollection}>
+                        <lightning-layout-item size="6" padding="horizontal-small">
+                            <c-lib-form-element label={label.dict_order_number_label} value={collectionOrder.orderNumber}></c-lib-form-element>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="6" padding="horizontal-small">
+                            <c-lib-form-element label={label.dict_sap_status} data-id="collection-status" value={collectionOrder.sapValue} tooltip={collectionOrder.sapMessage}
+                                download-button={showCollectionDownload} ondownload={handleDownloadCollection}></c-lib-form-element>
+                        </lightning-layout-item>                    
+                    </template>
+                    <template lwc:else>                                            
+                        <lightning-layout-item size="12" padding="horizontal-small">
+                            <span>Not Applicable</span>
+                        </lightning-layout-item>
+                    </template>
+                    
+                    <!-- Compensation Order -->
+                    <lightning-layout-item size="12" padding="horizontal-small" class="slds-var-m-top_medium">
+                        <span><b>{label.tr0002_003}</b></span> 
+                    </lightning-layout-item>                    
+                    <template lwc:if={hasCompensation}>
+                        <lightning-layout-item size="6" padding="horizontal-small">
+                            <c-lib-form-element label={label.dict_order_number_label} value={compensationOrder.orderNumber}></c-lib-form-element>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="6" padding="horizontal-small">
+                            <c-lib-form-element label={label.dict_sap_status} data-id="compensation-status" value={compensationOrder.sapValue} tooltip={compensationOrder.sapMessage}
+                                download-button={showCompensationDownload} ondownload={handleDownloadCompensation}></c-lib-form-element>
+                        </lightning-layout-item>                    
+                    </template>
+                    <template lwc:else>                                            
+                        <lightning-layout-item size="12" padding="horizontal-small">
+                            <span>Not Applicable</span>
+                        </lightning-layout-item>
+                    </template>
+
+                </lightning-layout>
+            </div>
+        </div>
+    </div>
+</template>

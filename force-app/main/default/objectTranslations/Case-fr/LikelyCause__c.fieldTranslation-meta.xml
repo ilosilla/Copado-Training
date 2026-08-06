@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Cause probable</label>
+    <name>LikelyCause__c</name>
+    <picklistValues>
+        <masterLabel>COMPANY LIABILITY</masterLabel>
+        <translation>RESPONSABILITÉ DE L&apos;ENTREPRISE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CUSTOMER ISSUE</masterLabel>
+        <translation>PROBLÈME DU CLIENT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CUSTOMER MIS-USE</masterLabel>
+        <translation>MAUVAISE UTILISATION DU CLIENT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CUSTOMER MIS-USE (1)</masterLabel>
+        <translation>MAUVAISE UTILISATION DU CLIENT (1)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CUSTOMER MIS-USE (2)</masterLabel>
+        <translation>MAUVAISE UTILISATION DU CLIENT (2)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CUSTOMER MIS-USE (3)</masterLabel>
+        <translation>MAUVAISE UTILISATION DU CLIENT (3)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DAMAGED IN TRANSIT / ON SITE</masterLabel>
+        <translation>ENDOMMAGÉ EN TRANSIT / SUR SITE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DAMAGED IN TRANSPORT</masterLabel>
+        <translation>ENDOMMAGÉ EN TRANSPORT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GROUT HAS NOT BEEN MIXED CORRECTLY - TOO MUCH WATER</masterLabel>
+        <translation>LE MORTIER N&apos;A PAS ÉTÉ BIEN MÉLANGÉ - TROP D&apos;EAU</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IMPROPER CLEANING OR MAINTENANCE</masterLabel>
+        <translation>NETTOYAGE OU ENTRETIEN INADÉQUAT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IMPROPER CLEANING OR MAINTENANCE (1)</masterLabel>
+        <translation>NETTOYAGE OU ENTRETIEN INADÉQUAT (1)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (1)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (1)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (10)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (10)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (11)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (11)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (12)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (12)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (14)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (14)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (15)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (15)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (16)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (16)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (17)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (17)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (18)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (18)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (19)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (19)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (2)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (2)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (20)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (20)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (21)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (21)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (22)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (22)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (23)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (23)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (24)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (24)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (25)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (25)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (3)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (3)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (4)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (4)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (5)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (5)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (6)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (6)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (7)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (7)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (8)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (8)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (9)</masterLabel>
+        <translation>PROBLÈME D&apos;INSTALLATION (9)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NOT MIXED PROPERLY</masterLabel>
+        <translation>MAL MÉLANGÉ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OTHERS</masterLabel>
+        <translation>AUTRES</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PICKING OR ADMIN ERROR</masterLabel>
+        <translation>ERREUR DE SÉLECTION OU ADMINISTRATIVE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCT ISSUE</masterLabel>
+        <translation>PROBLÈME DE PRODUIT</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCT ISSUE (1)</masterLabel>
+        <translation>PROBLÈME DE PRODUIT (1)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCT ISSUE (2)</masterLabel>
+        <translation>PROBLÈME DE PRODUIT (2)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCT UNSUITABLE FOR INTENDED USE</masterLabel>
+        <translation>PRODUIT INADÉQUAT POUR L&apos;UTILISATION PRÉVUE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCTION ISSUE</masterLabel>
+        <translation>PROBLÈME DE PRODUCTION</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCTION ISSUE (1)</masterLabel>
+        <translation>PROBLÈME DE PRODUCTION (1)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCTION ISSUE (10)</masterLabel>
+        <translation>PROBLÈME DE PRODUCTION (10)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCTION ISSUE (2)</masterLabel>
+        <translation>PROBLÈME DE PRODUCTION (2)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCTION ISSUE (3)</masterLabel>
+        <translation>PROBLÈME DE PRODUCTION (3)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCTION ISSUE (4)</masterLabel>
+        <translation>PROBLÈME DE PRODUCTION (4)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCTION ISSUE (5)</masterLabel>
+        <translation>PROBLÈME DE PRODUCTION (5)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCTION ISSUE (6)</masterLabel>
+        <translation>PROBLÈME DE PRODUCTION (6)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCTION ISSUE (7)</masterLabel>
+        <translation>PROBLÈME DE PRODUCTION (7)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCTION ISSUE (8)</masterLabel>
+        <translation>PROBLÈME DE PRODUCTION (8)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCTION ISSUE (9)</masterLabel>
+        <translation>PROBLÈME DE PRODUCTION (9)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SALES ISSUE</masterLabel>
+        <translation>PROBLÈME DE VENTE</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WATER SUPPLY ISSUE</masterLabel>
+        <translation>PROBLÈME D&apos;ALIMENTATION EN EAU</translation>
+    </picklistValues>
+</CustomFieldTranslation>

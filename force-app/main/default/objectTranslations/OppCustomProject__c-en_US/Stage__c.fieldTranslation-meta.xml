@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Project Stage --></label>
+    <name>Stage__c</name>
+    <picklistValues>
+        <masterLabel>CHANGE-ORDER</masterLabel>
+        <translation><!-- CHANGE-ORDER --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CLOSED</masterLabel>
+        <translation><!-- CLOSED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DEPOSIT</masterLabel>
+        <translation><!-- DEPOSIT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DRAWING-SIGNED</masterLabel>
+        <translation><!-- DRAWING-SIGNED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IN-PRODUCTION</masterLabel>
+        <translation><!-- IN-PRODUCTION --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION</masterLabel>
+        <translation><!-- INSTALLATION --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LOST</masterLabel>
+        <translation><!-- LOST --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PAYMENT-RECEIVED</masterLabel>
+        <translation><!-- PAYMENT-RECEIVED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PR-RECEIVED</masterLabel>
+        <translation><!-- PR-RECEIVED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PROPOSAL</masterLabel>
+        <translation><!-- PROPOSAL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>QUALIFICATION</masterLabel>
+        <translation><!-- QUALIFICATION --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TEMPLATE-APP</masterLabel>
+        <translation><!-- TEMPLATE-APP --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

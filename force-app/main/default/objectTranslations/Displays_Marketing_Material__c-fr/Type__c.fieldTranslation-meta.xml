@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Tipologie</label>
+    <name>Type__c</name>
+    <picklistValues>
+        <masterLabel>Altissima Setting</masterLabel>
+        <translation>Ambiance Altissima</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BOXTONE</masterLabel>
+        <translation><!-- BOXTONE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Binder</masterLabel>
+        <translation>Classeur</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Countertop Altissima</masterLabel>
+        <translation>Plan de Travail Altissima</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cuna parker</masterLabel>
+        <translation>Berceau Parker</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dakkar Panel Stand</masterLabel>
+        <translation>Dakk panel stand</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ex. Tower Xtone 25x28</masterLabel>
+        <translation>Presentoir Tour Xtone 25x28</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Exp. Tower Xtone 30x60</masterLabel>
+        <translation>Presentoir Tour Xtone 30x60</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Highker Stand</masterLabel>
+        <translation>Stand Highker</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kitchen</masterLabel>
+        <translation>Cuisines</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Krion Box</masterLabel>
+        <translation>Boîte Krion</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Krion countertop</masterLabel>
+        <translation>Plan de Travail en KRION</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Krion tower</masterLabel>
+        <translation>Tour Krion</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sample classifier Xtone 10x20</masterLabel>
+        <translation>Classeur échantillons 10x20</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Settings</masterLabel>
+        <translation>Ambiance</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Starwood Zone</masterLabel>
+        <translation>Zone Starwood</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Table Display Rack Altissima</masterLabel>
+        <translation>Table Presentoir Rack Altissima</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Table Display Rack XTONE</masterLabel>
+        <translation>Table Presentoir Rack Xtone</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Xlight tower</masterLabel>
+        <translation>Tour Xlight</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Xtone Catalogue</masterLabel>
+        <translation>Catalogue Xtone</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Xtone Countertop</masterLabel>
+        <translation>Plan en Xtone</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Xtone Packtool</masterLabel>
+        <translation><!-- Xtone Packtool --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Xtone Pantonier</masterLabel>
+        <translation>Pantonier Xtone</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Xtone Setting</masterLabel>
+        <translation>Ambiance Xtone</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Xtone tower</masterLabel>
+        <translation>Tour Xtone</translation>
+    </picklistValues>
+</CustomFieldTranslation>

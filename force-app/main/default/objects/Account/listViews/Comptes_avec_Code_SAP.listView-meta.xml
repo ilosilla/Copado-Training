@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Comptes_avec_Code_SAP</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>SAP_Id__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SAP_Id__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Comptes avec Code SAP</label>
+    <sharedTo>
+        <roleAndSubordinates>Director_Regional_FR</roleAndSubordinates>
+    </sharedTo>
+</ListView>

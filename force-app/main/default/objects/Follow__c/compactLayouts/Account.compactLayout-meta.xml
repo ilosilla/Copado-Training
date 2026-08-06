@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account</fullName>
+    <fields>Account__c</fields>
+    <fields>AccountSapId__c</fields>
+    <fields>AccountClassification__c</fields>
+    <label>Account</label>
+</CompactLayout>

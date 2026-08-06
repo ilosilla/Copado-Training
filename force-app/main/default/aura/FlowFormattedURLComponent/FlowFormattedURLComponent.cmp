@@ -1,0 +1,21 @@
+<aura:component implements="lightning:availableForFlowScreens" access="global">
+    <aura:attribute name="recordId" type="String" access="global" />  
+    <aura:attribute name="label" type="String" access="global" />  
+    <aura:attribute name="title" type="String" access="global" />  
+    <aura:attribute name="tooltip" type="String" access="global" />  
+    <aura:attribute name="theme" type="String" access="global" default="Default"/>
+	<aura:attribute name="cssString" type="String" default="slds-box "/>    
+    
+	<aura:handler name="init" value="{!this}" action="{!c.init}"/>    
+    
+    <article class="{!v.cssString}" role="status">
+        <div class="slds-card__header">
+            <h2 class="slds-card__header-title"><b>{!v.title}</b></h2>        
+		</div>                                              
+        <div class="slds-card__body slds-card__body_inner">
+            <lightning:formattedUrl value="{!'/lightning/r/' + v.recordId + '/view'}" 
+                                    label="{!v.label}" tooltip="{!v.tooltip}" />            
+        </div>
+    </article>    
+    
+</aura:component>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Raison De Reporter Le Projet</label>
+    <name>Reason_Project_Postponed__c</name>
+    <picklistValues>
+        <masterLabel>I am stressed</masterLabel>
+        <translation>Je suis stressé</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>I am undecided about the materials</masterLabel>
+        <translation>Je suis indécis au sujet des matériaux</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>I need more time to organize</masterLabel>
+        <translation>J&apos;ai besoin de plus de temps pour m&apos;organiser</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lack of knowledge of the range and advantages of the brand</masterLabel>
+        <translation>Manque de connaissance de la gamme et des avantages de la marque</translation>
+    </picklistValues>
+</CustomFieldTranslation>

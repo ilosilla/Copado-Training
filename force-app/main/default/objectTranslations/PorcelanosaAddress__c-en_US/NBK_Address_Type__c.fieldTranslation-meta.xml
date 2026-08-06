@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Address Type --></label>
+    <name>NBK_Address_Type__c</name>
+    <picklistValues>
+        <masterLabel>B2B-Warehouse</masterLabel>
+        <translation><!-- B2B-Warehouse --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Collection Point2</masterLabel>
+        <translation><!-- Collection Point2 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ships Samples2</masterLabel>
+        <translation><!-- Ships Samples2 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Showroom2</masterLabel>
+        <translation><!-- Showroom2 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Warehouse2</masterLabel>
+        <translation><!-- Warehouse2 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

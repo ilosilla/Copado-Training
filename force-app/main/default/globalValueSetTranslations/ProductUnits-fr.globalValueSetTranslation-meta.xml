@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>BAG</masterLabel>
+        <translation>SAC</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>BOX</masterLabel>
+        <translation>BT</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>CAN</masterLabel>
+        <translation>BID</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>CENTIMETER</masterLabel>
+        <translation>Centimètre</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>DECIMETER</masterLabel>
+        <translation><!-- DECIMETER --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>KILOGRAM</masterLabel>
+        <translation>Kilogramme</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>LITER</masterLabel>
+        <translation>Litre</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>METER</masterLabel>
+        <translation>Mètre</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>MILILITER</masterLabel>
+        <translation>Millilitre</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>PALLET</masterLabel>
+        <translation>Palette</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>PIECE</masterLabel>
+        <translation>Piece</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>ROLE</masterLabel>
+        <translation>Rôle</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>SQUARE CENTIMETER</masterLabel>
+        <translation>Centimètre carré</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>SQUARE DECIMETER</masterLabel>
+        <translation>Cécimètre carré</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>SQUARE FOOT</masterLabel>
+        <translation>Pied carré</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>SQUARE METER</masterLabel>
+        <translation>Mètre carré</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>SQUARE METERS</masterLabel>
+        <translation>Mètre carré</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>UNIT</masterLabel>
+        <translation>Pièce</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

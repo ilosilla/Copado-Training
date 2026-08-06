@@ -1,0 +1,17 @@
+<template>
+    <c-ux-side-panel
+        open={open}
+        loading={loading}
+        title={title}
+        dock={dock}
+        size={size}
+        onclose={handleClose}>        
+
+        <div class="terms-body" lwc:dom="manual"></div>
+
+        <div class="terms-actions">
+            <button class="terms-close" onclick={handleClose}>Close</button>
+        </div>
+
+    </c-ux-side-panel>
+</template>

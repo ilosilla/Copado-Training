@@ -1,0 +1,224 @@
+<template>
+
+    <div class="slds-var-p-around_small">
+        <lightning-spinner lwc:if={showSpinner}></lightning-spinner>
+
+        <div class="slds-panel__header">
+            <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">
+                <span>{formTitle}</span>
+            </h2>
+            <span class="slds-float_right">
+                <lightning-button-icon icon-name="utility:close" alternative-text="Close" title="Close" onclick={handleFormClose}></lightning-button-icon>
+            </span>
+        </div>
+        
+        <!-- Possible toolbar
+        <div class="slds-theme_inverse slds-var-p-around_x-small">
+        </div>
+        -->
+
+        <c-lib-message-bar messages={errorList} theme={errorTheme}></c-lib-message-bar>
+
+        <lightning-record-edit-form 
+            object-api-name='OrderItem'
+            onsubmit={handleSubmit}
+            record-id={recordId}>
+
+            <!--
+            onsuccess={handleSuccess}
+            onerror={handleErrors}
+            onload={handleItemLoad}
+            -->
+
+            <lightning-layout multiple-rows="true"
+                class="slds-form slds-var-p-vertical_small slds-var-p-horizontal_small ">
+                <!--
+                <lightning-layout-item size="12">                                            
+                    <lightning-input-field field-name="AccountId" value={_order.AccountId} disabled="true"></lightning-input-field>
+                    <lightning-input label="Sales Org." value={salesOrgName} disabled="true"></lightning-input>
+                </lightning-layout-item>
+                -->
+
+                <lightning-layout-item size="12">
+                    <!-- Item type selector
+                    <lightning-radio-group name="radioGroup"
+                        label="Item Type"
+                        options={options}
+                        value={value}
+                        required
+                        type="button">
+                    </lightning-radio-group>
+                    -->
+                    <template lwc:if={isNewItem}>
+                        <c-lib-product-lookup-bar 
+                            data-id="product-lookup"
+                            pricebook-id={order.Pricebook2Id} 
+                            currency-code={orderCurrency} 
+                            get-data="false"
+                            onselect={handleProductSelect} onreset={handleProductReset}>
+                        </c-lib-product-lookup-bar>
+                    </template>
+                    <template lwc:else>
+                        <lightning-input label={labels.dict_product} value={item.ProductName__c} class="slds-var-m-bottom_medium" disabled></lightning-input>
+                    </template>
+                </lightning-layout-item>
+
+                <div class="slds-hide">
+                    <lightning-input-field lwc:ref="PricebookEntryId" data-id="PricebookEntryId" field-name="PricebookEntryId" value={item.PricebookEntryId}></lightning-input-field>
+                </div>
+
+                <template lwc:if={isProductReady}>
+
+                    <!-- Hidden area-->
+                    <div class="slds-hide">
+                        <lightning-input-field field-name="Product2Id" value={item.Product2Id}></lightning-input-field>
+                        <lightning-input-field field-name="ProductCode__c" value={item.ProductCode__c}></lightning-input-field>                        
+                    </div>
+
+
+                    <lightning-layout-item size="4">
+                        <lightning-input-field  
+                            field-name="Quantity"
+                            value={item.Quantity}
+                            disabled={isReadonly}>
+                        </lightning-input-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="3" class="slds-var-p-right_small">
+                        <lightning-input-field  
+                            field-name="SalesUnit__c"
+                            value={item.SalesUnit__c}
+                            disabled="true">
+                        </lightning-input-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="5" class="slds-var-p-left_small">
+                        <lightning-input-field  
+                            field-name="NB2B_Shade__c"
+                            value={item.NB2B_Shade__c}
+                            disabled={isReadonly}>
+                        </lightning-input-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="4">
+                        <lightning-input-field  
+                            field-name="UnitPrice"
+                            value={item.UnitPrice}
+                            disabled>
+                        </lightning-input-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="3" class="slds-var-p-right_small">
+                        <lightning-input-field  
+                            field-name="UnitPriceUnitCode__c"
+                            value={item.UnitPriceUnitCode__c}
+                            disabled>
+                        </lightning-input-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="5" class="slds-var-p-left_small">
+                        <lightning-input
+                            label={labels.dict_list_price}
+                            value={strListPrice}
+                            readonly>
+                        </lightning-input>
+                    </lightning-layout-item>
+
+
+                    <lightning-layout-item size="12">
+                        <lightning-layout class="slds-var-m-top_small slds-box slds-box_small slds-theme_shade slds-theme_alert-texture">
+                            
+                            <template lwc:if={isNotFreeOfCharge}>
+                                <lightning-layout-item size="4">
+                                    <lightning-input-field  
+                                        field-name="TotalLineAmount"
+                                        disabled="true">
+                                    </lightning-input-field>
+                                </lightning-layout-item>
+                                <lightning-layout-item class="slds-var-p-around_medium slds-var-m-top_medium">
+                                    <span><i>(*) All prices displayed are in {orderCurrency}</i></span>
+                                </lightning-layout-item>
+                            </template>
+
+                            <template lwc:else>
+                                <lightning-layout-item size="12" class="slds-text-align_center">
+                                    <span><i>{labels.tr0005_204}</i></span> <!-- Items in this order type are provided free of charge. -->
+                                </lightning-layout-item>
+                            </template>
+
+                        </lightning-layout>
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+
+            <lightning-layout class="slds-border_top slds-border_bottom slds-var-p-around_small" lwc:if={isProductReady}>
+                <lightning-layout-item size="6">
+                    <lightning-button label={labels.dict_button_cancel} onclick={handleFormClose} lwc:if={isEditable}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" class="slds-text-align_right">
+                    <lightning-button data-id="submit-close" label={addButtonLabel} variant="brand" class="slds-var-m-right_small" type="submit" lwc:if={isEditable}>                        
+                    </lightning-button>
+                    <lightning-button label={labels.dict_button_cancel} onclick={handleFormClose} lwc:if={isReadonly}>                        
+                    </lightning-button>
+
+                    <!-- <lightning-button data-id="submit-new" label="Add&New" type="submit" onclick={handleBeforeSubmit}></lightning-button> -->
+                </lightning-layout-item>
+            </lightning-layout>
+
+        </lightning-record-edit-form>
+
+        <lightning-layout multiple-rows="true" class="slds-form slds-theme_shade slds-var-m-vertical_small slds-var-p-around_small" lwc:if={isProductReady}>
+
+            <lightning-layout-item size="6" class="slds-form-element slds-form-element_stacked">
+                <lightning-input
+                    label={labels.dict_sku}
+                    value={item.StockKeepingUnit__c}
+                    disabled="true">
+                </lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="6" class="slds-form-element slds-form-element_stacked">
+                <lightning-input
+                    label={labels.dict_make}
+                    value={productData.Marca__c}
+                    disabled="true">
+                </lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="6" class="slds-form-element slds-form-element_stacked">
+                <lightning-input
+                    label={labels.dict_pieces_box} 
+                    value={productData.PcsXBox__c}
+                    disabled="true">
+                </lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="6" class="slds-form-element slds-form-element_stacked">
+                <lightning-input
+                    label={labels.dict_box_pallet} 
+                    value={productData.BoxXPal__c}
+                    disabled="true">
+                </lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="6" class="slds-form-element slds-form-element_stacked">
+                <lightning-input
+                    label={labels.dict_metres_box} 
+                    value={productData.M2XBox__c}
+                    disabled="true"
+                    class="slds-form-element slds-form-element_stacked">
+                </lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="6" class="slds-form-element slds-form-element_stacked">
+                <lightning-input
+                    label={labels.dict_weight_kg}
+                    value={weightString}
+                    disabled="true">
+                </lightning-input>
+            </lightning-layout-item>
+
+        </lightning-layout>
+    </div> <!-- Cpmponent -->
+    
+</template>

@@ -1,0 +1,1362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>3999</fullName>
+        <default>false</default>
+        <label>ASOCIADOS</label>
+    </customValue>
+    <customValue>
+        <fullName>3015</fullName>
+        <default>false</default>
+        <label>AUBAGNE</label>
+    </customValue>
+    <customValue>
+        <fullName>3014</fullName>
+        <default>false</default>
+        <label>BESANÇON</label>
+    </customValue>
+    <customValue>
+        <fullName>3016</fullName>
+        <default>false</default>
+        <label>CANNES</label>
+    </customValue>
+    <customValue>
+        <fullName>3013</fullName>
+        <default>false</default>
+        <label>DIJON</label>
+    </customValue>
+    <customValue>
+        <fullName>3002</fullName>
+        <default>false</default>
+        <label>DISTRIBUTION_1</label>
+    </customValue>
+    <customValue>
+        <fullName>3021</fullName>
+        <default>false</default>
+        <label>DISTRIBUTION_2</label>
+    </customValue>
+    <customValue>
+        <fullName>3998</fullName>
+        <default>false</default>
+        <label>INTRAGRUPO</label>
+    </customValue>
+    <customValue>
+        <fullName>3012</fullName>
+        <default>false</default>
+        <label>LYON</label>
+    </customValue>
+    <customValue>
+        <fullName>2526</fullName>
+        <default>false</default>
+        <label>MD 3RD PARTY RET</label>
+    </customValue>
+    <customValue>
+        <fullName>2522</fullName>
+        <default>false</default>
+        <label>MD CANNOCK SHOW</label>
+    </customValue>
+    <customValue>
+        <fullName>2523</fullName>
+        <default>false</default>
+        <label>MD DISTRIBUTION</label>
+    </customValue>
+    <customValue>
+        <fullName>2524</fullName>
+        <default>false</default>
+        <label>MD INTERCOMPANY</label>
+    </customValue>
+    <customValue>
+        <fullName>2525</fullName>
+        <default>false</default>
+        <label>MD NAT.BUILDERS</label>
+    </customValue>
+    <customValue>
+        <fullName>2521</fullName>
+        <default>false</default>
+        <label>MD NOTTINGHAM SHOW</label>
+    </customValue>
+    <customValue>
+        <fullName>2520</fullName>
+        <default>false</default>
+        <label>MD SOLIHULL SHOW</label>
+    </customValue>
+    <customValue>
+        <fullName>2527</fullName>
+        <default>false</default>
+        <label>MD TRADE</label>
+    </customValue>
+    <customValue>
+        <fullName>3022</fullName>
+        <default>false</default>
+        <label>MERIGNAC</label>
+    </customValue>
+    <customValue>
+        <fullName>3000</fullName>
+        <default>false</default>
+        <label>MONTPELLIER</label>
+    </customValue>
+    <customValue>
+        <fullName>3011</fullName>
+        <default>false</default>
+        <label>MULHOUSE</label>
+    </customValue>
+    <customValue>
+        <fullName>3050</fullName>
+        <default>false</default>
+        <label>NE PAS UTILISER</label>
+    </customValue>
+    <customValue>
+        <fullName>3001</fullName>
+        <default>false</default>
+        <label>NIMES</label>
+    </customValue>
+    <customValue>
+        <fullName>2545</fullName>
+        <default>false</default>
+        <label>NW 3RD PARTY RET</label>
+    </customValue>
+    <customValue>
+        <fullName>2543</fullName>
+        <default>false</default>
+        <label>NW DISTRIBUTION</label>
+    </customValue>
+    <customValue>
+        <fullName>2540</fullName>
+        <default>false</default>
+        <label>NW INTERCOMPANY</label>
+    </customValue>
+    <customValue>
+        <fullName>2542</fullName>
+        <default>false</default>
+        <label>NW MANCHESTER</label>
+    </customValue>
+    <customValue>
+        <fullName>2544</fullName>
+        <default>false</default>
+        <label>NW NAT.BUILDERS</label>
+    </customValue>
+    <customValue>
+        <fullName>2546</fullName>
+        <default>false</default>
+        <label>NW TRADE</label>
+    </customValue>
+    <customValue>
+        <fullName>2541</fullName>
+        <default>false</default>
+        <label>NW WARRINGTON</label>
+    </customValue>
+    <customValue>
+        <fullName>3056</fullName>
+        <default>false</default>
+        <label>OUEST - ANGERS</label>
+    </customValue>
+    <customValue>
+        <fullName>3060</fullName>
+        <default>false</default>
+        <label>OUEST - BREST</label>
+    </customValue>
+    <customValue>
+        <fullName>3051</fullName>
+        <default>false</default>
+        <label>OUEST - CAEN</label>
+    </customValue>
+    <customValue>
+        <fullName>3054</fullName>
+        <default>false</default>
+        <label>OUEST - LA BAULE</label>
+    </customValue>
+    <customValue>
+        <fullName>3053</fullName>
+        <default>false</default>
+        <label>OUEST - LE MANS</label>
+    </customValue>
+    <customValue>
+        <fullName>3061</fullName>
+        <default>false</default>
+        <label>OUEST - LORIENT</label>
+    </customValue>
+    <customValue>
+        <fullName>3052</fullName>
+        <default>false</default>
+        <label>OUEST - ORVAULT</label>
+    </customValue>
+    <customValue>
+        <fullName>3055</fullName>
+        <default>false</default>
+        <label>OUEST - POITIERS</label>
+    </customValue>
+    <customValue>
+        <fullName>3062</fullName>
+        <default>false</default>
+        <label>OUEST - RENNES</label>
+    </customValue>
+    <customValue>
+        <fullName>3059</fullName>
+        <default>false</default>
+        <label>OUEST- ROCHE SUR YON</label>
+    </customValue>
+    <customValue>
+        <fullName>3057</fullName>
+        <default>false</default>
+        <label>OUEST - TOURS</label>
+    </customValue>
+    <customValue>
+        <fullName>3058</fullName>
+        <default>false</default>
+        <label>OUEST - VANNES</label>
+    </customValue>
+    <customValue>
+        <fullName>3036</fullName>
+        <default>false</default>
+        <label>PIDF - ARCUEIL</label>
+    </customValue>
+    <customValue>
+        <fullName>3033</fullName>
+        <default>false</default>
+        <label>PIDF - COIGNIERES</label>
+    </customValue>
+    <customValue>
+        <fullName>3034</fullName>
+        <default>false</default>
+        <label>PIDF - MARBEUF</label>
+    </customValue>
+    <customValue>
+        <fullName>3038</fullName>
+        <default>false</default>
+        <label>PIDF - LILLE</label>
+    </customValue>
+    <customValue>
+        <fullName>3031</fullName>
+        <default>false</default>
+        <label>PIDF - MELUN</label>
+    </customValue>
+    <customValue>
+        <fullName>3032</fullName>
+        <default>false</default>
+        <label>PIDF - MONTIGNY</label>
+    </customValue>
+    <customValue>
+        <fullName>3035</fullName>
+        <default>false</default>
+        <label>PIDF - PARIS</label>
+    </customValue>
+    <customValue>
+        <fullName>3037</fullName>
+        <default>false</default>
+        <label>PIDF - ROUEN</label>
+    </customValue>
+    <customValue>
+        <fullName>3018</fullName>
+        <default>false</default>
+        <label>ANNECY</label>
+    </customValue>
+    <customValue>
+        <fullName>2536</fullName>
+        <default>false</default>
+        <label>SC 3RD PARTY RET</label>
+    </customValue>
+    <customValue>
+        <fullName>2533</fullName>
+        <default>false</default>
+        <label>SC DISTRIBUTION</label>
+    </customValue>
+    <customValue>
+        <fullName>2531</fullName>
+        <default>false</default>
+        <label>SC EDINBURGH SHOW</label>
+    </customValue>
+    <customValue>
+        <fullName>2530</fullName>
+        <default>false</default>
+        <label>SC GLASGOW SHOW</label>
+    </customValue>
+    <customValue>
+        <fullName>2534</fullName>
+        <default>false</default>
+        <label>SC INTERCOMPANY</label>
+    </customValue>
+    <customValue>
+        <fullName>2535</fullName>
+        <default>false</default>
+        <label>SC NAT.BUILDERS</label>
+    </customValue>
+    <customValue>
+        <fullName>2532</fullName>
+        <default>false</default>
+        <label>SC NEWCASTLE SHOW</label>
+    </customValue>
+    <customValue>
+        <fullName>2538</fullName>
+        <default>false</default>
+        <label>SC TRADE NEWCASTLE</label>
+    </customValue>
+    <customValue>
+        <fullName>2537</fullName>
+        <default>false</default>
+        <label>SC TRADE SCOTLAND</label>
+    </customValue>
+    <customValue>
+        <fullName>2596</fullName>
+        <default>false</default>
+        <label>SE 3RD PARTY RET</label>
+    </customValue>
+    <customValue>
+        <fullName>2599</fullName>
+        <default>false</default>
+        <label>SE BUTECH SHOP</label>
+    </customValue>
+    <customValue>
+        <fullName>2559</fullName>
+        <default>false</default>
+        <label>SE CLERKENWELL</label>
+    </customValue>
+    <customValue>
+        <fullName>2554</fullName>
+        <default>false</default>
+        <label>SE CROYDON</label>
+    </customValue>
+    <customValue>
+        <fullName>2550</fullName>
+        <default>false</default>
+        <label>SE DISTRIBUTION</label>
+    </customValue>
+    <customValue>
+        <fullName>2558</fullName>
+        <default>false</default>
+        <label>SE FULHAM</label>
+    </customValue>
+    <customValue>
+        <fullName>2551</fullName>
+        <default>false</default>
+        <label>SE INTERCOMPANY</label>
+    </customValue>
+    <customValue>
+        <fullName>2595</fullName>
+        <default>false</default>
+        <label>SE NAT.BUILDERS</label>
+    </customValue>
+    <customValue>
+        <fullName>2556</fullName>
+        <default>false</default>
+        <label>SE NORWICH</label>
+    </customValue>
+    <customValue>
+        <fullName>2555</fullName>
+        <default>false</default>
+        <label>SE PETERBOROUGH</label>
+    </customValue>
+    <customValue>
+        <fullName>2557</fullName>
+        <default>false</default>
+        <label>SE READING</label>
+    </customValue>
+    <customValue>
+        <fullName>2553</fullName>
+        <default>false</default>
+        <label>SE SOUTHAMPTON</label>
+    </customValue>
+    <customValue>
+        <fullName>2597</fullName>
+        <default>false</default>
+        <label>SE TRADE</label>
+    </customValue>
+    <customValue>
+        <fullName>2552</fullName>
+        <default>false</default>
+        <label>SE WATFORD</label>
+    </customValue>
+    <customValue>
+        <fullName>3010</fullName>
+        <default>false</default>
+        <label>STRASBOURG</label>
+    </customValue>
+    <customValue>
+        <fullName>3020</fullName>
+        <default>false</default>
+        <label>TOULOUSE</label>
+    </customValue>
+    <customValue>
+        <fullName>2513</fullName>
+        <default>false</default>
+        <label>WE 3RD PARTY RET</label>
+    </customValue>
+    <customValue>
+        <fullName>2518</fullName>
+        <default>false</default>
+        <label>WE ASSOCIATES</label>
+    </customValue>
+    <customValue>
+        <fullName>2510</fullName>
+        <default>false</default>
+        <label>WE BRISTOL SHOW</label>
+    </customValue>
+    <customValue>
+        <fullName>2511</fullName>
+        <default>false</default>
+        <label>WE CARDIFF SHOW</label>
+    </customValue>
+    <customValue>
+        <fullName>2517</fullName>
+        <default>false</default>
+        <label>WE EXETER NEW SHOW.</label>
+    </customValue>
+    <customValue>
+        <fullName>2514</fullName>
+        <default>false</default>
+        <label>WE DISTRIBUTION</label>
+    </customValue>
+    <customValue>
+        <fullName>2512</fullName>
+        <default>false</default>
+        <label>WE EXETER SHOW</label>
+    </customValue>
+    <customValue>
+        <fullName>2516</fullName>
+        <default>false</default>
+        <label>WE INTERCOMPANY</label>
+    </customValue>
+    <customValue>
+        <fullName>2515</fullName>
+        <default>false</default>
+        <label>WE NAT.BUILDERS</label>
+    </customValue>
+    <customValue>
+        <fullName>2519</fullName>
+        <default>false</default>
+        <label>WE TRADE</label>
+    </customValue>
+    <customValue>
+        <fullName>2566</fullName>
+        <default>false</default>
+        <label>YO 3RD PARTY RET</label>
+    </customValue>
+    <customValue>
+        <fullName>2560</fullName>
+        <default>false</default>
+        <label>YO DISTRIBUTION</label>
+    </customValue>
+    <customValue>
+        <fullName>2561</fullName>
+        <default>false</default>
+        <label>YO DONCASTER SHOW</label>
+    </customValue>
+    <customValue>
+        <fullName>2564</fullName>
+        <default>false</default>
+        <label>YO INTERCOMPANY</label>
+    </customValue>
+    <customValue>
+        <fullName>2562</fullName>
+        <default>false</default>
+        <label>YO LEEDS SHOW</label>
+    </customValue>
+    <customValue>
+        <fullName>2565</fullName>
+        <default>false</default>
+        <label>YO NAT.BUILDERS</label>
+    </customValue>
+    <customValue>
+        <fullName>2563</fullName>
+        <default>false</default>
+        <label>YO SHEFFIELD SHOW</label>
+    </customValue>
+    <customValue>
+        <fullName>2567</fullName>
+        <default>false</default>
+        <label>YO TRADE</label>
+    </customValue>
+    <customValue>
+        <fullName>2594</fullName>
+        <default>false</default>
+        <label>SE CAMBRIDGE</label>
+    </customValue>
+    <customValue>
+        <fullName>2592</fullName>
+        <default>false</default>
+        <label>SE XTONE</label>
+    </customValue>
+    <customValue>
+        <fullName>3025</fullName>
+        <default>false</default>
+        <label>CHAMPAGNE AU MONT D&apos;OR</label>
+    </customValue>
+    <customValue>
+        <fullName>3026</fullName>
+        <default>false</default>
+        <label>LYON CENTRO</label>
+    </customValue>
+    <customValue>
+        <fullName>3091</fullName>
+        <default>false</default>
+        <label>PIDF - KRION</label>
+    </customValue>
+    <customValue>
+        <fullName>3024</fullName>
+        <default>false</default>
+        <label>KRION</label>
+    </customValue>
+    <customValue>
+        <fullName>3063</fullName>
+        <default>false</default>
+        <label>OUEST -XTONE</label>
+    </customValue>
+    <customValue>
+        <fullName>3064</fullName>
+        <default>false</default>
+        <label>OUEST - KRION</label>
+    </customValue>
+    <customValue>
+        <fullName>3090</fullName>
+        <default>false</default>
+        <label>PIDF - XTONE</label>
+    </customValue>
+    <customValue>
+        <fullName>3027</fullName>
+        <default>false</default>
+        <label>PAYS BASQUE</label>
+    </customValue>
+    <customValue>
+        <fullName>35007</fullName>
+        <default>false</default>
+        <label>COLONIA</label>
+    </customValue>
+    <customValue>
+        <fullName>2570</fullName>
+        <default>false</default>
+        <label>SE HANOVER SQ</label>
+    </customValue>
+    <customValue>
+        <fullName>5000</fullName>
+        <default>false</default>
+        <label>JOHANNESBURG</label>
+    </customValue>
+    <customValue>
+        <fullName>5001</fullName>
+        <default>false</default>
+        <label>COPENHAGUE</label>
+    </customValue>
+    <customValue>
+        <fullName>3017</fullName>
+        <default>false</default>
+        <label>LYON CEE</label>
+    </customValue>
+    <customValue>
+        <fullName>0000</fullName>
+        <default>false</default>
+        <label>EXPORTACIÓN</label>
+    </customValue>
+    <customValue>
+        <fullName>0001</fullName>
+        <default>false</default>
+        <label>GRUPO</label>
+    </customValue>
+    <customValue>
+        <fullName>2528</fullName>
+        <default>false</default>
+        <label>MD XTONE</label>
+    </customValue>
+    <customValue>
+        <fullName>3019</fullName>
+        <default>false</default>
+        <label>NICE</label>
+    </customValue>
+    <customValue>
+        <fullName>4101</fullName>
+        <default>false</default>
+        <label>MIAMI SHOWROOM</label>
+    </customValue>
+    <customValue>
+        <fullName>4102</fullName>
+        <default>false</default>
+        <label>POMPANO SHOWROOM</label>
+    </customValue>
+    <customValue>
+        <fullName>4103</fullName>
+        <default>false</default>
+        <label>ATLANTA SHOWROOM</label>
+    </customValue>
+    <customValue>
+        <fullName>4104</fullName>
+        <default>false</default>
+        <label>ATLANTA OUT.SALES</label>
+    </customValue>
+    <customValue>
+        <fullName>4105</fullName>
+        <default>false</default>
+        <label>DOWNTOWN MIA SHOWR</label>
+    </customValue>
+    <customValue>
+        <fullName>4106</fullName>
+        <default>false</default>
+        <label>DOWNTOWN MIA OUT.SAL</label>
+    </customValue>
+    <customValue>
+        <fullName>4107</fullName>
+        <default>false</default>
+        <label>MIAMI  OUT.SALES</label>
+    </customValue>
+    <customValue>
+        <fullName>4108</fullName>
+        <default>false</default>
+        <label>FL LATAM</label>
+    </customValue>
+    <customValue>
+        <fullName>4109</fullName>
+        <default>false</default>
+        <label>FL NATIONAL ACCOUNTS</label>
+    </customValue>
+    <customValue>
+        <fullName>4071</fullName>
+        <default>false</default>
+        <label>SAN JOSE SHOWROOM</label>
+    </customValue>
+    <customValue>
+        <fullName>4072</fullName>
+        <default>false</default>
+        <label>SAN JOSE OUT.SALES</label>
+    </customValue>
+    <customValue>
+        <fullName>4073</fullName>
+        <default>false</default>
+        <label>SAN FRANCISCO SHOWR.</label>
+    </customValue>
+    <customValue>
+        <fullName>4074</fullName>
+        <default>false</default>
+        <label>SAN FRANCISCO OUT.SA</label>
+    </customValue>
+    <customValue>
+        <fullName>4075</fullName>
+        <default>false</default>
+        <label>SEATTLE SHOWROOM</label>
+    </customValue>
+    <customValue>
+        <fullName>4076</fullName>
+        <default>false</default>
+        <label>SEATTLE OUT.SALES</label>
+    </customValue>
+    <customValue>
+        <fullName>4077</fullName>
+        <default>false</default>
+        <label>WALNUT CREEK SHOWR</label>
+    </customValue>
+    <customValue>
+        <fullName>4078</fullName>
+        <default>false</default>
+        <label>SF LATAM</label>
+    </customValue>
+    <customValue>
+        <fullName>4079</fullName>
+        <default>false</default>
+        <label>SF NATIONAL ACCOUNTS</label>
+    </customValue>
+    <customValue>
+        <fullName>4051</fullName>
+        <default>false</default>
+        <label>ANAHEIM SHOWROOM</label>
+    </customValue>
+    <customValue>
+        <fullName>4052</fullName>
+        <default>false</default>
+        <label>ORANGE CO. OUT.SALES</label>
+    </customValue>
+    <customValue>
+        <fullName>4053</fullName>
+        <default>false</default>
+        <label>LOS ANGELES DEALERS</label>
+    </customValue>
+    <customValue>
+        <fullName>4054</fullName>
+        <default>false</default>
+        <label>WEST HWOOD SHOWROOM</label>
+    </customValue>
+    <customValue>
+        <fullName>4055</fullName>
+        <default>false</default>
+        <label>WEST HWOOD OUT.SALES</label>
+    </customValue>
+    <customValue>
+        <fullName>4056</fullName>
+        <default>false</default>
+        <label>SAN DIEGO SHOWROOM</label>
+    </customValue>
+    <customValue>
+        <fullName>4057</fullName>
+        <default>false</default>
+        <label>SAN DIEGO OUT.SALES</label>
+    </customValue>
+    <customValue>
+        <fullName>4058</fullName>
+        <default>false</default>
+        <label>LA LATAM</label>
+    </customValue>
+    <customValue>
+        <fullName>4059</fullName>
+        <default>false</default>
+        <label>LA NATIONAL ACCOUNTS</label>
+    </customValue>
+    <customValue>
+        <fullName>4021</fullName>
+        <default>false</default>
+        <label>RAMSEY SHOWROOM</label>
+    </customValue>
+    <customValue>
+        <fullName>4022</fullName>
+        <default>false</default>
+        <label>PARAMUS SHOWROOM</label>
+    </customValue>
+    <customValue>
+        <fullName>4023</fullName>
+        <default>false</default>
+        <label>EAST BRUNSWICK SHOWR</label>
+    </customValue>
+    <customValue>
+        <fullName>4024</fullName>
+        <default>false</default>
+        <label>WESTBURY SHOWROOM</label>
+    </customValue>
+    <customValue>
+        <fullName>4025</fullName>
+        <default>false</default>
+        <label>CHICAGO SHOWROOM</label>
+    </customValue>
+    <customValue>
+        <fullName>4026</fullName>
+        <default>false</default>
+        <label>CHICAGO OUT.SALES</label>
+    </customValue>
+    <customValue>
+        <fullName>4027</fullName>
+        <default>false</default>
+        <label>RIVERSIDE SHOWROOM</label>
+    </customValue>
+    <customValue>
+        <fullName>4028</fullName>
+        <default>false</default>
+        <label>RIVERSIDE OUT.SALES</label>
+    </customValue>
+    <customValue>
+        <fullName>4029</fullName>
+        <default>false</default>
+        <label>BOSTON DCENTER SHOWR</label>
+    </customValue>
+    <customValue>
+        <fullName>4030</fullName>
+        <default>false</default>
+        <label>BOSTON CHESTHILL SHO</label>
+    </customValue>
+    <customValue>
+        <fullName>4031</fullName>
+        <default>false</default>
+        <label>BOSTON OUT.SALES</label>
+    </customValue>
+    <customValue>
+        <fullName>4032</fullName>
+        <default>false</default>
+        <label>202 5TH AVENUE SHOWR</label>
+    </customValue>
+    <customValue>
+        <fullName>4033</fullName>
+        <default>false</default>
+        <label>202 5TH AV.OUT.SALES</label>
+    </customValue>
+    <customValue>
+        <fullName>4034</fullName>
+        <default>false</default>
+        <label>KING PRUSSIA SHOWR</label>
+    </customValue>
+    <customValue>
+        <fullName>4035</fullName>
+        <default>false</default>
+        <label>KING PRUSSIA OUTSALE</label>
+    </customValue>
+    <customValue>
+        <fullName>4036</fullName>
+        <default>false</default>
+        <label>PARAMUS OUTSIDE SALES</label>
+    </customValue>
+    <customValue>
+        <fullName>4037</fullName>
+        <default>false</default>
+        <label>BROOKLYN SHOWROOM</label>
+    </customValue>
+    <customValue>
+        <fullName>4038</fullName>
+        <default>false</default>
+        <label>BROOKLYN OUT.SALES</label>
+    </customValue>
+    <customValue>
+        <fullName>4039</fullName>
+        <default>false</default>
+        <label>NY LATAM</label>
+    </customValue>
+    <customValue>
+        <fullName>4040</fullName>
+        <default>false</default>
+        <label>NY NATIONAL ACCOUNTS</label>
+    </customValue>
+    <customValue>
+        <fullName>4041</fullName>
+        <default>false</default>
+        <label>CHICAGO LINCOLN PARK</label>
+    </customValue>
+    <customValue>
+        <fullName>4121</fullName>
+        <default>false</default>
+        <label>DALLAS SHOWROOM</label>
+    </customValue>
+    <customValue>
+        <fullName>4122</fullName>
+        <default>false</default>
+        <label>DALLAS DC SHOWROOM</label>
+    </customValue>
+    <customValue>
+        <fullName>4123</fullName>
+        <default>false</default>
+        <label>DALLAS OUT.SALES</label>
+    </customValue>
+    <customValue>
+        <fullName>4124</fullName>
+        <default>false</default>
+        <label>DENVER SHOWROOM</label>
+    </customValue>
+    <customValue>
+        <fullName>4125</fullName>
+        <default>false</default>
+        <label>DENVER OUT.SALES</label>
+    </customValue>
+    <customValue>
+        <fullName>4126</fullName>
+        <default>false</default>
+        <label>HOUSTON SHOWROOM</label>
+    </customValue>
+    <customValue>
+        <fullName>4127</fullName>
+        <default>false</default>
+        <label>HOUSTON OUT.SALES</label>
+    </customValue>
+    <customValue>
+        <fullName>4128</fullName>
+        <default>false</default>
+        <label>AUSTIN OUT.SALES</label>
+    </customValue>
+    <customValue>
+        <fullName>4129</fullName>
+        <default>false</default>
+        <label>TX LATAM</label>
+    </customValue>
+    <customValue>
+        <fullName>4130</fullName>
+        <default>false</default>
+        <label>TX NATIONAL ACCOUNTS</label>
+    </customValue>
+    <customValue>
+        <fullName>4200</fullName>
+        <default>false</default>
+        <label>E.CAD BRAMPTON SHW</label>
+    </customValue>
+    <customValue>
+        <fullName>4201</fullName>
+        <default>false</default>
+        <label>E.CAD CALEDONIA SHW</label>
+    </customValue>
+    <customValue>
+        <fullName>4202</fullName>
+        <default>false</default>
+        <label>E.CAD BRAMPTON WHS</label>
+    </customValue>
+    <customValue>
+        <fullName>4203</fullName>
+        <default>false</default>
+        <label>E.CAD OUTSIDE SALES</label>
+    </customValue>
+    <customValue>
+        <fullName>4204</fullName>
+        <default>false</default>
+        <label>E.CAD QUEBEC</label>
+    </customValue>
+    <customValue>
+        <fullName>4205</fullName>
+        <default>false</default>
+        <label>E.CAD MONTREAL</label>
+    </customValue>
+    <customValue>
+        <fullName>4206</fullName>
+        <default>false</default>
+        <label>E.CAD VAUGHAN</label>
+    </customValue>
+    <customValue>
+        <fullName>4000</fullName>
+        <default>false</default>
+        <label>ROCKVILLE WAREHOUSE</label>
+    </customValue>
+    <customValue>
+        <fullName>4001</fullName>
+        <default>false</default>
+        <label>ROCKVILLE SHOWROOM</label>
+    </customValue>
+    <customValue>
+        <fullName>4002</fullName>
+        <default>false</default>
+        <label>WASHINGTON DC SHOWR.</label>
+    </customValue>
+    <customValue>
+        <fullName>4003</fullName>
+        <default>false</default>
+        <label>MARYLAND OUT.SALES</label>
+    </customValue>
+    <customValue>
+        <fullName>4004</fullName>
+        <default>false</default>
+        <label>NORTH CAR. OUT.SALES</label>
+    </customValue>
+    <customValue>
+        <fullName>4005</fullName>
+        <default>false</default>
+        <label>MD LATAM</label>
+    </customValue>
+    <customValue>
+        <fullName>4006</fullName>
+        <default>false</default>
+        <label>MD NATIONAL ACCOUNTS</label>
+    </customValue>
+    <customValue>
+        <fullName>0002</fullName>
+        <default>false</default>
+        <label>XTONE ESPAÑA</label>
+    </customValue>
+    <customValue>
+        <fullName>0003</fullName>
+        <default>false</default>
+        <label>XTONE PORTUGAL</label>
+    </customValue>
+    <customValue>
+        <fullName>0004</fullName>
+        <default>false</default>
+        <label>XTONE ITALIA</label>
+    </customValue>
+    <customValue>
+        <fullName>5020</fullName>
+        <default>false</default>
+        <label>PIAZZA CASTELLO</label>
+    </customValue>
+    <customValue>
+        <fullName>3005</fullName>
+        <default>false</default>
+        <label>AVIGNON</label>
+    </customValue>
+    <customValue>
+        <fullName>4020</fullName>
+        <default>false</default>
+        <label>RAMSEY WAREHOUSE</label>
+    </customValue>
+    <customValue>
+        <fullName>4007</fullName>
+        <default>false</default>
+        <label>TYSONS CORNER</label>
+    </customValue>
+    <customValue>
+        <fullName>4100</fullName>
+        <default>false</default>
+        <label>MIAMI WAREHOUSE</label>
+    </customValue>
+    <customValue>
+        <fullName>4120</fullName>
+        <default>false</default>
+        <label>DALLAS WAREHOUSE</label>
+    </customValue>
+    <customValue>
+        <fullName>3250</fullName>
+        <default>false</default>
+        <label>XTONE AZURCERAM.</label>
+    </customValue>
+    <customValue>
+        <fullName>3251</fullName>
+        <default>false</default>
+        <label>XTONE LORCERAM</label>
+    </customValue>
+    <customValue>
+        <fullName>3252</fullName>
+        <default>false</default>
+        <label>XTONE EURO</label>
+    </customValue>
+    <customValue>
+        <fullName>3253</fullName>
+        <default>false</default>
+        <label>XTONE PIDF</label>
+    </customValue>
+    <customValue>
+        <fullName>3254</fullName>
+        <default>false</default>
+        <label>XTONE SOCAMED</label>
+    </customValue>
+    <customValue>
+        <fullName>3255</fullName>
+        <default>false</default>
+        <label>XTONE OUEST</label>
+    </customValue>
+    <customValue>
+        <fullName>3256</fullName>
+        <default>false</default>
+        <label>XTONE SOUD OUEST</label>
+    </customValue>
+    <customValue>
+        <fullName>5250</fullName>
+        <default>false</default>
+        <label>XTONE SE</label>
+    </customValue>
+    <customValue>
+        <fullName>5251</fullName>
+        <default>false</default>
+        <label>XTONE NW</label>
+    </customValue>
+    <customValue>
+        <fullName>5252</fullName>
+        <default>false</default>
+        <label>XTONE MD</label>
+    </customValue>
+    <customValue>
+        <fullName>5253</fullName>
+        <default>false</default>
+        <label>XTONE SC</label>
+    </customValue>
+    <customValue>
+        <fullName>5254</fullName>
+        <default>false</default>
+        <label>XTONE WE</label>
+    </customValue>
+    <customValue>
+        <fullName>5255</fullName>
+        <default>false</default>
+        <label>XTONE YO</label>
+    </customValue>
+    <customValue>
+        <fullName>4250</fullName>
+        <default>false</default>
+        <label>XTONE FL</label>
+    </customValue>
+    <customValue>
+        <fullName>4251</fullName>
+        <default>false</default>
+        <label>XTONE LA</label>
+    </customValue>
+    <customValue>
+        <fullName>4252</fullName>
+        <default>false</default>
+        <label>XTONE SF</label>
+    </customValue>
+    <customValue>
+        <fullName>4253</fullName>
+        <default>false</default>
+        <label>XTONE NY</label>
+    </customValue>
+    <customValue>
+        <fullName>4255</fullName>
+        <default>false</default>
+        <label>XTONE TX</label>
+    </customValue>
+    <customValue>
+        <fullName>4254</fullName>
+        <default>false</default>
+        <label>XTONE MARYLAND</label>
+    </customValue>
+    <customValue>
+        <fullName>221</fullName>
+        <default>false</default>
+        <label>PORCELANOSA GROUPE</label>
+    </customValue>
+    <customValue>
+        <fullName>4050</fullName>
+        <default>false</default>
+        <label>ANAHEIM WAREHOUSE</label>
+    </customValue>
+    <customValue>
+        <fullName>4070</fullName>
+        <default>false</default>
+        <label>SAN JOSE WAREHOUSE</label>
+    </customValue>
+    <customValue>
+        <fullName>4042</fullName>
+        <default>false</default>
+        <label>OHIO</label>
+    </customValue>
+    <customValue>
+        <fullName>4060</fullName>
+        <default>false</default>
+        <label>ARIZONA</label>
+    </customValue>
+    <customValue>
+        <fullName>4008</fullName>
+        <default>false</default>
+        <label>TENNESSE</label>
+    </customValue>
+    <customValue>
+        <fullName>5002</fullName>
+        <default>false</default>
+        <label>ISTANBUL</label>
+    </customValue>
+    <customValue>
+        <fullName>219</fullName>
+        <default>false</default>
+        <label>PORCELANOSA GROUPE 219</label>
+    </customValue>
+    <customValue>
+        <fullName>5600</fullName>
+        <default>false</default>
+        <label>Porce. Switzerland</label>
+    </customValue>
+    <customValue>
+        <fullName>4061</fullName>
+        <default>false</default>
+        <label>NEVADA</label>
+    </customValue>
+    <customValue>
+        <fullName>5550</fullName>
+        <default>false</default>
+        <label>BELGIUM</label>
+    </customValue>
+    <customValue>
+        <fullName>037</fullName>
+        <default>false</default>
+        <label>UK - IRLANDA</label>
+    </customValue>
+    <customValue>
+        <fullName>038</fullName>
+        <default>false</default>
+        <label>FRANCIA</label>
+    </customValue>
+    <customValue>
+        <fullName>039</fullName>
+        <default>false</default>
+        <label>COL FRAN - CAR</label>
+    </customValue>
+    <customValue>
+        <fullName>040</fullName>
+        <default>false</default>
+        <label>CENTRO - SUDAMERICA</label>
+    </customValue>
+    <customValue>
+        <fullName>041</fullName>
+        <default>false</default>
+        <label>EEUU - CANADA - MEX</label>
+    </customValue>
+    <customValue>
+        <fullName>043</fullName>
+        <default>false</default>
+        <label>BEL -  E.A.U.</label>
+    </customValue>
+    <customValue>
+        <fullName>042</fullName>
+        <default>false</default>
+        <label>CENTROEUROPA</label>
+    </customValue>
+    <customValue>
+        <fullName>044</fullName>
+        <default>false</default>
+        <label>PAISES ESTE</label>
+    </customValue>
+    <customValue>
+        <fullName>045</fullName>
+        <default>false</default>
+        <label>GRE/P. ARAB A</label>
+    </customValue>
+    <customValue>
+        <fullName>046</fullName>
+        <default>false</default>
+        <label>S. ASIA - AUS - ISR</label>
+    </customValue>
+    <customValue>
+        <fullName>047</fullName>
+        <default>false</default>
+        <label>ALEM - AUST - SUIZA</label>
+    </customValue>
+    <customValue>
+        <fullName>048</fullName>
+        <default>false</default>
+        <label>ITALIA</label>
+    </customValue>
+    <customValue>
+        <fullName>049</fullName>
+        <default>false</default>
+        <label>NACIONAL(PORT/ANDO)</label>
+    </customValue>
+    <customValue>
+        <fullName>050</fullName>
+        <default>false</default>
+        <label>A.SAUD - OTROS</label>
+    </customValue>
+    <customValue>
+        <fullName>051</fullName>
+        <default>false</default>
+        <label>PAISES NO ASIGNADOS</label>
+    </customValue>
+    <customValue>
+        <fullName>150</fullName>
+        <default>false</default>
+        <label>CENTROAMERICA–CARIBE</label>
+    </customValue>
+    <customValue>
+        <fullName>999</fullName>
+        <default>false</default>
+        <label>OBSOLETOS</label>
+    </customValue>
+    <customValue>
+        <fullName>4043</fullName>
+        <default>false</default>
+        <label>MINNESOTA</label>
+    </customValue>
+    <customValue>
+        <fullName>4110</fullName>
+        <default>false</default>
+        <label>NAPLES SHOWROOM</label>
+    </customValue>
+    <customValue>
+        <fullName>2549</fullName>
+        <default>false</default>
+        <label>NW CHESTER</label>
+    </customValue>
+    <customValue>
+        <fullName>3066</fullName>
+        <default>false</default>
+        <label>EURO - ST-ETIENNE</label>
+    </customValue>
+    <customValue>
+        <fullName>3065</fullName>
+        <default>false</default>
+        <label>AIX EN PROVENCE</label>
+    </customValue>
+    <customValue>
+        <fullName>4009</fullName>
+        <default>false</default>
+        <label>CHARLOTTE</label>
+    </customValue>
+    <customValue>
+        <fullName>4111</fullName>
+        <default>false</default>
+        <label>WEST PALM BEACH</label>
+    </customValue>
+    <customValue>
+        <fullName>035</fullName>
+        <default>false</default>
+        <label>AREA A.I.E.</label>
+    </customValue>
+    <customValue>
+        <fullName>5800</fullName>
+        <default>false</default>
+        <label>PORCEL. SIDNEY</label>
+    </customValue>
+    <customValue>
+        <fullName>5801</fullName>
+        <default>false</default>
+        <label>PORCEL. BRISBANE</label>
+    </customValue>
+    <customValue>
+        <fullName>2539</fullName>
+        <default>false</default>
+        <label>SC ABERDEEN</label>
+    </customValue>
+    <customValue>
+        <fullName>5400</fullName>
+        <default>false</default>
+        <label>Porce. Scandinavia</label>
+    </customValue>
+    <customValue>
+        <fullName>4132</fullName>
+        <default>false</default>
+        <label>THE BAYOU SHOWROOM</label>
+    </customValue>
+    <customValue>
+        <fullName>5700</fullName>
+        <default>false</default>
+        <label>Porcelanosa Israel</label>
+    </customValue>
+    <customValue>
+        <fullName>5803</fullName>
+        <default>false</default>
+        <label>PORCEL. MELBOURNE</label>
+    </customValue>
+    <customValue>
+        <fullName>2800</fullName>
+        <default>false</default>
+        <label>SANTIAGO DE CHILE</label>
+    </customValue>
+    <customValue>
+        <fullName>2802</fullName>
+        <default>false</default>
+        <label>KRION CHILE</label>
+    </customValue>
+    <customValue>
+        <fullName>4080</fullName>
+        <default>false</default>
+        <label>BELLEVUE SHOWROOM</label>
+    </customValue>
+    <customValue>
+        <fullName>2801</fullName>
+        <default>false</default>
+        <label>ESPECIFICACIONES</label>
+    </customValue>
+    <customValue>
+        <fullName>4112</fullName>
+        <default>false</default>
+        <label>NAPLES OUT.SALES</label>
+    </customValue>
+    <customValue>
+        <fullName>5450</fullName>
+        <default>false</default>
+        <label>PORCELANOSA DK APS</label>
+    </customValue>
+    <customValue>
+        <fullName>5500</fullName>
+        <default>false</default>
+        <label>PORCELANOSA DEUTSCHLAND</label>
+    </customValue>
+    <customValue>
+        <fullName>2830</fullName>
+        <default>false</default>
+        <label>SANTO DOMINGO</label>
+    </customValue>
+    <customValue>
+        <fullName>2569</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>2569</label>
+    </customValue>
+    <customValue>
+        <fullName>2593</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>2593</label>
+    </customValue>
+    <customValue>
+        <fullName>5017</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CANTIERE SUR</label>
+    </customValue>
+    <customValue>
+        <fullName>3097</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3097</label>
+    </customValue>
+    <customValue>
+        <fullName>8250</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>XTONE SPA</label>
+    </customValue>
+    <customValue>
+        <fullName>2585</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>2585</label>
+    </customValue>
+    <customValue>
+        <fullName>5016</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CANTIERE NORTE</label>
+    </customValue>
+    <masterLabel>sales_office2</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>opportunit_s_TOM</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <columns>Amount_custom__c</columns>
+    <columns>OPPORTUNITY.RECORDTYPE</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>Activity__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>New,Qualification,Especificación,Cotización,Esperando pedido</value>
+    </filters>
+    <label>opportunités TOM</label>
+    <sharedTo>
+        <role>Responsable_de_Salle_nimes</role>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Autopick__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>When checked, the order is picjked automatically in SAP</description>
+    <inlineHelpText>Check this boix to select auto-pick.</inlineHelpText>
+    <label>Autopick</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

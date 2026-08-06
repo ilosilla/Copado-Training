@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Follow</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Follows</value>
+    </caseValues>
+    <layouts>
+        <layout>Account Follows</layout>
+        <sections>
+            <label><!-- Account Section --></label>
+            <section>Account Section</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Event Follows</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Event Section --></label>
+            <section>Event Section</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Follow Layout</layout>
+        <sections>
+            <label><!-- Account Section --></label>
+            <section>Account Section</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Section --></label>
+            <section>Opportunity Section</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Opportunity Follows</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Section --></label>
+            <section>Opportunity Section</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Task Follows</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Event Section --></label>
+            <section>Event Section</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <description><!-- RecordType para Follow de Account --></description>
+        <label><!-- Account --></label>
+        <name>Account</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Recordtype para Follow de Eventos --></description>
+        <label><!-- Event --></label>
+        <name>Event</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Recordtype para Follow de Opportunity --></description>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Record type para Follow de Tasks --></description>
+        <label><!-- Task --></label>
+        <name>Task</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

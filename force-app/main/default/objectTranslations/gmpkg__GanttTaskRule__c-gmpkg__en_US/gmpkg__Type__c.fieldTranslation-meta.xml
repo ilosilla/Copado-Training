@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type --></label>
+    <name>gmpkg__Type__c</name>
+    <picklistValues>
+        <masterLabel>FNET</masterLabel>
+        <translation><!-- FNET --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FNLT</masterLabel>
+        <translation><!-- FNLT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MFO</masterLabel>
+        <translation><!-- MFO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MSO</masterLabel>
+        <translation><!-- MSO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SNET</masterLabel>
+        <translation><!-- SNET --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SNLT</masterLabel>
+        <translation><!-- SNLT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Target End</masterLabel>
+        <translation><!-- Target End --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Target Start</masterLabel>
+        <translation><!-- Target Start --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Work</masterLabel>
+        <translation><!-- Work --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

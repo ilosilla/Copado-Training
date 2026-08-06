@@ -1,0 +1,207 @@
+:host {    
+    
+    /* Base typography */
+    --b2b-checkout-font-family: var(--psa-font-standard);
+    --b2b-checkout-base-size: 0.85rem;
+    --b2b-checkout-base-weight: 400;
+    --b2b-checkout-base-color: #3e3e3c;
+    --b2b-checkout-line-height: 1.45;
+    
+    /* Page title */
+    --b2b-checkout-page-title-size: 1.75em;
+
+    /* Section titles */
+    --b2b-checkout-section-title-size: 1.15em;
+    --b2b-checkout-section-title-weight: 600;
+    --b2b-checkout-section-title-margin-bottom: 0.75rem;
+
+    /* Strong inline text, like radio labels */
+    --b2b-checkout-strong-color: #181818;    
+    --b2b-checkout-strong-weight: 600;
+    --b2b-checkout-strong-size: 1.05em;
+
+    /* Muted inline text, like radio descriptions */
+    --b2b-checkout-muted-color: #6b6b6b;
+
+    --b2b-checkout-callout-bg-color: rgba(0, 0, 0, 0.035);
+    --b2b-checkout-warning-bg-color: rgba(255, 246, 229, 0.95);
+
+    /* Checkout layout gutter (global hooks) */
+    --b2b-checkout-gutter-margin: 0.75rem;  
+    --b2b-checkout-gutter-padding: 0.75rem; 
+    --b2b-checkout-gutter-total: 1.5rem;   
+    
+   /* ==================================================
+      B2B UI CORE — FIELD ROLES
+      ================================================== */
+
+    /* Field label */
+    --b2b-field-label-font-size: 0.85rem;
+    --b2b-field-label-font-weight: 500;
+    --b2b-field-label-text-color: #3e3e3c;
+    --b2b-field-label-text-color-light: #6b6b6b;
+    --b2b-field-label-text-color-dark: #2f2f2f;
+    --b2b-checkout-required-label-font-weight: 600;
+    --b2b-checkout-required-label-color: var(--b2b-field-label-text-color-light);
+
+    /* Field value */
+    --b2b-field-value-font-size: 0.9rem;
+    --b2b-field-value-text-color: #111111;
+    --b2b-field-value-font-weight-strong: 600;
+    --b2b-field-value-font-weight-weak: 400;
+
+    /* Others */
+    --b2b-field-font-family: var(--psa-font-standard);
+    --b2b-field-border-color:#c9c9c9;
+    --b2b-field-border-radius: 2px;
+    --b2b-field-spacing-medium: 0.25rem;
+    --b2b-field-border-color-focus: rgba(0,0,0,0.45);
+
+}
+
+
+/* =========================================================
+    CHECKOUT SECTION STYLES
+ * =========================================================  */
+
+.checkout-layout {
+    font-family: var(--b2b-checkout-font-family, inherit);
+    font-size: var(--b2b-checkout-base-size); 
+    font-weight: var(--b2b-checkout-base-weight);
+    color: var(--b2b-checkout-base-color);
+    line-height: var(--b2b-checkout-line-height);
+}
+
+.checkout-page-title {
+    font-family: var(--b2b-checkout-font-family, inherit);
+    font-size: var(--b2b-checkout-page-title-size);
+    font-weight: 600;
+    color: var(--b2b-checkout-strong-color);
+    margin: 0;
+}
+
+/* =========================
+   SECTION (default / edit)
+   ========================= */
+.checkout-section {
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-top: 1px solid var(--b2b-border-color);
+}
+
+/* First section (default): keep margin-top 8px, remove top separation */
+.checkout-section:first-of-type{
+  border-top: none;
+  padding-top: 0;
+  /* margin-top stays 0.5rem */
+}
+
+/* =========================
+   SECTION (summary / compact)
+   ========================= */
+.checkout-section.checkout-section--summary{
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-top: 1px solid var(--b2b-border-color);
+}
+
+/* First section (summary): margin-top 9px, no border-top */
+.checkout-section.checkout-section--summary:first-of-type{
+  margin-top: 0.5rem;
+  border-top: none;
+  padding-top: 0;      /* as requested */
+  padding-bottom: 0.5rem; /* explicit for clarity */
+}
+
+/* =========================================================
+    CHECKOUT MISC
+ * =========================================================  */
+.checkout-overlay {
+    position: fixed;
+    inset: 0;
+    /*background-color: rgba(240, 242, 245, 0.85) !important;*/
+    background-color: rgba(107,107,107,0.4);
+    backdrop-filter: blur(1px);    
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Ajuste visual del spinner para que quede ligeramente más arriba */
+.checkout-overlay lightning-spinner {
+    transform: translateY(-100px);
+}
+
+
+/* =========================================================
+   ERROR STATES
+   ========================================================= */
+.checkout-critical {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    margin: 1rem 0 1.25rem 0;
+    padding: 0.875rem 1rem;
+    background: #fff1f1;
+    border: 1px solid #f3b2b2;    border-radius: 0.25rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.checkout-critical__icon {
+    flex: 0 0 auto;
+    margin-top: 0.1rem;
+}
+
+.checkout-critical__content {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.checkout-critical__title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    color: #b00020;
+}
+
+.checkout-critical__message {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: #2b2b2b;
+}
+
+.checkout-critical__details {
+    margin-top: 0.75rem;
+}
+
+
+.checkout-critical__details-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    opacity: 0.85;
+}
+
+.checkout-critical__details-code {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.75rem;
+    line-height: 1.25;
+    white-space: pre-wrap;
+    overflow: auto;
+    max-height: 140px;
+}
+
+.checkout-critical__close {
+    flex: 0 0 auto;
+    margin-left: 0.25rem;
+    margin-top: -0.25rem;
+}

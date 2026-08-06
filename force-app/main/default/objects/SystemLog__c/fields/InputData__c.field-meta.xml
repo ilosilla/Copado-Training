@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InputData__c</fullName>
+    <description>Campo para registrar información de entrada como un JSON o un XML recibido.</description>
+    <label>Input Data</label>
+    <length>50000</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

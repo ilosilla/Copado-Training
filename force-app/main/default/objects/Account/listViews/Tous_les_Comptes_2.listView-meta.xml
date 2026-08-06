@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tous_les_Comptes_2</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>PC_EMAIL</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>Country_formula__c</columns>
+    <columns>ACCOUNT.CREATED_DATE</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>ACCOUNT.RECORDTYPE</columns>
+    <columns>SAP_Id__c</columns>
+    <columns>Account_Classification__c</columns>
+    <columns>Source__c</columns>
+    <columns>Locked__c</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>ACCOUNT.ADDRESS1_COUNTRY_CODE</columns>
+    <filterScope>Everything</filterScope>
+    <label>Tous les Comptes</label>
+    <sharedTo>
+        <portalRoleAndSubordinates>PGBCERAMICABVBAPartnerUser</portalRoleAndSubordinates>
+        <roleAndSubordinates>B_lgica</roleAndSubordinates>
+        <roleAndSubordinates>Director_Regional_FR</roleAndSubordinates>
+    </sharedTo>
+</ListView>

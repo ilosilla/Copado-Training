@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Categories__c</fullName>
+    <description>Ceramics (including wall tile, floor tile, porcelain, sintered stone, etc)
+Shower products (including shower enclosures, handels, shower tray, etc)
+Bathroom accesories (including mirrors, soap dishes, radiators, etc)
+Sanitaryware (including toilets, bidet, etc)
+Adhesives and other compliments for instalation</description>
+    <inlineHelpText>Ceramics (including wall tile, floor tile, porcelain, sintered stone)
+Shower products (including shower enclosures, handels, shower tray)
+Bathroom accesories (including mirrors, soap dishes, radiators)
+Sanitaryware (including toilets, bidet)</inlineHelpText>
+    <label>Product Categories</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Adhesives</fullName>
+                <default>false</default>
+                <label>Adhesives and other compliments</label>
+            </value>
+            <value>
+                <fullName>Altissima</fullName>
+                <default>false</default>
+                <label>Altissima</label>
+            </value>
+            <value>
+                <fullName>Bathroom accesories</fullName>
+                <default>false</default>
+                <label>Bathroom accesories</label>
+            </value>
+            <value>
+                <fullName>Bathroom furniture</fullName>
+                <default>false</default>
+                <label>Bathroom furniture</label>
+            </value>
+            <value>
+                <fullName>Bathtubs</fullName>
+                <default>false</default>
+                <label>Bathtubs</label>
+            </value>
+            <value>
+                <fullName>Bonded Facades</fullName>
+                <default>false</default>
+                <label>Bonded Facades</label>
+            </value>
+            <value>
+                <fullName>Ceramics</fullName>
+                <default>false</default>
+                <label>Ceramics</label>
+            </value>
+            <value>
+                <fullName>Countertops</fullName>
+                <default>false</default>
+                <label>Countertops</label>
+            </value>
+            <value>
+                <fullName>Fitwall</fullName>
+                <default>false</default>
+                <label>Fitwall</label>
+            </value>
+            <value>
+                <fullName>Kitchen furniture</fullName>
+                <default>false</default>
+                <label>Kitchen furniture</label>
+            </value>
+            <value>
+                <fullName>Krion</fullName>
+                <default>false</default>
+                <label>Krion</label>
+            </value>
+            <value>
+                <fullName>Laminate</fullName>
+                <default>false</default>
+                <label>Laminate</label>
+            </value>
+            <value>
+                <fullName>Linkfloor</fullName>
+                <default>false</default>
+                <label>Linkfloor</label>
+            </value>
+            <value>
+                <fullName>Mosaics</fullName>
+                <default>false</default>
+                <label>Mosaics</label>
+            </value>
+            <value>
+                <fullName>Natural Stone</fullName>
+                <default>false</default>
+                <label>Natural Stone</label>
+            </value>
+            <value>
+                <fullName>Offsite</fullName>
+                <default>false</default>
+                <label>Offsite</label>
+            </value>
+            <value>
+                <fullName>OSM Facade</fullName>
+                <default>false</default>
+                <label>OSM Facade</label>
+            </value>
+            <value>
+                <fullName>OSM Kitchens</fullName>
+                <default>false</default>
+                <label>OSM Kitchens</label>
+            </value>
+            <value>
+                <fullName>OSM Pods</fullName>
+                <default>false</default>
+                <label>OSM Pods</label>
+            </value>
+            <value>
+                <fullName>OSM Utility Cupboard</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OSM Utility Cupboard</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Pods</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pods</label>
+            </value>
+            <value>
+                <fullName>Raised access flooring</fullName>
+                <default>false</default>
+                <label>Raised access flooring</label>
+            </value>
+            <value>
+                <fullName>Sanitaryware</fullName>
+                <default>false</default>
+                <label>Sanitaryware</label>
+            </value>
+            <value>
+                <fullName>Shower products</fullName>
+                <default>false</default>
+                <label>Shower products</label>
+            </value>
+            <value>
+                <fullName>Taps</fullName>
+                <default>false</default>
+                <label>Taps</label>
+            </value>
+            <value>
+                <fullName>Ventilated facades</fullName>
+                <default>false</default>
+                <label>Ventilated facades</label>
+            </value>
+            <value>
+                <fullName>Wallpaper</fullName>
+                <default>false</default>
+                <label>Wallpaper</label>
+            </value>
+            <value>
+                <fullName>Washbasin</fullName>
+                <default>false</default>
+                <label>Washbasin</label>
+            </value>
+            <value>
+                <fullName>Wood</fullName>
+                <default>false</default>
+                <label>Wood</label>
+            </value>
+            <value>
+                <fullName>Xtone</fullName>
+                <default>false</default>
+                <label>Xtone</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CLAIM_Signature__c</fullName>
+    <defaultValue>&quot;&lt;p&gt;After Sales Department&lt;br/&gt;PORCELANOSA&lt;/p&gt;&quot;</defaultValue>
+    <label>CLAIM Signature</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Book_Appointment_Requested</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>ExistingAccount__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>AppointmentType__c</columns>
+    <columns>Showroom__c</columns>
+    <columns>City__c</columns>
+    <columns>State__c</columns>
+    <columns>LEAD.ZIP</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LeadType__c</field>
+        <operation>equals</operation>
+        <value>Book an Appointment</value>
+    </filters>
+    <label>New Book Appointment Requested</label>
+</ListView>

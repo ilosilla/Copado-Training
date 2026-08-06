@@ -1,0 +1,349 @@
+<template>
+    <template lwc:if={caseCreated}>
+        <div class="slds-modal__container" lwc:if={caseCreated}>            
+            <div class="slds-card" style="padding:0px;min-width:60%;width:600px;">
+                <header class="slds-theme_success slds-theme_alert-texture slds-var-p-horizontal_large" style="padding-top: 4rem; padding-bottom: 0.5rem;">
+                    <h3 class="slds-text-heading_large">{labels.caseClaimCreated}</h3>
+                </header>
+                <div class="slds-var-p-around_large slds-text-align_center">
+                    <p class="slds-text-heading_small">{labels.caseClaimCreatedBody}</p>
+                    <div class="slds-var-p-top_x-large">
+                         <lightning-button label={labels.dictClose} variant="brand" onclick={handleClose}></lightning-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template lwc:else>
+        <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="welcome-mat-112-label"
+            class="slds-modal slds-fade-in-open slds-modal_medium">
+            <div class="slds-modal__container">            
+                <div class="slds-modal__header slds-modal__header_empty"></div>
+                <div class="slds-modal__content">                
+                    <div class="lds-welcome-mat slds-welcome-mat_info-only" tabindex="-1">
+                        <div class="slds-welcome-mat__content slds-grid" tabindex="-1">
+                            <div class="slds-welcome-mat__info slds-size_1-of-3 slds-var-p-around_medium" tabindex="-1" role="region" style="background-image: none;align-items: stretch !important;">
+                                <div class="slds-welcome-mat__info-content slds-text-align_left slds-m-vertical_none" tabindex="-1">
+                                    <h2 class="slds-welcome-mat__info-title" id="welcome-mat-112-label">{labels.caseCreateClaimTitle}</h2>
+                                    <div class="slds-welcome-mat__info-description slds-text-longform slds-var-m-bottom_xx-small">
+                                        <lightning-formatted-rich-text value={labels.caseCreateClaimIntro}></lightning-formatted-rich-text>
+                                    </div>
+                                    <ul>
+
+                                        <li class="slds-welcome-mat__tile slds-welcome-mat__tile_info-only slds-m-vertical_none">
+                                            <div class="slds-media slds-p-around_none">
+                                                <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">
+                                                    <div class="slds-welcome-mat__tile-figure">
+                                                        <div class="slds-welcome-mat__tile-icon-container">
+                                                            <lightning-icon icon-name={icon1} size="small"></lightning-icon>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-media__body">
+                                                    <div class="slds-welcome-mat__tile-body slds-text-align_left">
+                                                        <h3 class="slds-welcome-mat__tile-title">{labels.caseCreateStep1Title}</h3>
+                                                        <p class="slds-welcome-mat__tile-description">{labels.caseCreateStep1Text}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="slds-welcome-mat__tile slds-welcome-mat__tile_info-only slds-m-vertical_none">
+                                            <div class="slds-media slds-p-around_none">
+                                                <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">
+                                                    <div class="slds-welcome-mat__tile-figure">
+                                                        <div class="slds-welcome-mat__tile-icon-container">
+                                                            <lightning-icon icon-name={icon2} size="small"></lightning-icon>
+                                                        </div>
+                                                    </div> 
+                                                </div> 
+                                                <div class="slds-media__body"> 
+                                                    <div class="slds-welcome-mat__tile-body slds-text-align_left">
+                                                        <h3 class="slds-welcome-mat__tile-title">{labels.caseCreateStep2Title}</h3>
+                                                        <p class="slds-welcome-mat__tile-description">{labels.caseCreateStep2Text}</p>
+                                                    </div> 
+                                                </div> 
+                                            </div> 
+                                        </li> 
+    
+                                        <li class="slds-welcome-mat__tile slds-welcome-mat__tile_info-only slds-m-vertical_none">
+                                            <div class="slds-media slds-p-around_none"> 
+                                                <div class="slds-media__figure slds-media __figure_fixed-width slds-align_absolute-center">
+                                                    <div class="slds-welcome-mat__tile-figure">
+                                                        <div class="slds-welcome-mat__tile-icon-container">
+                                                            <lightning-icon icon-name={icon3} size="small"></lightning-icon>
+                                                        </div> 
+                                                    </div> 
+                                                </div> 
+                                                <div class="slds-media__body"> 
+                                                    <div class="slds-welcome-mat__tile-body slds-text-align_left">
+                                                        <h3 class="slds-welcome-mat__tile-title">{labels.caseCreateStep3Title}</h3>
+                                                        <p class="slds-welcome-mat__tile-description">{labels.caseCreateStep3Text}</p>
+                                                    </div> 
+                                                </div> 
+                                            </div> 
+                                        </li> 
+    
+                                        <li class="slds-welcome-mat__tile slds-welcome-mat__tile_info-only slds-m-vertical_none">
+                                            <div class="slds-media slds-p-around_none"> 
+                                                <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">
+                                                    <div class="slds-welcome-mat__tile-figure">
+                                                        <div class="slds-welcome-mat__tile-icon-container">
+                                                            <lightning-icon icon-name={icon4} size="small"></lightning-icon>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-media__body">
+                                                    <div class="slds-welcome-mat__tile-body slds-text-align_left">
+                                                        <h3 class="slds-welcome-mat__tile-title">{labels.caseCreateStep4Title}</h3>
+                                                        <p class="slds-welcome-mat__tile-description">{labels.caseCreateStep4Text}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+
+                                </div>
+                            </div>
+                            <div class="slds-welcome-mat__tiles slds-size_2-of-3 slds-welcome-mat__tiles_info-only">
+                                <div class="slds-modal__header slds-var-p-top_xx-small slds-text-align_left">
+                                    <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{headerText}</h1>
+                                </div>
+
+                                <!--------------------------- step 1 -------------------------->                                
+                                <div lwc:if={isStep1}>  
+                                    <div class="slds-var-p-around_medium">
+                                        <p><b>{labels.caseEnterInvoice}</b></p>
+                                        <lightning-layout class="slds-var-m-vertical_x-small">
+                                            <lightning-layout-item>
+                                                <lightning-input data-id="invoiceNumber" type="text" label={labels.dictInvoiceNo} max-length="10" style="width:10em;"></lightning-input>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item style="position:relative;">
+                                                <lightning-button variant="brand" icon-name="utility:search" label={labels.dictButtonSearch} onclick={handleSearch}
+                                                    class="slds-var-m-left_xx-small" style="position:absolute;bottom: 2px;"></lightning-button>
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                    </div>
+                                    <div class="" style="border-top: 6px solid var(--lwc-colorBorderSeparatorAlt)" lwc:if={invoiceOK}>
+                                        <p class="slds-var-p-around_medium">{labels.caseCheckInvoice}</p>
+                                        <div class="">
+                                            
+                                            <div class="slds-var-p-around_medium slds-grid slds-wrap slds-theme_shade">
+                                                <div class="slds-col slds-size_1-of-2 slds-var-p-right_x-small">
+                                                    <c-lib-form-element label={labels.dictInvoiceNumber} value={invoiceData.Number}></c-lib-form-element>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-2 slds-var-p-left_x-small">
+                                                    <c-lib-form-element label={labels.dictInvoiceDate} value={invoiceData.Date} format="date"></c-lib-form-element>
+                                                </div>
+                                                <div class="slds-col slds-size_2-of-2 slds-var-p-right_x-small slds-var-p-top_x-small">
+                                                    <c-lib-form-element label={labels.dictInvoiceAmount} value={invoiceData.Total} currency={invoiceData.Currency} format="currency"></c-lib-form-element>
+                                                </div>
+                                                <!--
+                                                <div class="slds-col slds-size_1-of-2 slds-var-p-left_x-small slds-var-p-top_x-small">
+                                                    <c-lib-form-element label="Invoice Currency" value={invoiceData.Currency}></c-lib-form-element>
+                                                </div>
+                                                -->
+                                                <div class="slds-col slds-size_2-of-2 slds-var-p-top_x-small">
+                                                    <c-lib-form-element label={labels.dictCustomer} value={invoiceData.AccountName}></c-lib-form-element>
+                                                </div>
+                                                <div class="slds-col slds-size_2-of-2 slds-var-p-top_x-small">
+                                                    <c-lib-form-element label={labels.dictSalesOrg} value={salesOrgName}></c-lib-form-element>
+                                                </div>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                </div>  <!-- step 1 -->
+
+                                <!--------------------------- step 2 -------------------------->
+                                <div lwc:if={isStep2}>  
+                                    <div class="slds-var-p-horizontal_medium slds-var-m-top_medium">
+                                        <p class="slds-var-m-bottom_medium"><b>{labels.caseSelectProducts}</b></p>
+                                    </div>
+                                    <div class="slds-var-p-horizontal_medium slds-scrollable_x">
+                                        <c-lib-error-panel errors={errorObject} theme="error"></c-lib-error-panel>
+                                        <lightning-layout horizontal-align="spread"  class="slds-table slds-theme_info slds-table_bordered slds-var-p-horizontal_small" >                                        
+                                            <lightning-layout-item class="slds-border_right slds-var-p-around_xx-small" size="5">
+                                                <h3 class="col-header-1">Product</h3>
+                                                <h3 class="col-header-2">{labels.dictQuantityInvoiced}</h3>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="5" class="slds-border_right slds-var-p-around_xx-small" >                                                                                       
+                                                <h3 class="col-header-1">{labels.dictProblemDescription}</h3>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="2" class="slds-var-p-around_xx-small" >
+                                                <h3 class="col-header-1">{labels.caseAffectedUnits}</h3> 
+                                            </lightning-layout-item>
+                                        </lightning-layout>                                
+                                        <template for:each={invoiceLines} for:item="line">
+                                            <lightning-layout key={line.Line} class={line.className} >
+
+                                                <lightning-layout-item size="5" class="slds-var-p-around_xx-small">
+                                                    <div>{line.ProductName}</div>
+                                                    <div>{line.Quantity} {line.SalesUnit}</div>
+                                                </lightning-layout-item>
+
+                                                <lightning-layout-item size="5" class="slds-var-p-around_xx-small">
+                                                    <lightning-select
+                                                        data-index={line.index}
+                                                        value={line.problem}
+                                                        options={defectOptions}
+                                                        onchange={handleLineDefectChanged}
+                                                        variant="label-hidden"
+                                                        class="index-1">
+                                                    </lightning-select>           
+                                                </lightning-layout-item>                                    
+
+                                                <lightning-layout-item size="2" class="slds-var-p-around_xx-small">
+                                                    <lightning-input 
+                                                        data-id={line.inputId} 
+                                                        data-index={line.index}
+                                                        value={line.defective}
+                                                        type="number" 
+                                                        disabled={line.disabled} 
+                                                        onblur={handleLineUnitsChanged}
+                                                        variant="label-hidden"></lightning-input>
+                                                </lightning-layout-item>    
+                                                
+                                            </lightning-layout>
+                                        </template>
+                                    </div>
+                                </div> <!-- step 2 -->
+
+                                <!--------------------------- step 3 -------------------------->
+                                <div lwc:if={isStep3} class="slds-var-p-around_medium">  
+                                    
+                                    <p><b>{labels.caseProblemDescriptionPrompt}</b></p>
+
+                                    <lightning-layout pull-to-boundary="small" multiple-rows>
+                                        <lightning-layout-item size="6" padding="horizontal-small" class="slds-var-p-top_x-small">
+                                            <lightning-input label={labels.dictProduct} value={currentItem.ProductName} read-only></lightning-input>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" padding="horizontal-small" class="slds-var-p-top_x-small">
+                                            <lightning-input label={labels.dictQuantity} value={currentItem.QuantityString} read-only></lightning-input>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="12" padding="horizontal-small" class="slds-var-p-top_x-small">
+                                            <lightning-textarea data-id="problem-description" value={currentItem.ProblemDescription} label={labels.dictProblemDescription} onchange={handleDescriptionChange}></lightning-textarea>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="12" padding="horizontal-small" class="slds-var-p-top_x-small">
+                                            <!-- <c-custom-file-uploader></c-custom-file-uploader> -->
+                                            <lightning-input
+                                                type="file"
+                                                label={labels.dictAttachments}
+                                                onchange={handleFilesChange}
+                                                multiple>
+                                            </lightning-input>
+                                            <div class="slds-var-m-top_small">
+                                                <lightning-pill-container data-id="pills-container" items={uploadedFiles} onitemremove={handleItemRemove}></lightning-pill-container>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+
+                                </div> <!-- step 3 -->
+
+                                <!--------------------------- step 4 -------------------------->
+                                <div lwc:if={isStep4}>  
+                                    <c-lib-error-panel errors={errorObject} theme="error"></c-lib-error-panel>
+                                    <p class="slds-var-p-top_small slds-var-p-horizontal_medium"><b>{labels.caseCheckClaim}</b></p>
+                                    <div class="slds-var-m-vertical_small">
+                                        <div class="slds-var-p-horizontal_medium slds-var-p-vertical_x-small slds-theme_shade">                                        
+                                            <h2><b>{labels.dictDetails}:</b></h2>
+                                        </div>
+                                        <div class="slds-var-p-horizontal_medium slds-var-p-vertical_small">
+                                            <div class="slds-grid slds-wrap">
+                                                <div class="slds-col slds-size_1-of-2 slds-var-p-right_x-small">
+                                                    <c-lib-form-element label={labels.dictInvoiceNumber} value={invoiceData.Number}></c-lib-form-element>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-2 slds-var-p-left_x-small">
+                                                    <c-lib-form-element label={labels.dictInvoiceDate} value={invoiceData.Date} format="date"></c-lib-form-element>
+                                                </div>
+                                                <div class="slds-col slds-size_2-of-2 slds-var-p-top_x-small">
+                                                    <c-lib-form-element label={labels.dictCustomer} value={invoiceData.AccountName}></c-lib-form-element>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="slds-var-m-vertical_small">
+                                        <template for:each={selectedLines} for:item="line">
+                                            <div key={line.Line} class="slds-var-p-horizontal_medium slds-var-p-vertical_x-small slds-theme_shade">      
+                                                <h2><b>{labels.dictProductNo}{line.Position}</b></h2>
+                                            </div>
+                                            <div key={line.Line} class="slds-var-p-horizontal_medium slds-var-p-vertical_small">
+                                                <lightning-layout horizontal-align="spread" multiple-rows>
+                                                    <lightning-layout-item size="5" class="slds-var-p-vertical_xx-small slds-var-p-right_small">
+                                                        <div>{line.ProductName}</div>
+                                                    </lightning-layout-item>
+                                                    <lightning-layout-item size="2" class="slds-var-p-around_xx-small">
+                                                        <div>{line.defective} {line.SalesUnit}</div>
+                                                    </lightning-layout-item>                                    
+                                                    <lightning-layout-item size="5" class="slds-var-p-vertical_xx-small slds-var-p-right_small">
+                                                        <div>{line.description}</div>
+                                                    </lightning-layout-item>    
+                                                    <lightning-layout-item size="12" class="slds-var-p-vertical_xx-small slds-var-p-right_small">
+                                                        {line.ProblemDescriptionText}
+                                                    </lightning-layout-item>
+                                                    <lightning-layout-item size="12" class="slds-var-p-vertical_xx-small slds-var-p-right_small">
+                                                        <lightning-badge label={line.AttachmentsText} icon-name="utility:attach" class="slds-badge_lightest"></lightning-badge>
+                                                    </lightning-layout-item>
+                                                </lightning-layout>
+                                            </div>
+                                        </template>
+                                    </div>
+
+                                </div> <!-- step 4 -->
+
+                                <!--------------------------- step 99 (Error) -------------------------->                                
+                                <div lwc:if={isStep99}>  
+                                    <div class="slds-var-p-around_medium">
+                                        <div class="slds-var-p-horizontal_medium slds-var-p-vertical_x-small slds-theme_shade"> 
+
+                                            <h2>
+                                                <b>{error99}</b></h2>
+                                        </div>
+                                    </div>
+                                </div>  <!-- step 99 -->
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-modal__footer">
+                    <lightning-layout horizontal-align="spread">
+                        <lightning-layout-item>
+                            <lightning-button class="slds-button" label={labels.cancelButtonLabel} onclick={handleCancel}></lightning-button>
+                        </lightning-layout-item>                            
+                        <lightning-layout-item>
+                            <lightning-button class="slds-button" label={labels.dictButtonPrevious} onclick={handlePrevious} disabled={disablePrevious}></lightning-button>
+                            <lightning-button class="slds-button" label={nextLabel} onclick={handleNext} variant="brand" disabled={disableNext}></lightning-button>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </div>
+
+            </div>
+        </section>
+        <div lwc:if={showSpinner} class="spinnerDiv">
+            <lightning-spinner></lightning-spinner>
+        </div>    
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </template>
+    <!-- <c-lib-page-canvas mode="panel" xwidth="60%" xheight="50%" header-text="New Claim" show-positive-button="true"
+        show-negative-button="true" positive-button-label="Next" onpositive={handleContinue} onnegative={handleCancel}>
+
+        <div slot="header" class="slds-var-p-around_medium" style="background-color: white;">
+            <c-lib-page-header
+                icon-name="standard:case"
+                title="Open a Claim"
+                subtitle="Step 1 of 3: Invoice selection"
+            ></c-lib-page-header>            
+        </div>
+
+        <div slot="body" style="height:100%;">
+            <div class="slds-grid slds-grid_vertical slds-scrollable">
+                <p>Please enter the invoice number to start the claim process</p>
+                <lightning-input type="number" label="Invoice No."></lightning-input>
+            </div>
+        </div>
+    </c-lib-page-canvas>
+    -->
+</template>

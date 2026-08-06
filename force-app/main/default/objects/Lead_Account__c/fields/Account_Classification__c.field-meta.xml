@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Classification__c</fullName>
+    <label>Account Classification</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Building company</fullName>
+                <default>false</default>
+                <label>Building company</label>
+            </value>
+            <value>
+                <fullName>Architectural firm</fullName>
+                <default>false</default>
+                <label>Architectural firm</label>
+            </value>
+            <value>
+                <fullName>Brand/Chain/Franchise</fullName>
+                <default>false</default>
+                <label>Brand/Franchise</label>
+            </value>
+            <value>
+                <fullName>Construction company</fullName>
+                <default>false</default>
+                <label>Construction company</label>
+            </value>
+            <value>
+                <fullName>Custom home builder</fullName>
+                <default>false</default>
+                <label>Custom home builder</label>
+            </value>
+            <value>
+                <fullName>Developer</fullName>
+                <default>false</default>
+                <label>Developer/investor</label>
+            </value>
+            <value>
+                <fullName>Engineering consultant</fullName>
+                <default>false</default>
+                <label>Engineering consultant</label>
+            </value>
+            <value>
+                <fullName>Facade consultant</fullName>
+                <default>false</default>
+                <label>Facade consultant</label>
+            </value>
+            <value>
+                <fullName>Fit-out company (commercial contract)</fullName>
+                <default>false</default>
+                <label>Fit-out company (commercial contract)</label>
+            </value>
+            <value>
+                <fullName>Franchisee</fullName>
+                <default>false</default>
+                <label>Franchisee</label>
+            </value>
+            <value>
+                <fullName>Interior design firm</fullName>
+                <default>false</default>
+                <label>Interior design firm</label>
+            </value>
+            <value>
+                <fullName>Kitchen instalation company</fullName>
+                <default>false</default>
+                <label>Kitchen instalation company</label>
+            </value>
+            <value>
+                <fullName>Plumbing company</fullName>
+                <default>false</default>
+                <label>Plumbing company</label>
+            </value>
+            <value>
+                <fullName>Procurement company / Quantity surveyor</fullName>
+                <default>false</default>
+                <label>Procurement company / Quantity surveyor</label>
+            </value>
+            <value>
+                <fullName>Public administration</fullName>
+                <default>false</default>
+                <label>Public administration</label>
+            </value>
+            <value>
+                <fullName>Tile instalation company</fullName>
+                <default>false</default>
+                <label>Tile instalation company</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>National House Builders</fullName>
+                <default>false</default>
+                <label>National House Builders</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

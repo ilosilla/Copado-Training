@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultLandingTab>talkdesk__Talkdesk_Admin</defaultLandingTab>
+    <description>Backed by Salesforce Ventures, Talkdesk adds comprehensive call center functionality to the Salesforce experience. Leverage advanced call routing, real-time reporting and automations to work smarter and communicate more effectively from within Salesforce.</description>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Talkdesk</label>
+    <tabs>standard-Case</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>talkdesk__Talkdesk_Live</tabs>
+    <tabs>talkdesk__Talkdesk_Activity__c</tabs>
+    <tabs>talkdesk__Talkdesk_Admin</tabs>
+    <tabs>talkdesk__Talkdesk</tabs>
+    <tabs>talkdesk__Talkdesk_AppConnect</tabs>
+    <tabs>Weekly_Activity_Exception__c</tabs>
+    <tabs>MarketingActions__c</tabs>
+    <tabs>NextActionText__c</tabs>
+    <tabs>PorcelanosaAddress__c</tabs>
+    <tabs>Delivery_Days_Configuration__c</tabs>
+    <tabs>ExternalMapping__c</tabs>
+    <tabs>Follow__c</tabs>
+    <tabs>DvsDiscrepancy__c</tabs>
+    <tabs>WeeklyReport__c</tabs>
+    <tabs>BusinessTrip__c</tabs>
+    <tabs>BusinessTripStrategy__c</tabs>
+    <tabs>BusinessTripVisit__c</tabs>
+    <tabs>B2BCategoriesMapping__c</tabs>
+    <tabs>ItemGroup__c</tabs>
+    <tabs>B2B_RegionProduct__c</tabs>
+    <tabs>B2BAccountSettings__c</tabs>
+</CustomApplication>

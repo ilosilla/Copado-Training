@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>type__c</columns>
+    <columns>Category__c</columns>
+    <columns>Messagepersonal__c</columns>
+    <columns>Messageexception__c</columns>
+    <columns>Where__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Category__c</field>
+        <operation>notEqual</operation>
+        <value>SMSWLIST</value>
+    </filters>
+    <label>All</label>
+</ListView>

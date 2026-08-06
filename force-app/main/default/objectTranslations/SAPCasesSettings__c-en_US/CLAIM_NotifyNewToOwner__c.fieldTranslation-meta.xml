@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Automatically notifies the record owner when a claim is assigned to them --></help>
+    <label><!-- CLAIM Notify Owner --></label>
+    <name>CLAIM_NotifyNewToOwner__c</name>
+</CustomFieldTranslation>

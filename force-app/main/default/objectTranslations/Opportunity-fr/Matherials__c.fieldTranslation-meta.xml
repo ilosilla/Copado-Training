@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Matériaux</label>
+    <name>Matherials__c</name>
+    <picklistValues>
+        <masterLabel>Bathroom accessories</masterLabel>
+        <translation>Accessoires de salle de bains</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bathtubs</masterLabel>
+        <translation>Baignoires</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bulkheads</masterLabel>
+        <translation>Cloisons</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Countertops</masterLabel>
+        <translation>Comptoirs de cuisine</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dressing room</masterLabel>
+        <translation>Comptoirs de cuisine</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Furniture</masterLabel>
+        <translation>Meubles</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation>Autre</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Radiators</masterLabel>
+        <translation>Radiateurs</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sanitary</masterLabel>
+        <translation>Sanitaire</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shower</masterLabel>
+        <translation>Douche</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shower column</masterLabel>
+        <translation>Colonne de douche</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shower tray</masterLabel>
+        <translation>Receveur de douche</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sprinklers</masterLabel>
+        <translation>Arroseurs</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Taps</masterLabel>
+        <translation>Robinetterie</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wardrobe</masterLabel>
+        <translation>Armoire à vêtements</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Washbasins</masterLabel>
+        <translation>Évier</translation>
+    </picklistValues>
+</CustomFieldTranslation>

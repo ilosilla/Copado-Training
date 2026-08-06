@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gmpkg__Type__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>gmpkg__Category__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>SNET</fullName>
+                <default>false</default>
+                <label>SNET</label>
+            </value>
+            <value>
+                <fullName>SNLT</fullName>
+                <default>false</default>
+                <label>SNLT</label>
+            </value>
+            <value>
+                <fullName>FNET</fullName>
+                <default>false</default>
+                <label>FNET</label>
+            </value>
+            <value>
+                <fullName>FNLT</fullName>
+                <default>false</default>
+                <label>FNLT</label>
+            </value>
+            <value>
+                <fullName>MSO</fullName>
+                <default>false</default>
+                <label>MSO</label>
+            </value>
+            <value>
+                <fullName>MFO</fullName>
+                <default>false</default>
+                <label>MFO</label>
+            </value>
+            <value>
+                <fullName>Target Start</fullName>
+                <default>false</default>
+                <label>Target Start</label>
+            </value>
+            <value>
+                <fullName>Target End</fullName>
+                <default>false</default>
+                <label>Target End</label>
+            </value>
+            <value>
+                <fullName>Work</fullName>
+                <default>false</default>
+                <label>Work</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Constraint</controllingFieldValue>
+            <valueName>SNET</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Constraint</controllingFieldValue>
+            <valueName>SNLT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Constraint</controllingFieldValue>
+            <valueName>FNET</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Constraint</controllingFieldValue>
+            <valueName>FNLT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Constraint</controllingFieldValue>
+            <valueName>MSO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Constraint</controllingFieldValue>
+            <valueName>MFO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Deadline</controllingFieldValue>
+            <valueName>Target Start</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Deadline</controllingFieldValue>
+            <valueName>Target End</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Segment</controllingFieldValue>
+            <valueName>Work</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

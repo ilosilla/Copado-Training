@@ -1,0 +1,44 @@
+<!--
+  @description       : 
+  @author            : EHG@nubika.com
+  @group             : 
+  @last modified on  : 02-15-2023
+  @last modified by  : EHG@nubika.com
+-->
+<template>
+    <template if:true={showTotals}>
+        <div class="slds-grid" style="width: 100%;float: right;display: contents;">
+            <div class="slds-col slds-size_1-of-1" style="padding-top: 30%;padding-bottom: 20px;">
+                <div style="border-left: solid;border-left-width: 1px; border-left-color: black;">
+                    <!-- SUBTOTAL -->
+                    <div style="padding-left: 20px;    font-size: 16px;">
+                        <span style="font-weight: bold;">SubTotal:</span>
+                        <span style="font-weight: bold;float: right;margin-right: 20px;">
+                            <!--<lightning-formatted-number value={subTotalS} format-style="currency" currency-code={currencyCart} currency-display-as="symbol"></lightning-formatted-number>-->
+                            <span>{currencyS} {subTotalS}</span>
+                        </span> 
+                    </div>
+                    <!-- VAT -->
+                    <div style="padding-left: 20px;">
+                        <span style="font-weight: bold;">{taxexName}&nbsp;{porcentajeTaxex}%</span>
+                        <span style="font-weight: bold;float: right;margin-right: 20px;">
+                            <!--<lightning-formatted-number value={valorImpuestosS} format-style="currency" currency-code={currencyCart} currency-display-as="symbol"></lightning-formatted-number>-->
+                            <span>{currencyS} {valorImpuestosS}</span>
+                        </span>
+                    </div>
+                    <!-- TOTAL -->
+                    <div style="background-color: lightgrey; height: 50px;margin-left: 15px;margin-top: 10px;">
+                        <div style="font-size: 22px; padding-top: 10px;padding-left: 5px;">
+                            <span style="font-weight: bold;margin-right:10px">Total Order </span>
+                            <span style="font-weight: bold;float: right;margin-right: 20px;">
+                                <!--<lightning-formatted-number value={totalS} format-style="currency" currency-code={currencyCart} currency-display-as="symbol"></lightning-formatted-number>-->
+                                <span>{currencyS} {totalS}</span>
+ 
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

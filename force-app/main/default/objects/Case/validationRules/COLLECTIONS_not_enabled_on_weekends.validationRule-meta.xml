@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COLLECTIONS_not_enabled_on_weekends</fullName>
+    <active>true</active>
+    <description>Collecting not enabled on weekends in London</description>
+    <errorConditionFormula>IsCollection__c &amp;&amp;  not(CustomerReturns__c ) &amp;&amp; (WEEKDAY( CollectionDate__c) = 1 || WEEKDAY( CollectionDate__c) = 7)</errorConditionFormula>
+    <errorDisplayField>CollectionDate__c</errorDisplayField>
+    <errorMessage>Please note that collections are not possible on weekends</errorMessage>
+</ValidationRule>

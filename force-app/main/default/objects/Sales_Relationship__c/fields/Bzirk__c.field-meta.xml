@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bzirk__c</fullName>
+    <description>Sales area of the customer in SAP (BZIRK). In France is related to the price list applied.</description>
+    <externalId>false</externalId>
+    <label>Sales Area</label>
+    <length>6</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

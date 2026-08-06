@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gmpkg__Custom_Icon__c</fullName>
+    <defaultValue>&quot;standard:event&quot;</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Calendar Icon</description>
+    <externalId>false</externalId>
+    <label>Custom Icon</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

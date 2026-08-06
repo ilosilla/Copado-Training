@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Project Type --></label>
+    <name>ProjectType__c</name>
+    <picklistValues>
+        <masterLabel>ALTISSIMA</masterLabel>
+        <translation><!-- ALTISSIMA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KRION</masterLabel>
+        <translation><!-- KRION --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KRION &amp; XTONE</masterLabel>
+        <translation><!-- KRION &amp; XTONE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>XTONE</masterLabel>
+        <translation><!-- XTONE --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

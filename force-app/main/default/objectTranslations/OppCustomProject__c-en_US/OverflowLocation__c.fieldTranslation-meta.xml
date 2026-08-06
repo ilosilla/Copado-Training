@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Sink Overflow Location --></label>
+    <name>OverflowLocation__c</name>
+    <picklistValues>
+        <masterLabel>IN FRONT OF FAUCET</masterLabel>
+        <translation><!-- IN FRONT OF FAUCET --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>N/A</masterLabel>
+        <translation><!-- N/A --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>UNDER FAUCET</masterLabel>
+        <translation><!-- UNDER FAUCET --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

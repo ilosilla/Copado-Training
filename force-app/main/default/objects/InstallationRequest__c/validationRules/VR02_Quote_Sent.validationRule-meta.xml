@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR02_Quote_Sent</fullName>
+    <active>true</active>
+    <description>Quote sent to customer</description>
+    <errorConditionFormula>ispickval( State__c , &apos;Quotation Sent&apos; ) &amp;&amp;
+isblank( SAPQuote__c )</errorConditionFormula>
+    <errorMessage>Please enter the number of the SAP quotation before selectin this status</errorMessage>
+</ValidationRule>

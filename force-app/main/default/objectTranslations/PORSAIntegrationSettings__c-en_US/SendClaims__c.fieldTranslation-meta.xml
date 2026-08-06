@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Sends claims to the factory quality systems --></help>
+    <label><!-- Send claims to factories --></label>
+    <name>SendClaims__c</name>
+</CustomFieldTranslation>

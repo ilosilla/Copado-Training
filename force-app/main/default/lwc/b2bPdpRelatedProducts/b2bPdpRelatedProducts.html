@@ -1,0 +1,29 @@
+<template>
+    <div lwc:if={hasRelatedProducts}> 
+        <h2 class="pdp-related-title">Related products</h2>
+        <div class="pdp-related-container" lwc:if={hasRelatedProducts}>        
+            <div class="pdp-related-grid">
+                <template for:each={relatedProducts} for:item="item">
+                    <article key={item.Id} class="related-card">
+                        <a href={item.Slug} class="related-link">
+                            <div class="related-card-content">
+                                <img class="related-image" src={item.Image} alt={item.Name}/>
+                                <div class="related-info">
+                                    <div class="related-tags">
+                                        <template for:each={item.Tags} for:item="tag">
+                                            <span key={tag} class="related-tag">
+                                                {tag}
+                                            </span>
+                                        </template>
+                                    </div>
+                                    <div class="related-name">{item.Name}</div>
+                                    <div class="related-sku">SKU {item.Code}</div>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,20 @@
+<template>
+    <lightning-carousel if:true={allImagesChecked} disable-auto-refresh="false" disable-auto-scroll="true">
+        <template for:each={finalUrlImageList} for:item="imgUrl">
+            <lightning-carousel-image
+                key={imgUrl}
+                src={imgUrl}
+                description="Detail image"
+            >
+            </lightning-carousel-image>
+        </template>
+    </lightning-carousel>
+    <!-- SPINNER -->
+    <template if:false={allImagesChecked}>
+        <div style="position: relative">
+            <div class="slds-spinner_container">
+                <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+            </div>
+        </div>
+    </template>
+</template>

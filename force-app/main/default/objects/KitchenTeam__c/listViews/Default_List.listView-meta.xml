@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default_List</fullName>
+    <columns>NAME</columns>
+    <columns>Manager__c</columns>
+    <columns>Designer__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>Default List</label>
+</ListView>

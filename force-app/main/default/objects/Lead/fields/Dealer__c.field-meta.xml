@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dealer__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Field to associate Leads to dealers without having to convert them into Private Customers</description>
+    <label>Dealer</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Account.Account_Classification__c</field>
+            <operation>equals</operation>
+            <value>Distributor / dealer</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Leads (Dealer)</relationshipLabel>
+    <relationshipName>Leads1</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Lookup</type>
+</CustomField>

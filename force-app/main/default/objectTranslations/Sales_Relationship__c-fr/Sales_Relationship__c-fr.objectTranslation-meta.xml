@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Relation de vente</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Relation de vente</value>
+    </caseValues>
+    <gender>Masculine</gender>
+    <layouts>
+        <layout>Edition Layout</layout>
+        <sections>
+            <label><!-- Account Status --></label>
+            <section>Account Status</section>
+        </sections>
+        <sections>
+            <label><!-- Administrative Data --></label>
+            <section>Administrative Data</section>
+        </sections>
+        <sections>
+            <label>Sous-distributeurs</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Informations générales</label>
+            <section>Informacion general</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Organizacion Layout</layout>
+        <sections>
+            <label><!-- Account Status --></label>
+            <section>Account Status</section>
+        </sections>
+        <sections>
+            <label><!-- Administrative Data --></label>
+            <section>Administrative Data</section>
+        </sections>
+        <sections>
+            <label>Informations générales</label>
+            <section>Informacion general</section>
+        </sections>
+        <sections>
+            <label>Sous-distributeurs</label>
+            <section>Vínculos personalizados</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Nom de la relation de vente</nameFieldLabel>
+    <recordTypes>
+        <description>RecordType used only in the creation of the record</description>
+        <label>Pour la création</label>
+        <name>For_Creation</name>
+    </recordTypes>
+    <recordTypes>
+        <description>RecordType to edit records</description>
+        <label>Pour l&apos;édition</label>
+        <name>For_Edition</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage>Vous ne pouvez pas  créer des nouveaus relations de ventes parce que le compte est supprimé ou bloquée</errorMessage>
+        <name>Account_locked_or_delete</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Vous ne pouvez pas changer ces champs</errorMessage>
+        <name>Cant_change_key_fields</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Vous n&apos;êtes pas assigné à l&apos;Organisation de Ventes sélectionné. Choississez un autre organisation s&apos;il vous plaît</errorMessage>
+        <name>Check_User_Sales_Org</name>
+    </validationRules>
+    <webLinks>
+        <label>Envoyer à SAP</label>
+        <name>Ampliar_organizacion</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- pruebaboton3 --></label>
+        <name>pruebaboton3</name>
+    </webLinks>
+</CustomObjectTranslation>

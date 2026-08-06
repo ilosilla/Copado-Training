@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enforce_Static_Code_Score</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+  copado__Has_Apex_Code__c = true,
+  OR (
+    AND(
+      ISCHANGED(copado__Promote_Change__c),
+      copado__Promote_Change__c = true
+    ),
+    AND(
+      ISCHANGED(copado__Promote_and_Deploy__c),
+      copado__Promote_and_Deploy__c = true
+    )
+  ),
+  OR (
+    ISNULL(SCA_Score__c),
+    SCA_Score__c &gt; 0
+  )
+)</errorConditionFormula>
+    <errorMessage>Run static code analysis and ensure no violations are found</errorMessage>
+</ValidationRule>

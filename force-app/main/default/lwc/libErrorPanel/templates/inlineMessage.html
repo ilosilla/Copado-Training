@@ -1,0 +1,31 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <template lwc:if={showComponent}>
+        <div class={cssTheme}>            
+            <div class="" role="status">
+                <div class="slds-float_right" if:false={hideCloseButton}>
+                    <lightning-button-icon onclick={handleOnErrorsClose} icon-name="utility:close" alternative-text="Close" variant="bare-inverse" size="medium"></lightning-button-icon>
+                </div>        
+                <div lwc:if={multiMessageMode}>
+                    <header>
+                        <lightning-button-icon onclick={handleOnErrorsCollapse} icon-name="utility:chevrondown" alternative-text="Close" variant="bare-inverse" size="medium"
+                            class="slds-var-m-right_xx-small" if:true={isOpen}></lightning-button-icon>
+                        <lightning-button-icon onclick={handleOnErrorsCollapse} icon-name="utility:chevronright" alternative-text="Close" variant="bare-inverse" size="medium"
+                            class="slds-var-m-right_xx-small" if:false={isOpen}></lightning-button-icon>
+                        <span><b>{title}</b></span>
+                    </header>
+                    <ul class="slds-list--dotted slds-var-m-top_xx-small" if:true={isOpen}>
+                        <template for:each={errorMessages} for:item='errorItem'>
+                            <li key={errorItem}>{errorItem}</li>
+                        </template>
+                    </ul>
+                </div>
+                <div lwc:else>
+                    <template for:each={errorMessages} for:item='errorItem'>
+                        <div key={errorItem}>{errorItem}</div>
+                    </template>
+                </div>
+            </div> 
+        </div>
+    </template>
+</template>

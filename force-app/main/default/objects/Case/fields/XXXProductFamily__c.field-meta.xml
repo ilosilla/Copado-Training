@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>XXXProductFamily__c</fullName>
+    <label>XXXProduct Family</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TILES</fullName>
+                <default>false</default>
+                <label>TILES</label>
+            </value>
+            <value>
+                <fullName>SANITARYWARE</fullName>
+                <default>false</default>
+                <label>SANITARYWARE</label>
+            </value>
+            <value>
+                <fullName>BASINS</fullName>
+                <default>false</default>
+                <label>BASINS</label>
+            </value>
+            <value>
+                <fullName>INSTALLATION SYSTEMS</fullName>
+                <default>false</default>
+                <label>INSTALLATION SYSTEMS</label>
+            </value>
+            <value>
+                <fullName>BRASSWARE</fullName>
+                <default>false</default>
+                <label>BRASSWARE</label>
+            </value>
+            <value>
+                <fullName>SHOWER VALVES</fullName>
+                <default>false</default>
+                <label>SHOWER VALVES</label>
+            </value>
+            <value>
+                <fullName>SHOWER HEADS</fullName>
+                <default>false</default>
+                <label>SHOWER HEADS</label>
+            </value>
+            <value>
+                <fullName>SHOWER COLUMNS</fullName>
+                <default>false</default>
+                <label>SHOWER COLUMNS</label>
+            </value>
+            <value>
+                <fullName>SHOWER TRAYS</fullName>
+                <default>false</default>
+                <label>SHOWER TRAYS</label>
+            </value>
+            <value>
+                <fullName>BATHTUBS</fullName>
+                <default>false</default>
+                <label>BATHTUBS</label>
+            </value>
+            <value>
+                <fullName>ACCESSORIES</fullName>
+                <default>false</default>
+                <label>ACCESSORIES</label>
+            </value>
+            <value>
+                <fullName>TOWEL WARMERS</fullName>
+                <default>false</default>
+                <label>TOWEL WARMERS</label>
+            </value>
+            <value>
+                <fullName>BATHROOM FURNITURE</fullName>
+                <default>false</default>
+                <label>BATHROOM FURNITURE</label>
+            </value>
+            <value>
+                <fullName>MIRRORS</fullName>
+                <default>false</default>
+                <label>MIRRORS</label>
+            </value>
+            <value>
+                <fullName>WORKTOPS</fullName>
+                <default>false</default>
+                <label>WORKTOPS</label>
+            </value>
+            <value>
+                <fullName>TRIMS</fullName>
+                <default>false</default>
+                <label>TRIMS</label>
+            </value>
+            <value>
+                <fullName>ADHESIVES</fullName>
+                <default>false</default>
+                <label>ADHESIVES</label>
+            </value>
+            <value>
+                <fullName>GROUTS</fullName>
+                <default>false</default>
+                <label>GROUTS</label>
+            </value>
+            <value>
+                <fullName>UNDERFLOOR HEATING</fullName>
+                <default>false</default>
+                <label>UNDERFLOOR HEATING</label>
+            </value>
+            <value>
+                <fullName>ALL FAMILIES</fullName>
+                <default>false</default>
+                <label>ALL FAMILIES</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessMappings>
+        <accessLevel>Edit</accessLevel>
+        <object>InstallationOrder__c</object>
+        <objectField>Installer_Partner__c</objectField>
+        <userField>Account</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Edit</accessLevel>
+        <object>InstallationRequest__c</object>
+        <objectField>InstallerAccount__c</objectField>
+        <userField>Account</userField>
+    </accessMappings>
+    <name>Installation Community</name>
+    <profiles>installer community user</profiles>
+    <profiles>partner community user</profiles>
+</SharingSet>

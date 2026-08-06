@@ -1,0 +1,28 @@
+.THIS .myClass .slds-listbox{
+    
+    max-height: calc(((0.8125rem * 1.5) + 1rem) * 3) !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: content-box;
+   
+}
+
+.THIS .relative {
+    
+    position: relative;
+    height: 100px;
+    z-index: 0;
+    
+}
+
+.THIS .whiteBackground {
+    
+    background-color: #FFFFFF;
+  
+}
+
+.THIS [role=combobox] input[readonly]{
+    
+	min-height: calc(2.125rem + 2px);
+    
+}

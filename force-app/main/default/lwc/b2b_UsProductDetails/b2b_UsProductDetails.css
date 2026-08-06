@@ -1,0 +1,97 @@
+/* ====== Colapsable estilo “línea + título + +/-” ====== */
+.rc-section {
+  overflow: hidden;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--psa-border-color);
+}
+
+/* Cabecera */
+.rc-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+.rc-section-header h2 {
+    font-family: var(--psa-section-title-font);
+    font-size: var(--psa-section-title-size);
+    font-weight: var(--psa-section-title-weight);
+    color: var(--psa-section-title-color);
+}
+
+.rc-section-header .toggle {
+  cursor: pointer;
+}
+
+/* Cuerpo */
+.rc-section-body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px 40px 10px 40px; /* espacio lateral para los botones */
+}
+
+.is-closed {
+    display: none !important;
+}
+
+.rc-section-content {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 40px;             /* fila x columna */
+    width: 100%;
+    padding: 0;       /* igual que tu sección "Product Details" */
+    box-sizing: border-box;
+}
+
+/* Celda (cada item) */
+.cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0px;
+    border-bottom: 1px dashed #ccc;  background: #fff;
+}
+
+.cell.skip {
+  border: none;      /* no borde */
+  background: none;  /* hueco visual */
+}
+
+.cell:last-child {
+    border-bottom: none;
+}
+
+.break {
+    border-bottom: 1px solid var(--psa-light-background);
+    min-height: 6px;
+    grid-column: 1 / -1;   /* ocupa toda la fila */    
+    margin: 8px 0;         /* separador opcional */
+    border: none;
+}
+
+/* Estilos de texto (opcional) */
+.label { font-weight: 600; overflow: hidden; text-overflow: ellipsis; }
+.value { color: #555; margin-left: 8px; }
+
+/* Responsive: en móvil 1 columna, mismo orden */
+@media (max-width: 640px) {
+  .grid-2col {
+    grid-template-columns: 1fr;   /* una sola columna */
+  }
+}
+
+.no-select {
+    user-select: none;      /* Estándar moderno */
+    -webkit-user-select: none; /* Safari/Chrome */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE/Edge antiguo */
+}
+
+.rc-section-footer {
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+}

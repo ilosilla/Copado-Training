@@ -1,0 +1,212 @@
+<!--
+  @description       : 
+  @author            : EHG@nubika.com
+  @group             : 
+  @last modified on  : 02-09-2023
+  @last modified by  : EHG@nubika.com
+-->
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,forceCommunity:availableForAllPageTypes,lightning:availableForFlowScreens" 
+                 access="global" controller="NB2B_ProductQuantitiesSummary">
+    
+    <aura:Attribute name="cartItem" type="Object" default="{}" />
+    <aura:Attribute name="recordId" type="String"/>
+    <aura:Attribute name="cartId" type="String"/>
+    <aura:Attribute name="showDateWarning" type="Boolean" default="false"/>
+    <aura:Attribute name="deliveryDate" type="String"/>
+    <aura:Attribute name="showList" type="Boolean" default="false" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+
+    <div class="slds-modal__container" style="align-content: center;align-items: center;color: rgb(94, 94, 94);min-width: 100%;">
+        <aura:if isTrue="{!v.showList}">
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2" style="align-content: center; width: 100%;">
+                <div >
+
+                    <div style="display: grid;grid-template-columns: repeat(2, 1fr);grid-template-rows: 1fr;grid-column-gap: 0px;grid-row-gap: 0px; margin-top:20px;">
+                        <div class="div1 paddingleft10">
+                            <div>
+                                <span class="negrita15" style="font-size:x-large;">Delivery Address</span>
+                            </div>
+                            <aura:if isTrue="{!v.cartItem.checkStore}">
+                                <div>
+                                    <span>[&nbsp;X&nbsp;] I will collect the order from the warehouse</span>
+                                </div>
+                                
+                            </aura:if>
+                           
+                            <div class="margintop20">
+                                <p class="negrita15">{!v.cartItem.addressName}</p>
+                                <p>{!v.cartItem.addressStreet}</p>
+                                <p>{!v.cartItem.addressCity}</p>
+                                <p>{!v.cartItem.addressPostalCode}</p>
+                            </div>
+                        </div>
+                        <div class="div2 paddingleft10"> 
+                            <div>
+                                <span class="negrita15">Delivery Date</span>
+                                <p>{!v.deliveryDate}</p>
+                            </div>
+                            <div class="margintop20">
+                                <span class="negrita15">Your reference/PO</span>
+                                <p>{!v.cartItem.orderCode}</p>
+                            </div>
+                            <div class="margintop20">
+                                <span class="negrita15">Delivery Instructions</span>
+                                <p>{!v.cartItem.shippingInstructions}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div style="border-width: 1px;border-style: solid;border-color: lightgrey;background-color: burlywood; margin-top: 10px; height: 40px;">
+                        <div style="padding-top: 1%;padding-left: 20%;">
+                            WARNING: A transport fee of 50 GBP + VAT will be added to your order.
+                        </div>
+                    </div> -->
+
+                    
+
+                </div>
+            <br/><br/><br/>
+      			<div class="slds-grid slds-wrap">
+                    <!-- <div class="slds-col slds-size_1-of-1" style="text-align: center;padding-top: 10px;font-size: large;text-decoration-line: underline;">
+                        <span><h1>Order Products</h1></span>
+                    </div> -->
+                    <br/><br/><br/>
+                    <div class="slds-col slds-size_1-of-7" style="text-align: left;padding-top: 10px;font-size: large;text-decoration-line: underline;">
+                        <span><h3><b>Price</b></h3></span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-7" style="text-align: left;padding-top: 10px;font-size: large;text-decoration-line: underline;">
+                        <span><h3><b>Quantity</b></h3></span>
+                    </div>
+                    <div class="slds-col slds-size_2-of-7" style="text-align: left;padding-top: 10px;font-size:large;text-decoration-line: underline;">
+                        <span><h3><b>Products</b></h3></span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-7" style="text-align: left;padding-top: 10px;font-size:large;text-decoration-line: underline;">
+                        <span><h3><b>Shade</b></h3></span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-7" style="text-align: right;padding-top: 10px;font-size:large;text-decoration-line: underline;">
+                        <span><h3><b>Subtotal</b></h3></span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-7" style="text-align: right;padding-top: 10px;font-size:large;text-decoration-line: underline;">
+                        <span><h3><b>Tax</b></h3></span>
+                    </div>
+                    <aura:iteration items="{!v.cartItem.cartItemList}" var="item">
+                        <div class="slds-col slds-size_1-of-7" style="text-align: left;padding-top: 10px;font-size: small;">
+                            <span>{!item.SalesPrice}&nbsp;{!item.CurrencyIsoCode} / {!item.NB2B_UnitPrice__c }</span>
+                	 	</div>
+                        <div class="slds-col slds-size_1-of-7" style="text-align: left;padding-top: 10px;font-size: small;">
+                            <span>{!item.Quantity} x {!item.Product2.Umv__c }</span>
+                	 	</div>
+                      	<div class="slds-col slds-size_2-of-7" style="text-align: left;padding-top: 10px;font-size: small;">
+                    		<span>{!item.Product2.Name}</span>
+                	 	</div>
+                        <div class="slds-col slds-size_1-of-7" style="text-align: left;padding-top: 10px;font-size: small;">
+                            <span>{!item.NB2B_Shade__c}</span>
+                	 	</div>
+                        <div class="slds-col slds-size_1-of-7" style="text-align: right;padding-top: 10px;font-size: small;">
+                    		<span>
+                                <p>
+                                    <lightning:formattedNumber value="{!item.TotalLineAmount}" style="currency" currencyCode="{!item.CurrencyIsoCode}"/>
+                                </p>    
+                            </span>
+                	 	</div>
+                        <div class="slds-col slds-size_1-of-7" style="text-align: right;padding-top: 10px;font-size: small;">
+                    		<span>
+                                <p>
+                                    <lightning:formattedNumber value="{!item.TotalLineTaxAmount}" style="currency" currencyCode="{!item.CurrencyIsoCode}"/>
+                                </p>
+                            </span>
+                	 	</div>
+                    </aura:iteration>
+                 </div>
+                <br/><br/><br/>
+
+                <!-- <div style="border-width: 1px;border-style: solid;border-color: lightgrey;background-color: rgb(178, 178, 177); margin-top: 10px; height: 40px;">
+                    <div style="padding-top: 1%;padding-left: 10%;">
+                        [ ] By checking this box you acknowledge that you have read and accepted our <span style="font-weight: bold;">terms/conditions</span>
+                    </div>
+                </div> -->
+            </div>
+            <aura:if isTrue="{!v.showDateWarning}">
+        		<p><i>*{!$Label.c.NB2B_Date_Warning}</i></p>
+        	</aura:if>
+        </aura:if>
+        
+    </div> 
+
+    
+    <!-- <div class="slds-modal__container" style="align-content: center;align-items: center;color: rgb(94, 94, 94);">
+        <aura:if isTrue="{!v.showList}">
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2" style="width: 1110px;align-content: center;">
+      			<div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-1" style="text-align: center;padding-top: 10px;font-size: large;text-decoration-line: underline;">
+                        <span><h1>ORDER INFORMATION</h1></span>
+                    </div>
+                    <br/><br/><br/>
+                    <div class="slds-col slds-size_1-of-2" style="text-align: center;padding-top: 10px;font-size: large;text-decoration-line: underline;">
+                        <span><b>P.O. </b></span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2" style="text-align: center;padding-top: 10px;font-size: large;text-decoration-line: underline;">
+                        <span><b>Delivery Date  </b></span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2" style="text-align: center;padding-top: 10px;font-size: large;">
+                        <span>{!v.cartItem.orderCode}</span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2" style="text-align: center;padding-top: 10px;font-size: large;">
+                        <span>{!v.deliveryDate}   </span>
+                    </div>
+                </div>
+            <br/><br/><br/>
+      			<div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-1" style="text-align: center;padding-top: 10px;font-size: large;text-decoration-line: underline;">
+                        <span><h1>Order Products</h1></span>
+                    </div>
+                    <br/><br/><br/>
+                    <div class="slds-col slds-size_1-of-5" style="text-align: left;padding-top: 10px;font-size: large;text-decoration-line: underline;">
+                        <span><h3><b>Price</b></h3></span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-5" style="text-align: left;padding-top: 10px;font-size: large;text-decoration-line: underline;">
+                        <span><h3><b>Quantity</b></h3></span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-5" style="text-align: left;padding-top: 10px;font-size:large;text-decoration-line: underline;">
+                        <span><h3><b>Products</b></h3></span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-5" style="text-align: right;padding-top: 10px;font-size:large;text-decoration-line: underline;">
+                        <span><h3><b>Subtotal</b></h3></span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-5" style="text-align: right;padding-top: 10px;font-size:large;text-decoration-line: underline;">
+                        <span><h3><b>Tax</b></h3></span>
+                    </div>
+                    <aura:iteration items="{!v.cartItem.cartItemList}" var="item">
+                        <div class="slds-col slds-size_1-of-5" style="text-align: left;padding-top: 10px;font-size: small;">
+                            <span>{!item.SalesPrice}&nbsp;{!item.CurrencyIsoCode} / {!item.NB2B_UnitPrice__c }</span>
+                	 	</div>
+                        <div class="slds-col slds-size_1-of-5" style="text-align: left;padding-top: 10px;font-size: small;">
+                            <span>{!item.Quantity} x {!item.Product2.Umv__c }</span>
+                	 	</div>
+                      	<div class="slds-col slds-size_1-of-5" style="text-align: left;padding-top: 10px;font-size: small;">
+                    		<span>{!item.Product2.Name}</span>
+                	 	</div>
+                        <div class="slds-col slds-size_1-of-5" style="text-align: right;padding-top: 10px;font-size: small;">
+                    		<span>
+                                <p>
+                                    <lightning:formattedNumber value="{!item.TotalLineAmount}" style="currency" currencyCode="{!item.CurrencyIsoCode}"/>
+                                </p>    
+                            </span>
+                	 	</div>
+                        <div class="slds-col slds-size_1-of-5" style="text-align: right;padding-top: 10px;font-size: small;">
+                    		<span>
+                                <p>
+                                    <lightning:formattedNumber value="{!item.TotalLineTaxAmount}" style="currency" currencyCode="{!item.CurrencyIsoCode}"/>
+                                </p>
+                            </span>
+                	 	</div>
+                    </aura:iteration>
+                 </div>
+                <br/><br/><br/>
+            </div>
+        </aura:if>
+    </div> -->
+    
+</aura:component>

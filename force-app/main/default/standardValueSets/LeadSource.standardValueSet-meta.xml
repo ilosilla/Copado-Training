@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Website</fullName>
+        <default>false</default>
+        <label>Website</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Barbour_UK</fullName>
+        <default>false</default>
+        <label>Barbour (UK Users Only)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Explore_FR</fullName>
+        <default>false</default>
+        <label>Explore (FR utilisateurs SEULEMENT)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other Online Research</fullName>
+        <default>false</default>
+        <label>Other Online Research</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Web Request</fullName>
+        <default>false</default>
+        <label>Web Request</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Porsamarket</fullName>
+        <default>false</default>
+        <label>Porsamarket</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Houzz</fullName>
+        <default>false</default>
+        <label>Houzz</label>
+    </standardValue>
+</StandardValueSet>

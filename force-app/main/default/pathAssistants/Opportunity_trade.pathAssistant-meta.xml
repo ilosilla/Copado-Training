@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Opportunity</entityName>
+    <fieldName>StageName</fieldName>
+    <masterLabel>Opportunity trade</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>Amount_custom__c</fieldNames>
+        <fieldNames>Currency__c</fieldNames>
+        <fieldNames>SalesOrglookup__c</fieldNames>
+        <fieldNames>Offer_has_been_accepted__c</fieldNames>
+        <info>&lt;ol&gt;&lt;li&gt;Should identify the actors, contractors and subcontractors of the opportunity&lt;/li&gt;&lt;li&gt;Send to SAP the main actors of the opportunity&lt;/li&gt;&lt;li&gt;Generate the quotations&lt;/li&gt;&lt;li&gt;Follow up the quotations&lt;/li&gt;&lt;/ol&gt;</info>
+        <picklistValueName>Cotización</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Identify_developer__c</fieldNames>
+        <fieldNames>Identify_architect__c</fieldNames>
+        <fieldNames>Have_we_won_specification__c</fieldNames>
+        <info>&lt;ol&gt;&lt;li&gt;Remember to do the prescription&lt;/li&gt;&lt;li&gt;Remember to add files if necessary&lt;/li&gt;&lt;/ol&gt;</info>
+        <picklistValueName>Especificación</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;font-size: 10.5pt;&quot;&gt;Follow up approved quote&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 10.5pt;&quot;&gt;Check to the negative offers&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</info>
+        <picklistValueName>Esperando pedido</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Reason_Lost__c</fieldNames>
+        <picklistValueName>Lost</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Project_trade</recordTypeName>
+</PathAssistant>

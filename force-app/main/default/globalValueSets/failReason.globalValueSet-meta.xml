@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Installation took longer than planned.</fullName>
+        <default>false</default>
+        <label>Installation took longer than planned.</label>
+    </customValue>
+    <customValue>
+        <fullName>Installation delayed as parts/components were not available when needed.</fullName>
+        <default>false</default>
+        <label>Installation delayed as parts/components were not available when needed.</label>
+    </customValue>
+    <customValue>
+        <fullName>Poor quality workmanship</fullName>
+        <default>false</default>
+        <label>Poor quality workmanship</label>
+    </customValue>
+    <customValue>
+        <fullName>Incurring extra costs during the installation due to necessary extra work.</fullName>
+        <default>false</default>
+        <label>Incurring extra costs during the installation due to necessary extra work.</label>
+    </customValue>
+    <customValue>
+        <fullName>Components not fitting as well as they should</fullName>
+        <default>false</default>
+        <label>Components not fitting as well as they should</label>
+    </customValue>
+    <customValue>
+        <fullName>Poor customer service and shopping experience.</fullName>
+        <default>false</default>
+        <label>Poor customer service and shopping experience.</label>
+    </customValue>
+    <customValue>
+        <fullName>Others (please specify in comments below)</fullName>
+        <default>false</default>
+        <label>Others (please specify in comments below)</label>
+    </customValue>
+    <customValue>
+        <fullName>Undefined Reason 2</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Undefined Reason 2</label>
+    </customValue>
+    <description>Customer dissatisfaction main reason</description>
+    <masterLabel>Main Dissatisfaction Reason</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

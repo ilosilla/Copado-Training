@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Maximum number of events in the queue with missing fields in the login flow --></help>
+    <label><!-- Login flow max queue size --></label>
+    <name>lFlow_maxQueueSize__c</name>
+</CustomFieldTranslation>

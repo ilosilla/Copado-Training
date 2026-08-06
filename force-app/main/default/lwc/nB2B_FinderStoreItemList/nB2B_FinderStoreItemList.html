@@ -1,0 +1,36 @@
+<!--
+  @description       :
+  @author            : EHG@nubika.com
+  @group             :
+  @last modified on  : 08-01-2023
+  @last modified by  : EHG@nubika.com
+-->
+<template>
+
+    <div class="slds-grid slds-wrap slds-p-vertical_small">
+        <div class="slds-col slds-size_1-of-2 slds-small-size_1-of-2 slds-medium-size_1-of-2 slds-large-size_5-of-8">
+            <a class="details" onclick={redirectGeoMap}>
+								<template if:false={showFr}>
+									<div class="namecat">{store.address.Name} <span class="descriptioncat">{store.distance} {units} </span></div>
+									<div class="descriptioncat">{store.address.NBK_Address__c.street}</div>
+									<div class="descriptioncat">{store.address.NBK_Address__c.city}, {store.address.NBK_Address__c.state}, {store.address.NBK_Address__c.postalCode}</div>
+								</template>
+								<template if:true={showFr}>
+									<div class="namecat">{store.address.Name} <span class="descriptioncat">{store.distance} {units} </span></div>
+									<div class="descriptioncat">{store.address.NBK_Address__c.street}</div>
+									<div class="descriptioncat">{store.address.NBK_Address__c.postalCode} {store.address.NBK_Address__c.city}</div>
+								</template>
+                <!--<div class="descriptioncat">{store.address.NBK_Address__c.state}</div>-->
+                <!--<div class="descriptioncat">{labels.distanceStore} {store.distance} Km</div> -->
+            </a>
+        </div>
+        <div class="slds-col slds-size_1-of-2 slds-small-size_1-of-2 slds-medium-size_1-of-2 slds-large-size_3-of-8" >
+            <div class="buttonview slds-m-vertical_xx-small">
+                <!--<lightning-button label={labels.bookAndAppointment} onclick={handleCategoryClick}></lightning-button>-->
+                <button class="slds-button slds-button_neutral communityButton" onclick={handleCategoryClick}>{labels.bookAndAppointment}</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="lineSeparator"></div>
+</template>

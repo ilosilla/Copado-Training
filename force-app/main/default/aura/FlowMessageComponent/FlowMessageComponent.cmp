@@ -1,0 +1,15 @@
+<aura:component implements="lightning:availableForFlowScreens" access="global">
+	<aura:attribute name="message" type="String" access="global" />    
+    <aura:attribute name="type" type="String" access="global" default = "slds-box slds-theme_warning slds-theme_alert-texture"/>
+    <aura:attribute name="cssString" type="String" default="slds-box slds-theme_alert-texture"/>
+    <aura:attribute name="heading" type="String"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.getStyle}"/>
+    
+	<!-- <div class="slds-box slds-theme_warning slds-theme_alert-texture" role="status">-->
+    <div class="{!v.cssString}" role="status">
+    	<h2 class="slds-text-heading_small"><b>{!v.heading}</b></h2>
+        <p>{!v.message}</p>
+	</div>    
+
+</aura:component>

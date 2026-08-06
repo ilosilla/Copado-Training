@@ -1,0 +1,88 @@
+<template>
+    <template if:true={comments}>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-label="Example default base table of Opportunities">
+            <thead>
+              <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Completed">Completed</div>
+                  </th>
+                  <th class="" scope="col">
+                    <div class="slds-truncate" title="Opportunity Name">Account Name</div>
+                  </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Opportunity Name">Opportunity Name</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Close Date">Comment</div>
+                </th>
+                <th class="slds-cell_action-mode" scope="col" style="width:3.25rem">
+                    <div class="slds-truncate slds-assistive-text" title="Actions">Actions</div>
+                  </th>
+              </tr>
+            </thead>
+            <tbody>
+                <template for:each={comments} for:item="comment">
+                    <tr class="slds-hint-parent" key={comment.Id}>
+                        <th data-label="Comment">
+                            <div class="slds-truncate" title="Comment">
+                                <template if:true={comment.WeeklyCompleted__c}>
+                                    <lightning-icon icon-name='action:approval' alternative-text='approval' size='xx-small' title='approval'></lightning-icon>
+                                </template>
+                                <template if:false={comment.WeeklyCompleted__c}>
+                                    <lightning-icon icon-name='action:defer' alternative-text='approval' size='xx-small' title='defer'></lightning-icon>
+                                </template>
+                            </div>
+                        </th>
+                        <th data-label="Account Name" scope="row">
+                          <div class="slds-truncate" title="Account Name">
+                            <a href="#" tabindex="-1">{comment.Opportunity__r.Account.Name}</a>
+                          </div>
+                        </th>
+                        <td data-label="Sales Maturity">
+                          <div class="slds-truncate" title="Opportunity Name">{comment.Opportunity__r.Name}</div>
+                        </td>
+                        <td data-label="Comment">
+                          <div class="slds-truncate" title="Comment">{comment.Value__c}</div>
+                        </td>
+                        <td data-label="Comment">
+                            <lightning-button-menu alternative-text="Show menu">
+                                <lightning-menu-item value="Edit" label="Edit" onclick={handleRowAction} data-id={comment.Id}></lightning-menu-item>
+                            </lightning-button-menu>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+          </table>
+    </template>
+
+
+    <template if:true={isModalOpen}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <!-- Modal -->
+    <section role="dialog" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            
+            <!-- Header con "X" -->
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Cerrar"
+                        onclick={handleCloseModal}>
+                    <lightning-icon icon-name="utility:close" size="small" alternative-text="Cerrar"></lightning-icon>
+                </button>
+                <h2 class="slds-text-heading_medium">Editar key Opp Comment</h2>
+            </header>
+
+            <!-- Contenido -->
+            <div class="slds-modal__content slds-p-around_medium">
+                <lightning-flow
+                    flow-api-name="Edit_Key_Opportunity_Comment"
+                    flow-input-variables={inputVariables}
+                    onstatuschange={handleFlowStatusChange}>
+                </lightning-flow>
+            </div>
+        </div>
+    </section>
+        
+    </template>
+
+</template>

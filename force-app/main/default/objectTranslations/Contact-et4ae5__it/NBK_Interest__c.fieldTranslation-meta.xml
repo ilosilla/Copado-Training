@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Interés --></label>
+    <name>NBK_Interest__c</name>
+    <picklistValues>
+        <masterLabel>Bathroom</masterLabel>
+        <translation><!-- Bathroom --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Façades</masterLabel>
+        <translation><!-- Façades --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kitchen</masterLabel>
+        <translation><!-- Kitchen --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tiles</masterLabel>
+        <translation><!-- Tiles --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,30 @@
+:host {
+  display: block;
+}
+
+.layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header sticky al viewport (con scroll externo) */
+.layout__header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #fff;
+}
+
+/* Main NO scrollea: lo hace la página */
+.layout__main {
+  flex: 1 1 auto;
+  min-height: 0;
+    overflow-y: auto;   /* en vez de visible */
+  overflow-x: hidden;
+}
+
+/* Footer al final; si hay poco contenido queda abajo por flex+min-height */
+.layout__footer {
+  flex: 0 0 auto;
+}

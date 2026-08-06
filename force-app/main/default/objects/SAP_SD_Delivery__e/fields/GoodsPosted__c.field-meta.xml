@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GoodsPosted__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>True if the goods movement has been posted in SAP (and the stock has been updated)</description>
+    <isFilteringDisabled>false</isFilteringDisabled>
+    <isNameField>false</isNameField>
+    <isSortingDisabled>false</isSortingDisabled>
+    <label>SAP Goods Posted</label>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_carlos_Leads</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>Postcode__c</columns>
+    <columns>LEAD.ZIP</columns>
+    <columns>LEAD.MOBILE_PHONE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>Representative__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <columns>LeadSubtype__c</columns>
+    <columns>LEAD.CONVERTED</columns>
+    <columns>ID18__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.CREATED_DATE</field>
+        <operation>lessThan</operation>
+        <value>1/1/2024 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>Not contacted</value>
+    </filters>
+    <filters>
+        <field>LeadSubtype__c</field>
+        <operation>contains</operation>
+        <value>coverings,xtone</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.LAST_NAME</field>
+        <operation>equals</operation>
+        <value>monsonis,ramos,zapata,maria,garcia,homeyer</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.FIRST_NAME</field>
+        <operation>equals</operation>
+        <value>carlos,juan,santiago,aura,said,connor,breanna</value>
+    </filters>
+    <label>Carlos Leads</label>
+</ListView>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Trasformatore 4</label>
+    <lookupFilter>
+        <errorMessage>Questo non è un Trasformatore</errorMessage>
+    </lookupFilter>
+    <name>Fabricator_4__c</name>
+    <relationshipLabel><!-- Accounts (Fabricator 4) --></relationshipLabel>
+</CustomFieldTranslation>

@@ -1,0 +1,77 @@
+<!--
+  @description       : 
+  @author            : EHG@nubika.com
+  @group             : 
+  @last modified on  : 02-06-2023
+  @last modified by  : EHG@nubika.com
+-->
+<template>
+    <lightning-card class="container slds-card_boundary slds-m-top_medium" >
+        <div style="margin-left: 5%;margin-right: 5%;">
+            <div>
+                <div class="slds-wrap header " style="font-size:25px; font-family:PorcelanosaRegular;">       
+                    <span>Quick Order</span>
+                </div>
+                <div style="margin-top: 20px; font-size: 15px;">
+                    <span>Place an order by simply adding the Product Code of the products you want to purchase.</span>
+                </div>
+            </div>
+            
+            <div class="quickOrdeLineItemsContainer">
+                <template for:each={cartItemList} for:item="cartItem" for:index="index">
+                    <div key={cartItem.guid}>
+                        <c-nb2b-quick-item
+                            cart-item={cartItem}
+                            index={index}
+                            onaddtocart={updateCart}
+                            ondeleteitem={handleItemDeletion}
+                        ></c-nb2b-quick-item>
+                    </div>
+                </template>
+                <div class="slds-m-top_xx-small">
+                    <lightning-button-icon icon-name="utility:add" variant="bare"  onclick={addLines}></lightning-button-icon>
+                    <a style="text-decoration: underline;padding-left: 5px;vertical-align: middle;" onclick={addLines}> Add another product</a> 
+                </div>
+                <div if:true={alertAddProduct} class="slds-notify slds-notify_alert  alert-warning">
+                    The quantity for all products must be greater tha 0.
+                </div>
+            </div>
+
+            <!--BOTÓN DE AÑADIR LÍNEAS-->
+            <div class="slds-grid slds-gutters" style="align-items: end; width: 100%; padding-top:10px;margin-top:20px;border-top:1px solid #dfdbdb">
+                <div class="parent" style="width: 100%;">
+                    <div class="div1" style="width: 100%;">
+                        <span style="font-size:17px">
+                            Subtotal:&nbsp;
+                            <lightning-formatted-number
+                                value={total}
+                                format-style="currency"
+                                currency-code={currencyIsoCode}
+                                currency-display-as="symbol"
+                            ></lightning-formatted-number>
+                        </span>
+                    </div>
+                    <!-- DISPLAY ERROR -->
+                    <div if:true={error} class="slds-notify slds-notify_alert alert-error slds-var-m-around_small" role="alert">
+                        <lightning-icon icon-name="utility:warning" variant="inverse" size="small" class="slds-var-m-right_x-small"></lightning-icon>
+                        <h2>{error}</h2>
+                    </div>
+                    <div class="div2" style="width: 100%;">
+                        <div style="padding-top: 20px;text-align:center">
+                            <!--BOTÓN DE AÑADIR AL CARRITO-->
+                            <button 
+                                class="botonesQuick"                                
+                                type="submit"
+                                disabled={disableAdd}
+                                onclick={addToCart}>
+                                Add To Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--END-->
+    </lightning-card>
+</template>

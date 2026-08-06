@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Promozione</fullName>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Address__c</columns>
+    <columns>Account_Classification__c</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>ACCOUNT.ADDRESS1_ZIP</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE_CODE</columns>
+    <columns>ACCOUNT.ADDRESS1_COUNTRY_CODE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account_Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.LAST_NAME</field>
+        <operation>contains</operation>
+        <value>vasta,residori</value>
+    </filters>
+    <label>Promozione</label>
+    <sharedTo>
+        <role>Responsabile_Promozione</role>
+    </sharedTo>
+</ListView>

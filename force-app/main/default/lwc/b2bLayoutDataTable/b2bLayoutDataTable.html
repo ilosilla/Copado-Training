@@ -1,0 +1,44 @@
+<template>
+  <div class="layout" data-f6-region>
+
+    <!-- HEADER fijo/compacto -->
+    <header class="layout__header">
+      <div class="layout__header-inner">
+
+        <!-- Tu header compacto “visual” (logo + título + home + separadores…) -->
+        <div class="service-header">
+          <div class="service-header__left header-logo">
+            <!-- aquí tu logo/título -->
+                <h4>PORCELANOSA</h4>
+          </div>
+
+          <div class="service-header__right">
+            <!-- DROP ZONE: Profile -->
+            <div class="service-header__profile" data-f6-region>
+              <slot name="header-profile"></slot>
+            </div>
+
+            <span class="service-header__sep">|</span>
+
+            <!-- DROP ZONE: Cart -->
+            <div class="service-header__cart" data-f6-region>
+              <slot name="header-cart"></slot>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="layout__main" data-f6-region>
+      <slot></slot>
+    </main>
+
+    <!-- FOOTER (opcional) -->
+    <footer class="layout__footer" data-f6-region>
+      <slot name="footer"></slot>
+    </footer>
+
+  </div>
+</template>

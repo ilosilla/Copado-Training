@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>État</label>
+    <name>Status__c</name>
+    <picklistValues>
+        <masterLabel>APPROVED</masterLabel>
+        <translation>Approuvé</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NOT SENT</masterLabel>
+        <translation>Non envoyé</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PARTIALLY APPROVED</masterLabel>
+        <translation>Partiellement approuvé</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PENDING</masterLabel>
+        <translation>En attente</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REJECTED</masterLabel>
+        <translation>Refusé</translation>
+    </picklistValues>
+</CustomFieldTranslation>

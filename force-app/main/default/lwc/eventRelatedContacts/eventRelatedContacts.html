@@ -1,0 +1,56 @@
+<template>
+        <template if:true={contacts}>
+            <article class="slds-card" style="border: 2px solid #c9c9c9;">
+                <div class="slds-card__header slds-grid slds-color__background_gray-3">
+                  <header class="slds-media slds-media_center slds-has-flexi-truncate slds-p-around--x-small">
+                    <div class="slds-media__figure">
+                        <lightning-icon icon-name="utility:contact" size="small"></lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                      <h2 class="slds-card__header-title">
+                        <a href="#" class="slds-card__header-link slds-truncate" title="Accounts">
+                          <span>{label.relatedContactsLabel}</span>
+                        </a>
+                      </h2>
+                    </div>
+                  </header>
+                </div>
+                <div class="slds-card__body slds-card__body_inner">
+
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+                        <thead>
+                          <tr class="slds-line-height_reset">
+                            <th class="" scope="col">
+                              <div class="slds-truncate" title="Opportunity Name">{label.accountNameLabel}</div>
+                            </th>
+                            <th class="" scope="col">
+                              <div class="slds-truncate" title="Account Name">{label.contactNameLabel}</div>
+                            </th>
+                            <th class="" scope="col">
+                              <div class="slds-truncate" title="Close Date">{label.emailLabel}</div>
+                            </th>
+                            <th class="" scope="col">
+                              <div class="slds-truncate" title="Stage">{label.phoneLabel}</div>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={contacts} for:item="ct">
+                                <tr class="slds-hint-parent" key={ct.Id}>
+                                    <th data-label="Opportunity Name" scope="row">
+                                        <a href={ct.UrlAccount} target="_blank">{ct.Account.Name}</a>
+                                    </th>
+                                    <td><a href={ct.UrlContact} target="_blank">{ct.Name}</a></td>
+                                    <td>{ct.Email}</td>
+                                    <td>{ct.Phone}</td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+              </article>
+        </template>
+        <template if:true={error}>
+            <p class="slds-text-color_error">{error}</p>
+        </template>
+</template>

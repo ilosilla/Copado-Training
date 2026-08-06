@@ -1,0 +1,10 @@
+<!--
+    - @author 		Ramón Prades
+    - @date 		May 2021
+    - @group 		Tools
+    - @description 	Event to pass commands from a compoanent to another
+-->
+<aura:event type="COMPONENT" description="Event to pass commands from one component to another">
+    <aura:attribute name="command" type="String" required="true"/>
+    <aura:attribute name="arg" type="Object" required="false"/>
+</aura:event>

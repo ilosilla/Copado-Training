@@ -1,0 +1,9 @@
+<aura:component
+    implements="flexipage:availableForAllPageTypes,force:hasRecordId,lightning:hasPageReference,lightning:isUrlAddressable,lightning:actionOverride,force:lightningQuickActionWithoutHeader" 
+    access="global">
+
+    <lightning:workspaceAPI aura:id="workspace"/>
+
+    <c:caseClaimCreate oncancel="{!c.handleCancel}" onclose="{!c.handleClose}"> </c:caseClaimCreate>
+
+</aura:component>

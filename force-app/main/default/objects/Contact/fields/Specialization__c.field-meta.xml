@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Specialization__c</fullName>
+    <label>Specialization</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Facades</fullName>
+                <default>false</default>
+                <label>Facades</label>
+            </value>
+            <value>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+                <label>Healthcare</label>
+            </value>
+            <value>
+                <fullName>Home Builder</fullName>
+                <default>false</default>
+                <label>Home Builder</label>
+            </value>
+            <value>
+                <fullName>Hospitality</fullName>
+                <default>false</default>
+                <label>Hospitality</label>
+            </value>
+            <value>
+                <fullName>Institutional</fullName>
+                <default>false</default>
+                <label>Institutional</label>
+            </value>
+            <value>
+                <fullName>Multifamily</fullName>
+                <default>false</default>
+                <label>Multifamily</label>
+            </value>
+            <value>
+                <fullName>Residential</fullName>
+                <default>false</default>
+                <label>Residential</label>
+            </value>
+            <value>
+                <fullName>Retail</fullName>
+                <default>false</default>
+                <label>Retail</label>
+            </value>
+            <value>
+                <fullName>Retail Franchise</fullName>
+                <default>false</default>
+                <label>Retail Franchise</label>
+            </value>
+            <value>
+                <fullName>Senior Living</fullName>
+                <default>false</default>
+                <label>Senior Living</label>
+            </value>
+            <value>
+                <fullName>Workplace/ Corporate</fullName>
+                <default>false</default>
+                <label>Workplace/ Corporate</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

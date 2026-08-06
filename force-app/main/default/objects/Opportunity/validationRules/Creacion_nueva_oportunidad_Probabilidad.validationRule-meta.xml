@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Creacion_nueva_oportunidad_Probabilidad</fullName>
+    <active>true</active>
+    <description>Al momento de la creación, la probabilidad tiene que ser del 20%</description>
+    <errorConditionFormula>AND(  CONTAINS($User.Username, &apos;loads.user&apos;) = false,ISNEW(), Probability &lt;&gt; 0.2, RecordTypeId = &apos;0121w0000004KRjAAM&apos;)</errorConditionFormula>
+    <errorDisplayField>Probability</errorDisplayField>
+    <errorMessage>Al momento de la creación, la probabilidad tiene que ser del 20%</errorMessage>
+</ValidationRule>

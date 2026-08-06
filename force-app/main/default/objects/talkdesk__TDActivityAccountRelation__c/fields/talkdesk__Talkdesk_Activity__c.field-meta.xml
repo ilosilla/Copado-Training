@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>talkdesk__Talkdesk_Activity__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Talkdesk Activity</label>
+    <referenceTo>talkdesk__Talkdesk_Activity__c</referenceTo>
+    <relationshipLabel>Accounts</relationshipLabel>
+    <relationshipName>TDActivityAccountRelation</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

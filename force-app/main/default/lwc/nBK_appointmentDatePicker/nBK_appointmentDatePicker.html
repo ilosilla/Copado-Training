@@ -1,0 +1,177 @@
+<!--
+  @description       :
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             :
+  @last modified on  : 01-12-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+	<lightning-spinner if:true={showSpinner}></lightning-spinner>
+	<template if:false={showSpinner}>
+		<div class="bodyMain">
+			<!-- calendario seleccion hora y mostrar dias disponibles -->
+
+			<div class="dateTitle">{label.appointmentSelectDate} :
+				<table>
+					<tr>
+						<td width="38%">
+							<lightning-combobox
+								placeholder={label.availableHours}
+								options={selectModeOptions}
+								value={defaultModeValue}
+								onchange={handleChangeCalendarMode}
+								style="width:90%;"
+								data-id="modeCombobox" >
+							</lightning-combobox>
+						</td>
+						<td width="38%">
+							<template if:true={showHoursCombobox}>
+								<lightning-combobox
+									placeholder={label.availableHours}
+									options={hourList}
+									onchange={selectHourAppointment}
+									style="width:90%;"
+									data-id="hoursCombobox" >
+								</lightning-combobox>
+							</template>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="hours2" if:true={showHourList}>
+
+				<!-- <div style="margin:10px">
+					<legend class="slds-form-element__legend slds-form-element__label">Available hours</legend>
+					<template for:each={hourList} for:item="hour">
+						<div class="slds-form-element__control" key={hour.value}>
+							<span class="slds-radio" style="padding-top:10px">
+								<input type="radio" id={hour.value} name="default" value={hour.value} onchange={selectHourAppointment} />
+								<label class="slds-radio__label enabled" for={hour.value}>
+									<span class="slds-radio_faux"></span>
+									<span class="slds-form-element__label">{hour.label}</span>
+								</label>
+							</span>
+						</div>
+					</template>
+				</div> -->
+			</div>
+
+			<!-- calendario seleccion dia y mostrar horas -->
+			<template if:true={showAvailableDates}>
+				<div class="containerDatesHour">
+					<div class="dates" style="margin-top:6% !important">
+
+						<!--<div class="buttonContainer year">
+							<button class="link" type="button" onclick={goToday}><b>{todayButtonLabel}</b></button>
+							<p>{formattedSelectedDate}</p>
+							<p class="bold">{year}</p>
+						</div>-->
+						<div class="buttonContainer">
+							<button class="prev" type="button" onclick={previousMonth}>{label.prevButton}</button>
+							<span class="bold month">{month}</span>
+							<button class="next" type="button" onclick={nextMonth}>{label.nextButton}</button>
+						</div>
+						<ul class="header">
+							<template for:each={weekDays} for:item="day">
+								<li key={day}>{day}</li>
+							</template>
+						</ul>
+						<ul class="datePickerHolder">
+							<template for:each={dates} for:item="date">
+								<li
+									key={date.key}
+									class={date.className}
+									data-date={date.formatted}
+									onclick={setSelected}
+								>
+									{date.text}
+								</li>
+							</template>
+						</ul>
+					</div>
+					<div class="hourTitle" if:true={showAvailableHours}>
+						<div if:false={emptyAvailableHours}></div>
+					</div>
+					<lightning-spinner if:true={showSpinnerHours}></lightning-spinner>
+					<div class="hours slds-margin-bottom_small" if:true={showAvailableHours}>
+
+							<div class="emptyText" if:true={emptyAvailableHours}>{label.appointmentFullyBooked}.</div>
+							<legend class="slds-form-element__legend slds-form-element__label titleAvailableHours" if:false={emptyAvailableHours}>{label.availableHours}</legend>
+							<template for:each={availableHours} for:item="hour" if:false={emptyAvailableHours}>
+								<div class="slds-form-element__control hourElement" key={hour.value}>
+									<template if:true={hour.isEnabled}>
+										<span class="slds-radio" style="padding-top:10px">
+											<input type="radio" id={hour.value} name="default" value={hour.value} data-id={hour.idComercial} data-email={hour.comercialEmail} onchange={selectAppointmentInfo} />
+											<label class="slds-radio__label enabled" for={hour.value}>
+												<span class="slds-radio_faux"></span>
+												<span class="slds-form-element__label">{hour.label}</span>
+											</label>
+										</span>
+									</template>
+									<template if:false={hour.isEnabled}>
+										<span class="slds-radio" style="padding-top:10px">
+											<input type="radio" id={hour.value} name="default" value={hour.value} data-id={hour.idComercial} disabled/>
+											<label class="slds-radio__label disabled" for={hour.value}>
+												<span class="slds-radio_faux"></span>
+												<span class="slds-form-element__label">{hour.label}</span>
+											</label>
+										</span>
+									</template>
+								</div>
+							</template>
+
+					</div>
+				</div>
+			</template>
+
+			<!-- calendario seleccion hora y mostrar dias disponibles -->
+			<template if:false={showAvailableDates}>
+				<!-- new calendar -->
+				<template if:true={showCalendarHoursMode}>
+					<lightning-spinner if:true={showSpinnerHours}></lightning-spinner>
+					<div class="dates" style="margin-top:20px!important">
+						<!--<div class="buttonContainer year">
+							<button class="link" type="button" onclick={goToday}><b>{label.todayButton}</b></button>
+							<p>{formattedSelectedDate}</p>
+							<p class="bold">{year}</p>
+						</div>-->
+						<div class="buttonContainer">
+							<button class="prev" type="button" onclick={previousMonth}>{label.prevButton}</button>
+							<span class="bold month">{month}</span>
+							<button class="next" type="button" onclick={nextMonth}>{label.nextButton}</button>
+						</div>
+						<ul class="header">
+							<template for:each={weekDays} for:item="day">
+								<li key={day}>{day}</li>
+							</template>
+						</ul>
+						<ul class="datePickerHolder">
+							<template for:each={dates} for:item="date">
+								<li
+									key={date.key}
+									class={date.className}
+									data-id={date.comercialId}
+									data-email={date.comercialEmail}
+									data-date={date.formatted}
+									onclick={setSelected}
+								>
+									{date.text}
+								</li>
+							</template>
+						</ul>
+					</div>
+				</template>
+			</template>
+		</div>
+		<div class="containerButtons">
+			<lightning-button class="button" label={label.prevButton} onclick={handleBack}></lightning-button>
+			<template if:true={selectTime}>
+				<lightning-button class="button" label={label.nextButton} onclick={handleNext}></lightning-button>
+			</template>
+			<template if:false={selectTime}>
+				<lightning-button class="button"  label={label.nextButton} disabled onclick={handleNext}></lightning-button>
+			</template>
+		</div>
+	</template>
+</template>

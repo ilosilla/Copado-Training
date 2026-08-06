@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>InstallationRequest__c</entityName>
+    <fieldName>State__c</fieldName>
+    <masterLabel>Installation Request Path</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;b&gt;Porcelanosa Staff:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Please check the estimation of the cost and confirm it is acceptable. Then, prepare a quotation for the customer in SAP.&lt;/p&gt;</info>
+        <picklistValueName>3D Design</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>ReasonLost__c</fieldNames>
+        <info>&lt;p&gt;&lt;b&gt;Porcelanosa Staff:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Please enter a brief explanation of the reason why the customer has rejected the installation service.&lt;/p&gt;</info>
+        <picklistValueName>Closed Lost</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>SAPOrder__c</fieldNames>
+        <fieldNames>SAPPurchaseOrder__c</fieldNames>
+        <info>&lt;p&gt;&lt;b&gt;Porcelanosa Staff&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Please enter the sales order and the purchase order number entered in SAP to provide this installation. Then the system will create a Work Order to help you follow up the progress of the installation.&lt;/p&gt;</info>
+        <picklistValueName>Closed Won</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Installation_Cost__c</fieldNames>
+        <fieldNames>Currency__c</fieldNames>
+        <info>&lt;p&gt;&lt;b&gt;Installer:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Please enter the estimated cost to submit the installation to Porcelanosa for revision&lt;/p&gt;</info>
+        <picklistValueName>Cost Estimation</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;b&gt;Porcelanosa Staff:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Please fill in all details of the installation and ask the installer to review it&lt;/p&gt;</info>
+        <picklistValueName>New Request</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>ReasonRejected__c</fieldNames>
+        <info>&lt;p&gt;&lt;b&gt;Installer:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;To help us improve our service, please enter a brief explanation of the reasons why you have rejected this installation project.&lt;/p&gt;</info>
+        <picklistValueName>Quote Preparation</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>SAPQuote__c</fieldNames>
+        <info>&lt;p&gt;&lt;b&gt;Porcelanosa Staff:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Please enter the number of the SAP quote sent to the customer.&lt;/p&gt;</info>
+        <picklistValueName>Quote Sent</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>SurveyCompleted__c</fieldNames>
+        <info>&lt;p&gt;&lt;b&gt;Installer:&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Please confirm the visit to the customer has been done and confirm you have all the information you need to estimate the cost of the installation&lt;/p&gt;</info>
+        <picklistValueName>Site Survey</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

@@ -1,0 +1,15 @@
+.THIS.forceToastManager--default .forceVisualMessageQueue {
+    position: fixed;
+    text-align: center;
+    top: auto;
+}
+.THIS.forceToastManager--default .forceVisualMessageQueue {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10000;
+}
+.THIS.forceVisualMessageQueue {
+    pointer-events: none;
+}

@@ -1,0 +1,163 @@
+/* ====== Colapsable estilo “línea + título + +/-” ====== */
+.rc-section {
+  overflow: hidden;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--psa-border-color);
+}
+
+/* Cabecera */
+.rc-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+.rc-section-header h2 {
+    font-family: var(--psa-section-title-font);
+    font-size: var(--psa-section-title-size);
+    font-weight: var(--psa-section-title-weight);
+    color: var(--psa-section-title-color);
+}
+
+.rc-section-header .toggle {
+  cursor: pointer;
+}
+
+.rc-section-symbol {
+    font-size: 2.5rem;
+    font-family: var(--psa-salesforce-font, var(--psa-sans-serif-family));
+    color: var(--psa-color-brand);
+    font-weight: 100 !important;
+}
+
+/* Cuerpo */
+.rc-section-body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0px 40px 10px 40px; /* espacio lateral para los botones */
+}
+
+.is-closed {
+    display: none !important;
+}
+
+.rc-section-content {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+}
+
+.rc-section-content::-webkit-scrollbar {
+  display: none; /* Chrome */
+}
+
+/* Items de ejemplo */
+/* Card / item */
+.rc-card {
+    flex: 0 0 var(--rc-item-w);
+    width: var(--rc-item-w);
+    height: var(--rc-item-h);
+    box-sizing: border-box;
+    padding: 12px;
+    border-radius: 0px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;          /* <-- imagen arriba, texto abajo */
+    gap: var(--rc-gap);
+    align-items: stretch;
+    border: 1px solid var(--psa-border-color);
+}
+
+/* Imagen: ocupa todo el espacio disponible arriba */
+.rc-image-wrap {
+  flex: 1 1 auto;                  /* crece para llenar la tarjeta */
+  min-height: 0;                   /* permite que el flex container calcule bien */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Imagen dentro del wrapper */
+.rc-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;             /* no recorta la imagen */
+  display: block;
+}
+
+/* Info / textos */
+.rc-info {
+  flex: 0 0 auto;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.rc-name {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(psa-color-text);
+    margin-bottom: 4px;
+    display: -webkit-box;            /* multi-línea con clamp */
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.rc-type {
+  color: #666;
+  font-size: 0.88rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.rc-card.small  { --rc-item-w: 200px; --rc-item-h: 260px; }
+.rc-card.medium { --rc-item-w: 260px; --rc-item-h: 320px; }
+.rc-card.large  { --rc-item-w: 320px; --rc-item-h: 380px; }
+
+
+/* Botones de desplazamiento */
+.rc-scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rc-scroll-btn.left {
+  left: 5px;
+}
+
+.rc-scroll-btn.right {
+  right: 5px;
+}
+
+/* Por defecto ocultos, se mostrarán con JS cuando sea necesario */
+.rc-scroll-btn.hidden {
+  display: none;
+}
+
+.no-select {
+    user-select: none;      /* Estándar moderno */
+    -webkit-user-select: none; /* Safari/Chrome */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE/Edge antiguo */
+}
+
+a {
+    text-decoration: none !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Days established by the return policy during which a product can be returned. --></help>
+    <label><!-- COL Policy Days --></label>
+    <name>COL_PolicyDays__c</name>
+</CustomFieldTranslation>

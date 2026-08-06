@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Replacement Order Class --></label>
+    <name>ReplacementOrderClass__c</name>
+    <picklistValues>
+        <masterLabel>Replace entire product</masterLabel>
+        <translation><!-- Replace entire product --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Replace part or component</masterLabel>
+        <translation><!-- Replace part or component --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

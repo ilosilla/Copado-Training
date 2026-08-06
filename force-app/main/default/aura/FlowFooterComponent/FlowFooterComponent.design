@@ -1,0 +1,6 @@
+<design:component>
+	<design:attribute name="lblNext" label="label NEXT" description="NEXT label"/>
+	<design:attribute name="lblBack" label="label BACK" description="BACK label"/>
+   	<design:attribute name="lblFinish" label="label FINISH" description="FINISH label"/>
+   	<design:attribute name="lblPause" label="label PAUSE" description="PAUSE label"/>
+</design:component>

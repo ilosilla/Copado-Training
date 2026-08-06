@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Stato dil Conto</label>
+    <name>Account_Status__c</name>
+    <picklistValues>
+        <masterLabel>Active</masterLabel>
+        <translation>Attivo</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Inactive</masterLabel>
+        <translation>Inattivo: Non Seguito</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Inactive: Cessation of Activity</masterLabel>
+        <translation>Inattivo: Cessione attività</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Inactive: Duplicated</masterLabel>
+        <translation>Inattivo : Duplicato</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Inactive: Private customer purchasing through a trade client</masterLabel>
+        <translation>Inattivo: cliente  privato che acquista attraverso un professionista</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Inactive: Wrong Classification, not a business client</masterLabel>
+        <translation>Inattivo : cattiva classificazione. Cliente non professionale</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Waiting for Approval</masterLabel>
+        <translation><!-- Waiting for Approval --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

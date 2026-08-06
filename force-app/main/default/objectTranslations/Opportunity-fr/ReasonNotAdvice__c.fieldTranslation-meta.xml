@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Raison de ne pas accepter un conseil</label>
+    <name>ReasonNotAdvice__c</name>
+    <picklistValues>
+        <masterLabel>Deferred payment</masterLabel>
+        <translation>Paiement différé</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>I am checking some other options</masterLabel>
+        <translation>Je vérifie d&apos;autres options</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>I don&apos;t have any time at this moment</masterLabel>
+        <translation>Je n&apos;ai pas le temps en ce moment</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>I doubt if I&apos;m making the best choices</masterLabel>
+        <translation>Je doute que je fasse les meilleurs choix</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>I have just bought other materials</masterLabel>
+        <translation>Je viens d&apos;acheter d&apos;autres matériaux</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>I have little time to manage the project</masterLabel>
+        <translation>J&apos;ai peu de temps pour gérer le projet</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>I want to consult it</masterLabel>
+        <translation>Je veux le consulter</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>I&apos;m stressed about the project</masterLabel>
+        <translation>Je suis stressé à propos du projet</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Material collection</masterLabel>
+        <translation>Collecte de matériaux</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>The product range does not fit my needs</masterLabel>
+        <translation>La gamme de produits ne correspond pas à mes besoins</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>What if I don&apos;t like the final result</masterLabel>
+        <translation>Que se passe-t-il si je n&apos;aime pas le résultat final?</translation>
+    </picklistValues>
+</CustomFieldTranslation>

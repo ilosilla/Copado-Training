@@ -1,0 +1,358 @@
+<!--
+    * @author 			Ramón Prades
+    * @date 			November-2020
+    * @group 			Accounts
+    * @group-content 	../../ApexDocContent/Accounts.htm
+    * @description 	    Displays the detaisl of a sap document (quote, order or invoice).
+                        Parameters are passed in object docData:
+                        - docType: Q, O or I
+                        - accountId
+                        - salesOrg
+-->
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="SAPSalesDocumentController">
+
+    <!-- Attributes-->
+    <!--aura:attribute name="docType" type="String"/>
+    <aura:attribute name="docNumber" type="String"/ -->
+    <aura:attribute name="docData" type="object"/>
+    <aura:attribute name="errorList" type="List" default="[]"/>
+    <aura:attribute name="sapdoc" type="object"/>
+    <aura:attribute name="accountUrl" type="String"/>
+    <aura:attribute name="soldToUrl" type="String"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="showSpinner" type="Boolean" default="false"/>
+    <aura:attribute name="subtitle" type="String" default=""/>
+    <aura:attribute name="salesOffice" type="String" default=""/>
+    <aura:attribute name="iconType" type="string" default="standard:orders"/>
+    <aura:attribute name="titleType" type="string" default="Orders"/>
+    <aura:attribute name="description" type="String" default=""/>
+    <aura:attribute name="opportunityURL" type="String" default=""/>
+    <aura:attribute name="rep1URL" type="String" default=""/>
+    <aura:attribute name="rep2URL" type="String" default=""/>    
+    <aura:attribute name="rep1Name" type="String" default=""/>
+    <aura:attribute name="rep2Name" type="String" default=""/>
+    <aura:attribute name="expanded" type="Boolean" default="false"/>
+
+
+    <!-- Event Handlers -->
+    <aura:handler name="change" value="{!v.docData}" action="{!c.docChange}"/>    
+
+    <!-- html markup -->
+    <div style="height:100%;max-height:100%">
+
+        <!-- Errors -->
+        <aura:if isTrue="{!or(v.errorList.length > 0, v.showSpinner)}">            
+            <div style="padding:30px;">
+                <aura:if isTrue="{!v.errorList.length > 0}">                            
+                    <div class="slds-box slds-theme_error slds-theme_alert-texture" role="status">
+                        <div class="{!v.cssString}" role="status">
+                            <h2 class="slds-text-heading_small slds-p-bottom_small">{!$Label.c.app_review_errors}</h2>
+                            <ul class="slds-list--dotted">
+                                <aura:iteration items="{!v.errorList}" var="errorMessage">
+                                    <li>{!errorMessage}</li>
+                                </aura:iteration>
+                            </ul>
+                        </div>        
+                    </div>
+                </aura:if>  
+                <aura:if isTrue="{! v.showSpinner }">
+                    <div class="slds-align_absolute-center slds-p-around_xx-large">
+                        <lightning:spinner alternativeText="Loading" class="slds-spinner_inline"/>
+                    </div>                        
+                </aura:if>        
+            </div>      
+            
+            <aura:set attribute="else">
+                <lightning:notificationsLibrary aura:id="notifLib"/>
+                <!-- Page Header -->
+                <div class="slds-page-header slds-page-header_record-home" style="box-shadow:none;border:0px">
+                    <div class="slds-page-header__row">
+                        <div class="slds-page-header__col-title">
+                            <div class="slds-media">
+                                <div class="slds-media__figure">
+                                    <lightning:icon iconName="{!v.iconType}" />
+                                </div>
+                                <div class="slds-media__body">
+                                    <div class="slds-page-header__name">
+                                        <div class="slds-page-header__name-title">
+                                            <h1>
+                                                <span class="slds-page-header__title slds-truncate" title="{!v.docData.docNumber}">
+                                                    {!v.description} #{!v.docData.docNumber} 
+                                                </span>
+                                                <span>{!v.subtitle}</span>                                        
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-page-header__col-controls">
+                            <div class="slds-page-header__controls">
+                              <div class="slds-page-header__control">
+                                <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+                                    <!-- aura:if isTrue="{!v.docData.docType != 'q'}" -->
+                                        <lightning:buttonIcon iconName="utility:download" title="{!$Label.c.dict_download_pdf}" onclick="{!c.downloadPDF}"/>
+                                    <!-- /aura:if -->
+                                </div>
+                              </div>
+                            </div>                        
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document header fields -->
+                <div id="testc" class="slds-page-header__row slds-border_top slds-border_bottom  slds-p-top_small slds-p-bottom_small" style="border-bottom-width:2px;">
+                    <div class="slds-page-header__col-details">
+                        <div style="display:flex;float:right;height:100%;vertical-align:bottom;">
+                            <lightning:buttonIcon iconName="utility:add" variant="border-filled" onclick="{!c.openHeader}"/>
+                        </div>    
+
+                        <!-- Row 1 -->
+                        <div class="slds-grid">
+                            <aura:if isTrue="{!v.sapdoc.samples}">
+                                <div class="samples-flag slds-col slds-size_1-of-12 slds-box slds-theme_inverse slds-p-around_none slds-theme_alert-texture slds-m-right_small">
+                                    <!-- div class="slds-text-title slds-truncate" title="Document Date">{!$Label.c.dict_docType}</div -->
+                                    <div class="slds-truncate" title="{!$Label.c.dict_docType}">
+                                    <b>{!$Label.c.dict_samples}</b>
+                                    </div>
+                                </div>
+                            </aura:if>
+                            <div class="slds-col slds-size_1-of-12">
+                                <div class="slds-text-title slds-truncate" title="Document Date">{!$Label.c.dict_docDate}</div>
+                                <div class="slds-truncate" title="{!$Label.c.dict_docDate}">
+                                    <lightning:formattedDateTime value="{!v.sapdoc.docDate}"/>
+                                </div>
+                            </div>
+                            <div class="slds-col slds-size_2-of-12">
+                                <div class="slds-text-title slds-truncate" title="{!$Label.c.dict_billTo}">{!$Label.c.dict_billTo}</div>
+                                <div class="slds-truncate" title="{!$Label.c.dict_billTo}">
+                                    <aura:if isTrue="{v.sapdoc.isPersonAccount}">
+                                    <lightning:icon iconName='standard:person_account' class="slds-m-right_xx-small" size="x-small"/>
+                                    <aura:set attribute="else">
+                                        <lightning:icon iconName='standard:account' class="slds-m-right_xx-small"  size="x-small"/>
+                                    </aura:set>
+                                    </aura:if>
+                                    <lightning:formattedUrl value="{!v.accountUrl}" label="{!v.sapdoc.accountName}"/>
+                                </div>
+                            </div>
+                            <div class="slds-col slds-col slds-size_2-of-12">
+                                <div class="slds-text-title slds-truncate" title="Customer's Reference">{!$Label.c.dict_custReference}</div>                            
+                                <div class="slds-truncate" title="{!$Label.c.dict_custReference}">
+                                    {!v.sapdoc.reference}
+                                </div>
+                            </div>
+                            <div class="slds-col slds-col slds-size_2-of-12">
+                                <div class="slds-text-title slds-truncate" title="Opportunity">{!$Label.c.dict_opportunity}</div>                            
+                                <div class="slds-truncate" title="{!$Label.c.dict_opportunity}">
+                                        <aura:if isTrue="{!v.sapdoc.opportunityName}">
+                                            <lightning:icon iconName='standard:opportunity' class="slds-m-right_xx-small" size="x-small"/>
+                                            <lightning:formattedUrl value="{!v.opportunityURL}" label="{!v.sapdoc.opportunityName}"/>
+                                        <aura:set attribute="else">
+                                            <span>...</span>
+                                        </aura:set>
+                                    </aura:if>
+                                </div>
+                            </div>
+                            <!--
+                            <div class="slds-col slds-col slds-size_1-of-12">
+                                <div class="slds-text-title slds-truncate" title="Net Amount">Net</div>                            
+                                <div class="slds-truncate" title="net Amount">
+                                    <lightning:formattedNumber value="{!v.sapdoc.net}" style="currency" currencyCode="{!v.sapdoc.curr}" currencyDisplayAs="symbol"/>
+                                </div>
+                            </div>
+                            <div class="slds-col slds-col slds-size_1-of-12">
+                                <div class="slds-text-title slds-truncate" title="Tax">Tax</div>                            
+                                <div class="slds-truncate" title="Tax">
+                                    <lightning:formattedNumber value="{!v.sapdoc.tax}" style="currency" currencyCode="{!v.sapdoc.curr}" currencyDisplayAs="symbol"/>
+                                </div>
+                            </div>
+                            -->
+                            <div class="slds-col slds-col slds-size_1-of-12">
+                                <div class="slds-text-title slds-truncate" title="{!$Label.c.dict_amount_total}">{!$Label.c.dict_amount_total}</div>                            
+                                <div class="slds-truncate" title="Total Amount">
+                                    <lightning:formattedNumber value="{!v.sapdoc.total}" style="currency" currencyCode="{!v.sapdoc.curr}" currencyDisplayAs="symbol"/>
+                                </div>
+                            </div>
+                            <div class="slds-col slds-size_2-of-12">
+                                <!-- <div class="slds-text-title slds-truncate" title="Document Date">Doc.Status</div> -->
+                                <div class="slds-truncate" title="Document Status">
+                                    <lightning:badge label="{!v.sapdoc.statusName}" class="{!v.sapdoc.statusClass}"/>
+                                </div>
+                            </div>    
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Document items -->
+                <div class="slds-scrollable data-table">
+                    <lightning:dataTable 
+                        columnWidthsMode = "auto"
+                        keyField="docLine"
+                        data="{! v.sapdoc.items }"
+                        columns="{! v.columns }"
+                        hideCheckboxColumn="true"/>                    
+                </div>   
+            </aura:set>
+        </aura:if>
+    </div>
+
+    <div aura:id="modalBox" class="slds-hide">
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_medium" aria-modal="true">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close" class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick="{!c.closeHeader}"/>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title slds-truncate">{!v.description} #{!v.docData.docNumber}</span>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate"><b>Modal header</b></h2 -->
+                </header>
+                
+                <div class="slds-modal__content" id="modal-content-id-1">
+                    <div class="slds-grid">
+                        <!-- First column -->
+                        <div class="slds-col slds-size_2-of-6 slds-p-around_medium">
+                            <dl>
+                                <dt class="slds-text-title slds-truncate" title="{!$Label.c.dict_billTo}">{!$Label.c.dict_billTo}</dt>
+                                <dd class="slds-truncate" title="{!$Label.c.dict_billTo}">
+                                    <aura:if isTrue="{v.sapdoc.isPersonAccount}">
+                                        <lightning:icon iconName='standard:person_account' class="slds-m-right_xx-small" size="x-small"/>
+                                        <aura:set attribute="else">
+                                            <lightning:icon iconName='standard:account' class="slds-m-right_xx-small"  size="x-small"/>
+                                        </aura:set>
+                                    </aura:if>
+                                    <lightning:formattedUrl value="{!v.accountUrl}" label="{!v.sapdoc.accountName}"/>
+                                </dd>
+
+                                <dt class="slds-text-title slds-truncate" title="{!$Label.c.dict_opportunity}">{!$Label.c.dict_opportunity}</dt>                            
+                                <dd class="slds-truncate" title="{!$Label.c.dict_opportunity}">
+                                        <aura:if isTrue="{!v.sapdoc.opportunityName}">
+                                            <lightning:icon iconName='standard:opportunity' class="slds-m-right_xx-small" size="x-small"/>
+                                            <lightning:formattedUrl value="{!v.opportunityURL}" label="{!v.sapdoc.opportunityName}"/>
+                                        <aura:set attribute="else">
+                                            <span>...</span>
+                                        </aura:set>
+                                    </aura:if>
+                                </dd>
+
+                                <dt class="slds-text-title slds-truncate" title="{!$Label.c.dict_rep1}">{!$Label.c.dict_rep1}</dt>
+                                <dd class="slds-truncate" title="{!$Label.c.dict_rep1}">
+                                    <lightning:icon iconName='standard:user' class="slds-m-right_xx-small" size="x-small"/>
+                                    <aura:if isTrue="{!v.rep1URL}">
+                                        <lightning:formattedUrl value="{!v.rep1URL}" label="{!v.sapdoc.rep1name}"/>
+                                        <aura:set attribute="else">
+                                            {!v.rep1Name}
+                                        </aura:set>
+                                    </aura:if>
+                                </dd>
+
+                                <dt class="slds-text-title slds-truncate" title="{!$Label.c.dict_Rep2}">{!$Label.c.dict_Rep2}</dt>
+                                <dd class="slds-truncate">
+                                    <lightning:icon iconName='standard:user' class="slds-m-right_xx-small" size="x-small"/>
+                                    <aura:if isTrue="{!v.rep2URL}">
+                                        <lightning:formattedUrl value="{!v.rep2URL}" label="{!v.sapdoc.rep2name}"/>
+                                        <aura:set attribute="else">
+                                            {!v.rep2Name}
+                                        </aura:set>
+                                    </aura:if>
+                                </dd>
+
+                            </dl>
+                        </div>
+
+                        <!-- Second column -->
+                        <div class="slds-col slds-size_2-of-6 slds-p-around_medium">
+                            <dl>
+                                <dt class="slds-text-title slds-truncate" title="{!$Label.c.dict_soldTo}">{!$Label.c.dict_soldTo}</dt>
+                                <dd class="slds-truncate">
+                                    <aura:if isTrue="{v.sapdoc.soldTosPersonAccount}">
+                                        <lightning:icon iconName='standard:person_account' class="slds-m-right_xx-small" size="x-small"/>
+                                        <aura:set attribute="else">
+                                            <lightning:icon iconName='standard:account' class="slds-m-right_xx-small"  size="x-small"/>
+                                        </aura:set>
+                                    </aura:if>
+                                    <lightning:formattedUrl value="{!v.soldToUrl}" label="{!v.sapdoc.soldToName}"/>
+                                </dd>
+
+                                <dt class="slds-text-title slds-truncate">{!$Label.c.dict_salesOrg}</dt>
+                                <dd class="slds-truncate">[{!v.sapdoc.salesOrg}] {!v.sapdoc.salesOrgName}</dd>
+
+                                <dt class="slds-text-title slds-truncate">{!$Label.c.dict_distChannel}</dt>
+                                <dd class="slds-truncate">[{!v.sapdoc.distChannel}] {!v.sapdoc.distChannelName}</dd>
+
+                                <dt class="slds-text-title slds-truncate">{!$Label.c.dict_salesOffice}</dt>
+                                <dd class="slds-truncate">[{!v.sapdoc.salesOffice}] {!v.sapdoc.salesOfficeName}</dd>
+
+                            </dl>
+                        </div>  
+
+                        <!-- Third column -->
+                        <div class="slds-col slds-size_1-of-6 slds-theme_shade slds-border_left slds-p-around_medium">
+                            <dl>
+
+                                <dt class="slds-text-title slds-truncate">{!$Label.c.saps_hdr_net}</dt>                            
+                                <dd class="slds-truncate">
+                                   <b><lightning:formattedNumber value="{!v.sapdoc.net}" style="currency" currencyCode="{!v.sapdoc.curr}" currencyDisplayAs="symbol"/></b>
+                                </dd>
+
+                                <dt class="slds-text-title slds-truncate">{!$Label.c.saps_hdr_tax}</dt>                            
+                                <dd class="slds-truncate">
+                                    <b><lightning:formattedNumber value="{!v.sapdoc.tax}" style="currency" currencyCode="{!v.sapdoc.curr}" currencyDisplayAs="symbol"/></b>
+                                </dd>
+                                
+                                <dt class="slds-text-title slds-truncate">{!$Label.c.saps_hdr_total}</dt>                            
+                                <dd class="slds-truncate">
+                                    <b><lightning:formattedNumber value="{!v.sapdoc.total}" style="currency" currencyCode="{!v.sapdoc.curr}" currencyDisplayAs="symbol"/></b>
+                                </dd>
+                                </dl>
+                        </div>                        
+
+                        <!-- Fourth column -->
+                        <div class="slds-col slds-size_1-of-6 slds-theme_shade slds-p-around_medium">
+                            <dl>
+
+                                <dt class="slds-text-title slds-truncate">{!$Label.c.dict_custReference}</dt>                            
+                                <dd class="slds-truncate">
+                                    {!v.sapdoc.reference}
+                                </dd>
+
+                                <dt class="slds-text-title slds-truncate">{!$Label.c.dict_docDate}</dt>
+                                <dd class="slds-truncate" title="Document Date">
+                                    <lightning:formattedDateTime value="{!v.sapdoc.docDate}"/>
+                                </dd>
+
+                                <aura:if isTrue="{!v.docData.docType == 'o'}">
+                                    <dt class="slds-text-title slds-truncate">{!$Label.c.dict_deliveryDate}</dt>
+                                    <dd class="slds-truncate">
+                                        <lightning:formattedDateTime value="{!v.sapdoc.deliveryDate}"/>
+                                    </dd>
+                                </aura:if>
+
+                                <dt class="slds-text-title slds-truncate" title="Document Status">{!$Label.c.saps_docStatus}</dt>
+                                <dd>{!v.sapdoc.statusName}</dd>
+
+                            </dl>
+                            <br/>
+                            <br/>
+                            <br/>        
+                        </div>
+
+                    </div>
+                </div>
+        
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_brand" onclick="{!c.closeHeader}">{!$Label.c.dict_button_close}</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>    
+    </div>
+
+</aura:component>

@@ -1,0 +1,39 @@
+<template>
+    <div class="slds-var-p-around_medium">                                      
+        <p><b>{descriptionPrompt}</b></p>
+        <lightning-layout pull-to-boundary="small" multiple-rows>
+            <lightning-layout-item size="6" padding="horizontal-small" class="slds-var-p-top_x-small" lwc:if={isClaim}>
+                <lightning-input label={labels.dictProduct} value={currentItem.Name__c} read-only></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="horizontal-small" class="slds-var-p-top_x-small" lwc:if={isClaim}>
+                <lightning-input label={labels.dictQuantity} value={defectiveString} read-only></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="horizontal-small" class="slds-var-p-top_x-small">
+                <lightning-textarea 
+                    data-id="problem-description" 
+                    value={currentItem.problemDescription}
+                    label={labels.dictProblemDescription} 
+                    onchange={handleDescriptionChange}
+                    class="custom-textarea"
+                    required={isClaim}></lightning-textarea>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="horizontal-small" class="slds-var-p-top_x-small">
+                <!-- <c-custom-file-uploader></c-custom-file-uploader> -->
+                <lightning-input
+                    type="file"
+                    label={labels.dictAttachments}
+                    onchange={handleFilesChange}
+                    multiple>
+                </lightning-input>
+                <div class="slds-var-m-top_small">
+                    <lightning-pill-container data-id="pills-container" items={currentItem.filesToUpload} onitemremove={handleItemRemove}></lightning-pill-container>
+                </div>
+            </lightning-layout-item>
+            <template lwc:if={areFilesRequired}>
+                <lightning-layout-item size="12" padding="horizontal-small" class="slds-var-p-around_small">
+                    <strong>{labels.tr0009_036}</strong>
+                </lightning-layout-item>                
+            </template>            
+        </lightning-layout>
+    </div>
+</template>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- No Valid Opportunity Creation Mail To --></label>
+    <name>novalidcreation_mailto__c</name>
+</CustomFieldTranslation>

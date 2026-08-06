@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_Top_Accounts</fullName>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE_CODE</columns>
+    <columns>Account_Classification__c</columns>
+    <columns>Activity_Level__c</columns>
+    <columns>Last_Activity_Date__c</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>ACCOUNT.RATING</columns>
+    <columns>PC_EMAIL</columns>
+    <filterScope>Team</filterScope>
+    <filters>
+        <field>ACCOUNT.RATING</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <label>My Team Top Accounts</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>General_Manager_NY</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ShippingMethod__c</fullName>
+    <label>Shipping Method</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>US-UPS-60</fullName>
+                <default>false</default>
+                <label>US-UPS-60</label>
+            </value>
+            <value>
+                <fullName>US-STD</fullName>
+                <default>false</default>
+                <label>US-STD</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

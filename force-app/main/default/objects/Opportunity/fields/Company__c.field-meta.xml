@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Company__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( Sales_Organizational_Unit__c , &quot;203&quot;, &quot;EUROCERAMIQUE SARL&quot;
+,&quot;206&quot;, &quot;EUROCERAMIQUE SARL&quot;
+,&quot;207&quot;,&quot;EUROCERAMIQUE SARL&quot;
+,&quot;208&quot;,&quot;PORCELANOSA PARIS IDF&quot;
+,&quot;210&quot;,&quot;SOCAMED SARL&quot;
+,&quot;218&quot;,&quot;PORCELANOSA OUEST SAS&quot;
+,&quot;219&quot;,&quot;PORCELANOSA SUD-OUEST&quot;
+,&quot;502&quot;,&quot;PORCELANOSA SOUTHEAST LTD&quot;
+,&quot;504&quot;,&quot;PORCELANOSA NORTHWEST LTD&quot;
+,&quot;505&quot;,&quot;PORCELANOSA MIDLANDS LTD&quot;
+,&quot;506&quot;,&quot;PORCELANOSA SCOTLAND LTD&quot;
+,&quot;507&quot;,&quot;PORCELANOSA WESTERN LTD&quot;
+,&quot;508&quot;,&quot;PORCELANOSA YORKSHIRE LTD&quot;
+,&quot;null&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Company</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

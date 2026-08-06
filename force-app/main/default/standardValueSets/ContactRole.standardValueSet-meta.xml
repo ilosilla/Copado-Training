@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>true</sorted>
+    <standardValue>
+        <fullName>Architect</fullName>
+        <default>false</default>
+        <label>Architect</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Bath installer</fullName>
+        <default>false</default>
+        <label>Bath installer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Builder</fullName>
+        <default>false</default>
+        <label>Builder</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Interior designer</fullName>
+        <default>false</default>
+        <label>Designer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Developer / Owner</fullName>
+        <default>false</default>
+        <label>Developer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Engineering Consultant</fullName>
+        <default>false</default>
+        <label>Engineering Consultant</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Fabricator</fullName>
+        <default>false</default>
+        <label>Fabricator</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Facade consultant</fullName>
+        <default>false</default>
+        <label>Facade Consultant</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Facade Installer</fullName>
+        <default>false</default>
+        <label>Facade Installer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Flooring installer</fullName>
+        <default>false</default>
+        <label>Flooring installer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Franchisor</fullName>
+        <default>false</default>
+        <label>Franchisor</label>
+    </standardValue>
+    <standardValue>
+        <fullName>General / Main Contractor</fullName>
+        <default>false</default>
+        <label>General Contractor</label>
+    </standardValue>
+    <standardValue>
+        <fullName>K&amp;B Dealer</fullName>
+        <default>false</default>
+        <label>K&amp;B Dealer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Kitchen installer</fullName>
+        <default>false</default>
+        <label>Kitchen Installer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other Consultants</fullName>
+        <default>false</default>
+        <label>Other Consultants</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other contractor</fullName>
+        <default>false</default>
+        <label>Other Contractor</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Plumber</fullName>
+        <default>false</default>
+        <label>Plumber</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Pod Manufacturer</fullName>
+        <default>false</default>
+        <label>Pod Manufacturer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Private Customer</fullName>
+        <default>false</default>
+        <label>Private Customer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Procurement Consultant</fullName>
+        <default>false</default>
+        <label>Procurement Consultant</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Project Manager</fullName>
+        <default>false</default>
+        <label>Project Manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Quantity surveyor</fullName>
+        <default>false</default>
+        <label>Quantity surveyor</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Real State Agent</fullName>
+        <default>false</default>
+        <label>Real State Agent</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Reseller</fullName>
+        <default>false</default>
+        <label>Reseller</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Site Manager</fullName>
+        <default>false</default>
+        <label>Site Manager</label>
+    </standardValue>
+</StandardValueSet>

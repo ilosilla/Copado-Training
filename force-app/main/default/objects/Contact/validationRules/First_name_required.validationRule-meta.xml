@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_name_required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(CONTAINS($User.Username, &apos;loads.user&apos;) = false,ISBLANK( FirstName))</errorConditionFormula>
+    <errorDisplayField>FirstName</errorDisplayField>
+    <errorMessage>Firste name is required.</errorMessage>
+</ValidationRule>

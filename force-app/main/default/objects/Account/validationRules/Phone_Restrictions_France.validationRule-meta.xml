@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Phone_Restrictions_France</fullName>
+    <active>false</active>
+    <description>Restricciones de la validación del campo phone en UK</description>
+    <errorConditionFormula>BillingCountry=&apos;France&apos; &amp;&amp;
+LEN(Phone) != 10 &amp;&amp;
+NOT(BEGINS(Phone, &apos;0&apos;))</errorConditionFormula>
+    <errorDisplayField>Phone</errorDisplayField>
+    <errorMessage>Please write a valid format for the Phone field</errorMessage>
+</ValidationRule>

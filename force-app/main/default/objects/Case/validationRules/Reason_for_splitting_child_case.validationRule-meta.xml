@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_splitting_child_case</fullName>
+    <active>true</active>
+    <description>Every time an agent removes a case parent field, he will be asked for filling the Reason for split field</description>
+    <errorConditionFormula>ISCHANGED(ParentId) &amp;&amp; ISBLANK(ParentId) &amp;&amp; ISBLANK(Reason_for_split__c)</errorConditionFormula>
+    <errorDisplayField>Reason_for_split__c</errorDisplayField>
+    <errorMessage>A reason for splitting a case must be specified</errorMessage>
+</ValidationRule>

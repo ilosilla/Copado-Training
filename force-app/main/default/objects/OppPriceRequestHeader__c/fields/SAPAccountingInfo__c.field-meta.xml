@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAPAccountingInfo__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>SAP Accounting Info</label>
+    <referenceTo>Sales_Relationship__c</referenceTo>
+    <relationshipLabel>Price Request Headers</relationshipLabel>
+    <relationshipName>Price_Request_Headers</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

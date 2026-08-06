@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Lead_Source_selection</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+AND(
+OR($Profile.Name = &apos;UK Commercial Retail&apos;,$Profile.Name = &apos;UK Commercial Trade&apos;)
+,TEXT(LeadSource) = &apos;Explore_FR&apos;),
+AND(
+OR($Profile.Name = &apos;FR Commercial Extérieur&apos;,$Profile.Name = &apos;FR Commercial Salle&apos;)
+,TEXT(LeadSource) = &apos;Barbour_UK&apos;))</errorConditionFormula>
+    <errorDisplayField>LeadSource</errorDisplayField>
+    <errorMessage>You cannot select this option on Lead Source</errorMessage>
+</ValidationRule>

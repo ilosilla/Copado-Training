@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="comments" type="String" label="Comments" description="Commenst of the event"/>
+            <property name="isLoginFlow" type="Boolean" label="Is Login Flow" description="True if the flow is inside the login flow, because the size"/>
+        </targetConfig>
+    </targetConfigs>
+    <isExposed>true</isExposed>
+</LightningComponentBundle>

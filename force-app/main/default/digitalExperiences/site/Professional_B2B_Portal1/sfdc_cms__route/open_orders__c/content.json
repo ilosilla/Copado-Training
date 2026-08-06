@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Open Orders",
+  "contentBody" : {
+    "activeViewId" : "Open_Orders",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-open-orders",
+    "urlPrefix" : "open-orders"
+  },
+  "urlName" : "open-orders"
+}

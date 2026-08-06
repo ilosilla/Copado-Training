@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>L&apos;opportunité est gardée dans l&apos;attente d&apos;une action que le client doit finaliser.</help>
+    <label>Raison De l&apos;attente</label>
+    <name>Reason_Pending__c</name>
+    <picklistValues>
+        <masterLabel>In shop date</masterLabel>
+        <translation>Rendez-vous en magasin</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pending checkout</masterLabel>
+        <translation>En attente du paiement</translation>
+    </picklistValues>
+</CustomFieldTranslation>

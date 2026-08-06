@@ -1,0 +1,38 @@
+<template>
+	<lightning-record-edit-form class object-api-name="ContactPointAddress" onsuccess={handleSuccess} onsubmit={handleSave} onerror={handleError}>                    
+		<div class="slds-m-left_xx-large slds-m-right_xx-large">
+			<lightning-input-field field-name="Name" required></lightning-input-field>
+			<lightning-input-field field-name="ParentId" value={accountId} disabled></lightning-input-field>
+			<lightning-input-field field-name="IsDefault"></lightning-input-field>
+			<lightning-input-field field-name="Phone__c"></lightning-input-field>
+			<lightning-input-field field-name="NB2B_thirdpartyAddress__c" value="true" disabled="true"></lightning-input-field>
+			
+			<lightning-input-address
+				address-label="Address"
+				street-label="Street"
+				city-label="City"
+				country-label="Country"
+				province-label="State/ Province"
+				postal-code-label="Zip/ Postal Code"
+				country-options={countryOptions}
+                country={userCountryCode}
+				province-options={stateOptions}
+				onchange={addressInputChange}
+				required
+				show-address-lookup>
+			</lightning-input-address>
+		</div>
+		<div class="slds-align_absolute-center slds-m-top_x-large">
+			<lightning-button class="slds-m-bottom_small slds-m-right_medium" label="Cancel" onclick={closeModal}></lightning-button>
+			<lightning-button class="slds-m-bottom_small" label="Save" variant="brand" type="submit"></lightning-button>
+		</div>
+	</lightning-record-edit-form>
+    <!-- SPINNER -->
+    <template if:true={displaySpinner}>
+        <div style="position: relative">
+            <div class="slds-spinner_container slds-is-fixed">
+                <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+            </div>
+        </div>
+    </template>
+</template>

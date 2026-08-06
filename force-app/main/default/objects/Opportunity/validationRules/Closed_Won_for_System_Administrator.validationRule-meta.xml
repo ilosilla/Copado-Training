@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Won_for_System_Administrator</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND ( 
+  OR(
+ISPICKVAL($User.Execution_Context__c,&apos;FR&apos;),
+ISPICKVAL($User.Execution_Context__c,&apos;GB&apos;),
+ISPICKVAL($User.Execution_Context__c,&apos;US&apos;),
+    ISPICKVAL($User.Execution_Context__c,&apos;DEFAULT&apos;),
+    ISPICKVAL($User.Execution_Context__c, &apos;&apos;)
+  ),
+  ISPICKVAL(StageName, &apos;Closed Won&apos;) , 
+  NOT( $Setup.ClosedWon__c.User__c), 
+  OR(
+    ISCHANGED(StageName), 
+    ISNEW()
+  ) 
+)</errorConditionFormula>
+    <errorDisplayField>StageName</errorDisplayField>
+    <errorMessage>Change not permitted. SAP will automatically set this stage when an order is processed.</errorMessage>
+</ValidationRule>

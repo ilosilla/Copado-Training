@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR01_Scheduled</fullName>
+    <active>true</active>
+    <description>Rule to set the state as Scheduled</description>
+    <errorConditionFormula>ISPICKVAL( State__c , &apos;Scheduled&apos;) &amp;&amp;  
+(
+isblank(StartDate__c) ||isblank( EndDate__c )
+)</errorConditionFormula>
+    <errorMessage>Start and End date required to set the installation order as &quot;Scheduled&quot;</errorMessage>
+</ValidationRule>

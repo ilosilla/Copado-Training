@@ -1,0 +1,74 @@
+<aura:component implements="lightning:availableForFlowScreens" access="global">
+    
+    <!-- aura:component implements="lightning:availableForFlowScreens, forceCommunity:availableForAllPageTypes" access="global" -->    
+    <!-- aura:attribute name="colorPalette" type="List" default="['red', 'green', 'blue']" -->
+    
+    <!-- component parametres -->
+    <aura:attribute name="installationName" type="String" access="global"/>
+    <aura:attribute name="installationDescription" type="String" access="global"/>
+    <aura:attribute name="numberOfBathrooms" type="Integer" access="global"/>
+    <aura:attribute name="numberOfKitchens" type="Integer" access="global"/>
+    <aura:attribute name="numberOfOthers" type="Integer" access="global"/>
+    <aura:attribute name="errorList" type="String[]" access="global"/>
+    <aura:attribute name="opportunityName" type="String" access="global"/>
+    <aura:attribute name="opportunityOwner" type="String" access="global"/>
+    <aura:attribute name="accountName" type="String" access="global"/>
+	<aura:attribute name="installers" type="List" access="global"/>    
+    <aura:attribute name="installersJSON" type="String" access="global"/>
+	<aura:attribute name="installer" type="String" access="global"/>    
+    
+   	<aura:attribute name="validate" type="Aura.Action" />    
+	
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}"/>
+
+	<aura:if isTrue="{!v.errorList.length > 0}">
+        <div class="slds-box slds-theme_error slds-theme_alert-texture" role="status">
+            <div class="{!v.cssString}" role="status">
+                <h2 class="slds-text-heading_small"><b>{!$Label.c.app_review_errors}</b></h2>
+                <ul class="slds-list--dotted">
+                    <aura:iteration items="{!v.errorList}" var="errorMessage">
+                        <li>{!errorMessage}</li>
+                    </aura:iteration>
+                </ul>
+            </div>        
+        </div>
+        <aura:set attribute="else">
+            <aura:if isTrue="{! and(v.installers.length > 1, installer == null)}">
+                <div class="slds-box slds-theme_warning slds-theme_alert-texture" role="status">
+                    <div class="{!v.cssString}" role="status">
+                        <b>The system can't allocate an installer for the installation. Please select one from the list below.</b>
+                    </div>        
+                </div>
+            </aura:if>               
+        </aura:set>
+    </aura:if>
+    
+    <lightning:recordEditForm aura:id="recordEditForm"                                                  
+                              objectApiName="InstallationRequest__c">                            
+        <div class="slds-grid">                            
+            <div class="slds-col slds-size_1-of-2">  
+				<lightning:inputField aura:id="instName" fieldName="Name" variant="label-stacked" required="true" value="{!v.installationName}"/>
+                <lightning:combobox name="installer" 
+					label="{!$Label.c.ins_installer_label}" 
+					value="{!v.installer}" 
+					placeholder="Please select the installer" 
+                    onchange="{! c.handleChange }"          
+					options="{! v.installers }"/>                                
+                <div class="slds-list_horizontal">
+                    <lightning:inputField aura:id="bathrooms" fieldName="bathrooms__c" variant="label-stacked" value="{!v.numberOfBathrooms}"/>                
+                    <lightning:inputField aura:id="others" 	fieldName="others__c" variant="label-stacked" value="{!v.numberOfOthers}"/>                
+                 </div>
+            </div>
+            <div class="slds-col slds-size_1-of-2" style="padding-left:2rem">                                                                  
+                <lightning:input type="text" label="{!$Label.c.app_opportunity}" value="{!v.opportunityName}" disabled="true"></lightning:input>
+                <lightning:input type="text" label="{!$Label.c.app_account}" value="{!v.accountName}" disabled="true"></lightning:input>
+				<lightning:input type="text" label="Opportunity Owner" value="{!v.opportunityOwner}" disabled="true"></lightning:input>
+            </div>                                                        
+        </div> 
+        <div>
+			<lightning:inputField aura:id="instDescription" fieldName="Description__c" 
+                                  variant="label-stacked" 
+                                  value="{!v.installationDescription}"/>
+        </div>
+    </lightning:recordEditForm>
+</aura:component>

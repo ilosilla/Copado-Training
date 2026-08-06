@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Settings for features related to the Opportunities, by Country</description>
+    <enableFeeds>false</enableFeeds>
+    <label>PORSA Opportunity Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

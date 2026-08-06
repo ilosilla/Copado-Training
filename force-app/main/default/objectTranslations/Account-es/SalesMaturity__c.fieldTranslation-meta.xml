@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Sales Maturity --></label>
+    <name>SalesMaturity__c</name>
+    <picklistValues>
+        <masterLabel>Contacted</masterLabel>
+        <translation><!-- Contacted --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Development</masterLabel>
+        <translation><!-- Development --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No contacted</masterLabel>
+        <translation><!-- No contacted --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Producing</masterLabel>
+        <translation><!-- Producing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Stopped</masterLabel>
+        <translation><!-- Stopped --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Studying Opportunities</masterLabel>
+        <translation><!-- Studying Opportunities --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

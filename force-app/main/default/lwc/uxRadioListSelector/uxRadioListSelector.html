@@ -1,0 +1,68 @@
+<!-- uxRadioListSelector.html -->
+<template>
+    <div class="radio-list-selector">
+
+        <!-- Label del grupo -->
+        <template if:true={label}>
+            <div class="group-label slds-m-bottom_x-small">
+                {label}
+            </div>
+        </template>
+
+        <!-- Lista scrollable -->
+        <div class="options-container" role="radiogroup">
+            <div class="options-scroll" style={optionsListStyle}>
+                <template lwc:if={hasOptions}>
+                    <template for:each={filteredOptions} for:item="opt">
+                        <label
+                            key={opt.id}
+                            class={opt.itemClass}
+                            data-id={opt.id}
+                            onclick={handleItemClick}
+                        >
+                            <!-- En modo radio mostramos el input; en modo lista, no -->
+                            <template lwc:if={isRadioVariant}>
+                                <input
+                                    type="radio"
+                                    class="radio-input"
+                                    name="ux-radio-list-selector"
+                                    value={opt.id}
+                                    checked={opt.checked}
+                                    onchange={handleRadioChange}
+                                />
+                            </template>
+
+                            <span class="text">
+                                <span class="bold">{opt.label}</span>
+                                <template lwc:if={opt.description}>
+                                    <span class="normal"> - {opt.description}</span>
+                                </template>
+                            </span>
+                        </label>
+                    </template>
+                </template>
+
+                <template lwc:else>
+                    <div class="no-results slds-p-xx-small">
+                        No options found
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <!-- Buscador -->
+        <template lwc:if={isSearchEnabled}>
+            <div class="search-container">
+                <div class="search-input-wrapper">
+                    <input
+                        class="search-input"
+                        type="search"
+                        placeholder="Search address"
+                        value={searchTerm}
+                        oninput={handleSearchChange}
+                    />
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

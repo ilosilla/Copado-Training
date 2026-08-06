@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <label>Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Aroma Bar</fullName>
+                <default>false</default>
+                <label>Aroma Bar</label>
+            </value>
+            <value>
+                <fullName>Aromatherapy Workshop</fullName>
+                <default>false</default>
+                <label>Aromatherapy Workshop</label>
+            </value>
+            <value>
+                <fullName>Floral arrangement Workshop</fullName>
+                <default>false</default>
+                <label>Floral arrangement Workshop</label>
+            </value>
+            <value>
+                <fullName>Dress your table</fullName>
+                <default>false</default>
+                <label>Dress your table</label>
+            </value>
+            <value>
+                <fullName>Feng shui</fullName>
+                <default>false</default>
+                <label>Feng shui</label>
+            </value>
+            <value>
+                <fullName>Interior design photography with a smartphone</fullName>
+                <default>false</default>
+                <label>Interior design photography with a smartphone</label>
+            </value>
+            <value>
+                <fullName>Lettering workshop</fullName>
+                <default>false</default>
+                <label>Lettering workshop</label>
+            </value>
+            <value>
+                <fullName>Covers and paint</fullName>
+                <default>false</default>
+                <label>Covers and paint</label>
+            </value>
+            <value>
+                <fullName>Seasonal materials and colours</fullName>
+                <default>false</default>
+                <label>Seasonal materials and colours</label>
+            </value>
+            <value>
+                <fullName>Moodboard making</fullName>
+                <default>false</default>
+                <label>Moodboard making</label>
+            </value>
+            <value>
+                <fullName>Cuisinies with wine pairing</fullName>
+                <default>false</default>
+                <label>Cuisinies with wine pairing</label>
+            </value>
+            <value>
+                <fullName>Art exhibition</fullName>
+                <default>false</default>
+                <label>Art exhibition</label>
+            </value>
+            <value>
+                <fullName>Cooking class</fullName>
+                <default>false</default>
+                <label>Cooking class</label>
+            </value>
+            <value>
+                <fullName>Wellness open day</fullName>
+                <default>false</default>
+                <label>Wellness open day</label>
+            </value>
+            <value>
+                <fullName>Mommy and My</fullName>
+                <default>false</default>
+                <label>Mommy and My</label>
+            </value>
+            <value>
+                <fullName>Make your own blend</fullName>
+                <default>false</default>
+                <label>Make your own blend</label>
+            </value>
+            <value>
+                <fullName>Wine and cheese</fullName>
+                <default>false</default>
+                <label>Wine and cheese</label>
+            </value>
+            <value>
+                <fullName>Texture wall art workshop</fullName>
+                <default>false</default>
+                <label>Texture wall art workshop</label>
+            </value>
+            <value>
+                <fullName>Lunch and learn</fullName>
+                <default>false</default>
+                <label>Lunch and learn</label>
+            </value>
+            <value>
+                <fullName>Wood customization workshop</fullName>
+                <default>false</default>
+                <label>Wood customization workshop</label>
+            </value>
+            <value>
+                <fullName>Blooming tiles</fullName>
+                <default>false</default>
+                <label>Blooming tiles</label>
+            </value>
+            <value>
+                <fullName>Open days</fullName>
+                <default>false</default>
+                <label>Open days</label>
+            </value>
+            <value>
+                <fullName>Opening event showrooms</fullName>
+                <default>false</default>
+                <label>Opening event showrooms</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>1</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>1</label>
+            </value>
+            <value>
+                <fullName>2</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>2</label>
+            </value>
+            <value>
+                <fullName>3</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>3</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

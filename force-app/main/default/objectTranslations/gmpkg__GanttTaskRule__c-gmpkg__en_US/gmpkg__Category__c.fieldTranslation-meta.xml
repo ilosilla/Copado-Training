@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Category --></label>
+    <name>gmpkg__Category__c</name>
+    <picklistValues>
+        <masterLabel>Constraint</masterLabel>
+        <translation><!-- Constraint --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Deadline</masterLabel>
+        <translation><!-- Deadline --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Segment</masterLabel>
+        <translation><!-- Segment --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

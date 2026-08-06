@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>talkdesk__Disposition_Code__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Disposition Code</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Attempting Contact</fullName>
+                <default>false</default>
+                <label>Attempting Contact</label>
+            </value>
+            <value>
+                <fullName>Not Interested</fullName>
+                <default>false</default>
+                <label>Not Interested</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Successful Call</fullName>
+                <default>false</default>
+                <label>Successful Call</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

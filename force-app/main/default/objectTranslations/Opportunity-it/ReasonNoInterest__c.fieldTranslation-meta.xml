@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- ReasonNoInterest --></label>
+    <name>ReasonNoInterest__c</name>
+    <picklistValues>
+        <masterLabel>Cheaper in other company</masterLabel>
+        <translation><!-- Cheaper in other company --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>I don’t like it</masterLabel>
+        <translation><!-- I don’t like it --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>I&apos;ve changed my mind</masterLabel>
+        <translation><!-- I&apos;ve changed my mind --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>The product I like is not available</masterLabel>
+        <translation><!-- The product I like is not available --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

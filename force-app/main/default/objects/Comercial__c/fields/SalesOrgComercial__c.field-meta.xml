@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SalesOrgComercial__c</fullName>
+    <label>SalesOrgComercial</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>CompanyComercial__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>sales_orgs</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>502</controllingFieldValue>
+            <valueName>502</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

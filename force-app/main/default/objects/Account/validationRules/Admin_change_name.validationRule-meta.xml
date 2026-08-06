@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Admin_change_name</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF(ISPICKVAL($User.Execution_Context__c, &apos;FR&apos;), 
+AND(
+CONTAINS($User.Username, &apos;loads.user&apos;) = false,
+$User.Username &lt;&gt; &apos;falberto@porcelanosa.fr&apos;,
+ISCHANGED( Name ),
+AND($Profile.Name &lt;&gt; &apos;System Administrator&apos;)),
+AND(
+CONTAINS($User.Username, &apos;loads.user&apos;) = false,
+ISCHANGED( Name ),
+AND($Profile.Name &lt;&gt; &apos;System Administrator&apos;, $Profile.Name &lt;&gt; &apos;Managers&apos;),
+NOT(ISPICKVAL($User.Execution_Context__c, &apos;GB&apos;)),
+NOT(ISPICKVAL($User.Execution_Context__c, &apos;US&apos;)),
+NOT(ISPICKVAL($User.Execution_Context__c, &apos;CA&apos;)),
+NOT(ISPICKVAL($User.Execution_Context__c, &apos;DE&apos;))
+)
+)</errorConditionFormula>
+    <errorMessage>Only an admin can change the name field</errorMessage>
+</ValidationRule>

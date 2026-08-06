@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Product Line --></label>
+    <name>ProductLine2__c</name>
+    <picklistValues>
+        <masterLabel>Discontinued Lines</masterLabel>
+        <translation><!-- Discontinued Lines --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Emotion</masterLabel>
+        <translation><!-- Emotion --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Emotion Wardrobes</masterLabel>
+        <translation><!-- Emotion Wardrobes --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fusion Wardrobes</masterLabel>
+        <translation><!-- Fusion Wardrobes --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New Project</masterLabel>
+        <translation><!-- New Project --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New Residence</masterLabel>
+        <translation><!-- New Residence --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

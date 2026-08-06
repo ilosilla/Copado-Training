@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Usage --></label>
+    <name>Usage__c</name>
+    <picklistValues>
+        <masterLabel>FLOOR TILES</masterLabel>
+        <translation><!-- FLOOR TILES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INTENSE - EXTERNAL ACCESS</masterLabel>
+        <translation><!-- INTENSE - EXTERNAL ACCESS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INTENSE - LOAD DISPLACEMENT</masterLabel>
+        <translation><!-- INTENSE - LOAD DISPLACEMENT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LIGHT - EXTERNAL ACCESS</masterLabel>
+        <translation><!-- LIGHT - EXTERNAL ACCESS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MEDIUM - EXTERNAL ACCESS</masterLabel>
+        <translation><!-- MEDIUM - EXTERNAL ACCESS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WALL TILES</masterLabel>
+        <translation><!-- WALL TILES --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

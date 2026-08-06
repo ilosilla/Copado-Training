@@ -1,0 +1,48 @@
+.THIS .text-bold {
+    font-weight: bold;
+}
+
+.THIS .z_box {
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+}
+
+.THIS .transform0 {
+    transform: translateX(-0%);
+}
+
+.THIS .transform1 {
+    transform: translateX(-100%);
+}
+
+.THIS .transform2 {
+    transform: translateX(-200%);
+}
+
+.THIS .slds-carousel__panel {
+    padding: 4px;
+}
+
+.THIS .aged-orders {
+    width: 100%;
+}
+
+.THIS .aged-orders>div:first-child {
+    margin-left:0px;
+}
+
+.THIS .aged-orders>div {
+    margin-left:1em;
+}
+
+.THIS .dummy-link {
+    text-decoration: none;
+}
+
+.THIS .dummy-link:hover {
+    text-decoration: none;
+}
+
+.THIS .dummy-link:active {
+    text-decoration: none;
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Firing_DT__c</fullName>
+    <formula>Notitication_Date_Time__c - 0.04145</formula>
+    <label>Firing DT</label>
+    <required>false</required>
+    <type>DateTime</type>
+</CustomField>

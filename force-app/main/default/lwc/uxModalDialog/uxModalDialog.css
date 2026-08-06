@@ -1,0 +1,91 @@
+/* =========================================================
+   MODAL ROOT (overlay + positioning)
+   ========================================================= */
+:host {    
+    display: contents;
+    --ux-modal-variant-bar-height: 8px;
+    --ux-modal-margin-top: 26vh;
+    --ux-modal-color-confirm: #2e7d32;
+    --ux-modal-color-info: #2f6fad;
+    --ux-modal-color-error: #c23934;
+    --ux-modal-color-destructive: #8e1b1b;
+}
+
+.ux-modal {
+    position: fixed;
+    top: var(--ux-modal-margin-top, 26vh);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10001;       /* 1 por encima del backdrop */
+    background: #fff;
+    width: 640px;
+    max-width: calc(100vw - 2rem);
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+/* =========================================================
+   MODAL WINDOW
+   ========================================================= */
+.ux-modal__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================================
+   VARIANT BAR (top)
+   ========================================================= */
+.ux-modal__bar {
+    height: var(--ux-modal-variant-bar-height, 8px);
+     border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.ux-modal__bar--confirm {
+    background-color: var(--ux-modal-color-confirm);
+}
+
+.ux-modal__bar--error {
+    background-color: var(--ux-modal-color-error);
+}
+
+.ux-modal__bar--info {
+    background-color: var(--ux-modal-color-info);
+}
+
+.ux-modal__bar--destructive {
+    background-color: var(--ux-modal-color-destructive);
+}
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+.ux-modal__title {
+    margin: 2rem 1.5rem 1rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* =========================================================
+   BODY
+   ========================================================= */
+.ux-modal__body {
+    margin: 0 1.5rem 1.25rem;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: #374151;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.ux-modal__footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+
+    padding: 1rem 1.5rem 1.25rem;
+    /* border-top: 1px solid #e5e7eb;*/
+}

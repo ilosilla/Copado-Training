@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zak_World_of_Fa_ades_North_America_New</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account.Send_Mass_Email__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>FULL_NAME</field>
+        <operation>contains</operation>
+        <value>Aaron Dorf,Adam Rolston,Alejandro Uribe,Alexander B. Jacobs,Alexandra MacDonald,Alissa Bucher,Andrew Wilkinson,Antonio Rodriguez,Armando Petruccelli,Arthur Mcgoey,AYESHA HUSAIN</value>
+    </filters>
+    <label>Zak World of Façades North America, New</label>
+</ListView>

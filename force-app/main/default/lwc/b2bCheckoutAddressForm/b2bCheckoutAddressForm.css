@@ -1,0 +1,74 @@
+/* =========================================================
+   LIGHTNING INPUT NORMALIZATION
+   ========================================================= */
+
+/* Labels más pequeños y corporativos */
+
+:host lightning-input,
+:host lightning-combobox {
+    --dxp-s-form-element-label-font-size: 0.8rem;
+    --dxp-s-form-element-label-font-weight: 500;
+    --dxp-s-form-element-label-color: var(--b2b-checkout-muted-color);    
+    --dxp-s-form-element-text-color: rgb(62, 62, 60);
+    --dxp-s-form-element-text-font-size: 0.85rem;
+    --dxp-s-form-element-radius-border: 3px;
+    --dxp-s-form-element-color-border: rgb(229, 229, 229);
+    --dxp-s-input-shadow-focus: 0 0 0 1px #3a3a3a;
+    --dxp-s-form-element-text-font-family: var(--psa-sans-serif-family);
+    --dxp-s-input-shadow-focus: 0 0 0 1px rgba(24, 24, 24, 0.12);
+    margin-bottom: 0rem;
+}
+
+.address-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    font-family: var(--b2b-checkout-font-family);
+    font-size: var(--b2b-checkout-base-size);
+    color: var(--b2b-checkout-base-color);
+    padding-bottom: 5rem; /* room for the state combo */
+}
+
+.address-form__error {
+    padding: 0.85rem 1rem;
+    border: 1px solid #d14343;
+    border-left: 4px solid #d14343;
+    background: #fff0f0;
+    color: #7d0f0f;
+    font-weight: 600;
+    line-height: 1.35;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+}
+
+
+/* Full-width lightning controls */
+.address-form__control {
+    width: 100%;
+}
+
+/* Two-column layout blocks (City/State, Phone/Email) */
+.address-form__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+/* Ensure internal lightning components expand properly */
+.address-form__grid lightning-input,
+.address-form__grid lightning-combobox {
+    width: 100%;
+}
+
+/* Slight density refinement */
+.address-form lightning-input,
+.address-form lightning-combobox {
+    --slds-c-input-spacing-block-start: 0.25rem;
+}
+
+/* Responsive fallback */
+@media (max-width: 768px) {
+    .address-form__grid {
+        grid-template-columns: 1fr;
+    }
+}

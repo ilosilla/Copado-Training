@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lookup_Company__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Sociedad de referencia. Nivel superior en la jerarquía de localización. Es el nombre de la sociedad de referencia o la compañia. Corresponde al campo CompanyName del objeto personalizado COMPANY</description>
+    <label>Lookup Company</label>
+    <referenceTo>Company__c</referenceTo>
+    <relationshipLabel>Company</relationshipLabel>
+    <relationshipName>COMPANY</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

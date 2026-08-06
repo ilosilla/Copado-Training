@@ -1,0 +1,194 @@
+.doc {
+    display: flex;
+    flex-direction: column;
+    gap: 16px 8px;
+}
+
+.doc__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--b2b-border-color);
+}
+
+.doc__title {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.doc__section-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.doc__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 14px;
+}
+
+/* =========================================================
+ * Header layout (2/3 + 1/3)
+ * ========================================================= */
+.doc__header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 12px 18px;
+    align-items: start;
+}
+
+.doc__header-left,
+.doc__header-right {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.doc__field,
+.doc__fact {
+    min-width: 0;
+}
+
+.doc__value--strong {
+    font-weight: 600;
+}
+
+/* =========================================================
+ * Totals (Net / Tax / Total)
+ * ========================================================= */
+.doc__totals {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    background: var(--psa-light-background);
+    padding: 0px 12px 6px;
+}
+
+.doc__totals-col {
+    padding: 6px 10px;
+    min-width: 0;
+}
+
+.doc__totals-label {
+    font-size: 0.72rem;
+    font-weight: var(--b2b-field-label-font-weight);
+    color: var(--b2b-field-label-text-color-light);
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--b2b-border-color);
+    margin-bottom: 6px;
+}
+
+.doc__totals-value {
+    font-size: 0.85rem;
+    font-weight: var(--b2b-field-value-font-weight-strong);
+    color: var(--b2b-field-value-text-color);
+    white-space: nowrap;
+}
+
+.doc__totals-col--total .doc__totals-value {
+    font-size: 1.12rem;
+}
+
+@media (max-width: 520px) {
+    .doc__totals {
+        grid-template-columns: 1fr;
+    }
+}
+
+.doc__block--amounts,
+.doc__block--reserved {
+    grid-column: 1 / -1;
+}
+
+.doc__label {
+    font-size: 0.72rem;
+    opacity: 0.75;
+    margin-bottom: 2px;
+}
+
+.doc__value {
+    font-size: 0.85rem;
+}
+
+.doc__value--muted {
+    opacity: 0.6;
+}
+
+.doc__amounts {
+    border: 1px solid var(--b2b-border-color);
+    padding: 8px 10px;
+}
+
+.doc__amount-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    padding: 2px 0;
+}
+
+.doc__amount-row--total {
+    font-weight: 600;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    margin-top: 4px;
+    padding-top: 6px;
+}
+
+.doc__table-wrap {
+    border: 1px solid var(--b2b-border-color);
+    overflow: auto;
+    max-height: 45vh;
+}
+
+.doc__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+}
+
+.doc__table thead th {
+    position: sticky;
+    top: 0;
+    background: #3f464d;
+    color: #f8fafc;
+    padding: 8px 10px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.doc__table tbody td {
+    padding: 6px 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    white-space: nowrap;
+}
+
+.cell--strong {
+    font-weight: 600;
+}
+
+.num {
+    text-align: right;
+}
+
+.doc__empty {
+    text-align: center;
+    padding: 12px 10px;
+    opacity: 0.7;
+}
+
+.doc__error {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border: 1px solid rgba(234, 0, 30, 0.25);
+    background: rgba(234, 0, 30, 0.05);
+}
+
+.doc__error-text {
+    font-size: 0.85rem;
+}

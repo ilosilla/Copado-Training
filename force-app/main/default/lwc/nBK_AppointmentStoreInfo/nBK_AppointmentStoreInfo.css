@@ -1,0 +1,42 @@
+.dummy{
+	color : black;
+}
+
+.imagen {
+    height: 220px;
+    margin: 0 auto;
+    display: block;
+}
+
+.containerAddress {
+    background-color: #ededed;
+    padding: 20px 20px 20px 30px;
+    border: 1px solid #ededed;
+    min-height: 220px;
+}
+
+@font-face {
+    font-family: 'porcelanosafont';
+    src: url('/B2B/s/sfsites/c/resource/PorcelanosaRegular.ttf') format('ttf');
+}
+.titulo{
+    font-size: large;
+    font-weight: bold;
+    color: #223141;
+    font-family:'porcelanosafont';
+}
+
+.descrip{
+	font-size: medium;
+    font-family:'porcelanosafont';
+    color:#929292;
+    font-weight: normal;
+}
+
+
+.urldes{
+	font-size: medium;    
+    color:#929292;
+    font-weight: normal;
+	text-decoration: underline;
+}

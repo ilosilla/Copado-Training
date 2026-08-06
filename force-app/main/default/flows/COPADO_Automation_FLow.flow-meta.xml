@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Set_as_COMPLETED</name>
+        <label>Set as COMPLETED</label>
+        <locationX>204</locationX>
+        <locationY>1775</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.copado__Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>changed</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHeck_CHANGED</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_flag_to_false</name>
+        <label>Set flag to false</label>
+        <locationX>336</locationX>
+        <locationY>311</locationY>
+        <assignmentItems>
+            <assignToReference>changed</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_if_project_is_empty</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SET_IN_PROGRESS</name>
+        <label>Set In Progress</label>
+        <locationX>50</locationX>
+        <locationY>1343</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.copado__Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>In Progress</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>changed</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Credential</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_story_project</name>
+        <label>Set project</label>
+        <locationX>204</locationX>
+        <locationY>551</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.copado__Project__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>a2p6M000001CAQpQAO</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>changed</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Draft_And_Has_Credential</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_To_Do</name>
+        <label>Set To Do</label>
+        <locationX>204</locationX>
+        <locationY>887</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.copado__Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>To Do</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>changed</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHeck_TODO</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>CHeck_CHANGED</name>
+        <label>CHeck CHANGED</label>
+        <locationX>336</locationX>
+        <locationY>1991</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Has_changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>changed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Has changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Credential</name>
+        <label>Check Credential</label>
+        <locationX>336</locationX>
+        <locationY>1655</locationY>
+        <defaultConnector>
+            <targetReference>CHeck_CHANGED</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_in_PRODUCTION</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.porsa_CredentialName__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PRODUCTION</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_as_COMPLETED</targetReference>
+            </connector>
+            <label>Is in PRODUCTION</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_if_it_has_metadata</name>
+        <label>Check if it has metadata</label>
+        <locationX>182</locationX>
+        <locationY>1223</locationY>
+        <defaultConnector>
+            <targetReference>Check_Credential</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Has_Metadata</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.copado__Metadata_Types_in_Selection__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SET_IN_PROGRESS</targetReference>
+            </connector>
+            <label>Has Metadata</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_if_project_is_empty</name>
+        <label>Check if project is empty</label>
+        <locationX>336</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Is_Draft_And_Has_Credential</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Project_Is_Empty</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.copado__Project__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.copado__Project__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_story_project</targetReference>
+            </connector>
+            <label>Project Blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHeck_TODO</name>
+        <label>Check if TO DO</label>
+        <locationX>336</locationX>
+        <locationY>1103</locationY>
+        <defaultConnector>
+            <targetReference>Check_Credential</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>I</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.copado__Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>To Do</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_if_it_has_metadata</targetReference>
+            </connector>
+            <label>Is TO DO</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Checks if the story is in draft but has  a credendial set</description>
+        <name>Is_Draft_And_Has_Credential</name>
+        <label>Is Draft And Has Credential</label>
+        <locationX>336</locationX>
+        <locationY>767</locationY>
+        <defaultConnector>
+            <targetReference>CHeck_TODO</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_draft_adn_has_credential</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.copado__Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Draft</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.copado__Org_Credential__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_To_Do</targetReference>
+            </connector>
+            <label>Is draft adn has credential</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>COPADO Automation FLow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>COPADO Automation FLow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>210</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_flag_to_false</targetReference>
+        </connector>
+        <object>copado__User_Story__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>changed</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+</Flow>

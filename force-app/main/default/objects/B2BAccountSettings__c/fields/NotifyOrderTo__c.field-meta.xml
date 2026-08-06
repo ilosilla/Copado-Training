@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NotifyOrderTo__c</fullName>
+    <label>Notify Order To</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>NONE</fullName>
+                <default>true</default>
+                <label>NONE</label>
+            </value>
+            <value>
+                <fullName>CUSTOMER</fullName>
+                <default>false</default>
+                <label>CUSTOMER</label>
+            </value>
+            <value>
+                <fullName>REP</fullName>
+                <default>false</default>
+                <label>REP</label>
+            </value>
+            <value>
+                <fullName>BOTH</fullName>
+                <default>false</default>
+                <label>BOTH</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

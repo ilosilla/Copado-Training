@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Info type --></label>
+    <name>InfoType__c</name>
+    <picklistValues>
+        <masterLabel>FINANCIAL</masterLabel>
+        <translation><!-- FINANCIAL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GOAL</masterLabel>
+        <translation><!-- GOAL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INVOICES</masterLabel>
+        <translation><!-- INVOICES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ORDERS</masterLabel>
+        <translation><!-- ORDERS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PURCHASE</masterLabel>
+        <translation><!-- PURCHASE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>QUOTES</masterLabel>
+        <translation><!-- QUOTES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WEEKLYCOMMENT</masterLabel>
+        <translation><!-- WEEKLYCOMMENT --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

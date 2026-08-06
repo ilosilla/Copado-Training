@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Price_Books</fullName>
+    <columns>PRICEBOOK2.NAME</columns>
+    <columns>PRICEBOOK2.IS_ACTIVE</columns>
+    <columns>PRICEBOOK2.DESCRIPTION</columns>
+    <columns>PRICEBOOK2.LAST_UPDATE</columns>
+    <columns>LastSync__c</columns>
+    <columns>LastSyncResult__c</columns>
+    <columns>SAPCustomer__c</columns>
+    <columns>SAPSync__c</columns>
+    <columns>PriceType__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SAPCustomer__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Customer Price Books</label>
+</ListView>

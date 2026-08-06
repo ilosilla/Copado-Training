@@ -1,0 +1,12 @@
+<template>
+	<lightning-radio-group name="addresses"
+		options={addresses}
+		value={selectedAddress}
+		onchange={handleAddressSelection}>
+	</lightning-radio-group>
+		
+	<lightning-button class="slds-float_right" label={addAddressLabel} variant="brand" onclick={openModal}></lightning-button>
+	<c-nb2b-dialog title={modalTitle}>
+		<c-nb2b-create-contact-point-address onclose={closeModal} onsuccess={handleSave} account-id={accountId}></c-nb2b-create-contact-point-address>
+	</c-nb2b-dialog>
+</template>

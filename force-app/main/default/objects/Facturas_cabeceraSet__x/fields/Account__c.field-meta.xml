@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Retates the sales document with the Account using the value stored in id18</description>
+    <externalDeveloperName>id18</externalDeveloperName>
+    <isFilteringDisabled>false</isFilteringDisabled>
+    <isNameField>false</isNameField>
+    <isSortingDisabled>false</isSortingDisabled>
+    <label>Account</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Facturas_cabeceraSet</relationshipLabel>
+    <relationshipName>Facturas_cabeceraSet</relationshipName>
+    <required>false</required>
+    <type>Lookup</type>
+</CustomField>

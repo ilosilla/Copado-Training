@@ -1,0 +1,58 @@
+<!--
+  @description       : 
+  @author            : Nubika
+  @group             : 
+  @last modified on  : 09-14-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<aura:component implements="force:appHostable,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" controller="b2B_checkProductStock">
+
+    <aura:html tag="style">
+        .cuf-content {
+            padding: 0 0rem !important;
+        }
+        .slds-p-around--medium {
+            padding: 0rem !important;
+        }
+        .slds-modal__content {
+            overflow-y: visible !important; 
+            height: unset !important;
+            max-height: unset !important;
+        }
+        @media (min-width: 48em) {
+            .slds-modal__container {
+                margin: 0 auto;
+                width: 60% !important;
+                max-width: 60% !important;
+                min-width: 20rem;
+            }
+        }
+    </aura:html>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:Attribute name="showMessage" type="Boolean" default="false"/>
+    <aura:Attribute name="finish" type="Boolean" default="false"/>
+    
+    <aura:Attribute name="showComponent" type="Boolean" default="false"/>
+    <!--<aura:handler name="change" value="{!v.finish}" action="{!c.closeModal}" />-->
+
+    <div class="slds-col modal-header slds-modal__header">
+        <h2 class="title slds-text-heading--medium">{!$Label.c.NB2B_checkStock}</h2>
+    </div>
+    <aura:if isTrue="{!v.showComponent}">
+        <aura:if isTrue="{!v.showMessage}">
+            <c:b2B_checkStockComponent aura:id="stockComponent" onfinish="{!c.closeModal}" recordId="{!v.recordId}" finish="{!v.finish}" onfinishcallback="{!c.quitSpinner}" onrefresh="{!c.refreshView}"></c:b2B_checkStockComponent>
+            <div class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" onclick="{!c.CloseModal}">{!$Label.c.NB2B_cancel}</button>
+                <button class="slds-button slds-button_brand" onclick="{!c.SaveModal}">{!$Label.c.NB2B_save}</button>
+            </div>
+            <aura:set attribute="else">
+                <div class="slds-modal__container">
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <p>{!$Label.c.NB2B_Alert_text_Samples}</p>
+                      </div>
+                </div>
+            </aura:set>
+        </aura:if>
+    </aura:if>
+</aura:component>

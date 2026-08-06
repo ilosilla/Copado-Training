@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zmetres__c</fullName>
+    <description>Zmetres</description>
+    <externalDeveloperName>Zmetres</externalDeveloperName>
+    <externalId>false</externalId>
+    <isFilteringDisabled>false</isFilteringDisabled>
+    <isNameField>false</isNameField>
+    <isSortingDisabled>false</isSortingDisabled>
+    <label>Zmetres</label>
+    <precision>13</precision>
+    <required>false</required>
+    <scale>3</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

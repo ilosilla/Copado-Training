@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loss_reason</fullName>
+    <active>false</active>
+    <description>Si el nombre de la etapa es &quot;Cerrada/Perdida&quot; debe especificarse el motivo</description>
+    <errorConditionFormula>ISPICKVAL( StageName,&quot;Cierre/Perdida&quot;)
+&amp;&amp;
+ISPICKVAL( Reason_Lost__c, &quot;&quot;)</errorConditionFormula>
+    <errorMessage>Debe especificarse el motivo para esta etapa</errorMessage>
+</ValidationRule>

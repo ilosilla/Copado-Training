@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ordre_Alphabetique_Sud_Ouest</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Amount_custom__c</columns>
+    <columns>ProjetReference__c</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Opportunity_Classification__c</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>Sales_Office_Text_Owner__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Sales_Org__c</field>
+        <operation>equals</operation>
+        <value>219</value>
+    </filters>
+    <label>Ordre Alphabetique - Sud Ouest</label>
+    <sharedTo>
+        <roleAndSubordinates>Sociedad_P_S_O</roleAndSubordinates>
+    </sharedTo>
+</ListView>

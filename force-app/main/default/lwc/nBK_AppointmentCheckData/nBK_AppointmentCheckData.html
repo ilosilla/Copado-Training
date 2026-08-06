@@ -1,0 +1,29 @@
+<!--
+  @description       : 
+  @author            : EHG@nubika.com
+  @group             : 
+  @last modified on  : 08-07-2023
+  @last modified by  : EHG@nubika.com
+-->
+<template>
+    
+    <!-- PRUEBAS <div>
+      SelectedStore: {selectedStore}
+    </div>
+    <div>
+      fecha seleccionada: {currentSelectedDateTime}
+    </div>
+    <div>
+      businessHourId : {businessHourId}
+    </div>-->
+
+  <template if:true={showwating}>
+    <div>
+       <lightning-spinner alternative-text="Comprobando datos" size="large"></lightning-spinner>
+    </div>
+  </template>
+  <template if:false={showwating}>
+    <span style="color: red;font-size: 18px;">{label.nBK_AppointmentDataError}</span>
+  </template>
+
+</template>

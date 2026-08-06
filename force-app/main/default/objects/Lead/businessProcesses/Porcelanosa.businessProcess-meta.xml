@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Porcelanosa</fullName>
+    <isActive>true</isActive>
+    <values>
+        <fullName>Contacted via Email</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Contacted via Phone</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Converted</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Junk Lead</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>New</fullName>
+        <default>true</default>
+    </values>
+</BusinessProcess>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Log Level --></label>
+    <name>LogLevel__c</name>
+    <picklistValues>
+        <masterLabel>Debug</masterLabel>
+        <translation><!-- Debug --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Disabled</masterLabel>
+        <translation><!-- Disabled --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Errors</masterLabel>
+        <translation><!-- Errors --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Info</masterLabel>
+        <translation><!-- Info --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Warnings</masterLabel>
+        <translation><!-- Warnings --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

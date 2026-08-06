@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pedido_entregado__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Campo que se rellena automático cuando se recibe el pedido</description>
+    <label>Pedido entregado</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

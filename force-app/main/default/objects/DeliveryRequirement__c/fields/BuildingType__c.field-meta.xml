@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BuildingType__c</fullName>
+    <label>Building Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>APARTMENT BUILDING</fullName>
+                <default>false</default>
+                <label>Apartment Building</label>
+            </value>
+            <value>
+                <fullName>COMMERCIAL BUILDING</fullName>
+                <default>false</default>
+                <label>Commercial Building</label>
+            </value>
+            <value>
+                <fullName>CONSTRUCTION SITE</fullName>
+                <default>false</default>
+                <label>Construction Site</label>
+            </value>
+            <value>
+                <fullName>SINGLE FAMILY HOME</fullName>
+                <default>false</default>
+                <label>Single-Family Home</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Brest_File_d_Attente_Lead</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE_CODE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <filterScope>Queue</filterScope>
+    <label>Brest File d&apos;Attente</label>
+    <queue>Brest_File_d_Attente</queue>
+    <sharedTo>
+        <role>B_U_Bretagne</role>
+        <role>Commercial_Ext_rieur_Brest</role>
+        <role>Responsable_Agence_Brest</role>
+        <role>Sociedad_Ouest</role>
+    </sharedTo>
+</ListView>

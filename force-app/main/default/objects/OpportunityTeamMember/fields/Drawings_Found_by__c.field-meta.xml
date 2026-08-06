@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Drawings_Found_by__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Campo para identificar que usuario de Porcelanosa ha encontrado los dibujos del proyecto de fachadas</description>
+    <label>Drawings Found by</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

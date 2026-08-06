@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Please enter here the origin of the lead (i.e. Sale January 2020) --></help>
+    <label>Sous-type de la Piste</label>
+    <name>LeadSubtype__c</name>
+</CustomFieldTranslation>

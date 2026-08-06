@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ToMarketingCloud__c</fullName>
+    <formula>IF(AND(
+ISBLANK(Email) = false,
+OR( TEXT(MailingCountryCode) =&apos;GB&apos;, TEXT(MailingCountryCode) = &apos;FR&apos;),
+ISBLANK(EmailBouncedReason) = true,
+CONTAINS(Email, &apos;porcelanosa&apos;) = false, 
+Inactive_Contact__c = false,
+HasOptedOutOfEmail = false,
+notValidEmail__c = false
+), true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>To Marketing Cloud</label>
+    <type>Checkbox</type>
+</CustomField>

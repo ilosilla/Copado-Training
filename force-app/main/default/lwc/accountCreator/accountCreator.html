@@ -1,0 +1,21 @@
+<template>
+    <template if:true={showAccountCreation}>
+        <lightning-combobox
+            if:true={showComboAccountRecordTypes}
+            name="accountRecordTypes"
+            label={label.recordTypeLabel}
+            placeholder={label.selectRecordTypeLabel}
+            onchange={handleChangeAccountRecordTypes}
+            options={accountRecordtypesOptions}>
+        </lightning-combobox>
+        <lightning-record-form 
+            if:true={showAccountForm}
+            object-api-name={accountObject}
+            fields={accountFieldsToShow}
+            onsubmit={handleSubmit}
+            onsuccess={handleSuccess}
+            oncancel={handleCancel}
+            record-type-id={accountRecordtypeSelected}>
+        </lightning-record-form>
+    </template>
+</template>

@@ -1,0 +1,37 @@
+{
+  "type" : "sfdc_cms__theme",
+  "title" : "B2B Commerce",
+  "contentBody" : {
+    "activeBrandingSetId" : "B2B_Commerce",
+    "definitionName" : "b2b-commerce",
+    "layouts" : [ {
+      "layoutId" : "Service_Layout",
+      "layoutType" : "FNKEICQP4CTpbZzBInfE18PJt5X5mP"
+    }, {
+      "layoutId" : "checkoutLayout",
+      "layoutType" : "Checkout"
+    }, {
+      "layoutId" : "B2B_Data_Table_Layout",
+      "layoutType" : "eSAllXFKpWxlLYMI0eZgpfTfWAbj4s"
+    }, {
+      "layoutId" : "externalLayout",
+      "layoutType" : "External"
+    }, {
+      "layoutId" : "B2B_Custom_2_B_F",
+      "layoutType" : "I9ruvySfZB0aoZMMMqtA2xoS2mx7sQ"
+    }, {
+      "layoutId" : "snaThemeLayout",
+      "layoutType" : "ServiceNotAvailable"
+    }, {
+      "layoutId" : "commerceLayout",
+      "layoutType" : "Inner"
+    }, {
+      "layoutId" : "myAccountLayout",
+      "layoutType" : "MyAccount"
+    }, {
+      "layoutId" : "B2B_Global_Layout",
+      "layoutType" : "jC1ybJrwhVaEHOB1rCbpPsvUlFg67F"
+    } ]
+  },
+  "urlName" : "b2b-commerce"
+}

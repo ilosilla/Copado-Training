@@ -1,0 +1,18 @@
+.custom-confirm-header  {
+    --slds-c-modal-header-spacing-block-start: 0px;
+    --slds-c-modal-header-spacing-block-end: 0px;
+    --slds-c-modal-header-spacing-inline-start: 0px;
+    --slds-c-modal-header-spacing-inline-end: 0px; 
+    --slds-c-modal-radius-border: 0px !important;
+    --slds-c-modal-sizing-border: 0px !important;
+}
+
+.custom-confirm-body {
+    --slds-c-modal-sizing-border: 0px !important;
+    --slds-c-modal-radius-border: 0px !important;
+}
+.custom-confirm-footer {
+    --slds-c-modal-sizing-border: 0px !important;
+    --slds-c-modal-radius-border: 0px !important;
+    text-align: center;
+}

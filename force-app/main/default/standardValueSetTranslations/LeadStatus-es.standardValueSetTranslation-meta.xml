@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Appointment Setup</masterLabel>
+        <translation>Cita Concertada</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Claims/Product Support</masterLabel>
+        <translation>Soporte de Producto</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Contacted via Email</masterLabel>
+        <translation>Contactado Via Email</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Contacted via Phone</masterLabel>
+        <translation>Contactado Via Telefono</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Converted</masterLabel>
+        <translation>Convertido</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Junk Lead</masterLabel>
+        <translation>Lead basura</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>New</masterLabel>
+        <translation>Nuevo</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Not Contacted</masterLabel>
+        <translation>No contactado</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Not Interested</masterLabel>
+        <translation>No interesado</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TypeCustomer__c</fullName>
+    <label>TypeCustomer</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>POTENCIAL</fullName>
+                <default>true</default>
+                <label>POTENCIAL</label>
+            </value>
+            <value>
+                <fullName>CLIENTE</fullName>
+                <default>false</default>
+                <label>CLIENTE</label>
+            </value>
+            <value>
+                <fullName>TANDEM</fullName>
+                <default>false</default>
+                <label>TANDEM</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Meeting</fullName>
+        <default>true</default>
+        <label>Meeting</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Library Update</fullName>
+        <default>false</default>
+        <label>Library update/Samples delivery</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Product Presentation</fullName>
+        <default>false</default>
+        <label>Product Presentation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Showroom Visit</fullName>
+        <default>false</default>
+        <label>Showroom Visit</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Opportunity Follow Up Meeting</fullName>
+        <default>false</default>
+        <label>Opportunity Follow Up Meeting</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Claim Visit</fullName>
+        <default>false</default>
+        <label>Claim Visit</label>
+    </standardValue>
+    <standardValue>
+        <fullName>CPD presentation</fullName>
+        <default>false</default>
+        <label>CPD presentation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Prospect meeting</fullName>
+        <default>false</default>
+        <label>Prospect meeting</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Trade show</fullName>
+        <default>false</default>
+        <label>Trade show</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Factory trip</fullName>
+        <default>false</default>
+        <label>Factory trip</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Customer Entertainment</fullName>
+        <default>false</default>
+        <label>Customer Entertainment</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Client event</fullName>
+        <default>false</default>
+        <label>Client event</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Site visit</fullName>
+        <default>false</default>
+        <label>Site visit</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Non Commercial</fullName>
+        <default>false</default>
+        <label>Non Commercial</label>
+    </standardValue>
+    <standardValue>
+        <fullName>E-Commerce Showroom Appointment</fullName>
+        <default>false</default>
+        <label>E-commerce Showroom Appointment</label>
+    </standardValue>
+    <standardValue>
+        <fullName>E-commerce Virtual appointment</fullName>
+        <default>false</default>
+        <label>E-commerce Virtual appointment</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Lunch and Learn (CEU)</fullName>
+        <default>false</default>
+        <label>Lunch and Learn (CEU)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Virtual appointment</fullName>
+        <default>false</default>
+        <label>Virtual appointment</label>
+    </standardValue>
+</StandardValueSet>

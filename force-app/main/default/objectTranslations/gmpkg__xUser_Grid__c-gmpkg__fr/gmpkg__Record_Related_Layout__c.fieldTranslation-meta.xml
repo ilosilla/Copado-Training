@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Record Related Layout --></label>
+    <name>gmpkg__Record_Related_Layout__c</name>
+    <picklistValues>
+        <masterLabel>Accordion</masterLabel>
+        <translation><!-- Accordion --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Stacked</masterLabel>
+        <translation><!-- Stacked --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tabs</masterLabel>
+        <translation><!-- Tabs --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

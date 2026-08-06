@@ -1,0 +1,10 @@
+<aura:tokens extends="force:base" >
+    <aura:token name="myBodyTextFontFace" value="'Salesforce Sans', Helvetica, Arial, sans-serif"/>
+    <aura:token name="myBodyTextFontWeight" value="normal"/>
+    
+    <aura:token name="myBodyTextFontSize" value="13px"/>
+    
+    <aura:token name="myBackgroundColor" value="#f4f6f9"/>
+    <aura:token name="myDefaultMargin" value="6px"/>
+	
+</aura:tokens>

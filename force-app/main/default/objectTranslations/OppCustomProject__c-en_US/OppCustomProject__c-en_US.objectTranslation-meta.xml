@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Opportunity Custom Project</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Opportunity Custom Projects</value>
+    </caseValues>
+    <recordTypes>
+        <label><!-- Default Custom Project --></label>
+        <name>DefaultCustomProject</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please enter quoted price ($) in Amount field first --></errorMessage>
+        <name>Quoted_Amount</name>
+    </validationRules>
+</CustomObjectTranslation>

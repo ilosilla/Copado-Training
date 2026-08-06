@@ -1,0 +1,35 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" 
+                controller="NB2B_CartTotal" access="global" >
+	<aura:Attribute name="recordId" type="String"/>
+    <aura:Attribute name="total" type="Decimal"/>
+    <aura:Attribute name="deliveryCharges" type="Decimal"/>
+    <aura:Attribute name="showDeliveryCharges" type="Boolean" default="false"/>
+    <aura:Attribute name="currencyCart" type="String"/>
+    <aura:Attribute name="userLanguage" type="String"/>
+    <aura:Attribute name="showTotals" type="Boolean" default="false" />
+    <aura:handler name="init" value="{!this}" action="{!c.getTotalAmount}" />
+    
+    <aura:if isTrue="{!v.showTotals}">
+        <div class="slds-grid" style="width: 100%;float: right;display: contents;">
+            <div class="slds-col slds-size_1-of-1" style="padding-top: 30%;padding-bottom: 20px;">
+                <div style="Background:rgb(28, 50, 65); color:white;text-align: center;">
+                    <span>
+                        <p style="font-size: 20px;font-weight: bold;">
+                             {!$Label.c.NB2B_Total_Component_Text}
+                        </p>
+                        <!--<aura:if isTrue="{!v.showDeliveryCharges}">
+                            <p style="font-size: 10px;font-weight: bold;">
+                                {!$Label.c.NB2B_DeliveryCharge} : {!v.deliveryCharges} &nbsp;{!v.currencyCart}
+                            </p>
+                            <br/>
+                        </aura:if>-->
+                        <p style="font-size: x-large;">
+                            <aura:text value="{!v.total}"/>&nbsp;<aura:text value="{!v.currencyCart}"/>
+                        </p>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </aura:if>
+    
+</aura:component>

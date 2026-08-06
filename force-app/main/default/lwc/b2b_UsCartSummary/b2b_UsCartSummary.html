@@ -1,0 +1,100 @@
+<template>
+    <div class="cart-summary">
+
+        <!-- ========================================================= -->
+        <!-- ORDER SUMMARY (shadowed card)                             -->
+        <!-- ========================================================= -->
+        <template lwc:if={showSummary}>
+            <div class="cart-summary__card">
+
+                <h3 class="cart-summary__title">
+                    Cart summary
+                </h3>
+
+                <div class="cart-summary__totals">
+
+                    <div class="cart-summary__row">
+                        <span class="cart-summary__label">Subtotal</span>
+                        <span class="cart-summary__value">{formattedSubtotal}</span>
+                    </div>
+
+                    <div class="cart-summary__row">
+                        <span class="cart-summary__label">Shipping<template lwc:if={shippingPending}> *</template></span>
+                        <span class="cart-summary__value">{formattedShipping}</span>
+                    </div>
+
+                    <div class="cart-summary__row">
+                        <span class="cart-summary__label">Tax</span>
+                        <span class="cart-summary__value">{formattedTax}</span>
+                    </div>
+
+                    <div class="cart-summary__row cart-summary__row--total">
+                        <span class="cart-summary__label">Total</span>
+                        <span class="cart-summary__value">{formattedTotal}</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </template>
+
+        <!-- ========================================================= -->
+        <!-- CART ITEMS (no shadow)                                    -->
+        <!-- ========================================================= -->
+        <template lwc:if={showDetail}>
+            <div class="cart-summary__details">
+
+                <h3 class="cart-summary__title">
+                    Items in your cart
+                </h3>
+
+                <template lwc:if={lines}>
+                    <ul class="cart-summary__lines">
+                        <template for:each={lines} for:item="line">
+                            <li key={line.id} class="cart-summary__line">
+
+                                <!-- IMAGE -->
+                                <template lwc:if={line.imageUrl}>
+                                    <img
+                                        src={line.imageUrl}
+                                        alt={line.name}
+                                        class="cart-summary__line-image"
+                                    />
+                                </template>
+
+                                <!-- MAIN -->
+                                <div class="cart-summary__line-main">
+                                    <div class="cart-summary__line-name">
+                                        {line.quantityLabel} - {line.name}
+                                    </div>
+
+                                    <template lwc:if={line.sku}>
+                                        <div class="cart-summary__line-sku">
+                                            {line.sku}
+                                        </div>
+                                    </template>
+                                </div>
+
+                                <!-- PRICE -->
+                                <div class="cart-summary__line-meta">
+                                    <span class="cart-summary__line-total">
+                                        {line.formattedTotal}
+                                    </span>
+                                </div>
+
+                            </li>
+                        </template>
+                    </ul>
+                </template>
+
+                <template lwc:else>
+                    <div class="cart-summary__empty">
+                        No items in cart.
+                    </div>
+                </template>
+
+            </div>
+        </template>
+
+    </div>
+</template>

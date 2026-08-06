@@ -1,0 +1,106 @@
+<apex:page renderAs="pdf" applyBodyTag="false" applyHtmlTag="false" showHeader="false" controller="WeeklyManagementPdfController">
+<html>
+<head>
+    <style type="text/css">
+        @page { size: A4 portrait; margin: 2cm; }
+        body { font-family: Arial, sans-serif; font-size: 10px; line-height: 1.4; }
+        h1 { text-align: center; margin: 0; font-size: 18px; }
+        h2 { margin: 20px 0 10px 0; font-size: 14px; color: #2a2a2a; border-bottom: 1px solid #ccc; padding-bottom: 3px; }
+        h3.subtitle { text-align: center; margin: 5px 0 20px 0; font-weight: normal; font-size: 11px; color: #555; }
+        .section-intro { font-style: italic; margin: 0 0 10px 0; }
+        .event-block, .acc-block, .opp-block { border: 1px solid #ccc; padding: 8px; margin-bottom: 10px; border-radius: 4px; background: #f9f9f9; }
+        .event-block strong, .acc-block strong, .opp-block strong { display:block; margin-bottom:3px; }
+        .label { font-weight: bold; }
+        .page-break { page-break-after: always; }
+    </style>
+</head>
+<body>
+    <h1>Weekly Management Report</h1>
+
+    <!-- Subtítulo con usuario y fechas -->
+    <h3 class="subtitle">
+        User: {!userName} <br/>
+        Reporting period: {!startDate} – {!endDate}
+    </h3>
+
+    <p style="text-align:center; font-size:11px; margin-bottom:20px;">
+        This report summarizes the commercial and relational activity carried out during the week, 
+        highlighting events, key accounts, and opportunities that required special attention.
+    </p>
+
+    <!-- Weekly Summary -->
+    <apex:outputPanel >
+        <div class="block">
+            <strong>Weekly Summary:</strong>
+            <div>{!weekComment}</div>
+        </div>
+    </apex:outputPanel>
+
+    <!-- Events Section -->
+    <apex:outputPanel rendered="{!events.size > 0}">
+        <div class="page-break">
+            <h2>1. Scheduled and Completed Events</h2>
+            <p class="section-intro">
+                The following table presents the meetings, visits and other interactions organized during the week. 
+                Each record includes details on the type of event, the account or contact involved, 
+                and whether the meeting was cancelled or completed.
+            </p>
+            <apex:repeat value="{!events}" var="evt">
+                <div class="event-block">
+                    <strong>{!evt.Subject}</strong>
+                    <span class="label">Type:</span> {!evt.EventType}<br/>
+                    <span class="label">Account:</span> {!evt.AccountName}<br/>
+                    <span class="label">Contact:</span> {!evt.ContactName}<br/>
+                    <span class="label">Date and Time:</span> {!evt.StartDateTime}<br/>
+                    <span class="label">Cancelled:</span> {!IF(evt.Cancelled = 'true', 'Yes', 'No')}<br/>
+                    <span class="label">Owner:</span> {!evt.OwnerName}<br/>
+                    <span class="label">Comments:</span> <div>{!evt.Description}</div>
+                </div>
+            </apex:repeat>
+        </div>
+    </apex:outputPanel>
+
+
+    <!-- Key Account Comments -->
+    <apex:outputPanel rendered="{!accComments.size > 0}">
+        <div class="page-break">
+            <h2>2. Key Accounts – Strategic Notes</h2>
+            <p class="section-intro">
+                Key accounts are those customers with the greatest commercial impact. 
+                The following comments reflect their current status, maturity in the sales cycle, 
+                and strategic considerations observed during the week.
+            </p>
+            <apex:repeat value="{!accComments}" var="accComment">
+                <div class="acc-block">
+                    <strong>{!accComment.Account__r.Name}</strong>
+                    <span class="label">Sales Maturity:</span> {!accComment.Account__r.SalesMaturity__c}<br/>
+                    <span class="label">Comment:</span> <div>{!accComment.Value__c}</div>
+                </div>
+            </apex:repeat>
+        </div>
+    </apex:outputPanel>
+
+    <!-- Key Opportunity Comments -->
+    <apex:outputPanel rendered="{!oppComments.size > 0}">
+        <div class="page-break">
+            <h2>3. Key Opportunities - Strategic Notes</h2>
+            <p class="section-intro">
+                Opportunities represent potential revenue and new projects. 
+                Below are comments on the most relevant opportunities identified or worked on this week, 
+                highlighting advances, obstacles and next steps.
+            </p>
+            <apex:repeat value="{!oppComments}" var="oppComment">
+                <div class="opp-block">
+                    <strong>{!oppComment.Opportunity__r.Name}</strong>
+                    <span class="label">Comment:</span> <div>{!oppComment.Value__c}</div>
+                </div>
+            </apex:repeat>
+        </div>
+    </apex:outputPanel>
+
+    <p style="margin-top:30px; font-size:11px; text-align:center;">
+        — End of Weekly Report —
+    </p>
+</body>
+</html>
+</apex:page>

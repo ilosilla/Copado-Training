@@ -1,0 +1,26 @@
+<template>
+	<!-- <template if:true={showInput}> -->
+		<lightning-input type="text" label={inputLabel} placeholder={dateFormat} value={formattedSelectedDate} class="column" disabled="true"></lightning-input>
+	<!-- </template> -->
+	<a name="showModal" onclick={openModal} variant="brand" disabled={disableButton} class="selector slds-text-link column" style="margin-top: 5%;
+    padding-left: 2%;">{buttonLabel}</a>
+	<c-nb2b-dialog title={modalTitle}
+		onpositive={handleAccept}
+		onnegative={closeModal}
+		show-positive-button="true"
+		show-negative-button="true"
+		show-footer="true"
+		positive-button-label="Accept">
+
+		<c-nb2b-date-picker-calendar
+			dateformat={dateFormat}
+			actual-selection={selectedDate}
+			valid-dates={validDates}
+			onselection={handleSelection}
+			today-button-label={todayButtonLabel}
+			prev-button-label={prevButtonLabel}
+			next-button-label={nextButtonLabel}>
+		</c-nb2b-date-picker-calendar>
+
+	</c-nb2b-dialog>
+</template>

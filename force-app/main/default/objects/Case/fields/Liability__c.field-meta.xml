@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Liability__c</fullName>
+    <label>Liability</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>G1</fullName>
+                <default>false</default>
+                <label>Factory Liability.</label>
+            </value>
+            <value>
+                <fullName>G2</fullName>
+                <default>false</default>
+                <label>Region Liability.</label>
+            </value>
+            <value>
+                <fullName>G3</fullName>
+                <default>false</default>
+                <label>Customer Liability.</label>
+            </value>
+            <value>
+                <fullName>Company Liability</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Company Liability</label>
+            </value>
+            <value>
+                <fullName>Factory Liability</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Factory Liability</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

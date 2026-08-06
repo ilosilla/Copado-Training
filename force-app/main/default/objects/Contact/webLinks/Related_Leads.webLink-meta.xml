@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Related_Leads</fullName>
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Related Leads</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>https://porcelanosa.lightning.force.com/lightning/r/Report/00O6900000BrR3lEAF/view?fv0={!Contact.Id}&amp;fv1={!Contact.Id}&amp;fv2={!Contact.Id}&amp;fv3={!Contact.Id}&amp;fv4={!Contact.Id}</url>
+</WebLink>

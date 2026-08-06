@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- TImeout in milliseconds for the request (0 to use the default) --></help>
+    <label><!-- Timeout (ms) --></label>
+    <name>Timeout__c</name>
+</CustomFieldTranslation>

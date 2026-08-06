@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Yo must select wharehouse address when you select pick up from Cliente or Comertial --></help>
+    <label><!-- Delivery Method --></label>
+    <name>NB2B_Delivery_Method__c</name>
+    <picklistValues>
+        <masterLabel>Customer Pick Up</masterLabel>
+        <translation><!-- Customer Pick Up --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sales Rep Pick Up</masterLabel>
+        <translation><!-- Sales Rep Pick Up --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Send to Customer</masterLabel>
+        <translation><!-- Send to Customer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Showroom Delivery</masterLabel>
+        <translation><!-- Showroom Delivery --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

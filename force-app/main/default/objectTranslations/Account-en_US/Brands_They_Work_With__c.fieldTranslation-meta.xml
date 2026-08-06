@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Brands They Work With --></label>
+    <name>Brands_They_Work_With__c</name>
+    <picklistValues>
+        <masterLabel>Altissima</masterLabel>
+        <translation><!-- Altissima --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Antolini</masterLabel>
+        <translation><!-- Antolini --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Avonite</masterLabel>
+        <translation><!-- Avonite --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Caesarstone</masterLabel>
+        <translation><!-- Caesarstone --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cambria</masterLabel>
+        <translation><!-- Cambria --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Compac</masterLabel>
+        <translation><!-- Compac --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Corian</masterLabel>
+        <translation><!-- Corian --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dekton</masterLabel>
+        <translation><!-- Dekton --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Formica</masterLabel>
+        <translation><!-- Formica --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HanStone</masterLabel>
+        <translation><!-- HanStone --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Henraux</masterLabel>
+        <translation><!-- Henraux --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hi-macs</masterLabel>
+        <translation><!-- Hi-macs --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Itopker</masterLabel>
+        <translation><!-- Itopker --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Krion</masterLabel>
+        <translation><!-- Krion --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Laminam</masterLabel>
+        <translation><!-- Laminam --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lapitec</masterLabel>
+        <translation><!-- Lapitec --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Levantina</masterLabel>
+        <translation><!-- Levantina --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Neolith</masterLabel>
+        <translation><!-- Neolith --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Others</masterLabel>
+        <translation>Others</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Quarella</masterLabel>
+        <translation><!-- Quarella --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Radianz</masterLabel>
+        <translation><!-- Radianz --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Santamargherita</masterLabel>
+        <translation><!-- Santamargherita --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sapienstone</masterLabel>
+        <translation><!-- Sapienstone --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sensa</masterLabel>
+        <translation><!-- Sensa --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Silestone</masterLabel>
+        <translation><!-- Silestone --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Staron</masterLabel>
+        <translation><!-- Staron --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Techlam</masterLabel>
+        <translation><!-- Techlam --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Viatera</masterLabel>
+        <translation><!-- Viatera --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wilsonart</masterLabel>
+        <translation><!-- Wilsonart --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Xtone</masterLabel>
+        <translation><!-- Xtone --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Zodiaq</masterLabel>
+        <translation><!-- Zodiaq --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Building Type --></label>
+    <name>BuildingType__c</name>
+    <picklistValues>
+        <masterLabel>Commercial Building</masterLabel>
+        <translation><!-- Commercial Building --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Private Residence</masterLabel>
+        <translation><!-- Private Residence --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Residential Building</masterLabel>
+        <translation><!-- Residential Building --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

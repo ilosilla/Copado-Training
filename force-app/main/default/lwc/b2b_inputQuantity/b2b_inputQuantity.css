@@ -1,0 +1,89 @@
+/* Contenedor general del campo */
+.field {
+  display: inline-flex;           /* no ocupa todo el ancho; se ajusta al contenido */
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+/* Label superior */
+.field-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #3e3e3c;
+}
+
+/* Caja triple con borde propio */
+.triple {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--lwc-colorBorder, #d8dde6);
+  border-radius: 0.375rem;
+  padding: 0.375rem 0.5rem;
+  background: #fff;
+}
+
+.triple:focus-within {
+  outline: 2px solid #1b96ff;
+  outline-offset: 2px;
+}
+
+/* Botones +/- mínimos */
+.symbol-btn {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1ch;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-size: 1.125rem;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Celda central: ancho exacto en “ch” según --tnf-ch */
+.input-cell {
+  flex: 0 0 auto;
+}
+
+/* Input */
+.centered {
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Ancho en caracteres */
+.sized {
+  width: var(--tnf-ch, 6ch);
+}
+
+/* Sin borde / sin spinners */
+.no-border {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent;
+  padding: 0;
+}
+
+.no-spinners::-webkit-outer-spin-button,
+.no-spinners::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.no-spinners {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+/* Error message */
+.error-msg {
+  display: none;
+  color: #c23934;
+  font-size: 0.75rem;
+  margin-top: 0.125rem;
+}
+.error-msg.show {
+  display: block;
+}

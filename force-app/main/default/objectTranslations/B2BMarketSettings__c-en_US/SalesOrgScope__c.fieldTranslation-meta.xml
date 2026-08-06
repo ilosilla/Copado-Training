@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Sales Org Scope --></label>
+    <name>SalesOrgScope__c</name>
+    <picklistValues>
+        <masterLabel>EXPORT</masterLabel>
+        <translation><!-- EXPORT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NATIONAL</masterLabel>
+        <translation><!-- NATIONAL --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PORSAMARKET</fullName>
+    <columns>NAME</columns>
+    <columns>country__c</columns>
+    <columns>State__c</columns>
+    <columns>postCode__c</columns>
+    <columns>PostCodeTo__c</columns>
+    <columns>objectId__c</columns>
+    <columns>Comments__c</columns>
+    <columns>objectType__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>objectType__c</field>
+        <operation>equals</operation>
+        <value>PORSAMARKET</value>
+    </filters>
+    <label>PORSAMARKET</label>
+</ListView>

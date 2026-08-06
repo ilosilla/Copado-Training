@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidatePrices__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Requires double validation of proces by requesting a valuation to teh backend</description>
+    <label>ValidatePrices</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

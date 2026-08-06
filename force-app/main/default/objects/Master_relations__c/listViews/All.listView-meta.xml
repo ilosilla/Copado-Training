@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>SalesOrg_name__c</columns>
+    <columns>SalesOrg_code__c</columns>
+    <columns>DistributionChannel_name__c</columns>
+    <columns>DistributionChannel_code__c</columns>
+    <columns>SalesOffice_name__c</columns>
+    <columns>SalesOffice_code__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CURRENCY_ISO_CODE</columns>
+    <columns>OBJECT_ID</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SalesOrg_code__c</field>
+        <operation>equals</operation>
+        <value>720</value>
+    </filters>
+    <label>All</label>
+</ListView>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Euroceramique_Promo_2023</fullName>
+    <columns>Account.Activity__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>Sales_Office__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Sales_Office__c</field>
+        <operation>contains</operation>
+        <value>LYON,CHAMPAGNE,DIJON,ANNECY,BESA</value>
+    </filters>
+    <filters>
+        <field>Account.Account_Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>Account.RT_Name_ANA_Form__c</field>
+        <operation>notEqual</operation>
+        <value>Client Particulier</value>
+    </filters>
+    <filters>
+        <field>CONTACT.EMAIL_OPT_OUT</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>CONTACT.EMAIL</field>
+        <operation>notContain</operation>
+        <value>porcelanosa</value>
+    </filters>
+    <filters>
+        <field>Inactive_Contact__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Euroceramique Promo 2023</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>Sociedad_Euroceramique</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

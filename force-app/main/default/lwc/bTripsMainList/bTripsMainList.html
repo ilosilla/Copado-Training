@@ -1,0 +1,118 @@
+<template>
+    <!-- Overlay de loading -->
+    <template if:true={isLoading}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <div class="slds-modal slds-fade-in-open" style="display: flex; align-items: center; justify-content: center;">
+            <lightning-spinner alternative-text="Loading..." size="large"></lightning-spinner>
+        </div>
+    </template>
+
+    <template if:true={tripSelected}>
+        <c-b-trips-trip
+            trip-id={bTripSelected}>
+        </c-b-trips-trip>
+    </template>
+
+    <template if:false={tripSelected}>
+        <div>
+            <lightning-button label="Nuevo viaje" icon-name="utility:add" onclick={handleNewTrip} class="slds-m-left_x-small"></lightning-button>
+        </div>
+        <br/>
+        <br/>
+
+    <table class="slds-table slds-table_cell-buffer">
+        <thead>
+          <tr class="slds-line-height_reset">
+            <th class="slds-size--3-of-12" scope="col">
+                <div class="slds-truncate" title="Completed">País</div>
+              </th>
+            <th class="slds-size--3-of-12" scope="col">
+                <div class="slds-truncate" title="Completed">Título</div>
+              </th>
+              <th class="slds-size--3-of-12" scope="col">
+                <div class="slds-truncate" title="Completed">Inicio</div>
+              </th>
+            <th class="slds-size--2-of-12" scope="col">
+              <div class="slds-truncate" title="Opportunity Name">Fin</div>
+            </th>
+            <th class="slds-size--2-of-12" scope="col">
+                <div class="slds-truncate" title="Close Date">Manager</div>
+              </th>
+              <th class="slds-cell_action-mode slds-size--1-of-12" scope="col" style="width:3.25rem">
+                <div class="slds-truncate slds-assistive-text" title="Actions">Acciones</div>
+              </th>
+          </tr>
+        </thead>
+        <tbody>
+            <template for:each={bTrips} for:item="bTrip">
+                <tr class="slds-hint-parent" key={bTrip.Id}>
+                    <th data-label="Account Name" scope="row">
+                        <div class="slds-truncate" title="Name">
+                            {bTrip.Country__c}
+                        </div>
+                    </th>
+                    <th data-label="Account Name" scope="row">
+                        <div class="slds-truncate" title="Name">
+                            {bTrip.Name}
+                        </div>
+                    </th>
+                    <td data-label="Comment">
+                        <lightning-formatted-date-time
+                            value={bTrip.StartDate__c}
+                            year="numeric"
+                            month="short"
+                            day="2-digit">
+                        </lightning-formatted-date-time>
+                    </td>
+                    <td data-label="Comment">
+                        <lightning-formatted-date-time
+                            value={bTrip.EndDate__c}
+                            year="numeric"
+                            month="short"
+                            day="2-digit">
+                        </lightning-formatted-date-time>
+                    </td>
+                    <td data-label="Comment">
+                        <div class="slds-truncate" title="Name">
+                            {bTrip.Owner.Name}
+                        </div>
+                    </td>
+
+                      <td data-label="Comment">
+                        <lightning-button-menu alternative-text="Show menu">
+                            <lightning-menu-item value="Edit" label="Editar" onclick={handleRowAction} data-id={bTrip.Id}></lightning-menu-item>
+                        </lightning-button-menu>
+                    </td>
+                </tr>
+            </template>
+        </tbody>
+      </table>
+    </template>
+
+      <template if:true={isModalOpenCreate}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <!-- Modal -->
+        <section role="dialog" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                
+                <!-- Header con "X" -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Cerrar"
+                            onclick={handleCloseModal}>
+                        <lightning-icon icon-name="utility:close" size="small" alternative-text="Cerrar"></lightning-icon>
+                    </button>
+                </header>
+
+                <!-- Contenido -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-flow
+                        flow-api-name="Create_Business_Trip"
+                        onstatuschange={handleFlowStatusChange}>
+                    </lightning-flow>
+                </div>
+            </div>
+        </section>
+        
+    </template>
+</template>

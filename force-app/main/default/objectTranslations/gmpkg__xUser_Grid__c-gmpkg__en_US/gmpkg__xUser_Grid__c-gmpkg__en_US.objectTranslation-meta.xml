@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>GM - User Grid</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>GM - User Grids</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- UserGrid Maintenance FieldSet --></label>
+        <name>gmpkg__UserGrid_Maintenance_FieldSet</name>
+    </fieldSets>
+    <layouts>
+        <layout>User Grid Layout</layout>
+        <sections>
+            <label><!-- Comment --></label>
+            <section>Comment</section>
+        </sections>
+        <sections>
+            <label><!-- Config --></label>
+            <section>Config</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Clone --></label>
+        <name>gmpkg__Clone</name>
+    </quickActions>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Name is required --></errorMessage>
+        <name>gmpkg__Name_is_required</name>
+    </validationRules>
+</CustomObjectTranslation>

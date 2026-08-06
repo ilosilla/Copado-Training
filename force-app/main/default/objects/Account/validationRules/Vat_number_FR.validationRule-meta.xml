@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vat_number_FR</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(NOT(ISBLANK(VAT_Number__c)),AND( ISPICKVAL(BillingCountryCode, &quot;FR&quot;) , 
+NOT(REGEX( VAT_Number__c , &quot;(FR)?[0-9A-Z]{2}[0-9]{9}&quot;)) 
+))</errorConditionFormula>
+    <errorMessage>Invalid VAT number</errorMessage>
+</ValidationRule>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Matériaux</label>
+    <name>Materials__c</name>
+    <picklistValues>
+        <masterLabel>Bathroom accessories</masterLabel>
+        <translation><!-- Bathroom accessories --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bathtubs</masterLabel>
+        <translation><!-- Bathtubs --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bulkheads</masterLabel>
+        <translation><!-- Bulkheads --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Countertops</masterLabel>
+        <translation><!-- Countertops --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dressing room</masterLabel>
+        <translation><!-- Dressing room --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Furniture</masterLabel>
+        <translation><!-- Furniture --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Radiators</masterLabel>
+        <translation><!-- Radiators --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sanitary</masterLabel>
+        <translation><!-- Sanitary --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shower</masterLabel>
+        <translation><!-- Shower --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shower column</masterLabel>
+        <translation><!-- Shower column --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shower tray</masterLabel>
+        <translation><!-- Shower tray --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sprinklers</masterLabel>
+        <translation><!-- Sprinklers --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Taps</masterLabel>
+        <translation><!-- Taps --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wardrobe</masterLabel>
+        <translation><!-- Wardrobe --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Washbasins</masterLabel>
+        <translation><!-- Washbasins --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

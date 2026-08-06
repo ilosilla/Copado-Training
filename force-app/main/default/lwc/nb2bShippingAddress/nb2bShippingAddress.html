@@ -1,0 +1,80 @@
+<!--
+  @description       :
+  @author            : EHG@nubika.com
+  @group             :
+  @last modified on  : 01-31-2023
+  @last modified by  : EHG@nubika.com
+-->
+<template>
+	<lightning-card class="slds-card_boundary slds-m-top_medium" style="border:0px;">
+		<div >
+			<div class="slds-wrap header ">
+				<lightning-icon icon-name="utility:location" alternative-text={shippingAddressLabel} title={shippingAddressLabel} class="iconBlue slds-p-right_small"></lightning-icon>
+				<b class="slds-text-heading_small blue">{shippingAddressLabel}</b>
+			</div>
+		</div>
+		<div class="columnLeft">
+			<!-- <br/> -->
+			<lightning-input type="checkbox" label="I will collect the order from the warehouse" checked={pickchecked}  onchange={handleCheckChange} ></lightning-input>
+			<!-- label={label.checkoutPickup} -->
+			<template if:false={pickupAddress}>
+
+				<div class="slds-grid slds-wrap slds-p-vertical_medium">
+					<template if:true={showAddress}>
+						<div class="slds-col slds-grow-none slds-p-left_xx-large colAddress">
+							<div style="font-size: medium">
+								<template if:true={selectedAddress.Address}>
+									<lightning-formatted-address
+										city={selectedAddress.Address.city}
+										country={selectedAddress.Address.country}
+										postal-code={selectedAddress.Address.postalCode}
+										province={selectedAddress.Address.state}
+										street={selectedAddress.Address.street}
+										>
+									</lightning-formatted-address>
+								</template>
+								<template if:true={selectedAddress.city}>
+									<lightning-formatted-address
+										city={selectedAddress.city}
+										country={selectedAddress.country}
+										postal-code={selectedAddress.postalCode}
+										province={selectedAddress.state}
+										street={selectedAddress.street}
+										>
+									</lightning-formatted-address>
+								</template>
+							</div>
+						</div>
+						<!-- <div class="slds-col slds-p-horizontal_xx-large colAddressMap">
+							<lightning-map map-markers={mapMarkers} zoom-level="15"> </lightning-map>
+						</div> -->
+					</template>
+				</div>
+				<!--<a variant="brand" onclick={openModal} class="selector slds-text-link">{changeAddressLabel}</a>-->
+				<lightning-button label={changeAddressLabel} title={changeAddressLabel} icon-name="utility:checkin" onclick={openModal} class="slds-m-left_x-small"></lightning-button>
+
+			</template>
+			<template if:true={pickupAddress}>
+				<div class="slds-grid slds-wrap slds-p-vertical_medium">
+					<lightning-radio-group
+						data-id="pickupAddress"
+						name="addresses"
+						options={pickupListNormalizedAddress}
+						value={selectedAddressPickup}
+						onchange={handlePickupAddressSelection}>
+					</lightning-radio-group>
+				</div>
+			</template>
+		</div>
+
+	</lightning-card>
+	<c-nb2b-dialog title={modalTitle}
+				onpositive={handleSave}
+				onnegative={handleCancel}
+				show-positive-button="true"
+				show-negative-button="true"
+				show-footer="true"
+				positive-button-label="Save">
+		<c-nb2b-shipping-address-search account-id={accountId} addresses={options} selected-address={selectedOption} add-address-label={addAddressLabel} onnewaddress={handleAddressCreation} onselection={handleAddressSelection}></c-nb2b-shipping-address-search>
+	</c-nb2b-dialog>
+</template>

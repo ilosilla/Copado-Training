@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_percentages</fullName>
+    <active>false</active>
+    <description>Validate percentages. In a future, a trigger must check the total percentages</description>
+    <errorConditionFormula>IF (Percentage__c &gt; 100, true, false)</errorConditionFormula>
+    <errorMessage>The percentage must be less than 100. A future code will check the total percentages of an opportunity.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LiftgateRequired__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Select if a truck with a liftgate is required to unload the goods at the delivery location.</inlineHelpText>
+    <label>Liftgate Required</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

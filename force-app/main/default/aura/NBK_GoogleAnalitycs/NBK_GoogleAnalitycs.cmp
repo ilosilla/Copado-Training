@@ -1,0 +1,3 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,forceCommunity:availableForAllPageTypes,lightning:availableForFlowScreens" access="global" >
+	<!--<ltng:require scripts='https://www.googletagmanager.com/gtag/js?id=UA-8849054-1' afterScriptsLoaded="{!c.doInit}"/>-->
+</aura:component>

@@ -1,0 +1,334 @@
+<!--
+    - @author 		Ramón Prades
+    - @date 		May 2021
+    - @group 		Opportunities
+    - @description 	Component to display additional information in the opp lightning record page
+
+    This form display buttons to enter additional information in the opportunity (CUSTOM PROJECT, KITCHEN and FACADE). The form displayed depends
+    pon the variables "infoType".
+-->
+<aura:component 
+    implements="flexipage:availableForAllPageTypes,force:hasRecordId,lightning:hasPageReference,lightning:isUrlAddressable,lightning:actionOverride,force:lightningQuickActionWithoutHeader" 
+    access="global" 
+    controller="OpportunityInfoController">
+
+    <!-- Attributes -->
+    <aura:attribute name="recordId" type="String" />    
+    <aura:attribute name="customProjectId" type="String" />    
+    <aura:attribute name="kitchenId" type="String" /> 
+    <aura:attribute name="facadeId" type="String" /> 
+    <aura:attribute name="showSpinner" type="Boolean" default="true"/>
+    <aura:attribute name="confirmDelete" type="Boolean" default="false"/>
+    <aura:attribute name="deleteMessage" type="String"/>
+    <aura:attribute name="oppTypes" type="List" default="[]"/>    
+    <aura:attribute name="errorList" type="List" default="[]"/>    
+    <aura:attribute name="hasError" type="Boolean" default="false"/> 
+    <aura:attribute name="showModal" type="Boolean" default="false"/> 
+    <aura:attribute name="selectedType" type="String" default="NONE"/>   
+    <aura:attribute name="infoType" type="String" default="NONE"/>   
+
+    <!-- Events -->
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}"/> 
+    <aura:handler name="cmpCommand" event="c:ComponentCommandEvent" action="{!c.onComponentCommandEvent}"/>
+    
+    <!-- Spinner -->
+    <div class="spinnerHolder">
+        <aura:if isTrue="{! v.showSpinner }">
+            <lightning:spinner alternativeText="Loading" variant="brand"/>
+        </aura:if>
+    </div>
+
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+    
+    <!-- Server-side errors -->
+    <aura:if isTrue="{!v.errorList.length > 0}">
+        <div class="slds-box slds-theme_error slds-theme_alert-texture" role="status">
+            <div class="{!v.cssString}" role="status">
+                <h2 class="slds-text-heading_small slds-p-bottom_small">{!$Label.c.app_review_errors}</h2>
+                <ul class="slds-list--dotted">
+                    <aura:iteration items="{!v.errorList}" var="errorMessage">
+                        <li>{!errorMessage}</li>
+                    </aura:iteration>
+                </ul>
+            </div>        
+        </div>
+    </aura:if>        
+  
+    <aura:if isTrue="{!v.errorList.length == 0}">     
+        
+        <c:ModalPrompt isOpen="{!v.confirmDelete}" text="{!v.deleteMessage}" variant="YesNo"/>    
+
+        <!-- ************* Form to display KITCHEN details ***************** -->
+        <aura:if isTrue="{!v.infoType == 'KITCHEN'}">            
+
+            <lightning:recordEditForm aura:id="dataForm" recordId="{!v.kitchenId}" objectApiName="OppKitchen__c"  onload="{!c.onLoad}">
+                <div class="slds-section slds-is-open">
+                    <lightning:layout>
+                        <lightning:layoutItem flexibility="auto">
+                            <h3 class="slds-section__title slds-theme--shade slds-p-horizontal_medium">
+                                {!$Label.c.opp_kitchenProjectDetails}
+                            </h3>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem flexibility="auto, no-grow" class="slds-p-left_medium">
+                            <lightning:button                                 
+                                variant="brand" 
+                                label="{!$Label.c.opp_editKitchenProject}" 
+                                title="{!$Label.c.opp_editKitchenProject}" 
+                                onclick="{!c.onEditClick }"/>                                
+                            <lightning:buttonIcon 
+                                iconName="utility:delete"                               
+                                variant="brand" 
+                                title="{!$Label.c.opp_deleteKitchenProject}" 
+                                onclick="{!c.onDeleteClick }"/>                                
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                    <div class="slds-section__content slds-grid slds-wrap slds-p-horizontal_medium">
+                        <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                            <lightning:outputField fieldName="Stage__c" required="true"/>                                 
+                            <lightning:outputField fieldName="KitchenManager__c" required="true"/>                                 
+                            <lightning:outputField fieldName="KitchenDesigner__c" required="true"/>                                 
+                        </div>
+                        <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                            <lightning:outputField fieldName="DeliveryDate__c"  class="slds-form-element_readonly"/>
+                            <lightning:outputField fieldName="Amount__c"  class="slds-form-element_readonly"/>
+                            <lightning:outputField aura:id='currencyCode' fieldName="CurrencyIsoCode" class="slds-form-element_readonly"/>
+                        </div>
+                    </div>
+                </div> <!-- section 'project details'-->
+
+                <div class="slds-section slds-is-open">
+                    <h3 class="slds-section__title slds-theme--shade slds-p-horizontal_medium">
+                        {!$Label.c.dict_productInfo}
+                    </h3>
+                    <div class="slds-section__content slds-grid slds-wrap slds-p-horizontal_medium">
+                        <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                            <lightning:outputField aura:id="ProductType__c" fieldName="ProductType__c"/>
+                            <lightning:outputField aura:id="ProductQuoted__c" fieldName="ProductQuoted__c"/>
+                            <lightning:outputField aura:id="ProductLine__c" fieldName="ProductLine__c"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                            <lightning:outputField fieldName="Group__c"/>
+                            <lightning:outputField aura:id="Installation__c" fieldName="Installation__c"/>
+                            <lightning:outputField aura:id="EstimatedInstallation__c" fieldName="EstimatedInstallation__c"/>                                            
+                        </div>
+                    </div>
+                </div> <!-- section 'product info'-->
+
+                <div class="slds-section slds-is-open">
+                    <h3 class="slds-section__title slds-theme--shade slds-p-horizontal_medium">
+                        {!$Label.c.dict_financialInfo}
+                    </h3>
+                    <div class="slds-section__content slds-grid slds-wrap slds-p-horizontal_medium">
+                        <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                            <lightning:outputField fieldName="Budget__c"  class="slds-form-element_readonly"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                            <lightning:outputField fieldName="PricingCondition__c"  class="slds-form-element_readonly"/>
+                        </div>
+                    </div>
+                </div> <!-- section 'financial info'-->
+
+                <div class="slds-section slds-is-open">
+                    <h3 class="slds-section__title slds-theme--shade slds-p-horizontal_medium">
+                        {!$Label.c.dict_section_admin}
+                    </h3>
+                    <div class="slds-section__content slds-grid slds-wrap slds-p-horizontal_medium">
+                        <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                            <lightning:outputField fieldName="CreatedDate"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                            <lightning:outputField fieldName="CreatedById"/>
+                        </div>
+                    </div>
+                </div> <!-- section 'product info'-->
+
+            </lightning:recordEditForm>
+        </aura:if>
+
+        <!-- ************* Form to display FACADE details ***************** -->
+        <aura:if isTrue="{!v.infoType == 'FACADE'}">      
+            <lightning:recordEditForm aura:id="dataForm" recordId="{!v.facadeId}" objectApiName="OppFacade__c"  onload="{!c.onLoad}">
+                <c:NextActionComponent aura:id="nextComponent" variant="box" recordId="{!v.facadeId}"/>      
+                <div class="slds-section slds-is-open">
+                    <lightning:layout>
+                        <lightning:layoutItem flexibility="auto">
+                            <h3 class="slds-section__title slds-theme--shade slds-p-horizontal_medium">
+                                {!$Label.c.opp_facadeProjectDetails}
+                            </h3>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem flexibility="auto, no-grow" class="slds-p-left_medium">
+                            <lightning:button                                 
+                                variant="brand" 
+                                label="{!$Label.c.opp_editFacadeProject}" 
+                                title="{!$Label.c.opp_editFacadeProject}" 
+                                onclick="{!c.onEditClick }"/>                                
+                            <lightning:buttonIcon 
+                                iconName="utility:delete"                               
+                                variant="brand" 
+                                title="{!$Label.c.opp_deleteFacadeProject}" 
+                                onclick="{!c.onDeleteClick }"/>                                
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                    <div class="slds-section__content slds-grid slds-wrap slds-p-horizontal_medium">
+                        <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                            <lightning:inputField fieldName="Stage__c" readonly="true" onchange="{!c.onStageChange}" class="slds-hide"/>
+                            <lightning:outputField fieldName="Stage__c"/>                                 
+                            <lightning:outputField fieldName="DesignPhase__c"/>     
+                            <lightning:outputField fieldName="Amount__c"  />                            
+                        </div>
+                        <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                            <lightning:outputField fieldName="Manager__c"/>                                                                 
+                        </div>
+                    </div>                    
+                </div> <!-- section 'project details'-->
+
+                <div class="slds-section slds-is-open">
+                    <h3 class="slds-section__title slds-theme--shade slds-p-horizontal_medium">
+                        {!$Label.c.dict_productInfo}
+                    </h3>
+                    <div class="slds-section__content slds-grid slds-wrap slds-p-horizontal_medium">
+                        <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                            <lightning:outputField aura:id="CladdingMaterial__c" fieldName="CladdingMaterial__c"/>
+                            <lightning:outputField aura:id="CostEstimateMethod__c" fieldName="CostEstimateMethod__c"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                            <lightning:outputField fieldName="MaterialReceived__c"/>
+                            <lightning:outputField aura:id="SignedQuote__c" fieldName="SignedQuote__c"/>                                            
+                        </div>
+                    </div>
+                </div> <!-- section 'product info'-->
+
+                <div class="slds-section slds-is-open">
+                    <h3 class="slds-section__title slds-theme--shade slds-p-horizontal_medium">
+                        {!$Label.c.dict_section_admin}
+                    </h3>
+                    <div class="slds-section__content slds-grid slds-wrap slds-p-horizontal_medium">
+                        <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                            <lightning:outputField fieldName="CreatedDate"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                            <lightning:outputField fieldName="CreatedById"/>
+                        </div>
+                    </div>
+                    <div class="slds-section__content slds-grid slds-wrap slds-p-horizontal_medium">
+                        <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                            <lightning:outputField fieldName="Id"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                        </div>
+                    </div>
+
+                </div> <!-- section 'product info'-->
+
+            </lightning:recordEditForm>
+        </aura:if>
+
+
+        
+        <!-- ************* Form to display CUSTOM PROJECT details ***************** -->
+        <aura:if isTrue="{!v.infoType == 'CUSTOMP'}">            
+
+            <lightning:recordEditForm aura:id="dataForm" recordId="{!v.customProjectId}" objectApiName="OppCustomProject__c"  onload="{!c.onLoad}">
+                <div class="slds-section slds-is-open">
+                    <lightning:layout>
+                        <lightning:layoutItem flexibility="auto">
+                            <h3 class="slds-section__title slds-theme--shade slds-p-horizontal_medium">
+                                {!$Label.c.opp_customProjectDetails}
+                            </h3>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem flexibility="auto, no-grow" class="slds-p-left_medium">
+                            <lightning:button                                 
+                                variant="brand" 
+                                label="{!$Label.c.opp_editCustomProject}" 
+                                title="{!$Label.c.opp_editCustomProject}" 
+                                onclick="{!c.onEditClick }"/>                                
+                            <lightning:buttonIcon 
+                                iconName="utility:delete"                               
+                                variant="brand" 
+                                title="{!$Label.c.opp_deleteCustomProject}" 
+                                onclick="{!c.onDeleteClick }"/>                                
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                    <div class="slds-section__content slds-grid slds-wrap slds-p-horizontal_medium">
+                        <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                            <lightning:outputField aura:id="ProjectType__c" fieldName="ProjectType__c" class="slds-form-element_readonly"/>
+                            <lightning:outputField fieldName="Stage__c" required="true"/>                                 
+                            <lightning:outputField aura:id="SemiCustom__c" fieldName="SemiCustom__c" class="slds-form-element_readonly"/>
+                            <lightning:outputField aura:id="VanityType__c" fieldName="VanityType__c" class="slds-form-element_readonly"/>
+                            <lightning:outputField aura:id="VanityBy__c" fieldName="VanityBy__c" class="slds-form-element_readonly"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                            <lightning:outputField fieldName="ProductManager__c" class="slds-form-element_readonly"/>                            
+                            <lightning:outputField fieldName="DeliveryDate__c"  class="slds-form-element_readonly"/>
+                            <lightning:outputField fieldName="Amount__c"  class="slds-form-element_readonly"/>
+                            <lightning:outputField aura:id='currencyCode' fieldName="CurrencyIsoCode" class="slds-form-element_readonly"/>
+                        </div>
+                    </div>
+                </div> <!-- section 'project details'-->
+
+                <div class="slds-section slds-is-open">
+                    <h3 class="slds-section__title slds-theme--shade slds-p-horizontal_medium">
+                        {!$Label.c.dict_section_admin}
+                    </h3>
+                    <div class="slds-section__content slds-grid slds-wrap slds-p-horizontal_medium">
+                        <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                            <lightning:outputField fieldName="CreatedDate"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                            <lightning:outputField fieldName="CreatedById"/>
+                        </div>
+                    </div>
+                </div> <!-- section 'product info'-->
+
+            </lightning:recordEditForm>
+        </aura:if>
+
+        <!-- ************* Form to enter NEW info ***************** -->
+        <aura:if isTrue="{!v.infoType == 'NONE'}">
+
+            <div class="slds-float_right">
+                <lightning:button 
+                    variant="brand" 
+                    disabled="{!v.selectedType == 'NONE'}"
+                    label="{!$Label.c.opp_enterAddInfo}" 
+                    title="{!$Label.c.opp_enterAddInfo}" 
+                    onclick="{!c.onEditClick }"/>
+            </div>
+    
+            <fieldset class="slds-form-element">
+                <legend class="slds-form-element__legend slds-form-element__label slds-m-bottom_medium">{!$Label.c.opp_noAdditionalInfo}</legend>
+                <div class="slds-form-element__control slds-align_absolute-center">
+                    <aura:iteration items="{!v.oppTypes}" var="oppType">
+                        <div class="slds-visual-picker slds-visual-picker_medium" onclick="{!c.onOppTypeClick}" id="{!concat('id-', oppType.key)}">
+                            <input type="radio" id="{!oppType.key}" value="{!oppType.key}" name="options"/>
+                            <label for="{!oppType.key}">
+                                <span class="slds-visual-picker__figure slds-visual-picker__text slds-align_absolute-center">
+                                    <span>
+                                        <div class="slds-text-heading_medium slds-m-bottom_x-small"><b>{!oppType.title}</b></div>
+                                        <span class="slds-text-title"><aura:unescapedHtml value="{!oppType.description}"/></span>
+                                    </span>
+                                </span>
+                                <span class="slds-icon_container slds-visual-picker__text-check">
+                                    <lightning:icon iconName="utility:check" size="x-small" class="slds-icon-text-check" variant="inverse"/>
+                                </span>
+                            </label>
+                        </div>            
+                    </aura:iteration>
+                </div>
+            </fieldset>
+        </aura:if>
+
+        <aura:if isTrue="{!v.selectedType == 'CUSTOMP'}">
+            <c:OpportunityCustomProject isActive="{!v.showModal}" opportunityId="{!v.recordId}" customProjectId="{!v.customProjectId}"/>
+        </aura:if>  
+
+        <aura:if isTrue="{!v.selectedType == 'KITCHEN'}">
+            <c:OpportunityKitchen isActive="{!v.showModal}" opportunityId="{!v.recordId}" kitchenId="{!v.kitchenId}"/>
+        </aura:if>  
+
+        <aura:if isTrue="{!v.selectedType == 'FACADE'}">
+            <c:OpportunityFacade isActive="{!v.showModal}" opportunityId="{!v.recordId}" facadeId="{!v.facadeId}"/>
+        </aura:if>  
+
+    </aura:if>
+</aura:component>

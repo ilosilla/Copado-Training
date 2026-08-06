@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- It indicates if it is a main actor, that is to say, if in principle it is going to be able to generate for him a Quote (SAP Purchase Order) or not yet. --></help>
+    <label>¿Es principal?</label>
+    <name>Is_It_Main__c</name>
+</CustomFieldTranslation>

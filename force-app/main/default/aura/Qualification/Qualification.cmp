@@ -1,0 +1,547 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="Qualification_Controller">
+    <!--Attributes-->
+    <aura:attribute name="opportunity" type="Opportunity" default="{'sobjectType':'Opportunity'}"/>
+    
+    <!--Deciciones tomadas en las pantallas-->
+    <aura:attribute name = "pathList" type="list" default="[]"/>
+    <!--Decision actual. Sirve para ver que pantalla se renderiza-->
+    <aura:attribute name = "currentPathKey" type="String" default=""/>
+    <aura:attribute name = "currentPathValue" type="String" default=""/>
+    
+    <aura:attribute name="firstScreen" type="Boolean"/>
+    <aura:attribute name="lastScreen" type="Boolean"/>
+    <aura:attribute name="successFailureFinalScreen" type="Boolean"/>
+    <aura:attribute name="fieldsToUpdate" type="Map"/>
+    <aura:attribute name="accountFieldsToUpdate" type="Map"/>
+    <aura:attribute name="error" type="Boolean" default="false"/>
+    <aura:attribute name="dateError" type="Boolean" default="false"/>
+    <aura:attribute name="spinner" type="Boolean" default="false"/>
+    <aura:attribute name="inputMap" type="Map"/>
+    
+    <!--Atributos del componente Cierre Cita Tienda. -->
+    <aura:attribute name="requiredError" type="Boolean"/>
+    <aura:attribute name="appointmentLocation" type="String"/> 
+    
+    <!-- Guardan las opciones de los picklist, radiogroups, etc-->
+    <aura:attribute name="pickedUpRadioOptionsClientePresente" type="List" default="[]"/>
+    <aura:attribute name="pickedUpRadioOptionsClientSatisfied" type="List" default="[]"/>
+    <aura:attribute name="pickedUpRadioOptionsProfessionalAdvice" type="List" default="[]"/>
+    <aura:attribute name="pickedUpRadioOptionsUniversalStoreAppointment" type="List" default="[]"/>
+    <aura:attribute name="pickedUpRadioOptionsPersonalizedSample" type="List" default="[]"/>
+    <aura:attribute name="pickedUpRadioOptionsHelpOrganizeProject" type="List" default="[]"/>
+    <aura:attribute name="pickedUpRadioOptionsStartSoon" type="List" default="[]"/>
+    <aura:attribute name="pickedUpRadioOptionsTelephoneAdvice" type="List" default="[]"/>
+    <aura:attribute name="pickedUpRadioOptionsReasonNoAdvice" type="List" default="[]"/>
+    <aura:attribute name="pickedUpRadioOptionsTypeOfSale" type="List" default="[]"/>
+    
+    <aura:attribute name="comboOptionsProfessional" type="List" default="[]"/>
+    <aura:attribute name="comboOptionsReasonNotSatisfied" type="List" default="[]"/>
+    <aura:attribute name="comboOptionsReasonProjectPostponed" type="List" default="[]"/>
+    
+    <aura:attribute name="dualListBoxOptionsInterestMaterials" type="List"/>
+    <aura:attribute name="dualListBoxOptionsTypeofProject" type="List"/>
+    
+    <aura:attribute name="taskCreatedId" type="String"/>
+    
+    <aura:attribute name="dateValueReminder" type="DateTime"/>
+    <aura:attribute name="displayDate" type="DateTime"/>
+    <aura:attribute name="dateValueProjectStart" type="Date"/>
+    <aura:attribute name="dateValueProjectEnd" type="Date"/>
+    <aura:attribute name="dateValueReasonDontHaveTimeWantToConsult" type="DateTime" />
+    <aura:attribute name="dateMin" type="Date"/>
+    
+    <aura:attribute name="textScreenReasonDontHaveTimeWantToConsultValue" type="String"/>
+    <aura:attribute name="textScreenReasons" type="String"/>
+    
+    <aura:attribute name="messageMissingText" type="String" default="{!$Label.c.Qualification_Message_Missing_Text}" />
+    
+    <aura:attribute name="userName" type="String" default=""/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <!--Methods--> 
+    <aura:method name="changeScreen" action="{!c.changeScreen}" description="changeScreen"> 
+        <aura:attribute name="action" type="String"/>
+    </aura:method>
+    
+    <aura:method name="reloadStage" action="{!c.reloadStage}" description="reloadStage"></aura:method>
+    
+    <aura:handler name="childCmpChangeScreen" event="c:Cierre_Cita_Tienda_Event" action="{!c.changeScreen}"/>
+    
+    <!--Cada aura if es una pantalla distinta y se renderizan segun el ultimo elemento del pathList -->
+    <!--Todos los campos a rellenar tiene el aura:id "fieldToValidate" para poder ser validados -->
+    
+    <aura:if isTrue="{!v.spinner}">
+        
+        <div class="whiteBackground">
+            <div class="relative">
+                <lightning:spinner variant="brand" size="large" alternativeText="Loading"/>
+            </div>
+        </div>
+        <aura:set attribute="else">
+            <!--PANTALLA INICIAL-->
+            <aura:if isTrue="{! v.currentPathKey == 'Inicio' &amp;&amp; v.currentPathValue}">
+                
+                <div class="slds-grid slds-grid_vertical slds-grid_align-center slds-grid_vertical-align-center" style="height: 9.4rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!format($Label.c.Qualification_Llamada_contacto_1, v.userName, v.opportunity.Account.Name)}</h3>
+                        <h3>{!$Label.c.Qualification_Llamada_contacto_2}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <lightning:radioGroup aura:id="fieldToValidate" name="pickedUpRadioClientePresente" label="{!$Label.c.Qualification_Is_it_the_customer}" 
+                                              options="{!v.pickedUpRadioOptionsClientePresente}" type="radio" required="true" 
+                                              messageWhenValueMissing="{!$Label.c.Please_select_one_option}"/>    
+                    </div>
+                </div>
+            </aura:if>
+            
+            <!--Nivel 2-->
+            <aura:if isTrue="{! v.currentPathKey == 'clientePresente' &amp;&amp; !v.currentPathValue}">
+                <!--what time can i call back-->
+                <div class="slds-grid slds-grid_vertical slds-grid_align-center slds-grid_vertical-align-center" style="height: 9.4rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.Qualification_Could_you_please_tell_me_what_time_I_can_call_back}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <!-- <lightning:input aura:id= "dateFieldToValidate" type="datetime" name="dateReminder" label="{!$Label.c.Qualification_Call_Time}"
+                                 min="{!v.dateMin}" value="{!v.dateValueReminder}"  messageWhenValueMissing="{!v.messageMissingDate}"
+                                 timezone="GMT" onblur="{!c.handleDateChange}"/> -->
+                        
+                        <ui:inputDateTime aura:id="dateFieldToValidate" label="{! $Label.c.Qualification_Call_Time + ' - ' + $Label.c.Date_Time}" 
+                                          class="field" value="{!v.dateValueReminder}" displayDatePicker="true" required="true" change="{!c.dateValidation}"
+                                          blur="{!c.dateValidation}" labelClass="slds-form-element__label" format="YYYY-MM-DD HH:mm:ss"/>
+                        
+                    </div>
+                </div>
+            </aura:if>
+            
+            <aura:if isTrue="{! v.currentPathKey == 'clientePresente' &amp;&amp; v.currentPathValue}">
+                <!---->
+                <div class="slds-grid slds-grid_vertical slds-grid_align-center slds-grid_vertical-align-center" style="height: 9.4rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.Qualification_About_the_samples_received_did_you_like_them}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <lightning:radioGroup aura:id="fieldToValidate" name="pickedUpRadioClientSatisfied" label="{!$Label.c.Qualification_How_does_the_customer_feel_about_the_samples}" 
+                                              options="{!v.pickedUpRadioOptionsClientSatisfied}" type="radio" required="true" 
+                                              messageWhenValueMissing="{!$Label.c.Please_select_one_option}"/>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <!--Nivel 3-->    
+            <aura:if isTrue="{! v.currentPathKey == 'recordatorioCreado' &amp;&amp; v.currentPathValue}">
+                <!--recordatorioCreado-->
+                <div class="slds-grid slds-grid_vertical slds-grid_align-center slds-grid_vertical-align-center" style="height: 9.4rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!format($Label.c.Qualification_All_right_we_ll_call_again, v.opportunity.Account.Name, v.displayDate)}</h3>
+                        <h3>{!$Label.c.Qualification_Thank_you_very_much_for_your_attention}</h3>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <aura:if isTrue="{!v.currentPathKey == 'clienteSatisfecho' &amp;&amp; v.currentPathValue}">
+                <!--El cliente es profesional?-->
+                <div class="slds-grid slds-grid_vertical slds-grid_align-center slds-grid_vertical-align-center" style="height: 9.4rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.Qualification_Are_you_a_professional}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <lightning:combobox aura:id="fieldToValidate" name="comboProfessional" label="{!$Label.c.Qualification_Professional}" 
+                                            placeholder="{!$Label.c.Select_an_option}" options="{!v.comboOptionsProfessional}" 
+                                            required="true" messageWhenValueMissing="{!$Label.c.Please_select_one_option}"
+                                            class="combobox"/>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <aura:if isTrue="{!v.currentPathKey == 'clienteSatisfecho'  &amp;&amp; !v.currentPathValue}">
+                <!--Motivo insatisfaccion. Reason not satisfied-->
+                <div class="slds-grid slds-grid_vertical slds-grid_align-center slds-grid_vertical-align-center" style="height: 9.4rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.Qualification_Could_you_tell_us_why_you_don_t_like_the_sample}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <lightning:combobox aura:id="fieldToValidate" name="comboReasonNotSatisfied" label="{!$Label.c.Qualification_Cause_of_being_not_satisfied}"
+                                            placeholder="{!$Label.c.Select_an_option}" options="{!v.comboOptionsReasonNotSatisfied}" 
+                                            messageWhenValueMissing="{!$Label.c.Please_select_one_option}" required="true" class="combobox"/>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <!--Nivel 4-->
+            <aura:if isTrue="{! v.currentPathKey == 'linkTarea' &amp;&amp; v.currentPathValue }">
+                <!--Pantalla final de cliente ausente-->
+                
+                <div class="slds-grid slds-grid_vertical slds-grid_align-center slds-grid_vertical-align-center" style="height: 9.4rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.Qualification_Call_the_customer_back_on_the_specified_date}</h3>
+                        <h3>{!$Label.c.To_access_this_task_and_modify_any_of_the_parameters_click_on_the_following_link}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <a href="{! '/lightning/r/Task/' + v.taskCreatedId + '/view'}">{!v.taskCreatedId}</a>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <aura:if isTrue="{!v.currentPathKey == 'professional' &amp;&amp; !v.currentPathValue}">
+                <!--Professional advise-->
+                <div class="slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-grid_align-center" style="height: 9.4rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.Qualification_Have_you_contacted_any_professional}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <lightning:radioGroup aura:id="fieldToValidate" name="pickedUpRadioProfessionalAdvice" label="{!$Label.c.Qualification_Profesional_advice}" 
+                                              options="{!v.pickedUpRadioOptionsProfessionalAdvice}" type="radio" required="true" 
+                                              messageWhenValueMissing="{!$Label.c.Please_select_one_option}"/>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <aura:if isTrue="{! v.currentPathKey == 'reasonNotSatisfied' &amp;&amp; v.currentPathValue == 'irrelevant'}">
+                <!--personalized sample-->
+                <div class="slds-grid slds-grid_vertical slds-grid_align-center slds-grid_vertical-align-center" style="height: 9.4rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.Qualification_If_you_want_we_can_send_you_a_personalized_sample}</h3>
+                        <h3>{!$Label.c.Qualification_Would_you_be_interested_in_receiving_another_personalized_sample}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <lightning:radioGroup aura:id="fieldToValidate" name="pickedUpRadioPersonalizedSample" label="{!$Label.c.Qualification_Customized_samples}" 
+                                              options="{!v.pickedUpRadioOptionsPersonalizedSample}" type="radio" required="true" 
+                                              messageWhenValueMissing="{!$Label.c.Please_select_one_option}"/>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <!--Nivel 5-->
+            <aura:if isTrue="{! v.currentPathKey == 'professionalCommonPath' &amp;&amp; v.currentPathValue}">
+                <!--Type of project. professionalCommonPath-->
+                <div class="slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-grid_align-center"  style="height: 28rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.Qualification_What_kind_of_project_do_you_have_in_mind}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <lightning:textarea aura:id="fieldToValidate" name="textTypeOfProject" required="true" 
+                                            label="{!$Label.c.Qualification_Project_Type}" messageWhenValueMissing="{!v.messageMissingText}" class="textArea"/>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.Qualification_So_is_the_initial_intention_of_the_project_going_to_be}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <lightning:dualListbox aura:id="fieldToValidate" name="dualListTypeOfProject"  
+                                               label= "{!$Label.c.Qualification_Project_Areas}" required="true"
+                                               options="{!v.dualListBoxOptionsTypeofProject}"
+                                               messageWhenValueMissing="{!$Label.c.Qualification_Message_Missing_Dual_List}"
+                                               class="dualList"/>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.Qualification_What_is_the_main_reason_why_you_want_to}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <lightning:textarea aura:id="fieldToValidate" name="textCauseOfProject" required="true" 
+                                            label="{!$Label.c.Qualification_Project_Reason}" messageWhenValueMissing="{!v.messageMissingText}" 
+                                            class="textArea"/>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <aura:if isTrue="{! v.currentPathKey == 'personalizedSamples' &amp;&amp; !v.currentPathValue}">
+                <!--Cita Tienda. universalShopAppointment-->
+                <div class="slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-grid_align-center" style="height: 9.4rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.Qualification_In_that_case_in_our_Porcelanosa_Stores}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <lightning:radioGroup aura:id="fieldToValidate" name="pickedUpRadioUniversalStoreAppointment" label="{!$Label.c.Qualification_In_shop_appointment}" 
+                                              options="{!v.pickedUpRadioOptionsUniversalStoreAppointment}" type="radio" required="true" 
+                                              messageWhenValueMissing="{!$Label.c.Please_select_one_option}"/>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <aura:if isTrue="{! v.currentPathKey == 'personalizedSamples' &amp;&amp; v.currentPathValue}">
+                <!--Pedido muestra generado. personalized sample order-->
+                <div class="slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-grid_align-center" style="height: 9.4rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.Qualification_At_this_moment_I_m_managing_the_new_order_of_your_sample}</h3>
+                        <a href="http://www.porcelanosa.com/">E-comerce</a>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <!--Nivel 6-->
+            <aura:if isTrue="{! v.currentPathKey == 'typeOfProject' &amp;&amp; v.currentPathValue == 'irrelevant'}">
+                <!--InterestMaterials-->
+                <div class="slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-grid_align-center" style="height: 11.25rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.Qualification_Interest_Materials}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <lightning:dualListbox aura:id="fieldToValidate" name="dualListInterestMaterials"  
+                                               label= "{!$Label.c.Qualification_Products_of_Interest}"
+                                               options="{!v.dualListBoxOptionsInterestMaterials}"
+                                               class="dualList"/>
+                    </div>
+                </div>  
+            </aura:if>
+            
+            <aura:if isTrue="{! v.currentPathKey == 'universalStoreAppointment' &amp;&amp; v.currentPathValue}">
+                <!--Elegir Tienda. AppointmentInUniversalStore-->
+                <div class="slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-grid_align-center"  style="height: 19.4rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.Qualification_Arrange_an_appointment}</h3> 
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <c:Cierre_Cita_Tienda aura:id="cierreTiendaCmp" recordId="{!v.opportunity.Id}" 
+                                                requiredError="{! v.requiredError}" />
+                    </div>
+                </div>
+            </aura:if>
+            
+            <aura:if isTrue="{! v.currentPathKey == 'universalStoreAppointment'  &amp;&amp; !v.currentPathValue}">
+                <!--Pantalla Final Sin cita sin muestra. endNoAppointmentNoSample-->
+                <div class="slds-align_absolute-center"  style="height: 9.4rem;">
+                    <h3>{!$Label.c.Qualification_You_have_been_very_kind_to_give_us_your_time}</h3>
+                </div>
+            </aura:if>
+            
+            <aura:if isTrue="{! v.currentPathKey == 'personalizedSampleOrder' &amp;&amp; v.currentPathValue == 'irrelevant'}">
+                <!--Pantalla Final Muestra. endPersonalizedOrder-->
+                
+                <div class="slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-grid_align-center" style="height: 9.4rem; width: 44rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!format($Label.c.Qualification_Very_kind_of_you_to_give_us_your_time, v.opportunity.Account.ShippingStreet,'...')}</h3>
+                        <h3>{!format($Label.c.Qualification_However_we_will_send_you_an_SMS_Email, v.opportunity.Account.Name)}</h3>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <!--Nivel 7-->
+            
+            <aura:if isTrue="{! v.currentPathKey == 'interestMaterials' &amp;&amp; v.currentPathValue == 'irrelevant'}">
+                <!--Asesoramiento. HelpOrganizeProject-->
+                <div class="slds-grid slds-grid_vertical slds-grid_align-center slds-grid_vertical-align-center" style="height: 9.4rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.Qualification_We_can_see_how_to_organize_the_project}</h3>
+                        <h3>{!$Label.c.Qualification_Would_you_like_us_to_help_you_right_now}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <lightning:radioGroup aura:id="fieldToValidate" name="pickedUpRadioHelpOrganizeProject" label="{!$Label.c.Qualification_Help}" 
+                                              options="{!v.pickedUpRadioOptionsHelpOrganizeProject}" type="radio" required="true"
+                                              messageWhenValueMissing="{!$Label.c.Please_select_one_option}"/>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <aura:if isTrue="{! v.currentPathKey == 'endAppointmentUniversalStore' &amp;&amp; v.currentPathValue == 'irrelevant'}">
+                <!--Pantalla Final Con Cita. endAppointmentUniversalStore-->
+                <div class="slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-grid_align-center" style="height: 9.4rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!format($Label.c.Qualification_I_remind_you_that_we_are_waiting_for_you_at_the, v.appointmentLocation, v.displayDate)}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!format($Label.c.Qualification_appointment_reminder, v.opportunity.Account.Name)}</h3>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <!--Nivel 8-->
+            <aura:if isTrue="{! v.currentPathKey == 'helpOrganizeProject' &amp;&amp; v.currentPathValue}">
+                <!--Start Soon?-->
+                <div class="slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-grid_align-center" style="height: 20.5rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.Qualification_when_do_you_want_to_start_the_project}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <!--<lightning:input aura:id= "fieldToValidate" type="date" name="dateProjectStart" label="{!$Label.c.Qualification_Project_start_date}" min="{!v.dateMin}"
+                                 value="{!v.dateValueProjectStart}" required="true" messageWhenValueMissing="{!v.messageMissingDate}"/> -->
+                        
+                        <ui:inputDate aura:id="dateFieldToValidate" label="{! $Label.c.Qualification_Project_start_date}" 
+                                      class="field" value="{!v.dateValueProjectStart}" displayDatePicker="true" required="true" change="{!c.dateValidation}"
+                                      blur="{!c.dateValidation}" labelClass="slds-form-element__label"/>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <lightning:radioGroup aura:id="fieldToValidate" name="pickedUpRadioStartSoon" label="{!$Label.c.Qualification_Is_the_project_going_to_start_soon}" 
+                                              options="{!v.pickedUpRadioOptionsStartSoon}" type="radio" required="true" 
+                                              messageWhenValueMissing="{!$Label.c.Please_select_one_option}"/>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <lightning:textarea aura:id="fieldToValidate" name="textStartSoon" required="true" 
+                                            label="{!$Label.c.Qualification_Project_Description}" messageWhenValueMissing = "{!v.messageMissingText}"
+                                            class="textArea"/>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <aura:if isTrue="{! v.currentPathKey == 'helpOrganizeProject' &amp;&amp; !v.currentPathValue}">
+                <!--Motivo no asesoramiento-->
+                <div class="slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-grid_align-center"  style="height: 9.4rem;">
+                    <div class="slds-col">
+                        <h3>{!$Label.c.Qualification_Reason_no_advice}</h3>
+                    </div>
+                    <div class="slds-col"> 
+                        <!--<lightning:radioGroup aura:id="fieldToValidate" name="pickedUpRadioReasonNoAdvice" label="{!$Label.c.Qualification_Motive_no_advice}" 
+                                              options="{!v.pickedUpRadioOptionsReasonNoAdvice}" type="radio" required="true"
+                                              messageWhenValueMissing="{!$Label.c.Please_select_one_option}"/> -->
+                        <lightning:combobox aura:id="fieldToValidate" name="pickedUpRadioReasonNoAdvice" label="{!$Label.c.Qualification_Reason_project_postponed}"
+                                            options="{!v.pickedUpRadioOptionsReasonNoAdvice }" messageWhenValueMissing="{!$Label.c.Please_select_one_option}"
+                                            required="true" class="combobox myClass" placeholder="{!$Label.c.Select_an_option}"/>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <!--Nivel 9-->    
+            <aura:if isTrue="{! v.currentPathKey == 'startSoon' &amp;&amp; v.currentPathValue}">
+                <!--End Date-->
+                <div class="slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-grid_align-center" style="height: 9.4rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.Qualification_When_should_the_project_be_completed}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <!--<lightning:input aura:id= "fieldToValidate" type="date" name="dateProjectEnd" label="{!$Label.c.Qualification_Project_end_date}" 
+                                 min="{!v.dateValueProjectStart}" value="{!v.dateValueProjectEnd}" required="true" 
+                                 messageWhenValueMissing = "{!v.messageMissingDate}"/> -->
+                        <ui:inputDate aura:id="dateFieldToValidate" label="{! $Label.c.Qualification_Project_end_date}" 
+                                      class="field" value="{!v.dateValueProjectEnd}" displayDatePicker="true" required="true" change="{!c.dateValidation}"
+                                      blur="{!c.dateValidation}" labelClass="slds-form-element__label"/>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <aura:if isTrue="{! v.currentPathKey == 'startSoon' &amp;&amp; !v.currentPathValue}">
+                <!--Motivo pospuesto-->
+                <div class="slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-grid_align-center" style="height: 9.4rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.Qualification_What_is_the_reason_for_postponing_the_project}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <lightning:combobox aura:id="fieldToValidate" name="comboReasonProjectPostponed" label="{!$Label.c.Qualification_Reason_project_postponed}"
+                                            options="{!v.comboOptionsReasonProjectPostponed }" messageWhenValueMissing="{!$Label.c.Please_select_one_option}"
+                                            required="true" class="combobox" placeholder="{!$Label.c.Select_an_option}"/>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <!--Nivel 10-->    
+            <aura:if isTrue="{! v.currentPathKey == 'dateProjectEnd' &amp;&amp; v.currentPathValue == 'irrelevant'}">
+                <!--Telephone Advice?-->
+                <div class="slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-grid_align-center" style="height: 9.4rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.Qualification_start_telephone_advice}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <lightning:radioGroup aura:id="fieldToValidate" name="pickedUpRadioTelephoneAdvice" label="{!$Label.c.Qualification_By_telephone_advice}" 
+                                              options="{!v.pickedUpRadioOptionsTelephoneAdvice}" type="radio" required="true" 
+                                              messageWhenValueMissing="{!$Label.c.Please_select_one_option}"/>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <!--Nivel 11-->
+            <aura:if isTrue="{! v.currentPathKey == 'telephoneAdvice' &amp;&amp; v.currentPathValue}">
+                <!--Preparacion venta. TypeOfSale-->
+                <div class="slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-grid_align-center" style="height: 9.4rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.Qualification_help_you_to_make_your_purchase}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <lightning:radioGroup aura:id="fieldToValidate" name="pickedUpRadioTypeOfSale" label="{!$Label.c.Qualification_Type_of_sale}" 
+                                              options="{!v.pickedUpRadioOptionsTypeOfSale}" type="radio" required="true" 
+                                              messageWhenValueMissing="{!$Label.c.Please_select_one_option}"/>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <!--Nivel 12-->
+            <aura:if isTrue="{! v.currentPathKey == 'typeOfSale' &amp;&amp; v.currentPathValue == 'online'}">
+                <!--rangeOfColors? Pedido online-->
+                <div class="slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-grid_align-center" style="height: 9.4rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.Qualification_Shall_we_keep_the_range_of_colors_or_do_you_want_another_color}</h3>
+                        <a href="https://www.neoris.com">E-commerce</a>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <!--Nivel 13-->
+            <aura:if isTrue="{! v.currentPathKey == 'rangeOfColors' &amp;&amp; v.currentPathValue == 'irrelevant'}">
+                <!--Pantalla Final Pedido Online. endOnlineSale-->
+                <div class="slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-grid_align-center" style="height: 9.4rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">    
+                        <h3>{!format($Label.c.Qualification_Before_sending_Porcelanosa, v.opportunity.Account.ShippingStreet, '...')}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.QualificationHowever_you_will_be_able_to_follow_it_through_our_website}</h3>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <!--Nivel 14-->
+            <aura:if isTrue="{!or( v.currentPathKey == 'reasonNoAdviceProjectPostponed' &amp;&amp; v.currentPathValue == 'dontHaveTime',
+                             v.currentPathKey == 'reasonNoAdviceProjectPostponed' &amp;&amp; v.currentPathValue == 'wantToConsult')}">
+                <!--dontHaveTime o wantToConsult-->
+                <div class="slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-grid_align-center" style="height: 13.4rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!v.textScreenReasonDontHaveTimeWantToConsultValue}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <lightning:input aura:id="fieldToValidate" name="textReasonDontHaveTimeWantToConsult" value="{!v.opportunity.Name}"
+                                         label="{!$Label.c.Qualification_Task_Name}" required="true" messageWhenValueMissing="{!v.messageMissingText}"
+                                         class="text"/>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <!-- <lightning:input aura:id= "fieldToValidate" type="datetime" name="dateReasonDontHaveTimeWantToConsult" min="{!v.dateMin}"
+                                 label="{!$Label.c.Qualification_Call_Time}" value="{!v.dateValueReasonDontHaveTimeWantToConsult}"
+                                 required="true" messageWhenValueMissing="{!v.messageMissingDate}" timezone="GMT"/> -->
+                        
+                        <ui:inputDateTime aura:id="dateFieldToValidate" label="{! $Label.c.Qualification_Call_Time + ' - ' + $Label.c.Date_Time}" 
+                                          class="field" value="{!v.dateValueReasonDontHaveTimeWantToConsult}" displayDatePicker="true" required="true"
+                                          change="{!c.dateValidation}" blur="{!c.dateValidation}" labelClass="slds-form-element__label"/>
+                    </div>  
+                </div>
+            </aura:if>
+            
+            <aura:if isTrue="{!and(v.currentPathKey == 'reasonNoAdviceProjectPostponed', v.currentPathValue == 'irrelevant')}">
+                <!-- -->
+                <div class="slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-grid_align-center" style="height: 9.4rem; width: 44rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!v.textScreenReasons}</h3>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <aura:if isTrue="{! v.currentPathKey == 'reasonNoAdviceProjectPostponed' &amp;&amp; v.currentPathValue == 'deferredPayment'}">
+                <!--exccesivePrice-->
+                <div class="slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-grid_align-center" style="height: 13.4rem; width: 44rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.Qualification_deferred_Payment_1}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <lightning:input type="number" aura:id="fieldToValidate" name="numberOfInstalments" label="{!$Label.c.Qualification_Number_of_instalments}" 
+                                         required="true" messageWhenValueMissing = "{!$Label.c.Qualification_Message_Missing_Number}" maxlength="10" min="1"/>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.Qualification_deferred_Payment_2}</h3>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <!--Nivel 15-->
+            <aura:if isTrue="{! v.currentPathKey == 'endReasonTimeConsult' &amp;&amp; v.currentPathValue}">
+                <!-- -->
+                <div class="slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-grid_align-center" style="height: 9.4rem;">
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!format($Label.c.Qualification_All_right_we_ll_get_back_to_you, v.dateValueReasonDontHaveTimeWantToConsult)}</h3>
+                        <h3>{!$Label.c.Qualification_Thank_you_very_much_for_your_attention_Have_a_nice_day}</h3>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xx-small">
+                        <h3>{!$Label.c.To_access_this_task_and_modify_any_of_the_parameters_click_on_the_following_link}</h3>
+                        <a href="{! '/lightning/r/Task/' + v.taskCreatedId + '/view'}">{!v.taskCreatedId}</a>
+                    </div>
+                    
+                </div>
+            </aura:if>
+        </aura:set>
+    </aura:if>
+    
+</aura:component>

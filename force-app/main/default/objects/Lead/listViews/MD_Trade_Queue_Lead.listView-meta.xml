@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MD_Trade_Queue_Lead</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE_CODE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <filterScope>Queue</filterScope>
+    <label>MD Trade Queue</label>
+    <queue>MD_Trade_Queue</queue>
+    <sharedTo>
+        <role>Sales_Office_Trade_Midlands</role>
+        <role>Sociedad_Midlands</role>
+        <role>Trade_Midlands_Sales_Manager</role>
+    </sharedTo>
+</ListView>

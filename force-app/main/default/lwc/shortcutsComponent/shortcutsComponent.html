@@ -1,0 +1,11 @@
+<template>
+    <article>
+          <div class="slds-card__body slds-card__body_inner">
+            <div class="slds-m-top_medium slds-m-bottom_x-large">
+                <template for:each={links} for:item="link">
+                    <div key={link.name}><a data-url={link.url} data-linkurl={link.url} onclick={openUrl} >{link.label}</a></div>
+                </template>
+            </div>
+            </div>
+        </article>
+</template>

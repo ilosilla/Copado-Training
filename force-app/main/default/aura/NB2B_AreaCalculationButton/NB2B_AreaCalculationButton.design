@@ -1,0 +1,4 @@
+<design:component>
+    <design:attribute name="showButtonComp" label="showButtonComp" description="true to show component"/>
+    <design:attribute name="showButtonList" label="showButtonList" description="true to show list"/>
+</design:component>

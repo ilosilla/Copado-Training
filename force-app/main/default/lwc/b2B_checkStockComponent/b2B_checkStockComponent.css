@@ -1,0 +1,14 @@
+@media (min-width: 48em) {
+    .slds-modal__container {
+        margin: 0 auto;
+        width: 60% !important;
+        /* max-width: 40rem; */
+        min-width: 20rem;
+    }
+}
+
+.slds-modal__content {
+    overflow-y: visible !important; 
+    height: unset !important;
+    max-height: unset !important;
+}

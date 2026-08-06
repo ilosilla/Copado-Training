@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permiso para aprobar collections</description>
+    <isLicensed>false</isLicensed>
+    <label>CASE Approve Collections</label>
+</CustomPermission>

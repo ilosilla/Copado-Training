@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_User_Sales_Org</fullName>
+    <active>false</active>
+    <description>Checks whether the sales org is assigned to the user</description>
+    <errorConditionFormula>NOT CONTAINS($User.SalesOrg_Text__c, TEXT(Sales_Org__c))</errorConditionFormula>
+    <errorDisplayField>Sales_Org__c</errorDisplayField>
+    <errorMessage>You are not assigned to the selected Sales Org. Please choose another one.</errorMessage>
+</ValidationRule>

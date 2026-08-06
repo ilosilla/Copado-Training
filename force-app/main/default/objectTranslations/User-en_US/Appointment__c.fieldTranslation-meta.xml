@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Please tick this box if the user accepts store appointments --></help>
+    <label>Store Appointment</label>
+    <name>Appointment__c</name>
+</CustomFieldTranslation>

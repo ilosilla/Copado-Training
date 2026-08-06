@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COL_PolicyDays__c</fullName>
+    <defaultValue>28</defaultValue>
+    <externalId>false</externalId>
+    <inlineHelpText>Days established by the return policy during which a product can be returned.</inlineHelpText>
+    <label>COL Policy Days</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

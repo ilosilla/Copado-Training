@@ -1,0 +1,9 @@
+<template>
+    <lightning-modal-header label={label} tabindex="-1"></lightning-modal-header>
+    <lightning-modal-body class={modalClass} style="min-height: 80% !important;">
+        <lightning-formatted-rich-text value={bodyHtml}></lightning-formatted-rich-text>
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <lightning-button label="Close" lwf:ref="closeButton" onclick={closeModal}></lightning-button>
+    </lightning-modal-footer>
+</template>

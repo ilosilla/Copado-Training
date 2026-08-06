@@ -1,0 +1,187 @@
+<!-- sldsValidatorIgnore -->
+<!--
+<template>
+    <lightning-modal-body> Content: {content} </lightning-modal-body>
+    <lightning-modal-footer>
+        <lightning-button label="OK" onclick={handleOkay}></lightning-button>
+    </lightning-modal-footer>
+</template>
+-->
+
+<template>
+    <c-lib-custom-viewport             
+        show-viewport="true"
+        show-header = "false"
+        show-docked = {isSidePanelVisible}
+        onclose = {closeActionForm}
+        show-positive-button="false"
+        show-negative-button="false"
+        show-spinner = {isLoading}>  
+
+        <div slot="body" class="box">            
+            
+            <header class="header slds-border_bottom slds-theme_shade slds-var-p-around_medium" style="border-width: 2px;">
+                <div class="slds-page-header__row">
+                    <div class="slds-page-header__col-title">
+                        <div class="slds-media">
+                            <div class="slds-media__figure">
+                            <lightning-icon icon-name="custom:custom93"></lightning-icon>
+                            </div>
+                            <div class="slds-media__body">
+                                <div class="slds-page-header__name">
+                                    <div class="slds-page-header__name-title">
+                                        <h1>
+                                            <span class="slds-page-header__title slds-truncate" title={formTitle}>{formTitle}</span>
+                                        </h1>
+                                    </div>
+                                </div>
+                                <p class="slds-page-header__name-meta">
+                                    <span>{orderTypeName} • </span><span><lightning-formatted-date-time value={_order.EffectiveDate}></lightning-formatted-date-time> • </span>
+                                    <lightning-badge label={orderStatusName} class="slds-var-p-horizontal_large slds-theme_warning"></lightning-badge>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-panel__header-actions"> 
+                        <lightning-button-group class="slds-var-m-right_medium">
+                            <lightning-button label={labels.dict_header} onclick={handleHeaderClick}></lightning-button>
+                            <lightning-button label={labels.tr0005_101} onclick={handleAddItemClick} disabled={isSidePanelVisible} lwc:if={isEditable}></lightning-button> <!-- Add Item -->
+                            <lightning-button-icon icon-name="utility:delete" variant="border-filled" onclick={handleDeleteOrderClick} lwc:if={isDeletable}></lightning-button-icon>                            
+                        </lightning-button-group>                       
+                        <lightning-button label={labels.tr0005_102} onclick={handleConfirmOrder} lwc:if={isEditable}></lightning-button> <!-- Activate Order (SAP)-->
+                    </div>
+                </div>
+                <c-lib-order-query data-id="LibOrderQuery" ondatareceived={handleOrderQuery}></c-lib-order-query>
+                <div class="slds-border_top slds-var-m-top_x-small">                    
+                    <!-- ---------------------- Header Summary ------------------------- -->
+                    
+                    <lightning-layout pull-to-boundary="small">
+                        <lightning-layout-item size="3" padding="horizontal-small">
+                            <c-lib-form-element label={labels.dict_account} value={accountName}></c-lib-form-element>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="3" padding="horizontal-small">
+                            <c-lib-form-element label={labels.tr0005_007} value={salesArea}></c-lib-form-element> <!-- sales area -->
+                        </lightning-layout-item>
+                        <lightning-layout-item size="2" padding="horizontal-small">
+                            <c-lib-form-element label={labels.dict_deliveryDate} value={_order.DeliveryDate__c} format="date"></c-lib-form-element>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="2" padding="horizontal-small">
+                            <c-lib-form-element label={labels.dict_currency} value={_order.CurrencyIsoCode}></c-lib-form-element>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="2" padding="horizontal-small">
+                            <c-lib-form-element label={labels.dict_net_amount} value={_order.TotalAmount} currency={_order.CurrencyIsoCode} format="currency"></c-lib-form-element>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    
+                    <lightning-layout pull-to-boundary="small">
+                        <lightning-layout-item size="3" padding="horizontal-small">                            
+                            <c-lib-form-element label={labels.dict_po_number} value={_order.PoNumber}></c-lib-form-element>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="3" padding="horizontal-small">
+                            <c-lib-form-element label={labels.dict_salesOffice} value={salesOffice}></c-lib-form-element>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="2" padding="horizontal-small">
+                            <c-lib-form-element label={labels.dict_sap_id} value={sapIdString}></c-lib-form-element>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="2" padding="horizontal-small">
+                            <c-lib-form-element label={labels.dict_pricebook} value={pricebookName}></c-lib-form-element>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="2" padding="horizontal-small">
+                            <c-lib-form-element label={labels.dict_order_total} value={_order.GrandTotalAmount} currency={_order.CurrencyIsoCode} format="currency"></c-lib-form-element>
+                        </lightning-layout-item>
+                    </lightning-layout>
+
+                    <!-- ------------------ End of Header Summary ---------------------- -->
+                </div>
+            </header>        
+            
+            <div class="row content">
+                <c-lib-message-bar messages={messages} theme={messagesTheme} bullets="auto" align="left" font="bold" custom-class="slds-var-m-top_medium slds-var-m-horizontal_medium"></c-lib-message-bar>
+                <div style="position:relative;height:100%;overflow:hidden;display:flex;">    
+                    <div class="slds-col slds-var-p-around_medium slds-scrollable"> 
+                            <lightning-datatable  lwc:if={orderHasItems}
+                                class="data-table slds-scrollable"
+                                key-field="index"                              
+                                data={tableData}
+                                columns={columns}
+                                show-row-number-column
+                                onrowaction={handleRowAction}>                             
+                            </lightning-datatable>
+                            <template lwc:else>                                
+                                <div class="slds-text-align_center slds-var-p-top_medium">
+                                    <p class="slds-var-m-vertical_large">This order does not contain any products. Please click the button below to add one.</p>
+                                    <lightning-button label={labels.tr0005_101} onclick={handleAddItemClick} disabled={isSidePanelVisible} lwc:if={isEditable}></lightning-button>
+                                </div>
+                            </template>
+                        </div>                        
+                    </div>
+                    {debugText}
+                </div>
+            </div>
+        </div>
+            
+        <div slot="footer">
+            <lightning-button variant="neutral" label={labels.dict_button_cancel} onclick={handleCancelClick} class="slds-button"></lightning-button>              
+            <lightning-button variant="brand" label={labels.dict_save} onclick={handleSaveClick} class="slds-button" lwc:if={isEditable}></lightning-button>                   
+        </div>
+
+        <div slot="docked-panel" class="slds-theme_default slds-border_left" style="overflow-y: auto;width:600px; height:100%;">
+            <c-order-item-form 
+                order={_order} 
+                order-item={currentItem}
+                order-settings={orderSettings} 
+                onclose={handleItemFormClose}
+                onitemadded={handleItemAdded}
+                onitemmodified={handleItemModified}
+                ></c-order-item-form>
+        </div>
+
+        <!--
+        <div style="position:fixed;height:100%;overflow:hidden;right:0;top:0;width:50%;z-index:999;">      
+            <div class="slds-panel slds-panel_docked-right slds-panel_drawer slds-is-open slds-theme_shade">                        
+                <div class={sidePanelClass}>
+                    
+                    <div class={sidePanelHeaderClass}>
+                        <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">
+                            <span>Order Item</span>
+                        </h2>
+                        <div class="slds-panel__header-actions slds-wrap">
+                            <ul class={sidePanelActionsClass}>
+                                <li>
+                                    <lightning-button-icon icon-name="utility:arrow_left" variant="brand" 
+                                    tooltip="Hide the summary panel" size="small" onclick={handleClosePanelClick} lwc:if={isSidePanelVisible}></lightning-button-icon>
+                                </li>
+                                <li>
+                                    <lightning-button-icon icon-name="utility:arrow_right" variant="brand" onclick={handleOpenPanelClick}
+                                    class="slds-var-m-left_xx-small" tooltip="Show the summary panel" size="small" lwc:if={isSidePanelCollapsed}></lightning-button-icon>
+                                </li>
+                                <li>
+                                    <lightning-button-icon icon-name="utility:education" onclick={handleHeaderClick} variant="border" size="small" 
+                                    class="slds-var-m-left_xx-small" tooltip="Show the order header details"></lightning-button-icon>
+                                </li>
+                                <li>
+                                    <lightning-button-icon icon-name="utility:product" variant="border" size="small" 
+                                    class="slds-var-m-left_xx-small" tooltip="Show the item details"></lightning-button-icon>
+                                </li>
+                                <li>
+                                    <lightning-button-icon icon-name="utility:fulfillment_order" variant="border" size="small"
+                                    class="slds-var-m-left_xx-small" tooltip="Show the order status (SAP)" disabled></lightning-button-icon>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>        
+                    
+                    <div class="slds-panel__body" lwc:if={isSidePanelVisible}>
+                        <c-order-item-form order={_order} order-settings={orderSettings}></c-order-item-form>
+                    </div>    
+
+                </div>  
+            </div>
+        </div>
+        -->
+
+    </c-lib-custom-viewport>
+
+
+    
+</template>

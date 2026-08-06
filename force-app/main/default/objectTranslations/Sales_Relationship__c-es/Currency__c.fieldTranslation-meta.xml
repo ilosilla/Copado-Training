@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Moneda</label>
+    <name>Currency__c</name>
+    <picklistValues>
+        <masterLabel>AUD</masterLabel>
+        <translation><!-- AUD --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CAD</masterLabel>
+        <translation><!-- CAD --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CHF</masterLabel>
+        <translation><!-- CHF --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CLP</masterLabel>
+        <translation><!-- CLP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DKK</masterLabel>
+        <translation><!-- DKK --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DOP</masterLabel>
+        <translation><!-- DOP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EUR</masterLabel>
+        <translation><!-- EUR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GBP</masterLabel>
+        <translation><!-- GBP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ILS</masterLabel>
+        <translation><!-- ILS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SEK</masterLabel>
+        <translation><!-- SEK --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>USD</masterLabel>
+        <translation><!-- USD --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

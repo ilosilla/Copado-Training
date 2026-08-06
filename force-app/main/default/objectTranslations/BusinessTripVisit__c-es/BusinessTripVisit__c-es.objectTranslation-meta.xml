@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Visita de viaje</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Visitas de viaje</value>
+    </caseValues>
+    <gender>Feminine</gender>
+    <layouts>
+        <layout>Business Trip Visit Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Related --></label>
+            <section>Related</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Código</nameFieldLabel>
+    <quickActions>
+        <label><!-- New Lead --></label>
+        <name>New_Lead</name>
+    </quickActions>
+</CustomObjectTranslation>

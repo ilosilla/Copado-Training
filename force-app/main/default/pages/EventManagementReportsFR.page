@@ -1,0 +1,94 @@
+<apex:page renderAs="pdf" applyBodyTag="false" applyHtmlTag="false" showHeader="false" controller="ReportsHelperController">
+    <html>
+        <head>
+            <style type="text/css">
+                @page {
+                    size: A4 landscape; /* 📄 Horizontal */
+                    margin: 2%;
+                }
+                body {
+                    font-family: Arial, sans-serif;
+                    font-size: 8px;
+                }
+                table, th, td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+                table {
+                    -fs-table-paginate: paginate;
+                    border-spacing: 0;
+                }
+                th, td {
+                    width:100px;
+                    padding: 5px;
+                    text-align: center;
+                }
+                th {
+                    background-color: #f2f2f2;
+                }
+                tr { page-break-inside: avoid; }
+                h1 {
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+            </style>
+        </head>
+        <body>
+            <h1 style="text-align:center;">Rapport sur la gestion des événements</h1>
+
+            <apex:dataTable value="{!events}" var="evt" id="theTable" rowClasses="odd,even" styleClass="tableClass">
+                <apex:column >
+                    <apex:facet name="header">Sujet</apex:facet>
+                    <apex:outputText value="{!evt.Subject}"/>
+                </apex:column>
+
+                <apex:column >
+                    <apex:facet name="header">Type</apex:facet>
+                    <apex:outputText value="{!evt.EventType}"/>
+                </apex:column>
+
+                <apex:column >
+                    <apex:facet name="header">Commentaires</apex:facet>
+                    <!--<apex:outputText value="{!evt.Description}"/>-->
+                    <apex:outputText escape="false" value="{!'<!-- --><div style=\'max-width:50px; word-wrap: break-word; overflow-wrap: break-word;\'>' + evt.Description + '</div>'}" />
+                </apex:column>
+
+                <apex:column >
+                    <apex:facet name="header">Début</apex:facet>
+                    <apex:outputText value="{!evt.StartDateTime}"/>
+                </apex:column>
+
+                <apex:column >
+                    <apex:facet name="header">Compte</apex:facet>
+                    <apex:outputText value="{!evt.AccountName}"/>
+                </apex:column>
+
+                <apex:column >
+                    <apex:facet name="header">Contact</apex:facet>
+                    <apex:outputText value="{!evt.ContactName}"/>
+                </apex:column>
+
+                <apex:column >
+                    <apex:facet name="header">Cancelled</apex:facet>
+                    <apex:outputText value="{!evt.Cancelled}"/>
+                </apex:column>
+
+                <apex:column >
+                    <apex:facet name="header">Propriétaire</apex:facet>
+                    <apex:outputText value="{!evt.OwnerName}"/>
+                </apex:column>
+
+                <apex:column >
+                    <apex:facet name="header">Terminé</apex:facet>
+                    <apex:outputText value="{!evt.Completed}"/>
+                </apex:column>
+
+                <apex:column >
+                    <apex:facet name="header">Link</apex:facet>
+                    <apex:outputLink value="{!evt.Link}">Link</apex:outputLink>
+                </apex:column>
+
+            </apex:dataTable>
+    </body>
+</html>
+</apex:page>

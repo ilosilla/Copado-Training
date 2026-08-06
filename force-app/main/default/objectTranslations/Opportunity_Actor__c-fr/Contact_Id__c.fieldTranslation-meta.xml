@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Contact associé en tant qu&apos;acteur du projet</help>
+    <label>Id De Contact</label>
+    <lookupFilter>
+        <errorMessage>Le contact ne correspond pas au compte</errorMessage>
+    </lookupFilter>
+    <name>Contact_Id__c</name>
+    <relationshipLabel>Acteurs d&apos;opportunités</relationshipLabel>
+</CustomFieldTranslation>

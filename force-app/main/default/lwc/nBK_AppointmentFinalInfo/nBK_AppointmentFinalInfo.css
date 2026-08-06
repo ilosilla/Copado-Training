@@ -1,0 +1,10 @@
+@font-face {
+	font-family: 'porcelanosafont';
+	src: url('/B2B/s/sfsites/c/resource/PorcelanosaRegular.ttf') format('ttf');
+}
+.locatdesc{
+	margin-top: 10px;
+}
+.bolder{
+	font-weight: bold;
+}

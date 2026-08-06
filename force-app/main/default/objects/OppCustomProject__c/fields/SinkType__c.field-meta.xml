@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SinkType__c</fullName>
+    <label>Sink Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No Sink</fullName>
+                <default>false</default>
+                <label>No Sink</label>
+            </value>
+            <value>
+                <fullName>KRION Pre-fabricated</fullName>
+                <default>false</default>
+                <label>KRION Pre-fabricated</label>
+            </value>
+            <value>
+                <fullName>KRION Stainless Steel</fullName>
+                <default>false</default>
+                <label>KRION Stainless Steel</label>
+            </value>
+            <value>
+                <fullName>Custom Sink</fullName>
+                <default>false</default>
+                <label>Custom Sink</label>
+            </value>
+            <value>
+                <fullName>By others</fullName>
+                <default>false</default>
+                <label>By others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

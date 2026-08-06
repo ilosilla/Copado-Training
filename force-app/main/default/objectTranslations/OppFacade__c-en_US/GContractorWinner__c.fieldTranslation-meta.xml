@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- General Contractor (Winner) --></label>
+    <name>GContractorWinner__c</name>
+    <relationshipLabel><!-- Opportunity Facades (General Contractor (Winner)) --></relationshipLabel>
+</CustomFieldTranslation>

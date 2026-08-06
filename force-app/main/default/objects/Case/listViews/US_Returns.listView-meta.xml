@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>US_Returns</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>SAPMake__c</columns>
+    <columns>f_SAPRefInvoice__c</columns>
+    <columns>ProductCode__c</columns>
+    <columns>ProductName__c</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <columns>SalesOrg__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>IsCollection__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>SalesOrg__c</field>
+        <operation>greaterThan</operation>
+        <value>600</value>
+    </filters>
+    <filters>
+        <field>SalesOrg__c</field>
+        <operation>lessOrEqual</operation>
+        <value>650</value>
+    </filters>
+    <label>US Returns</label>
+    <sharedTo>
+        <group>US_Cases_Users</group>
+    </sharedTo>
+</ListView>

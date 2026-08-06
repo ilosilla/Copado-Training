@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DelegateGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <groups>ADMINS</groups>
+    <label>Admin Users</label>
+    <loginAccess>false</loginAccess>
+    <roles>Porcelanosa UK Director Regional</roles>
+    <roles>Sales Suppport Agent Southeast</roles>
+    <roles>Sales Support Agent Northwest</roles>
+    <roles>Sales Suppport Agent Western</roles>
+    <roles>Sales Support Agent Midlands</roles>
+    <roles>Sales Support Agent Scotland</roles>
+    <roles>Sales Support Agent Yorkshire</roles>
+</DelegateGroup>

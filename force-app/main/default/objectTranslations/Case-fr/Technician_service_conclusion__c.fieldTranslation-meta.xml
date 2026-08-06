@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Technician service conclusion --></label>
+    <name>Technician_service_conclusion__c</name>
+    <picklistValues>
+        <masterLabel>No ok</masterLabel>
+        <translation><!-- No ok --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ok</masterLabel>
+        <translation><!-- Ok --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reschedule</masterLabel>
+        <translation><!-- Reschedule --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

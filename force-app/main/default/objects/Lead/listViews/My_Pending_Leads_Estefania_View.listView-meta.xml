@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Pending_Leads_Estefania_View</fullName>
+    <columns>Representative__c</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>FULL_NAME</columns>
+    <columns>ExistingAccount__c</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LeadSubtype__c</columns>
+    <columns>City__c</columns>
+    <columns>LEAD.STATE_CODE</columns>
+    <columns>Postcode__c</columns>
+    <columns>CountryCode__c</columns>
+    <columns>AccountId__c</columns>
+    <columns>ContactId__c</columns>
+    <columns>OwnerReason__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.LAST_NAME</field>
+        <operation>contains</operation>
+        <value>rengifo,SALES,demestichas</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Junk Lead</value>
+    </filters>
+    <label>My Pending Leads- Estefania View</label>
+    <sharedTo>
+        <role>International_Projects</role>
+        <role>Manager</role>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reporter_SKU_site_identification__c</fullName>
+    <description>Campo en el que se guardarán los ids de los assets que ha seleccionado el cliente en la site de skuidentification para que al cargar las facturas en el wizard aparezcan ya seleccionadas, etarán separados por comas</description>
+    <label>Reporter SKU site identification</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

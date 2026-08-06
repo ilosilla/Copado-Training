@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CheckMessageAndMessageType</fullName>
+    <active>true</active>
+    <description>If Message Type is not &quot;From Service&quot; then you should specify into Message the Label api name or Text message literal.</description>
+    <errorConditionFormula>!ISPICKVAL(Message_Type__c,&apos;From Service&apos;) &amp;&amp; ISBLANK(Message__c)</errorConditionFormula>
+    <errorDisplayField>Message__c</errorDisplayField>
+    <errorMessage>If Message Type is not &quot;From Service&quot; then you should specify into Message the Label api name or Text message literal.</errorMessage>
+</ValidationRule>

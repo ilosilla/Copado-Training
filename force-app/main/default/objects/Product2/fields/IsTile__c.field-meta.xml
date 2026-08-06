@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsTile__c</fullName>
+    <description>True si es cerámica</description>
+    <formula>OR(
+   SAPItemGroup__r.SAPGroup__c = &quot;PT0001&quot;,
+   SAPItemGroup__r.SAPGroup__c = &quot;PT0002&quot;,
+   SAPItemGroup__r.SAPGroup__c = &quot;PT0003&quot;,
+   SAPItemGroup__r.SAPGroup__c = &quot;PT0069&quot;,
+   SAPItemGroup__r.SAPGroup__c = &quot;PT0097&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Tile</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

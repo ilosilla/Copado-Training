@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ContactPointAddressId__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Shipping Address Id</label>
+    <referenceTo>ContactPointAddress</referenceTo>
+    <relationshipLabel>Cart Delivery Groups2</relationshipLabel>
+    <relationshipName>CartDeliveryGroups2</relationshipName>
+    <required>false</required>
+    <type>Lookup</type>
+</CustomField>

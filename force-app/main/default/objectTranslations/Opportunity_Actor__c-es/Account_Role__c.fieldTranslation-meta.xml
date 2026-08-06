@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Rol de Cuenta</label>
+    <name>Account_Role__c</name>
+    <picklistValues>
+        <masterLabel>Architect</masterLabel>
+        <translation>Arquitecto/Diseñador</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bath installer / plumber</masterLabel>
+        <translation>Instalador/ fontanero</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Designer/Interior Designer</masterLabel>
+        <translation>Diseñador</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Developer / Owner</masterLabel>
+        <translation>Promotor</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fabricator</masterLabel>
+        <translation>Transformador</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Facade Installer</masterLabel>
+        <translation>Instalador de Fachadas</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Facade consultant</masterLabel>
+        <translation>Consultor Fachada</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Flooring installer / tiler</masterLabel>
+        <translation>Instalador/ Albañil</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>General / Main Contactor</masterLabel>
+        <translation>General / Contratista Principal</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kitchen installer / fitter</masterLabel>
+        <translation>Instalador de cocinas</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other Consultants</masterLabel>
+        <translation>Otros</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Procurement Consultant</masterLabel>
+        <translation>Gerente de Compras / Aparejador</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reseller</masterLabel>
+        <translation>Distribuidor</translation>
+    </picklistValues>
+</CustomFieldTranslation>

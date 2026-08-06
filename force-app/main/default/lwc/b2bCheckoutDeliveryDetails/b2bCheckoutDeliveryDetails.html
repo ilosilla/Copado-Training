@@ -1,0 +1,219 @@
+<template>
+
+
+    <template lwc:if={isSummary}>
+        <div class="checkout-summary__header">
+            <div class="checkout-summary__title">Delivery details</div>
+            <lightning-button
+                variant="base"
+                label="Change"
+                onclick={handleChange}
+                class="b2b-change-link">
+            </lightning-button>
+        </div>
+
+        <div class="checkout-summary__body">
+           <div class="checkout-summary__block">
+                <div class="checkout-summary__date">{deliveryDateSummaryLine}</div>
+                <div class="checkout-summary__contact">{deliveryContactSummaryLine}</div>
+                <template if:true={instructionsTextToShow}>
+                    <div class="checkout-summary__instructions">
+                        <span>Instructions — {instructionsTextToShow}</span>
+                        <template if:true={instructionsToggleLabel}>
+                        <button
+                            class="b2b-action-link"
+                            type="button"
+                            onclick={handleToggleInstructions}>                        
+                            {instructionsToggleLabel}        
+                        </button>
+                        </template>
+                    </div>
+                </template>
+                <!--
+                <div>
+                    <span class="checkout-summary__contact-name">{summaryAddressName}</span>
+                    <span class="checkout-summary__sep">—</span>
+                    <span class="checkout-summary__contact-line">{summaryAddressLine}</span>
+                </div>
+                <div class="checkout-summary__instructions">{summaryCost}</div> -
+                -->
+            </div>            
+        </div>
+    </template>
+
+    <template lwc:else>
+        <div class="checkout-form">
+
+            <div class="checkout-section__title">
+                Delivery details
+            </div>
+
+            <!-- =====================================================
+                BLOCK 1 (PRIMARY)
+                Row 1: Date (1/3)
+                Row 2: Contact (3 x 1/3)
+                Row 3: Special instructions (full width)
+                ===================================================== -->
+
+            <!-- Row 1: Delivery date (1/3) -->
+            <div class="dd-grid dd-grid--primary">
+                <div class="dd-date-col">
+                    <lightning-input
+                        type="date"
+                        data-id="deliveryDate"
+                        label="Desired delivery date"
+                        value={st_deliveryDate}
+                        onchange={handleDateChange}
+                        class="input-required"
+                        required>
+                    </lightning-input>
+                </div>            
+                <!-- Right-side microcopy area -->
+                <div class="dd-date-hint">
+                    <template lwc:if={st_dateErrorMessage}>
+                        <div class="b2b-microcopy b2b-microcopy--error" role="status">
+                            {st_dateErrorMessage}
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <!-- Row 2: Contact fields (3 x 1/3) -->
+            <div class="dd-grid-3">
+                <div>
+                    <lightning-input
+                        type="text"
+                        label="Contact name"
+                        value={st_requirement.DeliveryContactName__c}
+                        onchange={handleFieldChange}
+                        data-field="DeliveryContactName__c">
+                    </lightning-input>
+                </div>
+
+                <div>
+                    <lightning-input
+                        type="tel"
+                        label="Phone"
+                        value={st_requirement.DeliveryContactPhone__c}
+                        onchange={handleFieldChange}
+                        data-field="DeliveryContactPhone__c">
+                    </lightning-input>
+                </div>
+
+                <div>
+                    <lightning-input
+                        type="email"
+                        label="Email"
+                        value={st_requirement.DeliveryContactEmail__c}
+                        onchange={handleFieldChange}
+                        data-field="DeliveryContactEmail__c">
+                    </lightning-input>
+                </div>
+            </div>
+
+            <!-- Row 3: Special instructions (full width) -->
+            <div class="dd-instructions dd-instructions--primary">
+                <lightning-textarea
+                    label="Special instructions"
+                    value={st_deliveryInstructions}
+                    onchange={handleInstructionsChange}
+                    data-field="deliveryInstructions">
+                </lightning-textarea>
+            </div>
+
+            <!-- =====================================================
+                BLOCK 2 (SECONDARY): Delivery requirements
+                ===================================================== -->
+            <div class="dd-req-card">
+                <div class="dd-req-card__title">Delivery requirements</div>
+                <div class="dd-req-card__divider"></div>
+
+                <div class="dd-req-grid">
+
+                    <!-- Row 1: selects (2 x 1/2) -->
+                    <div class="dd-req-combos">
+                        <lightning-combobox
+                            label="Site type"
+                            value={st_requirement.SiteType__c}
+                            options={siteTypeOptions}
+                            onchange={handleFieldChange}
+                            data-field="SiteType__c">
+                        </lightning-combobox>
+
+                        <lightning-combobox
+                            label="Building type"
+                            value={st_requirement.BuildingType__c}
+                            options={buildingTypeOptions}
+                            onchange={handleFieldChange}
+                            data-field="BuildingType__c">
+                        </lightning-combobox>
+                    </div>
+
+                    <!-- Row 2-3: checks (2 rows x 3 cols) -->
+                    <div class="dd-checks-grid">
+
+                        <!-- Row 1 -->
+                        <lightning-input
+                            type="checkbox"
+                            label="Appointment required"
+                            checked={st_requirement.AppointmentRequired__c}
+                            onchange={handleCheckboxChange}
+                            data-field="AppointmentRequired__c">
+                        </lightning-input>
+
+                        <lightning-input
+                            type="checkbox"
+                            label="Limited access"
+                            checked={st_requirement.LimitedAccess__c}
+                            onchange={handleCheckboxChange}
+                            data-field="LimitedAccess__c">
+                        </lightning-input>
+
+                        <lightning-input
+                            type="checkbox"
+                            label="Residential delivery"
+                            checked={st_requirement.InsideDelivery__c}
+                            onchange={handleCheckboxChange}
+                            data-field="InsideDelivery__c">
+                        </lightning-input>
+
+                        <!-- Row 2 -->
+                        <lightning-input
+                            type="checkbox"
+                            label="Liftgate required"
+                            checked={st_requirement.LiftgateRequired__c}
+                            onchange={handleCheckboxChange}
+                            data-field="LiftgateRequired__c">
+                        </lightning-input>
+
+                        <lightning-input
+                            type="checkbox"
+                            label="Dock available"
+                            checked={st_requirement.LoadingDockOnSite__c}
+                            onchange={handleCheckboxChange}
+                            data-field="LoadingDockOnSite__c">
+                        </lightning-input>
+
+                        <lightning-input
+                            type="checkbox"
+                            label="Forklift available"
+                            checked={st_requirement.ForkliftAvailableOnSite__c}
+                            onchange={handleCheckboxChange}
+                            data-field="ForkliftAvailableOnSite__c">
+                        </lightning-input>
+
+                    </div>
+
+                </div>
+            </div>            
+            <div class="checkout-actions">
+                <lightning-button
+                    variant="brand"
+                    label="Confirm details"
+                    onclick={handleConfirm}
+                    disabled={isConfirmDisabled}>
+                </lightning-button>
+            </div>
+        </div>
+    </template>
+</template>

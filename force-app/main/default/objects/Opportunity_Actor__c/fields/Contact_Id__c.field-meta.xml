@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Id__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Contacto relacionado como Actor del proyecto (Oportunidad)</description>
+    <inlineHelpText>Related Contact as Opportunity Actor</inlineHelpText>
+    <label>Contact Id</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>The contact doesn`t match with the account</errorMessage>
+        <filterItems>
+            <field>Contact.AccountId</field>
+            <operation>equals</operation>
+            <valueField>$Source.Account__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>$Source.Account__c</field>
+            <operation>notEqual</operation>
+            <value>null</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Opportunity Actors</relationshipLabel>
+    <relationshipName>Project_Actors</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

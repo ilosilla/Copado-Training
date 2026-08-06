@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dummy_Contact</fullName>
+    <active>false</active>
+    <description>Dummy Contact cannot be chosen</description>
+    <errorConditionFormula>AND( NOT( ISBLANK( ContactId__c )),NOT( ISBLANK( ContactId__r.FirstName )),  CONTAINS(&apos;DUMMY&apos;,  UPPER(ContactId__r.FirstName) )  )</errorConditionFormula>
+    <errorDisplayField>ContactId__c</errorDisplayField>
+    <errorMessage>Dummy contact cannot be chosen</errorMessage>
+</ValidationRule>

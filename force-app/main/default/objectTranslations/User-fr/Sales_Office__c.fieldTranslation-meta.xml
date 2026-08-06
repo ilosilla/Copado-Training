@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Bureau de vente de l&apos;Org. des ventes par défaut</help>
+    <label>Bureau des Ventes</label>
+    <name>Sales_Office__c</name>
+</CustomFieldTranslation>

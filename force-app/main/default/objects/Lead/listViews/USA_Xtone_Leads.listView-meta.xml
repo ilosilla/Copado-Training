@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>USA_Xtone_Leads</fullName>
+    <columns>LEAD.RECORDTYPE</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.COUNTRY_CODE</columns>
+    <columns>LeadSubtype__c</columns>
+    <columns>LeadType__c</columns>
+    <columns>Interests__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LeadSubtype__c</field>
+        <operation>equals</operation>
+        <value>Xtone Contact</value>
+    </filters>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.USWebRequest</value>
+    </filters>
+    <label>USA Xtone Leads</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>Krion_USA</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

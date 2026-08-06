@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>talkdesk__user_timezone__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>(dateValue(dateTimeValue(text(today())+&quot; 00:00:00&quot;)) - today()) +
+            (dateValue(dateTimeValue(text(today()) + &quot; 01:00:00&quot;)) - today()) +
+            (dateValue(dateTimeValue(text(today()) + &quot; 02:00:00&quot;)) - today()) +
+            (dateValue(dateTimeValue(text(today()) + &quot; 03:00:00&quot;)) - today()) +
+            (dateValue(dateTimeValue(text(today()) + &quot; 04:00:00&quot;)) - today()) +
+            (dateValue(dateTimeValue(text(today()) + &quot; 05:00:00&quot;)) - today()) +
+            (dateValue(dateTimeValue(text(today()) + &quot; 06:00:00&quot;)) - today()) +
+            (dateValue(dateTimeValue(text(today()) + &quot; 07:00:00&quot;)) - today()) +
+            (dateValue(dateTimeValue(text(today()) + &quot; 08:00:00&quot;)) - today()) +
+            (dateValue(dateTimeValue(text(today()) + &quot; 09:00:00&quot;)) - today()) +
+            (dateValue(dateTimeValue(text(today()) + &quot; 10:00:00&quot;)) - today()) +
+            (dateValue(dateTimeValue(text(today()) + &quot; 11:00:00&quot;)) - today()) +
+            (dateValue(dateTimeValue(text(today()) + &quot; 12:00:00&quot;)) - today()) +
+            (dateValue(dateTimeValue(text(today()) + &quot; 13:00:00&quot;)) - today()) +
+            (dateValue(dateTimeValue(text(today()) + &quot; 14:00:00&quot;)) - today()) +
+            (dateValue(dateTimeValue(text(today()) + &quot; 15:00:00&quot;)) - today()) +
+            (dateValue(dateTimeValue(text(today()) + &quot; 16:00:00&quot;)) - today()) +
+            (dateValue(dateTimeValue(text(today()) + &quot; 17:00:00&quot;)) - today()) +
+            (dateValue(dateTimeValue(text(today()) + &quot; 18:00:00&quot;)) - today()) +
+            (dateValue(dateTimeValue(text(today()) + &quot; 19:00:00&quot;)) - today()) +
+            (dateValue(dateTimeValue(text(today()) + &quot; 20:00:00&quot;)) - today()) +
+            (dateValue(dateTimeValue(text(today()) + &quot; 21:00:00&quot;)) - today()) +
+            (dateValue(dateTimeValue(text(today()) + &quot; 22:00:00&quot;)) - today()) +
+            (dateValue(dateTimeValue(text(today()) + &quot; 23:00:00&quot;)) - today())</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>User Timezone</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

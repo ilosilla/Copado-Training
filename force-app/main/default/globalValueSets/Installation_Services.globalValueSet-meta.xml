@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Floor Tiles Installation</fullName>
+        <default>true</default>
+        <label>Floor Tiles Installation</label>
+    </customValue>
+    <customValue>
+        <fullName>Wall Tiles Installation</fullName>
+        <default>false</default>
+        <label>Wall Tiles Installation</label>
+    </customValue>
+    <customValue>
+        <fullName>Skirting Installation</fullName>
+        <default>false</default>
+        <label>Skirting Installation</label>
+    </customValue>
+    <customValue>
+        <fullName>Furniture Installation</fullName>
+        <default>false</default>
+        <label>Furniture Installation</label>
+    </customValue>
+    <customValue>
+        <fullName>Sanitaryware Installation</fullName>
+        <default>false</default>
+        <label>Sanitaryware Installation</label>
+    </customValue>
+    <customValue>
+        <fullName>Demolition</fullName>
+        <default>false</default>
+        <label>Demolition</label>
+    </customValue>
+    <customValue>
+        <fullName>Other works</fullName>
+        <default>false</default>
+        <label>Other works</label>
+    </customValue>
+    <description>Installation Services Picklist</description>
+    <masterLabel>Installation Services</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

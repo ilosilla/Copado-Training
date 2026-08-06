@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAPCustomer__c</fullName>
+    <description>SAP customer code to get the special prices from (read from ZB2B_PRICE2__x)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>SAP customer code to get the special prices from (read from ZB2B_PRICE2__x)</inlineHelpText>
+    <label>SAP Customer</label>
+    <precision>10</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Check this option to export PickList fields as Labels instead of API names. --></help>
+    <label><!-- Export PickList as Label --></label>
+    <name>gmpkg__xExport_PickListAsLabel__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,56 @@
+<template>
+    <footer class="footer-section">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_4-of-12">
+                <div class="c-container">
+                    <lightning-layout>
+                        <lightning-layout-item padding="around-small">
+                            <lightning-input type="text" name="emailBox" placeholder="Email@..." variant="label-hidden"></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="around-small">
+                            <lightning-button label="Enviar" title="Non-primary action" onclick={handleClickEmail} class="slds-m-left_x-small"></lightning-button>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <lightning-input type="checkbox" name="checkAgreePolicies" label="By ticking this box you acknowledge and confirm that you have read and agree to us processing your personal data as set out in our Privacy Policy." ></lightning-input>
+                </div>
+
+
+
+            </div>
+            <div class="slds-col slds-size_2-of-12"></div>
+            <div class="slds-col slds-size_6-of-12">
+                <span>Follow Us</span>
+                <lightning-layout>
+                    <lightning-layout-item padding="around-small">
+                        <p>Facebook</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small">
+                        <p>Instagram</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small">
+                        <p>Twitter</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small">
+                        <p>TikTok</p>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+        </div>
+        <br/><br/><br/>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_2-of-12"></div>
+            <div class="slds-col slds-size_3-of-12">
+               <h1 class="slds-text-heading_large">Customer Care</h1>
+            </div>
+            <div class="slds-col slds-size_2-of-12">
+                <h1 class="slds-text-heading_large">About Us</h1>
+            </div>
+            <div class="slds-col slds-size_2-of-12">
+                <h1 class="slds-text-heading_large">Inspiration</h1>
+            </div>
+            <div class="slds-col slds-size_3-of-12">
+                <h1 class="slds-text-heading_large">Product Categories</h1>
+            </div>
+        </div>
+    </footer>
+</template>

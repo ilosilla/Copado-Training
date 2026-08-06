@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>BREVO</label>
+    <protected>false</protected>
+    <values>
+        <field>Pass__c</field>
+        <value xsi:type="xsd:string">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</value>
+    </values>
+    <values>
+        <field>Url__c</field>
+        <value xsi:type="xsd:string">https://api.brevo.com/v3/transactionalSMS/sms</value>
+    </values>
+    <values>
+        <field>User__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

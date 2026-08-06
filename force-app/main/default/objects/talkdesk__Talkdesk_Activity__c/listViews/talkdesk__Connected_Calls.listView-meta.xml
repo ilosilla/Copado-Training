@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>talkdesk__Connected_Calls</fullName>
+    <columns>talkdesk__Start_Time__c</columns>
+    <columns>NAME</columns>
+    <columns>talkdesk__Contact__c</columns>
+    <columns>talkdesk__Case__c</columns>
+    <columns>talkdesk__User__c</columns>
+    <columns>talkdesk__Ring_Groups__c</columns>
+    <columns>talkdesk__CallDuration__c</columns>
+    <columns>talkdesk__Notes__c</columns>
+    <columns>talkdesk__Recording__c</columns>
+    <columns>talkdesk__DispositionCode__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>talkdesk__Type__c</field>
+        <operation>equals</operation>
+        <value>Inbound,Outbound,Outbound_Voicemail</value>
+    </filters>
+    <filters>
+        <field>talkdesk__Channel__c</field>
+        <operation>equals</operation>
+        <value>Voice</value>
+    </filters>
+    <label>Connected Calls</label>
+</ListView>

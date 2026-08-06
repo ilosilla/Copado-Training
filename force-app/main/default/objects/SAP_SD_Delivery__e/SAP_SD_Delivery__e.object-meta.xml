@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Platform Event triggered from SAP via API to communicate delivery events</description>
+    <eventType>HighVolume</eventType>
+    <label>SAP SD Delivery</label>
+    <pluralLabel>SAP SD Delivery</pluralLabel>
+    <publishBehavior>PublishAfterCommit</publishBehavior>
+</CustomObject>

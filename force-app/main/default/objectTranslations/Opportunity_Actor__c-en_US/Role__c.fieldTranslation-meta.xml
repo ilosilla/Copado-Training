@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Indicates the role with which the Actor will act (contact) in the Opportunity</help>
+    <label><!-- Contact Role --></label>
+    <name>Role__c</name>
+    <picklistValues>
+        <masterLabel>Architect</masterLabel>
+        <translation>Architect/Designer</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Consultant</masterLabel>
+        <translation><!-- Consultant --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Developer  / Owner</masterLabel>
+        <translation><!-- Developer  / Owner --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fabricator</masterLabel>
+        <translation><!-- Fabricator --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Installer</masterLabel>
+        <translation><!-- Installer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Interior designer</masterLabel>
+        <translation><!-- Interior designer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Project Manager</masterLabel>
+        <translation><!-- Project Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reseller</masterLabel>
+        <translation><!-- Reseller --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Site Manager</masterLabel>
+        <translation><!-- Site Manager --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

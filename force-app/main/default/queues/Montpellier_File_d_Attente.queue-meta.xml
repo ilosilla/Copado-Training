@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesIncludeBosses>true</doesIncludeBosses>
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Montpellier File d&apos;Attente</name>
+    <queueMembers>
+        <roles>
+            <role>Organizacion_Socamed</role>
+            <role>Sales_Office_Montpellier</role>
+            <role>Sociedad_Socamed</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,33 @@
+<template>
+    <div class="slds-welcome-mat slds-welcome-mat_splash">
+        <div class="slds-welcome-mat__info-content slds-text-align_left slds-m-vertical_none" tabindex="-1">
+            <h2 class="slds-welcome-mat__info-title">{mainTitle}</h2>
+            <div class="slds-welcome-mat__info-description slds-text-longform slds-var-m-bottom_xx-small"> 
+                <lightning-formatted-rich-text value={introText}></lightning-formatted-rich-text>            
+            </div>
+            <ul>   
+                <template for:each={stepsSummary} for:item="item">
+                    <li key={item.index} class="slds-welcome-mat__tile slds-welcome-mat__tile_info-only xxslds-welcome-mat__tile_complete slds-m-vertical_none">
+                        <div class="slds-media slds-p-around_none">
+                            <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">
+                                <div class="slds-welcome-mat__tile-figure">
+                                    <div class="slds-welcome-mat__tile-icon-container">
+                                        <span class="slds-icon_container">
+                                            <lightning-icon data-id={item.dataid} icon-name={item.icon} size="small"></lightning-icon>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slds-media__body">
+                                <div class="slds-welcome-mat__tile-body slds-text-align_left">
+                                    <h3 class="slds-welcome-mat__tile-title">{item.title}</h3>
+                                    <p class="slds-welcome-mat__tile-description">{item.description}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </template>
+            </ul>            
+        </div>
+        </div>
+</template>

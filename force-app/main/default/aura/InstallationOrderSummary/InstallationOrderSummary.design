@@ -1,0 +1,3 @@
+<design:component label="Installation Order Summary	">
+    <design:attribute name="recordId" label="Ins. Order Id" description="Id of the installation order" />
+</design:component>

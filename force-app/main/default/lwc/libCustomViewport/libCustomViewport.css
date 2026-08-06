@@ -1,0 +1,56 @@
+.viewport-container {
+    min-width: 100%;
+}
+.content-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;    
+}
+
+.side-bar {
+    height:100%;
+    width:auto;
+    overflow-y:auto;
+}
+
+.content-main {
+    display:flex; 
+    flex-grow:1; 
+    flex-direction:column;
+    overflow:hidden;
+}
+
+.content-body {
+    height: 100%;
+}
+
+.backdrop {
+    position:absolute; 
+    top:0; 
+    bottom:0; 
+    right:0; 
+    width:100%; 
+    height:100%;
+    overflow:hidden;
+    background-color: var(--slds-g-color-disabled-container-2);
+    opacity:0.3;
+}
+
+.right-docked-panel {
+    box-sizing: border-box; 
+    position:fixed; 
+    top:0; 
+    bottom:0;
+    right:0;
+    overflow-y:hidden;
+    float:right
+}
+
+::slotted(div) {
+    height: 100% !important;
+    min-width: 200px !important;
+}
+
+slot[name="xxxbody"] { height:100%; }
+slot[name="xxxbody"]>div { height:100%; }

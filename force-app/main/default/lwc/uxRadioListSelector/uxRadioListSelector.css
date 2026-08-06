@@ -1,0 +1,141 @@
+/* uxRadioListSelector.css */
+:host {
+    --ux-radio-list-border-color: #d8dde6;
+    --ux-radio-list-background-color: #ffffff;
+    --ux-radio-list-row-border-width: 0px;
+    --ux-radio-list-row-border-color: #f3f3f3;
+    --ux-radio-list-row-hover-bg: #f3f6fb;
+    --ux-radio-list-row-padding-y: 0.25rem;
+    --ux-radio-list-row-padding-x: 0.5rem;
+    --ux-radio-list-radius: 0.25rem;
+    --ux-radio-list-font-weight-label: 600;
+    --ux-radio-list-font-size: 0.9rem;
+    --ux-radio-list-text-color: #3e3e3c;
+    --ux-radio-list-text-color-secondary: #5f5f5f;
+
+    --ux-radio-list-selected-bg: #f4f6fb;
+    --ux-radio-list-selected-accent-color: #0176d3;
+
+    /* Hooks de búsqueda */
+    --ux-radio-list-search-margin-top: 0.35rem;
+    --ux-radio-list-search-border-color: var(--ux-radio-list-border-color);
+    --ux-radio-list-search-bg: #ffffff;
+    --ux-radio-list-search-text-color: #3e3e3c;
+    --ux-radio-list-search-placeholder-color: #999999;
+    --ux-radio-list-search-radius: 0.25rem;
+}
+
+.radio-list-selector {
+    width: 100%;
+}
+
+/* Label superior */
+.group-label {
+    font-weight: var(--ux-radio-list-font-weight-label);
+}
+
+/* Contenedor con borde fijo */
+.options-container {
+    display: block;
+    border: 1px solid var(--ux-radio-list-border-color);
+    border-radius: var(--ux-radio-list-radius);
+    background: var(--ux-radio-list-background-color);
+}
+
+/* Contenedor que realmente scrolla */
+.options-scroll {
+    overflow-y: auto;
+}
+
+/* Cada fila */
+.radio-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    border-bottom: var(--ux-radio-list-row-border-width) solid var(--ux-radio-list-row-border-color);
+    padding: var(--ux-radio-list-row-padding-y) var(--ux-radio-list-row-padding-x);
+}
+
+.radio-item:last-child {
+    border-bottom: none;
+}
+
+/* Hover común a ambos modos */
+.radio-item:hover {
+    background: var(--ux-radio-list-row-hover-bg);
+}
+
+/* Input solo visible en modo radio (en lista ni siquiera se pinta) */
+.radio-input {
+    margin-right: 0.5rem;
+    flex: 0 0 auto;
+}
+
+.text {
+    flex: 1 1 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: var(--ux-radio-list-font-size);
+    color: var(--ux-radio-list-text-color);
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.normal {
+    font-weight: 400;
+    color: var(--ux-radio-list-text-color-secondary);
+}
+
+.no-results {
+    font-style: italic;
+    color: #999999;
+}
+
+/* Selección sutil en modo lista */
+.radio-item--selected {
+    background-color: var(--ux-radio-list-selected-bg);
+    box-shadow: inset 3px 0 0 0 var(--ux-radio-list-selected-accent-color);
+}
+
+
+
+/* === Search bar “nueva” (input nativo) === */
+/* ===== FIX: BORDER PARA LA SEARCH BAR ===== */
+
+.search-container {
+    margin-top: var(--ux-radio-list-search-margin-top, 0.25rem);
+}
+
+/* Caja con el borde SIEMPRE visible */
+.search-input-wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid var(--ux-radio-list-border-color, #d8dde6);
+    border-radius: var(--ux-radio-list-radius, 0.25rem);
+    background-color: #ffffff;
+    padding: 0.25rem 0.5rem;
+}
+
+/* Input “plano”, sin borde propio */
+.search-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: var(--ux-radio-list-font-size, 0.875rem);
+    color: var(--ux-radio-list-text-color, #3e3e3c);
+}
+
+/* Placeholder suave */
+.search-input::placeholder {
+    color: var(--ux-radio-list-text-color-secondary, #706e6b);
+}
+
+/* Foco (solo suaviza, no crea el borde) */
+.search-input-wrapper:focus-within {
+    border-color: var(--ux-radio-list-selected-accent-color, #0176d3);
+    box-shadow: 0 0 0 2px rgba(1, 118, 211, 0.15);
+}

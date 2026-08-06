@@ -1,0 +1,171 @@
+<!--
+  @description       : 
+  @author            : EHG@nubika.com
+  @group             : 
+  @last modified on  : 02-02-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <c-lib-spinner visible={showSpinner}></c-lib-spinner>
+    <!---->
+    <div class="slds-scrollable_none">
+        <div class="slds-modal__header">
+            <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{windowTitle}</h1>
+        </div>
+        <div class="slds-modal__content slds-scrollable" >
+            <lightning-layout vertical-align="stretch" multiple-rows="true">
+                <lightning-layout-item size="8" padding="horizontal-small" class="slds-var-p-vertical_small slds-var-p-horizontal_medium">
+                    <div class="slds-var-m-bottom_small slds-theme_alert-texture slds-theme_success slds-var-p-around_medium" lwc:if={isOrderInSAP}>
+                        <center>ORDER IN SAP WITH NUMBER {sapOrderNumber}</center>
+                    </div>        
+
+                    <div class="slds-var-m-bottom_small slds-theme_alert-texture slds-theme_warning slds-var-p-around_medium" lwc:if={hasNextOrders}>
+                        <b>Please note that the account has orders set for delivery in the next 15 days</b>
+                    </div>        
+
+                    <div class="slds-grid slds-wrap slds-gutters_x-small slds-grid_vertical-align-start">
+
+                        <div class="slds-col slds-size_1-of-2 slds-var-p-bottom_small">
+                            <lightning-combobox
+                                name="salesOrg"
+                                label="Sales Orgatization"
+                                value={salesOrgSelected}
+                                placeholder="-"
+                                options={optionsSalesRelationShip}
+                                onchange={changeValue} 
+                                disabled={salesOrgDisabled}></lightning-combobox>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2 slds-var-p-bottom_small">                            
+                            <lightning-input 
+                                name="customerReference" 
+                                type="text" 
+                                value={customerReference} 
+                                label={labels.NBK_CreateSamplesOrderCustRef} 
+                                onchange={changeValue}                                 
+                                max-length="30"
+                                required
+                                disabled={isReadonly}></lightning-input>
+                        </div>
+
+                        <div class="slds-col slds-size_1-of-2 slds-var-p-bottom_small"> 
+                            <lightning-input 
+                                name="orderDate" 
+                                type="date" 
+                                value={orderDate} 
+                                label={labels.NBK_CreateSamplesOrderOrderDate} 
+                                disabled="true" ></lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2 slds-var-p-bottom_small">
+                            <lightning-input 
+                                name="deliveryDate" 
+                                type="date" 
+                                value={deliveryDate} 
+                                label={labels.NBK_CreateSamplesOrderDelDate} 
+                                onchange={changeValue} 
+                                required
+                                disabled={isReadonly}></lightning-input>
+                        </div>
+
+                        <div class="slds-col slds-size_1-of-2 slds-var-p-bottom_small">
+                        </div>
+
+                        <div class="slds-col slds-size_1-of-2 slds-var-p-bottom_small">
+                            <lightning-input 
+                                data-element="autopick-checkbox"
+                                type="checkbox" 
+                                label="Autopick" 
+                                onchange={changeValue} 
+                                name="autopick" ></lightning-input>
+                        </div>
+
+                        <div class="slds-col slds-size_1-of-2 slds-var-p-bottom_small">
+                            <lightning-combobox
+                                name="deliveryMethod"
+                                label={labels.NBK_CreateSamplesOrderDelMethod}
+                                value={deliveryMethodSel}
+                                placeholder="Please choose a delivery method"
+                                options={optionsDeliveryMethod}
+                                onchange={changeValue} 
+                                disabled={isReadonly}></lightning-combobox>    
+                        </div>
+
+                        <div class="slds-col slds-size_1-of-2">
+                            <div class="slds-form-element">
+                                <span class="slds-form-element__label"></span>
+                                <div class="slds-form-element__control slds-var-p-top_xx-small">    
+                                    <lightning-button label="Select Address" onclick={handleAddressChange} variant="brand" disabled={isReadonly}></lightning-button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slds-col slds-size_1-of-2">
+                            <div class="slds-form-element">
+                                <span class="slds-form-element__label">Address Name</span>
+                                <div class="slds-form-element__control">
+                                    <span>{selectedAddress.Name}</span>
+                                </div>
+                            </div>
+                            <div class="slds-form-element slds-var-m-top_xx-small">
+                                <span class="slds-form-element__label">Address Phone</span>
+                                <div class="slds-form-element__control">
+                                    <span>{selectedAddress.Phone}</span>
+                                </div>
+                            </div>                                        
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <div class="slds-form-element">
+                                <span class="slds-form-element__label">{addressLabel}</span>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-form-element__static">
+                                        <lightning-formatted-address
+                                            street={selectedAddress.Street}
+                                            city={selectedAddress.City}
+                                            country={selectedAddress.Country}
+                                            province={selectedAddress.State}
+                                            postal-code={selectedAddress.PostalCode}                                                    
+                                            locale={selectedAddress.Locale}                                                  
+                                        ></lightning-formatted-address>
+                                    </div>
+                                </div>
+                            </div>                                        
+                        </div>
+                    </div>
+                    <template lwc:if={isReadonly}></template>                    
+                    <div class="slds-var-m-top_small slds-theme_alert-texture slds-var-p-around_medium slds-border_top slds-border_left slds-border_right slds-border_bottom" lwc:else>
+                        <center>{deliveryWarning}</center>
+                    </div>            
+                </lightning-layout-item>
+                <lightning-layout-item size="4" class="slds-theme_shade slds-var-p-around_small">
+                    <lightning-input type="text" value={opportunityName} label="Opportunity Name" read-only="true" class="slds-var-p-bottom_small"></lightning-input>
+                    <lightning-input type="text" value={ownerName} label="Owner Name" read-only="true" class="slds-var-p-bottom_small"></lightning-input>
+                    <lightning-input value={accountName} label={labels.NBK_CreateSamplesOrderAccName} read-only="true" class="slds-var-p-bottom_small"></lightning-input>
+                    <lightning-input value={accountSAPId} label="Account SAP Id" read-only="true" class="slds-var-p-bottom_small"></lightning-input>
+                    <lightning-input type="text" value={pricebookName} label={labels.NBK_CreateSamplesOrderPriceBook} read-only="true" class="slds-var-p-bottom_small"></lightning-input>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+        <div class="slds-modal__footer">
+            <lightning-button variant="neutral" label="Cancel" onclick={handleClose} style="margin-right: 10px;"></lightning-button>
+            <lightning-button variant="brand" label="Save" onclick={handleSave} disabled={isReadonly}></lightning-button>
+        </div>
+    </div>
+
+    <c-lib-address-commons 
+        object-id={addressObjectId}
+        onaddressready={handleDeliveryAddressReady} 
+    ></c-lib-address-commons>
+
+    <c-contact-point-address-selection
+        variant="full"
+        mode={addressMode}
+        account-id={accountId}
+        selected-address-id={selectedAddressId}
+        show-dialog={openAddressesDialog}
+        oncancel={handleAddressCancel}
+        onerror={handleAddressError}
+        onselect={handleAddressSelect}
+    >   
+    </c-contact-point-address-selection>
+
+
+</template>

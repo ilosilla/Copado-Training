@@ -1,0 +1,5 @@
+{
+  "apiName" : "Payment_Gateway_Response",
+  "type" : "sfdc_cms__view",
+  "path" : "views"
+}

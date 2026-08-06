@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Installation_Requests_Closed</fullName>
+    <columns>NAME</columns>
+    <columns>State__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>State__c</field>
+        <operation>equals</operation>
+        <value>Closed Won,Closed Lost,Rejected</value>
+    </filters>
+    <label>Installation Requests - Closed</label>
+</ListView>

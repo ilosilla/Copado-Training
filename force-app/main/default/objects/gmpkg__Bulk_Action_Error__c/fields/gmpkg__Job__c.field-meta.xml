@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gmpkg__Job__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Job</label>
+    <referenceTo>gmpkg__Bulk_Action_Job__c</referenceTo>
+    <relationshipLabel>Bulk Action Errors</relationshipLabel>
+    <relationshipName>Bulk_Action_Errors</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

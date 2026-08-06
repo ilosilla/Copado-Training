@@ -1,0 +1,52 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1); /* Adjust transparency as needed */
+    z-index: 9999; /* Ensure it appears above other elements */
+}
+
+.parent-panel {
+    position:absolute; 
+    background-color:white 0.0; 
+    top:0; 
+    bottom:0; 
+    height:100%;
+    width:auto;
+    min-width:5px;    
+    z-index:9999;
+}
+
+.dock-right {
+    right:0; 
+}
+
+.dock-left {
+    left:0;
+}
+
+.child-panel {
+        position: relative;
+        top: 0;
+        right: 0;
+        bottom: 0; /* Updated */
+        width: auto;
+        height:100%;
+}
+
+.white-background {
+    background-color: white;
+}
+
+.body_slot {
+    height: 100%;
+}
+
+::slotted(div) {
+    height: 100% !important;
+}
+
+slot[name="body"] { height:100%; }
+slot[name="body"]>div { height:100%; }

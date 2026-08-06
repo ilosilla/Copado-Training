@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Chicago</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>Representative__c</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>ExistingAccount__c</columns>
+    <columns>AppointmentType__c</columns>
+    <columns>Showroom__c</columns>
+    <columns>City__c</columns>
+    <columns>State__c</columns>
+    <columns>LEAD.ZIP</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Sales_Office__c</field>
+        <operation>contains</operation>
+        <value>chicago,lincon</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>Not contacted</value>
+    </filters>
+    <filters>
+        <field>LeadType__c</field>
+        <operation>equals</operation>
+        <value>Book an Appointment</value>
+    </filters>
+    <label>Chicago</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>B_U_Manager_Chicago</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RoomTypeFilled__c</fullName>
+    <description>At least a room type value is greater or equal to 1</description>
+    <formula>OR(
+roomTypeFullHouse__c &gt; 0,
+roomTypeBathroom__c &gt; 0,
+roomTypeKitchen__c &gt; 0,
+roomTypeLivingRoom__c &gt; 0,
+roomTypeBedroom__c &gt; 0,
+roomTypeFireplace__c &gt; 0,
+roomTypeFoyer__c &gt; 0,
+roomTypeOutdoorPatio__c &gt; 0,
+roomTypeSwimmingPool__c &gt; 0,
+roomTypeLaundryRoom__c &gt; 0,
+roomTypeOther__c &gt; 0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Room Type Filled</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

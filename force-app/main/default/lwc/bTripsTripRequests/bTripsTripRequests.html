@@ -1,0 +1,167 @@
+<template>
+    <lightning-layout multiple-rows >
+        <lightning-layout-item size="12" flexibility="auto" padding="horizontal-small" class="slds-text-align_right">
+            <lightning-button-group>
+                <lightning-button label="Nueva colicitud" title="Download action" icon-name="utility:add" onclick={handleNewRequest} class="slds-m-left_x-small"></lightning-button>
+            </lightning-button-group>
+        </lightning-layout-item>
+    </lightning-layout>
+
+    <br/>
+
+    <div class="sslds-grid slds-wrap">
+        <div class="slds-size_1-of-1 slds-m-bottom_medium">
+            <div class="slds-section slds-is-open slds-p-around--xx-small" style="background-color:#f3f3f3">
+                <h3 class="slds-section__title slds-m-left--large">
+                    <span class="slds-truncate" title="Event Management">Visitas - Solicitudes a dirección relacionadas</span>
+                </h3>
+            </div>
+        </div>
+    </div>
+
+    <template if:true={hasVisitRequests}>
+        <table class="slds-table slds-table_cell-buffer slds-table--striped">
+            <thead>
+              <tr class="slds-line-height_reset">
+                <th class="slds-size--2-of-12" scope="col">
+                    <div class="slds-truncate" title="Completed">Prioridad</div>
+                  </th>
+                <th class="slds-size--3-of-12" scope="col">
+                    <div class="slds-truncate" title="Completed">Visita</div>
+                  </th>
+                <th class="slds-size--6-of-12" scope="col">
+                  <div class="slds-truncate" title="Opportunity Name">Comentario</div>
+                </th>
+                  <th class="slds-cell_action-mode slds-size--1-of-12" scope="col" style="width:3.25rem">
+                    <div class="slds-truncate slds-assistive-text" title="Actions">Actions</div>
+                  </th>
+              </tr>
+            </thead>
+            <tbody>
+                <template for:each={requests} for:item="request">
+                    <tr class="slds-hint-parent" key={request.Id}>
+                        <th data-label="Account Name" scope="row">
+                            <div class="slds-truncate" title="Name">
+                                {request.Priority__c}
+                            </div>
+                        </th>
+                        <th data-label="Account Name" scope="row">
+                            <div class="slds-truncate" title="Name">
+                                {request.BusinessTripVisit2__r.Title__c}
+                            </div>
+                        </th>
+                        <td data-label="Comment">
+                            <div class="slds-truncate" title="Name">
+                                {request.Comment__c}
+                            </div>
+                        </td>
+    
+                          <td data-label="Comment">
+                            <lightning-button-menu alternative-text="Show menu">
+                                <lightning-menu-item value="Edit" label="Edit" onclick={handleRowAction} data-id={request.Id}></lightning-menu-item>
+                                <lightning-menu-item value="DELETE" label="Eliminar" onclick={handleRowActionDelete} data-id={request.Id}></lightning-menu-item>
+                            </lightning-button-menu>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+          </table>
+    </template>
+    <template if:false={hasVisitRequests}>
+        <p class="slds-p-left--large">No hay datos</p>
+    </template>
+
+      <br/>
+      <br/>
+
+      <div class="sslds-grid slds-wrap">
+        <div class="slds-size_1-of-1 slds-m-bottom_medium">
+            <div class="slds-section slds-is-open slds-p-around--xx-small" style="background-color:#f3f3f3">
+                <h3 class="slds-section__title slds-m-left--large">
+                    <span class="slds-truncate" title="Event Management">Oportunidades estratégicas - Solicitudes a dirección relacionadas</span>
+                </h3>
+            </div>
+        </div>
+    </div>
+
+    <template if:true={hasStrategyRequests}>
+        <table class="slds-table slds-table_cell-buffer slds-table--striped">
+            <thead>
+              <tr class="slds-line-height_reset">
+                <th class="slds-size--2-of-12" scope="col">
+                    <div class="slds-truncate" title="Completed">Prioridad</div>
+                  </th>
+                <th class="slds-size--3-of-12" scope="col">
+                    <div class="slds-truncate" title="Completed">Oportunidad estratégica</div>
+                  </th>
+                <th class="slds-size--6-of-12" scope="col">
+                  <div class="slds-truncate" title="Opportunity Name">Comentario</div>
+                </th>
+                  <th class="slds-cell_action-mode slds-size--1-of-12" scope="col" style="width:3.25rem">
+                    <div class="slds-truncate slds-assistive-text" title="Actions">Actions</div>
+                  </th>
+              </tr>
+            </thead>
+            <tbody>
+                <template for:each={strategyRequests} for:item="request">
+                    <tr class="slds-hint-parent" key={request.Id}>
+                        <th data-label="Account Name" scope="row">
+                            <div class="slds-truncate" title="Name">
+                                {request.Priority__c}
+                            </div>
+                        </th>
+                        <th data-label="Account Name" scope="row">
+                            <div class="slds-truncate" title="Name">
+                                {request.BusinessTripStrategy__r.Title__c}
+                            </div>
+                        </th>
+                        <td data-label="Comment">
+                            <div class="slds-truncate" title="Name">
+                                {request.Comment__c}
+                            </div>
+                        </td>
+    
+                          <td data-label="Comment">
+                            <lightning-button-menu alternative-text="Show menu">
+                                <lightning-menu-item value="Edit" label="Edit" onclick={handleRowAction} data-id={request.Id}></lightning-menu-item>
+                                <lightning-menu-item value="DELETE" label="Eliminar" onclick={handleRowActionDelete} data-id={request.Id}></lightning-menu-item>
+                            </lightning-button-menu>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+          </table>
+    </template>
+    <template if:false={hasStrategyRequests}>
+        <p class="slds-p-left--large">No hay datos</p>
+    </template>
+
+      <template if:true={isModalOpenCreateRequest}>
+        <div class="slds-backdrop slds-backdrop_open">
+        <!-- Modal -->
+            <section role="dialog" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    
+                    <!-- Header con "X" -->
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                title="Cerrar"
+                                onclick={handleCloseModal}>
+                            <lightning-icon icon-name="utility:close" size="small" alternative-text="Cerrar"></lightning-icon>
+                        </button>
+                        <h2 class="slds-text-heading_medium">Solicitud de visita</h2>
+                    </header>
+
+                    <!-- Contenido -->
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <lightning-flow
+                            flow-api-name="Business_Trip_Request"
+                            flow-input-variables={inputVariables}
+                            onstatuschange={handleFlowStatusChange}>
+                        </lightning-flow>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </template>
+</template>

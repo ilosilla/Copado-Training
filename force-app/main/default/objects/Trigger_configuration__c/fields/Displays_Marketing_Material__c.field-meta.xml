@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Displays_Marketing_Material__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>¿Enable Display and Marketing Materials Triggers?</description>
+    <label>Displays Marketing Material</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

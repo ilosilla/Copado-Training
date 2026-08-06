@@ -1,0 +1,14 @@
+.THIS.script-container {
+    /*
+     * border: t(borderWidthThick) solid t(colorBorderBrand);
+     * border-radius: t(borderRadiusMedium);
+    */
+}
+
+.THIS .script {
+   /*
+    * font-size: 1.125rem; / * t(fontSizeTextLarge)* /
+    * font-weight: t(fontWeightRegular);
+    * line-height: t(lineHeightHeading);
+    */
+}

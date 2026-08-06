@@ -1,0 +1,42 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="opportunity" type="Opportunity" default="{'sobjectType':'Opportunity'}"/>
+    
+    <aura:attribute name="currentScreen" type="Integer"/>
+    <aura:attribute name="numberOfScreens" type="Integer" default="2"/>
+    <aura:attribute name="fieldsToUpdate" type="Map" default="{}"/>
+    <aura:attribute name="firstScreen" type="Boolean"/>
+    <aura:attribute name="lastScreen" type="Boolean"/>
+    <aura:attribute name="successFailureFinalScreen" type="Boolean" default="false"/>
+    <aura:attribute name="error" type="Boolean" default="false"/>
+    
+    <aura:attribute name="comboValueReasonForClosure" type="String"/>
+    <aura:attribute name="comboOptionsReasonForClosure" type="String"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <!--Methods--> 
+    <aura:method name="changeScreen" action="{!c.changeScreen}" description="changeScreen"> 
+        <aura:attribute name="action" type="String"/>
+    </aura:method>
+    
+    <aura:method name="reloadStage" action="{!c.reloadStage}" description="reloadStage"></aura:method>
+    
+    <aura:if isTrue="{! (v.opportunity.Close_Mode__c != 'In shop date') &amp;&amp; 
+                     (v.opportunity.Close_Mode__c != 'E-commerce') &amp;&amp; v.firstScreen}">
+        <div class="slds-align_absolute-center" style = "height: 6.25rem;">
+            <lightning:combobox aura:id="fieldToValidate" name="comboReasonForClosure" label="{!$Label.c.Closed_Won_Reason_for_closure}" 
+                                placeholder="{!$Label.c.Select_an_option}" options="{!v.comboOptionsReasonForClosure}" 
+                                value="{!v.comboValueReasonForClosure}" required="true" messageWhenValueMissing="{!$Label.c.Please_select_one_option}"/>
+        </div>
+    </aura:if>
+    
+    <aura:if isTrue="{! (v.opportunity.Close_Mode__c == 'In shop date') || 
+                     (v.opportunity.Close_Mode__c == 'E-commerce') ||
+                     (v.lastScreen)}">
+        <div class="slds-align_absolute-center" style = "height: 6.25rem;">
+            <h3>{!$Label.c.The_opportunity_has_been_closed}</h3>
+        </div>
+    </aura:if>
+    
+    
+</aura:component>

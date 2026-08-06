@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>
+        <!-- Checkout/order model for this market. 
+
+- REGION = served by a subsidiary (current dealer flow). 
+- FACTORY = bought direct from factories, order split and credit checked per factory. -->
+    </help>
+    <label><!-- Checkout Mode --></label>
+    <name>CheckoutMode__c</name>
+    <picklistValues>
+        <masterLabel>Factory (direct)</masterLabel>
+        <translation><!-- Factory (direct) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Region (via subsidiary)</masterLabel>
+        <translation><!-- Region (via subsidiary) --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

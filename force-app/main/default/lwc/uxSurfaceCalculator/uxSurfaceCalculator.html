@@ -1,0 +1,96 @@
+<template>
+    <c-ux-side-panel
+        open={open}
+        dock="right"
+        size="M"
+        custom-width="auto"
+        variant="square"
+        title="Surface calculator"
+        onclose={handleClose}>
+
+        <div class="calc-body">
+
+            <!-- Product -->
+            <div class="calc-product">
+                <span class="calc-sku">SKU# {productInfo.sku}</span>
+                <span class="calc-name">{productInfo.name}</span>
+            </div>
+
+            <!-- Conversion factors -->
+            <div class="calc-factors">
+                <span class="calc-factor">Boxes / Pallet: <strong>{productInfo.boxPerPal}</strong></span>
+                <span class="calc-factor">Pieces / Box: <strong>{productInfo.pcsPerBox}</strong></span>
+                <span class="calc-factor">{surfaceFactorLabel}: <strong>{m2PerBoxDisplay}</strong></span>
+            </div>
+
+            <!-- Inputs — two shaded blocks -->
+            <div class="calc-inputs-row">
+                <div class="calc-inputs-block">
+                    <c-b2b-input-quantity
+                        class="calc-qty"
+                        label={surfaceInputLabel}
+                        type="decimal"
+                        digits="6"
+                        decimals="2"
+                        max-digits="8"
+                        negatives="false"
+                        step="0.5"
+                        value={inputSurface}
+                        onchange={handleSurfaceChange}>
+                    </c-b2b-input-quantity>
+                </div>
+
+                <div class="calc-inputs-block">
+                    <c-b2b-input-quantity
+                        class="calc-qty"
+                        label="Pallets"
+                        type="integer"
+                        digits="4"
+                        max-digits="6"
+                        negatives="false"
+                        step="1"
+                        value={inputPallets}
+                        onchange={handlePalletsChange}>
+                    </c-b2b-input-quantity>
+
+                    <c-b2b-input-quantity
+                        class="calc-qty"
+                        label="Boxes"
+                        type="integer"
+                        digits="4"
+                        max-digits="6"
+                        negatives="false"
+                        step="1"
+                        value={inputBoxes}
+                        onchange={handleBoxesChange}>
+                    </c-b2b-input-quantity>
+                </div>
+            </div>
+
+            <!-- Result -->
+            <div class="calc-result">
+                <template lwc:if={hasResult}>
+                    <span class="calc-result-label">You have selected:</span>
+                    <div class="calc-result-summary">{resultSummaryText}</div>
+                    <div class="calc-result-note" lwc:if={wasRounded}>
+                        * Rounded up to the nearest full box.
+                    </div>
+                </template>
+                <div class="calc-result-empty" lwc:else>
+                    Enter a value above to see the result.
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <button
+                class="calc-cta"
+                type="button"
+                disabled={hasNoResult}
+                onclick={handleConfirm}>
+                Confirm
+            </button>
+
+        </div>
+
+    </c-ux-side-panel>
+</template>

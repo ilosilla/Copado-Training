@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Verified__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>True if is verified through some methods. For exemple, if it&apos;s created from porsamarket</description>
+    <label>Verified</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

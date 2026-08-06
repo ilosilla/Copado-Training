@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Opportunity Actor</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Opportunity Actors</value>
+    </caseValues>
+    <layouts>
+        <layout>Project Actor Layout</layout>
+        <sections>
+            <label>Custom Links 2</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- Can&apos;t create new actors because the account is deleted or locked. --></errorMessage>
+        <name>Account_locked_or_delete</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The classification of a fabricator account must be fabricator --></errorMessage>
+        <name>Account_role_fabricator</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The classification of a reseller account must be reseller --></errorMessage>
+        <name>Account_role_reseller</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Opportunity cannot be changed --></errorMessage>
+        <name>Change_of_Opportunity</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The classification of a fabricator contact must be fabricator --></errorMessage>
+        <name>Contact_role_fabricator</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The classification of a reseller contact must be reseller --></errorMessage>
+        <name>Contact_role_reseller</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please, enter the other role before save --></errorMessage>
+        <name>Other_account_role</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please, enter the other role before save --></errorMessage>
+        <name>Other_contact_role</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Add_Opportunity_Actors --></label>
+        <name>Add_Opportunity_Actors</name>
+    </webLinks>
+</CustomObjectTranslation>

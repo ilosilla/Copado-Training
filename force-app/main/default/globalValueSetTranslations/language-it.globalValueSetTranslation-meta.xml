@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Dutch</masterLabel>
+        <translation><!-- Dutch --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Flemish</masterLabel>
+        <translation><!-- Flemish --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>French</masterLabel>
+        <translation>Francese</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>GB English</masterLabel>
+        <translation>Inglese GB</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>German</masterLabel>
+        <translation>Tedesco</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Italian</masterLabel>
+        <translation>Italiano</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Portuguese</masterLabel>
+        <translation>Portoghese</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Spanish</masterLabel>
+        <translation>Spagnolo</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>US English</masterLabel>
+        <translation>Inglese US</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

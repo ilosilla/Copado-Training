@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- UI Action --></label>
+    <name>talkdesk__UI_Action__c</name>
+    <picklistValues>
+        <masterLabel>Nothing</masterLabel>
+        <translation><!-- Nothing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pop Related Record</masterLabel>
+        <translation><!-- Pop Related Record --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Show Widget</masterLabel>
+        <translation><!-- Show Widget --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

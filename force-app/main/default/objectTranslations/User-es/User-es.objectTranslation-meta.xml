@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- PersonalInfo_EPIM --></label>
+        <name>PersonalInfo_EPIM</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Functional Review Session Assignment Datatable --></label>
+        <name>copadoQuality__Functional_Review_Session_Assignment_Dat</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Copado License Manager --></label>
+        <name>copado__License_Manager</name>
+    </fieldSets>
+    <layouts>
+        <layout>Community Member Layout</layout>
+        <layoutType>CommunityMemberLayout</layoutType>
+        <sections>
+            <label><!-- Basic Information --></label>
+            <section>Basic Information</section>
+        </sections>
+        <sections>
+            <label><!-- Chatter Settings --></label>
+            <section>Chatter Settings</section>
+        </sections>
+        <sections>
+            <label><!-- Language And Locale Settings --></label>
+            <section>Language And Locale Settings</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>User Layout</layout>
+        <sections>
+            <label>Vínculos Personalizados</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Organizational Assignment --></label>
+            <section>Organizational Assignment</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>User Profile Layout</layout>
+        <layoutType>UserAlt</layoutType>
+        <sections>
+            <label><!-- About --></label>
+            <section>About</section>
+        </sections>
+        <sections>
+            <label><!-- Background --></label>
+            <section>Background</section>
+        </sections>
+        <sections>
+            <label><!-- Contact --></label>
+            <section>Contact</section>
+        </sections>
+    </layouts>
+    <validationRules>
+        <errorMessage><!-- The default sales organization must be in the list of selected organizations --></errorMessage>
+        <name>Sales_org_default</name>
+    </validationRules>
+</CustomObjectTranslation>

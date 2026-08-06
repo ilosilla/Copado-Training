@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Liability --></label>
+    <name>Liability__c</name>
+    <picklistValues>
+        <masterLabel>Customer Liability.</masterLabel>
+        <translation><!-- Customer Liability. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Factory Liability.</masterLabel>
+        <translation><!-- Factory Liability. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Region Liability.</masterLabel>
+        <translation><!-- Region Liability. --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_Project_Postponed__c</fullName>
+    <label>Reason Project Postponed</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Lack of knowledge of the range and advantages of the brand</fullName>
+                <default>false</default>
+                <label>Lack of knowledge of the range and advantages of the brand</label>
+            </value>
+            <value>
+                <fullName>I am undecided about the materials</fullName>
+                <default>false</default>
+                <label>I am undecided about the materials</label>
+            </value>
+            <value>
+                <fullName>I am stressed</fullName>
+                <default>false</default>
+                <label>I am stressed</label>
+            </value>
+            <value>
+                <fullName>I need more time to organize</fullName>
+                <default>false</default>
+                <label>I need more time to organize</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

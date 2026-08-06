@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Classification_II__c</fullName>
+    <label>Opportunity Classification II</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Opportunity_Classification__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Car dealership</fullName>
+                <default>false</default>
+                <label>Car dealership</label>
+            </value>
+            <value>
+                <fullName>Cinema</fullName>
+                <default>false</default>
+                <label>Cinema</label>
+            </value>
+            <value>
+                <fullName>Clothing store</fullName>
+                <default>false</default>
+                <label>Clothing store</label>
+            </value>
+            <value>
+                <fullName>Financial institutions</fullName>
+                <default>false</default>
+                <label>Financial institutions</label>
+            </value>
+            <value>
+                <fullName>Multi-unit</fullName>
+                <default>false</default>
+                <label>Multi-unit</label>
+            </value>
+            <value>
+                <fullName>Other store</fullName>
+                <default>false</default>
+                <label>Other store</label>
+            </value>
+            <value>
+                <fullName>Restaurant</fullName>
+                <default>false</default>
+                <label>Restaurant</label>
+            </value>
+            <value>
+                <fullName>Shopping centre/Mall/Leisure center</fullName>
+                <default>false</default>
+                <label>Shopping centre/Mall/Leisure center</label>
+            </value>
+            <value>
+                <fullName>Single-family home</fullName>
+                <default>false</default>
+                <label>Single-family home</label>
+            </value>
+            <value>
+                <fullName>Sports center</fullName>
+                <default>false</default>
+                <label>Sports center</label>
+            </value>
+            <value>
+                <fullName>Supermarket</fullName>
+                <default>false</default>
+                <label>Supermarket</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>Car dealership</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>Cinema</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>Clothing store</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>Financial institutions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>Other store</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>Restaurant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>Shopping centre/Mall/Leisure center</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>Sports center</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>Supermarket</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Residential</controllingFieldValue>
+            <valueName>Multi-unit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Residential</controllingFieldValue>
+            <valueName>Single-family home</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

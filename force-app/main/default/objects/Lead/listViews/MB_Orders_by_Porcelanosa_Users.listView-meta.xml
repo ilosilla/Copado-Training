@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MB_Orders_by_Porcelanosa_Users</fullName>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LeadSubtype__c</columns>
+    <columns>Representative__c</columns>
+    <columns>ExistingAccount__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>LeadType__c</field>
+        <operation>equals</operation>
+        <value>US Material Bank</value>
+    </filters>
+    <filters>
+        <field>Representative__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Junk Lead</value>
+    </filters>
+    <label>MB Orders by Porcelanosa Users</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>Porcelanosa_USA_Director_Regional</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

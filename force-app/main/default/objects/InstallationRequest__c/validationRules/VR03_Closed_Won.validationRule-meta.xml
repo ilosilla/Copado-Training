@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR03_Closed_Won</fullName>
+    <active>true</active>
+    <errorConditionFormula>ispickval( State__c , &apos;Closed Won&apos; ) &amp;&amp;
+(
+isblank( SAPOrder__c ) ||
+isblank( SAPPurchaseOrder__c )
+)</errorConditionFormula>
+    <errorMessage>Requests won require both the sales and purchase order numbers</errorMessage>
+</ValidationRule>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Close Mode --></label>
+    <name>Close_Mode__c</name>
+    <picklistValues>
+        <masterLabel>E-commerce</masterLabel>
+        <translation><!-- E-commerce --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>In shop date</masterLabel>
+        <translation><!-- In shop date --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>More samples</masterLabel>
+        <translation><!-- More samples --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not contacted</masterLabel>
+        <translation><!-- Not contacted --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not interested</masterLabel>
+        <translation><!-- Not interested --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

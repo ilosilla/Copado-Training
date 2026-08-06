@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Reported Problem --></label>
+    <name>Problem__c</name>
+    <picklistValues>
+        <masterLabel>Customer Return</masterLabel>
+        <translation><!-- Customer Return --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other problems</masterLabel>
+        <translation><!-- Other problems --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product deteriorated over time</masterLabel>
+        <translation><!-- Product deteriorated over time --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product incomplete: parts missing</masterLabel>
+        <translation><!-- Product incomplete: parts missing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product malfunctioning</masterLabel>
+        <translation><!-- Product malfunctioning --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product mismatch</masterLabel>
+        <translation><!-- Product mismatch --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product received damaged or broken</masterLabel>
+        <translation><!-- Product received damaged or broken --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

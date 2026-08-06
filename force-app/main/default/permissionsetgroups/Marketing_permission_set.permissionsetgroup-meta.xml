@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>For marketing users with minimum access</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Marketing permission set</label>
+    <permissionSets>Marketing_Permissions</permissionSets>
+    <permissionSets>force__CRMUserPsl</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Automatic_SAP_Error_Message__c</fullName>
+    <description>Holds tips about what was wrong on the Automatic Send to Finance Dpt process</description>
+    <label>Automatic SAP Error Message</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

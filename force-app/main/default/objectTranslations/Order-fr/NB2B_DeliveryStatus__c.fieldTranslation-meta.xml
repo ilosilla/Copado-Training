@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>État de la Livraison</label>
+    <name>NB2B_DeliveryStatus__c</name>
+    <picklistValues>
+        <masterLabel>Delivered</masterLabel>
+        <translation>Collection de Client</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Delivering</masterLabel>
+        <translation>Collection de Commercial</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pending</masterLabel>
+        <translation>Envoi au Client</translation>
+    </picklistValues>
+</CustomFieldTranslation>

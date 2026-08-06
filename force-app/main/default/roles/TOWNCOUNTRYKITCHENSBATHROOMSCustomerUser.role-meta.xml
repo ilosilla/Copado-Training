@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>TOWN &amp; COUNTRY KITCHENS &amp; BATHROOMS Customer User</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>TOWN &amp; COUNTRY KITCHENS &amp; BATHROOMS Customer User</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>Sales_Office_3rd_Party_Southeast</parentRole>
+</Role>

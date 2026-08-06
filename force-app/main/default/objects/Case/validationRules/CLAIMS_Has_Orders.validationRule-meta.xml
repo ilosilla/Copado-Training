@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CLAIMS_Has_Orders</fullName>
+    <active>true</active>
+    <description>Claims with orders created cannot be changed to earlier statuses</description>
+    <errorConditionFormula>IsClaim__c &amp;&amp; 
+( NOT(ISBLANK( OrderId__c )) || NOT(ISBLANK( CompensationOrderId__c )))
+&amp;&amp; NOT(ISPICKVAL(Status, &apos;Agreement&apos;)) &amp;&amp; NOT(ISPICKVAL(Status, &apos;Execution&apos;)) &amp;&amp; NOT(ISPICKVAL(Status, &apos;Closed&apos;))</errorConditionFormula>
+    <errorMessage>The claim cannot be moved to the selected status because related orders have already been created</errorMessage>
+</ValidationRule>

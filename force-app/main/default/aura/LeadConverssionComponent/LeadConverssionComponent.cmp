@@ -1,0 +1,307 @@
+<aura:component 
+    implements="flexipage:availableForAllPageTypes,force:hasRecordId,lightning:hasPageReference,lightning:isUrlAddressable,lightning:actionOverride,force:lightningQuickActionWithoutHeader" 
+    access="global"
+    controller="LeadConversionController">    
+
+    <!-- Variables -->
+    <aura:attribute name="showSpinner" type="Boolean" default="false"/>
+    <aura:attribute name="showContent" type="Boolean" default="false"/>
+    <aura:attribute name="theLead" type="Object"/>
+    <aura:attribute name="isPersonAccount" type="Boolean"/>
+    <aura:attribute name="usePersonAccount" type="Boolean"/>
+    <aura:attribute name="locked" type="Boolean" default="false"/>
+    <aura:attribute name="disableAccount" type="Boolean" default="true"/>
+    <aura:attribute name="contactId" type="String"/>
+    <aura:attribute name="createNewLabel" type="String"/>
+    <aura:attribute name="disableContact" type="Boolean" default="true"/>
+    <aura:attribute name="disableNewContact" type="Boolean" default="true"/>
+    <aura:attribute name="disableOpportunity" type="Boolean" default="false"/>
+    <aura:attribute name="createNewAccount" type="Boolean" default="false"/>
+    <aura:attribute name="createNewContact" type="Boolean" default="false"/>
+    <aura:attribute name="dontCreateOpp" type="Boolean" default="false"/>
+    <aura:attribute name="selectedOpportunity" type="String"/>    
+    <aura:attribute name="opportunityList" type="Object[]"/>    
+    <aura:attribute name="contactList" type="Object[]"/>    
+    <aura:attribute name="errorList" type="String[]"/>
+    <aura:attribute name="warningsList" type="String[]"/>
+    <aura:attribute name="leadConverted" type="Boolean" default="false"/>
+    <aura:attribute name="hasProductList" type="Boolean" default="false"/>
+    <aura:attribute name="convertProducts" type="Boolean" default="false"/>
+    <aura:attribute name="convertAvailableProducts" type="Boolean" default="false"/>
+    <aura:attribute name="cResult" type="Object"/>    
+    <aura:attribute name="enableEdit" type="Boolean" default="false"/>
+
+    <!-- Styles -->
+    <aura:html tag="style">
+        .cuf-content {
+        padding: 0 0rem !important;
+        }
+        .slds-p-around--medium {
+            padding: 0rem !important;
+        }
+        .slds-modal__content {
+            height: unset !important;
+            max-height: unset !important;
+        }        
+        .slds-modal__container{
+            max-height:100%;
+            width: 100%;
+            max-width: 62.5rem;
+            min-width: 32rem !important;
+            margin: 0 auto;
+        }
+    </aura:html>
+
+    <!-- 
+        This component has 2 forms (yes, not a good idea but it is faster and I'm short of time). The first one displays the lead
+        to be converted and allows the user to change a couple. Also it has the button to convert the lead.
+        The second form is called after the lead has been successfully converted and it is used to display the links to the new account 
+        and opportunity.
+        The variable that controls which one to display is "v.leadConverted".
+    -->
+
+    <!-- Event handlers -->
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}"/>                 
+
+    <!-- html markup -->
+    <aura:if isTrue="{!v.showSpinner}">
+        <div class="slds-align_absolute-center" style="width:100px; height: 100px;">              
+            <lightning:spinner size="large" alternativeText="Loading"/>            
+        </div>
+    </aura:if>
+
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+    <lightning:quickActionAPI aura:id="quickActionAPI" />
+        
+    <div class="slds-scrollable_y scrolledDiv"> <!-- body outer div -->   
+        <div class="slds-p-around_large" >  <!-- Margins -->
+
+            <!-- header -->
+            <header class="slds-modal__header">
+                <aura:if isTrue="{!v.leadConverted == false}">
+                    <h2 class="slds-text-heading_medium slds-hyphenate">{!$Label.c.lead_title_convert}</h2>
+                </aura:if>
+                <aura:if isTrue="{!v.leadConverted == true}">
+                    <h2 class="slds-text-heading_medium slds-hyphenate">{!$Label.c.lead_converted_ok}</h2>
+                </aura:if>
+            </header>   
+                    
+            <!-- body -->
+            <div class=" modal-body scrollable" style="height: 470px; max-height: 50%; overflow-y: auto !important; overflow-x: hidden !important">
+                <aura:if isTrue="{!v.leadConverted == false}">
+                    <lightning:recordEditForm aura:id="recordEditForm" objectApiName="Lead">
+                        <lightning:messages />
+                        <aura:if isTrue="{!v.errorList.length}">
+                            <div class="slds-box slds-theme_warning slds-theme_alert-texture slds-clearfix slds-m-top_small" role="status">
+                                <div class="slds-float_left">
+                                    <div><aura:unescapedHtml value="{!$Label.c.lead_not_ready}"/></div>
+                                        <ul class="slds-list_dotted slds-var-p-top_small">
+                                            <aura:iteration items="{!v.errorList}" var="errorMessage">
+                                                <li><aura:unescapedHtml value="{!errorMessage}" /></li>
+                                            </aura:iteration>
+                                        </ul>
+                                    </div>
+                                <div class="slds-float_right">
+                                    <aura:if isTrue="{!v.showContent}">
+                                        <lightning:buttonIcon iconName="utility:close" variant="bare"  onclick="{! c.closeMessage }" alternativeText="Close message"/>
+                                    </aura:if>
+                                </div>                
+                            </div>
+                            <aura:set attribute="else">
+                                <div class="slds-text-color_default slds-var-p-around_medium">                    
+                                    <aura:unescapedHtml value="{!$Label.c.lead_convert_intro}"/>
+                                </div>        
+                            </aura:set>
+                        </aura:if>
+
+                        <aura:if isTrue="{!v.showContent}">
+                            <div class="slds-grid slds-gutters slds-clearfix">
+                                <div class="slds-col slds-size_2-of-3">
+                                    <div class="slds-section slds-is-open">
+                                        <h3 class="slds-section__title slds-theme--shade slds-var-p-left_small">
+                                            {!$Label.c.dict_account}
+                                        </h3>
+                                        <div class="slds-section__content slds-var-p-left_small">                                            
+                                            <ul class="slds-list_horizontal slds-form-element__control">
+                                                <li class="slds-form-element slds-form-element_stacked">
+                                                    <lightning:input name="Name2" label="{!$Label.c.lead_contact_name}" value="{!v.theLead.Name}" 
+                                                    class="slds-form-element_stacked" disabled="true" />
+                                                </li>
+                                                <li class="slds-form-element slds-form-element_stacked">
+                                                    <lightning:input name="Company" label="{!$Label.c.dict_company}" value="{!v.theLead.Company}" 
+                                                    class="slds-form-element_stacked" disabled="true" />
+                                                </li>
+                                            </ul>
+                                            <ul class="slds-list_horizontal slds-form-element__control">
+                                                <li class="slds-form-element slds-form-element_stacked">
+                                                    <lightning:inputField aura:id="accountField" fieldName="AccountId__c" 
+                                                        value="{!v.theLead.AccountId__c}" onchange="{!c.onChangeAccount}" 
+                                                        disabled="{!or(v.disableAccount, v.locked)}" 
+                                                        class="slds-m-bottom_small" />
+                                                    <lightning:input type="checkbox" label="{!v.createNewLabel}" name="newAccountBox" 
+                                                        checked="{!v.createNewAccount}"
+                                                        onchange="{!c.newAccountBoxChanged}"
+                                                        class="slds-p-left_small"/>
+                                                </li>
+                                                <li class="slds-form-element slds-form-element_stacked">
+                                                    <lightning:select name="contacts" label="{!$Label.c.dict_contact}" 
+                                                        value="{!v.contactId}"
+                                                        disabled="{!v.disableContact}">
+                                                        <option text="" value=""/>
+                                                        <aura:iteration items="{!v.contactList}" var="contact">
+                                                            <option text="{!contact.Name}" value="{!contact.Id}" selected="{!contact.selected}"/>
+                                                        </aura:iteration>
+                                                    </lightning:select>
+                                                    <lightning:input type="checkbox" label="{!$Label.c.lead_new_contact}" name="newAccountBox" 
+                                                        checked="{!v.createNewContact}"
+                                                        disabled="{!v.disableNewContact}"
+                                                        onchange="{!c.newContactBoxChanged}"
+                                                        class="slds-p-left_small"/>
+                                                </li>                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-col slds-size_1-of-3">
+                                    <div class="slds-section slds-is-open">
+                                        <h3 class="slds-section__title slds-theme--shade slds-var-p-right_small">
+                                            {!$Label.c.dict_opportunity}
+                                        </h3>
+                                        <div class="slds-section__content slds-var-p-right_small">
+                                            <lightning:inputField fieldName="Opportunity_Name__c" value="{!v.theLead.Opportunity_Name__c}" 
+                                                class="slds-m-bottom_x-small" required="{!and(v.warningsList.length==0, v.dontCreateOpp == false)}" disabled="{!v.warningsList.length>0}"/>
+                                            <div class="slds-form-element slds-form-element_stacked">
+                                                <lightning:select aura:id="selectOpp" label="{!$Label.c.dict_opportunity}" value="{!v.selectedOpportunity}" 
+                                                    disabled="{!v.disableOpportunity}" class="slds-m-bottom_x-small">
+                                                    <aura:iteration items="{!v.opportunityList}" var="opp">
+                                                        <option value="{!opp.Id}" text="{!opp.Name}"></option>
+                                                    </aura:iteration>
+                                                </lightning:select>
+                                                <lightning:input type="checkbox" label="{!$Label.c.lead_dont_create_opp}" name="dontCreateOppCheck" 
+                                                    checked="{!v.dontCreateOpp}"
+                                                    class="slds-p-left_small"
+                                                    onchange="{!c.dontCreateBoxChanged}"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:if>
+                        <aura:if isTrue="{!v.hasProductList}">
+                            <div class="slds-col slds-size_3-of-3 slds-box slds-theme_shade slds-theme_alert-texture">
+                                <lightning:input type="checkbox" label="{!$Label.c.lead_convert_products}" name="convertProducts" 
+                                disabled="{!v.disableOpportunity}"
+                                checked="{!v.convertProducts}"/>
+                                <lightning:input type="checkbox" label="{!$Label.c.lead_ignoreMissing}" name="convertAvailableProducts" 
+                                disabled="{!v.disableOpportunity}"
+                                checked="{!v.convertAvailableProducts}"/>
+                            </div>
+                        </aura:if>
+                    </lightning:recordEditForm>
+
+                    <aura:if isTrue="{!v.warningsList.length}">
+                        <div class="slds-box slds-theme_warning slds-theme_alert-texture slds-clearfix slds-m-top_small" role="status">
+                            <div class="slds-float_left">
+                                <div><aura:unescapedHtml value="Conversion to new opportunity disabled because of the following warnings:"/></div>
+                                <ul class="slds-list_dotted slds-var-p-top_x-small slds-var-p-bottom_x-small">
+                                    <aura:iteration items="{!v.warningsList}" var="errorMessage">
+                                        <li><aura:unescapedHtml value="{!errorMessage}" /></li>
+                                    </aura:iteration>
+                                </ul>
+                                <div>Click <b><a onclick="{! c.editLeadClick }">here</a></b> to edit the lead if you want to fix the warnings.</div>
+                            </div>
+                        </div>
+                    </aura:if>
+                </aura:if>
+
+                <aura:if isTrue="{!v.leadConverted == true}">
+                    <aura:if isTrue="{! v.cResult.productsNotAdded > 0 }">
+                            <div class="slds-notify slds-notify_alert slds-alert_warning" role="alert">
+                                <span class="slds-assistive-text">warning</span>
+                                <span class="slds-icon_container slds-icon-utility-warning slds-m-right_x-small" title="Description of icon when needed">
+                                    <lightning:icon size="x-small" iconName="utility:warning" alternativeText="Warning!" title="Warning" />
+                                </span>
+                                <h2>{! v.cResult.productsNotAdded } products have not been copied to the opportunity.</h2>
+                            </div>
+                        </aura:if>  
+                    <div class="slds-var-p-vertical_medium demo-only slds-grid slds-gutters">
+                        <div class="slds-col slds-size_1-of-2">
+                            <article class="slds-tile slds-media slds-box">
+                                <div class="slds-media__figure">
+                                    <lightning:icon iconName="standard:person_account"/>
+                                </div>  
+                                <div class="slds-media__body">
+                                    <h3 class="slds-tile__title slds-truncate slds-text-heading_small ">
+                                        <a href="{!'/lightning/r/' + v.cResult.account.id + '/view'}">{!v.cResult.account.name}</a>
+                                    </h3>                                         
+                                    <div class="slds-tile__detail">
+                                        <dl class="slds-list_horizontal slds-wrap">
+                                            <dt class="slds-item_label slds-text-color_weak slds-truncate" title="{!$Label.c.dict_country}">{!$Label.c.dict_country}:</dt>
+                                            <dd class="slds-item_detail slds-truncate">{!v.cResult.account.country}</dd>
+                                            <dt class="slds-item_label slds-text-color_weak slds-truncate" title="{!$Label.c.dict_city}">{!$Label.c.dict_city}:</dt>
+                                            <dd class="slds-item_detail slds-truncate">{!v.cResult.account.city}</dd>
+                                            <dt class="slds-item_label slds-text-color_weak slds-truncate" title="{!$Label.c.dict_phone}">{!$Label.c.dict_phone}:</dt>
+                                            <dd class="slds-item_detail slds-truncate">{!v.cResult.account.phone}</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+    
+                        <div class="slds-col slds-size_1-of-2">
+                            <article class="slds-tile slds-media slds-box">
+                                <div class="slds-media__figure">
+                                    <lightning:icon iconName="standard:opportunity"/>
+                                </div>  
+                                <div class="slds-media__body">
+                                    <h3 class="slds-tile__title slds-truncate slds-text-heading_small ">
+                                        <aura:if isTrue="{!v.cResult.noOpportunity}">
+                                            <a href="#">                                                                    
+                                                {!$Label.c.lead_noOpportunity}
+                                            </a>
+                                            <aura:set attribute="else">
+                                                <a href="{!'/lightning/r/' + v.cResult.opportunity.Id + '/view'}">
+                                                        {!v.cResult.opportunity.Name}            
+                                                </a>
+                                            </aura:set>
+                                        </aura:if>
+                                    </h3>                                         
+                                    <div class="slds-tile__detail">
+                                        <aura:if isTrue="{!not(v.cResult.noOpportunity)}">
+                                            <dl class="slds-list_horizontal slds-wrap">
+                                                <dt class="slds-item_label slds-text-color_weak slds-truncate">{!$Label.c.dict_owner}:</dt>
+                                                <dd class="slds-item_detail slds-truncate">{!v.cResult.owner.Name}</dd>
+                                                <dt class="slds-item_label slds-text-color_weak slds-truncate">{!$Label.c.dict_company}:</dt>
+                                                <dd class="slds-item_detail slds-truncate">{!v.cResult.owner.SalesOrg_Text__c}</dd>
+                                                <dt class="slds-item_label slds-text-color_weak slds-truncate">{!$Label.c.dict_sales_office}:</dt>
+                                                <dd class="slds-item_detail slds-truncate">{!v.cResult.owner.Sales_Office_Text__c}</dd>                                
+                                            </dl>
+                                        </aura:if>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>                  
+                    </div> 
+                </aura:if>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="slds-col modal-footer slds-modal__footer slds-var-m-top_medium">     
+        <aura:if isTrue="{!v.leadConverted == false}">
+            <lightning:button variant="neutral" label="{!$Label.c.dict_button_cancel}" onclick="{! c.cancelClick }" />  
+            <aura:if isTrue="{!v.enableEdit}">
+                <lightning:button variant="brand" label="{!$Label.c.lead_button_edit}" onclick="{! c.editLeadClick }" />
+            </aura:if>
+            <aura:if isTrue="{!v.showContent}">
+                <lightning:button variant="brand" label="{!$Label.c.dict_button_convert_lead}" onclick="{! c.saveClick }" />
+            </aura:if>
+        </aura:if>
+
+        <aura:if isTrue="{!v.leadConverted == true}">
+            <lightning:button variant="brand" label="{!$Label.c.dict_button_close}" onclick="{! c.cancelClick }" />                         
+        </aura:if>            
+    </div>
+    
+</aura:component>

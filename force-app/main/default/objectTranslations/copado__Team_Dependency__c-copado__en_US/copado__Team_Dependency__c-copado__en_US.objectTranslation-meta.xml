@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>User Story Dependency</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>User Story Dependencies</value>
+    </caseValues>
+    <layouts>
+        <layout>Team Dependency Layout</layout>
+        <sections>
+            <label><!-- Child User Story --></label>
+            <section>Child User Story</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Owners --></label>
+            <section>Owners</section>
+        </sections>
+        <sections>
+            <label><!-- Parent User Story --></label>
+            <section>Parent User Story</section>
+        </sections>
+        <sections>
+            <label><!-- Relationship type --></label>
+            <section>Relationship type</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>User Story Dependency Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Deliverable --></label>
+            <section>Deliverable</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Team Dependency (Optional) --></label>
+            <section>Team Dependency (Optional)</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

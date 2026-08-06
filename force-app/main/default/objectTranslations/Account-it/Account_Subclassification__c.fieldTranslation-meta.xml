@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Sottoclassificazione del Conto</label>
+    <name>Account_Subclassification__c</name>
+    <picklistValues>
+        <masterLabel>Automotive</masterLabel>
+        <translation><!-- Automotive --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Big-Box</masterLabel>
+        <translation><!-- Big-Box --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Consumer Goods</masterLabel>
+        <translation><!-- Consumer Goods --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cruises</masterLabel>
+        <translation><!-- Cruises --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Education</masterLabel>
+        <translation><!-- Education --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Food &amp; Beverage</masterLabel>
+        <translation><!-- Food &amp; Beverage --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Healthcare</masterLabel>
+        <translation>Assitenza Sanitaria</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hospitality/ Hotel</masterLabel>
+        <translation>Albergo/Ospitalità</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Landscape Architect</masterLabel>
+        <translation><!-- Landscape Architect --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Multi-Unit</masterLabel>
+        <translation><!-- Multi-Unit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Multifamily</masterLabel>
+        <translation><!-- Multifamily --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Offices</masterLabel>
+        <translation><!-- Offices --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Residential</masterLabel>
+        <translation><!-- Residential --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Retail Chain</masterLabel>
+        <translation>Catena di Negozi</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Senior Living</masterLabel>
+        <translation>Villaggio di Pensionati (UK e USA)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Transportation</masterLabel>
+        <translation><!-- Transportation --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,141 @@
+<!--
+ Ivan Losilla - August 2021
+ Component Created to manage the Price Requests by an Approver.
+ It shows a brief of all Price Requests having at least one item waiting for a decision to make.
+ There is a button to show the price request and the items, to be able to manage it.
+-->
+<aura:component 
+                implements="flexipage:availableForAllPageTypes,force:appHostable"
+                access="global"
+                controller="OppPriceRequestComponentController"
+   >
+    <!-- Data Attributes -->
+    <aura:attribute name="headersList" type="OppPriceRequestHeader__c[]" default="[]"/>
+    <aura:attribute name="salesOrgsList" type="Map" default="{}"/>
+    <aura:attribute name="salesOfficesList" type="Map" default="{}"/>
+    
+    <!-- UI Attributes -->
+    <aura:attribute name="isActive" type="Boolean" default="false"/>
+    <aura:attribute name="approverMode" type="Boolean" default="false"/>
+    <aura:attribute name="textWarning" type="String" default=""/>
+    <aura:attribute name="showSpinner" type="Boolean" default="false"/>
+    <aura:attribute name="showPage" type="Boolean" default="false"/>
+    <aura:attribute name="columns" type="List" default="[]"/>
+    <aura:attribute name="selectedPriceRequest" type="String" default=""/>
+    <aura:attribute name="sortDirection" type="String" default="asc" />
+    <aura:attribute name="defaultSortDirection" type="String" default="asc" />
+    <aura:attribute name="sortedBy" type="String" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    
+    <!-- Spinner -->
+    <aura:if isTrue="{!v.showSpinner}">
+            <div aura:id="spinnerId" class="slds-spinner_container">
+               <div class="slds-spinner_brand  slds-spinner slds-spinner_large slds-is-relative" role="alert">
+                 <span class="slds-assistive-text">{}! $Label.c.dict_loading]</span>
+                 <div class="slds-spinner__dot-a"></div>
+                 <div class="slds-spinner__dot-b"></div>
+               </div>
+            </div>
+    </aura:if>
+    
+    <aura:if isTrue="{! v.showPage == true }">
+        
+        <!-- It shows the list if the user is an approver and the price request is available by the user's context -->
+        <aura:if isTrue="{! and(v.isActive == true, v.approverMode == true) }">
+            <div class="slds-col">
+                <article class="slds-card headerBottomBorder forceRelatedListCardDesktop">
+                    <div class="slds-page-header slds-grid">
+                        
+                        <!-- Header Info -->
+                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                            <div class="slds-media__figure">
+                                <span class="slds-icon_container slds-icon-standard-account">
+                                    <lightning:icon iconName="standard:partner_fund_claim" />
+                                    <span class="slds-assistive-text">Factory Review Pricing Authorization</span>
+                                </span>
+                            </div>
+                            <div class="slds-media__body">
+                                <div class="slds-page-header__name-title">
+                                    <h1><span class="slds-page-header__title slds-truncate">Factory Review Pricing Authorization</span></h1>
+                                </div>
+                            </div>
+                        </header>
+                    </div>
+                    
+                    <!-- Price Request List -->
+                    <div class="slds-card__body slds-card__body_inner">
+                        <lightning:tabset>
+                            <lightning:tab label="{! $Label.c.dict_pending }" id="one">
+                                <aura:if isTrue="{! and(v.isActive == true,  v.headersList.length > 0 ) }">
+                            
+                            <div class="tableFixHead">
+                                
+                                <lightning:datatable
+                                    keyField="id"
+                                    data="{! v.headersList }"
+                                    columns="{! v.columns }"
+                                    hideCheckboxColumn="true"
+                                    resizeColumnDisabled="true"
+                                    wrapTextMaxLines="1"
+                                    onrowaction="{! c.handleRowAction }"
+                                    onsort="{! c.sortRows }"
+                                    defaultSortDirection="{!v.defaultSortDirection}"
+                                    sortedDirection="{!v.sortDirection}"
+                                    sortedBy="{!v.sortedBy}"/>
+                            </div>
+                            <aura:set attribute="else">
+                                <div class="slds-illustration slds-illustration_large">
+                                    <img src="/img/chatter/OpenRoad.svg" class="slds-illustration__svg" alt=""/>
+                                    <div class="slds-text-longform">
+                                        <h3 class="slds-text-heading_large">{! $Label.c.prequest_no_prequest }</h3>
+                                        <p class="slds-text-heading--medium">{! v.textWarning }</p>
+                                    </div>
+                                </div>
+                            </aura:set>
+                        </aura:if>
+                            </lightning:tab>
+                            <lightning:tab label="{! $Label.c.dict_historic }" id="two">
+                                <c:oppPriceRequestFactoryHistoric></c:oppPriceRequestFactoryHistoric>
+                            </lightning:tab>
+                        </lightning:tabset>
+                    </div>
+                </article>
+            </div>
+            
+            <aura:if isTrue="{! v.selectedPriceRequest != '' }">
+                <!-- Modal with Price Request Component -->
+                <section aura:id="modalPriceRequest" role="dialog" tabindex="-1" class="slds-modal slds-modal_large" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+                    <div class="slds-modal__container">
+                        <div class="slds-modal__content" id="modal-content-id-1">
+                            <c:OppPriceRequestComponentFactory closeComponent="{! c.closeModal }" aura:id="pRequest" approverMode="true" recordId="{! v.selectedPriceRequest }"/>
+                        </div>
+                    </div>
+                </section>
+                <div aura:id="backdropId" class="slds-backdrop"></div>
+            </aura:if>
+            
+            <!-- Page to show to the user, if the user doesn't have permissions -->
+            <aura:set attribute="else">
+                <article class="slds-card">
+                    <div class="slds-card__header slds-grid">
+                        <header>
+                            <h2>
+                                <a href="#" class="slds-card__header-link slds-truncate" title="{!$Label.c.prequest_review_auth}">
+                                    <span class="slds-text-heading_small">{!$Label.c.prequest_review_auth}</span>
+                                </a>
+                            </h2>
+                        </header>
+                    </div>
+                    <div class="slds-illustration slds-illustration_large">
+                        <img src="/img/chatter/OpenRoad.svg" class="slds-illustration__svg" alt=""/>
+                        <div class="slds-text-longform">
+                            <h3 class="slds-text-heading_large">{!$Label.c.dict_acces_denied}</h3>
+                            <p class="slds-text-heading--medium">{! v.textWarning }</p>
+                        </div>
+                    </div>
+                </article>
+            </aura:set>
+        </aura:if>
+    </aura:if>
+</aura:component>

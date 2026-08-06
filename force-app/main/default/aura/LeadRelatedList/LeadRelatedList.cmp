@@ -1,0 +1,102 @@
+<!--
+  Leads Related List
+  Displays related Leads of an Account or a Lead
+  Ivan, March 2021
+-->
+<aura:component
+  implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName,forceCommunity:availableForAllPageTypes"
+  access="global"
+  controller="LeadRelatedListComponentController">
+    
+    <!-- Attributes -->
+  	<aura:attribute name="spinner" type="Boolean" default="false" />
+    <aura:attribute name="noData" type="Boolean" default="false" />
+    <aura:attribute name="noDataFiltered" type="Boolean" default="false" />
+    <aura:attribute name="summaryData" type="Object"/>
+    <aura:attribute name="summaryDataFiltered" type="Object"/>
+    <aura:attribute name="summaryColumns" type="List"/>
+    
+   	<!--  Event handlers -->
+  	<aura:handler name="init" action="{!c.onLoad}" value="{!this}" />
+    
+    <div class="spinnerHolder">
+        <aura:if isTrue="{!v.spinner }">
+            <lightning:spinner alternativeText="Loading" variant="brand"/>
+        </aura:if>
+  	</div>
+    
+    <article class="slds-card slds-card_boundary headerBottomBorder forceRelatedListCardDesktop">
+    	<div class="slds-page-header slds-grid">
+       		<!-- Page header: Title, refresh, filter -->
+          	<header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-standard-account"
+                          title="account">
+                        <lightning:icon iconName="standard:lead" />
+                        <span class="slds-assistive-text">{!$Label.c.lead_related_leads}</span>
+                    </span>
+                </div>
+                <div class="slds-media__body">
+                    <div class="slds-page-header__name">
+                        <div class="slds-page-header__name-title">
+                            <h1>
+                                <span class="slds-page-header__title slds-truncate" title="titulo de prueba">{!$Label.c.lead_related_leads}</span>
+                            </h1>
+                        </div>
+                    </div>
+                    <p class="slds-page-header__name-meta">{!$Label.c.lead_related_leads_comment}</p>
+                </div>
+                <aura:if isTrue="{! !v.noData}">
+                    <div class="slds-form--inline slds-form_vertical">
+                        <lightning:select aura:id="selectFilter" name="select" label="{!$Label.c.dict_select_filter}" onchange="{! c.onChangeFilter }">
+                            <option value="ACTIVE">{!$Label.c.dict_actives}</option>
+                            <option value="ALL">{!$Label.c.dict_all}</option>
+                        </lightning:select>
+                    </div>
+                </aura:if>
+                <div class="slds-no-flex slds-p-left_small ">
+                        <lightning:buttonIcon  variant="border-filled" title="{!$Label.c.Refresh}" iconName="utility:refresh"
+                                              onclick="{!c.handleRefresh}" disabled="{!v.disable}"/>
+                    </div>
+            </header>
+        </div>
+        
+        <!-- List -->
+        <div class="slds-card__body slds-card__body_inner">
+          <div class="slds-carousel">
+            <div class="slds-carousel__stage">
+              <div aura:id="carousel-panels" class="slds-carousel__panels">
+                 <aura:if isTrue="{! !v.noData}">
+                    <div aura:id="slide1" id="content-id-01" class="slds-carousel__panel" role="tabpanel" aria-hidden="false" aria-labelledby="indi01">          
+                      <div class="slds-border_top slds-border_right slds-border_bottom slds-border_left">
+                          <aura:if isTrue="{! !v.noDataFiltered}">
+                            <lightning:datatable
+                                    keyField="summaryTable"
+                                    data="{! v.summaryDataFiltered }"
+                                    columns="{! v.summaryColumns }"
+                                    hideCheckboxColumn="true"/>
+                          </aura:if>
+                          <aura:if isTrue="{! v.noDataFiltered}">
+                              <div class="slds-box slds-theme_alert-texture" role="status">
+                                  <div class="no" role="status">
+                                      <h4 class="slds-text-heading_small slds-p-bottom_small slds-p-top_medium slds-text-align--center">{!$Label.c.lead_no_related_filter}</h4>
+                                  </div>        
+                                </div>
+                          </aura:if>
+                        </div>
+                    </div>
+                  </aura:if>
+          		</div>
+                <aura:if isTrue="{! v.noData}">
+                	<div class="slds-box slds-theme_alert-texture" role="status">
+                      <div class="no" role="status">
+                          <h4 class="slds-text-heading_small slds-p-bottom_small slds-p-top_medium slds-text-align--center">{!$Label.c.lead_no_related}</h4>
+                      </div>        
+      				</div>
+                </aura:if>
+              </div>
+            </div>
+        </div>
+    </article>
+
+</aura:component>

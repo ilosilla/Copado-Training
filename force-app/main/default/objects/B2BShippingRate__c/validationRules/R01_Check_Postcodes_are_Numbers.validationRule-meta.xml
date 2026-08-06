@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>R01_Check_Postcodes_are_Numbers</fullName>
+    <active>false</active>
+    <description>Number required if isPostalNumeric is true</description>
+    <errorConditionFormula>AND(
+  IsPostalNumeric__c = TRUE,
+  OR (
+    ISNUMBER(PostcodeFrom__c) = FALSE,
+    ISNUMBER(PostcodeTo__c) = FALSE,
+    PostcodeFrom__c &gt; PostcodeTo__c
+  )  
+)</errorConditionFormula>
+    <errorMessage>PostcodeFrom and PostcodeTo required if the rule is numeric</errorMessage>
+</ValidationRule>

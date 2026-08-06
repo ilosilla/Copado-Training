@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VanityBy__c</fullName>
+    <label>Vanity By</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>wall mounted</fullName>
+                <default>false</default>
+                <label>No, wall mounted (add brackets)</label>
+            </value>
+            <value>
+                <fullName>No, wall mounted (add backets)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>No, wall mounted (add backets)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

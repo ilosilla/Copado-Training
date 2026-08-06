@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CLAIM_DebugEMail__c</fullName>
+    <description>All claim emails addressed to this email when set</description>
+    <externalId>false</externalId>
+    <label>CLAIM Debug EMail</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Email</type>
+    <unique>false</unique>
+</CustomField>

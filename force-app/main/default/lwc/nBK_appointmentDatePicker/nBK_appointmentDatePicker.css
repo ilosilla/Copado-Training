@@ -1,0 +1,362 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+}
+
+.bold {
+	font-size: 24px;
+	font-weight: 600;
+}
+.containerButtons{
+	text-align: right;
+	margin-top: 40px;
+
+}
+.button{
+	margin-top:10px ;
+	margin: 3px;
+	padding: 3px;
+}
+.link {
+	/* color: #007bff; */
+	color: #1c3241 !important;
+	border: 0;
+	background-color: white;
+}
+@font-face {
+    font-family: 'porcelanosafont';
+    src: url('/B2B/s/sfsites/c/resource/PorcelanosaRegular.ttf') format('ttf');
+}
+
+.buttonContainer {
+	background-color: #1d3241;
+	padding: 10px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border: none;
+	color: #fff;
+}
+
+.prev,
+.next {
+	border: none;
+	width: 70px;
+	background-color: transparent;
+}
+
+.titleAvailableHours{width: 95%;}
+
+span.slds-radio {
+    display: inline-block!important;
+}
+
+.datePickerHolder li.date{
+	border-bottom: 1px solid #e9e9e9;
+}
+
+.dates .header{
+	border-bottom: 1px solid #1d3241;
+}
+
+@media only screen and (min-width: 1100px)  {
+	.containerDatesHour{display: flex;}
+
+	.bodyMain {
+		/* width: 300px; */
+		color: #223141;
+	}
+
+	.emptyText{
+    color: white;
+  }
+
+	.dateTitle {
+		top: 10px;
+		left: 450px;
+		font-size: large;
+		font-weight: bold;
+		color: #223141;
+		font-family:'porcelanosafont';
+	}
+
+	.dates {
+		top: 35px;
+		left: 500px;
+
+		width: 400px;
+		border: 1px solid gray;
+		border-radius: 0px;
+
+		color: #223141;
+
+	}
+	.hourTitle {
+
+		top: 10px;
+		left: 1000px;
+		color: #223141;
+		font-family:'porcelanosafont';
+	}
+
+	.hours {
+		margin-left: -1px!important;
+		padding: 10px;
+		top: 35px;
+		left: 1000px;
+		margin-top: 6% !important;
+
+
+		border-radius: 0px;
+
+		color: #223141;
+		text-align: center;
+		background-color: #1d3241;
+    	min-width: 150px;
+	}
+
+	.hours .hourElement .slds-radio .slds-form-element__label{
+		color:#fff;
+	}
+	.titleAvailableHours{color:#fff}
+
+	.hours2 {
+
+		top: 35px;
+		left: 1000px;
+		width: 125%;
+
+		/* border: 1px solid gray;
+		border-radius: 16px;
+		margin: 0 auto; */
+	}
+
+	.dates ul {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		width: 364px;
+		margin: 0 auto;
+	}
+
+	li {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 50px;
+		min-height: 50px;
+		margin: 1px;
+	}
+}
+
+.gridSelector {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 1fr;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+}
+
+.buttonReset { grid-area: 1 / 1 / 2 / 3; }
+
+@media only screen and (max-width: 1099px)  {
+	.bodyMain {
+		/* width: 300px; */
+		height: 30px auto;
+		color: #223141;
+	}
+	.dateTitle {
+		/*
+		position: absolute;
+		top: 10px;
+		left: 450px;
+		*/
+		align-self: left;
+		font-size: large;
+		font-weight: bold;
+		color: #223141;
+		font-family:'porcelanosafont';
+	}
+
+	.dates {
+		/* position: relative;
+		float: left; */
+		/*
+		position: absolute;
+		top: 35px;
+		left: 500px;
+		*/
+
+		margin-top: 4% !important;
+		border: 1px solid gray;
+		border-radius: 0px;
+		/* align-self: left; */
+		color: #223141;
+	}
+
+	.hourTitle {
+		/* position: absolute;
+		top: 10px;
+		left: 1000px; */
+		color: #223141;
+		font-family:'porcelanosafont';
+		width: 100%;
+	}
+
+	.hours {
+		/* position: relative;
+		float: left; */
+		/*
+		top: 35px;
+		left: 1000px;
+		*/
+		border: 1px solid gray;
+		border-radius: 0px;
+		margin: 0 ;
+		margin-top: 10px;
+		/* align-items: center; */
+		align-self: center;
+		color: #223141;
+		display: flex;
+		flex-flow: row wrap;
+		padding: 10px 10px 10px 20px;
+	}
+
+	.hours .hourElement {width: 20%;}
+
+	.dates ul {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		width: 90%;
+		margin: 5px;
+		color: #223141;
+	}
+
+	li {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 1px;
+		color: #223141;
+		min-width: 13.3%;
+		min-height: 13.3%;
+		padding: 5px 0px;
+	}
+
+	.buttonContainer {
+
+		/* display: flex;
+		align-items: center; */
+		/* justify-content: space-between; */
+		/* border: none; */
+	}
+
+	.year{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border: none;
+		color: #223141;
+		font-family:'porcelanosafont';
+	}
+
+	.prev,
+	.next {
+		border: none;
+		width: 10%;
+		margin: 10px;
+	}
+
+	.datePickerHolder, .dates .header{margin: 15px auto!important;}
+
+	.titleAvailableHours{
+		width: 100%;
+	}
+
+}
+
+.dates .datePickerHolder {
+	flex-wrap: wrap;
+}
+
+.prev:hover,
+.next:hover,
+.link:hover {
+	cursor: pointer;
+}
+
+.prev:before {
+	content: '←';
+	padding-right: 4px;
+}
+
+.next:after {
+	content: '→';
+	padding-left: 4px;
+}
+
+.datePickerHolder li {
+	transition: all 300ms;
+	cursor: pointer;
+	border-radius: 0px;
+	color: #223141;
+}
+
+.header li {
+	background-color: white;
+	color: #223141;
+}
+
+.datePickerHolder li:hover {
+	color: #fff;
+    border-color: #929292;
+    background-color: #1d3241;
+}
+
+.datePickerHolder .today {
+	background-color: var(--lwc-brandBackgroundDark);
+	color: #223141;
+	pointer-events: none;
+}
+
+.datePickerHolder .selected {
+	/* background-color: var(--lwc-brandAccessibleActive); */
+	background: #1c3241 !important;
+	color: white;
+}
+
+.datePickerHolder .disabled {
+	pointer-events: none;
+	opacity: 0.6;
+	color: #223141;
+	font-family:'porcelanosafont';
+	font-size: 14px;
+}
+
+
+.slds-radio [type=radio][disabled]~.slds-radio_faux,
+.slds-radio [type=radio][disabled]~.slds-radio--faux,
+.slds-radio [type=radio][disabled]+.slds-radio__label .slds-radio_faux,
+.slds-radio [type=radio][disabled]+.slds-radio__label .slds-radio--faux {
+	background-color: #d0cacac6;
+	color: #223141;
+
+}
+
+.slds-radio [type=radio]:checked+.slds-radio_faux:after,
+.slds-radio [type=radio]:checked+.slds-radio--faux:after,
+.slds-radio [type=radio]:checked~.slds-radio_faux:after,
+.slds-radio [type=radio]:checked~.slds-radio--faux:after,
+.slds-radio [type=radio]:checked+.slds-radio__label .slds-radio_faux:after,
+.slds-radio [type=radio]:checked+.slds-radio__label .slds-radio--faux:after {
+	background: #1c3241 !important;
+	color: #223141;
+}
+
+.slds-radio__label .enabled {
+	font-weight: bold !important;
+	/* font-weight: bolder; */
+	color: #223141;
+}

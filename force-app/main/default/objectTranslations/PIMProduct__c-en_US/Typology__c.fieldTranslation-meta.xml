@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Typology --></label>
+    <name>Typology__c</name>
+    <picklistValues>
+        <masterLabel>BASIN ACCESSORIES</masterLabel>
+        <translation><!-- BASIN ACCESSORIES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BASINS</masterLabel>
+        <translation><!-- BASINS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BATHROOM ACCESSORIES</masterLabel>
+        <translation><!-- BATHROOM ACCESSORIES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BATHROOM FURNITURE</masterLabel>
+        <translation><!-- BATHROOM FURNITURE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BATHTUBS</masterLabel>
+        <translation><!-- BATHTUBS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CERAMIC MOSAICS &amp; DECORATIONS</masterLabel>
+        <translation><!-- CERAMIC MOSAICS &amp; DECORATIONS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CERAMIC TILES</masterLabel>
+        <translation><!-- CERAMIC TILES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CORNER &amp; FINISHING PROFILES</masterLabel>
+        <translation><!-- CORNER &amp; FINISHING PROFILES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DECORATIVE PROFILES</masterLabel>
+        <translation><!-- DECORATIVE PROFILES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DECOUPLING MEMBRANES</masterLabel>
+        <translation><!-- DECOUPLING MEMBRANES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DRAINAGE GRILLES</masterLabel>
+        <translation><!-- DRAINAGE GRILLES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FAUCET ACCESSORIES</masterLabel>
+        <translation><!-- FAUCET ACCESSORIES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GLASS LISTELLOS</masterLabel>
+        <translation><!-- GLASS LISTELLOS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GLASS MOSAICS</masterLabel>
+        <translation><!-- GLASS MOSAICS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GROUTING MATERIALS</masterLabel>
+        <translation><!-- GROUTING MATERIALS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KRION ACCESSORIES</masterLabel>
+        <translation><!-- KRION ACCESSORIES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KRION BASINS</masterLabel>
+        <translation><!-- KRION BASINS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KRION PANELS</masterLabel>
+        <translation><!-- KRION PANELS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LINKFLOOR</masterLabel>
+        <translation><!-- LINKFLOOR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MANUFACTURING - GROUTING MATERIALS</masterLabel>
+        <translation><!-- MANUFACTURING - GROUTING MATERIALS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MIRRORS</masterLabel>
+        <translation><!-- MIRRORS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MIXED MOSAICS</masterLabel>
+        <translation><!-- MIXED MOSAICS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NATURAL STONE MOSAICS &amp; DECORATIONS</masterLabel>
+        <translation><!-- NATURAL STONE MOSAICS &amp; DECORATIONS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SANITARYWARE</masterLabel>
+        <translation><!-- SANITARYWARE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SANITARYWARE ACCESSORIES</masterLabel>
+        <translation><!-- SANITARYWARE ACCESSORIES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SETTING MATERIALS (ADHESIVES)</masterLabel>
+        <translation><!-- SETTING MATERIALS (ADHESIVES) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SHOWER ENCLOSURES</masterLabel>
+        <translation><!-- SHOWER ENCLOSURES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TECHNICAL PROFILES</masterLabel>
+        <translation><!-- TECHNICAL PROFILES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRAPS &amp; DRAINS</masterLabel>
+        <translation><!-- TRAPS &amp; DRAINS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WATERPROOFING</masterLabel>
+        <translation><!-- WATERPROOFING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WOOD FLOORING (PARQUET)</masterLabel>
+        <translation><!-- WOOD FLOORING (PARQUET) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WOOD MOSAICS</masterLabel>
+        <translation><!-- WOOD MOSAICS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>XLIGHT CERAMIC</masterLabel>
+        <translation><!-- XLIGHT CERAMIC --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

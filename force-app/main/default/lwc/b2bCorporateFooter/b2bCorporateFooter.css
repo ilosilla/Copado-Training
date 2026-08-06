@@ -1,0 +1,178 @@
+.b2b-footer {
+    background-color: #1c2b36;
+    color: #ffffff;
+    padding: 0;
+    font-size: 0.85rem;
+}
+
+.b2b-footer__container {
+    max-width: var(--dxp-s-footer-content-max-width, 1600px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: start;
+}
+
+/* ---------- LEFT ---------- */
+
+.b2b-footer__left {
+    text-align: left;
+}
+
+.b2b-footer__address, .b2b-footer__contact {
+    white-space: pre-line;
+    font-size: 0.85rem;
+    font-weight: 400;
+    line-height: 1.4;
+    opacity: 0.85;
+    margin-top: 0.35rem;
+}
+
+/* Mismo color y tipografía que la dirección; subrayado solo al hover.
+   !important para ganar al color de enlace que inyecta el tema del site. */
+.b2b-footer__contact-link {
+    display: block;
+    color: #ffffff !important;
+    font: inherit;
+    text-decoration: none;
+}
+
+.b2b-footer__contact-link:hover {
+    text-decoration: underline;
+}
+
+.b2b-footer__org {
+    font-size: 1.1rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* ---------- CENTER ---------- */
+
+.b2b-footer__center {
+    text-align: center;
+}
+
+.b2b-footer__royal {
+    height: 120px;
+    width: auto;
+    display: block;
+    margin: 0 auto 8px;
+    opacity: 0.9;
+}
+
+.b2b-footer__copyright {
+    font-size: 0.7rem;
+    opacity: 0.7;
+}
+
+/* ---------- RIGHT ---------- */
+
+.b2b-footer__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.b2b-footer__logo {
+    height: 34px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-bottom: 8px;
+}
+
+.b2b-footer__social {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding-right:8px;
+    margin-bottom: 1rem;
+}
+
+.footer-social-icon {
+    width: 24px;
+    height: 24px;
+    color: #ffffff;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.footer-social-icon:hover {
+    opacity: 1;
+}
+
+.b2b-footer__market {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.90rem;
+    font-weight: 500;
+    opacity: 0.9;
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 2px;
+    white-space: nowrap;    
+    margin-right: 0.25rem;
+}
+
+/* =========================================================
+ * Variant: COMPACT (service pages)
+ * ========================================================= */
+.b2b-footer[data-variant="COMPACT"] {
+    padding: 0; /* one row */
+}
+
+.b2b-footer[data-variant="COMPACT"] .b2b-footer__container {
+    /* override the 3-column grid used in FULL */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 12px;
+}
+
+/* Compact row layout */
+.b2b-footer[data-variant="COMPACT"] .b2b-footer__compact {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.b2b-footer[data-variant="COMPACT"] .b2b-footer__compact-left {
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.b2b-footer[data-variant="COMPACT"] .b2b-footer__compact-center {
+    flex: 1 1 auto;
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.75;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.b2b-footer[data-variant="COMPACT"] .b2b-footer__compact-right {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.b2b-footer[data-variant="COMPACT"] .b2b-footer__compact-logo {
+    height: 32px;
+    width: auto;
+    display: block;
+}
+
+/* Ensure FULL-only blocks don't influence compact sizing */
+.b2b-footer[data-variant="COMPACT"] .b2b-footer__left,
+.b2b-footer[data-variant="COMPACT"] .b2b-footer__center,
+.b2b-footer[data-variant="COMPACT"] .b2b-footer__right {
+    display: none;
+}

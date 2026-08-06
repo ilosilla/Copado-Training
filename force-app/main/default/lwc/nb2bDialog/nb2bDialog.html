@@ -1,0 +1,64 @@
+<template>
+    <template if:true={showDialog}>
+        <section
+            role="dialog"
+            class={computedModalClass}
+            data-element-id="modal"
+        >
+            <div class="slds-modal__container">
+                <header class={computedHeaderClass}>
+                    <template if:false={excludeXButton}>
+                        <lightning-button-icon
+                        icon-name="utility:close"
+                        size="large"
+                        onclick={hide}
+                        variant="bare"
+                        alternative-text="Close"
+                        class="slds-modal__close"
+                        icon-class="slds-button_icon-inverse"
+                    ></lightning-button-icon>
+                    </template>
+                    <template if:true={showHeader}>
+                        <h2
+                            if:true={hasStringTitle}
+                            class="slds-modal__title slds-hyphenate"
+                            data-element-id="h2"
+                        >
+                            {title}
+                        </h2>
+                        <template if:false={hasStringTitle}>
+                            <slot name="title"></slot>
+                        </template>
+                    </template>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <template if:true={isLoading}>
+                        <lightning-spinner
+                            alternative-text={loadingStateAlternativeText}
+                            size="small"
+                            class="spinner"
+                            data-element-id="lightning-spinner"
+                        ></lightning-spinner>
+                    </template>
+                    <template if:false={isLoading}>
+                        <slot></slot>
+                    </template>
+                </div>
+                <template if:true={showFooter}>
+                    <footer class="slds-modal__footer">
+                        <slot name="footer"></slot>
+                        <template if:false={hasFooterSlot}>
+                            <template if:true={showNegativeButton}>
+                                <button class="slds-button slds-button_neutral" onclick={handleNegative}>{negativeButtonLabel}</button>
+                            </template>
+                            <template if:true={showPositiveButton}>
+                                <button class="slds-button slds-button_brand" onclick={handlePositive}>{positiveButtonLabel}</button>
+                            </template>     
+                        </template>                   
+                    </footer>
+                </template>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

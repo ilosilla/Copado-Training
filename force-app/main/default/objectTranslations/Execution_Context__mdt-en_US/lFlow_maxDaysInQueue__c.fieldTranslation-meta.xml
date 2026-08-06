@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Maximum number of days in which an event can appear in the list of events with missing fields in the login flow --></help>
+    <label><!-- Login flow max days in queue --></label>
+    <name>lFlow_maxDaysInQueue__c</name>
+</CustomFieldTranslation>

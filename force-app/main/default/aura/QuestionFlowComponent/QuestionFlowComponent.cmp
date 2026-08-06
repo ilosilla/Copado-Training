@@ -1,0 +1,22 @@
+<aura:component implements="lightning:availableForFlowScreens" access="global" >
+    
+    <!-- Get thequestion text from the flow -->    
+    <aura:attribute name="questionText" type="String" required="true" />
+    <aura:attribute name="promptText" type="String" />
+    
+    <!-- Pass the value of the selected option back to the flow -->
+    <aura:attribute name="response" type="String" />          
+    <aura:attribute name="accepted" type="Boolean" />          
+    
+    <!-- Display the question -->
+    <div class="slds-p-bottom_small">
+        <p><ui:outputRichText class="slds-p-bottom_small" value="{!v.questionText}"/></p>        
+        <p><lightning:formattedText value="{!v.promptText}" class="slds-text-body_small" /></p>
+        <lightning:buttongroup >
+            <lightning:button label="{!$Label.c.dic_yes}" aura:id="Yes" 
+                              variant="neutral" onclick="{!c.handleChange}"/>
+            <lightning:button label="{!$Label.c.dic_no}" aura:id="No" 
+                              variant="neutral" onclick="{!c.handleChange}"/>
+        </lightning:buttongroup>
+    </div>
+</aura:component>

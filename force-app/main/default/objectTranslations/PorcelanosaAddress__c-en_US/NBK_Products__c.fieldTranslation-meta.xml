@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Products --></label>
+    <name>NBK_Products__c</name>
+    <picklistValues>
+        <masterLabel>Baths</masterLabel>
+        <translation><!-- Baths --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hardwood-Laminate-LVT</masterLabel>
+        <translation><!-- Hardwood-Laminate-LVT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kitchens</masterLabel>
+        <translation><!-- Kitchens --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mosaics</masterLabel>
+        <translation><!-- Mosaics --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Natural Stone</masterLabel>
+        <translation><!-- Natural Stone --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tile</masterLabel>
+        <translation><!-- Tile --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>talkdesk__Is_Mood_set__c</fullName>
+    <deprecated>false</deprecated>
+    <formula>IF (talkdesk__MoodNumValue__c  &lt;1 || talkdesk__MoodNumValue__c &gt;5, false, true)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Mood set</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

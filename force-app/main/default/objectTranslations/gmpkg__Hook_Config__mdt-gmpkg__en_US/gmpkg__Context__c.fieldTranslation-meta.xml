@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Context --></label>
+    <name>gmpkg__Context__c</name>
+    <picklistValues>
+        <masterLabel>afterInsert</masterLabel>
+        <translation><!-- afterInsert --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>afterUpdate</masterLabel>
+        <translation><!-- afterUpdate --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>beforeInsert</masterLabel>
+        <translation><!-- beforeInsert --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>beforeUpdate</masterLabel>
+        <translation><!-- beforeUpdate --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

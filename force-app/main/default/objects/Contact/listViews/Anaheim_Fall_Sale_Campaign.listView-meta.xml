@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Anaheim_Fall_Sale_Campaign</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>Sales_Office__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Account.Last_Activity_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Sales_Office__c</field>
+        <operation>contains</operation>
+        <value>ANAHEIM,ORANGE</value>
+    </filters>
+    <filters>
+        <field>Account.Account_Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>Inactive_Contact__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.ADDRESS1_ZIP</field>
+        <operation>startsWith</operation>
+        <value>928,926</value>
+    </filters>
+    <filters>
+        <field>Account.Account_Classification__c</field>
+        <operation>equals</operation>
+        <value>Architectural firm,Brand/Chain/Franchise,Construction company,Custom home builder,Design-Build company,Developer,Engineering consultant,Fit-out company (commercial contract),Franchisee,Furniture Company,Plumbing company,Real State Agency</value>
+    </filters>
+    <label>Anaheim Fall Sale Campaign</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>B_U_Manager_Orange_County</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,15 @@
+<template>
+    <lightning-record-picker
+        lwc:ref="recordPicker"
+        data-id="recordPicker"
+        label="Product Name"
+        value={entryId}
+        placeholder="Enter product name or product code..."
+        object-api-name="PricebookEntry"
+        display-info={productDisplayInfo}
+        matching-info={productMatchingInfo}
+        filter={productFilter}
+        onchange={handleProductChange}        
+        class="slds-form-element slds-form-element_stacked">
+    </lightning-record-picker>                    
+</template>

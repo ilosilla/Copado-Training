@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>
+        <!-- A field to store the path format of the folder name that maps a Salesforce object to a folder in
+		SpringCM. -->
+    </help>
+    <label><!-- Path Format --></label>
+    <name>dfsle__PathFormat__c</name>
+</CustomFieldTranslation>

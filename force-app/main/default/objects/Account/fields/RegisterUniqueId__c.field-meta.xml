@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RegisterUniqueId__c</fullName>
+    <description>Código único del registro, calculado por apex en el trigger, y que puede variar el formato dependiendo el país o lo que se decida. Actualmente es domain+postcode</description>
+    <externalId>false</externalId>
+    <label>Register Unique Id</label>
+    <length>150</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

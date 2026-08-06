@@ -1,0 +1,9 @@
+<aura:event type="COMPONENT" description="Event template">
+    
+    <aura:attribute name="action" type="String" default="Next"/>
+    <aura:attribute name="companyComboboxValue" type="String"/>
+    <aura:attribute name="salesOrgComboboxValue" type="String"/>
+    <aura:attribute name="salesOfficeComboboxValue" type="String"/>
+    <aura:attribute name="dateCita" type="datetime"/>
+                                         
+</aura:event>

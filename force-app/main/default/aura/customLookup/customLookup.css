@@ -1,0 +1,64 @@
+.THIS .customSearchIcon svg, .THIS .customCloseIcon svg{
+    fill: #888888;
+}
+
+.THIS .customPillContainer{
+    padding: 0.25rem;
+    
+}
+
+.THIS .customFullWidth{
+    width:100%;
+}
+
+.THIS .customAnchor{
+    color: black;
+}
+
+.THIS .customPillAction{
+    padding: .45rem; 
+    padding-left: 0.25rem;
+}
+
+.THIS .customAvatarIcon svg{
+    height: 1.25rem;
+    width: 1.25rem;
+    /*border-radius: 2px;*/
+}
+
+.THIS lightning-icon.slds-icon_container{
+    border-radius: .125rem;
+}
+
+.THIS .customPillLabel{
+    vertical-align: middle;
+}
+
+.THIS .slds-listbox_vertical .slds-listbox__option:hover{
+    background-color: rgb(243, 242, 242);
+}
+
+.THIS button[title="Remove"]{
+    margin-right: 0.25rem;    
+}
+
+.THIS ul.myListBox{
+    margin-top: 0px !important;
+    overflow-y: auto;
+    max-height: calc((2.5rem) * 5 + 1rem)!important;
+    left: unset;
+    transform: unset;
+}
+
+.THIS .visibHidden{
+    
+    visibility: hidden;
+    
+}
+
+.THIS.customSearchBar{
+    
+    position: unset; 
+    width: unset;
+    
+}

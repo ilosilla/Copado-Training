@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Materiales</label>
+    <name>Matherials__c</name>
+    <picklistValues>
+        <masterLabel>Bathroom accessories</masterLabel>
+        <translation>Accesorios baño</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bathtubs</masterLabel>
+        <translation>Bañeras</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bulkheads</masterLabel>
+        <translation>Mamparas</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Countertops</masterLabel>
+        <translation>Encimeras</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dressing room</masterLabel>
+        <translation>Vestidor</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Furniture</masterLabel>
+        <translation>Mobiliario</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation>Otros</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Radiators</masterLabel>
+        <translation>Radiadores</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sanitary</masterLabel>
+        <translation>Sanitarios</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shower</masterLabel>
+        <translation>Ducha</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shower column</masterLabel>
+        <translation>Columna ducha</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shower tray</masterLabel>
+        <translation>Plato ducha</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sprinklers</masterLabel>
+        <translation>Rociadores</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Taps</masterLabel>
+        <translation>Grifería</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wardrobe</masterLabel>
+        <translation>Armario</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Washbasins</masterLabel>
+        <translation>Lavabos</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,67 @@
+:host {
+    /* Sets modal header padding to 0 */
+    --slds-c-modal-header-spacing-block-start: 0px;
+    --slds-c-modal-header-spacing-block-end: 0px;
+    --slds-c-modal-header-spacing-inline-start: 0px;
+    --slds-c-modal-header-spacing-inline-end: 0px;
+    --lwc-tableColorTextHeader: var(--slds-g-color-palette-neutral-100);
+    display: block;
+    height: 100%;
+    max-height: 100%;
+}
+* {
+    box-sizing: border-box;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+    max-height: 100% !important; 
+    background-color: white;
+}
+
+.header {
+    flex: 0 0 auto;
+    text-align: center;
+}
+
+.header-icon {
+    padding: 4px;
+}
+
+.footer {
+    flex: 0 0 auto;
+}
+
+.footer-left lightning-button {
+    margin-right: var(--lwc-spacingXSmall,0.5rem);
+}
+
+.footer-right lightning-button {
+    margin-left: var(--lwc-spacingXSmall,0.5rem);
+}
+
+
+.content {
+    flex: 1 1 auto;
+    overflow-y: hidden;
+    height: 100%;
+    max-height: 100%;
+}
+
+.content-container {
+    min-height: 200px !important;
+    max-height: 100% !important;
+    height: 100% !important;  
+    display: flex;
+}
+
+.main-content {
+    flex: 1; /* Toma el espacio restante */    
+    overflow: auto; /* Permite scroll si hay demasiado contenido */
+}
+
+
+.side-bar {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}

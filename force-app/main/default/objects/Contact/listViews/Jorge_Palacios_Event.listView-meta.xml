@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Jorge_Palacios_Event</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>CONTACT.IS_PERSON_ACCOUNT</columns>
+    <columns>CONTACT.SALUTATION</columns>
+    <columns>CONTACT.CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account.Account_Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>Account.Account_Name_2__c</field>
+        <operation>contains</operation>
+        <value>vocon,morris ad,nbbj,adjaye</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.LAST_NAME</field>
+        <operation>equals</operation>
+        <value>kaufman</value>
+    </filters>
+    <label>S.Kaufman-Jorge Palacios Event</label>
+    <sharedTo>
+        <role>Porcelanosa_USA_Director_Regional</role>
+    </sharedTo>
+</ListView>

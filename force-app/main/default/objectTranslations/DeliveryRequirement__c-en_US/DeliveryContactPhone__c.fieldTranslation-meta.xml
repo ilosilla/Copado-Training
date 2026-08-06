@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Phone number of the delivery contact. --></help>
+    <label><!-- Delivery Contact Phone --></label>
+    <name>DeliveryContactPhone__c</name>
+</CustomFieldTranslation>

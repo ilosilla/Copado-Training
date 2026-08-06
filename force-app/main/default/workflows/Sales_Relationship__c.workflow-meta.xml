@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>email_alert_on_new_sales_relationships</fullName>
+        <ccEmails>bsales@porcelanosa-usa.com</ccEmails>
+        <description>email alert on new sales relationships</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderAddress>salesforce@porcelanosagrupo.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/New_Sales_Relationship</template>
+    </alerts>
+    <alerts>
+        <fullName>test_email</fullName>
+        <description>test email</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>dmas@porcelanosagrupo.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Accounts/New_International_Dept_Account</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>update_name</fullName>
+        <field>Name</field>
+        <formula>IF(Account_Org__r.IsPersonAccount,
+			Account_Org__r.PersonContact.FirstName &amp; &quot; &quot; &amp; Account_Org__r.PersonContact.LastName &amp; &quot; &quot; &amp; TEXT(Sales_Org__c),
+			Account_Org__r.Name  &amp; &quot; &quot; &amp;TEXT(Sales_Org__c))</formula>
+        <name>update_name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_to_success</fullName>
+        <description>Update the status to success</description>
+        <field>Sap_Status__c</field>
+        <literalValue>Success</literalValue>
+        <name>update to success</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Sales_relationship_name</fullName>
+        <actions>
+            <name>update_name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Sales_Relationship__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>For Creation</value>
+        </criteriaItems>
+        <description>Concat name</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sap status update with sap id</fullName>
+        <actions>
+            <name>update_to_success</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Sales_Relationship__c.Sap_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Error</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Sales_Relationship__c.SAP_Id__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Update the status SAP to success if sap id != null</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

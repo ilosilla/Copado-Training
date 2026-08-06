@@ -1,0 +1,291 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId,lightning:actionOverride,force:lightningQuickActionWithoutHeader,lightning:isUrlAddressable,lightning:hasPageReference" access="global" controller="Account_Controller">
+    
+    <aura:attribute name="layoutSections" type="List"/>
+    <aura:attribute name="requiredList" type="List"/>
+    
+    <aura:attribute name="spinner" type="Boolean" default="true"/>
+    <aura:attribute name="spinnerSaving" type="Boolean" default="true"/>
+    <aura:attribute name="requiredName" type="Boolean" default="false"/>
+    <aura:attribute name="stopReload" type="Boolean" default="false"/>
+    <aura:attribute name="userHasAccess" type="Boolean" default="true"/>
+    <aura:attribute name="accountOnSap" type="Boolean" default="true"/>
+    <aura:attribute name="userHasSap" type="Boolean" default="true"/>
+    <aura:attribute name="canEditSapData" type="Boolean" default="true"/>
+    <aura:attribute name="userIsAdmin" type="Boolean" default="true"/>
+    <aura:attribute name="displayWarningMessage" type="Boolean" default="false"/>
+    <aura:attribute name="isRecTypeChange" type="Boolean" default="false"/>
+    <aura:attribute name="ready" type="Boolean" default="false"/>
+    <aura:attribute name="recordTypeId" type="String" default=""/>
+    
+    <aura:attribute name="requiredErrorNotification" type="Boolean" default="false"/>
+    <aura:attribute name="modeList" type="List" default="[]"/>
+    <!--<aura:attribute name="currentMode" type="String" default="Edit"/>-->
+    <aura:attribute name="headerTitle" type="String" default="headerTitle"/>
+    
+    <aura:attribute name="toastMessage" type="String"/>
+    <aura:attribute name="errorTitle" type="String" default="Error"/>
+    <aura:attribute name="errorMessage" type="String" default="Complete this field"/>
+    <aura:attribute name="targetError" type="String" default="targetError"/>
+
+    <aura:attribute name="originalName" type="String" default=""/>
+
+    <aura:attribute name="lockedFields" type="List" default="['Account_Classification__c','Account_Subclassification__c','Notes__c','ParentId','Email','Business_Email__c','Phone','Other_Phone__c']"/>
+    
+    <!-- inputField no toma bien los cambios en el campo nombre cuando es una personAccount,
+  el workaround es guardar los valores por separado en atributos -->
+    <aura:attribute name="firstName" type="String" default=""/>
+    <aura:attribute name="lastName" type="String" default=""/>
+    <aura:attribute name="salutation" type="String" default=""/>
+    
+    <!--Section Labels-->
+    <aura:attribute name="Main_Information" type="String" default=""/>
+    <aura:attribute name="Personal_Information" type="String" default=""/>
+    <aura:attribute name="Address" type="String" default=""/>
+    <aura:attribute name="Personal_Address" type="String" default=""/>
+    <aura:attribute name="Manufacturer_Information" type="String" default=""/>
+    <aura:attribute name="Distributor_Information" type="String" default=""/>
+    <aura:attribute name="Notes" type="String" default=""/>
+    <aura:attribute name="Admin_Data" type="String" default=""/>
+    <aura:attribute name="Additional_Information" type="String" default=""/>
+    <aura:attribute name="Custom_Links" type="String" default=""/>
+    <!--Change Handlers-->
+    <aura:handler name="change" value="{!v.Main_Information}" action="{!c.itemsChange}"/>
+    <aura:handler name="change" value="{!v.Personal_Information}" action="{!c.itemsChange}"/>    
+    <aura:handler name="change" value="{!v.Address}" action="{!c.itemsChange}"/>
+    <aura:handler name="change" value="{!v.Personal_Address}" action="{!c.itemsChange}"/>
+    <aura:handler name="change" value="{!v.Manufacturer_Information}" action="{!c.itemsChange}"/>
+    <aura:handler name="change" value="{!v.Distributor_Information}" action="{!c.itemsChange}"/>
+    <aura:handler name="change" value="{!v.Notes}" action="{!c.itemsChange}"/>
+    <aura:handler name="change" value="{!v.Admin_Data}" action="{!c.itemsChange}"/>
+    <aura:handler name="change" value="{!v.Additional_Information}" action="{!c.itemsChange}"/>
+    <aura:handler name="change" value="{!v.Custom_Links}" action="{!c.itemsChange}"/>
+    <!--Field List-->
+    <aura:attribute name="fieldList" type="List" 
+                    default="['Main_Information', 'Personal_Information', 'Address', 'Personal_Address', 
+                             'Manufacturer_Information', 'Distributor_Information', 'Notes', 'Admin_Data', 
+                             'Additional_Information', 'Custom_Links']"/>
+    
+    <lightning:navigation aura:id="navService"/>
+    <lightning:notificationsLibrary aura:id="notificationsLibrary"/>
+    <!--RecordId to test with Lightning App-->
+    <!-- <aura:attribute name="recordId" type="String" default="0011w00000A17m6AAB"/> -->
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:html tag="style">
+        .cuf-content {
+        padding: 0 0rem !important;
+        }
+        .slds-p-around--medium {
+        padding: 0rem !important;
+        }
+        .slds-modal__content{
+        overflow-y: hidden;
+        height:unset !important;
+        max-height:unset !important;
+        }
+        .slds-modal__container{
+        width: 100%;
+        max-width: 52.5rem;
+        min-width: 20rem;
+        margin: 0 auto;
+        }
+	</aura:html>
+    
+    <!--To display Account field values-->
+    <aura:attribute name="currentRecordObject" type="Object"/>
+    <force:recordData recordId="{!v.recordId}"
+                      fields="RecordType.DeveloperName, Potential__c"
+                      layoutType="FULL"
+                      targetFields="{!v.currentRecordObject}"
+                      recordUpdated="{!c.setMode}"
+                      targetError="{!v.targetError}"
+                      />
+    <aura:if isTrue="{!v.spinner}">
+        <div class="slds-align_absolute-center">
+            <lightning:spinner variant="brand" size="large" alternativeText="Loading"/>
+        </div>
+
+        <aura:set attribute="else">
+            <aura:if isTrue="{! v.displayWarningMessage }">
+                <div class="slds-modal slds-fade-in-open">
+                    <div class="{# $Browser.formFactor != 'DESKTOP' ? 'slds-modal__container mobilePosition' : 'slds-modal__container'}">
+                        <article class="slds-card">
+                            <div>
+                                <div class="slds-box slds-theme_shade slds-theme--warning slds-text-align--center">
+                                    <b>{!v.errorTitle}</b>
+                                    </div>
+                            </div>
+                            <div class="slds-p-around--large slds-card__body_inner">
+                                <div class="slds-text-align--center">
+                                    <p><lightning:formattedRichText value="{! v.errorMessage }"/></p>
+                                    </div>
+                            </div>
+                            <footer class="slds-card__footer">
+                                <lightning:button variant="neutral" label="{!$Label.c.dict_close}" onclick="{!c.closeComponent}"/>
+                            </footer>
+                        </article>
+                    </div>
+                </div>
+
+                <aura:set attribute="else">
+                    <div class="slds-modal slds-fade-in-open">
+                        
+                        <div class="{# $Browser.formFactor != 'DESKTOP' ? 'slds-modal__container mobilePosition' : 'slds-modal__container'}">
+                            
+                            <!-- ***************************************** FORM HEADER ************************************** -->
+                            <header class="slds-modal__header">
+                                <aura:if isTrue="{# $Browser.formFactor == 'DESKTOP'}">
+                                    <lightning:buttonIcon alternativeText="Close" onclick="{!c.handleOnCancel}" disabled="{!v.spinnerSaving}" iconName="utility:close" variant="bare" size="large" class="slds-modal__close slds-button_icon-inverse"/>
+                                </aura:if>
+                                <h2 class="slds-text-heading_medium slds-hyphenate">{!v.headerTitle}</h2>
+                            </header>   
+                            
+                            <!-- *********************************** FORM BODY in a scrollable div ******************************* -->
+                            <ui:scrollerWrapper class="scrollerSize" aura:id="innerScroller">
+                                <div class="slds-modal__content slds-p-around_medium" style="overflow-y: auto !important; padding: 1rem 2rem;">                            
+                                    <aura:if isTrue="{!v.currentRecordObject.Potential__c}">
+                                        <div class="slds-notify_container slds-is-relative"
+                                                style="overflow-y: auto !important; padding: 1rem 2rem;">
+                                            <div class="slds-box slds-theme_warning slds-theme_alert-texture" role="status">
+                                                <div class="slds-notify__content">
+                                                    <h2 class="slds-text-heading_small">{!$Label.c.Warning}</h2>
+                                                    <p>{!$Label.c.acc_warning_potential}</p>
+                                                    <div class="slds-box" style="margin-top:0.5em">                                                  
+                                                    <lightning:input type="checkbox" label="{!$Label.c.acc_convert_potential}" 
+                                                            aura:id="convertPotential"/>
+                                                    </div>   
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </aura:if>                                
+                                    
+                                <!-- </aura:if>-->
+                                    <aura:if isTrue="{!v.ready}">
+                                        <div>
+                                            <aura:if isTrue="{! v.canEditSapData == false &amp;&amp; v.accountOnSap == true }">
+                                            	<div class="slds-notify slds-notify_alert slds-alert_warning" role="alert">
+                                                  <h2>{! $Label.c.acc_contact_accounting}</h2>
+												</div>
+                                            </aura:if>
+                                            <lightning:recordEditForm onload="{!c.handleOnload}"
+                                                                        objectApiName="Account"
+                                                                        recordTypeId = "{!v.isRecTypeChange ? v.recordTypeId : v.currentRecordObject.RecordTypeId}"
+                                                                        recordId = "{!v.recordId}"
+                                                                        aura:id = "recordFormId"
+                                                                        onerror = "{! c.handleOnError}">
+        
+                                                                        <!-- the messages component is for error messages -->
+                                                <lightning:messages aura:id = "mensajes"/>
+                                                
+                                                <!--<div id="scrollToTop"></div>-->
+                                                <aura:iteration items="{!v.layoutSections}" var="section" indexVar="index">
+                                                    
+                                                    <aura:if isTrue="{! !empty(section.fieldList)}">
+                                                        <div class="slds-section slds-is-open">
+                                                            <!-- Section title -->
+                                                            <h3 class="slds-section__title slds-theme--shade">
+                                                                {!section.label}
+                                                            </h3>
+                                                            <!-- Section content -->
+                                                            <div class="slds-section__content">
+                                                                <lightning:layout multipleRows="{!section.totalColumns > 1 }" class="slds-grid slds-wrap">
+                                                                    
+                                                                    <aura:iteration items="{!section.fieldList}" var="field">
+                                                                        <!-- Si el device es un telefono muestra todos los campos en una sola columna, si es desktop o tablet respeta el layout original -->
+                                                                        <lightning:layoutItem size="{! $Browser.isPhone ? 12 : 12/section.totalColumns }" flexibility="auto" padding="around-small" >
+                                                                            <!-- Cambio 21/08/19 para cambio de record type -->
+                                                                            <aura:if isTrue="{! field.fieldName == 'RecordTypeId' }">
+                                                                                <lightning:inputField aura:id="inputField" fieldName="{!field.fieldName}" value="{! v.isRecTypeChange ? v.recordTypeId : v.currentRecordObject.RecordTypeId}" disabled="true"/> <!-- {!v.isRecTypeChange} -->
+                                                                                <aura:set attribute="else">
+                                                                                    <aura:if isTrue="{! v.canEditSapData == false &amp;&amp; v.accountOnSap == true &amp;&amp; field.fieldName != 'Account_Classification__c' &amp;&amp; field.fieldName != 'Account_Subclassification__c' &amp;&amp;
+                                                                                        field.fieldName != 'Notes__c' &amp;&amp;
+                                                                                        field.fieldName != 'ParentId' &amp;&amp;
+                                                                                        field.fieldName != 'Email' &amp;&amp;
+                                                                                        field.fieldName != 'Business_Email__c' &amp;&amp;
+                                                                                        field.fieldName != 'Phone' &amp;&amp;
+                                                                                        field.fieldName != 'PersonEmail' &amp;&amp;
+                                                                                        field.fieldName != 'PersonOtherPhone' &amp;&amp;
+                                                                                        field.fieldName != 'Fabricator_1__c' &amp;&amp;
+                                                                                        field.fieldName != 'Fabricator_2__c' &amp;&amp;
+                                                                                        field.fieldName != 'Fabricator_3__c' &amp;&amp;
+                                                                                        field.fieldName != 'Fabricator_4__c' &amp;&amp;
+                                                                                        
+                                                                                        field.fieldName != 'Other_Phone__c'}">
+                                                                                        <lightning:outputField aura:id="outputField" fieldName="{!field.fieldName}" />
+                                                                                        <aura:set attribute="else">
+                                                                                            <aura:if isTrue="{! !field.isReadOnly &amp;&amp; field.fieldName != null}">
+                                                                                        
+                                                                                                <div>
+                                                                                                    <aura:if isTrue="{! field.isRequired }">
+                                                                                                        
+                                                                                                        <lightning:inputField aura:id="inputField" fieldName ="{!field.fieldName}" onchange="{! c.handleChangeRequired}"/> <!-- class="customRequired" -->
+                                                                                                        
+                                                                                                        <div id = "{!field.fieldName}" class="slds-form-element__help slds-hide" style="color: rgb(194, 57, 52); padding-bottom: 7px;">
+                                                                                                            {!v.errorMessage}
+                                                                                                        </div>
+                                                                                                        <aura:set attribute="else">    
+                                                                                                            <lightning:inputField aura:id="inputField" fieldName ="{!field.fieldName}"/>     
+                                                                                                        </aura:set>
+                                                                                                    </aura:if>
+                                                                                                </div>
+                                                                                                
+                                                                                                <aura:set attribute="else">
+                                                                                                    <aura:if isTrue="{! field.fieldName != 'RecordTypeId' &amp;&amp; field.fieldName != null 
+                                                                                                                        &amp;&amp; field.fieldName != undefined   }">
+                                                                                                        <lightning:outputField aura:id="outputField" fieldName="{!field.fieldName}" />    
+                                                                                                        
+                                                                                                    </aura:if>
+                                                                                                </aura:set>
+                                                                                            </aura:if>
+                                                                                        </aura:set>
+                                                                                    </aura:if>
+                                                                                </aura:set>
+                                                                            </aura:if>
+                                                                            
+                                                                        </lightning:layoutItem>
+                                                                        
+                                                                    </aura:iteration>
+                                                                </lightning:layout>
+                                                            </div>
+                                                        </div>
+                                                    </aura:if>
+                                                    
+                                                </aura:iteration> 
+                                                
+                                                <lightning:button class="{! $Browser.isTablet ? 'myButtonTablet' : 'myButton'}" variant = "brand" iconName="custom:custom6" label="{! ! $Browser.isPhone ? $Label.c.Scroll_to_Top : ''}" title="Base action" onclick="{! c.handleScrollToTop }"/>
+                                                
+                                            </lightning:recordEditForm>
+                                            
+                                        </div>
+                                    </aura:if>
+                                    
+                                </div>
+                            </ui:scrollerWrapper>
+                            <footer class="modal-footer slds-modal__footer">
+                                <div class="slds-align_absolute-center">
+                                    <lightning:button variant="neutral" label="{!$Label.c.Cancel}" onclick="{!c.handleOnCancel}" disabled="{!v.spinnerSaving}"/>
+                                    <lightning:button variant="brand" type="submit" label="{!$Label.c.Save}" onclick="{!c.handleOnSubmit}" disabled="{!v.spinnerSaving}"/>
+                                    <div class="exampleHolder">
+                                        <aura:if isTrue="{!v.spinnerSaving}">
+                                            <lightning:spinner variant="brand" size="small" alternativeText="Loading"/>
+                                        </aura:if>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                        
+                    </div>
+
+
+                </aura:set>
+            </aura:if>
+            
+            <aura:if isTrue="{! $Browser.formFactor == 'DESKTOP'}">
+                <div aura:id="overlay" class="slds-backdrop slds-backdrop--open"></div>
+            </aura:if>
+        </aura:set>
+    </aura:if>
+    
+    
+</aura:component>

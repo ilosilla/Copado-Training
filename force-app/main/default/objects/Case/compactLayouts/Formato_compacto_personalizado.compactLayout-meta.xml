@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Formato_compacto_personalizado</fullName>
+    <fields>CaseNumber</fields>
+    <fields>ContactId</fields>
+    <fields>ContactEmail</fields>
+    <fields>ContactPhone</fields>
+    <fields>Completed__c</fields>
+    <fields>Customer__c</fields>
+    <label>Formato compacto personalizado</label>
+</CompactLayout>

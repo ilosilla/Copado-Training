@@ -1,0 +1,28 @@
+.terms-body {
+    padding: 16px;
+}
+
+.terms-body h3 {
+    font-weight: 700;
+    margin: 16px 0 8px;
+}
+
+.terms-body p {
+    margin: 0 0 10px;
+    line-height: 1.45;
+}
+
+.terms-actions {
+    padding: 16px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.terms-close {
+    border: 1px solid rgba(0,0,0,0.2);
+    background: transparent;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-weight: 600;
+    cursor: pointer;
+}

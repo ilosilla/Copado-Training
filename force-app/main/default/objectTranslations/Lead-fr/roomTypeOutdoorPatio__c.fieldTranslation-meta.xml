@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Nombre de patios extérieurs, égal ou supérieur à 0</help>
+    <label>No. Patios extérieurs</label>
+    <name>roomTypeOutdoorPatio__c</name>
+</CustomFieldTranslation>

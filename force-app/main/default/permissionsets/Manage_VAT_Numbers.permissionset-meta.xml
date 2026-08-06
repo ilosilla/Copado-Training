@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Gives permission to view and edit vat number fields</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.VAT_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Manage VAT Numbers</label>
+    <license>Salesforce</license>
+</PermissionSet>

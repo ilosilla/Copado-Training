@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>See_All_Contact_Data</name>
+    </customPermissions>
+    <description>If a user has this permission can see the email and phone data of any contact on Salesforce. If not, only can be seen by Managers and owner</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>See All Contact Data</label>
+    <license>Salesforce</license>
+</PermissionSet>

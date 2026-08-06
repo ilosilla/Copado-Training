@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Order Reason --></label>
+    <name>OrderReason__c</name>
+    <picklistValues>
+        <masterLabel>Admin Error</masterLabel>
+        <translation><!-- Admin Error --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer Error</masterLabel>
+        <translation><!-- Customer Error --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Damaged Product</masterLabel>
+        <translation><!-- Damaged Product --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Defective Product</masterLabel>
+        <translation><!-- Defective Product --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Suitable</masterLabel>
+        <translation><!-- Not Suitable --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Picking Error</masterLabel>
+        <translation><!-- Picking Error --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sales Error</masterLabel>
+        <translation><!-- Sales Error --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Surplus</masterLabel>
+        <translation><!-- Surplus --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Check this option to use Enhanced Filter Builder. With Enhanced Filter Builder, you can easily create complex logic. --></help>
+    <label><!-- Enhanced Filter Builder --></label>
+    <name>gmpkg__xEnhanced_FilterBuilder__c</name>
+</CustomFieldTranslation>

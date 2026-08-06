@@ -1,0 +1,305 @@
+<template>
+    <!-- Overlay de loading -->
+    <template if:true={isLoading}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <div class="slds-modal slds-fade-in-open" style="display: flex; align-items: center; justify-content: center;">
+            <lightning-spinner alternative-text="Loading..." size="large"></lightning-spinner>
+        </div>
+    </template>
+
+    <!--
+      Contenedor de selectores de semana y usuario
+    -->
+
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="text-input-id-47">
+                  {label.labelSelectorWeek}
+                </label>
+                <div class="slds-form-element__control">
+                    <select class="slds-select" id="weekDropdown" onchange={handleWeekChange}>
+                        <template for:each={weeksFiltered} for:item="week">
+                            <option key={week.value} value={week.value} selected={week.isCurrent}>
+                                {week.label}
+                            </option>
+                        </template>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12 slds-p-left--large">
+            <template if:true={hasDownloadableReports}>
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="text-input-id-47">
+                    {label.labelDownloadReport}
+                    </label>
+                    <div class="slds-form-element__control">
+                        <!--
+                        Contenedor de botones de descarga de reportes
+                        -->
+                        <div class="report-buttons-container slds-grid slds-wrap">
+                            <template for:each={weeklyReports} for:item="report">
+                                <!-- PDF -->
+                                <template if:true={report.isPdf}>
+                                    <lightning-button-icon
+                                        key={report.Id}
+                                        icon-name="doctype:pdf"
+                                        alternative-text={report.FileName__c}
+                                        title={report.FileName__c}
+                                        data-id={report.Id}
+                                        onclick={downloadReport}
+                                        size="large"
+                                        class="report-button slds-m-right_x-small">
+                                    </lightning-button-icon>
+                                </template>
+
+                                <!-- Excel -->
+                                <template if:true={report.isXls}>
+                                    <lightning-button-icon
+                                        key={report.Id}
+                                        icon-name="doctype:excel"
+                                        alternative-text={report.FileName__c}
+                                        title={report.FileName__c}
+                                        data-id={report.Id}
+                                        onclick={downloadReport}
+                                        size="large"
+                                        class="report-button slds-m-right_x-small">
+                                    </lightning-button-icon>
+                                </template>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+        <div class="slds-col slds-size_1-of-1 slds-large-size_5-of-12">
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12">
+            <template if:true={userIsAdmin}>
+                <lightning-combobox
+                    label="User"
+                    options={usersUnder}
+                    value={ownerId}
+                    onchange={handleChangeOwner}>
+                </lightning-combobox>
+            </template>
+        </div>
+    </div>
+
+    <br/>
+
+        <lightning-progress-indicator current-step={stepStages} type="path" variant="base">
+            <lightning-progress-step label={labelCompletion} value="step1"></lightning-progress-step>
+            <lightning-progress-step label={label.labelSendReportStage} value="step2"></lightning-progress-step>
+            <lightning-progress-step label={label.labelCompletedStage} value="step3"></lightning-progress-step>
+        </lightning-progress-indicator>
+
+    <template if:true={weekCompleted}>
+        <div class="slds-section slds-is-open slds-p-around--xx-small" style="background-color:#f3f3f3">
+            <h3 class="slds-section__title slds-p-left--medium">
+                <span class="slds-truncate" title="Event Management">Weekly Comments</span>
+            </h3>
+        </div>
+        <br/>
+        <div style="white-space: pre-line;">
+            {weeklyManagement.Comment__c}
+        </div>
+        <br/>
+    </template>
+
+    <div class="slds-section slds-is-open slds-p-around--xx-small" style="background-color:#f3f3f3">
+        <h3 class="slds-section__title slds-p-left--medium">
+            <span class="slds-truncate" title="Event Management">{label.labelEventManagement}</span>
+        </h3>
+    </div>
+
+    <br/>
+    <p class="slds-text-body_small slds-text-color_weak">
+        <lightning-icon icon-name='utility:info' alternative-text='info' size='xx-small' title='info' class="slds-m-right--x-small"></lightning-icon><lightning-formatted-rich-text value={label.labelEventManagementInfo}></lightning-formatted-rich-text>
+    </p>
+
+    <template if:true={isCurrentWeek}>
+        <template if:false={lookingDifferentUser}>
+            <div class="slds-form-element__control slds-text-align--right">
+                <lightning-button label={label.labelNewEvent} onclick={handleNewEvent} class="slds-m-left_x-small"></lightning-button>
+            </div>
+        </template>
+    </template>
+
+    <div class="slds-p-around--x-small">
+        <c-weekly-event-management
+            completed={weekCompleted}
+            events={events}
+            isreadonly={lookingDifferentUser}
+            onrefresh={handleUpdateEvent}>
+        </c-weekly-event-management>
+    </div>
+
+    <br/>
+    <template if:true={haskeyAccComments}>
+        <div class="slds-section slds-is-open slds-p-around--x-small" style="background-color:#f3f3f3">
+            <h3 class="slds-section__title slds-p-left--medium">
+                <span class="slds-truncate" title="Section Title">{label.labelKeyAccountComments}</span>
+            </h3>
+        </div>
+
+        <br/>
+        <p class="slds-text-body_small slds-text-color_weak">
+            <lightning-icon icon-name='utility:info' alternative-text='info' size='xx-small' title='info' class="slds-m-right--x-small"></lightning-icon><i>{label.labelKeyAccountCommentsInfo}.</i>
+        </p>
+    
+        <div class="slds-p-around--xx-small">
+            <c-weekly-key-account-management
+            completed={weekCompleted}
+            accounts={keyAccounts}
+            comments={keyAccountsComments}
+            isreadonly={lookingDifferentUser}
+            onrefresh={handleUpdateEvent}>
+            </c-weekly-key-account-management>
+        </div>
+
+    </template>
+    <br/>
+
+    <template if:true={hasKeyOppComments}>
+        <div class="slds-section slds-is-open slds-p-around--x-small" style="background-color:#f3f3f3">
+            <h3 class="slds-section__title slds-p-left--medium">
+                <span class="slds-truncate" title="Section Title">{label.labelKeyOppComments}</span>
+            </h3>
+        </div>
+
+        <br/>
+        <p class="slds-text-body_small slds-text-color_weak">
+            <lightning-icon icon-name='utility:info' alternative-text='info' size='xx-small' title='info' class="slds-m-right--x-small"></lightning-icon><i>{label.labelKeyOppCommentsInfo}.</i>
+        </p>
+    
+        <div class="slds-p-around--xx-small">
+            <c-weekly-key-opportunity-management
+            completed={weekCompleted}
+            accounts={keyOpportunities}
+            comments={keyOpportunitiesComments}
+            isreadonly={lookingDifferentUser}
+            onrefresh={handleUpdateEvent}>
+            </c-weekly-key-opportunity-management>
+        </div>
+
+        <br/>
+    </template>
+
+    <br/>
+    <br/>
+    <hr>
+
+    <template if:true={canSendReport}>
+        <br/>
+        <div class="slds-align_absolute-center">
+            <!-- Brand variant: Identifies the primary action in a group of buttons -->
+            <lightning-button variant="brand" label={label.labelSendReport} title={label.labelSendReport} onclick={handleSendReportClick} class="slds-m-left_x-small"></lightning-button>
+        </div>
+    </template>
+
+    <!-- Modal de confirmación -->
+    <template if:true={isConfirmModalOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+
+                <!-- Encabezado -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close"
+                            onclick={closeConfirmModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium">{label.labelSendReportStage}</h2>
+                </header>
+
+                <!-- Cuerpo -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <p>{label.labelWeeklyCommentInfo}</p>
+                    <br/>
+                    <lightning-textarea 
+                        name="userComment"
+                        label="Comments"
+                        value={confirmComment}
+                        onchange={handleCommentChange}
+                        placeholder={label.labelHelpComments}
+                        required>
+                    </lightning-textarea>
+                </div>
+
+                <!-- Pie -->
+                <footer class="slds-modal__footer">
+                    <lightning-button 
+                        class="slds-m-right--medium"
+                        variant="neutral" 
+                        label="Cancel" 
+                        onclick={closeConfirmModal}>
+                    </lightning-button>
+                    <lightning-button 
+                        variant="brand" 
+                        label="Confirm" 
+                        onclick={handleSendReport}
+                        disabled={isCommentEmpty}>
+                    </lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <!-- Modal de "already sent" -->
+    <template if:true={isAlreadySentModalOpen}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <section role="dialog" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close"
+                            title="Close"
+                            onclick={closeAlreadySentModal}>
+                        <lightning-icon icon-name="utility:close" size="xx-small" alternative-text="Close"></lightning-icon>
+                    </button>
+                    <h2 class="slds-text-heading_medium">{label.labelReportAlreadySent}</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium slds-text-align--center">
+                    <lightning-formatted-rich-text value={labelAlreadySentBody} ></lightning-formatted-rich-text>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button variant="neutral" label="Cancel" onclick={closeAlreadySentModal} class="slds-m-right--medium"></lightning-button>
+                    <lightning-button variant="brand" label={label.labelSend} onclick={handleSendReportAgain}></lightning-button>
+                </footer>
+            </div>
+        </section>
+    </template>
+
+    <template if:true={isModalNewEventOpen}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <!-- Modal -->
+        <section role="dialog" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                
+                <!-- Header con "X" -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Cerrar"
+                            onclick={handleCloseModal}>
+                        <lightning-icon icon-name="utility:close" size="small" alternative-text="Cerrar"></lightning-icon>
+                    </button>
+                </header>
+    
+                <!-- Contenido -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-flow
+                        flow-api-name="Create_Event"
+                        onstatuschange={handleFlowStatusChange}>
+                    </lightning-flow>
+                </div>
+            </div>
+        </section>
+            
+        </template>
+
+</template>

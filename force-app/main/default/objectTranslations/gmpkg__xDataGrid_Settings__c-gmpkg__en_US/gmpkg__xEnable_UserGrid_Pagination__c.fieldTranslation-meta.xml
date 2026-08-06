@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Check this option to enable pagination instead of scrolling for the User Grids. --></help>
+    <label><!-- Enable UserGrid Pagination --></label>
+    <name>gmpkg__xEnable_UserGrid_Pagination__c</name>
+</CustomFieldTranslation>

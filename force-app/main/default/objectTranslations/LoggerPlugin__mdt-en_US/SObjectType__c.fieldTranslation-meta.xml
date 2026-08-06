@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The logging system&apos;s SObject that should dynamically call the plugin. This controls when the plugin is executed. --></help>
+    <label><!-- Logger SObject Type --></label>
+    <name>SObjectType__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,41 @@
+<aura:component access="global" implements="lightning:availableForFlowScreens">
+    
+    <!-- Custom labels -->
+    <aura:attribute name="lblNext" type="String" access="global" default="Next" />
+    <aura:attribute name="lblBack" type="String" access="global" default="Previous" />
+    <aura:attribute name="lblFinish" type="String" access="global" default="Finish" />
+    <aura:attribute name="lblPause" type="String" access="global" default="Pause" />
+    
+    
+    <!-- Determine which actions are available -->
+    <aura:attribute name="canPause" type="Boolean" />
+    <aura:attribute name="canBack" type="Boolean" />
+    <aura:attribute name="canNext" type="Boolean" />
+    <aura:attribute name="canFinish" type="Boolean" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    
+    <div aura:id="actionButtonBar" class="slds-clearfix slds-p-top_medium">
+        <!-- If Previous is available, display to the left -->
+        <div class="slds-float_left">
+            <aura:if isTrue="{!v.canBack}">
+                <lightning:button aura:id="BACK" label="{!v.lblBack}"
+                                  variant="neutral" onclick="{!c.onButtonPressed}" />
+            </aura:if>
+        </div>
+        <div class="slds-float_right">
+            <!-- If Pause, Next, or Finish are available, display to the right -->
+            <aura:if isTrue="{!v.canPause}">
+                <lightning:button aura:id="PAUSE" label="{!v.lblPause}"
+                                  variant="neutral" onclick="{!c.onButtonPressed}" />
+            </aura:if>
+            <aura:if isTrue="{!v.canNext}">
+                <lightning:button aura:id="NEXT" label="{!v.lblNext}" 
+                                  variant="brand" onclick="{!c.onButtonPressed}" />
+            </aura:if>
+            <aura:if isTrue="{!v.canFinish}">
+                <lightning:button aura:id="FINISH" label="{!v.lblFinish}"
+                                  variant="brand" onclick="{!c.onButtonPressed}" />
+            </aura:if>
+        </div>
+    </div>
+</aura:component>

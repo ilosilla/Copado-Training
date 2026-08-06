@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Public_UK__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Grants read level access to all users in UK</description>
+    <inlineHelpText>Grants read level access to all users in UK</inlineHelpText>
+    <label>Public (UK)</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

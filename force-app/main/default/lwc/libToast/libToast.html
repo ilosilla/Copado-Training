@@ -1,0 +1,33 @@
+<!-- 
+    c-lib-toast
+    Improved toast version to display a list of html messages in a toast
+    Ramón Feb 2023
+-->
+<template>
+    <template if:true={showToastBar}>
+        <div class="slds-notify_container">
+            <div class={outerClass} role="status">
+                <span class="slds-assistive-text">{type}</span>
+                <span class={innerClass} title={_message}>
+                    <lightning-icon icon-name={iconName} alternative-text="icon" styleclass="slds-icon slds-icon_small" variant="inverse" size="small"></lightning-icon>
+                </span>
+                <div class="slds-notify__content">
+                    <h2 class="slds-text-heading_small">
+                        {header}
+                    </h2>
+                    <lightning-formatted-rich-text value={messageBody}>
+                    </lightning-formatted-rich-text>
+                </div>
+                
+                <div class='slds-notify__close'>
+                    <lightning-button-icon 
+                        icon-name='utility:close' 
+                        size='small' 
+                        variant='border-filled' 
+                        class='slds-button slds-button_icon slds-button_icon-inverse' 
+                        onclick={closeToast} ></lightning-button-icon>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

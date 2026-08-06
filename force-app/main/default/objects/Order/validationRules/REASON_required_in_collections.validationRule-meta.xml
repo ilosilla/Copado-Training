@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>REASON_required_in_collections</fullName>
+    <active>true</active>
+    <description>Checks collections have identified the reason</description>
+    <errorConditionFormula>IsCollection__c = true &amp;&amp; ISBLANK(TEXT(OrderReason__c))</errorConditionFormula>
+    <errorMessage>An order reason is required for collections</errorMessage>
+</ValidationRule>

@@ -1,0 +1,7 @@
+<aura:component implements="lightning:availableForFlowScreens">
+    <aura:attribute name="urlToRedirect" type="String"/>
+    
+    <div>
+        <lightning:button label="Close" onclick="{!c.redirectToURL}"/>
+    </div>
+</aura:component>

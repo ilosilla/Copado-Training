@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Enables DEBUG-level logging in Lightning Web Components developed by PORSA. Intended for development and troubleshooting purposes.</description>
+    <isLicensed>false</isLicensed>
+    <label>PORSA – LWC Debug Logging</label>
+</CustomPermission>

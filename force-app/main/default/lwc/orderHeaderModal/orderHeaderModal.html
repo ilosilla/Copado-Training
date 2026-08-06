@@ -1,0 +1,252 @@
+<template>
+    
+    <lightning-spinner alternative-text="Loading" lwc:if={showSpinner}></lightning-spinner>
+    
+    <lightning-modal-header label={windowTitle}>
+    </lightning-modal-header>
+    
+    <lightning-modal-body> 
+
+        <lightning-record-edit-form 
+            object-api-name='Order'
+            onload={handleRecordLoad}
+            onsubmit={handleSubmit}
+            onsuccess={handleSuccess}
+            onerror={handleErrors}
+            record-type-id={_order.RecordTypeId}
+            record-id={recordId}>
+
+            <!-- Hidden fields (needed in the object when submitting -->
+            <div class="slds-hide">
+                <lightning-input-field field-name="Id" value={_order.Id} readonly></lightning-input-field>                
+                <lightning-input-field field-name="SalesOrg__c" value={_order.SalesOrg__c}></lightning-input-field>
+                <lightning-input-field field-name="Distribution_channel__c" value={_order.Distribution_channel__c}></lightning-input-field>
+                <lightning-input-field lwc:ref="officeField" field-name="SalesOffice__c" value={_order.SalesOffice__c} disabled required></lightning-input-field>
+                <lightning-input-field field-name="NBK_Contact_Point_Address__c" value={_order.NBK_Contact_Point_Address__c}></lightning-input-field>NBK_Contact_Point_Address__c
+                <lightning-button data-id="submitButton" type="submit" label="Save Record"></lightning-button>                            
+            </div>
+
+            <!-- ------------------ Section 1 ------------------------ -->
+            <c-lib-expandable-section id="1" label={labels.tr0005_006}  fixed>                        
+                <lightning-layout pull-to-boundary="medium" multiple-rows="true" class="slds-var-p-horizontal_medium">
+
+                    <!----------------- Row 1 ------------------>
+
+                    <lightning-layout-item padding="horizontal-medium" size="6">
+                        <lightning-input-field field-name="AccountId" value={_order.AccountId} required disabled></lightning-input-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-medium" size="3">                        
+                        <lightning-input-field field-name="EffectiveDate" value={_order.EffectiveDate} required disabled></lightning-input-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-medium" size="3">                        
+                        <lightning-input-field field-name="Type" value={_order.Type} required disabled></lightning-input-field>
+                    </lightning-layout-item>
+
+                    <!----------------- Row 2 ------------------>
+
+                    <lightning-layout-item padding="horizontal-medium" size="6">
+                        <lightning-combobox
+                            name="salesArea"
+                            label={labels.tr0005_007}
+                            value={selectedSalesArea}
+                            options={salesAreaOptions}
+                            disabled
+                            required ></lightning-combobox>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-medium" size="3">
+                        <lightning-input-field field-name="OrderNumber" value={_order.OrderNumber} disabled></lightning-input-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-medium" size="3">
+                        <lightning-input-field field-name="Sap_Id__c" value={sapIdString} disabled></lightning-input-field>
+                    </lightning-layout-item>                    
+
+                    <!----------------- Row 3 ------------------>
+
+                    <lightning-layout-item padding="horizontal-medium" size="6">                        
+                        <lightning-combobox
+                            data-id="office-combo"
+                            name="salesOffice"
+                            label={labels.tr0005_008}
+                            value={_order.SalesOffice__c}
+                            options={officeOptions}
+                            onchange={handleOfficeChange}
+                            disabled={isReadonly}
+                            required ></lightning-combobox>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-medium" size="3">
+                        <lightning-input-field field-name="ReferredInvoice__c" value={_order.ReferredInvoice__c} disabled></lightning-input-field>
+                    </lightning-layout-item>
+
+
+                    <lightning-layout-item padding="horizontal-medium" size="3">
+                        <lightning-input-field field-name="CurrencyIsoCode" value={_order.CurrencyIsoCode} disabled required></lightning-input-field>
+                    </lightning-layout-item>
+
+                    <!----------------- Row 4 ------------------>
+
+                    <lightning-layout-item padding="horizontal-medium" size="3">
+                        <lightning-input-field field-name="PoNumber" value={_order.PoNumber} required disabled={isReadonly}></lightning-input-field>                        
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-medium" size="3">
+                        <lightning-input-field data-id="DeliveryDate__c" field-name="DeliveryDate__c" value={_order.DeliveryDate__c} onchange={handleDeliveryDateChange} class={deliveryDateClass} required disabled={isReadonly}></lightning-input-field>                        
+                        <div class="slds-form-element__help">{deliveryDateError}</div>
+                    </lightning-layout-item>    
+
+                    <lightning-layout-item padding="horizontal-medium" size="3">
+                        <lightning-input-field field-name="Status" value={_order.Status} disabled required></lightning-input-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-medium" size="3">
+                        <lightning-input-field field-name="OwnerId" value={_order.OwnerId} disabled></lightning-input-field>                        
+                    </lightning-layout-item>
+
+                    <!-------------------- Row 5  ---------------------------->
+                    <lightning-layout-item padding="horizontal-medium" size="6">
+                        <lightning-input-field field-name="OrderReason__c" value={_order.OrderReason__c} disabled={isdReadOnly} required={isCollection}></lightning-input-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-medium" size="6">
+                        <lightning-input-field field-name="Pricebook2Id" value={_order.Pricebook2Id} disabled required></lightning-input-field>
+                    </lightning-layout-item>
+
+
+
+                    <!--
+                    <lightning-layout-item padding="horizontal-medium" size="6">
+                        <lightning-input-field field-name="BillTo__c" value={_order.BillTo__c}></lightning-input-field>
+                    </lightning-layout-item>
+                    -->
+                    
+                </lightning-layout>
+            </c-lib-expandable-section>
+
+            <!-- ===================== Section 2 ====================== -->
+
+            <c-lib-expandable-section id="2" label={deliveryInstructionsTitle} fixed>   <!-- Delivery instructions -->
+
+                <lightning-layout pull-to-boundary="medium" multiple-rows="true" class="slds-var-p-horizontal_medium">
+
+                    <!----------------- Row 1 ------------------>
+
+                    <lightning-layout-item padding="horizontal-medium" size="3">                        
+                        <lightning-input-field field-name="NB2B_Delivery_Method__c" value={_order.NB2B_Delivery_Method__c} required disabled={isReadonly}></lightning-input-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-medium" size="3">
+                        <!--<lightning-input-field field-name="Autopick__c" value={_order.Autopick__c} disabled={isReadonly}></lightning-input-field>-->
+                        <lightning-input-field field-name="Autopick__c" value={_order.Autopick__c} disabled=true></lightning-input-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-medium" size="6">
+                        <lightning-input label={labels.tr0005_010} value={shippingName} disabled></lightning-input> <!-- ship to -->
+                    </lightning-layout-item>
+
+                    <!----------------- Row 2 ------------------>
+
+                    <lightning-layout-item padding="horizontal-medium" size="6">    
+                        <lightning-input-field field-name="Instructions__c" value={_order.Instruccions__c} disabled={isReadonly}></lightning-input-field>                    
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-medium" size="4">
+                        <div class="slds-box slds-box_x-small">
+                            <lightning-formatted-address
+                                street={shippingObject.Street}
+                                city={shippingObject.City}
+                                country={shippingObject.Country}
+                                province={shippingObject.State}
+                                postal-code={shippingObject.PostalCode}                                                    
+                                locale={shippingObject.Locale}  
+                            ></lightning-formatted-address>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="horizontal-medium" size="2">
+                        <lightning-button label={labels.tr0005_011} onclick={handleChangeAddressClick} variant="brand" disabled={isReadonly}>                            
+                        </lightning-button> <!-- CHange address -->
+                    </lightning-layout-item>
+
+                    <!----------------- Row 3 ------------------>
+
+                    <lightning-layout-item padding="horizontal-medium" size="6">
+                        
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-medium" size="4">
+                        <lightning-input label={labels.dict_phone} value={shippingObject.Phone} disabled></lightning-input>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-medium" size="2">
+                        <lightning-input label={labels.dict_sap_id} value={shippingObject.SAPId} disabled></lightning-input>
+                    </lightning-layout-item>
+
+                </lightning-layout>
+            </c-lib-expandable-section> 
+            
+            <!-- ===================== Section 2 ====================== -->
+            <c-lib-expandable-section id="3" label={labels.tr0005_012} closed>    <!-- Admin data -->
+                <lightning-layout pull-to-boundary="medium" multiple-rows="true" class="slds-var-p-horizontal_medium">
+
+                    <!----------------- Row 1 ------------------>                    
+                    <lightning-layout-item padding="horizontal-medium" size="3">                        
+                        <lightning-input label={labels.dict_created_by} value={_order.CreatedByName} read-only class="slds-border_bottom"></lightning-input> <!-- Created by -->
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-medium" size="3">                        
+                        <lightning-output-field value={_order.CreatedDate} read-only class="slds-border_bottom"></lightning-output-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-medium" size="6">
+                        <lightning-input label={labels.dict_record_id} value={_order.Id} read-only class="slds-border_bottom"></lightning-input>
+                    </lightning-layout-item>
+
+
+                    <!----------------- Row 2 ------------------>                    
+                    <lightning-layout-item padding="horizontal-medium" size="3">                        
+                        <lightning-input label={labels.dict_modified_by} value={_order.LastModifiedByName} read-only class="slds-border_bottom"></lightning-input>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-medium" size="3">                        
+                        <lightning-input-field  value={_order.LastModifiedDate} read-only class="slds-border_bottom"></lightning-input-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-medium" size="6">
+                        <lightning-input label={labels.dict_record_type} value={recordTypeName} read-only class="slds-border_bottom"></lightning-input>
+                    </lightning-layout-item>
+
+
+                </lightning-layout>
+            </c-lib-expandable-section>
+
+            <!-- ====================== Hidden stuff ========================== -->
+        </lightning-record-edit-form>
+
+        {debugText}
+    </lightning-modal-body>
+
+    <lightning-modal-footer>
+        <lightning-button label={labels.dict_button_cancel} onclick={handleCancelClick}></lightning-button>
+        <lightning-button label={labels.dict_button_ok} onclick={handleOKClick} variant="brand" class="slds-var-m-left_small" lwc:if={isEditable}></lightning-button>
+    </lightning-modal-footer>
+
+    <c-contact-point-address-selection
+        account-id={_order.AccountId}
+        selected-address-id={selectedAddressId}
+        show-dialog={showAddressesDialog}
+        oncancel={handleAddressCancel}
+        onerror={handleAddressError}
+        onselect={handleAddressSelect}
+    ></c-contact-point-address-selection>
+
+    <c-lib-address-commons 
+        object-id={initialAddressId}
+        onaddressready={handleCollectionAddressReady}
+    ></c-lib-address-commons>
+
+    <c-lib-sales-queries data-id="query-lib" ondatareceived={handleSalesQueryDataReceived}></c-lib-sales-queries>
+
+</template>

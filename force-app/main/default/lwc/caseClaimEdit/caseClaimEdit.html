@@ -1,0 +1,601 @@
+<template>
+    <c-lib-spinner visible={isLoading}></c-lib-spinner>
+    <div style="position:relative;height:100% !important;">
+                        
+        <article id="main-layout" class="slds-card slds-var-p-around_medium">
+            <header class="slds-modal__header" style="width: 100%;">
+                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{mainTitle}</h2>
+            </header>
+
+            <lightning-record-edit-form 
+                object-api-name='Case'
+                onload={handleRecordLoad}
+                onsubmit={handleSubmit}
+                onsuccess={handleSuccess}
+                onerror={handleErrors}
+                record-id={recordId}>
+
+                <lightning-messages></lightning-messages>
+
+                <!-- ***************************************** -->
+                <!-- *   HIDDEN PANEL TO READ SOME FIELDS    * -->
+                <!-- ***************************************** -->
+                <div class="slds-hide">
+                    <lightning-output-field field-name="CaseNumber"> </lightning-output-field>
+                    <lightning-input-field lwc:ref="ProductId" field-name="ProductId"> </lightning-input-field>
+                    <lightning-input-field field-name="Status"> </lightning-input-field>       
+                    <lightning-input-field field-name="SAPInvoice__c"> </lightning-input-field>   
+                    <lightning-input-field field-name="SAPInvoiceLine__c"> </lightning-input-field>   
+                    <lightning-input-field field-name="SupplyReplacement__c"> </lightning-input-field>   
+                    <lightning-input-field field-name="SupplyInstallation__c"> </lightning-input-field>   
+                    <lightning-input-field field-name="ArrangeCollection__c"> </lightning-input-field>   
+                    <lightning-input-field field-name="OrderId__c" lwc:ref="replacementOrderId"> </lightning-input-field>   
+                    <lightning-input-field field-name="CollectionOrderId__c" lwc:ref="collectionOrderId"> </lightning-input-field>   
+                    <lightning-input-field field-name="CompensationOrderId__c" lwc:ref="compensationOrderId"> </lightning-input-field>   
+                    <lightning-input-field field-name="FactoryInquiryDate__c" data-id="FactoryInquiryDate__c"> </lightning-input-field>   
+                    <lightning-input-field field-name="ClosedDate"></lightning-input-field>                    
+                    <lightning-input-field field-name="OrderStatus__c"></lightning-input-field>                    
+                    <lightning-input-field field-name="ApprovalRequested__c"></lightning-input-field>
+                    <lightning-input-field field-name="Approved__c"></lightning-input-field>
+                    <lightning-input-field field-name="ApprovalDate__c"></lightning-input-field>
+                    <lightning-input-field field-name="ApprovedBy__c"></lightning-input-field>
+                    <lightning-input-field data-id="SAPMake__c" field-name="SAPMake__c"></lightning-input-field>
+                </div>
+
+                <lightning-layout vertical-align="stretch" multiple-rows="true" class="x-large slds-var-m-top_x-small">
+
+                    <!-- ********************************************* -->
+                    <!-- MAIN CASE FORM                                -->
+                    <!-- ********************************************* -->
+                    <lightning-layout-item size="8" padding="horizontal-small" class="custom-box slds-scrollable">
+
+                        <!-- ***************************************** -->
+                        <!-- STATUS PROGRESS BAR                       -->
+                        <!-- ***************************************** -->
+                        <lightning-progress-indicator data-id="statusBar" type="path" variant="base" 
+                            lwc:ref="progressIndicator"
+                            current-step={currentStatus} 
+                            has-error={statusBarError} 
+                            onclick={handleStatusPathClick}>
+                            <template for:each={steps} for:item="step">
+                                <lightning-progress-step data-id={step.label} label={step.label} value={step.value} key={step.label}></lightning-progress-step>
+                            </template>
+                        </lightning-progress-indicator>
+
+                        <c-lib-error-panel errors={errorObject} theme={errorTheme}></c-lib-error-panel>
+
+                        <lightning-tabset>
+                            <lightning-tab label={label.claimDetailsSection}>
+
+                        <!-- *************************** SECTION CASE DETAILS *************************************** -->
+                        <c-lib-expandable-section id="1" label={label.claimDetailsSection}>
+
+                            <div class="slds-grid slds-wrap">
+
+                                <div class={rejectedClass}>
+                                    <div class="slds-var-p-around_medium slds-theme_warning slds-theme_alert-texture">                                                
+                                        <label style="color: white;">{label.caseRejectionReason}</label>
+                                        <lightning-input-field data-id="RejectionReason" field-name="RejectionReason__c" variant="label-hidden" readonly={isReasonDisabled}> </lightning-input-field>       
+                                    </div>
+                                </div>
+                                <div class="slds-var-p-horizontal_x-small slds-col slds-size_1-of-2">
+                                    <lightning-input-field field-name="Subject" required="true"> </lightning-input-field>       
+                                </div>
+                                <div class="slds-var-p-horizontal_x-small slds-col slds-size_1-of-4">
+                                    <lightning-output-field field-name="CreatedDate"> </lightning-output-field>
+                                </div>
+                                <div class="slds-var-p-horizontal_x-small slds-col slds-size_1-of-4" lwc:if={isClosed}>
+                                    <lightning-output-field field-name="ClosedDate"> </lightning-output-field>                                    
+                                </div>
+                                <div class="slds-var-p-horizontal_x-small slds-col slds-size_1-of-4" lwc:else>
+                                    <lightning-output-field field-name="ProposalDate__c"> </lightning-output-field>                                    
+                                </div>
+                                
+                                <div class="slds-var-p-horizontal_x-small slds-col slds-size_1-of-2">
+                                    <lightning-input-field field-name="AccountId" disabled="true"></lightning-input-field>
+                                </div>
+
+                                <div class="slds-var-p-horizontal_x-small slds-col slds-size_1-of-2">
+                                    <lightning-input-field field-name="ProductName__c" disabled> </lightning-input-field>       
+                                </div>                                
+
+                                <div class="slds-var-p-horizontal_x-small slds-col slds-size_1-of-2">
+                                    <lightning-input-field field-name="OwnerId"></lightning-input-field>                                            
+                                </div>
+
+                                <div class="slds-var-p-horizontal_x-small slds-col slds-size_1-of-4">
+                                    <lightning-input-field lwc:ref="Quantity__c" label={label.dictQuantityClaimed} field-name="Quantity__c" disabled={proposalSent}> </lightning-input-field>       
+                                </div>                                
+
+                                <div class="slds-var-p-horizontal_x-small slds-col slds-size_1-of-4">
+                                    <lightning-input-field lwc:ref="Unit__c" field-name="Unit__c" disabled> </lightning-input-field>       
+                                </div>                                
+
+                                <div class="slds-col slds-size_1-of-2 slds-var-p-horizontal_x-small">
+                                    <lightning-input-field field-name="Description" class="text-area_large custom-textarea"> </lightning-input-field>       
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-var-p-horizontal_x-small">
+                                    <lightning-input-field data-id="Liability__c" field-name="Liability__c" disabled={proposalSent}></lightning-input-field>    
+                                    <lightning-layout>
+                                        <lightning-layout-item size="6">
+                                            <lightning-input-field data-id="Warranty__c" field-name="Warranty__c" disabled={proposalSent}></lightning-input-field>                                                                                         
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6">
+                                            <lightning-input label={label.dictInvoiceDate} value={invoiceHeader.Date}  type="date" read-only></lightning-input>                                              
+                                        </lightning-layout-item>
+                                    </lightning-layout>                                    
+                                </div>
+
+                                <div class="slds-col slds-size_2-of-2 slds-var-p-horizontal_small">
+                                    <div class="warning slds-text-align_center slds-var-p-around_small">
+                                        <b>{label.claimLabel013}</b>
+                                    </div>
+                                </div>
+
+                                <!--
+                                <div class="slds-col slds-size_1-of-2 slds-var-p-horizontal_x-small">
+                                    <lightning-input-field field-name="Comments" class="text-area_large"> </lightning-input-field>       
+                                </div>
+
+                                <div class="slds-col slds-size_2-of-4 slds-var-p-horizontal_x-small">
+                                    <lightning-input-field data-id="Liability__c" field-name="Liability__c" disabled={proposalSent}></lightning-input-field>                            
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-4 slds-var-p-horizontal_x-small">
+                                    <lightning-input-field data-id="Warranty__c" field-name="Warranty__c" disabled={proposalSent}></lightning-input-field>                     
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-4 slds-var-p-horizontal_x-small">                                    
+                                    <lightning-input label={label.dictInvoiceDate} value={invoiceHeader.Date}  type="date" read-only></lightning-input>  
+                                </div>
+                            -->
+
+
+                            </div>
+
+                        </c-lib-expandable-section>
+
+                        <!-- ***************************************** -->
+                        <!-- *       PROBLEM QUALIFICATION           * -->
+                        <!-- ***************************************** -->                        
+                        <c-lib-expandable-section id="2" label={label.claimQualificationSection}>
+                                                                                                            
+                            <lightning-layout multiple-rows="true">
+
+                                <lightning-layout-item padding="horizontal-small" size="6">
+                                    <lightning-input-field data-id="Problem__c" field-name="Problem__c" onchange={handleProblemChange} disabled={proposalSent}></lightning-input-field>
+                                </lightning-layout-item>
+                                <lightning-layout-item padding="horizontal-small" size="3">
+                                    <lightning-input type="text" label={label.dictProductMake} value={makeName} disabled="true"></lightning-input>
+                                </lightning-layout-item>
+                                <lightning-layout-item padding="horizontal-small" size="3">
+                                    <lightning-input-field data-id="ProductType__c" field-name="ProductType__c" onchange={handleProductTypeChange} disabled={proposalSent}></lightning-input-field>
+                                </lightning-layout-item>
+
+                                <lightning-layout-item padding="horizontal-small" size="6">
+                                    <lightning-input-field data-id="Symptoms__c" field-name="Symptoms__c" onchange={handleSymptomChange} disabled={proposalSent}>                                        
+                                    </lightning-input-field>                            
+                                </lightning-layout-item>
+
+                                <lightning-layout-item padding="horizontal-small" size="6">
+                                    <lightning-input-field data-id="SymptomsDetails__c" field-name="SymptomsDetails__c" onchange={handleDetailChange} disabled={proposalSent}></lightning-input-field>               
+                                </lightning-layout-item>
+                                
+                                <lightning-layout-item padding="horizontal-small" size="6">
+                                    <lightning-input-field data-id="LikelyCause__c" field-name="LikelyCause__c" onchange={handleCauseChange} disabled={proposalSent}></lightning-input-field>                            
+                                </lightning-layout-item>
+                                <lightning-layout-item padding="horizontal-small" size="6">
+                                    <lightning-input-field data-id="RecommendedCure__c" field-name="RecommendedCure__c" onchange={handleRecommendedCureChange} disabled={proposalSent}></lightning-input-field>                            
+                                </lightning-layout-item>
+
+
+                                <div class="slds-hide">
+                                    <lightning-layout-item padding="horizontal-small" size="6">
+                                        <lightning-input-field data-id="ReportedMakeProblem__c" field-name="ReportedMakeProblem__c" onchange={handleMakeProblemChange} disabled={proposalSent}></lightning-input-field>                            
+                                    </lightning-layout-item>
+                                    <lightning-layout-item padding="horizontal-small" size="6">
+                                        <lightning-input-field data-id="ReportedTypeProblem__c" field-name="ReportedTypeProblem__c" onchange={handleTypeProblemChange} disabled={proposalSent}></lightning-input-field>                            
+                                    </lightning-layout-item>
+                                </div>
+
+                            </lightning-layout>
+                        </c-lib-expandable-section>
+                        <!-- ***************************************** -->
+                        <!-- *          CLAIM SOLUTION              * -->
+                        <!-- ***************************************** -->     
+                         
+                        <c-lib-expandable-section id="11" label={label.claimSolutionSection} theme="shade-texture">
+                            <template lwc:if={isSolutionVisible}> 
+
+                                <div class="claim-solution-layout slds-grid slds-wrap slds-var-p-horizontal_small slds-var-p-top_xxx-small slds-var-p-bottom_medium">
+                                    <div class="claim-solution-column slds-col slds-size_6-of-12 slds-var-p-horizontal_x-small">
+                                        <div class="claim-solution-row">
+                                            <span class="claim-solution-label slds-form-element__label slds-var-m-bottom_xx-small">{label.caseSupplyReplacement}:</span>
+                                            <div class="slds-grid slds-wrap">
+                                                <div class="slds-col slds-size_2-of-6 slds-var-p-right_x-small claim-solution-toggle">
+                                                    <lightning-input type="toggle" 
+                                                        checked={supplyReplacementFlag}
+                                                        onchange={handleReplacementChange}
+                                                        disabled={proposalSent}
+                                                        variant="label-hidden" 
+                                                        message-toggle-active="" 
+                                                        message-toggle-inactive="">
+                                                    </lightning-input>
+                                                </div>
+                                                <div class="slds-col slds-size_3-of-6 slds-var-p-right_x-small">
+                                                    <lightning-button 
+                                                        label={replacementButtonLabel}
+                                                        onclick={handleCreateSupplyClick}
+                                                        disabled={supplyReplacementDisabled}
+                                                        stretch="true"
+                                                    ></lightning-button>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-6"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="claim-solution-row slds-var-m-top_x-small">
+                                            <span class="claim-solution-label slds-form-element__label slds-var-m-bottom_xx-small">{label.caseArrangeCollection}:</span>
+                                            <div class="slds-grid slds-wrap">
+                                                <div class="slds-col slds-size_2-of-6 slds-var-p-right_x-small claim-solution-toggle">
+                                                    <lightning-input type="toggle" 
+                                                        checked={arrangeCollectionFlag}
+                                                        onchange={handleCollectionChange}
+                                                        disabled={proposalSent}
+                                                        variant="label-hidden" 
+                                                        message-toggle-active="" 
+                                                        message-toggle-inactive="">
+                                                    </lightning-input>
+                                                </div>
+                                                <div class="slds-col slds-size_3-of-6 slds-var-p-right_x-small">
+                                                    <lightning-button 
+                                                        label={collectionButtonLabel}
+                                                        onclick={handleCreateCollectionClick}
+                                                        disabled={arrangeCollectionDisabled}
+                                                        stretch="true"
+                                                    ></lightning-button>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-6"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="claim-solution-row slds-var-m-top_x-small">
+                                            <span class="claim-solution-label slds-form-element__label slds-var-m-bottom_xx-small">{label.casePayCompensation} (*):</span>
+                                            <div class="slds-grid slds-wrap">
+                                                <div class="slds-col slds-size_2-of-6 slds-var-p-right_x-small">
+                                                    <lightning-input-field field-name="Compensation__c" 
+                                                        disabled={proposalSent} 
+                                                        variant="label-hidden" 
+                                                        onfocusout={handleFocusOut}>
+                                                    </lightning-input-field>
+                                                </div>
+                                                <div class="slds-col slds-size_3-of-6 slds-var-p-right_x-small">
+                                                    <lightning-button 
+                                                        label={label.dictButtonCreateOrder}
+                                                        stretch="true"
+                                                        onclick={handleCreateCompensationClick}
+                                                        disabled={compensationDisabled}
+                                                    ></lightning-button>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-6"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="claim-solution-column slds-col slds-size_4-of-12 slds-var-p-horizontal_x-small">
+                                        <div class="claim-solution-row">
+                                            <lightning-input-field
+                                                data-id="ReplacementOrderClass__c"
+                                                field-name="ReplacementOrderClass__c"
+                                                disabled={proposalSent}>
+                                            </lightning-input-field>
+                                        </div>
+
+                                        <div class="claim-solution-row slds-var-m-top_x-small">
+                                            <span class="claim-solution-label slds-form-element__label slds-var-m-bottom_xx-small">{label.caseSupplyRepair}:</span>
+                                            <div class="slds-grid slds-wrap">
+                                                <div class="slds-col slds-size_2-of-4 claim-solution-toggle">
+                                                    <lightning-input type="toggle" 
+                                                        checked={supplyInstallationFlag}
+                                                        onchange={handleInstallationChange}
+                                                        disabled={proposalSent}
+                                                        variant="label-hidden" 
+                                                        message-toggle-active="" 
+                                                        message-toggle-inactive="">
+                                                    </lightning-input>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-col slds-size_2-of-12"></div>
+                                </div>
+
+                                <lightning-layout multiple-rows="true" class="slds-var-p-horizontal_small slds-var-p-bottom_x-small slds-border_top">
+                                    <lightning-layout-item size="12" class="slds-var-p-horizontal_x-small slds-var-p-top_x-small ">
+                                        <span><i>(*) {label.caseCompensationFootnote}</i></span>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+
+                            </template>
+                            <div class="slds-var-p-horizontal_small slds-var-p-bottom_small" lwc:else>
+                                <p>{label.claimSolutionHint}</p>
+                                <div class="slds-hide">
+                                    <!-- This is to prevent the onload to fire multiple times -->
+                                    <lightning-input-field field-name="Compensation__c" disabled={proposalSent} variant="label-hidden" onchange={handleSettlementChange}></lightning-input-field>
+                                    <lightning-input-field field-name="InstallationCost__c" disabled={proposalSent} variant="label-hidden" onchange={handleInstallationChange}></lightning-input-field>
+                                </div>
+                            </div>        
+                        </c-lib-expandable-section>
+                    
+
+                        {debugText}
+
+                        </lightning-tab>
+                        <lightning-tab label={label.claimExternalTab}>
+
+                        <!-- ***************************************** -->
+                        <!-- *       FACTORY INQUIRY SECTION         * -->
+                        <!-- ***************************************** -->
+                        <c-lib-expandable-section id="3a" label={label.claimInquirySection} fixed="true">
+                            <lightning-layout multiple-rows="true">                                    
+                                <lightning-layout-item size="6" >
+                                    <lightning-input-field lwc:ref="FactoryInquiryContact__c" field-name="FactoryInquiryContact__c" onchange={handleFactoryContactChanged}></lightning-input-field>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="4" >
+                                    <lightning-input-field lwc:ref="FactoryInvoice__c" field-name="FactoryInvoice__c"></lightning-input-field>
+                                </lightning-layout-item>
+
+                                <lightning-layout-item size="2" class="slds-var-p-top_large">
+                                    <lightning-button 
+                                        variant="brand" 
+                                       label={label.dictButtonSendEmail}
+                                        onclick={handleSendFactoryEmail}
+                                        disabled={factoryContactNotSelected}
+                                    ></lightning-button>       
+                                    <!--
+                                    <span class="slds-var-m-left_medium" lwc:if={hasFactoryDate}>Factory inquiry sent on <lightning-formatted-date-time value={factoryDate}></lightning-formatted-date-time></span>
+                                    <span lwc:else>No factory inquiry registered</span>                                        
+                                    -->
+                                </lightning-layout-item>
+        
+                                <lightning-layout-item size="10">
+                                    <lightning-input-field lwc:ref="factoryComments" field-name="FactoryInquiryComments__c" class="custom-textarea-large"></lightning-input-field>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="2"></lightning-layout-item>
+
+
+                                <lightning-layout-item size="10">
+                                    <lightning-input-field field-name="FactoryInquiryResponse__c" class="custom-textarea-large"></lightning-input-field>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="2" class="slds-var-p-top_large">
+                                    <lightning-button 
+                                        variant="brand-outline"
+                                        label={label.dictAISummary}
+                                        onclick={handleAISummaryClick}
+                                        disabled={factoryReponseNotReceived}
+                                        lwc:if={hasOpenAIPermission}></lightning-button>       
+                                </lightning-layout-item>
+
+                            </lightning-layout>
+                        </c-lib-expandable-section>
+
+                        <!-- ***************************************** -->
+                        <!-- *          SITE VISIT SECTION           * -->
+                        <!-- ***************************************** -->
+                        <c-lib-expandable-section id="3b" label={label.claimVisitSection} fixed="true">
+                            <lightning-layout multiple-rows="true" class="slds-var-p-bottom_medium">
+                                <lightning-layout-item size="6" padding="horizontal-small">
+                                    <lightning-input-field field-name="SiteVisitorName__c"></lightning-input-field>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="6" padding="horizontal-small">
+                                    <lightning-input-field field-name="SiteVisitDate__c"></lightning-input-field>
+                                </lightning-layout-item>                                        
+                                <lightning-layout-item size="12" padding="horizontal-small">
+                                    <lightning-input-field field-name="SiteVisitNotes__c"></lightning-input-field>                                    
+                                </lightning-layout-item>    
+                            </lightning-layout>
+                        </c-lib-expandable-section>
+
+                        </lightning-tab>
+                    </lightning-tabset>
+
+                    </lightning-layout-item>
+
+                    <!-- ********************************************* -->
+                    <!-- SIDE PANEL (HINT, SAP INVOICE AND ADMIN)      -->
+                    <!-- ********************************************* -->                    
+                    <lightning-layout-item size="4">
+                        
+                        <!-- ********************** AGE WARNING ************************ -->
+                         <!--
+                        <div class="slds-var-m-bottom_x-small">
+                            <div class={ageClass}>    
+                                <b><center>{ageText}</center></b>
+                            </div>
+                        </div>
+                        -->
+                        <!-- ******************* CLAIM ALERtS ****************-->
+                        <div class="slds-var-m-bottom_x-small">
+                             <c-claim-alert-box record-id={recordId} compact="true"></c-claim-alert-box>
+                        </div>
+
+
+                        <!-- ******************* HINT ***************** -->
+                        <div class="slds-var-m-bottom_x-small" lwc:if={isOpen}>
+                            <div class="slds-card slds-theme_shade slds-var-p-around_small">
+                                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                    <div class="slds-media__figure">
+                                        <lightning-icon icon-name="standard:solution"></lightning-icon>
+                                    </div>
+                                    <div class="slds-media__body">
+                                        <h2 class="slds-card__header-title">
+                                            <span>{label.dictHint}</span> <!--Please ensure all components of the proposed solution are selected.-->
+                                        </h2>
+                                    </div>
+                                </header>
+                                
+                                <div class="slds-card__body slds-card__body_inner" lwc:if={isConsideration}>                                    
+                                    <template lwc:if={isProposalEnabled}>
+                                        <p class="slds-var-m-top_small">
+                                            {label.caseHint001}
+                                        </p>                                                                               
+                                         <p  class="slds-var-m-top_small"><b>{label.caseHint002}</b></p> <!--Once you have informed the customer, click the button below to confirm.-->
+                                         <!--
+                                        <div class="slds-var-m-top_small">
+                                            <lightning-button 
+                                                variant="brand" 
+                                                label="Send Proposal to Customer" 
+                                                onclick={handleEmailCustomerClick}
+                                                disabled={proposalSentDisabled}
+                                                ></lightning-button>                                   
+                                        </div>
+                                        -->
+                                        <div class="slds-var-m-top_small">
+                                            <lightning-button 
+                                                label={label.caseCustomerInformed} 
+                                                onclick={handleProposalSentClick}
+                                                disabled={proposalSentDisabled}
+                                                ></lightning-button>                                   
+                                        </div>
+                                        <div class="slds-var-m-top_small slds-text-title" lwc:if={approved}>{proposalApprovedWarning}</div>
+                                    </template>
+                                    <template lwc:else>
+                                        <p>{label.caseHint003}</p> <!--Please review the problem and check the attached files to identify the issue and then, complete the proposed solution form.-->
+                                    </template>
+
+                                    <template lwc:if={isApprovalNeeded}>
+                                        <template lwc:if={isApprover}>
+                                            <p class="slds-var-m-top_small"></p><b>{label.caseHint004}</b></p> <!--Note: You need to approve the proposed solution before it is sent to the customer.-->
+                                            <div class="slds-var-m-top_small">
+                                                <lightning-button 
+                                                    variant="brand" 
+                                                    label={label.dictApprove} 
+                                                    onclick={handleApproveClick}
+                                                    ></lightning-button>                                   
+                                            </div>
+                                        </template>
+                                        <template lwc:else> 
+                                            <p class="slds-var-m-top_small"></p><b>{label.caseHint005}</b></p><!--Note: The proposed solution requires the approval of a supervisor before it is sent to the customer.-->
+                                            <div class="slds-var-m-top_small">
+                                                <lightning-button 
+                                                    variant="brand" 
+                                                    label={label.dictRequestApproval} 
+                                                    onclick={handleRequestApprovalClick}
+                                                    ></lightning-button>                                   
+                                                <div class="slds-var-m-top_small slds-text-title">{approvalRequestedWarning}</div>
+                                            </div>
+                                        </template>
+                                    </template>
+                                </div>
+                                <div class="slds-card__body slds-card__body_inner" lwc:if={isProposal}>
+                                    <p>{label.caseHint006}</p> <!--The proposal has been sent to the customer. Please confirm its acceptance status.-->
+                                    <div class="slds-var-m-top_small">
+                                        <lightning-button 
+                                                variant="brand" 
+                                                label={label.caseAccepted}
+                                                onclick={handleProposalAcceptedClick}
+                                                class="slds-var-m-right_x-small"
+                                        ></lightning-button>                   
+                                        <lightning-button 
+                                            label={label.dictRejected} 
+                                            onclick={handleProposalRejectedClick}
+                                        ></lightning-button>                        
+                                    </div>
+                                </div>
+
+                                <div class="slds-card__body slds-card__body_inner" lwc:if={isRejected}>
+                                    <p>{label.caseHint007}</p> <!--The company has not accepted the customer's claim. If you want to reopen it, click on the button below.-->
+                                    <div class="slds-var-m-top_small">
+                                        <lightning-button 
+                                            label={label.caseEditReason}
+                                            onclick={handleEditReasonClick}
+                                            class="slds-var-m-right_x-small"
+                                        ></lightning-button>                        
+                                        <lightning-button 
+                                                variant="brand" 
+                                                label={label.caseReopen}
+                                                onclick={handleReopenClick}
+                                        ></lightning-button>                   
+                                    </div>
+                                </div>
+
+                                <div class="slds-card__body slds-card__body_inner" lwc:if={isAgreement}>
+                                    <p>{label.caseHint008}</p><!--The customer has accepted our proposal, and the solution is ready for execution. Please create the necessary SAP elements and click the button below to initiate the execution phase.-->
+                                    <div class="slds-var-m-top_small">              
+                                        <lightning-button 
+                                                variant="brand" 
+                                                label={label.caseStartExecution}
+                                                onclick={handleExecutionClick}
+                                        ></lightning-button>                   
+                                    </div>
+                                </div>    
+                                
+                                <div class="slds-card__body slds-card__body_inner" lwc:if={isExecution}>
+                                    <p>{label.caseHint009}</p><!--The claim is currently being resolved, and the agreed solution is in progress. Please indicate the claim’s closure by clicking the button below.-->
+                                    <div class="slds-var-m-top_small">              
+                                        <lightning-button 
+                                                variant="brand" 
+                                                label={label.caseCloseClaim}
+                                                onclick={handleCloseClick}
+                                        ></lightning-button>                   
+                                    </div>
+                                </div>    
+                                
+                                <div class="slds-card__body slds-card__body_inner" lwc:if={isClosed}>
+                                    <p>{label.caseHint010}</p> <!--The claim is closed-->
+                                </div>    
+
+                            </div>
+                        </div>
+
+                        <!-- ******************* SAP STATUS ****************-->
+                        <div class="slds-var-m-bottom_x-small">
+                            <!-- <c-claim-sap-status record-id={recordId}></c-claim-sap-status> -->
+                             <c-claim-sap-status replacement-id={orderId} collection-id={collectionOrderId} compensation-id={compensationOrderId}></c-claim-sap-status>
+                        </div>
+                                                                        
+                        <!-- ******************* RELATED STATS ****************-->
+                        <div class="slds-var-m-bottom_x-small">
+                            <c-claim-related-stats record-id={recordId}></c-claim-related-stats>
+                        </div>
+
+                        <!-- *******************+ SAP INVOICE INFO ******************* -->
+                        <div class="slds-var-m-bottom_x-small">
+                            <c-lib-card-invoice header={invoiceHeader} item={invoiceItem}></c-lib-card-invoice>
+                        </div>
+
+                    </lightning-layout-item>
+
+                </lightning-layout>
+
+                <lightning-button
+                    data-id="submitButton"
+                    class="slds-hide"
+                    type="submit"
+                    label={label.dictSave}
+                ></lightning-button>
+
+            </lightning-record-edit-form>    
+            {debugText}
+        </article>
+    </div>    
+    
+    <c-order-edition-modal 
+        order-type="REPLACEMENT" 
+        case-id={recordId} 
+        record-id={currentOrderId} 
+        order={orderData} 
+        order-items={orderItems} 
+        ondelete={handleOrderDelete}
+        onclose={handleOrderClose} 
+        oncancel={handleOrderCancel} 
+        onerror={handleOrderError} 
+        lwc:if={showOrderDialog}></c-order-edition-modal>
+    <c-lib-product-queries lwc:ref='LibProductQuery' ondatareceived={handleProductQuery}></c-lib-product-queries>
+    <!-- c-lib-order-query lwc:ref="LibOrderHelper" ondatareceived={handleOrderDataReceived}></c-lib-order-query -->
+     <c-claims-a-i-factory-summary lwc:ref="aiSummary" record-id={recordId}></c-claims-a-i-factory-summary>
+
+
+</template>

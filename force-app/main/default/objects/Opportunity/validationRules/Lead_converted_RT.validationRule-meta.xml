@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_converted_RT</fullName>
+    <active>true</active>
+    <errorConditionFormula>Lead_origin__c  = TRUE  &amp;&amp;  RecordType.DeveloperName &lt;&gt; &apos;Project_trade&apos;</errorConditionFormula>
+    <errorMessage>El Record Type de la oportunidad solamente puede ser Trade</errorMessage>
+</ValidationRule>

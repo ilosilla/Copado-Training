@@ -1,0 +1,365 @@
+<template>
+    <!-- Overlay de loading -->
+    <template if:true={isLoading}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <div class="slds-modal slds-fade-in-open" style="display: flex; align-items: center; justify-content: center;">
+            <lightning-spinner alternative-text="Loading..." size="large"></lightning-spinner>
+        </div>
+    </template>
+
+    <p style="text-align: center;" data-aura-rendered-by="397:0"><strong style="font-size: 36px;">{tripName}</strong></p>
+
+    <lightning-layout multiple-rows >
+        <lightning-layout-item size="12" flexibility="auto" padding="horizontal-small" class="slds-text-align_right">
+            <lightning-button-group>
+                <lightning-button 
+                    label="Generar PDF" 
+                    variant="neutral" 
+                    onclick={handleGeneratePdf}>
+                </lightning-button>
+                <lightning-button 
+                    label="Enviar PDF" 
+                    variant="neutral" 
+                    onclick={handleOpenSendPdf}>
+                </lightning-button>
+            </lightning-button-group>
+        </lightning-layout-item>
+    </lightning-layout>
+    
+
+    <br/>
+
+    <lightning-tabset>
+        <lightning-tab label="Detalles" class="tab-class">
+
+            <lightning-layout multiple-rows >
+                <lightning-layout-item size="12" flexibility="auto" padding="horizontal-small" class="slds-text-align_right">
+                    <lightning-button-group>
+                        <lightning-button 
+                            label="Editar" 
+                            variant="neutral" 
+                            onclick={handleEditMode}>
+                        </lightning-button>
+                    </lightning-button-group>
+                </lightning-layout-item>
+            </lightning-layout>
+            
+            <template if:true={editMode} >
+                <lightning-record-edit-form
+                    record-id={recordId}
+                    object-api-name="BusinessTrip__c"
+                    onload={handleLoad}
+                    onsubmit={handleSubmit}
+                    onsuccess={handleSuccess}
+                    mode="view"
+                >
+                    <lightning-messages></lightning-messages>
+                    
+                    <!-- I. Información Clave del Viaje -->
+                    <div class="slds-p-around_medium slds-grid slds-wrap">
+                        <div class="slds-size_1-of-1">
+                            <div class="slds-section slds-is-open slds-p-around--xx-small" style="background-color:#f3f3f3">
+                                <h3 class="slds-section__title slds-m-left--large">
+                                    <span class="slds-truncate" title="Event Management">Información Clave del Viaje</span>
+                                </h3>
+                            </div>
+        
+                            <lightning-layout multiple-rows="true" class="slds-var-m-bottom_small">
+                                <lightning-layout-item size="6" class="slds-var-p-horizontal_x-small slds-m-bottom--medium">
+                                    <label class="slds-form-element__label">Título</label>
+                                    <lightning-input-field field-name="Name" variant="label-hidden" placeholder="Título"></lightning-input-field>
+                                </lightning-layout-item>
+        
+                                <lightning-layout-item size="6" class="slds-var-p-horizontal_x-small slds-m-bottom--medium">
+                                    <label class="slds-form-element__label">Regional Manager / Área Manager</label>
+                                    <lightning-output-field field-name="OwnerId" variant="label-hidden" placeholder="Regional Manager / Área Manager"></lightning-output-field>
+                                </lightning-layout-item>
+        
+                                <lightning-layout-item size="6" class="slds-var-p-horizontal_x-small slds-m-bottom--medium">
+                                    <label class="slds-form-element__label">Mercado / País</label>
+                                    <lightning-input-field field-name="Countries__c" variant="label-hidden" placeholder="Mercado / País"></lightning-input-field>
+                                </lightning-layout-item>
+        
+                                <lightning-layout-item size="3" class="slds-var-p-horizontal_x-small slds-m-bottom--medium">
+                                    <label class="slds-form-element__label">Inicio del viaje</label>
+                                    <lightning-input-field type="date" field-name="StartDate__c" variant="label-hidden"></lightning-input-field>
+                                </lightning-layout-item>
+        
+                                <lightning-layout-item size="3" class="slds-var-p-horizontal_x-small slds-m-bottom--medium">
+                                    <label class="slds-form-element__label">Fin del viaje</label>
+                                    <lightning-input-field type="date" field-name="EndDate__c" variant="label-hidden"></lightning-input-field>
+                                </lightning-layout-item>
+        
+                                <lightning-layout-item size="6" class="slds-var-p-horizontal_x-small slds-m-bottom--medium">
+                                    <label class="slds-form-element__label">Principales Objetivos</label>
+                                    <lightning-input-field class="custom-textarea-large" field-name="MainObjectives__c" variant="label-hidden" placeholder="Principales Objetivos"></lightning-input-field>
+                                </lightning-layout-item>
+        
+                                <lightning-layout-item size="6" class="slds-var-p-horizontal_x-small slds-m-bottom--medium">
+                                    <label class="slds-form-element__label">Riesgos Principales</label>
+                                    <lightning-input-field class="custom-textarea-large" field-name="MainRisks__c" variant="label-hidden" placeholder="Riesgos Principales"></lightning-input-field>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </div>
+                    </div>
+        
+                    <!-- III. Observaciones Estratégicas -->
+                    <div class="slds-p-around_medium slds-grid slds-wrap">
+                        <div class="slds-size_1-of-1 slds-m-bottom_medium">
+                            <div class="slds-section slds-is-open slds-p-around--xx-small" style="background-color:#f3f3f3">
+                                <h3 class="slds-section__title slds-m-left--large">
+                                    <span class="slds-truncate" title="Event Management">Observaciones Estratégicas</span>
+                                </h3>
+                            </div>
+        
+                            <lightning-layout multiple-rows="true" class="slds-var-m-bottom_small">
+                                <lightning-layout-item size="6" class="slds-var-p-horizontal_x-small slds-m-bottom--medium">
+                                    <label class="slds-form-element__label">Comentarios del Area Manager</label>
+                                    <lightning-input-field field-name="Comments__c" class="custom-textarea-large" variant="label-hidden" placeholder="Comentario 1"></lightning-input-field>
+                                </lightning-layout-item>
+        
+                                <lightning-layout-item size="6" class="slds-var-p-horizontal_x-small slds-m-bottom--medium">
+                                    <label class="slds-form-element__label">Aspectos positivos de la visita</label>
+                                    <lightning-input-field field-name="Comments2__c" class="custom-textarea-large" variant="label-hidden" placeholder="Comentario 2"></lightning-input-field>
+                                </lightning-layout-item>
+        
+                                <lightning-layout-item size="6" class="slds-var-p-horizontal_x-small slds-m-bottom--medium">
+                                    <label class="slds-form-element__label">Aspectos a mejorar de la visita</label>
+                                    <lightning-input-field field-name="Comments3__c" class="custom-textarea-large" variant="label-hidden" placeholder="Comentario 3"></lightning-input-field>
+                                </lightning-layout-item>
+        
+                                <lightning-layout-item size="6" class="slds-var-p-horizontal_x-small slds-m-bottom--medium">
+                                    <label class="slds-form-element__label">Material de merchandising utilizado</label>
+                                    <lightning-input-field field-name="MaterialUsedComment__c" class="custom-textarea-large" variant="label-hidden" placeholder="Comentario 4"></lightning-input-field>
+                                </lightning-layout-item>
+        
+                                <lightning-layout-item size="12" class="slds-var-p-horizontal_x-small slds-m-bottom--medium">
+                                    <label class="slds-form-element__label">Nuevas Oportunidades Futuras</label>
+                                    <lightning-input-field field-name="FutureOpportunities__c" class="custom-textarea-large" variant="label-hidden" placeholder="Comentario 4"></lightning-input-field>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </div>
+                    </div>
+        
+                    <div class="slds-var-m-top_medium slds-align--absolute-center">
+                        <lightning-button variant="destructive" class="slds-m-left_x-small" label="Cancelar" onclick={handleCancelEdition}></lightning-button>
+                        <lightning-button variant="brand" type="submit" label="Actualizar viaje" class="slds-m-left_small"></lightning-button>
+                    </div>
+        
+                </lightning-record-edit-form>
+            </template>
+        
+            <template if:false={editMode} >
+                <lightning-record-view-form
+                record-id={recordId}
+                object-api-name="BusinessTrip__c"
+                onload={handleLoad}
+                >
+                    <lightning-messages></lightning-messages>
+                
+                    <!-- I. Key Trip Information -->
+                    <div class="slds-p-around_medium slds-grid slds-wrap">
+                        <div class="slds-size_1-of-1">
+                            <div class="slds-section slds-is-open slds-p-around--xx-small" style="background-color:#f3f3f3">
+                                <h3 class="slds-section__title slds-m-left--large">
+                                    <span class="slds-truncate" title="Key Trip Information">Información Clave del Viaje</span>
+                                </h3>
+                            </div>
+                
+                            <lightning-layout multiple-rows="true" class="slds-var-m-bottom_small">
+                                <lightning-layout-item size="6" class="slds-var-p-horizontal_x-small">
+                                    <label class="slds-form-element__label"><b>Título</b></label>
+                                    <lightning-output-field field-name="Name" variant="label-hidden"></lightning-output-field>
+                                </lightning-layout-item>
+                
+                                <lightning-layout-item size="6" class="slds-var-p-horizontal_x-small">
+                                    <label class="slds-form-element__label"><b>Regional Manager / Área Manager</b></label>
+                                    <lightning-output-field field-name="OwnerId" variant="label-hidden"></lightning-output-field>
+                                </lightning-layout-item>
+                
+                                <lightning-layout-item size="6" class="slds-var-p-horizontal_x-small">
+                                    <label class="slds-form-element__label"><b>Mercado / País</b></label>
+                                    <lightning-output-field field-name="Countries__c" variant="label-hidden"></lightning-output-field>
+                                </lightning-layout-item>
+                
+                                <lightning-layout-item size="3" class="slds-var-p-horizontal_x-small">
+                                    <label class="slds-form-element__label"><b>Inicio del viaje</b></label>
+                                    <lightning-output-field field-name="StartDate__c" variant="label-hidden"></lightning-output-field>
+                                </lightning-layout-item>
+                
+                                <lightning-layout-item size="3" class="slds-var-p-horizontal_x-small">
+                                    <label class="slds-form-element__label"><b>Fin del viaje</b></label>
+                                    <lightning-output-field field-name="EndDate__c" variant="label-hidden"></lightning-output-field>
+                                </lightning-layout-item>
+                
+                                <lightning-layout-item size="6" class="slds-var-p-horizontal_x-small">
+                                    <label class="slds-form-element__label"><b>Principales Objetivos</b></label>
+                                    <lightning-output-field field-name="MainObjectives__c" variant="label-hidden"></lightning-output-field>
+                                </lightning-layout-item>
+                
+                                <lightning-layout-item size="6" class="slds-var-p-horizontal_x-small">
+                                    <label class="slds-form-element__label"><b>Riesgos Principales</b></label>
+                                    <lightning-output-field field-name="MainRisks__c" variant="label-hidden"></lightning-output-field>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </div>
+                    </div>
+                
+                    <!-- II. Observaciones Estratégicas -->
+                    <div class="slds-p-around_medium slds-grid slds-wrap">
+                        <div class="slds-size_1-of-1 slds-m-bottom_medium">
+                            <div class="slds-section slds-is-open slds-p-around--xx-small" style="background-color:#f3f3f3">
+                                <h3 class="slds-section__title slds-m-left--large">
+                                    <span class="slds-truncate" title="Strategic Observations">Observaciones Estratégicas</span>
+                                </h3>
+                            </div>
+                
+                            <lightning-layout multiple-rows="true" class="slds-var-m-bottom_small">
+                                <lightning-layout-item size="6" class="slds-var-p-horizontal_x-small">
+                                    <label class="slds-form-element__label"><b>Comentarios del Área Manager</b></label>
+                                    <lightning-output-field field-name="Comments__c" variant="label-hidden"></lightning-output-field>
+                                </lightning-layout-item>
+                
+                                <lightning-layout-item size="6" class="slds-var-p-horizontal_x-small">
+                                    <label class="slds-form-element__label"><b>Aspectos positivos de la visita</b></label>
+                                    <lightning-output-field field-name="Comments2__c" variant="label-hidden"></lightning-output-field>
+                                </lightning-layout-item>
+                
+                                <lightning-layout-item size="6" class="slds-var-p-horizontal_x-small">
+                                    <label class="slds-form-element__label"><b>Aspectos a mejorar de la visita</b></label>
+                                    <lightning-output-field field-name="Comments3__c" variant="label-hidden"></lightning-output-field>
+                                </lightning-layout-item>
+                
+                                <lightning-layout-item size="6" class="slds-var-p-horizontal_x-small">
+                                    <label class="slds-form-element__label"><b>Material de merchandising utilizado</b></label>
+                                    <lightning-output-field field-name="MaterialUsedComment__c" variant="label-hidden"></lightning-output-field>
+                                </lightning-layout-item>
+                
+                                <lightning-layout-item size="12" class="slds-var-p-horizontal_x-small">
+                                    <label class="slds-form-element__label"><b>Nuevas Oportunidades Futuras</b></label>
+                                    <lightning-output-field field-name="FutureOpportunities__c" variant="label-hidden"></lightning-output-field>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </div>
+                    </div>
+                </lightning-record-view-form>
+            </template>
+
+        </lightning-tab>
+
+        <lightning-tab label={visitsTabText} title="2nd tab extended title" class="tab-class">
+            
+            <div class="sslds-grid slds-wrap">
+                <div class="slds-size_1-of-1 slds-m-bottom_medium">
+                    <div class="slds-section slds-is-open slds-p-around--xx-small" style="background-color:#f3f3f3">
+                        <h3 class="slds-section__title slds-m-left--large">
+                            <span class="slds-truncate" title="Event Management">Visitas Clave y Proyectos</span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+    
+            <template if:true={headerId}>
+                <c-b-trips-trip-visits
+                visits={visits}
+                tripid={headerId}
+                onrefresh={handleUpdateEvent}>
+                </c-b-trips-trip-visits>
+            </template>
+
+        </lightning-tab>
+
+        <lightning-tab label={strategiesTabText} title="2nd tab extended title" class="tab-class">
+            
+            <div class="sslds-grid slds-wrap">
+                <div class="slds-size_1-of-1 slds-m-bottom_medium">
+                    <div class="slds-section slds-is-open slds-p-around--xx-small" style="background-color:#f3f3f3">
+                        <h3 class="slds-section__title slds-m-left--large">
+                            <span class="slds-truncate" title="Event Management">Oportunidades estratégicas</span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+    
+            <template if:true={headerId}>
+                <c-b-trips-trip-strategies
+                strategies={strategies}
+                tripid={headerId}
+                onrefresh={handleUpdateEvent}>
+                </c-b-trips-trip-strategies>
+            </template>
+
+        </lightning-tab>
+
+        <lightning-tab label={actionsTabText} class="tab-class">
+    
+            <template if:true={headerId}>
+                <c-b-trips-trip-actions
+                actions={visitActions}
+                strategy-actions={strategyActions}
+                tripid={headerId}
+                onrefresh={handleUpdateEvent}>
+                </c-b-trips-trip-actions>
+            </template>
+
+        </lightning-tab>   
+        
+        <lightning-tab label={eventsTabText} class="tab-class">
+    
+            <template if:true={headerId}>
+                <c-b-trips-trip-events
+                events={visitEvents}                
+                tripid={headerId}
+                onrefresh={handleUpdateEvent}>
+                </c-b-trips-trip-events>
+            </template>
+
+        </lightning-tab>    
+
+        <lightning-tab label={requestsTabText} title="2nd tab extended title" class="tab-class">
+    
+            <template if:true={headerId}>
+                <c-b-trips-trip-requests
+                requests={requests}
+                strategy-requests={strategyRequests}
+                tripid={headerId}
+                onrefresh={handleUpdateEvent}>
+                </c-b-trips-trip-requests>
+            </template>
+
+        </lightning-tab>
+        
+    </lightning-tabset>
+
+    <template if:true={isModalSendPdf}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <!-- Modal -->
+        <section role="dialog" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                
+                <!-- Header con "X" -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Cerrar"
+                            onclick={handleCloseModal}>
+                        <lightning-icon icon-name="utility:close" size="small" alternative-text="Cerrar"></lightning-icon>
+                    </button>
+                </header>
+
+                <!-- Contenido -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-input label="Título del email" required onchange={handleEmailTitleChanged}></lightning-input>
+                    <lightning-input-rich-text label-visible label="Cuerpo del email" required onchange={handleEmailBodyChanged}></lightning-input-rich-text>
+                    <div class="slds-var-m-top_medium slds-align--absolute-center">
+                        <span>Se puede enviar a <b>varias personas</b>. Para ello, separar los diferentes emails por  <b>coma</b>.</span>
+                    </div>
+                    <br/>
+                    <lightning-input type="email" placeholder="a@a.es,b@b.com" label="Direcciónes de email a enviar." required onchange={handleEmailChanged}></lightning-input>
+                    <div class="slds-var-m-top_medium slds-align--absolute-center">
+                        <lightning-button variant="brand" label="Enviar" onclick={handleSendPdf}></lightning-button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</template>

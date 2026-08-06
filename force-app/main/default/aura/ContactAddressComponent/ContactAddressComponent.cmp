@@ -1,0 +1,116 @@
+<aura:component 
+    implements="flexipage:availableForAllPageTypes,force:hasRecordId,lightning:hasPageReference,lightning:isUrlAddressable,lightning:actionOverride,force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome" 
+    controller="ContactAddressController" 
+    access="global" >
+
+    <!-- Variables -->
+    <aura:attribute name="title" type="String" default="{!v.recordId == null ? $Label.c.addr_new_title : $Label.c.addr_edit_title}"/>
+    <aura:attribute name="addressLoading" type="Boolean" default="true"/>
+    <aura:attribute name="submitting" type="Boolean" default="false"/>    
+    <aura:attribute name="oldAccountId" type="Id"/>
+    <aura:attribute name="accountId" type="String"/>    
+    <aura:attribute name="account" type="Object"/>
+    <aura:attribute name="addressFields" type="Object"/>
+    <aura:attribute name="savepoint" type="Object"/>
+    <aura:attribute name="debugString" type="String"/>
+
+     <!-- Event handlers -->
+    <aura:handler name="init" value="{!this}" action="{!c.handleInit}"/>
+
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+    
+    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_small">
+
+        <aura:if isTrue="{!(v.addressLoading || v.submitting)}">
+            <lightning:spinner alternativeText="Loading"/>
+        </aura:if>
+
+        <div class="slds-modal__container">    
+    
+            <!-- ***************************************** FORM HEADER ************************************** -->                
+            <header class="slds-modal__header">
+                <lightning:buttonIcon alternativeText="Close" onclick="{!c.onCancelClick}" iconName="utility:close" variant="bare-inverse" size="large"
+                 class="slds-modal__close"/>
+                <h2 class="slds-text-heading_medium slds-hyphenate">{!v.title}</h2>
+            </header>   
+                
+            <!-- *********************************** FORM BODY in a scrollable div ******************************* -->
+            <div class="slds-modal__content slds-p-around_small">
+
+                <!-- ========================================================
+                <force:recordData aura:id="accountRecord"
+                    recordId="{!v.accountId}"
+                    fields="Id, Name, SAP_Id__c, AddressesSynced__c"
+                    layoutType="FULL"
+                    targetFields="{!v.account}"
+                    recordUpdated="{!c.handleAccountObjectUpdated}"
+                />   
+                ======================================================== -->                    
+                    
+                <lightning:recordEditForm aura:id="recordForm" recordId="{!v.recordId}" objectApiName="ContactPointAddress" 
+                    onload="{!c.handleOnLoadAddress}" onsubmit="{!c.handleOnSubmit}" onsuccess="{!c.handleOnSuccess}" onerror="{!c.handleOnError}">
+                    <lightning:messages aura:id = "mensajes"/>    
+                    <input aura:id="submitButton" type="submit" class="slds-hide"/>
+
+                    <!-- Section 1: Lead details -->
+                    <div class="slds-section slds-is-open">
+                        <h3 class="slds-section__title slds-theme- -shade slds-p-left_medium">
+                            {!v.recordId}
+                        </h3>
+                        <div class="slds-section__content slds-grid slds-wrap">
+                            <div class="slds-col slds-size_2-of-2 slds-p-left_small slds-p-right_small">
+                                <lightning:inputField aura:id="Name" fieldName="Name"/>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                                <lightning:inputField aura:id="ParentId" fieldName="ParentId" disabled="true"/>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                                <lightning:inputField aura:id="AddressType" fieldName="AddressType" disabled="true"/>
+                            </div>
+
+                            <div class="slds-col slds-size_2-of-2 slds-p-left_small slds-p-right_small">
+                                <lightning:inputField aura:id="Address" fieldName="Address"/>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                                <lightning:inputField aura:id="Phone" fieldName="Phone__c"/>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                                <lightning:inputField aura:id="Mobile" fieldName="Mobile__c"/>
+                            </div>
+
+                            <div class="slds-col slds-size_2-of-2 slds-p-left_small slds-p-right_small">
+                                <lightning:inputField aura:id="EMail" fieldName="EMail__c"/>
+                            </div>
+                            
+                            <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                                <lightning:inputField aura:id="SAPID__c" fieldName="SAPId__c" disabled="true"/>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                                <lightning:outputField fieldName="LastModifiedDate" disabled="true"/>
+                            </div>
+
+                        </div>         
+
+                    </div>            
+
+                </lightning:recordEditForm>
+            </div>
+
+            <!-- Footer -->
+            <div class="slds-modal__footer slds-theme_default slds-p-around_medium">
+                <lightning:button variant="neutral" label="{!$Label.c.Cancel}" onclick="{!c.onCancelClick}"/>
+                <lightning:button variant="brand" type="submit" label="{!$Label.c.Save}" onclick="{!c.onSaveClick}" />
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="slds-backdrop slds-backdrop_open"></div>
+
+</aura:component>

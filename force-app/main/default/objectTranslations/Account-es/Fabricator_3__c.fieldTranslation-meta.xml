@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Fabricator 3 --></label>
+    <lookupFilter>
+        <errorMessage>La Cuenta no es un Transformador</errorMessage>
+    </lookupFilter>
+    <name>Fabricator_3__c</name>
+    <relationshipLabel><!-- Accounts (Fabricator 3) --></relationshipLabel>
+</CustomFieldTranslation>

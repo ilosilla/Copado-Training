@@ -1,0 +1,108 @@
+<template>
+    <c-lib-modal 
+        modal-size={variant}
+        show-modal={_showDialog}
+        show-close-icon="false"
+        show-spinner={showSpinner}>    
+
+        <div slot="header">
+            {mainHeader}
+        </div>
+        <div slot="body" >
+            <c-lib-address-commons 
+                object-id={accountId}
+                onaddressready={handleAccountAddressReady}
+            ></c-lib-address-commons>
+            <c-lib-error-panel errors={error} theme={errorTheme} hide-close-button="true"></c-lib-error-panel>
+            <template lwc:if={isReady}>
+                <template lwc:if={editionMode}>
+                    <p class="slds-theme_warning slds-theme_alert-texture slds-text-align_center slds-var-p-around_x-small">
+                        <strong>{newIntroLabel}</strong>
+                    </p>
+                    <div class="slds-grid slds-wrap slds-gutters slds-var-m-top_x-small">
+                        <!-- ROW 1 -->
+                        <div class="slds-col slds-size_2-of-4">
+                            <lightning-input data-id="Name" value={address.Name} label={labels.dict_name} required="true"></lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_2-of-4">
+                            <lightning-combobox
+                                data-id="AddressType"
+                                name="addressType"
+                                label={labels.dict_address_type}
+                                value={addressType}                                
+                                options={addressTypesList}></lightning-combobox>        
+                        </div>
+
+                        <!-- ROW 2 -->                
+                        <div class="slds-col slds-size_2-of-4">
+                            <lightning-input data-id="Phone" value={address.Phone} required="true" label={labels.dict_phone}></lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_2-of-4">
+                        </div>
+                        <!-- ROW 3 (Address) -->
+                        <div class="slds-col slds-size_4-of-4 slds-var-p-top_small">
+                            <lightning-input-address
+                                data-id="Address"                        
+                                address-label={labels.dict_delivery_address}
+                                address-lookup-label={labels.dict_search_address}
+                                street-label={labels.dict_street}
+                                city-label={labels.dict_city}
+                                postal-code-label={labels.dict_postal_code}
+                                country-label={labels.dict_country}
+                                province-label={labels.dict_state_province}        
+                                street={address.street}
+                                city={address.city}
+                                country={address.countryCode}
+                                province={address.provinceCode}
+                                postal-code={address.postcode}
+                                country-options={countryList}
+                                province-options={provinceList}
+                                onchange={handleAddressChange}
+                                show-address-lookup                                
+                            > </lightning-input-address>       
+                        </div>
+                    </div>
+                    <!-- ROW 4 (Admin readonly data) -->
+                    <div class="slds-col slds-size_2-of-4">
+                    </div>
+                </template>
+                <template lwc:else>
+                    <template lwc:if={hasData}>
+                        <lightning-radio-group name="addressesRadioGroup"
+                            label={radioLabel}
+                            options={radioOptions}
+                            value={radioValue}
+                            required
+                            type="radio"
+                            onchange={handleAddressSelection}></lightning-radio-group>
+                    </template>   
+                    <template lwc:else>
+                        <div class="slds-var-p-around_large slds-text-align_center">
+                            <p>{emptyListLabel}</p>
+                        </div>
+                    </template>
+                </template>
+            </template>
+        </div>
+
+        <div slot="custom-actions">
+            <span lwc:if={showNewButton}>
+                <button class="slds-button slds-button_neutral" onclick={handleNewAddressButton}>{labels.tr0007_011}</button> <!-- New Address -->
+            </span>
+        </div>
+
+        <div slot="footer">
+            <template lwc:if={selectionMode}>
+                <button class="slds-button slds-button_neutral" onclick={handleCloseButton}>{labels.dict_button_cancel}</button>
+                <button class="slds-button slds-button_brand" onclick={handleOKButton} disabled={addressNotSelected}>{labels.dict_button_ok}</button>
+            </template>
+            <template lwc:else>
+                <button class="slds-button slds-button_neutral" onclick={handleCancelButton}>{labels.dict_button_cancel}</button>
+                <button class="slds-button slds-button_brand" onclick={handleSaveButton}>{labels.dict_save}</button>
+            </template>
+        </div>
+
+    </c-lib-modal> 
+    <!--
+    -->
+</template>

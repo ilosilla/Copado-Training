@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CLAIM_SendCustomerReceipt__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Sends an email to the custoemr when a claim is opened</description>
+    <label>CLAIM Send Customer Receipt</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>UNITED STATES &amp; CANADA</label>
+    <protected>false</protected>
+    <values>
+        <field>Pass__c</field>
+        <value xsi:type="xsd:string">FD5E3F60-F9B4-5688-F32D-4271EA1617B9</value>
+    </values>
+    <values>
+        <field>Url__c</field>
+        <value xsi:type="xsd:string">https://rest.clicksend.com/v3/sms/send</value>
+    </values>
+    <values>
+        <field>User__c</field>
+        <value xsi:type="xsd:string">crm@porcelanosa-usa.com</value>
+    </values>
+</CustomMetadata>

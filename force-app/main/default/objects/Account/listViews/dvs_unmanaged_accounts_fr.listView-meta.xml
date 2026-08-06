@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>dvs_unmanaged_accounts_fr</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE_CODE</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Address__c</columns>
+    <columns>PC_ADDRESS2_CITY</columns>
+    <columns>VAT_Number__c</columns>
+    <columns>VAT_Number_2__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>DVSAction__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>ACCOUNT.ADDRESS1_COUNTRY_CODE</field>
+        <operation>equals</operation>
+        <value>FR</value>
+    </filters>
+    <filters>
+        <field>Account_Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Fabricator,Account.Third_party_Retailer_Reseller,Account.Trade_and_Specificators</value>
+    </filters>
+    <label>Comptes non validés fr</label>
+</ListView>

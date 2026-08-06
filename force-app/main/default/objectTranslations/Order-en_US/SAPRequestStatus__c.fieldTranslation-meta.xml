@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- SAP Request Status --></label>
+    <name>SAPRequestStatus__c</name>
+    <picklistValues>
+        <masterLabel>accepted</masterLabel>
+        <translation><!-- accepted --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>queued</masterLabel>
+        <translation><!-- queued --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ready</masterLabel>
+        <translation><!-- ready --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

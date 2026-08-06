@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Check to require attachments when creating a claim --></help>
+    <label><!-- CLAIM Require Files --></label>
+    <name>CLAIM_FilesRequired__c</name>
+</CustomFieldTranslation>

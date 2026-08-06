@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amount_custom__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>Amount of the opportunity without currency</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Amount of the opportunity without currency</inlineHelpText>
+    <label>Quantity of the opportunity</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

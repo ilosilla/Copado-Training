@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FactoryRejectedItems__c</fullName>
+    <label>Factory Rejected Items</label>
+    <summaryFilterItems>
+        <field>OppPriceRequestItem__c.FactoryStatus__c</field>
+        <operation>equals</operation>
+        <value>REJECTED</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OppPriceRequestItem__c.PriceRequestHeader__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type --></label>
+    <name>gmpkg__Type__c</name>
+    <picklistValues>
+        <masterLabel>Finish-To-Finish</masterLabel>
+        <translation><!-- Finish-To-Finish --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Finish-To-Start</masterLabel>
+        <translation><!-- Finish-To-Start --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Start-To-Finish</masterLabel>
+        <translation><!-- Start-To-Finish --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Start-To-Start</masterLabel>
+        <translation><!-- Start-To-Start --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

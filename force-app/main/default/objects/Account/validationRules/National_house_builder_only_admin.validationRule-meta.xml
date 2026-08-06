@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>National_house_builder_only_admin</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( CONTAINS($User.Username, &apos;loads.user&apos;) = false,
+ISPICKVAL(Account_Classification__c, &quot;National House Builders&quot;), 
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;, 
+OR(ISCHANGED(Account_Classification__c), ISNEW() ) 
+)</errorConditionFormula>
+    <errorDisplayField>Account_Classification__c</errorDisplayField>
+    <errorMessage>Only an administrator can select this option. Please, contact with your system administrator.</errorMessage>
+</ValidationRule>

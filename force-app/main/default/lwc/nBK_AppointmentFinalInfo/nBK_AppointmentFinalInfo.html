@@ -1,0 +1,78 @@
+<!--
+  @description  :
+  @author       : Nubika Team <example@nubika.com>
+  @version      : 1.0.0
+  @date         : 30-10-2023
+  @group        :
+  @see          :
+-->
+<template>
+    <div>
+			<div class="capa1">
+				{labels.tit1}
+			</div>
+            </br>
+			<div >
+				{labels.date}
+			</div>
+            <div class="bolder">
+				{selectedDateS}
+			</div>
+            </br>
+            <template if:false={isVirtual}>
+							<template if:false={showFR}>
+                <div class="direcciones">
+                    <div>
+                        {labels.location}
+                    </div>
+                    <div class="locatdesc bolder">
+                        {store.Name} Showroom
+                    </div>
+                    <div class="locatdesc bolder">
+                        {store.NBK_Address__Street__s}
+                    </div>
+                    <div class="locatdesc bolder">
+                        {store.NBK_Address__PostalCode__s} {store.NBK_Address__c.state}
+                    </div>
+                    <div class="locatdesc bolder">
+                        {store.NBK_Address__c.country}
+                    </div>
+                </div>
+							</template>
+							<template if:true={showFR}>
+                <div class="direcciones">
+                    <div>
+											{labels.location}
+                    </div>
+                    <div class="locatdesc bolder">
+                        {store.Name} Showroom
+                    </div>
+                    <div class="locatdesc bolder">
+                        {store.NBK_Address__Street__s}
+                    </div>
+                    <div class="locatdesc bolder">
+                        {store.NBK_Address__PostalCode__s} {store.NBK_Address__c.city}
+                    </div>
+                    <div class="locatdesc bolder">
+                        {store.NBK_Address__c.country}
+                    </div>
+                </div>
+							</template>
+						</template>
+            <template if:true={isVirtual}>
+                <div class="direcciones">
+                    <div>
+											{labels.location}
+                    </div>
+                    <div class="locatdesc bolder">
+                        {appointmentType}
+                    </div>
+                </div>
+            </template>
+            </br>
+            </br>
+			<div>
+				{labels.tit3}
+			</div>
+		</div>
+</template>

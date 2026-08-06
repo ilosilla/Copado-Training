@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Customer no ok service cause --></label>
+    <name>Customer_no_ok_service_cause__c</name>
+    <picklistValues>
+        <masterLabel>Agent did not appeared</masterLabel>
+        <translation><!-- Agent did not appeared --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Incorrect solution</masterLabel>
+        <translation><!-- Incorrect solution --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

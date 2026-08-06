@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>ACC</fullName>
+        <default>false</default>
+        <label>ACCESSORIES</label>
+    </customValue>
+    <customValue>
+        <fullName>ADH</fullName>
+        <default>false</default>
+        <label>ADHESIVES</label>
+    </customValue>
+    <customValue>
+        <fullName>ALL</fullName>
+        <default>false</default>
+        <label>ALL FAMILIES</label>
+    </customValue>
+    <customValue>
+        <fullName>BAS</fullName>
+        <default>false</default>
+        <label>BASINS</label>
+    </customValue>
+    <customValue>
+        <fullName>BRW</fullName>
+        <default>false</default>
+        <label>BRASSWARE</label>
+    </customValue>
+    <customValue>
+        <fullName>FUR</fullName>
+        <default>false</default>
+        <label>BATHROOM FURNITURE</label>
+    </customValue>
+    <customValue>
+        <fullName>GRO</fullName>
+        <default>false</default>
+        <label>GROUTS</label>
+    </customValue>
+    <customValue>
+        <fullName>HEA</fullName>
+        <default>false</default>
+        <label>UNDERFLOOR HEATING</label>
+    </customValue>
+    <customValue>
+        <fullName>INS</fullName>
+        <default>false</default>
+        <label>INSTALLATION SYSTEMS</label>
+    </customValue>
+    <customValue>
+        <fullName>MIR</fullName>
+        <default>false</default>
+        <label>MIRRORS</label>
+    </customValue>
+    <customValue>
+        <fullName>OTH</fullName>
+        <default>false</default>
+        <label>OTHERS</label>
+    </customValue>
+    <customValue>
+        <fullName>SAW</fullName>
+        <default>false</default>
+        <label>SANITARYWARE</label>
+    </customValue>
+    <customValue>
+        <fullName>SHC</fullName>
+        <default>false</default>
+        <label>SHOWER COLUMNS</label>
+    </customValue>
+    <customValue>
+        <fullName>SHE</fullName>
+        <default>false</default>
+        <label>SHOWER ENCLOSURES</label>
+    </customValue>
+    <customValue>
+        <fullName>SHH</fullName>
+        <default>false</default>
+        <label>SHOWER HEADS</label>
+    </customValue>
+    <customValue>
+        <fullName>SHT</fullName>
+        <default>false</default>
+        <label>SHOWER TRAYS</label>
+    </customValue>
+    <customValue>
+        <fullName>SHV</fullName>
+        <default>false</default>
+        <label>SHOWER VALVES</label>
+    </customValue>
+    <customValue>
+        <fullName>TIL</fullName>
+        <default>false</default>
+        <label>TILES</label>
+    </customValue>
+    <customValue>
+        <fullName>TOP</fullName>
+        <default>false</default>
+        <label>WORKTOPS</label>
+    </customValue>
+    <customValue>
+        <fullName>TOW</fullName>
+        <default>false</default>
+        <label>TOWEL WARMERS</label>
+    </customValue>
+    <customValue>
+        <fullName>TRI</fullName>
+        <default>false</default>
+        <label>TRIMS</label>
+    </customValue>
+    <customValue>
+        <fullName>TUB</fullName>
+        <default>false</default>
+        <label>BATHTUBS</label>
+    </customValue>
+    <description>List of product category (related to the detail shown in the catalog)</description>
+    <masterLabel>Product Catalog Categories</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

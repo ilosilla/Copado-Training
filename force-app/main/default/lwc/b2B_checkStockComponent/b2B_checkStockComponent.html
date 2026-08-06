@@ -1,0 +1,81 @@
+<!--
+  @description       :
+  @author            : Nubika
+  @group             :
+  @last modified on  : 02-01-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+	<c-b2-b_custom-toast></c-b2-b_custom-toast>
+	<template if:true={showwating}>
+					<lightning-spinner alternative-text="Loading data" size="large"></lightning-spinner>
+	</template>
+	<!-- Modal/Popup Box LWC body starts here -->
+	<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+			 <template if:true={hasProductsOutStock}>
+					<div class="slds-var-p-around_large slds-theme_alert-texture slds-theme_warning" >
+							<center>Some ítems are out of stock and will be excluded form the order. Please check the availability date and tick the ones you want to include in the order.</center>
+					</div>
+			</template>
+
+			<template if:true={hasProducts}>
+					<br/>
+					<div>
+							<lightning-formatted-rich-text style="font-size: large;" value="Check the stock and press send order to record the order in SAP"></lightning-formatted-rich-text>
+					</div>
+					<br/>
+					<div if:true={validationErrors}>
+							<br/>
+							<lightning-formatted-rich-text style="color: red;" value={errorMsg}></lightning-formatted-rich-text>
+							<br/>
+							<br/>
+					</div>
+					<table>
+							<tr>
+									<td> <input type="checkbox" onchange={handleCheckAll}></input></td>
+									<td></td>
+									<td style="padding-bottom:2%"><b>{labels.nameLabel}</b></td>
+									<td style="padding-bottom:2%"><b>{labels.quantityLabel}</b></td>
+									<td style="padding-bottom:2%"><b>{labels.stockLabel}</b></td>
+									<td style="padding-bottom:2%; text-align:center"><b>{labels.returnStockLabel}</b></td>
+							</tr>
+							<template for:each={productStockList} for:item="product">
+									<tr key={product.product}>
+											<td >
+													<div style="padding-top: 6px;margin-right: 15px;">
+															<input type="checkbox" key={product.product} data-id={product.product} checked={product.available} onchange={refreshCheckedList}></input>
+													</div>
+											</td>
+											<td>
+													<div if:true={product.available}>
+															<lightning-icon icon-name="action:approval" alternative-text="Added" title="Added" style="transform: scale(0.5);"></lightning-icon>
+													</div>
+													<div if:false={product.available}>
+															<lightning-icon icon-name="action:close" alternative-text="NotAdded" title="NotAdded" style="transform: scale(0.5);"></lightning-icon>
+													</div>
+											</td>
+											<td>
+													{product.name}
+											</td>
+											<td>
+													{product.quantity}
+											</td>
+											<td >
+													{product.availstk}
+											</td>
+											<td style="text-align:center">
+													{product.nextProduction}
+											</td>
+									</tr>
+							</template>
+					</table>
+			</template>
+			<template if:false={hasProducts}>
+					<div class="slds-var-p-around_large slds-theme_alert-texture slds-theme_warning" >
+							<center>Please add at least a product before submitting the order to SAP</center>
+					</div>
+			</template>
+	</div>
+
+	<!-- Modal/Popup Box LWC footer starts here -->
+</template>

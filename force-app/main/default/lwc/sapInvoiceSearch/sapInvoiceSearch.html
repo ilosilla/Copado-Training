@@ -1,0 +1,109 @@
+<template>
+    <c-lib-layout-001
+        header-icon="standard:record_lookup"
+        header-title={labels.dict_invoice_search}      
+        side-panel-icon="standard:products"
+        side-panel-title={currentInvoice.Ordernum__c}        
+        show-side-panel={showDetail}
+        show-form-header
+        show-close-panel-button
+        disable-ok-button={okDisabled}
+        onsidepanelclosed={handleSidePanelClosed}
+        oncancelclick={handleCancelClick}
+        onokclick={handleOKClick}
+        >
+        
+        <div slot="form-header">
+            <p><b>{labels.tr0009_031}.</b></p> <!-- Use the fields below to enter your search criteria -->
+            <lightning-layout vertical-align="start" class="slds-truncate">
+                <lightning-layout-item size="2" class="slds-truncate slds-var-p-right_x-small">
+                    <lightning-select
+                        data-id="SalesOrg"                            
+                        label={labels.dict_salesOrg}
+                        value={defaults.salesOrg}
+                        options={componentData.salesOrgs}                            
+                        required ></lightning-select>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="2" class="slds-truncate slds-var-p-right_x-small">
+                    <lightning-record-picker
+                        data-id="Account"
+                        label={labels.dict_account}
+                        placeholder={labels.tr0010_002}
+                        object-api-name="Account"
+                        matching-info={accountMatchingInfo}
+                    ></lightning-record-picker>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="3" class="slds-truncate slds-var-p-right_x-small">
+                    <lightning-record-picker
+                        data-id="Product"
+                        label={labels.dict_product}
+                        placeholder={labels.tr0010_003}
+                        object-api-name="Product2"  
+                        matching-info={productMatchingInfo}
+                        display-info={productDisplayInfo}
+                        filter={productFilter}                    
+                    ></lightning-record-picker>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="2" class="slds-truncate slds-var-p-right_x-small">
+                    <lightning-input 
+                        data-id="OrderNumber"
+                        label={labels.dict_order_number}
+                        type="text"
+                        minlength="7"
+                        maxlength="10"
+                        pattern="\d{7,10}"></lightning-input>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="2" class="slds-truncate slds-var-p-right_x-small">
+                    <lightning-select
+                        data-id="timeframe"
+                        label={labels.dict_timeframe}
+                        value={defaultTimeframe}
+                        options={timeframeOptions}
+                    ></lightning-select>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="1" class="slds-var-p-top_large">
+                    <lightning-button variant="brand" icon-name="utility:search" label={labels.dict_search} onclick={handleSearch}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>   
+            <c-lib-error-panel errors={errors} theme="error"></c-lib-error-panel>  
+            <div class="slds-box slds-box_xx-small slds-theme_shade slds-theme_alert-texture slds-var-m-top_small" lwc:if={showSearchResults}>
+                <span><lightning-icon icon-name="utility:info" size="x-small" class="slds-var-m-right_small"></lightning-icon></span>
+                <b>{numberOfResults}</b>
+            </div>
+        </div>
+
+        <div slot="main-content" style=" box-sizing: border-box; height:100%; max-height: 100%; overflow: hidden;">
+            <template lwc:if={showTable}>
+                <lightning-datatable    
+                    data-id="invoices-list"                
+                    key-field="id"
+                    data={invoices}                
+                    max-row-selection="1"
+                    columns={invoiceColumns}      
+                    onrowselection={handleRowSelection}          
+                    onsort={handleColumnSorting}
+                    sorted-by={tableSortedBy}
+                    sorted-direction={tableSortedDirection}>                
+                </lightning-datatable>
+            </template>            
+        </div>
+
+        <div slot="side-panel-body" class="side-bar">
+            <template for:each={currentLines} for:item="line">
+                <lightning-layout key={line.Orderlin__c} multiple-rows="true" class="slds-var-p-vertical_x-small slds-border_bottom">
+                    <lightning-layout-item size="9"><b>{line.Name__c}</b></lightning-layout-item>
+                    <lightning-layout-item size="3" class="slds-text-align_right"><b>{line.quantityString}</b></lightning-layout-item>
+                    <lightning-layout-item size="8">{line.skuString}</lightning-layout-item>
+                    <lightning-layout-item size="4" class="slds-text-align_right">{line.amountString}</lightning-layout-item>
+                </lightning-layout>
+            </template>
+        </div>
+
+    </c-lib-layout-001>
+    <lightning-spinner lwc:if={showSpinner}></lightning-spinner>
+</template>

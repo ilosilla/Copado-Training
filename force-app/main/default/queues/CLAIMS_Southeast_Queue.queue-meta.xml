@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesIncludeBosses>true</doesIncludeBosses>
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>claims-queue-502@porcelanosagrupo.com</email>
+    <name>Southeast Claims Queue</name>
+    <queueMembers>
+        <users>
+            <user>daisy.zhou@porcelanosa.co.uk</user>
+            <user>louise.butterworth@porcelanosa.co.uk</user>
+            <user>rprades@porcelanosagrupo.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

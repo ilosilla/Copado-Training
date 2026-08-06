@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ShippingPending__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Flag to signal that there&apos;s a shipping calculation waiting to be confirmed by the cart extension</description>
+    <label>Shipping Pending</label>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,94 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName,forceCommunity:availableForAllPageTypes" access="global" controller="FlashCardAccountController">
+    <aura:attribute name="targetError" type="String"/>
+    
+    <!-- account fields -->
+    <aura:attribute name="accountName" type="String"/>
+    <aura:attribute name="street" type="String"/>
+    <aura:attribute name="city" type="String"/>
+    <aura:attribute name="country" type="String"/>
+    <aura:attribute name="county" type="String"/>
+    <aura:attribute name="postcode" type="String"/>
+    <aura:attribute name="phone" type="String"/>
+    <aura:attribute name="email" type="String"/>
+    <aura:attribute name="icon" type="String"/>
+    
+	<!-- data reading -->
+    <aura:attribute name="currentRecord" type="Object"/>    
+    <force:recordData recordId="{!v.recordId}"
+                      layoutType="FULL"
+                      fields="AccountId__c"
+                      targetFields="{!v.currentRecord}"
+                      targetError="{!v.targetError}"
+                      recordUpdated="{!c.accountEvent}"
+                      />                
+    
+    <!-- global events -->
+    
+	<!-- html markup -->
+    <article class="slds-card"> 
+        <header class="slds-border_bottom">
+            <div class="slds-media slds-media_center slds-has-flexi-truncate slds-page-header slds-border_bottom" >
+                <div class="slds-media__figure">
+                    <lightning:icon iconName="{!v.icon}" size="small"/>
+                </div>
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <span class="slds-card__header-link slds-truncate" title="Accounts">
+                            <span>Account</span>
+                        </span>
+                    </h2>
+                </div>
+            </div>
+        </header>
+
+       	<!--
+        <aura:set attribute="title"> 
+            <div class="slds-media slds-media_center slds-has-flexi-truncate slds-page-header slds-border_bottom">
+                <div class="slds-media__figure">
+                    <lightning:icon iconName="standard:person_account" size="small"/>
+                </div>
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <span class="slds-card__header-link slds-truncate" title="Accounts">
+                            <span>Account</span>
+                        </span>
+                    </h2>
+                </div>
+            </div>
+        </aura:set>
+        -->
+        <div class="slds-card__body slds-card__body_inner">
+            <div class="slds-grid slds-gutters">
+				<div class="slds-col">
+					<p title="Name" class="slds-text-title slds-truncate">Account Name</p>                  
+                  	<p class="fieldComponent slds-text-body--regular slds-show_inline-block slds-truncate">
+                        <h1>
+                            <lightning:formattedText value="{!v.accountName}"></lightning:formattedText>
+                        </h1>
+                    </p>
+                    <br/>
+                    <p title="Phone" class="slds-text-title slds-truncate">Phone</p>                  
+                    <p class="fieldComponent slds-text-body--regular slds-show_inline-block slds-truncate">
+                    	<lightning:formattedPhone value="{!v.phone}"></lightning:formattedPhone>
+                    </p>
+                    <br/>
+                    <p title="Email" class="slds-text-title slds-truncate">Email</p>                  
+                    <p class="fieldComponent slds-text-body--regular slds-show_inline-block slds-truncate">
+                    	<lightning:formattedEmail linkify="true" value="{!v.email}"></lightning:formattedEmail>
+                    </p>
+              </div>
+              <div class="slds-col">
+                 <p title="Address" class="slds-text-title slds-truncate">Address</p>                                    
+                 <p class="fieldComponent slds-text-body--regular slds-show_inline-block slds-truncate">                  
+                 	<lightning:formattedAddress
+                    street="{!v.street}"
+                    city="{!v.city}"
+                    country="{!v.country}"
+                    province="{!v.county}"
+                    postalCode="{!v.postcode}"/>
+                  </p>
+              </div>
+            </div>
+        </div>
+    </article>	
+</aura:component>

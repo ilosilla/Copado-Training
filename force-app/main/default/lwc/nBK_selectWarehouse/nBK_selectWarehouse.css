@@ -1,0 +1,76 @@
+.line-1 {
+    height: 1px;
+    background: black;
+}
+
+.container {
+    cursor: pointer;
+    padding-top: 4%;
+    width: 110%;
+    grid-area: 1 / 1 / 2 / 2; 
+}
+
+
+    
+.addressGrid { grid-area: 1 / 1 / 2 / 2; }
+
+
+@media only screen and (max-width: 1099px)  {
+    .parentDiv {
+        /* display: grid; */
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+
+    .mapGrid { 
+
+    }
+
+    .mapContainer {
+        display: contents;
+        padding-top: 3%;
+        width: 119%;
+    }
+
+    .slds-float_right{
+		align-self: center;
+        float:none !important;
+    }
+}
+
+@media only screen and (min-width: 1100px)  {
+    .parentDiv {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+
+        height: 620px !important;
+    }
+    
+    .slds-scrollable--y{
+        height: 500px; 
+        overflow: scroll !important; 
+        width:80% !important;
+    }
+    .mapGrid { grid-area: 1 / 2 / 2 / 3; }
+
+    .mapContainer {
+        padding-top: 3%;
+        width: 119%;
+    }
+}
+    
+
+.parentAddresses{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+    .divIcon { grid-area: 1 / 2 / 2 / 3; }

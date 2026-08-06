@@ -1,0 +1,267 @@
+<!--
+ Ivan Losilla - August 2021
+ Component created to manage a list og Price Request Items given.
+ It only marks each item if the user wants to delete, approve, etc.
+ The component sends all data to the parent component with each change
+-->
+
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    
+    <!-- Events -->
+    <aura:registerEvent name="reloadList" type="c:eventReloadParent" />
+    <aura:registerEvent name="editItem" type="c:eventEditItem" />
+    <aura:registerEvent name="onChange" type="c:eventOnChange" />
+    
+    <!-- Data Attributes -->
+    <aura:attribute name="items" type="OppPriceRequestItem__c[]" default="[]"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="countryCode" type="String" default=""/>
+    
+    <!-- UI Attributes -->
+    <aura:attribute name="noEditable" type="Boolean" default="false"/>
+    <aura:attribute name="approverMode" type="Boolean" default="false"/>
+    <aura:attribute name="showApprovalCheckbox" type="Boolean" default="true"/>
+    <aura:attribute name="approvedPriceCheckboxes" type="List" default="[]"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    
+    <div class="tableFixHead">
+        <table aria-multiselectable="true" class="slds-table slds-table_bordered slds-table_resizable-cols" role="grid">
+            
+            <!-- Table HEADER -->
+            <thead>
+                <tr class="slds-line-height_reset">
+                    
+                    <!-- If it's not an approver, we show the Select All option (to send to Approval) -->
+                    <aura:if isTrue="{! v.noEditable == false }">
+                        <th scope="row" class="slds-is-resizable slds-is-sortable slds-text-align_center" style="width:50px;">
+                            <div>
+                                <label class="slds-checkbox">
+                                    <ui:inputCheckbox aura:id="selectAllForApprovalId" change="{!c.selectAll}"/>
+                                    <span class="slds-checkbox_faux"></span>
+                                </label>
+                            </div>
+                        </th>
+                    </aura:if>
+                    
+                    <!-- Headers -->
+                    <th aria-label="{! $Label.c.prequest_product_code }" aria-sort="none" class="slds-is-resizable slds-is-sortable slds-text-align--center" scope="col">
+                        <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="0">
+                            <div class="slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                <span class="slds-truncate" title="{! $Label.c.prequest_product_code }">{! $Label.c.prequest_product_code }</span>
+                            </div>
+                        </a>
+                    </th>
+                    <th aria-label="{! $Label.c.dict_status }" aria-sort="none" class="slds-is-resizable slds-is-sortable slds-text-align--center" scope="col">
+                        <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="0">
+                            <div class="slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                <span class="slds-truncate" title="{! $Label.c.dict_status }">Factory status</span>
+                            </div>
+                        </a>
+                    </th>
+                    <aura:if isTrue="{! v.approverMode == true }">
+                        <th aria-label="{! $Label.c.dict_applicant }" aria-sort="none" class="slds-is-resizable slds-is-sortable slds-text-align--center" scope="col">
+                            <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="0">
+                                <div class="slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                    <span class="slds-truncate" title="{! $Label.c.dict_applicant }">{! $Label.c.dict_applicant }</span>
+                                </div>
+                            </a>
+                        </th>
+                    </aura:if>
+                    <th aria-label="{! $Label.c.dict_quantity}" aria-sort="none" class="slds-is-resizable slds-is-sortable slds-text-align--center" scope="col">
+                        <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="0">
+                            <div class="slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                <span class="slds-truncate" title="{! $Label.c.dict_quantity }">{! $Label.c.dict_quantity }</span>
+                            </div>
+                        </a>
+                    </th>
+                    <th aria-label="{! $Label.c.dict_quantity}" aria-sort="none" class="slds-is-resizable slds-is-sortable slds-text-align--center" scope="col">
+                        <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="0">
+                            <div class="slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                <span class="slds-truncate" title="{! $Label.c.dict_unit }">{! $Label.c.dict_unit }</span>
+                            </div>
+                        </a>
+                    </th>
+                    
+                    <th aria-label="{! $Label.c.dict_discount }" aria-sort="none" class="slds-is-resizable slds-is-sortable slds-text-align--center" scope="col">
+                        <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="0">
+                            <div class="slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                <span class="slds-truncate" title="{! $Label.c.dict_discount }">Factory Price
+                                </span>
+                            </div>
+                        </a>
+                    </th>
+
+                    <th aria-label="{! $Label.c.prequest_price_needed }" aria-sort="none" class="slds-is-resizable slds-is-sortable slds-text-align--center" scope="col">
+                        <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="0">
+                            <div class="slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                <span class="slds-truncate" title="{! $Label.c.prequest_price_needed }">Factory Price Needed</span>
+                            </div>
+                        </a>
+                    </th>
+
+                    <th aria-label="{! $Label.c.prequest_approved_price }" aria-sort="none" class="slds-is-resizable slds-is-sortable slds-text-align--center" scope="col">
+                        <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="0">
+                            <div class="slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                <span class="slds-truncate" title="{! $Label.c.prequest_approved_price }">Factory Approved Price</span>
+                            </div>
+                        </a>
+                    </th>
+                    
+                    <aura:if isTrue="{! v.approverMode == false }">
+                        <th aria-label="{! $Label.c.dict_approver }" aria-sort="none" class="slds-is-resizable slds-is-sortable slds-text-align--center" scope="col">
+                            <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="0">
+                                <div class="slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                    <span class="slds-truncate" title="{! $Label.c.dict_approver }">Factory Approver</span>
+                                </div>
+                            </a>
+                        </th>
+                    </aura:if>
+
+                    <aura:if isTrue="{! v.approverMode == false }">
+                        <th aria-label="{! $Label.c.dict_approver }" aria-sort="none" class="slds-is-resizable slds-is-sortable slds-text-align--center" scope="col"></th>
+                    </aura:if>
+                    
+                </tr>
+            </thead>
+            
+            <!-- Table BODY -->
+            <tbody>
+                <aura:iteration items="{!v.items}" var="elem" indexVar="index">
+                    <aura:if isTrue="{! elem.hide != true }">
+                        <tr aria-selected="false" class="slds-hint-parent">
+                            
+                            <th scope="row" class="slds-text-align--center">
+                                <aura:if isTrue="{! v.approverMode == false }">
+                                    <aura:if isTrue="{! and(elem.FactoryStatus__c == 'NOTSENT', elem.FactoryPriceNeeded__c > 1) }">
+                                        <label class="slds-checkbox">
+                                            <ui:inputCheckbox text="{!index}"
+                                                                value="{!elem.isChecked}"
+                                                                change="{!c.checkboxSelect}"/>
+                                            <span class="slds-checkbox_faux"></span>
+                                        </label>
+                                    </aura:if>
+                                </aura:if>
+                                <aura:if isTrue="{! v.approverMode == true }">
+                                    <label class="slds-checkbox">
+                                        <aura:if isTrue="{! elem.FactoryPriceNeeded__c > 1 }">
+                                            <aura:if isTrue="{! and(elem.FactoryStatus__c == 'PENDING',elem.FactoryApprovedPrice__c > 1) }">
+                                                    <ui:inputCheckbox text="{!index}"
+                                                                    value="{!elem.isChecked}"
+                                                                    change="{!c.checkboxSelect}"/>
+                                                <span class="slds-checkbox_faux"></span>
+                                            </aura:if>
+                                        </aura:if>
+                                    </label>
+                                </aura:if>
+                            </th>
+                            <td role="gridcell"  class="slds-text-align--left">
+                                <div class="slds-truncate" style="width: 80%;" title="{! $Label.c.prequest_product_code }">
+                                    {! elem.ProductCodeFormula__c} - {! elem.ProductNameFormula__c}
+                                </div>
+                            </td>
+                            <aura:if isTrue="{! elem.FactoryStatus__c == 'PENDING' }">
+                                <td role="gridcell" class="slds-text-align--center" style="text-transform:uppercase">
+                                    {! $Label.c.dict_pending }
+                                </td>
+                            </aura:if>
+                            <aura:if isTrue="{! elem.FactoryStatus__c == 'REJECTED' }">
+                                <td role="gridcell" class="slds-text-align--center" style="text-transform:uppercase">
+                                    {! $Label.c.dict_rejected }
+                                </td>
+                            </aura:if>
+                            <aura:if isTrue="{! elem.FactoryStatus__c == 'APPROVEDPARTIALLY' }">
+                                <td role="gridcell" class="slds-text-align--center" style="text-transform:uppercase">
+                                    {! $Label.c.prequest_part_approved }
+                                </td>
+                            </aura:if>
+                            <aura:if isTrue="{! elem.FactoryStatus__c == 'APPROVED' }">
+                                <td role="gridcell" class="slds-text-align--center" style="text-transform:uppercase">
+                                    {! $Label.c.dict_approved }
+                                </td>
+                            </aura:if>
+                            <aura:if isTrue="{! or(elem.FactoryStatus__c == 'NOTSENT', elem.FactoryStatus__c == null) }">
+                                <td role="gridcell" class="slds-text-align--center" style="text-transform:uppercase">
+                                    {! $Label.c.dict_not_sent }
+                                </td>
+                            </aura:if>
+                            <aura:if isTrue="{! v.approverMode == true }">
+                                <td role="gridcell" class="slds-text-align--center">
+                                    <div class="slds-truncate" title="{! $Label.c.dict_approver }">{! elem.SubmittedToFactoryManager__r.Name}</div>
+                                </td>
+                            </aura:if>
+                            <td role="gridcell" class="slds-text-align--right">
+                                <div class="slds-truncate" title="{! $Label.c.dict_quantity }">{! elem.Quantity__c}</div>
+                            </td>
+                            <td role="gridcell" class="slds-text-align--right">
+                                <div class="slds-truncate" title="{! $Label.c.dict_quantity }">{! elem.labelUnitPrice}</div>
+                            </td>
+                            <td role="gridcell" class="slds-text-align--right">
+                                <div class="slds-truncate" title="{! $Label.c.prequest_price_needed }">
+                                    <lightning:formattedNumber value="{! elem.FactoryPrice__c}" style="currency" currencyCode="{! elem.CurrencyIsoCode}"/>
+                                </div>
+                            </td>
+                            <td role="gridcell" class="slds-text-align--right">
+                                <div class="slds-truncate" title="{! $Label.c.prequest_price_needed }">
+                                    <lightning:formattedNumber value="{! elem.FactoryPriceNeeded__c}" style="currency" currencyCode="{! elem.CurrencyIsoCode}"/>
+                                </div>
+                            </td>
+                             <td role="gridcell" class="slds-text-align--right">
+                                <div class="slds-truncate" title="{! $Label.c.prequest_approved_price }">
+                                    <aura:if isTrue="{! and(v.approverMode == true, elem.FactoryStatus__c == 'PENDING') }">
+                                        <aura:if isTrue="{! elem.FactoryPriceNeeded__c > 1 }">
+                                            <lightning:input type="number" step=".01" maxlength="10" name="{!index}" variant="label-hidden" value="{! elem.FactoryApprovedPrice__c}"/>
+                                        </aura:if>
+                                    	<aura:set attribute="else">
+                                            <lightning:formattedNumber value="{! elem.FactoryApprovedPrice__c}" style="currency" currencyCode="{! elem.CurrencyIsoCode}"/>
+                                        </aura:set>
+                                    </aura:if>
+                                </div>
+                            </td>
+                            <aura:if isTrue="{! v.approverMode == false }">
+                                <td role="gridcell"  class="slds-text-align--center">
+                                    <div class="slds-truncate" title="{! $Label.c.prequest_product_code }">
+                                        {! elem.FactoryApprover__r.Name}
+                                    </div>
+                                </td>
+                            </aura:if>
+                            
+                            <aura:if isTrue="{! v.approverMode == false }">
+                                <td role="gridcell">
+                                    <aura:if isTrue="{! or(elem.FactoryStatus__c == 'NOTSENT',elem.FactoryStatus__c == null) }">
+                                            <span class="slds-p-around--small">
+                                            <lightning:button label="{!$Label.c.dict_edit}" onclick="{! c.emitEditItem }" value="{! index}"/>
+                                        </span>
+                                    </aura:if>
+                                </td>
+                            </aura:if>
+                        </tr>
+                        </aura:if>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </div>
+    
+    <aura:html tag="style">
+       .tableFixHead{
+            overflow-y: auto;
+        }
+        
+        .tableFixHead thead th{
+            position: sticky;
+            top: -5px;
+        	z-index: 20;
+        }
+        
+        .tableFixHead table{
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .tableFixHead th, .tableFixHead td {
+            border: 1px solid #ccc;
+          }
+          .tableFixHead th {
+            background: #eee;
+          }
+	</aura:html>
+</aura:component>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DuplicateRule xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionOnInsert>Block</actionOnInsert>
+    <actionOnUpdate>Block</actionOnUpdate>
+    <alertText>[A0002] Your are trying to create an account that already has the same name and address. Please change it or contact your administrator.</alertText>
+    <description>[A0002] Identifies as duplicates those accounts with the same address and name</description>
+    <duplicateRuleFilter xsi:nil="true"/>
+    <duplicateRuleMatchRules>
+        <matchRuleSObjectType>Account</matchRuleSObjectType>
+        <matchingRule>same_address_account_and_name</matchingRule>
+        <objectMapping xsi:nil="true"/>
+    </duplicateRuleMatchRules>
+    <isActive>false</isActive>
+    <masterLabel>NAME &amp; ADDRESS</masterLabel>
+    <securityOption>BypassSharingRules</securityOption>
+    <sortOrder>3</sortOrder>
+</DuplicateRule>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>
+        <!-- The API name of the metadata to run, based on the Plugin Type
+
+Apex: The name of an Apex class that implements the interface LoggerSObjectHandlerPlugin
+
+Flow: The API name of a Flow that supports these inputs:
+ - triggerOperationType: text variable
+ - triggerNew: record collection variable
+ - triggerOld: record collection variable -->
+    </help>
+    <label><!-- Plugin API Name --></label>
+    <name>PluginApiName__c</name>
+</CustomFieldTranslation>

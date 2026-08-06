@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Abierta</masterLabel>
+        <translation><!-- Abierta --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Closed</masterLabel>
+        <translation><!-- Closed --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Closed Lost</masterLabel>
+        <translation><!-- Closed Lost --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Closed Won</masterLabel>
+        <translation>Vinta</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Concepción</masterLabel>
+        <translation><!-- Concepción --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Contacted</masterLabel>
+        <translation><!-- Contacted --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cotización</masterLabel>
+        <translation>Preventivo</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Especificación</masterLabel>
+        <translation>Specifica</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Esperando pedido</masterLabel>
+        <translation>In Attesa di Ordine</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Lost</masterLabel>
+        <translation>Persa</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>New</masterLabel>
+        <translation><!-- New --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Oferta</masterLabel>
+        <translation>Preventivo</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pendiente de decisión</masterLabel>
+        <translation><!-- Pendiente de decisión --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pending</masterLabel>
+        <translation><!-- Pending --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Qualification</masterLabel>
+        <translation>Qualifica</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

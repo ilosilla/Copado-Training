@@ -1,0 +1,89 @@
+<template>    
+    <c-lib-modal 
+        modal-size="auto"
+        show-modal=true
+        header-text = "SAP Invoice"
+        show-close-icon="false"
+        show-positive-button="true"
+        show-negative-button="true"
+        positive-button-label="Next"
+        onpositive={handleContinue}
+        onnegative={handleCancel}        
+        width="850px">
+
+        <div slot="body" style="overflow-x:auto;">        
+            <div class="slds-grid" style="width:100%;">            
+                <div class="slds-col slds-box slds-size_1-of-3 slds-var-p-horizontal_small slds-theme_shade ">
+                    <p><strong>Please enter the invoice number and click on "Search":</strong></p>                    
+                    <ul>
+                        <!--
+                        <li class="slds-var-p-bottom_small">  
+                            <lightning-combobox
+                                name="progress"
+                                label="Case Type"
+                                required="true" 
+                                value={caseType}
+                                options={picklistValues}
+                                onchange={handleChange} ></lightning-combobox>
+                        </li>
+                        -->
+                        <li class="slds-var-p-bottom_small">  
+                            <lightning-input
+                                data-id="invoiceNumber"
+                                type="search"
+                                autocomplete = "on"
+                                max-length = "10"
+                                label="SAP Invoice"
+                                data-name="sapInvoice"
+                                value={invoiceNumber}
+                                is-loading={isLoading}
+                                required="true"
+                                onchange={handleInvoiceChange}
+                                onkeypress={handleEnter}
+                            ></lightning-input>
+                        </li>
+                        <li> 
+                            <lightning-button variant="brand" label="Search" title="Search" onclick={handleInvoiceSearch} class=""></lightning-button>                        
+                        </li>
+                    </ul>
+                </div>
+                <div class="slds-col lds-size_2-of-3 slds-var-p-horizontal_small">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-3 slds-var-p-horizontal_medium">
+                            <lightning-input type="text" name="invoiceNumber" label="Invoice Number" value={invoiceNumber} read-only="true" ></lightning-input>
+                            <lightning-input type="date" name="invoiceDate" label="Invoice Date" value={invoiceDate} read-only="true" ></lightning-input>
+                            <lightning-input type="text" name="invoiceTotal" label="Amount" value={amountString} read-only="true" ></lightning-input>
+                            <lightning-input type="number" name="numItems" label="#Items" value={numItems} read-only="true" ></lightning-input>
+                        </div>
+
+                        <div class="slds-col slds-size_2-of-3 slds-var-p-horizontal_medium">
+                            <lightning-input type="text" name="customer" label="Customer" value={customer} read-only="true" ></lightning-input>
+                            <lightning-input type="text" name="salesRep" label="Sales rep" value={salesRep} read-only="true" ></lightning-input>
+                            <lightning-input type="text" name="salesOrg" label="Sales org" value={salesOrg} read-only="true" ></lightning-input>
+                            <lightning-input type="text" name="salesOffice" label="Sales office" value={salesOffice} read-only="true" ></lightning-input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+                <!--
+                <lightning-layout-item class="slds-var-p-around_medium slds-var-p-top_small slds-theme_shade slds-border_top slds-text-align_right" style="width:100%;">                    
+                    <lightning-button label="Cancel" title="Cancel" onclick={handleCancel} class="slds-var-m-right_medium"></lightning-button>       
+                    <lightning-button variant="brand" label="Continue" title="Continue" onclick={handleContinue} disabled={disableContinue}></lightning-button>       
+                </lightning-layout-item>
+                -->
+
+            <div if:true={daysWarning} class="slds-theme_warning slds-theme_alert-texture slds-box slds-var-m-top_medium slds-var-p-around_xx-large slds-text-align_center">
+                <b>Invoice older than {collectionDays} days. Please make sure it meets our returns policy.</b>
+            </div>
+
+            {debugText}
+        </div>
+
+        <div slot="footer">
+            <lightning-button label="Cancel" variant="newtral" onclick={handleCancel} class="slds-var-p-right_xx-small"></lightning-button>
+            <lightning-button label="Next" variant="brand" onclick={handleContinue} disabled={disableContinue}></lightning-button>
+        </div>
+
+    </c-lib-modal>
+</template>

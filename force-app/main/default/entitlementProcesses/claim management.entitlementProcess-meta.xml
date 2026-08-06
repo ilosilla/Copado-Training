@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EntitlementProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <SObjectType>Case</SObjectType>
+    <active>true</active>
+    <entryStartDateField>Case.CreatedDate</entryStartDateField>
+    <exitCriteriaFilterItems>
+        <field>Case.IsClosed</field>
+        <operation>equals</operation>
+        <value>true</value>
+    </exitCriteriaFilterItems>
+    <isVersionDefault>true</isVersionDefault>
+    <milestones>
+        <isDisplayedOnLinkedEntity>false</isDisplayedOnLinkedEntity>
+        <milestoneCriteriaFormula>true</milestoneCriteriaFormula>
+        <milestoneName>Solve customer claim</milestoneName>
+        <minutesToComplete>10080</minutesToComplete>
+        <useCriteriaStartTime>false</useCriteriaStartTime>
+    </milestones>
+    <name>claim management</name>
+    <versionMaster>5521r000000kWot</versionMaster>
+    <versionNumber>1</versionNumber>
+</EntitlementProcess>

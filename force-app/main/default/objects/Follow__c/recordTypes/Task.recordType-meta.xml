@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Task</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>Task</compactLayoutAssignment>
+    <description>Record type para Follow de Tasks</description>
+    <label>Task</label>
+</RecordType>

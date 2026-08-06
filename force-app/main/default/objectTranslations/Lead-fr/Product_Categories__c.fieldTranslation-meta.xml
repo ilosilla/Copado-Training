@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Catégories de Produits</label>
+    <name>Product_Categories__c</name>
+    <picklistValues>
+        <masterLabel>Adhesives and other compliments</masterLabel>
+        <translation>Adhesifs et autres /complements</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bathroom furniture</masterLabel>
+        <translation>Mobilier de Salle de Bain</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bathtubs</masterLabel>
+        <translation>Baignoire</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ceramics</masterLabel>
+        <translation>Ceramiques</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Countertops</masterLabel>
+        <translation>Plan de Travail</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kitchen furniture</masterLabel>
+        <translation>Mobilier de Cuisine</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Krion</masterLabel>
+        <translation>Krion</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Laminate</masterLabel>
+        <translation>Laminé</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Linkfloor</masterLabel>
+        <translation>Vinyl</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mosaics</masterLabel>
+        <translation>Mosaïques</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Natural Stone</masterLabel>
+        <translation>Pierre Naturelle</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Raised access flooring</masterLabel>
+        <translation>Sols Techniques</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sanitaryware</masterLabel>
+        <translation>Sanitaires</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shower products</masterLabel>
+        <translation>Produits pour la douche</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Taps</masterLabel>
+        <translation>Robinetterie</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ventilated facades</masterLabel>
+        <translation>Façades Ventilées</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Washbasin</masterLabel>
+        <translation>Lavabo</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wood</masterLabel>
+        <translation>Bois</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Xtone</masterLabel>
+        <translation>Xtone</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Grid Interaction Channel</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>Interaction Type</description>
+        <fieldName>interactionType</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Object Name</description>
+        <fieldName>objectName</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Grid Name</description>
+        <fieldName>gridName</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Grid Code</description>
+        <fieldName>gridCode</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Record Id</description>
+        <fieldName>recordId</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Payload</description>
+        <fieldName>payload</fieldName>
+    </lightningMessageFields>
+    <masterLabel>Grid Interaction</masterLabel>
+</LightningMessageChannel>

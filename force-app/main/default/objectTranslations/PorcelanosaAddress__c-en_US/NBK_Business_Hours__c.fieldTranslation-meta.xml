@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Business Hours --></label>
+    <name>NBK_Business_Hours__c</name>
+    <relationshipLabel><!-- Porcelanosa Address (Business Hours) --></relationshipLabel>
+</CustomFieldTranslation>

@@ -1,0 +1,16 @@
+.error-page {
+    display: flex;
+    justify-content: center;
+}
+
+.error-page__content {
+    max-width: 40rem;
+    background-color: #f3f2f2;
+    padding: 3rem 2.5rem;
+}
+
+.error-page__reference {
+    color: #706e6b;
+    font-family: monospace;
+    letter-spacing: 0.02em;
+}

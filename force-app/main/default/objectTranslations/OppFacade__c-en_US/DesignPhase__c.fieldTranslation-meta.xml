@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Design Phase --></label>
+    <name>DesignPhase__c</name>
+    <picklistValues>
+        <masterLabel>BID GC LEVEL</masterLabel>
+        <translation><!-- BID GC LEVEL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BID INSTALLER LEVEL</masterLabel>
+        <translation><!-- BID INSTALLER LEVEL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CONSTRUCTION DRAWINGS</masterLabel>
+        <translation><!-- CONSTRUCTION DRAWINGS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DESIGN DEVELOPMENT</masterLabel>
+        <translation><!-- DESIGN DEVELOPMENT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRE DESIGN</masterLabel>
+        <translation><!-- PRE DESIGN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SCHEMATICS DESIGN</masterLabel>
+        <translation><!-- SCHEMATICS DESIGN --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

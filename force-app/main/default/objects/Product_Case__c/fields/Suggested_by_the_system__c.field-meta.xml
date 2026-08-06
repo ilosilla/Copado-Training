@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Suggested_by_the_system__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Identify if the product to send has been calculated automatically bv the decision tree</description>
+    <label>Suggested by the system</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

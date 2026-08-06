@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fill_technician_conclusions</fullName>
+    <active>true</active>
+    <description>Si se pasa del estado de technician conclusions a otro más avanzado se debe especificar una las conclusiones del técnico</description>
+    <errorConditionFormula>ISBLANK(TEXT(Technician_service_conclusion__c)) &amp;&amp; ISCHANGED(Status) &amp;&amp; ISPICKVAL(PRIORVALUE(Status),&apos;11&apos;) &amp;&amp; VALUE(TEXT(PRIORVALUE(Status))) &lt; VALUE(TEXT(Status))</errorConditionFormula>
+    <errorDisplayField>Technician_service_conclusion__c</errorDisplayField>
+    <errorMessage>Please specify the technician conclusions</errorMessage>
+</ValidationRule>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RedirectTo__c</fullName>
+    <description>URL a la que redirige la pa´gina de response y de error (debe estar en el site del B2B)</description>
+    <label>XXXRedirectTo</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Url</type>
+</CustomField>

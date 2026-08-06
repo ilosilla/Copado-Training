@@ -1,0 +1,5 @@
+<design:component  label="Search component">
+	<design:attribute name="flowName" label="flowName" description="Flow Name" default="" />
+    <design:attribute name="url" label="urlName" description="Url Detail Name" default="" />
+    <design:attribute name="urlSearch" label="Url Search Name" description="url Search Name" default="" />
+</design:component>

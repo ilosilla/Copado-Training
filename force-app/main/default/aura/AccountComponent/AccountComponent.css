@@ -1,0 +1,119 @@
+/*Para ocultar los spinner buttons del input number*/
+/*Mantiene la funcionalidad de las teclas UP-DOWN*/
+/*.THIS input[type=number]::-webkit-inner-spin-button, 
+.THIS input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+.THIS .slds-form-element__label{   
+    font-size: .8125rem;    
+}
+
+.THIS .slds-form-element__static{    
+    font-size: .875rem;    
+}
+
+.THIS .slds-form-element_readonly{
+    border-bottom: none;    
+}
+
+.THIS .slds-checkbox .slds-form-element__label{    
+    display: none;    
+}*/
+
+.THIS .slds-theme--shade {
+    background-color: rgb(243, 242, 242);
+}
+
+.THIS .relative {
+    
+    position: relative;
+    height: 100px;
+    z-index: 0;
+    
+}
+
+.THIS .whiteBackground {
+    
+    background-color: #FFFFFF;
+  
+}
+
+.THIS.noPaddingTop{
+    
+    padding-top: 1rem !important;
+    
+}
+
+.THIS .customRequired{
+    font-weight: 400; 
+}
+
+.THIS .customRequired:before{    
+    content: "*";
+    margin: 0 0.125rem 0 0.125rem;
+    color: rgb(194, 57, 52);
+    float: left; 
+} 
+.THIS .none{
+    display:none; 
+}
+
+.THIS .formElementHelp{
+    color: rgb(194, 57, 52);
+    font-size: .75rem;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+.THIS .exampleHolder{
+    position: relative;
+    display: inline-block;
+    margin-left: 1rem;
+    width: 3.4rem;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+
+.THIS .slds-listbox{
+    
+    max-height: calc(((0.8125rem * 1.5) + 1rem) * 4) !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: content-box;
+   
+}
+
+/*.THIS .slds-modal__container.mobilePosition{
+    
+    position: fixed !important;
+  
+    
+}*/
+
+.THIS.scrollerSize {
+    height: 9.25rem;
+}
+
+.THIS .myButton{
+    position: absolute;
+    bottom: 19%;
+    right: 4%;
+    z-index: 10;
+}
+
+.THIS .myButtonTablet{
+    position: absolute;
+    bottom: 1%;
+    right: 4%;
+    z-index: 10;
+}
+
+.THIS .mobilePosition{
+    padding-top: 0;
+    
+}

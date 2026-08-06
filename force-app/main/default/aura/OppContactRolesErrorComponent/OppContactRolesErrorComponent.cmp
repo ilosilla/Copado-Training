@@ -1,0 +1,99 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" controller="OppContactRolesErrorComponentController">
+    <aura:attribute name="message" type="String" default="Check the list. To solve the issues press the 'Retry' button. If the error persist try editing the record."/>
+    
+    <aura:attribute name="rows" type="Integer" default="1"/>
+    <aura:attribute name="maxRows" type="Integer" default="2"/>
+    <aura:attribute name="minRows" type="Integer" default="1"/>
+    <aura:attribute name="showTable" type="Boolean" default="false"/>
+    <aura:attribute name="spinner" type="Boolean" default="true"/>
+    <aura:attribute name="disableButtons" type="Boolean" default="true"/>
+    <aura:attribute name="screenMessage" type="String" default="There are no errors to show."/>
+    
+    <!--<aura:attribute name="recordId" type="String" default="0011w00000GoYfNAAV"/>-->
+    
+    <aura:attribute name="oppContactRoles" type="OpportunityContactRole[]"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" access="global"/>
+    
+    <aura:if isTrue="{! v.oppContactRoles.length > 0 }">
+        <article class="slds-card">
+            <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                    <div class="slds-media__figure">
+                        <lightning:icon iconName='utility:error' alternative-text='error' variant='error' size='small' title='error'></lightning:icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <h2 class="slds-card__header-title">
+                            <a href="#" class="slds-card__header-link slds-truncate" title="Accounts">
+                                <span><b>{# $Label.c.OppActor_SAPerror}</b></span>
+                            </a>
+                        </h2>
+                    </div>
+                    <div class="slds-no-flex">
+                        <lightning:button  label="{! $Browser.formFactor != 'Desktop' ? $Label.c.Refresh : ''}" title="Refresh" iconName="utility:refresh" onclick="{! c.handleRefresh}" disabled="{! or(v.disableButtons,v.spinner)}"/>
+                    </div>
+                </header>
+            </div>
+            <div class="slds-card__body slds-card__body_inner">
+                <aura:if isTrue="{!v.spinner }">
+                    
+                    <div class="exampleHolder" style="position: relative">
+                        <lightning:spinner alternativeText="Loading" size="medium" />
+                    </div>
+                    
+                    <aura:set attribute="else">
+                        <aura:if isTrue="{!v.showTable }">
+                            <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+                                <thead>
+                                    <tr class="slds-line-height_reset">
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title="{! $Label.c.dict_contact + ' ' + $Label.c.Name}">
+                                                {# $Label.c.dict_contact + ' ' + $Label.c.Name}
+                                            </div>
+                                        </th>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title="{! $Label.c.Description}">
+                                                {# $Label.c.Description}
+                                            </div>
+                                        </th>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title="{! $Label.c.Retry}">
+                                                {# $Label.c.Retry}
+                                            </div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <aura:iteration items="{!v.oppContactRoles}" var="sapError" indexVar="index">
+                                        <tr class="slds-hint-parent">
+                                            <th data-label="Contact Role Name" scope="row">
+                                                <div class="slds-truncate" title="{!sapError.Contact.Name}">
+                                                    <a href="{!'/lightning/r/OpportunityContactRole/' + sapError.Id + '/view'}">{!sapError.Contact.Name}</a>
+                                                </div>
+                                            </th>
+                                            <td data-label="Error">
+                                                <aura:unescapedHtml value="{!sapError.ErrorMessage__c}" />
+                                            </td>
+                                            <td data-label="Close Date">
+                                                <lightning:button variant="brand" name="{!sapError.Id}" label="{# $Label.c.Retry}" title="Retry" onclick="{! c.handleRetry }" disabled="{!v.disableButtons}"/>
+                                            </td>
+                                        </tr>
+                                    </aura:iteration>
+                                </tbody>
+                            </table>
+                            <div class="slds-p-around--x-small slds-text-align--center">
+                                <b>{# $Label.c.ErrorCMP_Instructions}</b>
+                            </div>
+                            <aura:set attribute="else">
+                                <div class="slds-align_absolute-center">
+                                    <b>{!v.screenMessage}</b>
+                                </div>
+                            </aura:set>
+                        </aura:if>
+                    </aura:set>
+                </aura:if>
+            </div>
+            <!-- Card Body -->
+        </article>
+    </aura:if>
+</aura:component>

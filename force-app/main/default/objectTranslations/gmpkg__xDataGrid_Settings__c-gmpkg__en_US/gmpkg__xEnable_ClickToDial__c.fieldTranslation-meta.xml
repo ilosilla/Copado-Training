@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Check this option to enable click to dial. This option should be activated only if a Dialer is configured for the logged user. --></help>
+    <label><!-- Enable Click To Dial --></label>
+    <name>gmpkg__xEnable_ClickToDial__c</name>
+</CustomFieldTranslation>

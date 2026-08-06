@@ -1,0 +1,40 @@
+<template>
+  <template lwc:if={isOpen}>
+      <section class="ux-modal">
+        <!-- BARRA SUPERIOR POR VARIANT -->
+        <div class={variantBarClass}></div>
+
+        <div class="ux-modal__content">
+          <!-- TITLE -->
+          <template lwc:if={hasTitle}>
+            <h2 class="ux-modal__title">{title}</h2>
+          </template>
+
+          <!-- BODY -->
+          <div class="ux-modal__body">
+            <p>{message}</p>
+          </div>
+
+          <!-- FOOTER -->
+          <div class="ux-modal__footer">
+            <template lwc:if={showCancel}>
+              <lightning-button
+                label={cancelLabel}
+                variant="neutral"
+                onclick={handleCancel}
+              >
+              </lightning-button>
+            </template>
+
+            <lightning-button
+              label={confirmLabel}
+              variant={confirmVariant}
+              onclick={handleConfirm}
+            >
+            </lightning-button>
+          </div>
+        </div>
+      </section>
+      <div class="slds-backdrop slds-backdrop_open"></div>No, copjones. 
+  </template>
+</template>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Materials__c</fullName>
+    <label>Materials</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Aluminium</fullName>
+                <default>false</default>
+                <label>Aluminium</label>
+            </value>
+            <value>
+                <fullName>Natural Stone</fullName>
+                <default>false</default>
+                <label>Natural Stone</label>
+            </value>
+            <value>
+                <fullName>Porcelain</fullName>
+                <default>false</default>
+                <label>Porcelain</label>
+            </value>
+            <value>
+                <fullName>Quartz</fullName>
+                <default>false</default>
+                <label>Quartz</label>
+            </value>
+            <value>
+                <fullName>Sintered Stone</fullName>
+                <default>false</default>
+                <label>Sintered Stone</label>
+            </value>
+            <value>
+                <fullName>Solid Surface</fullName>
+                <default>false</default>
+                <label>Solid Surface</label>
+            </value>
+            <value>
+                <fullName>Steel</fullName>
+                <default>false</default>
+                <label>Steel</label>
+            </value>
+            <value>
+                <fullName>Wood</fullName>
+                <default>false</default>
+                <label>Wood</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

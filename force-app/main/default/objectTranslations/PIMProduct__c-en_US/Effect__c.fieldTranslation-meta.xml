@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Effect --></label>
+    <name>Effect__c</name>
+    <picklistValues>
+        <masterLabel>CONCRETE</masterLabel>
+        <translation><!-- CONCRETE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MARBLE</masterLabel>
+        <translation><!-- MARBLE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OXIDE</masterLabel>
+        <translation><!-- OXIDE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SOLID COLOUR</masterLabel>
+        <translation><!-- SOLID COLOUR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>STONE</masterLabel>
+        <translation><!-- STONE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TEXTURE</masterLabel>
+        <translation><!-- TEXTURE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WOOD</masterLabel>
+        <translation><!-- WOOD --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

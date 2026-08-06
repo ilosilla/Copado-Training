@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Porcelanosa Address</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Porcelanosa Address</value>
+    </caseValues>
+    <layouts>
+        <layout>Porcelanosa Address Layout</layout>
+        <sections>
+            <label><!-- Address --></label>
+            <section>Address</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Logistics/Warehouse FIelds --></label>
+            <section>Logistics/Warehouse FIelds</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- If you select Showroom Type, it&apos;s necesary select a Sales Office asociate. --></errorMessage>
+        <name>NBK_Showrrom_Salesoffice</name>
+    </validationRules>
+</CustomObjectTranslation>

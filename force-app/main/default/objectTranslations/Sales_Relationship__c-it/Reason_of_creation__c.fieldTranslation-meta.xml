@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Reason of creation --></label>
+    <name>Reason_of_creation__c</name>
+    <picklistValues>
+        <masterLabel>Change Account Owner</masterLabel>
+        <translation>Cambio Titolare dil Conto</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New Account</masterLabel>
+        <translation>Nuovo Conto</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New Account Team Member</masterLabel>
+        <translation>Nuovo Membro dil Team dil Conto</translation>
+    </picklistValues>
+</CustomFieldTranslation>

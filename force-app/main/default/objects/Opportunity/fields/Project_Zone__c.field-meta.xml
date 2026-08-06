@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Zone__c</fullName>
+    <label>Project Zone</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Whole remodelation</fullName>
+                <default>false</default>
+                <label>Whole remodelation</label>
+            </value>
+            <value>
+                <fullName>Bathroom</fullName>
+                <default>false</default>
+                <label>Bathroom</label>
+            </value>
+            <value>
+                <fullName>Kitchen</fullName>
+                <default>false</default>
+                <label>Kitchen</label>
+            </value>
+            <value>
+                <fullName>Room</fullName>
+                <default>false</default>
+                <label>Room</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Pavement</fullName>
+                <default>false</default>
+                <label>Pavement</label>
+            </value>
+            <value>
+                <fullName>Flooring</fullName>
+                <default>false</default>
+                <label>Flooring</label>
+            </value>
+            <value>
+                <fullName>Swimming pool</fullName>
+                <default>false</default>
+                <label>Swimming pool</label>
+            </value>
+            <value>
+                <fullName>Living room</fullName>
+                <default>false</default>
+                <label>Living room</label>
+            </value>
+            <value>
+                <fullName>Dining room</fullName>
+                <default>false</default>
+                <label>Dining room</label>
+            </value>
+            <value>
+                <fullName>Gym</fullName>
+                <default>false</default>
+                <label>Gym</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

@@ -1,0 +1,65 @@
+<!-- sldsValidatorIgnore -->
+<template>    
+    <template lwc:if={showCanvas}>
+        <div class="windowViewMode-maximized active lafPageHost">
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" class={topClass} 
+                style="width:100%; height:100%;">                
+
+                <lightning-spinner alternative-text="Loading..." variant="brand" if:true={showSpinner}>
+                </lightning-spinner>        
+
+                <!-- div style="position:relative; background-color:blue; width: 500px; top:0; bottom:0; right:0; z-index:9999;">ESTO ES EL SIDE</div -->
+                <!--div style="position:relative;top:0;bottom:0; right:0;width:400px;; background-color:white;border-left: 4px solid black;z-index:9999"></div -->
+
+                <div class={containerClass} style="min-width:100% !important;"> <!--style={widthString}>  -->   
+                    <!--div class="slds-template__container canvas-container" style="height:100%;background-color: white;" -->                        
+                        <!-- div class="inlinePanel oneRecordActionWrapper" -->
+                            <!-- div class="canvas" -->
+                                <slot name="header">
+                                    <template if:true={_showHeader}>
+                                        <header class="slds-modal__header" style="width: 100%;">
+                                            <h2 class="slds-text-heading--medium slds-hyphenate">
+                                                <span>
+                                                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{headerText}</h2>
+                                                </span>    
+                                            </h2>
+                                        </header>
+                                    </template>
+                                </slot>
+                                <div class={canvasBodyClass} style={heightString}>
+                                    <slot name="body" class="body_slot slds-var-p-around_medium">
+                                        <p>Body goes here..1</p>
+                                    </slot>
+                                </div>
+                            <!-- /div --> <!-- canvas -->
+                    
+                            <!-- footer class="slds-modal__footer slds-modal__footer_directional" style="width: 100%;" -->
+                            <footer class="slds-modal__footer">
+                                <lightning-layout horizontal-align="spread">
+                                    <lightning-layout-item>
+                                        <slot name="custom-actions">
+                                        </slot>
+                                    </lightning-layout-item>                            
+                                    <lightning-layout-item>
+                                        <slot name="footer">
+                                            <template if:true={showNegative}>
+                                                <lightning-button onclick={handleNegative} label={negativeButtonLabel}></lightning-button>
+                                            </template>
+                                            <template if:true={showPositive}>
+                                                <lightning-button variant="brand" onclick={handlePositive} label={positiveButtonLabel}></lightning-button>
+                                            </template>
+                                        </slot>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                            </footer>
+                        <!-- /div --> <!-- inlinePanel-->                
+                    <!-- /div-->
+    
+                </div>
+
+    
+            </section>    
+            <div class="slds-backdrop slds-backdrop_open" lwc:if={isModalorDocked}></div>
+        </div>
+    </template>
+</template>

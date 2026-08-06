@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Liste des Sociétés (Relations Commerciales) dont dispose ce Compte pour la configuration des règles de partage par critères.</help>
+    <label>Liste De Relations Commerciales</label>
+    <name>Sales_RelationShip_List__c</name>
+</CustomFieldTranslation>

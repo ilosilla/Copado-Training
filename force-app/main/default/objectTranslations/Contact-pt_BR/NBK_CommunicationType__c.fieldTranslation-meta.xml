@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Tipo de comunicación --></label>
+    <name>NBK_CommunicationType__c</name>
+    <picklistValues>
+        <masterLabel>Inspo</masterLabel>
+        <translation><!-- Inspo --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>News</masterLabel>
+        <translation><!-- News --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Newsletter</masterLabel>
+        <translation><!-- Newsletter --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Promotions</masterLabel>
+        <translation><!-- Promotions --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Nombre de chambres à coucher, égal ou supérieur à 0</help>
+    <label>No. Chambres à coucher</label>
+    <name>roomTypeBedroom__c</name>
+</CustomFieldTranslation>

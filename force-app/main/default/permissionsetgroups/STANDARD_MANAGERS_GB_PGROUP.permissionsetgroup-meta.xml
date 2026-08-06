@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Functional role for managers in Great Britain.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>STANDARD_MANAGERS_GB_PGROUP</label>
+    <status>Updated</status>
+</PermissionSetGroup>

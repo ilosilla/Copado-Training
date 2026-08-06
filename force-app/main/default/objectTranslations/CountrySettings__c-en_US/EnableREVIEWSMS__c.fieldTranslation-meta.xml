@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Enables the button to send a SMS to an account asking for a good review in Google --></help>
+    <label><!-- Enable REVIEW SMS --></label>
+    <name>EnableREVIEWSMS__c</name>
+</CustomFieldTranslation>

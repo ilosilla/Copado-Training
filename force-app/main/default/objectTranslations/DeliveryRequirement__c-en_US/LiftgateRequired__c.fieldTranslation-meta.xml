@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Select if a truck with a liftgate is required to unload the goods at the delivery location. --></help>
+    <label><!-- Liftgate Required --></label>
+    <name>LiftgateRequired__c</name>
+</CustomFieldTranslation>

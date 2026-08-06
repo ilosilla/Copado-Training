@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ISO_Code_Name</fullName>
+    <active>false</active>
+    <description>El Execution Context Name ha de ser un ISO CODE</description>
+    <errorConditionFormula>AND(UPPER(DeveloperName) &lt;&gt; &apos;DEFAULT&apos;, LEN(DeveloperName) &lt;&gt; 2)</errorConditionFormula>
+    <errorDisplayField>DeveloperName</errorDisplayField>
+    <errorMessage>The name has to be an ISO CODE (2 characters) or DEFAULT, if still not set</errorMessage>
+</ValidationRule>

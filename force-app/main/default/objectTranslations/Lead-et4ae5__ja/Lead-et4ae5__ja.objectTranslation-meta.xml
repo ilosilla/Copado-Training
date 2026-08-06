@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>New Lead Layout</layout>
+        <sections>
+            <label><!-- Lead Interests --></label>
+            <section>Lead Interests</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Information --></label>
+            <section>Opportunity Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Potential Layout</layout>
+        <sections>
+            <label><!-- Account Information --></label>
+            <section>Account Information</section>
+        </sections>
+        <sections>
+            <label><!-- Contact Information --></label>
+            <section>Contact Information</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Information --></label>
+            <section>Opportunity Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Web Lead Layout</layout>
+        <sections>
+            <label><!-- Admin Data --></label>
+            <section>Admin Data</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Lead Contact --></label>
+            <section>Lead Contact</section>
+        </sections>
+        <sections>
+            <label><!-- Lead Description --></label>
+            <section>Lead Description</section>
+        </sections>
+        <sections>
+            <label><!-- Lead Information --></label>
+            <section>Lead Information</section>
+        </sections>
+        <sections>
+            <label><!-- Room Information --></label>
+            <section>Room Information</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Convert Lead --></label>
+        <name>CustomConvert</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Edit --></label>
+        <name>EditWebLead</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Call with RingCentral --></label>
+        <name>rcsfl__Call_with_RingCentral</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- SMS with RingCentral --></label>
+        <name>rcsfl__SMS_with_RingCentral</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- Lead --></label>
+        <name>Lead</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- US website requests --></description>
+        <label><!-- US Web Request --></label>
+        <name>USWebRequest</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Lead captured from web forms --></description>
+        <label><!-- Web Request --></label>
+        <name>WebRequest</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- This Leads is associated to a Dealer and doesn&apos;t need to be Converted into a Private Customer --></errorMessage>
+        <name>Dealer_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Material Bank Leads cannot be Junk Leads --></errorMessage>
+        <name>MB_Junk_Status_Invalid</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please fill out the address field to save the record --></errorMessage>
+        <name>Mandatory_Address</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- At least one of the room types on Room Information is not a valid value (empty or positive number). --></errorMessage>
+        <name>RoomType_valid_values</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot select this option on Lead Source --></errorMessage>
+        <name>Validate_Lead_Source_selection</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label>Marketing Cloud 再購読</label>
+        <name>et4ae5__ExactTarget_Resubscribe</name>
+    </webLinks>
+    <webLinks>
+        <label>Marketing Cloud 購読取り消し</label>
+        <name>et4ae5__ExactTarget_Unsubscribe</name>
+    </webLinks>
+    <webLinks>
+        <label>Marketing Cloud メールを送信</label>
+        <name>et4ae5__Send_ExactTarget_Email</name>
+    </webLinks>
+    <webLinks>
+        <label>Marketing Cloud SMS を送信</label>
+        <name>et4ae5__Send_ExactTarget_SMS</name>
+    </webLinks>
+    <webLinks>
+        <label>Marketing Cloud 分析を参照</label>
+        <name>et4ae5__View_ExactTarget_Analytics</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SendSMS --></label>
+        <name>rcsfl__SendSMS</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Smart_Dialer --></label>
+        <name>talkdesk__Smart_Dialer</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Smart_SMS --></label>
+        <name>talkdesk__Smart_SMS</name>
+    </webLinks>
+    <workflowTasks>
+        <description><!-- Souvenez-vous de convertir la piste ou changer l&apos;status à &quot;Pas Intéressé&quot;. --></description>
+        <name>Contactez_ou_Convertez_la_Piste</name>
+        <subject><!-- Convertez ou Pas Intéressé --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <description><!-- Convert the Lead or change its status to &quot;Not Interested&quot; --></description>
+        <name>Lead_Reminder</name>
+        <subject><!-- Lead Reminder: Convert or Not Interested --></subject>
+    </workflowTasks>
+</CustomObjectTranslation>

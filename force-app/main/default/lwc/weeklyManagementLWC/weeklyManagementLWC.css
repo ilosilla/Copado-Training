@@ -1,0 +1,13 @@
+.container {
+    padding: 10px;
+}
+
+.lightning-combobox {
+    margin-bottom: 15px;
+}
+
+.slds-spinner_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

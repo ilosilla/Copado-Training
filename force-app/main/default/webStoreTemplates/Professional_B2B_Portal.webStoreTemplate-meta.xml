@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebStoreTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoFacetingEnabled>false</autoFacetingEnabled>
+    <cartAsyncProcessingEnabled>false</cartAsyncProcessingEnabled>
+    <cartCalculateEnabled>true</cartCalculateEnabled>
+    <cartToOrderAutoCustomFieldMapping>true</cartToOrderAutoCustomFieldMapping>
+    <commerceEinsteinActivitiesTracked>false</commerceEinsteinActivitiesTracked>
+    <commerceEinsteinDeployed>false</commerceEinsteinDeployed>
+    <country>US</country>
+    <defaultCurrency>USD</defaultCurrency>
+    <defaultLanguage>en_US</defaultLanguage>
+    <defaultTaxLocaleType>Net</defaultTaxLocaleType>
+    <description>Internal B2B storefront for authorized US dealers. This site provides controlled access to product catalogs, pricing, and ordering capabilities based on assigned buyer groups and price books. Intended for use by manually invited subdistributor accounts.</description>
+    <duplicateCartItemsEnabled>false</duplicateCartItemsEnabled>
+    <guestBrowsingEnabled>false</guestBrowsingEnabled>
+    <guestCartEnabled>false</guestCartEnabled>
+    <guestCartTimeToLive>10080</guestCartTimeToLive>
+    <guestCheckoutEnabled>false</guestCheckoutEnabled>
+    <masterLabel>Professional B2B Portal</masterLabel>
+    <maxValuesPerFacet>100</maxValuesPerFacet>
+    <orderLifeCycleType>MANAGED</orderLifeCycleType>
+    <paginationSize>20</paginationSize>
+    <preserveGuestCartEnabled>true</preserveGuestCartEnabled>
+    <pricingStrategy>Priority</pricingStrategy>
+    <productGrouping>BestMatch</productGrouping>
+    <skipAdditionalEntitlementCheckForSearch>true</skipAdditionalEntitlementCheckForSearch>
+    <skuDetectionEnabled>false</skuDetectionEnabled>
+    <splitShipmentEnabled>false</splitShipmentEnabled>
+    <supportedCurrencies>USD</supportedCurrencies>
+    <supportedLanguages>en_US</supportedLanguages>
+    <supportedShipToCountries>US</supportedShipToCountries>
+    <type>B2B</type>
+</WebStoreTemplate>

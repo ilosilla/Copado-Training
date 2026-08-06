@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JMMF_Listado_Facturas</fullName>
+    <columns>ExternalId</columns>
+    <columns>Sfopportunity__c</columns>
+    <columns>BillTo__c</columns>
+    <columns>Company__c</columns>
+    <columns>Distchannel__c</columns>
+    <columns>Doc__c</columns>
+    <columns>Dtotal__c</columns>
+    <columns>Orderdate__c</columns>
+    <columns>Salesorg__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>JMMF Listado Facturas</label>
+</ListView>

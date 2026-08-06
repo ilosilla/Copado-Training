@@ -1,0 +1,22 @@
+{
+  "type" : "sfdc_cms__themeLayout",
+  "title" : "B2B Global Layout",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "attributes" : {
+          "dxpStyle" : {
+            "padding" : {
+              "bottom" : "3%",
+              "left" : "8%",
+              "right" : "8%",
+              "top" : "3%"
+            }
+          }
+        },
+        "id" : "80e87c32-72e9-4e4c-bccc-2a709d60f3de"
+      } ]
+    }
+  },
+  "urlName" : "b2b-global-layout"
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveDataset xmlns="http://soap.sforce.com/2006/04/metadata">
+    <application>Lead_test</application>
+    <description>Created from the Leads US recipe.</description>
+    <masterLabel>Leads US</masterLabel>
+    <type>default</type>
+</WaveDataset>

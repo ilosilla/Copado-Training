@@ -1,0 +1,152 @@
+/* ==============================
+   GRID
+   ============================== */
+
+.plp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* ==============================
+   CARD
+   ============================== */
+
+.plp-card {
+    border: 1px solid var(--b2b-border-color_dark, #e5e5e5);
+    background: #fff;
+    padding: 0.9rem;
+    transition: border-color 0.15s ease,
+                box-shadow 0.15s ease,
+                transform 0.15s ease;
+}
+
+.plp-card:hover {
+    border-color: var(--psa-border-color_darker, #c9c9c9);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.plp-card:hover .plp-name {
+    color: var(--b2b-color-success);
+}
+
+.plp-card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    padding: 0.20rem;
+}
+
+.plp-card-link:hover,
+.plp-card-link:focus {
+    text-decoration: none;
+}
+
+/* ==============================
+   IMAGE
+   ============================== */
+
+.plp-image-wrapper {
+    /*padding: 0.25rem;*/
+    background: #fafafa;
+}
+
+.plp-image-wrapper img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    display: block;
+}
+
+/* ==============================
+   BODY
+   ============================== */
+
+.plp-card-body {
+    text-align: left;
+    padding-top: 0.5rem;
+}
+
+/* ==============================
+   TEXT
+   ============================== */
+
+.plp-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.1rem;
+    line-height: 1.25;
+}
+
+.plp-sku {
+    font-size: 0.8rem;
+    color: #6b6b6b;
+    margin-bottom: 0.25rem;
+}
+
+/* ==============================
+   PRICE + STOCK ROW
+   ============================== */
+
+.plp-price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.plp-price {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #000;
+    line-height: 1.2;
+}
+
+/* ==============================
+   STOCK
+   ============================== */
+
+.plp-stock {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.80rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.plp-stock::before {
+    content: '';
+    width: 8px;          /* 👈 antes 7px */
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;      /* 👈 CLAVE */
+}
+
+
+.plp-stock.success {
+    color: var(--b2b-color-success);
+}
+
+.plp-stock.success::before {
+    background-color: var(--b2b-color-success);
+}
+
+.plp-stock.warning {
+    color: var(--b2b-color-warning);
+}
+
+.plp-stock.warning::before {
+    background-color: var(--b2b-color-warning);
+}
+
+.plp-stock.error {
+    color: var(--b2b-color-error);
+}
+
+.plp-stock.error::before {
+    background-color: var(--b2b-color-error);
+}

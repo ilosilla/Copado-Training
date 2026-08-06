@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>Event</compactLayoutAssignment>
+    <description>Recordtype para Follow de Eventos</description>
+    <label>Event</label>
+</RecordType>

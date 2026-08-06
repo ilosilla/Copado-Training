@@ -1,0 +1,25 @@
+<template>
+    <header data-f6-region class='custom-header'>
+        <div class="header-row__service">
+            <div class="header-left header-logo">
+                <h4>PORCELANOSA</h4>
+                <template if:true={showTitle}>
+                    <span class="sep">|</span>
+                    <span class="header-title">{title}</span>
+                </template>
+            </div>
+
+            <div class="header-right">
+                <a href="javascript:void(0)" class="header-icon" onclick={handleHome} title="Home">
+                    <lightning-icon icon-name="utility:home" size="x-small" alternative-text="Home"></lightning-icon>
+                </a>
+                <span class="sep">|</span>
+                <div class="cell profile"><slot name="profile-menu"></slot></div>
+                <span class="sep">|</span>
+                <div class="cell cart">
+                    <slot name="cart-icon"></slot>
+                </div>
+            </div>
+        </div>
+    </header>
+</template>

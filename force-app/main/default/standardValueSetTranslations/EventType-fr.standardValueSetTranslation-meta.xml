@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>CPD presentation</masterLabel>
+        <translation><!-- CPD presentation --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Claim Visit</masterLabel>
+        <translation>Visite SAV</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Client event</masterLabel>
+        <translation>Événements pour Clients</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Customer Entertainment</masterLabel>
+        <translation>Divertissement pour Clients</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>E-commerce Showroom Appointment</masterLabel>
+        <translation>Rendez-vous Salle E-commerce</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>E-commerce Virtual appointment</masterLabel>
+        <translation><!-- E-commerce Virtual appointment --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Factory trip</masterLabel>
+        <translation>Voyage à l&apos;usine</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Library update/Samples delivery</masterLabel>
+        <translation>Actualisation de la Biblioteque/Échantillons</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Lunch and Learn (CEU)</masterLabel>
+        <translation><!-- Lunch and Learn (CEU) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Meeting</masterLabel>
+        <translation><!-- Meeting --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Non Commercial</masterLabel>
+        <translation>Divers</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Opportunity Follow Up Meeting</masterLabel>
+        <translation>Réunion pour suivi de l&apos;opportunité</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Product Presentation</masterLabel>
+        <translation>Presentation Produits</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Prospect meeting</masterLabel>
+        <translation>Réunion Prospecteurs</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Showroom Visit</masterLabel>
+        <translation>Visite de la Salle Expo</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Site visit</masterLabel>
+        <translation>Visite Chantier</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Trade show</masterLabel>
+        <translation>Salon</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Virtual appointment</masterLabel>
+        <translation><!-- Virtual appointment --></translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

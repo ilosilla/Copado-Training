@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>talkdesk__DispositionCode__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>Disposition Code</label>
+    <referenceTo>talkdesk__Talkdesk_Disposition_Code__c</referenceTo>
+    <relationshipLabel>Talkdesk Activities</relationshipLabel>
+    <relationshipName>Talkdesk_Activities</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

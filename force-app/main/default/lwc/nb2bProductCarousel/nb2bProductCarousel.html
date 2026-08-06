@@ -1,0 +1,24 @@
+<template>
+    <lightning-card class="card productCarouselCard">
+        <div class="slds-text-align_center slds-m-bottom_large slds-p-bottom_large parent parent productCarouselBox">
+            
+            <div class="carousel">
+                <template for:each={products} for:item="prod" for:index="index">
+                    <div class="gallery-cell slds-col slds-size_12-of-12 slds-medium-size--4-of-12 slds-large-size--2-of-12 slds-small-size-10-of-12"
+                        key={prod.id}>
+                        <a href={prod.url}>
+                            <img style="max-height: 210px" alt="" src={prod.imagen} class="productImage"/>
+                        </a>
+                        <div class="productDetails">
+                            <a href={prod.url}>
+                                <h3 class="productTitle">{prod.name}</h3>
+                            </a>
+                            <h3 class="productPrice">{prod.price}</h3>                        
+                        </div>
+                    </div>
+                </template>
+            </div>
+            
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,400 @@
+<!--
+ Ivan Losilla - August 2021
+ Component Created to manage the Price Request. There are 2 types of users:
+ - User: Can create a Price Request and the Items related to it.
+ - Approver: Can manage Price Request Items, to approve or reject
+ Depending on the type of user, the component show more or less parts of the component, and loads different data needed.
+
+ The List of Items is another component separately, included by this one
+-->
+<aura:component 
+  	implements="flexipage:availableForAllPageTypes,force:hasSObjectName,force:hasRecordId"
+	access="global"
+    controller="OppPriceRequestComponentController">
+    
+    <!-- Events -->
+    <aura:registerEvent name="closeComponent" type="c:eventCloseComponent" />
+    
+    <!-- Data Attributes -->
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="opportunityData" type="Opportunity"/>
+    <aura:attribute name="priceRequest" type="OppPriceRequestHeader__c" default="{'sobjectType':'OppPriceRequestHeader__c', 'Opportunity__c': ''}"/>
+    <aura:attribute name="items" type="OppPriceRequestItem__c[]"/>
+    <aura:attribute name="itemPanel" type="OppPriceRequestItem__c" default="{'sobjectType':'OppPriceRequestItem__c'}"/>
+    <aura:attribute name="itemEditingIndex" type="Integer" default="-1"/>
+    <aura:attribute name="itemFields" type="List" default="[]"/>
+    <aura:attribute name="itemFieldOnlyFactory" type="List" default="[]"/>
+    <aura:attribute name="tariffPrices" type="List" default="[]"/>
+    <aura:attribute name="referencePrices" type="List" default="[]"/>
+    <aura:attribute name="opportunityProducts" type="List" default="[]"/>
+    <aura:attribute name="pricebook" type="Pricebook2"/>
+    <aura:attribute name="pricebookName" type="String"/>
+    <aura:attribute name="products" type="List" default="[]"/>
+    <aura:attribute name="salesOrgs" type="PriceRequest.salesOrgsWrapper[]"/>
+    
+    <!-- UI Attributes -->
+    <aura:attribute name="isExpanded" type="Boolean" default="false"/>
+    <aura:attribute name="isExpandedHeader" type="Boolean" default="false"/>
+    <aura:attribute name="saveEnabled" type="Boolean" default="false"/>
+    <aura:attribute name="mode" type="String" default=""/>
+    <aura:attribute name="approverMode" type="Boolean" default="false"/>
+    <aura:attribute name="hasApprovers" type="Boolean" default="false"/>
+    <aura:attribute name="oppHasProducts" type="Boolean" default="false"/>
+    <aura:attribute name="isStoreManager" type="Boolean" default="false"/>
+    <aura:attribute name="isFactoryManager" type="Boolean" default="false"/>
+    <aura:attribute name="isStoreApprover" type="Boolean" default="false"/>
+    <aura:attribute name="isFactoryApprover" type="Boolean" default="false"/>
+    <aura:attribute name="isActive" type="Boolean" default="false"/>
+    <aura:attribute name="isApprover" type="Boolean" default="false"/>
+    <aura:attribute name="showSpinner" type="Boolean" default="false"/>
+    <aura:attribute name="showSpinnerItemForm" type="Boolean" default="false"/>
+    <aura:attribute name="title" type="String"/>
+    <aura:attribute name="titlePanel" type="String"/>
+    <aura:attribute name="confirmedDialog" type="Boolean" default="false" />
+    <aura:attribute name="isStandardPricebook" type="Boolean" default="false" />
+    <aura:attribute name="componentOnModal" type="Boolean" default="true" />
+    <aura:attribute name="textConfirmSubmit" type="String"/>
+    <aura:attribute name="buttonActionSelected" type="String" default=""/>
+    <aura:attribute name="opportunityClosed" type="Boolean" default="false"/>
+    <aura:attribute name="selectedCount" type="Integer" default="0"/>
+    <aura:attribute name="selectedToApprove" type="Integer" default="0"/>
+    <aura:attribute name="selectedToReject" type="Integer" default="0"/>
+    <aura:attribute name="editingItem" type="Boolean" default="false"/>
+    <aura:attribute name="approveChecked" type="Boolean" default="false"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    
+    <div class="slds-is-relative docker" style="position:relative;height:100%;display:flex;flex-direction:row-reverse">
+            <aura:if isTrue="{!v.showSpinner}">
+                <div aura:id="spinnerId" class="slds-spinner_container">
+                <div class="slds-spinner_brand  slds-spinner slds-spinner_large slds-is-relative" role="alert">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+                </div>
+        </aura:if>
+
+        <aura:if isTrue="{! v.isActive == true }">
+            
+            <!-- *************************************************************************************************************** -->
+            <!-- *********************************************** CREATE PART *************************************************** -->
+            <!-- *************************************************************************************************************** -->
+            <aura:if isTrue="{! v.mode == 'CREATE' }">
+                <div class="slds-col">
+                    <article class="slds-card headerBottomBorder forceRelatedListCardDesktop">
+                        <div class="slds-page-header slds-grid">
+                            
+                            <!-- Header Info -->
+                            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                <div class="slds-media__figure">
+                                    <span class="slds-icon_container slds-icon-standard-account" title="{! $Label.c.prequest_pricerequest }">
+                                        <lightning:icon iconName="standard:partner_fund_claim" />
+                                        <span class="slds-assistive-text">{!$Label.c.prequest_pricerequest}</span>
+                                    </span>
+                                </div>
+                                <div class="slds-media__body">
+                                    <div class="slds-page-header__name-title">
+                                        <h1><span class="slds-page-header__title slds-truncate">{! v.title }</span></h1>
+                                    </div>
+                                </div>
+                            </header>
+                        </div>
+                        <lightning:recordEditForm
+                                                  aura:id="formBasicPriceRequest"
+                                                  objectApiName="OppPriceRequestHeader__c"
+                                                  onsubmit="{! c.submitNewPriceRequest }"
+                                                  class="slds-p-around--large">
+                            <lightning:messages />
+                            
+                            <div class="slds-grid slds-wrap">
+                                <lightning:inputField fieldName="CurrencyIsoCode" value="{! v.priceRequest.CurrencyIsoCode }" required="true" disabled="true"/>
+                                <lightning:inputField fieldName="NeededBy__c" value="{! v.priceRequest.NeededBy__c }" required="true" disabled="{! or(v.approverMode == true) }" onchange="{! c.enableSaveButton }"/>
+                                <lightning:select aura:id="SAPAccountingInfo__c" name="SAPAccountingInfo__c" value="{!v.priceRequest.SAPAccountingInfo__c}" label="Sales Org" required="true" disabled="{!v.approverMode == true}">
+                                    <aura:if isTrue="{! v.salesOrgs.length > 1 }">
+                                        <option value=""></option>
+                                    </aura:if>    
+                                    <aura:iteration items="{! v.salesOrgs }" var="elem">
+                                        <option value="{!elem.id}">{!elem.label}</option>
+                                    </aura:iteration>
+                                </lightning:select>
+                                <lightning:inputField class="notes-height" fieldName="Notes__c" value="{! v.priceRequest.Notes__c }" disabled="{! or(v.approverMode == true) }" onchange="{! c.enableSaveButton }"/>
+                            </div>
+                        </lightning:recordEditForm>
+                        
+                        <footer class="slds-modal__footer">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-col slds-size_8-of-12 slds-p-left_small slds-p-right_small slds-text-align--left">
+                                </div>
+                                <div class="slds-col slds-size_4-of-12 slds-p-left_small slds-p-right_small">
+                                    <lightning:button variant="neutral" label="{!$Label.c.dict_close}" onclick="{!c.closeComponent}"/>
+                                        <aura:if isTrue="{! v.approverMode == false }">
+                                        <lightning:button variant="brand" label="{!$Label.c.dict_save}" disabled="{! v.showSpinner }" onclick="{!c.submitNewPriceRequest}"/>
+                                            <aura:set attribute="else">
+                                                <lightning:button variant="brand" label="{!$Label.c.dict_save}" disabled="{! !v.saveEnabled }" onclick="{!c.submitUpdatePriceRequest}"/>
+                                            </aura:set>
+                                        </aura:if>
+                                        <aura:if isTrue="{! v.approverMode == true}">
+                                            <lightning:button variant="brand" label="{!$Label.c.dict_submit}" disabled="{! and(v.selectedToApprove == 0, v.selectedToReject == 0) }" onclick="{!c.submitApprovedRejectedConfirmation}"/>
+                                        </aura:if>
+                                </div>
+                            </div>
+                        </footer>
+                    </article>
+                </div>
+            </aura:if>
+        
+            <!-- *************************************************************************************************************** -->
+            <!-- ************************************************* EDIT PART *************************************************** -->
+            <!-- *************************************************************************************************************** -->
+            <aura:if isTrue="{! v.mode == 'EDIT' }">
+                <!-- Item Panel -->
+                <div class="{! 'slds-panel slds-size_medium slds-panel_docked slds-panel_docked-right docked slds-is-absolute ' + ( v.isExpanded ? 'slds-is-open' : '')}" aria-hidden="false" id="example-unique-id-132">
+
+                    <div class="slds-panel__header">
+                        <lightning:buttonIcon iconName="utility:chevronright" class="slds-panel__back" variant="bare" onclick="{!c.collapsePanel}"/>
+                        <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">{! v.titlePanel }</h2>
+                        <div class="slds-panel__header-actions">
+                            <lightning:buttonIcon iconName="utility:close" class="slds-panel__back" variant="bare" onclick="{!c.collapsePanel}"/>
+                        </div>
+                    </div>
+                    <div class="slds-panel__body">
+                        <aura:if isTrue="{!v.showSpinnerItemForm}">
+                            <div class="slds-spinner_container">
+                                <div class="slds-spinner slds-spinner_brand slds-spinner_large slds-is-relative" role="alert">
+                                    <span class="slds-assistive-text">Loading</span>
+                                    <div class="slds-spinner__dot-a"></div>
+                                    <div class="slds-spinner__dot-b"></div>
+                                </div>
+                            </div>
+                        </aura:if>
+                        
+                        <!-- Price Request Item Form -->
+                        <lightning:recordEditForm
+                                            aura:id="formNewPriceRequestItem"
+                                            objectApiName="OppPriceRequestItem__c"
+                                            onsubmit="{!c.saveItem}">
+                            <lightning:messages />
+
+                            <aura:if isTrue="{!v.showSpinnerItemForm == false}">
+                                <!-- We mount each field with the metadata on itemFields -->
+                                <lightning:select aura:id="OpportunityProduct__c" name="OpportunityProduct__c" value="{!v.itemPanel.OpportunityProduct__c}" label="{! $Label.c.dict_opportunity_product }" required="true" disabled="{! or(v.approverMode == true,v.editingItem )}" onchange="{! c.changeProductData}">
+                                    <option value=""> </option>
+                                    <aura:iteration items="{!v.opportunityProducts}" var="option">
+                                        <option value="{!option.Id}">{!option.Product2.Name}</option>
+                                    </aura:iteration>
+                                </lightning:select>
+
+                                <aura:iteration items="{!v.itemFields}" var="elem" >
+                                    <aura:if isTrue="{! elem.hide == true }">
+                                        <lightning:inputField aura:id="inputField" fieldName="{! elem.field }" value="{! elem.itemValue }" disabled="{! elem.disabled }" required="{! elem.required }" class="slds-hide"/>
+                                    </aura:if>
+                                    <aura:if isTrue="{! elem.hide == false }">
+                                        <lightning:inputField aura:id="inputField" fieldName="{! elem.field }" value="{! elem.itemValue }" disabled="{! elem.disabled }" required="{! elem.required }"/>
+                                    </aura:if>
+                                </aura:iteration>
+
+                                <div class="slds-m-top_medium slds-align_absolute-center">
+                                    <lightning:button class="slds-button slds-button_neutral" name="cancel" label="{!$Label.c.dict_button_cancel}" onclick="{!c.collapsePanel}"/>
+                                    <lightning:button class="slds-button slds-button_brand" variant="brand" type="submit" name="save" label="{!$Label.c.dict_save}"/>
+                                </div>
+                            </aura:if>
+                            
+                            
+                        </lightning:recordEditForm>
+                    </div>
+                </div>
+                
+                <!-- Price Request Header Panel -->
+                <div class="{! 'slds-panel slds-size_medium slds-panel_docked slds-panel_docked-left docked slds-is-absolute ' + ( v.isExpandedHeader ? 'slds-is-open' : '')}" aria-hidden="false" style="border-left: 1px solid #c9c9c9;" id="example-unique-id-132">
+                    <div class="slds-panel__header">
+                        <lightning:buttonIcon iconName="utility:chevronright" class="slds-panel__back" variant="bare" onclick="{!c.collapsePanelHeader}"/>
+                        <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">{!$Label.c.dict_basic_information}</h2>
+                        <div class="slds-panel__header-actions">
+                            <lightning:buttonIcon iconName="utility:close" class="slds-panel__back" variant="bare" onclick="{!c.collapsePanelHeader}"/>
+                        </div>
+                    </div>
+                    <div class="slds-panel__body">
+                        
+                        <!-- Price Request Header Form -->
+                        <lightning:recordEditForm
+                                                  aura:id="formBasicPriceRequest"
+                                                  objectApiName="OppPriceRequestHeader__c">
+                            <lightning:messages />
+                            <div class="slds-grid slds-wrap">
+                                <lightning:inputField fieldName="Status__c" value="{! v.priceRequest.Status__c }" disabled="true"/>
+                                <lightning:inputField fieldName="CurrencyIsoCode" value="{! v.priceRequest.CurrencyIsoCode }" required="true" disabled="true" onchange="{! c.changeItemsCurrency }"/>
+                                <lightning:inputField fieldName="NeededBy__c" value="{! v.priceRequest.NeededBy__c }" required="true" disabled="{! v.approverMode == true }" onchange="{! c.enableSaveButton }"/>
+                                <lightning:inputField fieldName="ApproveCode__c" value="{! v.priceRequest.ApproveCode__c }" disabled="true"/>
+                                <lightning:select aura:id="SAPAccountingInfo__c" name="SAPAccountingInfo__c" value="{!v.priceRequest.SAPAccountingInfo__c}" label="Sales Org" required="true" disabled="{!or(v.approverMode == true, v.priceRequest.ApproveCode__c != null)}">
+                                    <aura:if isTrue="{! v.salesOrgs.length > 1 }">
+                                        <option value=""> </option>
+                                    </aura:if>    
+                                    <aura:iteration items="{! v.salesOrgs }" var="elem">
+                                        {!elem.id}-{!elem.label}
+                                        <option value="{!elem.id}">{!elem.label}</option>
+                                    </aura:iteration>
+                                </lightning:select>
+                                <lightning:inputField fieldName="Notes__c" class="notes-height" value="{! v.priceRequest.Notes__c }" disabled="{! v.approverMode == true }" onchange="{! c.enableSaveButton }"/>
+                            </div>
+                            
+                            <div class="slds-m-top_medium slds-align_absolute-center">
+                                <lightning:button class="slds-button slds-button_neutral" name="cancel" label="{!$Label.c.dict_close}" onclick="{!c.collapsePanelHeader}"/>
+                                <aura:if isTrue="{! v.approverMode == false }">
+                                    <lightning:button class="slds-button slds-button_brand" variant="brand" name="save" label="{!$Label.c.dict_save}" onclick="{! c.submitUpdatePriceRequest }"/>
+                                </aura:if>
+                            </div>
+                        </lightning:recordEditForm>
+                    </div>
+                </div>                
+                
+                <!-- Main Page -->
+                <div class="slds-col" style="width: 100%;">
+                    <article class="slds-card headerBottomBorder forceRelatedListCardDesktop">
+                        <div class="slds-page-header slds-grid">
+                            
+                            <!-- Header Info -->
+                            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                <div class="slds-media__figure">
+                                    <span class="slds-icon_container slds-icon-standard-account" title="{! $Label.c.prequest_pricerequest }">
+                                        <lightning:icon iconName="standard:partner_fund_claim" />
+                                        <span class="slds-assistive-text">{!$Label.c.prequest_pricerequest}</span>
+                                    </span>
+                                </div>
+                                <div class="slds-media__body">
+                                    <div class="slds-page-header__name-title">
+                                        <h1><span class="slds-page-header__title slds-truncate">{! v.title }</span></h1>
+                                    </div>
+                                </div>
+                                <div class="slds-no-flex">
+                                    <lightning:button label="{!$Label.c.dict_basic_information}" title="{!$Label.c.dict_basic_information}" onclick="{! c.openPanelHeader }"/>
+                                </div>
+                            </header>
+                        </div>
+
+                        <aura:if isTrue="{! v.approverMode == true}">
+                            <div class="slds-grid slds-wrap slds-p-top--small">
+                                <div class="slds-col slds-size_9-of-12 slds-p-left--x-large slds-p-top--small">
+                                    <aura:if isTrue="{! v.priceRequest.ApproveCode__c != null }">
+                                        {!$Label.c.prequest_approve_code} : {! v.priceRequest.ApproveCode__c }
+                                    </aura:if>
+                                </div>
+                                <div class="slds-col slds-size_3-of-12 slds-p-left--x-large slds-text-align_center">
+                                    <lightning:buttonGroup>
+                                        <lightning:button label="{!$Label.c.dict_approve}" disabled="{! v.selectedCount == 0}" onclick="{! c.submitApproveConfirmation }" />
+                                        <lightning:button label="{!$Label.c.dict_decilne}" disabled="{! v.selectedCount == 0}" title="{!$Label.c.dict_decilne}" onclick="{! c.submitDeclineConfirmation }"/>
+                                    </lightning:buttonGroup>
+                                </div>
+                            </div>
+                        </aura:if>
+                        <aura:if isTrue="{! v.approverMode == false}">
+                            <div class="slds-notify slds-notify_alert" role="alert">
+                                {! $Label.c.prequest_message_correct_data }
+                            </div>
+                            <aura:if isTrue="{! v.hasApprovers == false }">
+                                <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+                                    {! $Label.c.prequest_no_approvers }
+                                </div>
+                            </aura:if>
+                            <div class="slds-grid slds-wrap slds-p-top--small">
+                                <div class="slds-col slds-size_8-of-12 slds-p-left--x-large slds-p-top--small">
+                                </div>
+                                <!-- Items Button group -->
+                                <div class="slds-col slds-size_5-of-12 slds-text-align_center">
+                                    <aura:if isTrue="{! v.approverMode == false}">
+                                        <lightning:buttonGroup>
+                                            <lightning:button label="{!$Label.c.prequest_send_approval}" disabled="{! or(v.selectedCount == 0, v.hasApprovers == false) }" onclick="{! c.submitForApprovalConfirmation }" />
+                                            <lightning:button label="{!$Label.c.dict_delete}" disabled="{! v.selectedCount == 0}" onclick="{! c.submitDeleteConfirmation }"/>
+                                        </lightning:buttonGroup>
+                                        <lightning:button label="{!$Label.c.prequest_new_item}" title="{!$Label.c.prequest_new_item}" onclick="{! c.openPanel }" disabled="{! v.opportunityProducts.length == 0 }"/>
+                                    </aura:if>
+                                </div>
+                            </div>
+                        </aura:if>
+                        
+                        <div class="slds-p-top--medium" style="min-height: 600px;">
+                            <!-- Price Request Items List -->
+                            <div class="slds-card__body slds-card__body_inner" style="overflow:auto;height: 40vh;margin-top: 0;">
+                                <c:OppPriceRequestItemListComponent
+                                    showApprovalCheckbox="true"
+                                    countryCode="{! v.opportunityData.Owner.CountryCode}"
+                                    onChange="{! c.updateItemsCount }"
+                                    items="{! v.items }"
+                                    approverMode="{! v.approverMode }"
+                                    reloadList="{! c.reload}"
+                                    isStoreManager="{! v.isStoreManager }"
+                                    isStoreApprover="{! v.isStoreApprover }"
+                                    isFactoryManager="{! v.isFactoryManager }"
+                                    isFactoryApprover="{! v.isFactoryApprover }"
+                                    editItem="{! c.prepareEditForm }"/>
+                        </div>
+                        </div>
+                        
+                        <footer class="slds-modal__footer">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-col slds-size_8-of-12 slds-p-left_small slds-p-right_small slds-text-align--left">
+                                </div>
+                                <div class="slds-col slds-size_4-of-12 slds-p-left_small slds-p-right_small">
+                                    <lightning:button variant="neutral" label="{!$Label.c.dict_close}" onclick="{!c.closeComponent}"/>
+                                </div>
+                            </div>
+                        </footer>
+                    </article>
+                </div>
+            </aura:if>
+            
+            <!-- Modal/Popup Confirm Changes -->
+            <section role="dialog" aura:id="modalConfirmSubmit" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-modal_small">
+                <div class="slds-modal__container slds-text-align--center" style="width:25%!important">
+                    <header class="slds-modal__header">
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{!$Label.c.dict_confirm}</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <p><aura:unescapedHtml value="{! v.textConfirmSubmit }"/></p>
+                    </div>
+
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="neutral"
+                                          label="{!$Label.c.dict_no}"
+                                          title="{!$Label.c.dict_no}"
+                                          onclick="{! c.closeConfirmationModal }"/>
+                        <aura:if isTrue="{! v.buttonActionSelected == 'APPROVE'}">
+                            <lightning:button variant="brand"
+                                                label="{!$Label.c.dict_yes}"
+                                                title="{!$Label.c.dict_yes}"
+                                                onclick="{!c.handleSubmitConfirmationChecked}"/>
+                            <aura:set attribute="else">
+                                <lightning:button variant="brand"
+                                                    label="{!$Label.c.dict_yes}"
+                                                    title="{!$Label.c.dict_yes}"
+                                                    onclick="{!c.handleSubmitConfirmationChecked}"/>
+                            </aura:set>
+                        </aura:if>
+
+                            
+                    </footer>
+                </div>
+            </section>
+        </aura:if>
+        <div aura:id="backdropId" class="slds-backdrop"></div>
+    </div>
+    
+    <aura:if isTrue="{! v.mode == 'EDIT' }">
+        <aura:html tag="style">
+            .slds-modal__container{
+            width: 100%;
+            max-width: 80rem;
+            min-width: 20rem;
+            margin: 0 auto;
+            }
+        </aura:html>
+    </aura:if>
+    
+    <aura:html tag="style">
+        .slds-modal__content{
+            overflow-y: hidden;
+            height:unset !important;
+            max-height:unset !important;
+        }
+	</aura:html>
+</aura:component>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Execution Context</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Execution Contexts</value>
+    </caseValues>
+    <layouts>
+        <layout>Execution Context Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- The name has to be an ISO CODE (2 characters) or DEFAULT, if still not set --></errorMessage>
+        <name>ISO_Code_Name</name>
+    </validationRules>
+</CustomObjectTranslation>

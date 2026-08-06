@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Type de relation</help>
+    <label>Type de relation</label>
+    <name>Relationship__c</name>
+    <picklistValues>
+        <masterLabel>Asociada</masterLabel>
+        <translation>Associés</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Grupo</masterLabel>
+        <translation>Groupe</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Terceros</masterLabel>
+        <translation>Des tiers</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vinculada</masterLabel>
+        <translation>Lié</translation>
+    </picklistValues>
+</CustomFieldTranslation>

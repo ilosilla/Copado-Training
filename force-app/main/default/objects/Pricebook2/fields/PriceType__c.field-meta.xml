@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PriceType__c</fullName>
+    <description>Indica qué precios se graban en los price book entries. Si &quot;PRICE UNIT&quot;, se usa el precio de SAP (por MT2 en bases). Si &quot;SALES UNIT&quot; se usa el precio calculado por unidad de venta.</description>
+    <inlineHelpText>Indica qué precios se graban en los price book entries. Si &quot;PRICE UNIT&quot;, se usa el precio de SAP (por MT2 en bases). Si &quot;SALES UNIT&quot; se usa el precio calculado por unidad de venta.</inlineHelpText>
+    <label>Price Type</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>UPR</fullName>
+                <default>true</default>
+                <label>Use Price Unit</label>
+            </value>
+            <value>
+                <fullName>UMV</fullName>
+                <default>false</default>
+                <label>Use Sales Unit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Type d&apos;événement</label>
+    <name>EventType__c</name>
+    <picklistValues>
+        <masterLabel>CPD presentation</masterLabel>
+        <translation><!-- CPD presentation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Claim Visit</masterLabel>
+        <translation>Visite SAV</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Client event</masterLabel>
+        <translation>Événements pour Clients</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer Entertainment</masterLabel>
+        <translation>Divertissement pour Clients</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>E-Commerce Showroom Appointment</masterLabel>
+        <translation><!-- E-Commerce Showroom Appointment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>E-commerce Virtual appointment</masterLabel>
+        <translation><!-- E-commerce Virtual appointment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Factory trip</masterLabel>
+        <translation>Voyage à l&apos;usine</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Library update/Samples delivery</masterLabel>
+        <translation>Actualisation de la Biblioteque/Échantillons</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lunch and Learn (CEU)</masterLabel>
+        <translation><!-- Lunch and Learn (CEU) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Meeting</masterLabel>
+        <translation>Rendez-vous</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Non Commercial</masterLabel>
+        <translation>Divers</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Opportunity Follow Up Meeting</masterLabel>
+        <translation>Réunion pour suivi de l&apos;opportunité</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product Presentation</masterLabel>
+        <translation>Presentation Produits</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Prospect meeting</masterLabel>
+        <translation>Réunion Prospecteurs</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Showroom Visit</masterLabel>
+        <translation>Visite de la Salle Expo</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Site visit</masterLabel>
+        <translation>Visite Chantier</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Store visit</masterLabel>
+        <translation><!-- Store visit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Trade show</masterLabel>
+        <translation>Salon</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Weekly report</masterLabel>
+        <translation>Rapport hebdomadaire</translation>
+    </picklistValues>
+</CustomFieldTranslation>

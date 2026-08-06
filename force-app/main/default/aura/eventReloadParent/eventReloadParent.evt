@@ -1,0 +1,1 @@
+<aura:event type="COMPONENT" description="Tell if the parent have to reload"/>

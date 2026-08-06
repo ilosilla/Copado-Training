@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Merchandaising Materials</label>
+    <name>Merchandising_Materials__c</name>
+    <picklistValues>
+        <masterLabel>Catalogues</masterLabel>
+        <translation><!-- Catalogues --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Others</masterLabel>
+        <translation><!-- Others --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Stands</masterLabel>
+        <translation><!-- Stands --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Worktop</masterLabel>
+        <translation><!-- Worktop --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

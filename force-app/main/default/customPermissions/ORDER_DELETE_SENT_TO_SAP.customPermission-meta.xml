@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permite borrar pedidos aunque hayan sido enviados a SAP</description>
+    <isLicensed>false</isLicensed>
+    <label>ORDER_DELETE_SENT_TO_SAP</label>
+</CustomPermission>

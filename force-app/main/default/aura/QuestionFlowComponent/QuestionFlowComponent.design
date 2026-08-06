@@ -1,0 +1,6 @@
+<design:component>
+   <design:attribute name="questionText" label="Question Text" description="The question to ask to  the user"/>
+    <design:attribute name="promptText" label="Prompt Text" description="The phrase to show above the buttons"/>
+    <design:attribute name="response" label="Response" description="The user's response (YES/NO)"/>
+    <design:attribute name="accepted" label="User clicked YES" description="The user's response (true/false)"/>
+</design:component>

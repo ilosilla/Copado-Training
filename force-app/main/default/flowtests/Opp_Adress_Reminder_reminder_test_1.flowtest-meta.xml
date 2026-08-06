@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowTest xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flowApiName>Opp_Adress_Reminder</flowApiName>
+    <label>reminder test 1</label>
+    <testPoints>
+        <elementApiName>Start</elementApiName>
+        <isUseMockOutput>false</isUseMockOutput>
+        <parameters>
+            <leftValueReference>$Record</leftValueReference>
+            <type>InputTriggeringRecordInitial</type>
+            <value>
+                <sobjectValue>{&quot;AccountId&quot;:&quot;0016900002vv0adAAA&quot;,&quot;Address__c&quot;:&quot;12 West 18th Street 5E&quot;,&quot;Amount_custom__c&quot;:5000,&quot;Budget_Confirmed__c&quot;:false,&quot;City__c&quot;:&quot;n/a&quot;,&quot;CloseDate&quot;:&quot;2022-10-18&quot;,&quot;ContactId__c&quot;:&quot;0036900003MbDGcAAN&quot;,&quot;Contact__c&quot;:&quot;No contact&quot;,&quot;ContractorConsulting__c&quot;:false,&quot;Contractor_Consulting__c&quot;:false,&quot;CurrencyIsoCode&quot;:&quot;GBP&quot;,&quot;Currency__c&quot;:&quot;GBP&quot;,&quot;Discovery_Completed__c&quot;:false,&quot;Dist_Channel__c&quot;:&quot;70&quot;,&quot;ForecastCategoryName&quot;:&quot;Omitted&quot;,&quot;Freeze_Percentages__c&quot;:false,&quot;Identify_architect__c&quot;:false,&quot;Identify_developer__c&quot;:false,&quot;Interest__c&quot;:false,&quot;Last_Activity_Date__c&quot;:&quot;2022-07-19T20:11:00.000Z&quot;,&quot;Lead_origin__c&quot;:false,&quot;Name&quot;:&quot;Nava&apos;s House&quot;,&quot;Operation_Type__c&quot;:&quot;Refurbishment&quot;,&quot;Opportunity_Classification__c&quot;:&quot;Residential (Retail)&quot;,&quot;Out_of_territory__c&quot;:false,&quot;OwnerId&quot;:&quot;0051r000009WrUfAAK&quot;,&quot;Pedido_entregado__c&quot;:false,&quot;Postcode__c&quot;:&quot;10011&quot;,&quot;Pricebook2Id&quot;:&quot;01s6900000441JkAAI&quot;,&quot;Probability&quot;:0,&quot;Product_Categories__c&quot;:&quot;Bathroom accesories;Krion&quot;,&quot;Product_and_price__c&quot;:&quot;Product -  Price&quot;,&quot;ProjetReference__c&quot;:false,&quot;ROI_Analysis_Completed__c&quot;:false,&quot;Reason_Lost__c&quot;:&quot;Price&quot;,&quot;RecordTypeId&quot;:&quot;0121r000000a2vrAAA&quot;,&quot;Recovered__c&quot;:false,&quot;Sales_Org__c&quot;:&quot;602&quot;,&quot;Satisfaction__c&quot;:&quot;Not defined&quot;,&quot;StageName&quot;:&quot;Lost&quot;,&quot;countryCode__c&quot;:&quot;US&quot;,&quot;ecommerce__c&quot;:false}</sobjectValue>
+            </value>
+        </parameters>
+    </testPoints>
+    <testPoints>
+        <assertions>
+            <conditions>
+                <leftValueReference>$Record.City__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>n/a</stringValue>
+                </rightValue>
+            </conditions>
+        </assertions>
+        <elementApiName>Finish</elementApiName>
+        <isUseMockOutput>false</isUseMockOutput>
+    </testPoints>
+    <testType>WithAssertion</testType>
+</FlowTest>

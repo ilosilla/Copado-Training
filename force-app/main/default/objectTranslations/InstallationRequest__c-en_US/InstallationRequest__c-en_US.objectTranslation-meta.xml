@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Installation Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Installation Requests</value>
+    </caseValues>
+    <layouts>
+        <layout>Installation Request  Community Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description of Works --></label>
+            <section>Description of Works</section>
+        </sections>
+        <sections>
+            <label><!-- Installation Cost --></label>
+            <section>Installation Cost</section>
+        </sections>
+        <sections>
+            <label><!-- Installation Details --></label>
+            <section>Installation Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Installation Request Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description of Works --></label>
+            <section>Description of Works</section>
+        </sections>
+        <sections>
+            <label><!-- Description of Works II --></label>
+            <section>Description of Works II</section>
+        </sections>
+        <sections>
+            <label><!-- Installation Details --></label>
+            <section>Installation Details</section>
+        </sections>
+        <sections>
+            <label><!-- SAP Information --></label>
+            <section>SAP Information</section>
+        </sections>
+        <sections>
+            <label><!-- Site Survey &amp; Cost Estimation --></label>
+            <section>Site Survey &amp; Cost Estimation</section>
+        </sections>
+        <sections>
+            <label><!-- Survey II --></label>
+            <section>Survey II</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please enter the estimation of the cost --></errorMessage>
+        <name>VR01_Cost_estimated</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter the number of the SAP quotation before selectin this status --></errorMessage>
+        <name>VR02_Quote_Sent</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Requests won require both the sales and purchase order numbers --></errorMessage>
+        <name>VR03_Closed_Won</name>
+    </validationRules>
+</CustomObjectTranslation>

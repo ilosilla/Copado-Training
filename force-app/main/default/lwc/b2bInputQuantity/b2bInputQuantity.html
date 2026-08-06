@@ -1,0 +1,28 @@
+<template>
+  <div class="field" style={hostStyle}>
+    
+    <label class="field-label" for={inputId}>{label}</label>
+
+    <div class={fieldClass} aria-label={label}>
+      <button class="symbol-btn" data-step={negativeStep} onclick={onStep} title="Decrease quantity" tabindex="-1">−</button>
+
+      <div class="input-cell">
+        <input
+          id={inputId}
+          class="slds-input centered no-border no-spinners sized"
+          type="number"
+          step={stepAttr}
+          inputmode={inputMode}
+          pattern={patternAttr}
+          value={displayValue}          
+          onblur={onBlur}
+          min="0"
+        />
+      </div>
+
+      <button class="symbol-btn" data-step={positiveStep} onclick={onStep} title="Increase quantity" tabindex="-1">+</button>
+    </div>
+
+    <!-- <div id={errorId} class={errorClass}>{errorMessage}</div> -->
+  </div>
+</template>

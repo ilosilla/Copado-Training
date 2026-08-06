@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Samples Weekend Delivery --></label>
+    <name>SamplesWeekendDays__c</name>
+    <picklistValues>
+        <masterLabel>SAT</masterLabel>
+        <translation><!-- SAT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SUN</masterLabel>
+        <translation><!-- SUN --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

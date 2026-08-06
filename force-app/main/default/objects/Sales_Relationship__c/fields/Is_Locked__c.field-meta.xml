@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Locked__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Is it Locked this RelationShip? It&apos;s independent from the Is Locked field in Account. Set by SAP System.</description>
+    <inlineHelpText>Is it Locked this RelationShip? It&apos;s independent from the Is Locked field in Account. Set by SAP System.</inlineHelpText>
+    <label>Is Locked</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

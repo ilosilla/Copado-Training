@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NBK_Sample_ListPrice</fullName>
+    <active>true</active>
+    <errorConditionFormula>UnitPrice &lt;&gt;  0
+&amp;&amp;
+Order.RecordTypeId = &apos;0126M0000007B9p&apos;</errorConditionFormula>
+    <errorDisplayField>UnitPrice</errorDisplayField>
+    <errorMessage>The unit price of the product cannot be greater than 0.</errorMessage>
+</ValidationRule>

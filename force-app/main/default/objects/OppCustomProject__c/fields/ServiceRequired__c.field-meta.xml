@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ServiceRequired__c</fullName>
+    <label>Service Required</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Fabrication and Installation</fullName>
+                <default>false</default>
+                <label>Fabrication and Installation</label>
+            </value>
+            <value>
+                <fullName>Material and Fabrication Only</fullName>
+                <default>false</default>
+                <label>Material and Fabrication Only</label>
+            </value>
+            <value>
+                <fullName>Other (Explain in Notes)</fullName>
+                <default>false</default>
+                <label>Other (Explain in Notes)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

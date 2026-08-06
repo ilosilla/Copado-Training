@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mes_opportunit_s_d_passes</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.RECORDTYPE</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Amount_custom__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>Mes opportunités dépasses</label>
+    <sharedTo>
+        <roleAndSubordinates>B_lgica</roleAndSubordinates>
+        <roleAndSubordinates>Director_Regional_FR</roleAndSubordinates>
+    </sharedTo>
+</ListView>

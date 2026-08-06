@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Usage__c</fullName>
+    <label>Usage</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PAVIMENTO</fullName>
+                <default>false</default>
+                <label>FLOOR TILES</label>
+            </value>
+            <value>
+                <fullName>INTENSO-ACCESO-EXTERIOR</fullName>
+                <default>false</default>
+                <label>INTENSE - EXTERNAL ACCESS</label>
+            </value>
+            <value>
+                <fullName>INTENSO-DESPLZ-CARGA</fullName>
+                <default>false</default>
+                <label>INTENSE - LOAD DISPLACEMENT</label>
+            </value>
+            <value>
+                <fullName>LIGERO-ACCESO-EXTERIOR</fullName>
+                <default>false</default>
+                <label>LIGHT - EXTERNAL ACCESS</label>
+            </value>
+            <value>
+                <fullName>MEDIO-ACCESO-EXTERIOR</fullName>
+                <default>false</default>
+                <label>MEDIUM - EXTERNAL ACCESS</label>
+            </value>
+            <value>
+                <fullName>REVESTIMIENTO</fullName>
+                <default>false</default>
+                <label>WALL TILES</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

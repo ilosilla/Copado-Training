@@ -1,0 +1,23 @@
+<template>
+    <div class="error-page slds-p-vertical_xx-large slds-p-horizontal_medium">
+        <div class="error-page__content slds-text-align_center">
+            <h1 class="slds-text-heading_large slds-m-bottom_small">{title}</h1>
+            <p class="slds-text-body_regular slds-m-bottom_large">{description}</p>
+
+            <template lwc:if={showHomeButton}>
+                <lightning-button
+                    variant="brand"
+                    label="Back to home"
+                    title="Back to home"
+                    onclick={handleGoHome}>
+                </lightning-button>
+            </template>
+
+            <template lwc:if={showReference}>
+                <p class="error-page__reference slds-m-top_large slds-text-body_small">
+                    Ref: {reference}
+                </p>
+            </template>
+        </div>
+    </div>
+</template>

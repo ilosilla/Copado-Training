@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CIF_GB</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+AND(Country__c = &quot;GB&quot;),
+NOT(REGEX(VAT_Number__c, &quot;(/^(GB)((?:[0-9]{12}|[0-9]{9}|(?:GD|HA)[0-9]{3})$)/i)&quot;)), RecordType.Name  &lt;&gt; &quot;Private Customer&quot;
+)</errorConditionFormula>
+    <errorMessage>Invalid CIF</errorMessage>
+</ValidationRule>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MB_Junk_Status_Invalid</fullName>
+    <active>false</active>
+    <description>material bank leads cannot be marked as Junk</description>
+    <errorConditionFormula>ISPICKVAL( LeadType__c ,&quot;US Material Bank&quot;) &amp;&amp; ISPICKVAL( Status , &quot;Junk Lead&quot;)</errorConditionFormula>
+    <errorDisplayField>Status</errorDisplayField>
+    <errorMessage>Material Bank Leads cannot be Junk Leads</errorMessage>
+</ValidationRule>

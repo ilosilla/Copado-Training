@@ -1,0 +1,315 @@
+:host {
+
+    /* =========================================================
+       OVERLAY
+       ========================================================= */
+
+    --ux-sidepanel-overlay-bg: rgba(0, 0, 0, 0.45);
+    --ux-sidepanel-overlay-blur: blur(2px);
+    --ux-sidepanel-overlay-z: 7500;
+
+    /* Overlay para el “modal” dock=center (debe estar por encima del anterior) */
+    --ux-sidepanel-overlay-z-center: 7700;
+
+    /* =========================================================
+       PANEL BASE
+       ========================================================= */
+
+    --ux-sidepanel-bg: #ffffff;
+    --ux-sidepanel-shadow: -2px 0 12px rgba(0, 0, 0, 0.15);
+
+    /* Center / modal variant */
+    --ux-sidepanel-center-max-height: 90vh;
+    --ux-sidepanel-center-radius: 10px;
+    --ux-sidepanel-center-offset-y: -7vh;
+
+    /* =========================================================
+       SIZES
+       ========================================================= */
+
+    --ux-sidepanel-size-s: 360px;
+    --ux-sidepanel-size-m: 520px;
+    --ux-sidepanel-size-l: 780px;
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
+    --ux-sidepanel-header-bg: #ffffff;
+    --ux-sidepanel-header-padding: 0.75rem 1.25rem;
+    --ux-sidepanel-header-border-color: var(--b2b-border-color);
+
+    --ux-sidepanel-title-size: 1rem;
+    --ux-sidepanel-title-weight: 600;
+    --ux-sidepanel-title-color: #181818;
+
+    --ux-sidepanel-close-size: 1.1rem;
+    --ux-sidepanel-close-color: #5f5f5f;
+    --ux-sidepanel-close-hover-color: #181818;
+
+    /* =========================================================
+       CONTENT
+       ========================================================= */
+
+    /*--ux-sidepanel-content-padding: 1.25rem 1.5rem 2rem;*/
+    --ux-sidepanel-content-bg: transparent;
+    --ux-sidepanel-content-padding: 1.5rem 1.75rem 2.25rem;
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    --ux-sidepanel-footer-bg: #ffffff;
+    --ux-sidepanel-footer-padding: 0.75rem 1.25rem;
+    --ux-sidepanel-footer-gap: 0.5rem;
+    --ux-sidepanel-footer-border-color: var(--b2b-border-color);
+    /* Footer buttons */
+    --ux-sidepanel-footer-button-min-width: 96px;
+}
+
+/* =========================================================
+   OVERLAY
+   ========================================================= */
+
+.ux-sidepanel-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(
+        --ux-sidepanel-overlay-bg,
+        rgba(0, 0, 0, 0.35)
+    );
+    backdrop-filter: var(
+        --ux-sidepanel-overlay-blur,
+        blur(2px)
+    );
+    z-index: var(--ux-sidepanel-overlay-z, 7500);
+    display: flex;
+}
+
+/* Cuando el sidepanel actúa como modal (dock=center) */
+.ux-sidepanel-overlay--center {
+    z-index: var(--ux-sidepanel-overlay-z-center, 7700);
+}
+
+/* =========================================================
+   PANEL BASE
+   ========================================================= */
+
+.ux-sidepanel {
+    position: relative;
+    background: var(--ux-sidepanel-bg, #ffffff);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--ux-sidepanel-shadow,-2px 0 12px rgba(0, 0, 0, 0.15));
+    overflow:hidden;
+}
+
+/* =========================================================
+   DOCKING
+   ========================================================= */
+
+.ux-sidepanel--dock-right {
+    margin-left: auto;
+}
+
+.ux-sidepanel--dock-left {
+    margin-right: auto;
+}
+
+.ux-sidepanel--dock-top {
+    width: 100%;
+    height: auto;
+}
+
+.ux-sidepanel--dock-bottom {
+    width: 100%;
+    height: auto;
+    margin-top: auto;
+}
+
+.ux-sidepanel--dock-center {
+    margin: auto;
+    height: auto;
+    max-height: var(--ux-sidepanel-center-max-height, 90vh);
+    border-radius: var(--ux-sidepanel-center-radius, 6px);
+    transform: translateY(var(--ux-sidepanel-center-offset-y, -6vh));
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
+.ux-sidepanel--square {
+    border-radius: 0;
+}
+
+/* =========================================================
+   SIZES
+   ========================================================= */
+
+.ux-sidepanel--size-s {
+    width: var(--ux-sidepanel-size-s, 360px);
+}
+
+.ux-sidepanel--size-m {
+    width: var(--ux-sidepanel-size-m, 520px);
+}
+
+.ux-sidepanel--size-l {
+    width: var(--ux-sidepanel-size-l, 780px);
+}
+
+.ux-sidepanel--size-full {
+    width: 100%;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.ux-sidepanel__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--ux-sidepanel-header-padding, 0.75rem 1.25rem);
+    border-bottom: 1px solid var(--ux-sidepanel-header-border-color,var(--b2b-border-color));
+    background: var(--ux-sidepanel-header-bg,#ffffff);
+    flex-shrink: 0;
+}
+
+.ux-sidepanel__title {
+    margin: 0;
+    font-size: var(--ux-sidepanel-title-size, 1rem);
+    font-weight: var(--ux-sidepanel-title-weight, 600);
+    color: var(--ux-sidepanel-title-color, #181818);
+}
+
+.ux-sidepanel__header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 0;
+}
+
+.ux-sidepanel__back {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    line-height: 1;
+    font-size: 1.1rem;
+    color: inherit;
+}
+
+.ux-sidepanel__title {
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ux-sidepanel__close {
+    background: none;
+    border: none;
+    font-size: var(--ux-sidepanel-close-size, 1.1rem);
+    line-height: 1;
+    cursor: pointer;
+    color: var(--ux-sidepanel-close-color, #5f5f5f);
+}
+
+.ux-sidepanel__close:hover {
+    color: var(--ux-sidepanel-close-hover-color, #181818);
+}
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.ux-sidepanel__content {
+    padding: var(--ux-sidepanel-content-padding,1.25rem 1.5rem 2rem);
+    overflow-y: auto;
+    flex: 1 1 auto;
+    background: var(--ux-sidepanel-content-bg,transparent);
+}
+
+.non-sticky-content{
+    flex: 1 1 auto !important; /* Was 0 0 auto */
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.ux-sidepanel__footer {
+    display: flex;
+    gap: var(--ux-sidepanel-footer-gap,0.5rem);
+    padding: var(--ux-sidepanel-footer-padding,0.75rem 1.25rem);
+    border-top: 1px solid var(--ux-sidepanel-footer-border-color,var(--b2b-border-color));
+    background: var(--ux-sidepanel-footer-bg,#ffffff);
+    flex-shrink: 0;
+}
+
+/* Sticky vs static */
+
+.ux-sidepanel__footer:not(.ux-footer--static) {
+    position: sticky;
+    bottom: 0;
+}
+
+.ux-footer--static {
+    position: static;
+}
+
+/* =========================================================
+   FOOTER LAYOUTS
+   ========================================================= */
+
+.ux-footer--right {
+    justify-content: flex-end;
+}
+
+.ux-footer--left {
+    justify-content: flex-start;
+}
+
+.ux-footer--center {
+    justify-content: center;
+}
+
+.ux-footer--stretch {
+    justify-content: space-between;
+}
+
+.ux-sidepanel__footer-spacer {
+    flex: 1 1 auto;
+}
+
+/* =========================================================
+   LOADING OVERLAY
+   ========================================================= */
+
+.ux-sidepanel__loading-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(1px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+@media (max-height: 700px) {
+    .ux-sidepanel--dock-center {
+        transform: translateY(var(--ux-sidepanel-center-offset-y, -3vh));
+    }
+}
+
+/* =========================================================
+   BUTTON TWEAKS
+   ========================================================= */
+
+/*.ux-sidepanel__footer lightning-button {
+    min-width: var(
+        --ux-sidepanel-footer-button-min-width,
+        96px
+    );
+}*/

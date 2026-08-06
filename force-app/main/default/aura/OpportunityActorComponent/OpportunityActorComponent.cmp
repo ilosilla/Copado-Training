@@ -1,0 +1,5 @@
+<!--
+    @deprecated January 2022 Revisado y nunca se ha utilizado ni se utiliza
+-->
+<aura:component implements="flexipage:availableForAllPageTypes,lightning:actionOverride,force:lightningQuickActionWithoutHeader,lightning:isUrlAddressable,lightning:hasPageReference" access="global">
+</aura:component>

@@ -1,0 +1,123 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,lightning:availableForFlowScreens" access="global" controller="Cierre_Cita_Tienda_Controller">
+    
+    <!--Obtener todas las dependencias de campos entre Company_Date__c, Sales_Org_Date__c, Sales_Office_Date__c-->
+    <aura:attribute name="fieldDependenciesCompanySalesOrg" type="List" default="[]"/>
+    <aura:attribute name="fieldDependenciesSalesOrgSalesOffice" type="List" default="[]"/>
+    <!--Nombres API de los campos-->
+    <aura:attribute name="companyFieldAPI" type="String" default="Company_Date__c"/>
+    <aura:attribute name="salesOrgFieldAPI" type="string" default="Sales_Org_Date__c"/>
+    <aura:attribute name="salesOfficeFieldAPI" type="string" default="Sales_Office_Date__c"/>
+    <!--Comboboxes-->
+    <aura:attribute name="companyCombobox" type="List" default="[]"/>
+    <aura:attribute name="salesOrgCombobox" type="List" default="[]"/>
+    <aura:attribute name="salesOfficeCombobox" type="List" default="[]"/>
+    <!--Control de visibilidad de Combobox-->
+    <aura:attribute name="salesOrgDisabled" type="boolean" default="true"/>
+    <aura:attribute name="salesOfficeDisabled" type="boolean" default="true"/>
+    <!--Spinner-->
+    <aura:attribute name="Spinner" type="Boolean" default="false"/>
+    <!--Error Message-->
+    <aura:attribute name="errorMessage" type="String" default="{!$Label.c.Please_select_one_option}"/>
+    <aura:attribute name="requiredErrorMessage" type="String" default="{!$Label.c.CierreCitaTienda_requiredErrorMessage}"/>
+    <aura:attribute name="companyError" type="Boolean" default="false"/>
+    <aura:attribute name="salesOrgError" type="Boolean" default="false"/>
+    <aura:attribute name="salesOfficeError" type="Boolean" default="false"/>
+    <aura:attribute name="requiredError" type="Boolean" default="false"/>
+    <!--Selected Values-->
+    <aura:attribute name="companySelected" type="String"/>
+    <aura:attribute name="salesOrgSelected" type="String"/>
+    <aura:attribute name="salesOfficeSelected" type="String"/>
+    <!--RecordId (Para probar con App)-->
+    <aura:attribute name="recordId" type="String"/>
+    <!--<aura:attribute name="recordId" type="String" default="0061w000003Mt26AAC"/>-->
+    <aura:attribute name="dateTime" type="DateTime"/>
+    
+    <aura:handler name="init" value="this" action="{!c.doInit}"/>
+    
+    <!--CHANGED-->
+    <!--Para poder llamarlo-->
+    <aura:method name="saveOppDetails" action="{!c.saveOppDetails}" description="saveOppDetails"></aura:method>
+    <aura:registerEvent name="childCmpChangeScreen" type="c:Cierre_Cita_Tienda_Event"/>
+    
+    <aura:html tag="style">
+        .slds-modal__content{
+        overflow: initial;
+        height: unset !important;
+        max-height: unset !important;
+        }
+    </aura:html>
+    
+    <div class=".slds-modal__content">
+        
+        <aura:if isTrue="{!v.Spinner}">
+            
+            <div class="whiteBackground">
+                <div class="relative">
+                    <lightning:spinner variant="brand" size="large" alternativeText="Loading"/>
+                </div>
+            </div>
+            
+            <aura:set attribute="else">
+                
+                <div class="slds-wrap slds-align_absolute-center">
+                
+                <div class="slds-grid slds-gutters">
+                    
+                    <div class="slds-col slds-size_3-of-6" style="padding-top:2px">
+                        
+                        <lightning:combobox class="{!v.companyError ? 'myClass slds-has-error' : 'myClass'}" aura:id="companyId" name="company" 
+                                            label="{!$Label.c.Company}" placeholder="{!$Label.c.Select_an_option}" options="{!v.companyCombobox}" onchange="{!c.onControllerFieldChange}" 
+                                            onblur="{!c.validateFields}" disabled="false" style="overflow: initial"/>
+                        <aura:if isTrue="{!v.companyError}">
+                            <div class="slds-form-element__help" style="color: rgb(194, 57, 52); padding-bottom: 7px;">{!v.errorMessage}</div>
+                        </aura:if>
+                        
+                        <lightning:combobox class="{!v.salesOrgError ? 'myClass slds-has-error' : 'myClass'}" aura:id="salesOrgId" name="salesOrg" 
+                                            label="SalesOrg" placeholder="{!$Label.c.Select_an_option}" options="{!v.salesOrgCombobox}" onchange="{!c.onControllerFieldChange}" 
+                                            onblur="{!c.validateFields}" disabled="{!v.salesOrgDisabled}" style="overflow: initial"/>
+                        <aura:if isTrue="{!v.salesOrgError}">
+                            <div class="slds-form-element__help" style="color: rgb(194, 57, 52); padding-bottom: 7px;">{!v.errorMessage}</div>
+                        </aura:if>
+                        
+                        <lightning:combobox class="{!v.salesOfficeError ? 'myClass slds-has-error' : 'myClass'}" aura:id="salesOfficeId" name="salesOffice" 
+                                            label="{!$Label.c.SalesOffice}" placeholder="{!$Label.c.Select_an_option}" options="{!v.salesOfficeCombobox}" 
+                                            onchange="{!c.onControllerFieldChange}" onblur="{!c.validateFields}" disabled="{!v.salesOfficeDisabled}" 
+                                            style="overflow: initial"/>
+                        <aura:if isTrue="{!v.salesOfficeError}">
+                            <div class="slds-form-element__help" style="color: rgb(194, 57, 52);">{!v.errorMessage}</div>
+                        </aura:if>
+                        
+                    </div>
+                    
+                    <div class="slds-col slds-col slds-size_3-of-6">
+                    
+                        <ui:inputDateTime aura:id="today" label="{!$Label.c.Date_Time}" value="{!v.dateTime}" displayDatePicker="true" change="{!c.dateTimeChange}"/>
+                        
+                    </div>
+                    
+                    </div>                     
+                    
+                </div>
+                
+                <div style="padding-top: 10px;">
+                    
+                    <div class="slds-align_absolute-center">
+                        <aura:if isTrue="{!v.requiredError}">
+                            <div class="slds-form-element__help" style="color: rgb(194, 57, 52); padding-bottom: 7px;">{!v.requiredErrorMessage}</div>
+                        </aura:if>
+                    </div>
+                    
+                </div>
+                
+                <div class="slds-align_absolute-center">
+                    <lightning:button variant="brand" label="{!$Label.c.Ir_a_la_Tienda}" title="goToStore" onclick="{!c.redirectToStore}"/>
+                    <!--<lightning:button variant="brand" label="{!$Label.c.Guardar_registro}" title="saveRecord" onclick="{!c.saveOppDetails}"/>-->
+                </div>
+                
+            </aura:set>
+            
+        </aura:if>
+        
+    </div>
+    
+</aura:component>

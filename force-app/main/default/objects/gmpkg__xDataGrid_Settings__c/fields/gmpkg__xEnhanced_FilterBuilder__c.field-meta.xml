@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gmpkg__xEnhanced_FilterBuilder__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <inlineHelpText>Check this option to use Enhanced Filter Builder. With Enhanced Filter Builder, you can easily create complex logic.</inlineHelpText>
+    <label>Enhanced Filter Builder</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

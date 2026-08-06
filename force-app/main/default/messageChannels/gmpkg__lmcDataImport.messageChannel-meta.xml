@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Data Import Channel</description>
+    <isExposed>false</isExposed>
+    <lightningMessageFields>
+        <description>eventType</description>
+        <fieldName>eventType</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>File Name</description>
+        <fieldName>fileName</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>File Id</description>
+        <fieldName>fileId</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description># of Rows</description>
+        <fieldName>size</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Object Name</description>
+        <fieldName>objectName</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Operation</description>
+        <fieldName>operation</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Job Id List</description>
+        <fieldName>jobIdList</fieldName>
+    </lightningMessageFields>
+    <masterLabel>Data Import</masterLabel>
+</LightningMessageChannel>

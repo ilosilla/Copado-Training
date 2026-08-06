@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Description_required_when_Dummy</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(CONTAINS( $Setup.SystemSettings__c.DummyProduct__c,  Product2.ProductCode),AND(ISBLANK(  DescripcionAuxiliar__c ), ISBLANK(  CodigoAuxiliar__c )))</errorConditionFormula>
+    <errorDisplayField>DescripcionAuxiliar__c</errorDisplayField>
+    <errorMessage>Dummy product must has an Auxiliar Code or an Auxiliar Description</errorMessage>
+</ValidationRule>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EnableREVIEWSMS__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Enables the button to send a SMS to an account asking for a good review in Google</description>
+    <inlineHelpText>Enables the button to send a SMS to an account asking for a good review in Google</inlineHelpText>
+    <label>Enable REVIEW SMS</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

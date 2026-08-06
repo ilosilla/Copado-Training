@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Reported Problem per Make --></label>
+    <name>ReportedMakeProblem__c</name>
+    <picklistValues>
+        <masterLabel>000-BROKEN</masterLabel>
+        <translation><!-- 000-BROKEN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>000-DETERIORATED</masterLabel>
+        <translation><!-- 000-DETERIORATED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>000-INCOMPLETE</masterLabel>
+        <translation><!-- 000-INCOMPLETE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>000-NOT-WORKING</masterLabel>
+        <translation><!-- 000-NOT-WORKING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>000-OTHERS</masterLabel>
+        <translation><!-- 000-OTHERS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>000-WRONG-PRODUCT</masterLabel>
+        <translation><!-- 000-WRONG-PRODUCT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>001-BROKEN</masterLabel>
+        <translation><!-- 001-BROKEN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>001-DETERIORATED</masterLabel>
+        <translation><!-- 001-DETERIORATED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>001-INCOMPLETE</masterLabel>
+        <translation><!-- 001-INCOMPLETE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>001-NOT-WORKING</masterLabel>
+        <translation><!-- 001-NOT-WORKING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>001-OTHERS</masterLabel>
+        <translation><!-- 001-OTHERS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>001-WRONG-PRODUCT</masterLabel>
+        <translation><!-- 001-WRONG-PRODUCT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>002-BROKEN</masterLabel>
+        <translation><!-- 002-BROKEN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>002-DETERIORATED</masterLabel>
+        <translation><!-- 002-DETERIORATED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>002-INCOMPLETE</masterLabel>
+        <translation><!-- 002-INCOMPLETE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>002-NOT-WORKING</masterLabel>
+        <translation><!-- 002-NOT-WORKING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>002-OTHERS</masterLabel>
+        <translation><!-- 002-OTHERS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>002-WRONG-PRODUCT</masterLabel>
+        <translation><!-- 002-WRONG-PRODUCT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-BROKEN</masterLabel>
+        <translation><!-- 006-BROKEN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-DETERIORATED</masterLabel>
+        <translation><!-- 006-DETERIORATED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-INCOMPLETE</masterLabel>
+        <translation><!-- 006-INCOMPLETE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-NOT-WORKING</masterLabel>
+        <translation><!-- 006-NOT-WORKING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-OTHERS</masterLabel>
+        <translation><!-- 006-OTHERS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006-WRONG-PRODUCT</masterLabel>
+        <translation><!-- 006-WRONG-PRODUCT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>007-BROKEN</masterLabel>
+        <translation><!-- 007-BROKEN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>007-DETERIORATED</masterLabel>
+        <translation><!-- 007-DETERIORATED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>007-INCOMPLETE</masterLabel>
+        <translation><!-- 007-INCOMPLETE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>007-NOT-WORKING</masterLabel>
+        <translation><!-- 007-NOT-WORKING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>007-OTHERS</masterLabel>
+        <translation><!-- 007-OTHERS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>007-WRONG-PRODUCT</masterLabel>
+        <translation><!-- 007-WRONG-PRODUCT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-BROKEN</masterLabel>
+        <translation><!-- 008-BROKEN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-DETERIORATED</masterLabel>
+        <translation><!-- 008-DETERIORATED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-INCOMPLETE</masterLabel>
+        <translation><!-- 008-INCOMPLETE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-NOT-WORKING</masterLabel>
+        <translation><!-- 008-NOT-WORKING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-OTHERS</masterLabel>
+        <translation><!-- 008-OTHERS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008-WRONG-PRODUCT</masterLabel>
+        <translation><!-- 008-WRONG-PRODUCT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>009-BROKEN</masterLabel>
+        <translation><!-- 009-BROKEN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>009-DETERIORATED</masterLabel>
+        <translation><!-- 009-DETERIORATED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>009-INCOMPLETE</masterLabel>
+        <translation><!-- 009-INCOMPLETE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>009-NOT-WORKING</masterLabel>
+        <translation><!-- 009-NOT-WORKING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>009-OTHERS</masterLabel>
+        <translation><!-- 009-OTHERS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>009-WRONG-PRODUCT</masterLabel>
+        <translation><!-- 009-WRONG-PRODUCT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>040-BROKEN</masterLabel>
+        <translation><!-- 040-BROKEN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>040-DETERIORATED</masterLabel>
+        <translation><!-- 040-DETERIORATED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>040-INCOMPLETE</masterLabel>
+        <translation><!-- 040-INCOMPLETE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>040-NOT-WORKING</masterLabel>
+        <translation><!-- 040-NOT-WORKING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>040-OTHERS</masterLabel>
+        <translation><!-- 040-OTHERS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>040-WRONG-PRODUCT</masterLabel>
+        <translation><!-- 040-WRONG-PRODUCT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>041-BROKEN</masterLabel>
+        <translation><!-- 041-BROKEN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>041-DETERIORATED</masterLabel>
+        <translation><!-- 041-DETERIORATED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>041-INCOMPLETE</masterLabel>
+        <translation><!-- 041-INCOMPLETE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>041-NOT-WORKING</masterLabel>
+        <translation><!-- 041-NOT-WORKING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>041-OTHERS</masterLabel>
+        <translation><!-- 041-OTHERS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>041-WRONG-PRODUCT</masterLabel>
+        <translation><!-- 041-WRONG-PRODUCT --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

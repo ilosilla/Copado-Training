@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Demo Signup / Trial</masterLabel>
+        <translation><!-- Demo Signup / Trial --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Email</masterLabel>
+        <translation><!-- Email --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Event</masterLabel>
+        <translation>Eventi</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Factory Trip</masterLabel>
+        <translation>Viaggio Fabbrica</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other</masterLabel>
+        <translation>Altri</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Referral Program</masterLabel>
+        <translation><!-- Referral Program --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Search</masterLabel>
+        <translation>Ricerca</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Social Media</masterLabel>
+        <translation><!-- Social Media --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Thought Leadership</masterLabel>
+        <translation><!-- Thought Leadership --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Trade Show</masterLabel>
+        <translation>Fiera</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Website Direct</masterLabel>
+        <translation><!-- Website Direct --></translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

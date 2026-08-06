@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- List of email addresses to notify when a claim is created. Separate multiple addresses using semicolons (;) --></help>
+    <label><!-- CLAIM Notify New To --></label>
+    <name>CLAIM_NotifyNewTo__c</name>
+</CustomFieldTranslation>

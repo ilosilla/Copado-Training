@@ -1,0 +1,116 @@
+<template>
+    <c-ux-side-panel
+        dock="center"
+        open={open}
+        loading={ui_isLoading}
+        title={panelTitle}
+        footer-variant="save-cancel"
+        positive-disabled={ui_isSaveDisabled}
+        onpositive={handleSave}
+        onnegative={handleCancel}
+        onclose={handleCancel}>        
+
+        <div class="address-form">
+
+            <template lwc:if={hasErrorMessage}>
+                <div class="address-form__error">{ui_errorMessage}</div>
+            </template>
+
+            <!-- Address name -->
+            <lightning-input
+                class="address-form__control"
+                label="Address name"
+                value={st_address.Name}
+                required
+                data-field="Name"
+                onchange={handleChange}>
+            </lightning-input>
+
+            <!-- Country -->
+            <lightning-combobox
+                class="address-form__control"
+                label="Country"
+                value={st_address.CountryCode}
+                options={countryOptions}
+                required
+                disabled={isCountryDisabled}
+                data-field="CountryCode"
+                onchange={handleCountryChange}>
+            </lightning-combobox>
+
+            <!-- Street -->
+            <lightning-input
+                class="address-form__control"
+                label="Street address"
+                value={st_address.Street}
+                required
+                data-field="Street"
+                onchange={handleChange}>
+            </lightning-input>
+
+            <!-- City / State -->
+            <div class="address-form__grid">
+                <lightning-input
+                    label="City"
+                    value={st_address.City}
+                    required
+                    data-field="City"
+                    onchange={handleChange}>
+                </lightning-input>
+
+                <!-- ZIP -->
+                <lightning-input
+                    class="address-form__control"
+                    label="ZIP code"
+                    value={st_address.PostalCode}
+                    required
+                    pattern="^\d{5}(-\d{4})?$"
+                    message-when-pattern-mismatch="Enter a valid ZIP code (e.g. 90210 or 90210-1234)."
+                    data-field="PostalCode"
+                    onchange={handleChange}>
+                </lightning-input>
+            </div>
+
+            <lightning-combobox
+                label="State"
+                value={st_address.StateCode}
+                options={stateOptions}
+                required
+                disabled={countryNotSelected}
+                data-field="StateCode"
+                onchange={handleChange}>
+            </lightning-combobox>
+
+            <!-- Phone / Email -->
+            <div class="address-form__grid">
+                <lightning-input
+                    type="tel"
+                    label="Phone"
+                    value={st_address.Phone__c}
+                    data-field="Phone__c"
+                    onchange={handleChange}>
+                </lightning-input>
+
+                <lightning-input
+                    type="email"
+                    label="Email"
+                    value={st_address.EMail__c}
+                    data-field="EMail__c"
+                    onchange={handleChange}>
+                </lightning-input>
+            </div>
+
+            <!-- Default address -->
+            <lightning-input
+                class="address-form__control address-form__default"
+                type="checkbox"
+                label="Make this my default address"
+                checked={st_address.IsDefault}
+                disabled={ui_isDefaultAlready}
+                onchange={handleDefaultChange}>
+            </lightning-input>
+
+        </div>
+    </c-ux-side-panel>
+
+</template>

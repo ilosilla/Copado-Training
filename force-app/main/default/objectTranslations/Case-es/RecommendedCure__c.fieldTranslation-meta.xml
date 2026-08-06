@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Recommended Solution --></label>
+    <name>RecommendedCure__c</name>
+    <picklistValues>
+        <masterLabel>ACCEPT RETURN</masterLabel>
+        <translation><!-- ACCEPT RETURN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ADJUST VALVE TO LOWER SETTING</masterLabel>
+        <translation><!-- ADJUST VALVE TO LOWER SETTING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CHECK DATE ON PACKAGING</masterLabel>
+        <translation><!-- CHECK DATE ON PACKAGING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CHECK ELECTRICTITY IS CONNECTED</masterLabel>
+        <translation><!-- CHECK ELECTRICTITY IS CONNECTED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CHECK ORIGINAL ORDER</masterLabel>
+        <translation><!-- CHECK ORIGINAL ORDER --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CHECK THERMOSTAT OR HEATING ELEMENT</masterLabel>
+        <translation><!-- CHECK THERMOSTAT OR HEATING ELEMENT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CHECK WITH ELECTRICIAN</masterLabel>
+        <translation><!-- CHECK WITH ELECTRICIAN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CHECK WITH INSTALLER</masterLabel>
+        <translation><!-- CHECK WITH INSTALLER --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CLEAN EACH NOZZLE</masterLabel>
+        <translation><!-- CLEAN EACH NOZZLE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CLEAR OBSTRUCTION</masterLabel>
+        <translation><!-- CLEAR OBSTRUCTION --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CLOSE CLAIM</masterLabel>
+        <translation><!-- CLOSE CLAIM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CONTACT HELPLINE</masterLabel>
+        <translation><!-- CONTACT HELPLINE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CONTACT INSTALLER</masterLabel>
+        <translation><!-- CONTACT INSTALLER --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CONTACT PLUMBER</masterLabel>
+        <translation><!-- CONTACT PLUMBER --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ENSURE SENSOR IS PRESSED FIRMLY SO RECOGNISES A FINGERPRINT</masterLabel>
+        <translation><!-- ENSURE SENSOR IS PRESSED FIRMLY SO RECOGNISES A FINGERPRINT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EVALUATE ANOTHER PRODUCT</masterLabel>
+        <translation><!-- EVALUATE ANOTHER PRODUCT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FIND OUT AND QUALIFY THE PROBLEM</masterLabel>
+        <translation><!-- FIND OUT AND QUALIFY THE PROBLEM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALL EXTENSION KIT</masterLabel>
+        <translation><!-- INSTALL EXTENSION KIT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLER MUST THREAD BOLTS IN TO CORRECT DEPTH</masterLabel>
+        <translation><!-- INSTALLER MUST THREAD BOLTS IN TO CORRECT DEPTH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NO BLEEDING DONE DURING INSTALLATION - INTERNAL DAMAGE</masterLabel>
+        <translation><!-- NO BLEEDING DONE DURING INSTALLATION - INTERNAL DAMAGE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PLUMBER TO CLEAR DRAIN</masterLabel>
+        <translation><!-- PLUMBER TO CLEAR DRAIN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REFIT VALVE</masterLabel>
+        <translation><!-- REFIT VALVE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REMOVE AIR - NO BLEEDING DONE DURING INSTALLATION</masterLabel>
+        <translation><!-- REMOVE AIR - NO BLEEDING DONE DURING INSTALLATION --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REMOVE DEBRIS FROM AERATOR</masterLabel>
+        <translation><!-- REMOVE DEBRIS FROM AERATOR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REMOVE OBSTRUCTION</masterLabel>
+        <translation><!-- REMOVE OBSTRUCTION --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REMOVE P/B CARTRIDGE AND CLEAN LINES</masterLabel>
+        <translation><!-- REMOVE P/B CARTRIDGE AND CLEAN LINES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REPLACE CARTRIDGE</masterLabel>
+        <translation><!-- REPLACE CARTRIDGE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REPLACE DIVERTER</masterLabel>
+        <translation><!-- REPLACE DIVERTER --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REPLACE DRAIN CAP</masterLabel>
+        <translation><!-- REPLACE DRAIN CAP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REPLACE DRAWER GLIDES</masterLabel>
+        <translation><!-- REPLACE DRAWER GLIDES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REPLACE FLOW RESTRICTOR</masterLabel>
+        <translation><!-- REPLACE FLOW RESTRICTOR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REPLACE MISSING PART</masterLabel>
+        <translation><!-- REPLACE MISSING PART --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REPLACE ONE OR EITHER</masterLabel>
+        <translation><!-- REPLACE ONE OR EITHER --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REPLACE PRODUCT</masterLabel>
+        <translation><!-- REPLACE PRODUCT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REPLACE PRODUCT (GOOD WILL)</masterLabel>
+        <translation><!-- REPLACE PRODUCT (GOOD WILL) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REPLACE SOFT CLOSE HINGES</masterLabel>
+        <translation><!-- REPLACE SOFT CLOSE HINGES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REPLACE SUPPLY LINE / FLEXIBLE HOSE</masterLabel>
+        <translation><!-- REPLACE SUPPLY LINE / FLEXIBLE HOSE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REPLACE THERMOSTATIC CARTRIDGE</masterLabel>
+        <translation><!-- REPLACE THERMOSTATIC CARTRIDGE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REPLACE VALVE</masterLabel>
+        <translation><!-- REPLACE VALVE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SUPPLY CORRECT SHADE</masterLabel>
+        <translation><!-- SUPPLY CORRECT SHADE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SUPPLY REPLACEMENT DRAIN</masterLabel>
+        <translation><!-- SUPPLY REPLACEMENT DRAIN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WATER SUPPLIES MUST BE REVERSED IN THE WALL</masterLabel>
+        <translation><!-- WATER SUPPLIES MUST BE REVERSED IN THE WALL --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

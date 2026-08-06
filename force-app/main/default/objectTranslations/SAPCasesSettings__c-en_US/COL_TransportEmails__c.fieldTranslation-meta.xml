@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Transport Emails to receive alerts when a new collection note is created. If blank, no alert is sent. --></help>
+    <label><!-- COL Collection Transport Emails --></label>
+    <name>COL_TransportEmails__c</name>
+</CustomFieldTranslation>

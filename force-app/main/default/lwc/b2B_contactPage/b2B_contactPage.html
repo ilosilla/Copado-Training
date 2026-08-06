@@ -1,0 +1,45 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 02-07-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <!-- TITTLE -->
+    <div>
+        <div>
+            <h1 class="tittle">{labels.title}</h1>
+    
+            <p class="subtitle">{labels.subtitle}</p>
+        </div>
+    
+        <div class="textAreaName">
+            <span>{labels.commentsBox}</span>
+        </div>
+        <!-- TEXTAREA -->
+        <div>
+            
+            <lightning-textarea placeholder={labels.commentsPlaceholder} name="contactMessage" class="commentText" value={comments} onchange={handleCheckComments}></lightning-textarea>
+        </div>
+        
+    
+        <!-- CHECK  -->
+        <div class="slds-form-element checkPrivacy">
+            <div class="slds-form-element__control">
+                <div class="slds-checkbox">
+                    <input type="checkbox" name="options" data-id="privacyPolicies" id="checkbox-unique-id-81" onchange={handleInputName} required/>
+                    <label class="slds-checkbox__label" for="checkbox-unique-id-81">
+                        <span class="slds-checkbox_faux"></span>
+                        <span class="slds-form-element__label">{labels.privacyPolicies1}&nbsp;<strong>{labels.privacyPolicies2}</strong></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    
+        <!-- BUTTON -->
+        <div class="buttonPosition">
+            <lightning-button variant="brand" label={labels.buttonSubmit} title="Primary action" onclick={handleClickSubmit} class="slds-m-left_x-small" disabled={enableButton}></lightning-button>
+        </div>
+    </div>
+</template>

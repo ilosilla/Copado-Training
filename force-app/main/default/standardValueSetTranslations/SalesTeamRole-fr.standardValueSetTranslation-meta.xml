@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Account Manager</masterLabel>
+        <translation>Chargé de comptes</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Agent</masterLabel>
+        <translation><!-- Agent --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Facade Manager</masterLabel>
+        <translation><!-- Facade Manager --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Installer</masterLabel>
+        <translation><!-- Installer --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kitchen Designer</masterLabel>
+        <translation><!-- Kitchen Designer --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kitchen Manager</masterLabel>
+        <translation><!-- Kitchen Manager --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Opportunity Owner</masterLabel>
+        <translation>Responsable de l&apos;opportunité</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sales Admin. Assistant</masterLabel>
+        <translation>Assistant Commercial</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sales Manager</masterLabel>
+        <translation>Directeur Commercial</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sales Rep</masterLabel>
+        <translation>Commercial</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Technical Sales Rep.</masterLabel>
+        <translation>Technico Commercial</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

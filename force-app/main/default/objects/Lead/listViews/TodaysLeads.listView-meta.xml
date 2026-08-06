@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TodaysLeads</fullName>
+    <columns>LAST_ACTIVITY_DATETIME</columns>
+    <columns>INACTIVE_DAYS</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LeadSubtype__c</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.CREATED_DATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>1/1/2025 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>AccountId__c</field>
+        <operation>equals</operation>
+        <value>COSNARD</value>
+    </filters>
+    <label>Pistes du jour</label>
+</ListView>

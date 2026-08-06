@@ -1,0 +1,48 @@
+.THIS #theModal {
+    width: 90% !important;
+    max-width:100% !important;
+    max-height: 100% !important;   
+}
+
+.THIS #theModal>.slds-modal__content  {
+    height: 90% !important;    
+}
+
+.THIS .docker {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.THIS .the-tabset {
+    height: 100%;
+    overflow-y: hidden; /* Hide vertical scrollbar */
+}
+
+.THIS .highlighted-column {
+    font-weight: bold;
+}
+
+.THIS .docked {
+    float: right;
+    z-index: 99;
+}
+
+.THIS .slds-textarea {
+    height: 12em !important; 
+}
+
+.THIS .checklist {
+    margin-bottom: 0px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.THIS .data-table {
+    max-width: 100% !important;
+}
+
+.THIS .slds-tabs_default__nav {
+    padding-left: 1em;
+    padding-right: 1em;
+}

@@ -1,0 +1,147 @@
+<template>
+    <!-- Overlay de loading -->
+    <template if:true={isLoading}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <div class="slds-modal slds-fade-in-open" style="display: flex; align-items: center; justify-content: center;">
+            <lightning-spinner alternative-text="Loading..." size="large"></lightning-spinner>
+        </div>
+    </template>
+
+    <lightning-layout multiple-rows >
+        <lightning-layout-item size="12" flexibility="auto" padding="horizontal-small" class="slds-text-align_right">
+            <lightning-button-group>
+                <lightning-button label="Nueva oportunidad" title="Download action" icon-name="utility:add" onclick={handleNewStrategy} class="slds-m-left_x-small"></lightning-button>
+            </lightning-button-group>
+        </lightning-layout-item>
+    </lightning-layout>
+
+    <br/>
+
+    <table class="slds-table slds-table_cell-buffer slds-table--striped">
+        <thead>
+          <tr class="slds-line-height_reset">
+            <th class="slds-size--2-of-12" scope="col">
+                <div class="slds-truncate" title="Completed">Impacto</div>
+              </th>
+            <th class="slds-size--2-of-12" scope="col">
+                <div class="slds-truncate" title="Completed">Título</div>
+              </th>
+            <th class="slds-size--5-of-12" scope="col">
+              <div class="slds-truncate" title="Opportunity Name">Comentario</div>
+            </th>
+            <th class="slds-size--2-of-12" scope="col">
+                <div class="slds-truncate" title="Close Date">Cliente</div>
+              </th>
+              <th class="slds-size--2-of-12" scope="col">
+                <div class="slds-truncate" title="Close Date">Acciones</div>
+              </th>
+              <th class="slds-size--2-of-12" scope="col">
+                <div class="slds-truncate" title="Close Date">Solicitudes</div>
+              </th>
+              <th class="slds-cell_action-mode slds-size--1-of-12" scope="col" style="width:3.25rem">
+                <div class="slds-truncate slds-assistive-text" title="Actions">Actions</div>
+              </th>
+          </tr>
+        </thead>
+        <tbody>
+            <template for:each={strategies} for:item="strategy">
+                <tr class="slds-hint-parent" key={strategy.Id}>
+                    <td data-label="Comment">
+                        <div class="slds-truncate" title="Name">
+                            {strategy.Impact__c}
+                        </div>
+                    </td>
+                    <td data-label="Comment">
+                        <div class="slds-truncate" title="Name">
+                            {strategy.Title__c}
+                        </div>
+                    </td>
+                    <td data-label="Comment">
+                        <div class="slds-truncate" title="Name">
+                            {strategy.Comment__c}
+                        </div>
+                    </td>
+                    <td data-label="Comment">
+                        <div class="slds-truncate" title="Account Name">
+                            <a href={strategy.accountLink} target="_blank" >{strategy.accountName}</a>
+                          </div>
+                    </td>
+                    <td data-label="Comment">
+                        <div class="slds-truncate" title="Account Name">
+                            {strategy.actionCount}
+                          </div>
+                    </td>
+                    <td data-label="Comment">
+                        <div class="slds-truncate" title="Account Name">
+                            {strategy.requestCount}
+                          </div>
+                    </td>
+                      <td data-label="Comment">
+                        <lightning-button-menu alternative-text="Show menu">
+                            <lightning-menu-item value="EDIT" label="Edit" onclick={handleRowActionEdit} data-id={strategy.Id}></lightning-menu-item>
+                            <lightning-menu-item value="DELETE" label="Eliminar" onclick={handleRowActionDelete} data-id={strategy.Id}></lightning-menu-item>
+                        </lightning-button-menu>
+                    </td>
+                </tr>
+            </template>
+        </tbody>
+      </table>
+
+      <template if:true={isModalOpenCreateStrategy}>
+        <div class="slds-backdrop slds-backdrop_open">
+        <!-- Modal -->
+            <section role="dialog" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    
+                    <!-- Header con "X" -->
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                title="Cerrar"
+                                onclick={handleCloseModal}>
+                            <lightning-icon icon-name="utility:close" size="small" alternative-text="Cerrar"></lightning-icon>
+                        </button>
+                        <h2 class="slds-text-heading_medium">Oportunidad estratégica</h2>
+                    </header>
+
+                    <!-- Contenido -->
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <lightning-flow
+                            flow-api-name="Business_trip_strategy"
+                            flow-input-variables={inputVariables}
+                            onstatuschange={handleFlowStatusChange}>
+                        </lightning-flow>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </template>
+
+    <template if:true={isModalOpenDeleteStrategy}>
+        <div class="slds-backdrop slds-backdrop_open">
+        <!-- Modal -->
+            <section role="dialog" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    
+                    <!-- Header con "X" -->
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                title="Cerrar"
+                                onclick={handleCloseModal}>
+                            <lightning-icon icon-name="utility:close" size="small" alternative-text="Cerrar"></lightning-icon>
+                        </button>
+                        <h2 class="slds-text-heading_medium">Eliminar estrategia</h2>
+                    </header>
+
+                    <!-- Contenido -->
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <lightning-flow
+                            flow-api-name="Delete_Business_Trip_Strategy"
+                            flow-input-variables={inputVariables}
+                            onstatuschange={handleFlowStatusChange}>
+                        </lightning-flow>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </template>
+</template>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OwnerAssignation__c</fullName>
+    <description>Método sobre el que se buscará el owner para la asignación de un objeto</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <label>Owner Assignation</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>STD</fullName>
+                <default>true</default>
+                <label>Standard (país y cp)</label>
+            </value>
+            <value>
+                <fullName>USA</fullName>
+                <default>false</default>
+                <label>Extended US (país, cp, profile, etc)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

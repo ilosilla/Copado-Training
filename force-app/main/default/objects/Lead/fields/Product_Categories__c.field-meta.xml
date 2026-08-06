@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Categories__c</fullName>
+    <label>Product Categories</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Adhesives</fullName>
+                <default>false</default>
+                <label>Adhesives and other compliments</label>
+            </value>
+            <value>
+                <fullName>Bathroom furniture</fullName>
+                <default>false</default>
+                <label>Bathroom furniture</label>
+            </value>
+            <value>
+                <fullName>Bathtubs</fullName>
+                <default>false</default>
+                <label>Bathtubs</label>
+            </value>
+            <value>
+                <fullName>Ceramics</fullName>
+                <default>false</default>
+                <label>Ceramics</label>
+            </value>
+            <value>
+                <fullName>Countertops</fullName>
+                <default>false</default>
+                <label>Countertops</label>
+            </value>
+            <value>
+                <fullName>Kitchen furniture</fullName>
+                <default>false</default>
+                <label>Kitchen furniture</label>
+            </value>
+            <value>
+                <fullName>Krion</fullName>
+                <default>false</default>
+                <label>Krion</label>
+            </value>
+            <value>
+                <fullName>Laminate</fullName>
+                <default>false</default>
+                <label>Laminate</label>
+            </value>
+            <value>
+                <fullName>Linkfloor</fullName>
+                <default>false</default>
+                <label>Linkfloor</label>
+            </value>
+            <value>
+                <fullName>Mosaics</fullName>
+                <default>false</default>
+                <label>Mosaics</label>
+            </value>
+            <value>
+                <fullName>Natural Stone</fullName>
+                <default>false</default>
+                <label>Natural Stone</label>
+            </value>
+            <value>
+                <fullName>Raised access flooring</fullName>
+                <default>false</default>
+                <label>Raised access flooring</label>
+            </value>
+            <value>
+                <fullName>Sanitaryware</fullName>
+                <default>false</default>
+                <label>Sanitaryware</label>
+            </value>
+            <value>
+                <fullName>Shower products</fullName>
+                <default>false</default>
+                <label>Shower products</label>
+            </value>
+            <value>
+                <fullName>Taps</fullName>
+                <default>false</default>
+                <label>Taps</label>
+            </value>
+            <value>
+                <fullName>Ventilated facades</fullName>
+                <default>false</default>
+                <label>Ventilated facades</label>
+            </value>
+            <value>
+                <fullName>Washbasin</fullName>
+                <default>false</default>
+                <label>Washbasin</label>
+            </value>
+            <value>
+                <fullName>Wood</fullName>
+                <default>false</default>
+                <label>Wood</label>
+            </value>
+            <value>
+                <fullName>Xtone</fullName>
+                <default>false</default>
+                <label>Xtone</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

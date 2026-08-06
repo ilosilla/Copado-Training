@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <label>Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>18</fullName>
+                <default>false</default>
+                <label>ACCESSORIES</label>
+            </value>
+            <value>
+                <fullName>27</fullName>
+                <default>false</default>
+                <label>INSTALLATION ADHESIVES</label>
+            </value>
+            <value>
+                <fullName>1</fullName>
+                <default>false</default>
+                <label>CERAMIC TILES</label>
+            </value>
+            <value>
+                <fullName>8</fullName>
+                <default>false</default>
+                <label>BATHTUBS</label>
+            </value>
+            <value>
+                <fullName>87</fullName>
+                <default>false</default>
+                <label>DECOUPLING</label>
+            </value>
+            <value>
+                <fullName>47</fullName>
+                <default>false</default>
+                <label>MIRRORS</label>
+            </value>
+            <value>
+                <fullName>62</fullName>
+                <default>false</default>
+                <label>LARGE FORMAT</label>
+            </value>
+            <value>
+                <fullName>19</fullName>
+                <default>false</default>
+                <label>BATHROOM FAUCETS (BRASSWARE)</label>
+            </value>
+            <value>
+                <fullName>31</fullName>
+                <default>false</default>
+                <label>WATERPROOFING</label>
+            </value>
+            <value>
+                <fullName>68</fullName>
+                <default>false</default>
+                <label>KRION INSTALLATION</label>
+            </value>
+            <value>
+                <fullName>48</fullName>
+                <default>false</default>
+                <label>KRION</label>
+            </value>
+            <value>
+                <fullName>49</fullName>
+                <default>false</default>
+                <label>BASINS AND COUNTERTOPS</label>
+            </value>
+            <value>
+                <fullName>11</fullName>
+                <default>false</default>
+                <label>SHOWER ENCLOSURES</label>
+            </value>
+            <value>
+                <fullName>28</fullName>
+                <default>false</default>
+                <label>GROUTING MATERIALS</label>
+            </value>
+            <value>
+                <fullName>50</fullName>
+                <default>false</default>
+                <label>MOSAICS AND DECORATIONS</label>
+            </value>
+            <value>
+                <fullName>7</fullName>
+                <default>false</default>
+                <label>COMPACT BATHROOM FURNITURE</label>
+            </value>
+            <value>
+                <fullName>5</fullName>
+                <default>false</default>
+                <label>WOOD FLOORING</label>
+            </value>
+            <value>
+                <fullName>93</fullName>
+                <default>false</default>
+                <label>DECORATIVE PROFILES</label>
+            </value>
+            <value>
+                <fullName>95</fullName>
+                <default>false</default>
+                <label>TECHNICAL PROFILES</label>
+            </value>
+            <value>
+                <fullName>89</fullName>
+                <default>false</default>
+                <label>DRAINAGE GRILLES</label>
+            </value>
+            <value>
+                <fullName>17</fullName>
+                <default>false</default>
+                <label>SANITARYWARE</label>
+            </value>
+            <value>
+                <fullName>92</fullName>
+                <default>false</default>
+                <label>LEVELING SYSTEMS</label>
+            </value>
+            <value>
+                <fullName>55</fullName>
+                <default>false</default>
+                <label>VINYL FLOORING</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

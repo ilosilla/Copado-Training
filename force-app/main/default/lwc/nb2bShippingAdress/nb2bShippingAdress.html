@@ -1,0 +1,59 @@
+<template>
+    <lightning-card class="container slds-card_boundary slds-m-top_medium">
+        <div class="slds-p-horizontal_medium">
+            <div class="slds-wrap header ">                
+                <lightning-icon icon-name="utility:location" alternative-text="Shipping Address" title="Shipping Address" class="iconBlue slds-p-right_small"></lightning-icon>        
+                <b class="slds-text-heading_small blue">Shipping Address</b>                       
+                <lightning-button if:true={edit} label="Change Address" variant="brand" onclick={handleAddComment} style="float:right"></lightning-button>        
+            </div>
+        </div>        
+​
+        <div class="slds-grid slds-wrap slds-p-vertical_medium">            
+            <div class="slds-col slds-grow-none slds-p-left_xx-large colAddress">
+                <template if:true={address}>
+                    <div style="font-size: medium">
+                        <lightning-formatted-address
+                            city={address.city}
+                            country={address.country}
+                            postal-code={address.postalCode}
+                            province={address.state}
+                            street={address.street}
+                            >
+                        </lightning-formatted-address>
+                    </div>
+                </template>
+            </div>
+            <div class="slds-col slds-p-horizontal_xx-large colAddressMap">
+                <template if:true={address}>                    
+                    <lightning-map map-markers={mapMarkers} zoom-level="15"> </lightning-map>                    
+                </template>
+            </div>
+        </div>
+        <div>
+            <lightning-badge label={pointContactAddressId}></lightning-badge>
+            <lightning-badge label={postalCode}></lightning-badge> 
+        </div>
+    </lightning-card>
+        <c-nb2b-dialog   title={modalTitle}
+                    onpositive={handleSave}
+                    onnegative={handleCancel}
+                    show-positive-button="true"
+                    show-negative-button="true"
+                    show-footer="true"
+                    positive-button-label="Save">
+            <div>
+                <template if:true={addresses}>
+                    <lightning-radio-group   name="addresses"
+                                                options={addresses}
+                                                value={selectedAddress}
+                                                onchange={handleAddress}>
+                    </lightning-radio-group>
+                </template>
+            </div>
+            
+            <lightning-button class="slds-float_right" label="Add new Address" variant="brand" onclick={handleAddNewAddress}></lightning-button>
+            <template if:true={createContactPointAddress}>
+                <c-nb2b-create-contact-point-adress onshowcreatecpa={handleHideCreateCPA} onupdateaddresseslist={handleUpdateAddresses} account-id={accountId}></c-nb2b-create-contact-point-adress>
+            </template>
+        </c-nb2b-dialog>
+</template>

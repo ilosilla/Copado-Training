@@ -1,0 +1,31 @@
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+    </targets>
+    <isExposed>true</isExposed>
+     <targetConfigs>
+        <targetConfig targets="lightning__RecordPage, lightning__AppPage">
+            <property
+                name="minutes"
+                type="Integer"
+                default="0"
+                label="Show every X minutes"
+                description="Sets the minutes that has to pass after the popup is shown to the user again"
+            />
+        <property
+            name="actions"
+            type="String"
+            label="Different actions to use"
+            description="actions separated by ; of one or multiple. Example: MISSDVS;ACTION1;ACTION2"
+        />
+         <property
+            name="disableClose"
+            type="Boolean"
+            label="Hide close button"
+            description="If checked, the user cannot close the component"
+        />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

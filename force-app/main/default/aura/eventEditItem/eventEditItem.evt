@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="Emit the Id of the Item to edit">
+    <aura:attribute name="itemIndex" type="Integer" default="" />
+</aura:event>

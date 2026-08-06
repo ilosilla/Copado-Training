@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>IT Case</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Neoris_case_layout</layout>
+        <sections>
+            <label><!-- Campos --></label>
+            <section>Campos</section>
+        </sections>
+        <sections>
+            <label><!-- Vínculos personalizados --></label>
+            <section>Vínculos personalizados</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>SAP Invoice Case Layout</layout>
+        <sections>
+            <label><!-- Case Information --></label>
+            <section>Case Information</section>
+        </sections>
+        <sections>
+            <label><!-- Collection Instructions --></label>
+            <section>Collection Instructions</section>
+        </sections>
+        <sections>
+            <label><!-- SAP Status --></label>
+            <section>SAP Status</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>SAP Invoice Claims</layout>
+        <sections>
+            <label><!-- Claim Qualification --></label>
+            <section>Claim Qualification</section>
+        </sections>
+        <sections>
+            <label><!-- Claim Solution --></label>
+            <section>Claim Solution</section>
+        </sections>
+        <sections>
+            <label><!-- External Inquiries --></label>
+            <section>External Inquiries</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>SAP Invoice Collections</layout>
+        <sections>
+            <label><!-- Case Information --></label>
+            <section>Case Information</section>
+        </sections>
+        <sections>
+            <label><!-- Collection Instructions --></label>
+            <section>Collection Instructions</section>
+        </sections>
+        <sections>
+            <label><!-- SAP Status --></label>
+            <section>SAP Status</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Case Management --></label>
+        <name>Case_Management</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Change Priority --></label>
+        <name>Change_Priority</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- CloseCaseLightning --></label>
+        <name>CloseCaseLightning</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Close the Case --></label>
+        <name>Close_the_Case</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Edit --></label>
+        <name>EditCase</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Edit Collection --></label>
+        <name>EditCollection</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Factory Mails (AI) --></label>
+        <name>Factory_Mails_AI</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Update Case --></label>
+        <name>Manage_case</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewChildCase --></label>
+        <name>NewChildCase</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Send Email --></label>
+        <name>SendEmail</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- SocialPublisher --></label>
+        <name>SocialPublisher</name>
+    </quickActions>
+    <recordTypes>
+        <description><!-- Case to log IT issues --></description>
+        <label><!-- IT Case --></label>
+        <name>ITCase</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Neoris_caso</label>
+        <name>Neoris_case</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Problem --></label>
+        <name>Problem</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- SAP Claims --></description>
+        <label><!-- SAP Claims Case --></label>
+        <name>SAPClaimsCase</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Record Type for customer issues related to a SAP invoice --></description>
+        <label><!-- SAP Collections Case --></label>
+        <name>SAPInvoiceCase</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- The claim must be approved before the status can be changed --></errorMessage>
+        <name>CLAIMS_Approval_Pending</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The claim cannot be moved to the selected status because related orders have already been created --></errorMessage>
+        <name>CLAIMS_Has_Orders</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Account is required --></errorMessage>
+        <name>CLAIMS_Required_Field_Account</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- SAP Invoice information is requried --></errorMessage>
+        <name>CLAIMS_Required_Field_Invoice</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please complete the Liability information --></errorMessage>
+        <name>CLAIMS_Required_Field_Liability</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please specify if the product is covered by our warranty terms --></errorMessage>
+        <name>CLAIMS_Required_Field_Warranty</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please note that collections are not possible on weekends --></errorMessage>
+        <name>COLLECTIONS_not_enabled_on_weekends</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please specify the customer conclusions --></errorMessage>
+        <name>Fill_customer_conclusions</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please specify the delivery date --></errorMessage>
+        <name>Fill_delivery_date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please specify the service date --></errorMessage>
+        <name>Fill_service_date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please specify the technician conclusions --></errorMessage>
+        <name>Fill_technician_conclusions</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A reason for splitting a case must be specified --></errorMessage>
+        <name>Reason_for_splitting_child_case</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a valid SAP invoice number --></errorMessage>
+        <name>SAPInvoice_InvoiceRequired</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must specify a new service date --></errorMessage>
+        <name>Specify_new_service_date</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- New_CCase --></label>
+        <name>New_CCase</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Claim --></label>
+        <name>New_Claim</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Smart_Dialer --></label>
+        <name>talkdesk__Smart_Dialer</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Smart_SMS --></label>
+        <name>talkdesk__Smart_SMS</name>
+    </webLinks>
+    <workflowTasks>
+        <name>Claim_consideration_approved</name>
+        <subject><!-- Claim consideration approved --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <name>Claim_consideration_rejected</name>
+        <subject><!-- Claim consideration rejected --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <name>Contact_reporter_after_sending_attach_SKU_photos_email</name>
+        <subject><!-- Contact reporter after sending attach SKU photos email --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <name>Contact_reporter_since_form_was_sent</name>
+        <subject><!-- Contact reporter since form was sent --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <name>Contact_reporter_to_confirm_service</name>
+        <subject><!-- Contact reporter to confirm service --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <name>Contact_technician_to_confirm_service</name>
+        <subject><!-- Contact technician to confirm service --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <name>Contact_technician_to_enter_service_date</name>
+        <subject><!-- Contact technician to enter service date --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <name>Customer_agrees_with_the_solution</name>
+        <subject><!-- Customer agrees with the solution --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <name>Fill_estimated_delivery_date</name>
+        <subject><!-- Fill estimated delivery date --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <name>Fill_service_date</name>
+        <subject><!-- Fill service date --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <name>Manage_the_claim_after_attaching_SKU_photos</name>
+        <subject><!-- Manage the claim after attaching SKU photos --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <name>Reporter_filled_the_form</name>
+        <subject><!-- Reporter filled the form --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <name>Reporter_identified_invoice_lines</name>
+        <subject><!-- Reporter identified invoice lines --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <name>Reporter_refuses_to_attach_photo_and_customer_not_identified</name>
+        <subject><!-- Reporter refuses to attach photo and customer not identified --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <name>Technician_Service_conclusion_No_Ok</name>
+        <subject><!-- Technician Service conclusion No Ok --></subject>
+    </workflowTasks>
+</CustomObjectTranslation>

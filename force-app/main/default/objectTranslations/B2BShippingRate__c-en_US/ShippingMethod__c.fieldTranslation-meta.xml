@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Shipping Method --></label>
+    <name>ShippingMethod__c</name>
+    <picklistValues>
+        <masterLabel>US-STD</masterLabel>
+        <translation><!-- US-STD --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>US-UPS-60</masterLabel>
+        <translation><!-- US-UPS-60 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

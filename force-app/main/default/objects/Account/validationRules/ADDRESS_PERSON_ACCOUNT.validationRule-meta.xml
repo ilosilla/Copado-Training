@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ADDRESS_PERSON_ACCOUNT</fullName>
+    <active>true</active>
+    <description>Validates person account&apos;s address</description>
+    <errorConditionFormula>AND(CONTAINS($User.Username, &apos;loads.user&apos;) = false,
+  IsPersonAccount = true, 
+  Potential__c = false,
+  OR(
+    ISBLANK(PersonMailingPostalCode), 
+    ISBLANK(PersonMailingCity),
+    ISPICKVAL(PersonMailingCountryCode, &apos;&apos;)
+  )
+)</errorConditionFormula>
+    <errorMessage>Address in Account is required (Country, postcode and city)</errorMessage>
+</ValidationRule>

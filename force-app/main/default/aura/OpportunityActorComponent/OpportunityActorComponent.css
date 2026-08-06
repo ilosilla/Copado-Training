@@ -1,0 +1,211 @@
+.THIS .customModalContent{
+    
+    overflow-y: auto !important; 
+    padding: 1rem 2rem;
+    min-height: 10rem;
+    max-height: 20rem;
+}
+
+.THIS .customHeader{
+    
+    color: #080707;
+    font-weight: inherit;
+    
+}
+
+.THIS div.indexHeader{
+    
+    display: none;
+        
+}
+
+@media (max-width: 768px) {
+    
+    .THIS div.indexHeader{
+        
+        display: block;
+        text-align: center;
+        margin: 1em 0;
+        
+    }
+    
+}
+
+.THIS label.slds-form-element__label, .THIS lightning-helptext{
+    
+    display: none !important;
+    
+}
+
+.THIS lightning-helptext{
+    
+    display: none;
+    
+}
+
+.THIS .contentCell lightning-input-field{
+    
+    margin: 0;
+    
+}
+
+.THIS .buttonContainer{
+    
+    text-align: center;
+	margin-top: 1rem;
+    
+}
+
+.THIS abbr.slds-required{
+    
+    display: contents;
+    
+}
+
+/* GRID */
+.THIS .container{
+    
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+    grid-template-areas: "header content";
+    min-height: 10rem;
+    
+}
+
+@media (min-width: 768px){
+    
+    .THIS .container{
+        
+        grid-template-rows: 1fr 2fr;
+        grid-template-columns: auto;
+        grid-template-areas: "header"
+                             "content";
+        min-height: initial;
+        
+    }
+    
+    .THIS .container.noHeader{
+        
+        grid-template-rows: 1fr;
+        grid-template-columns: auto;
+        grid-template-areas: "content";
+        min-height: initial;
+        
+    }
+    
+}
+
+.THIS .header{
+    
+    grid-area: header;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(5, minmax(0, 1fr));
+    grid-template-areas: "headerCell"
+    					 "headerCell"
+    					 "headerCell"
+    					 "headerCell"
+    					 "headerCell";
+    
+}
+
+@media (min-width: 768px){
+    
+    .THIS .header{
+        
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        grid-template-rows: auto;
+        grid-template-areas: "headerCell headerCell headerCell headerCell headerCell";
+        
+    }
+    
+    .THIS .header.hideContent{
+        
+        display:none;
+        
+    }
+    
+}
+
+.THIS .headerCell, .THIS .contentCell{
+    
+    display: grid;
+    
+    
+}
+
+.THIS .headerCell{
+    
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: #514F4D;
+    font-weight: 700;
+    border-bottom: 1px solid #dddbda;
+    
+}
+
+.THIS .contentCell{
+    
+    justify-content: stretch;
+    align-items: center;
+    padding: 0.5rem;    
+    border-bottom: 1px solid #dddbda;
+    
+}
+
+@media (max-width: 768px){
+    
+    .THIS .headerCell{
+        
+        border-bottom: 1px solid #dddbda;
+        
+    }
+    
+    .THIS .headerCell:first-child{
+        
+        border-top: 1px solid #dddbda;
+        
+    }
+    
+    .THIS .contentCell{
+        
+        padding: 0.3125rem 10%;
+        
+    }
+    
+    .THIS .contentCell:first-child{
+        
+        border-top: 1px solid #dddbda;
+        
+    }
+    
+}
+
+.THIS .content{    
+    
+    grid-area: content;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(5, minmax(0, 1fr));
+    grid-template-areas: "contentCell"
+    					 "contentCell"
+    					 "contentCell"
+    					 "contentCell"
+    					 "contentCell";
+    
+}
+
+@media (min-width: 768px){
+    
+    .THIS .content{
+        
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        grid-template-rows: auto;
+        grid-template-areas: "contentCell contentCell contentCell contentCell contentCell";
+        
+    }
+    
+}

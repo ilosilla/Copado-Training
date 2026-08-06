@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SalesMaturity__c</fullName>
+    <description>Campo Rellenado en el Weekly event report , para decir como esá el contacto con el Account</description>
+    <label>Sales Maturity</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>NOCONTACTED</fullName>
+                <default>false</default>
+                <label>No contacted</label>
+            </value>
+            <value>
+                <fullName>CONTACTED</fullName>
+                <default>false</default>
+                <label>Contacted</label>
+            </value>
+            <value>
+                <fullName>DEVELOPMENT</fullName>
+                <default>false</default>
+                <label>Development</label>
+            </value>
+            <value>
+                <fullName>STUDYINGOPPS</fullName>
+                <default>false</default>
+                <label>Studying Opportunities</label>
+            </value>
+            <value>
+                <fullName>PRODUCING</fullName>
+                <default>false</default>
+                <label>Producing</label>
+            </value>
+            <value>
+                <fullName>FREEZED</fullName>
+                <default>false</default>
+                <label>Stopped</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

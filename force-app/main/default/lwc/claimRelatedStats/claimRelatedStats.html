@@ -1,0 +1,40 @@
+<template>
+    <div class="slds-card slds-theme_shade">
+        <header class="slds-media slds-media_center slds-has-flexi-truncate slds-var-p-horizontal_small slds-var-p-top_small">
+            <div class="slds-media__figure">
+                <lightning-icon icon-name="standard:knowledge"></lightning-icon>
+            </div>
+            <div class="slds-media__body">
+                <h2 class="slds-card__header-title">
+                    <span>{label.tr0003_001}</span> <!-- Claim Analytics-->
+                </h2>
+            </div>
+        </header>
+        <div class="slds-var-p-horizontal_large slds-var-p-vertical_x-small slds-scrollable_y" style="max-height: 12rem;">
+            <div lwc:if={isLoading}>
+                <lightning-spinner size="xx-small"></lightning-spinner>
+            </div>
+            <div class="slds-grid slds-wrap  slds-var-p-horizontal_small slds-var-p-bottom_small" lwc:else>
+                <div class="slds-col slds-size_1-of-12 slds-var-m-top_small">
+                    <lightning-icon icon-name={invoiceClaimsIcon} size="small"></lightning-icon>
+                </div>
+                <div class="slds-col slds-size_11-of-12 slds-var-m-top_small slds-var-p-left_small">
+                    <span>{invoiceClaimsText}</span>
+                </div>
+                <div class="slds-col slds-size_1-of-12 slds-var-m-top_small">
+                    <lightning-icon icon-name={productClaimsIcon} size="small"></lightning-icon>
+                </div>
+                <div class="slds-col slds-size_11-of-12 slds-var-m-top_small slds-var-p-left_small">
+                    <span>{productClaimsText}</span>
+                </div>
+                <div class="slds-col slds-size_1-of-12 slds-var-m-top_small">
+                    <lightning-icon icon-name={accountClaimsIcon} size="small"></lightning-icon>
+                </div>
+                <div class="slds-col slds-size_11-of-12 slds-var-m-top_small slds-var-p-left_small">
+                    <span>{accountClaimsText}</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>

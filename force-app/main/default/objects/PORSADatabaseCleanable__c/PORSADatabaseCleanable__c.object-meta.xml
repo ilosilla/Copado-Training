@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Lista de objetos a borrar en base de datos</description>
+    <enableFeeds>false</enableFeeds>
+    <label>PORSADatabaseCleanable</label>
+    <visibility>Public</visibility>
+</CustomObject>

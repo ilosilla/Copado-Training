@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Likely Cause --></label>
+    <name>LikelyCause__c</name>
+    <picklistValues>
+        <masterLabel>COMPANY LIABILITY</masterLabel>
+        <translation><!-- COMPANY LIABILITY --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CUSTOMER ISSUE</masterLabel>
+        <translation><!-- CUSTOMER ISSUE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CUSTOMER MIS-USE</masterLabel>
+        <translation><!-- CUSTOMER MIS-USE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CUSTOMER MIS-USE (1)</masterLabel>
+        <translation><!-- CUSTOMER MIS-USE (1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CUSTOMER MIS-USE (2)</masterLabel>
+        <translation><!-- CUSTOMER MIS-USE (2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CUSTOMER MIS-USE (3)</masterLabel>
+        <translation><!-- CUSTOMER MIS-USE (3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DAMAGED IN TRANSIT / ON SITE</masterLabel>
+        <translation><!-- DAMAGED IN TRANSIT / ON SITE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DAMAGED IN TRANSPORT</masterLabel>
+        <translation><!-- DAMAGED IN TRANSPORT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GROUT HAS NOT BEEN MIXED CORRECTLY - TOO MUCH WATER</masterLabel>
+        <translation><!-- GROUT HAS NOT BEEN MIXED CORRECTLY - TOO MUCH WATER --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IMPROPER CLEANING OR MAINTENANCE</masterLabel>
+        <translation><!-- IMPROPER CLEANING OR MAINTENANCE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IMPROPER CLEANING OR MAINTENANCE (1)</masterLabel>
+        <translation><!-- IMPROPER CLEANING OR MAINTENANCE (1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE</masterLabel>
+        <translation><!-- INSTALLATION ISSUE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (1)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (10)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (10) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (11)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (11) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (12)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (12) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (14)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (14) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (15)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (15) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (16)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (16) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (17)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (17) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (18)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (18) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (19)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (19) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (2)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (20)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (20) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (21)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (21) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (22)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (22) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (23)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (23) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (24)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (24) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (25)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (25) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (3)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (4)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (5)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (6)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (7)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (8)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (8) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION ISSUE (9)</masterLabel>
+        <translation><!-- INSTALLATION ISSUE (9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NOT MIXED PROPERLY</masterLabel>
+        <translation><!-- NOT MIXED PROPERLY --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OTHERS</masterLabel>
+        <translation><!-- OTHERS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PICKING OR ADMIN ERROR</masterLabel>
+        <translation><!-- PICKING OR ADMIN ERROR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCT ISSUE</masterLabel>
+        <translation><!-- PRODUCT ISSUE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCT ISSUE (1)</masterLabel>
+        <translation><!-- PRODUCT ISSUE (1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCT ISSUE (2)</masterLabel>
+        <translation><!-- PRODUCT ISSUE (2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCT UNSUITABLE FOR INTENDED USE</masterLabel>
+        <translation><!-- PRODUCT UNSUITABLE FOR INTENDED USE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCTION ISSUE</masterLabel>
+        <translation><!-- PRODUCTION ISSUE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCTION ISSUE (1)</masterLabel>
+        <translation><!-- PRODUCTION ISSUE (1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCTION ISSUE (10)</masterLabel>
+        <translation><!-- PRODUCTION ISSUE (10) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCTION ISSUE (2)</masterLabel>
+        <translation><!-- PRODUCTION ISSUE (2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCTION ISSUE (3)</masterLabel>
+        <translation><!-- PRODUCTION ISSUE (3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCTION ISSUE (4)</masterLabel>
+        <translation><!-- PRODUCTION ISSUE (4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCTION ISSUE (5)</masterLabel>
+        <translation><!-- PRODUCTION ISSUE (5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCTION ISSUE (6)</masterLabel>
+        <translation><!-- PRODUCTION ISSUE (6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCTION ISSUE (7)</masterLabel>
+        <translation><!-- PRODUCTION ISSUE (7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCTION ISSUE (8)</masterLabel>
+        <translation><!-- PRODUCTION ISSUE (8) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRODUCTION ISSUE (9)</masterLabel>
+        <translation><!-- PRODUCTION ISSUE (9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SALES ISSUE</masterLabel>
+        <translation><!-- SALES ISSUE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WATER SUPPLY ISSUE</masterLabel>
+        <translation><!-- WATER SUPPLY ISSUE --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

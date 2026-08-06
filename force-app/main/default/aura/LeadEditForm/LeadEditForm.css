@@ -1,0 +1,26 @@
+.THIS.hidden {
+    display: none;
+}
+
+.THIS #theModal {
+    width: 90% !important;
+    max-width:100% !important;
+    max-height: 100% !important;   
+}   
+.THIS #theModal>.slds-modal__content  {
+    height: 90% !important;
+}
+
+.THIS #large_text_area textarea {
+    height: 184px;
+}
+
+.THIS .slds-textarea {
+    height: 80px !important;
+}
+
+.THIS .docker {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row-reverse;
+}

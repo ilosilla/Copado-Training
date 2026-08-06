@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Profil</label>
+    <name>Profile__c</name>
+    <picklistValues>
+        <masterLabel>Architect</masterLabel>
+        <translation><!-- Architect --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Builder</masterLabel>
+        <translation>Constructeur</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Consumer</masterLabel>
+        <translation>Consommateur</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Contractor</masterLabel>
+        <translation>Constructeur Général</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dealer</masterLabel>
+        <translation>Distributeur</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Designer</masterLabel>
+        <translation>Architet d&apos;Intérieur</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Developer</masterLabel>
+        <translation>Développeur</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fabricator</masterLabel>
+        <translation>Transformateur</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Facade Consultant</masterLabel>
+        <translation>Consultant en Facades</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Facade Installer</masterLabel>
+        <translation>Installateur de Facades</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kitchen &amp; Bath store</masterLabel>
+        <translation><!-- Kitchen &amp; Bath store --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Press</masterLabel>
+        <translation>Presse</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Private Customer</masterLabel>
+        <translation>Client Particulier</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Project Manager</masterLabel>
+        <translation>Chef du Projet</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Realtor</masterLabel>
+        <translation>Agent Immobilier</translation>
+    </picklistValues>
+</CustomFieldTranslation>

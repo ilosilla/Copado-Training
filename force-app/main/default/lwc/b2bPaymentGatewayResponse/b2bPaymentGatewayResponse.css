@@ -1,0 +1,71 @@
+/* b2bPaymentGatewayResponse.css */
+.pg-container {
+    max-width: 520px;
+    margin: 60px auto 0;
+    padding: 24px;
+    padding-bottom: 100px;
+    position: relative;
+    background: #fff;
+}
+
+.pg-container lightning-spinner {
+    margin-top: 128px;
+}
+
+.pg-content {
+    text-align: center;
+}
+
+.pg-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.pg-subtitle {
+    margin: 8px auto 0;
+    max-width: 520px;   /* 👈 evita línea demasiado larga */
+    font-size: 0.95rem;
+    opacity: 0.85;
+}
+
+.pg-order {
+    margin-top: 16px;
+    font-size: 1rem;
+}
+
+.pg-orderNumber {
+    font-weight: 700;
+}
+
+.pg-actions {
+    margin-top: 18px;
+}
+
+.pg-btn {
+    border: 0;
+    border-radius: 4px;
+    padding: 10px 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+@media (max-width: 480px) {
+    .pg-wrapper {
+        padding-top: 72px; /* 👈 mejor en móvil */
+    }
+}
+
+.pg-subtitle--recovery {
+    margin-top: 8px;
+}
+
+.pg-paragraph {
+    margin: 0 0 10px 0;
+}
+
+.pg-paragraph--last {
+    margin-bottom: 0;
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_Transaction__c</fullName>
+    <label>Reason Transaction</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Change Account Owner</fullName>
+                <default>false</default>
+                <label>Change Account Owner</label>
+            </value>
+            <value>
+                <fullName>New Account</fullName>
+                <default>false</default>
+                <label>New Account</label>
+            </value>
+            <value>
+                <fullName>New Account Team Member</fullName>
+                <default>false</default>
+                <label>New Account Team Member</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,13 @@
+.selector{
+    text-decoration-color:#116baf;
+    text-decoration-style: solid;
+    text-decoration: underline;
+	vertical-align: text-bottom;
+
+}
+.column{
+	/* display: flex; */
+	float:left;
+    width: 50%;
+	justify-content: center;
+}

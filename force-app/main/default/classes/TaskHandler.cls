@@ -1,0 +1,17 @@
+/*-----------------------------------------------------------------------------------------
+Author:         Juan Manuel Martinez
+Company:        Neoris
+Date:			21-03-2019
+Description:    No permite crear una nueva Tarea si tienee puesta una Account en el campo WhatID 
+				y ésta cuenta se encuentra con el flag bloqueada o borrada a True. 
+Test Class:     TaskHandlerTest
+History
+<Date>            <Author>              <Change Description>
+-----------------------------------------------------------------------------------------*/
+/**
+* @date September 2021
+* @group Triggers
+* @deprecated  We don't use this one, instead we use TaskTriggerHandler
+*/
+
+public class TaskHandler{}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <description>Guarda el tipo de proyecto externo que es</description>
+    <label>Type</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>MOODBOARD</fullName>
+                <default>false</default>
+                <label>Moodboard</label>
+            </value>
+            <value>
+                <fullName>TILEPLANNER</fullName>
+                <default>false</default>
+                <label>Tile Planner</label>
+            </value>
+            <value>
+                <fullName>SELECT</fullName>
+                <default>false</default>
+                <label>Select</label>
+            </value>
+            <value>
+                <fullName>COUNTERTOP</fullName>
+                <default>false</default>
+                <label>Counter Top</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

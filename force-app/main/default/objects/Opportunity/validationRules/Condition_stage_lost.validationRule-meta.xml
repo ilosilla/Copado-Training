@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Condition_stage_lost</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( CONTAINS($User.Username, &apos;loads.user&apos;) = false,OR(RecordType.Name = &quot;Project trade&quot;,RecordType.Name = &quot;Project retail&quot;) , 
+
+ISPICKVAL(StageName , &quot;Lost&quot;), 
+ISCHANGED(StageName), 
+ISPICKVAL(Reason_Lost__c ,&quot;&quot;) 
+)</errorConditionFormula>
+    <errorMessage>You must select a reason lost</errorMessage>
+</ValidationRule>

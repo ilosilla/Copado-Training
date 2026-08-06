@@ -1,0 +1,178 @@
+<aura:component 
+    implements="flexipage:availableForAllPageTypes,force:hasRecordId,lightning:hasPageReference,lightning:isUrlAddressable,lightning:actionOverride,force:lightningQuickActionWithoutHeader" 
+    access="global"
+    controller="LeadEditController">    
+
+    <!-- style modification -->
+    <aura:html tag="style">
+        .toastMessage.forceActionsText{
+            white-space : pre-line !important;
+        }
+        .slds-modal__container {
+            width: 60rem !important;
+            max-width: 60.5rem;
+            min-width: 30rem !important;
+            margin: 0 auto;
+        }
+        .slds-modal__content{
+            height:unset !important;
+            max-height:unset !important;
+        }
+    </aura:html>    
+    
+    <!-- Variables -->
+    <aura:attribute name="formTitle" type="String"/>
+    <aura:attribute name="loading" type="Boolean" default="true"/>
+    <aura:attribute name="oldAccountId" type="Id"/>    
+    <aura:attribute name="contactId" type="Id"/>
+    <aura:attribute name="contactList" type="List"/>
+
+
+    <!-- Event handlers -->
+    <!-- <aura:handler name="init" value="{!this}" action="{!c.onInit}"/>   -->
+
+    <div>   <!-- main container -->
+
+        <div tabindex="-1" class="slds-modal slds-fade-in-open">  
+
+            <aura:if isTrue="{!v.loadingo}">
+                <div class="slds-align_absolute-center slds-p-around_xx-large">
+                    <lightning:spinner alternativeText="Loading"/>
+                </div>                        
+            </aura:if>
+                
+            <div id="" class="slds-modal__container">
+                                    
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium slds-hyphenate">Edit &laquo;{!v.formTitle}&raquo;</h2>
+                </header>   
+
+                <div class="slds-modal__content" id="modal-content-id-1"> <!-- content div-->
+
+                    <div class="slds-scrollable_y slds-p-horizontal_small"> <!-- main body scrollable -->
+                
+                        <lightning:recordEditForm aura:id="leadForm" recordId="{!v.recordId}" objectApiName="Lead" 
+                            onload="{!c.handleOnLoad}" onsuccess="{!c.handleOnSuccess}" onerror="{!c.handleOnError}" onsubmit="{!c.handleOnSubmit}" >
+                                
+                            <lightning:messages aura:id = "mensajes"/>
+
+                            <lightning:notificationsLibrary aura:id="notifLib"/>
+                            <input aura:id="submitButton" type="submit" class="hidden"/>
+                
+                            <!-- Section 1: Lead details -->
+                            <div class="slds-section slds-is-open">
+                                <h3 class="slds-section__title slds-theme--shade slds-p-left_medium">
+                                    {!$Label.c.lead_section_info}
+                                </h3>
+                                <div class="slds-section__content slds-grid slds-wrap">
+                                    <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                                        <lightning:inputField aura:id="oppName" fieldName="Opportunity_Name__c" required="true"/>
+                                        <lightning:inputField fieldName="Status" required="true" />
+                                        <lightning:inputField fieldName="OwnerId" />
+                                        <lightning:inputField fieldName="Representative__c" disabled="true"/>
+                                        <lightning:inputField fieldName="AccountId__c" onchange="{!c.handleAccountChange}"/>                        
+                                        <lightning:select name="contacts" label="{!$Label.c.dict_contact}" value="{!v.contactId}" class="slds-form-element_stacked">
+                                            <option text="" value=""/>
+                                            <aura:iteration items="{!v.contactList}" var="contact">
+                                                <option text="{!contact.Name}" value="{!contact.Id}" selected="{!contact.selected}"/>
+                                            </aura:iteration>
+                                        </lightning:select>
+                                        <lightning:inputField fieldName="Dealer__c"/>                        
+                                        <lightning:inputField aura:id="ContactId__c" fieldName="ContactId__c" class="slds-hide"/>   
+                                        <lightning:outputField fieldName="ExistingAccount__c" />
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-right_small">
+                                        <lightning:inputField fieldName="LeadSource" disabled="true"/>
+                                        <lightning:inputField fieldName="LeadType__c" disabled="true"/>
+                                        <lightning:inputField fieldName="LeadSubtype__c" disabled="true"/>
+                                        <lightning:inputField fieldName="ReferredBy__c"/>
+                                        <lightning:inputField fieldName="Operation_Type__c"/>
+                                        <lightning:inputField fieldName="Quantity_of_the_opportunity__c"/>
+                                        <ul class="slds-list_horizontal slds-form-element__control">
+                                            <lightning:inputField fieldName="Close_Date__c" />
+                                            <lightning:outputField fieldName="CreatedDate" />
+                                        </ul>                            
+                                        <!-- lightning:inputField fieldName="IsSupportOrWarranty__c"/ -->                                        
+                                    </div>
+                                    <div class="slds-col slds-size_2-of-2 slds-p-left_small slds-p-right_small">
+                                        <lightning:inputField fieldName="Description" class="textarea"/>                        
+                                    </div>    
+                                </div>
+                
+                            </div>
+                
+                            <!-- Section 2: Contact details -->
+                            <div class="slds-section slds-is-open">
+                                <h3 class="slds-section__title slds-theme--shade slds-p-left_medium">
+                                    {!$Label.c.lead_section_contact}
+                                </h3>
+                                <div class="slds-section__content slds-grid slds-wrap">
+                                    <div class="slds-col slds-size_6-of-12 slds-p-left_small slds-p-right_small">
+                                        <lightning:inputField fieldName="Name" />      
+                                        <ul class="slds-list_horizontal slds-form-element__control">
+                                        <li style="width:50%"><lightning:inputField fieldName="Title"/></li>
+                                        <li style="width:50%"><lightning:inputField fieldName="Profile__c"/></li>
+                                        </ul>
+                                        <lightning:inputField fieldName="Company" />
+                                        <lightning:inputField fieldName="MobilePhone"/>
+                                    </div>
+                                    <div class="slds-col slds-size_6-of-12 slds-p-left_small slds-p-right_small">
+                                        <legend class="slds-form-element__control slds-form-element__label slds-form-element__legend">
+                                            {!$Label.c.lead_contact_address}
+                                        </legend>
+                                        <fieldset class="slds-form-element_stacked slds-form-element slds-form-compound">
+                                            <div class="slds-form-element__group">
+                                                <lightning:inputField fieldName="CountryCode__c" required="true" />
+                                                <lightning:inputField fieldName="Address__c" class="slds-form-element__control"/>
+                                                <ul class="slds-list_horizontal slds-form-element__control">
+                                                    <li style="width:50%"><lightning:inputField fieldName="State__c" /></li>
+                                                    <li style="width:50%" class="slds-m-left_small"><lightning:inputField fieldName="Postcode__c" /></li>
+                                                </ul>
+                                                <lightning:inputField fieldName="City__c" />
+                                            </div>
+                                        </fieldset>                            
+                                    </div>
+                                    <div class="slds-col slds-size_12-of-12 slds-p-left_small slds-p-right_small">
+                                        <lightning:inputField fieldName="Email" required="true"/>
+                                    </div>
+                                </div>         
+                            </div>
+
+                            <!-- Section 3: Interest -->
+                            <div class="slds-section slds-is-open">
+                                <h3 class="slds-section__title slds-theme--shade slds-p-left_medium">
+                                    {!$Label.c.lead_room_information}
+                                </h3>                    
+                                <div class="slds-section__content slds-grid">
+                                    <div class="slds-col slds-size_6-of-12 slds-p-left_small slds-p-right_small">
+                                        <lightning:inputField fieldName="roomTypeFullHouse__c"/>
+                                        <lightning:inputField fieldName="roomTypeKitchen__c"/>
+                                        <lightning:inputField fieldName="roomTypeBedroom__c"/>
+                                        <lightning:inputField fieldName="roomTypeFoyer__c"/>
+                                        <lightning:inputField fieldName="roomTypeSwimmingPool__c"/>
+                                        <lightning:inputField fieldName="roomTypeOther__c"/>
+                                    </div>
+                                    <div class="slds-col slds-size_6-of-12 slds-p-left_small slds-p-right_small">
+                                        <lightning:inputField fieldName="roomTypeBathroom__c"/>
+                                        <lightning:inputField fieldName="roomTypeLivingRoom__c"/>
+                                        <lightning:inputField fieldName="roomTypeFireplace__c"/>
+                                        <lightning:inputField fieldName="roomTypeOutdoorPatio__c"/>
+                                        <lightning:inputField fieldName="roomTypeLaundryRoom__c"/>
+                                    </div>
+                                </div>
+                            </div>
+                
+                        </lightning:recordEditForm>            
+                    </div> <!-- scrollable body -->
+                </div> <!-- content div-->                
+            
+                <div class="slds-modal__footer slds-theme_default">
+                    <lightning:button label="Cancel" onclick="{!c.handleCancel}"/>
+                    <lightning:button label="Save Lead" onclick="{!c.submitForm}" variant="brand"/>        
+                </div>
+
+            </div>
+        </div>  
+    </div> <!-- main container -->
+
+</aura:component>

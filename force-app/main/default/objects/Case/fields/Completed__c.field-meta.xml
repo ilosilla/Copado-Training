@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Completed__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( AND(VALUE(TEXT(Status)) &lt; 5, Case_Stopped__c,  Urgent__c ), IMAGE(&quot;/servlet/servlet.FileDownload?file=0156E000000H0Qw&quot;, &quot;Pending&quot; , 30 , 30) + IMAGE(&quot;/servlet/servlet.FileDownload?file=0156E000000H15f&quot;, &quot;Stopped&quot; , 30 , 30)+ IMAGE(&quot;/servlet/servlet.FileDownload?file=0156E000000H0ty&quot;, &quot;Urgent&quot; , 30 , 30) ,
+ 
+			IF(AND(VALUE(TEXT(Status)) &lt; 5, NOT(Case_Stopped__c),  Urgent__c )  , IMAGE(&quot;/servlet/servlet.FileDownload?file=0156E000000H0Qw&quot;, &quot;Pending&quot; , 30 , 30) +  IMAGE(&quot;/servlet/servlet.FileDownload?file=0156E000000H0ty&quot;, &quot;Urgent&quot; , 30 , 30),
+			
+			IF(AND(VALUE(TEXT(Status)) &lt; 5, NOT(Case_Stopped__c),  NOT(Urgent__c) ),  IMAGE(&quot;/servlet/servlet.FileDownload?file=0156E000000H0Qw&quot;, &quot;Pending&quot; , 30 , 30),
+			
+			IF (AND(VALUE(TEXT(Status)) &lt; 5, Case_Stopped__c,  NOT(Urgent__c) ), IMAGE(&quot;/servlet/servlet.FileDownload?file=0156E000000H0Qw&quot;, &quot;Pending&quot; , 30 , 30) + IMAGE(&quot;/servlet/servlet.FileDownload?file=0156E000000H15f&quot;, &quot;Stopped&quot; , 30 , 30),
+			
+			IF(AND(VALUE(TEXT(Status)) &gt;= 5, NOT(Case_Stopped__c),  Urgent__c )  , IMAGE(&quot;/servlet/servlet.FileDownload?file=0156E000000H0Ke&quot;,  &quot;Completed&quot;,  30 , 30) +  IMAGE(&quot;/servlet/servlet.FileDownload?file=0156E000000H0ty&quot;, &quot;Urgent&quot; , 30 , 30),
+			
+			IF(AND(VALUE(TEXT(Status)) &gt;= 5, NOT(Case_Stopped__c),  NOT(Urgent__c) ),  IMAGE(&quot;/servlet/servlet.FileDownload?file=0156E000000H0Ke&quot;,  &quot;Completed&quot;,  30 , 30),
+			
+			IF(AND(VALUE(TEXT(Status)) &gt;= 5, Case_Stopped__c,  NOT(Urgent__c) ), IMAGE(&quot;/servlet/servlet.FileDownload?file=0156E000000H0Ke&quot;,  &quot;Completed&quot;,  30 , 30) + IMAGE(&quot;/servlet/servlet.FileDownload?file=0156E000000H15f&quot;, &quot;Stopped&quot; , 30 , 30),
+			
+			IMAGE(&quot;/servlet/servlet.FileDownload?file=0156E000000H0Ke&quot;,  &quot;Completed&quot;,  30 , 30) + IMAGE(&quot;/servlet/servlet.FileDownload?file=0156E000000H15f&quot;, &quot;Stopped&quot; , 30 , 30)+ IMAGE(&quot;/servlet/servlet.FileDownload?file=0156E000000H0ty&quot;, &quot;Urgent&quot; , 30 , 30)
+)))))))</formula>
+    <label>Management Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

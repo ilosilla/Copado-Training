@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- List of emails of the approvers (separated by ;). The approvers have to be salesforce users and have the poermission set CASEApproveCollections --></help>
+    <label><!-- COL Collection Approver Emails --></label>
+    <name>COL_ApproverEmails__c</name>
+</CustomFieldTranslation>

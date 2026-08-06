@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Subtype__c</fullName>
+    <label>Event Subtype</label>
+    <required>false</required>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>EventType__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Altissima</fullName>
+                <default>false</default>
+                <label>Altissima</label>
+            </value>
+            <value>
+                <fullName>Bathroom fixtures</fullName>
+                <default>false</default>
+                <label>Bathroom fixtures</label>
+            </value>
+            <value>
+                <fullName>Butech</fullName>
+                <default>false</default>
+                <label>Butech</label>
+            </value>
+            <value>
+                <fullName>Catalogs</fullName>
+                <default>false</default>
+                <label>Catalogs</label>
+            </value>
+            <value>
+                <fullName>Facades</fullName>
+                <default>false</default>
+                <label>Facades</label>
+            </value>
+            <value>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+                <label>Healthcare</label>
+            </value>
+            <value>
+                <fullName>Kitchen</fullName>
+                <default>false</default>
+                <label>Kitchen</label>
+            </value>
+            <value>
+                <fullName>Krion</fullName>
+                <default>false</default>
+                <label>Krion</label>
+            </value>
+            <value>
+                <fullName>Laminate</fullName>
+                <default>false</default>
+                <label>Laminate</label>
+            </value>
+            <value>
+                <fullName>LVT</fullName>
+                <default>false</default>
+                <label>LVT</label>
+            </value>
+            <value>
+                <fullName>Tile</fullName>
+                <default>false</default>
+                <label>Tile</label>
+            </value>
+            <value>
+                <fullName>Urbatek</fullName>
+                <default>false</default>
+                <label>Urbatek</label>
+            </value>
+            <value>
+                <fullName>Wood</fullName>
+                <default>false</default>
+                <label>Wood</label>
+            </value>
+            <value>
+                <fullName>Xlight</fullName>
+                <default>false</default>
+                <label>Xlight</label>
+            </value>
+            <value>
+                <fullName>Xtone</fullName>
+                <default>false</default>
+                <label>Xtone</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Lunch and Learn (CEU)</controllingFieldValue>
+            <valueName>Altissima</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lunch and Learn (CEU)</controllingFieldValue>
+            <valueName>Bathroom fixtures</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lunch and Learn (CEU)</controllingFieldValue>
+            <valueName>Butech</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lunch and Learn (CEU)</controllingFieldValue>
+            <valueName>Catalogs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lunch and Learn (CEU)</controllingFieldValue>
+            <valueName>Facades</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lunch and Learn (CEU)</controllingFieldValue>
+            <valueName>Healthcare</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lunch and Learn (CEU)</controllingFieldValue>
+            <valueName>Kitchen</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lunch and Learn (CEU)</controllingFieldValue>
+            <valueName>Krion</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lunch and Learn (CEU)</controllingFieldValue>
+            <valueName>Laminate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lunch and Learn (CEU)</controllingFieldValue>
+            <valueName>LVT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lunch and Learn (CEU)</controllingFieldValue>
+            <valueName>Tile</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lunch and Learn (CEU)</controllingFieldValue>
+            <valueName>Urbatek</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lunch and Learn (CEU)</controllingFieldValue>
+            <valueName>Wood</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lunch and Learn (CEU)</controllingFieldValue>
+            <valueName>Xlight</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lunch and Learn (CEU)</controllingFieldValue>
+            <valueName>Xtone</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

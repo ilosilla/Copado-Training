@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- HVS Disposition --></label>
+    <name>rcsfl__hvs_disposition__c</name>
+    <picklistValues>
+        <masterLabel>Call Back Later</masterLabel>
+        <translation><!-- Call Back Later --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Left Voicemail</masterLabel>
+        <translation><!-- Left Voicemail --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Meaningful Connect</masterLabel>
+        <translation><!-- Meaningful Connect --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Interested</masterLabel>
+        <translation><!-- Not Interested --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unqualified</masterLabel>
+        <translation><!-- Unqualified --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Status__c</fullName>
+    <description>Cuentas Activas o Inactivas</description>
+    <label>Account Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Active</fullName>
+                <default>true</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+                <label>Inactive</label>
+            </value>
+            <value>
+                <fullName>Inactive: Cessation of Activity</fullName>
+                <default>false</default>
+                <label>Inactive: Cessation of Activity</label>
+            </value>
+            <value>
+                <fullName>Inactive: Duplicated</fullName>
+                <default>false</default>
+                <label>Inactive: Duplicated</label>
+            </value>
+            <value>
+                <fullName>Inactive: Wrong Classification, not a business client</fullName>
+                <default>false</default>
+                <label>Inactive: Wrong Classification, not a business client</label>
+            </value>
+            <value>
+                <fullName>Inactive: Private customer purchasing through a trade client</fullName>
+                <default>false</default>
+                <label>Inactive: Private customer purchasing through a trade client</label>
+            </value>
+            <value>
+                <fullName>Waiting for Approval</fullName>
+                <default>false</default>
+                <label>Waiting for Approval</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

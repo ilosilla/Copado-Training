@@ -1,0 +1,64 @@
+<template>
+    <div>
+        <c-lib-error-panel errors={errorObject} theme="error"></c-lib-error-panel>
+        <p class="slds-var-p-top_small slds-var-p-horizontal_medium"><b>{labels.caseCheckClaim}</b></p>
+        <div class="slds-var-m-vertical_small">
+            <div class="slds-var-p-horizontal_medium slds-var-p-vertical_x-small slds-theme_shade">                                        
+                <h2><b>{labels.dictDetails}:</b></h2>
+            </div>
+            <div class="slds-var-p-horizontal_medium slds-var-p-vertical_small">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-2 slds-var-p-right_x-small">
+                        <c-lib-form-element label={labels.dictInvoiceNumber} value={caseData.invoiceHeader.Ordernum__c}></c-lib-form-element>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-var-p-left_x-small">
+                        <c-lib-form-element label={labels.dictInvoiceDate} value={caseData.invoiceHeader.Orderdate__c} format="date"></c-lib-form-element>
+                    </div>
+                    <div class="slds-col slds-size_2-of-2 slds-var-p-top_x-small">
+                        <c-lib-form-element label={labels.dictCustomer} value={caseData.invoiceHeader.accountName}></c-lib-form-element>
+                    </div>
+                    <template lwc:if={isReturn}>
+                        <div class="slds-col slds-size_2-of-2 slds-var-p-top_x-small">
+                            <c-lib-form-element label={labels.dictDescription} value={returnsHeader.description}></c-lib-form-element>
+                        </div>
+                        <div class="slds-col slds-size_2-of-2 slds-var-p-top_x-small">
+                            <lightning-badge label={returnsHeader.attachmentsText} icon-name="utility:attach" class="slds-badge_lightest"></lightning-badge>
+                        </div>
+                    </template>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="slds-var-m-vertical_small">
+            <template for:each={selectedLines} for:item="line">
+                <div key={line.Line} class="slds-var-p-horizontal_medium slds-var-p-vertical_x-small slds-theme_shade">      
+                    <h2><b>{labels.dictProductNo}{line.position}: {line.Name__c}</b></h2>
+                </div>
+                <div key={line.Line} class="slds-var-p-horizontal_medium slds-var-p-vertical_small">
+                    <lightning-layout horizontal-align="spread" multiple-rows>
+                        <lightning-layout-item size="5" class="slds-var-p-vertical_xx-small slds-var-p-right_small">
+                            <div>{line.Sku__c}</div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="2" class="slds-var-p-around_xx-small">
+                            <div>{line.defective} {line.salesUnitName}</div>
+                        </lightning-layout-item>                                    
+                        <lightning-layout-item size="5" class="slds-var-p-vertical_xx-small slds-var-p-right_small">
+                            <div>{line.problemLabel}</div>
+                        </lightning-layout-item>    
+                        <template lwc:if={isClaim}>
+                            <lightning-layout-item size="12" class="slds-var-p-vertical_xx-small slds-var-p-right_small">
+                                {line.problemDescription}
+                            </lightning-layout-item>
+                            <lightning-layout-item size="12" class="slds-var-p-vertical_xx-small slds-var-p-right_small">
+                                <lightning-badge label={line.attachmentsText} icon-name="utility:attach" class="slds-badge_lightest"></lightning-badge>
+                            </lightning-layout-item>
+                        </template>
+                    </lightning-layout>
+                </div>
+            </template>
+        </div>
+
+    </div> <!-- step 4 -->
+
+</template>

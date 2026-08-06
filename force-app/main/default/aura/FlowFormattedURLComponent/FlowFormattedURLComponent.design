@@ -1,0 +1,7 @@
+<design:component>
+	<design:attribute name="recordId" label="Record ID" />	    
+    <design:attribute name="title" label="Title"/>	  
+    <design:attribute name="label" label="Label"/>	  
+    <design:attribute name="theme" label="Theme" datasource="Default,Shade,Success,Info,Warning,Error, Offline, Inverse" default="Default"/>	  
+    <design:attribute name="tooltip" label="Tooltip"/>	  	
+</design:component>

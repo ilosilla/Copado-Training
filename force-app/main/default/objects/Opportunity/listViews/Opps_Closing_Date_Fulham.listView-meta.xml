@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opps_Closing_Date_Fulham</fullName>
+    <columns>Sales_Organizational_Unit__c</columns>
+    <columns>SalesOrglookup__c</columns>
+    <columns>Sales_Org__c</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.RECORDTYPE</columns>
+    <columns>Amount_custom__c</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.PROBABILITY</columns>
+    <columns>Opportunity_Classification__c</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Rol_Usuario_ANA__c</field>
+        <operation>equals</operation>
+        <value>Sales Office Fulham</value>
+    </filters>
+    <label>Opps Closing Date Fulham</label>
+    <sharedTo>
+        <role>Sales_Office_Fulham</role>
+    </sharedTo>
+</ListView>

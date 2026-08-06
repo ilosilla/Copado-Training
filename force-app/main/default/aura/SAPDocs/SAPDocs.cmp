@@ -1,0 +1,176 @@
+<!--
+    * @author 			Ramón Prades
+    * @date 			November-2020
+    * @group 			Accounts
+    * @group-content 	../../ApexDocContent/Accounts.htm
+    * @description 	    Displays the list of sap docs of an account and offers details
+-->
+<aura:component implements="force:appHostable,lightning:isUrlAddressable" controller="SAPDocsController" >
+
+    <!-- Attributes -->
+    <aura:attribute name="variant" type="String"/>
+    <aura:attribute name="docType" type="String"/>
+    <aura:attribute name="accountId" type="String"/>
+    <aura:attribute name="opportunityId" type="String"/>    
+    <aura:attribute name="salesOrg" type="String"/>  
+    <aura:attribute name="breadcrumb1" type="String"/>
+    <aura:attribute name="breadcrumb2" type="String"/>
+    <aura:attribute name="iconType" type="string" default="standard:orders"/>
+    <aura:attribute name="listTitle" type="string" default="Open Orders"/>
+    <aura:attribute name="titleType" type="string" default="Orders"/>
+    <aura:attribute name="errorList" type="List" default="[]"/>
+    <aura:attribute name="documents" type="List" default="[]"/>
+    <aura:attribute name="ndocuments" type="Integer" default="0"/>
+    <aura:attribute name="description" type="String" default="0"/>
+    <aura:attribute name="timeUpdated" type="String" default=""/>
+    <aura:attribute name="currentDoc" type="object" />
+    <aura:attribute name="tabId" type="String"/>
+    <aura:attribute name="orderField" type="String"/>
+    <aura:attribute name="orderAscending" type="Boolean"/>
+
+
+    <!-- Variables to control what to display-->
+    <aura:attribute name="showErrors" type="Boolean" default="false"/>
+    <aura:attribute name="showTooltip" type="Boolean" default="false"/>
+    <aura:attribute name="showDocument" type="Boolean" default="false"/>
+    <aura:attribute name="showEmptyList" type="Boolean" default="false"/>
+    <aura:attribute name="showSpinner" type="Boolean" default="false" />    
+
+    <!-- Event handlers -->
+    <aura:handler name="init" value="this" action="{!c.doInit}"/>
+    <lightning:workspaceAPI aura:id="sapdocsWS" />
+    
+    <!-- html markup -->
+    <div class="spinnerHolder">
+        <aura:if isTrue="{! v.showSpinner }">
+            <lightning:spinner alternativeText="Loading" variant="brand"/>
+        </aura:if>
+    </div>
+
+    <div class="sideBar slds-float_left">
+        <div class="slds-split-view_container slds-is-open">    
+            <article aria-hidden="false" id="split-view-id" class="slds-split-view slds-grid slds-grid_vertical slds-grow slds-scrollable">                    
+                <header class="slds-split-view__header">
+                    <div class="slds-grid slds-grid_vertical-align-center slds-m-bottom_xx-small">
+                        <div class="slds-has-flexi-truncate">
+                            <div class="slds-media slds-media_center">
+                                <div class="slds-media__figure">
+                                    <lightning:icon aura:id="iconType" iconName="{!v.iconType}"/>
+                                </div>
+                                <div class="slds-media__body">
+                                    <h1 class="slds-page-header__title slds-text-color_default slds-p-right_x-small slds-p-bottom_xxx-small">
+                                        <button class="slds-button slds-button_reset slds-type-focus slds-truncate" aria-haspopup="true" title="">
+                                            <span class="slds-truncate" title="{!v.titleType}"><b>{!v.listTitle}</b></span>
+                                            <span class="slds-grid slds-has-flexi-truncate slds-grid_vertical-align-center">
+                                            <!-- lightning:icon iconName="utility:down" size="xx-small"/ -->
+                                            </span>
+                                        </button>
+                                    </h1>
+                                    <p class="slds-text-body_small slds-text-color_weak">{!v.ndocuments}&nbsp;{!v.titleType} • {!v.timeUpdated}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-no-flex slds-grid">
+                            <div class="slds-button-group">
+                                <lightning:buttonIcon iconName="utility:refresh" variant="border-filled" size="medium" onclick="{!c.refreshList}" title="{!$Label.c.dict_refresh}"/>
+                            </div>
+                        </div>                    
+                    </div>
+                    <nav role="navigation" aria-label="Breadcrumbs">
+                        <ol class="slds-breadcrumb slds-list_horizontal slds-wrap">
+                            <li class="slds-breadcrumb__item"><a href="javascript:void(0);">{!v.breadcrumb1}</a></li>
+                            <aura:if isTrue="{!v.breadcrumb2.length > 0}">
+                                <li class="slds-breadcrumb__item"><a href="javascript:void(0);">{!v.breadcrumb2}</a></li>
+                            </aura:if>
+                        </ol>
+                      </nav>
+                </header>
+                <div class="slds-grid slds-grid_vertical slds-scrollable">
+                    <div class="slds-split-view__list-item-action slds-grow slds-has-flexi-truncate slds-split-view__list-header docs-header">
+                        <div class="slds-grid slds-wrap">
+                            <span id="hNumber" class="slds-truncate clickable-header" title="{!$Label.c.dict_docNumber}" onclick="{!c.changeOrder}">
+                                <b>{!$Label.c.dict_docNumber}</b>
+                                <lightning:icon aura:id="hNumber-icon" class="slds-hide" iconName="utility:arrowdown" size="xx-small"/>                                
+                            </span>
+                            <span id="hAmount" class="slds-truncate slds-col_bump-left clickable-header" title="{!$Label.c.dict_amount}" onclick="{!c.changeOrder}">
+                                <b>{!$Label.c.dict_amount}</b>
+                                <lightning:icon aura:id="hAmount-icon" class="slds-hide" iconName="utility:arrowdown" size="xx-small"/>
+                            </span> 
+                        </div>
+                        <div class="slds-grid slds-wrap">
+                            <span id="hReference" class="slds-truncate slds-text-body_small clickable-header" title="{!$Label.c.dict_custReference}" onclick="{!c.changeOrder}">
+                                {!$Label.c.dict_custReference}
+                                <lightning:icon aura:id="hReference-icon" class="slds-hide" iconName="utility:arrowdown" size="xx-small"/>
+                            </span>
+                            <span id="hDate" class="slds-truncate slds-text-body_small slds-col_bump-left clickable-header" title="{!$Label.c.dict_docDate}" onclick="{!c.changeOrder}">
+                                {!$Label.c.dict_docDate}
+                                <lightning:icon aura:id="hDate-icon" iconName="utility:arrowdown" size="xx-small"/>
+                            </span>
+                        </div>
+                    </div>
+                    <ul aria-multiselectable="true" class="slds-scrollable_y" role="listbox">
+                        <aura:iteration items="{!v.documents}" var="document" indexVar="index">
+                            <li class="slds-split-view__list-item" role="presentation">
+                                <a href="javascript:void(0)" onclick="{!c.documentClick}" id="{!document.Ordernum__c}" aria-selected="false" role="option" 
+                                class="slds-split-view__list-item-action slds-grow slds-has-flexi-truncate" tabindex="0">
+                                <div class="slds-grid slds-wrap">                                    
+                                    <span class="slds-truncate slds-text-body_regular slds-text-color_default slds-tile" title="{!$Label.c.dict_docNumber}" style="color:#005583;">
+                                        <b>#{!document.Ordernum__c}</b>
+                                    </span>
+                                    <span class="slds-truncate slds-col_bump-left" title="{!$Label.c.dict_amount}">
+                                        <b>
+                                            <lightning:formattedNumber value="{!document.Dtotal__c}" style="currency" currencyCode="{!document.Dcurr__c}" currencyDisplayAs="symbol"/>
+                                        </b>
+                                    </span> 
+                                </div>
+                                <div class="slds-grid slds-wrap">
+                                    <span class="slds-truncate" title="{!$Label.c.dict_custReference}">{!document.Refer__c}</span>
+                                    <span class="slds-truncate slds-col_bump-left" title="{!$Label.c.dict_docDate}"><lightning:formattedDateTime value="{!document.Orderdate__c}"/></span>
+                                </div>
+                                </a>
+                            </li>
+                        </aura:iteration>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </div>    
+
+    <div class="mainContent">
+
+        <aura:if isTrue="{!v.showErrors}">
+            <div class="message-box">
+                <div class="slds-box slds-p-around_medium slds-theme_error slds-theme_alert-texture" role="status">
+                    <h2 class="slds-text-heading_small slds-p-bottom_small">{!$Label.c.app_review_errors}</h2>
+                    <ul class="slds-list--dotted">
+                        <aura:iteration items="{!v.errorList}" var="errorMessage">
+                            <li>{!errorMessage}</li>
+                        </aura:iteration>
+                    </ul>
+                </div>
+            </div>            
+        </aura:if>            
+
+        <aura:if isTrue="{!v.showEmptyList }">
+            <div class="message-box">
+                <div class="slds-box slds-p-around_medium slds-theme_warning slds-theme_alert-texture" role="status">
+                    <h2 class="slds-text-heading_small">{!format($Label.c.saps_emptyDocs, v.breadcrumb1, v.breadcrumb2)}</h2>
+                </div>
+            </div>            
+        </aura:if>            
+
+        <aura:if isTrue="{!v.showTooltip}">
+            <div class="tooltiper">
+                <div class="slds-popover slds-popover_tooltip slds-nubbin_left" role="tooltip" id="help" style="">
+                    <div class="slds-popover__body">{!$Label.c.saps_msg_001}</div>
+                </div>
+            </div>                       
+        </aura:if>
+            
+        <aura:if isTrue="{!v.showDocument}">
+            <c:SAPSalesDocument aura:id="documentComp"></c:SAPSalesDocument>
+        </aura:if>
+        
+    </div>
+
+</aura:component>

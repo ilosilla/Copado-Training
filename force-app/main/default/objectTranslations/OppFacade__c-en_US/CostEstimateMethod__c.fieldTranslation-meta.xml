@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Cost Estimate Method --></label>
+    <name>CostEstimateMethod__c</name>
+    <picklistValues>
+        <masterLabel>PROJECT-SPECIFIC</masterLabel>
+        <translation><!-- PROJECT-SPECIFIC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SMALL-PROJECT</masterLabel>
+        <translation><!-- SMALL-PROJECT --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

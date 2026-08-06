@@ -1,0 +1,94 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Login",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "1440px",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"4b8dbebf-bd6d-429c-8ebc-c5ad3755b6db\",\"columns\":[{\"UUID\":\"133fd8fc-73ef-48a9-8400-1c46b918eb44\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "dxpStyle" : { },
+                "variant" : "LOGIN"
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "dxpStyle" : { },
+                    "forgotPasswordLabel" : "Forgot your password?",
+                    "forgotPasswordUrl" : "/ForgotPassword",
+                    "loginButtonLabel" : "Log In",
+                    "passwordLabel" : "Password",
+                    "selfRegisterLabel" : "Not a member?",
+                    "selfRegisterUrl" : "/SelfRegister",
+                    "startUrl" : "",
+                    "usernameLabel" : "Username"
+                  },
+                  "definition" : "community_login:loginForm",
+                  "id" : "60d1ce4a-e1b3-41d1-a482-d933c2528849",
+                  "type" : "component"
+                } ],
+                "id" : "a1523df9-0bca-48c1-9ce8-bbc7f74d578b",
+                "name" : "main",
+                "title" : "main",
+                "type" : "region"
+              } ],
+              "definition" : "c:b2bAuthShell",
+              "id" : "370d221a-8e21-41a4-abd5-c16932622837",
+              "type" : "component"
+            } ],
+            "id" : "133fd8fc-73ef-48a9-8400-1c46b918eb44",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "4b8dbebf-bd6d-429c-8ebc-c5ad3755b6db",
+          "type" : "component"
+        } ],
+        "id" : "88a840f1-ae08-46f5-8da6-72050d1de226",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "dxpStyle" : { },
+            "pageTitle" : "Login",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "09dc2bb4-e2b0-4d86-904e-1532fbea382f",
+          "type" : "component"
+        } ],
+        "id" : "89b0349e-331e-4ebc-9015-8ea10f3a14dd",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "548d9912-91b8-4cb6-9cdc-da1a554d35b6",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "External",
+    "viewType" : "login-main"
+  },
+  "urlName" : "login"
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>agrupación de permisos de los coordinadores SF</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Coordinadores</label>
+    <permissionSets>CRM_Coordinators_Permissions</permissionSets>
+    <permissionSets>Export_Reports</permissionSets>
+    <permissionSets>Marketing_Actions_Access</permissionSets>
+    <permissionSets>Private_Customers_for_Trade_Users</permissionSets>
+    <permissionSets>Reports_and_Dashboards</permissionSets>
+    <permissionSets>sales_office_sap_editable</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

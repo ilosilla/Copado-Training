@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Product Type --></label>
+    <name>ProductType__c</name>
+    <picklistValues>
+        <masterLabel>ACCESSORIES</masterLabel>
+        <translation><!-- ACCESSORIES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ADHESIVES</masterLabel>
+        <translation><!-- ADHESIVES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ALL FAMILIES</masterLabel>
+        <translation><!-- ALL FAMILIES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BASINS</masterLabel>
+        <translation><!-- BASINS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BATHROOM FURNITURE</masterLabel>
+        <translation><!-- BATHROOM FURNITURE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BATHTUBS</masterLabel>
+        <translation><!-- BATHTUBS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BRASSWARE</masterLabel>
+        <translation><!-- BRASSWARE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GROUTS</masterLabel>
+        <translation><!-- GROUTS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSTALLATION SYSTEMS</masterLabel>
+        <translation><!-- INSTALLATION SYSTEMS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MIRRORS</masterLabel>
+        <translation><!-- MIRRORS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OTHERS</masterLabel>
+        <translation><!-- OTHERS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SANITARYWARE</masterLabel>
+        <translation><!-- SANITARYWARE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SHOWER COLUMNS</masterLabel>
+        <translation><!-- SHOWER COLUMNS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SHOWER ENCLOSURES</masterLabel>
+        <translation><!-- SHOWER ENCLOSURES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SHOWER HEADS</masterLabel>
+        <translation><!-- SHOWER HEADS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SHOWER TRAYS</masterLabel>
+        <translation><!-- SHOWER TRAYS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SHOWER VALVES</masterLabel>
+        <translation><!-- SHOWER VALVES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TILES</masterLabel>
+        <translation><!-- TILES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TOWEL WARMERS</masterLabel>
+        <translation><!-- TOWEL WARMERS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRIMS</masterLabel>
+        <translation><!-- TRIMS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>UNDERFLOOR HEATING</masterLabel>
+        <translation><!-- UNDERFLOOR HEATING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WORKTOPS</masterLabel>
+        <translation><!-- WORKTOPS --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

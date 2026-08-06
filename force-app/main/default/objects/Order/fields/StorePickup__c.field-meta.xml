@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>StorePickup__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Check this box when the customer will collect the goods from the warehouse</inlineHelpText>
+    <label>Store Pickup</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

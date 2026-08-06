@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Activity_Level_Update</fullName>
+        <description>Activity Level Update</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ivan.losilla@porcelanosagrupo.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>salesforce@porcelanosagrupo.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Accounts/Activity_Level_Update</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Belgium_Account</fullName>
+        <ccEmails>alfonso.munoz@porcelanosa.com</ccEmails>
+        <description>New Belgium Account</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>maria.mata@porcelanosagrupo.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>marta.monfort@porcelanosagrupo.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>salesforce@porcelanosagrupo.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Accounts/New_International_Dept_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Denmark_Account</fullName>
+        <ccEmails>alfonso.munoz@porcelanosa.com</ccEmails>
+        <description>New Denmark Account</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>maria.mata@porcelanosagrupo.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>marta.monfort@porcelanosagrupo.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>salesforce@porcelanosagrupo.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Accounts/New_International_Dept_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Germany_Account</fullName>
+        <ccEmails>alfonso.munoz@porcelanosa.com, cindy.marquez@porcelanosa.de</ccEmails>
+        <description>New Germany Account</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>maria.mata@porcelanosagrupo.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>marta.monfort@porcelanosagrupo.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>salesforce@porcelanosagrupo.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Accounts/New_International_Dept_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Israel_Account</fullName>
+        <ccEmails>alfonso.munoz@porcelanosa.com, daria.music@porcelanosa.co.il</ccEmails>
+        <description>New Israel Account</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>maria.mata@porcelanosagrupo.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>marta.monfort@porcelanosagrupo.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>salesforce@porcelanosagrupo.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Accounts/New_International_Dept_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Sweden_Account</fullName>
+        <ccEmails>alfonso.munoz@porcelanosa.com</ccEmails>
+        <description>New Sweden Account</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>maria.mata@porcelanosagrupo.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>marta.monfort@porcelanosagrupo.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>salesforce@porcelanosagrupo.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Accounts/New_International_Dept_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Switzerland_Account</fullName>
+        <description>New Switzerland Account</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>hector.muniesa@porcelanosagrupo.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>salesforce@porcelanosagrupo.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Accounts/newCHAccount</template>
+    </alerts>
+    <alerts>
+        <fullName>Notification_email_acc_team_member</fullName>
+        <description>Notification email acc team member</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Opportunity Owner</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Sales Admin. Assistant</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Sales Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Technical Sales Rep.</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Accounts/Acc_team_template</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Account_Name_UpperCase</fullName>
+        <description>Converts de Account Name to all Upper cases</description>
+        <field>Name</field>
+        <formula>UPPER( Name )</formula>
+        <name>Account Name UpperCase</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>German_Language</fullName>
+        <field>Language__c</field>
+        <literalValue>de_DE</literalValue>
+        <name>German Language</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PersonAccount_First_Name_Uppercase</fullName>
+        <field>FirstName</field>
+        <formula>UPPER( FirstName )</formula>
+        <name>PersonAccount First Name Uppercase</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Person_Account_LastName_Uppercase</fullName>
+        <field>LastName</field>
+        <formula>UPPER( LastName )</formula>
+        <name>Person Account LastName Uppercase</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_Waiting</fullName>
+        <field>Account_Status__c</field>
+        <literalValue>Waiting for Approval</literalValue>
+        <name>Status Waiting</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_billing_country</fullName>
+        <field>BillingCountry</field>
+        <formula>$User.Country</formula>
+        <name>Update billing country</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_language_person_account</fullName>
+        <field>Language__c</field>
+        <literalValue>en_GB</literalValue>
+        <name>Update language person account</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Updtae_to_Active</fullName>
+        <field>Account_Status__c</field>
+        <literalValue>Active</literalValue>
+        <name>Updtae to Active</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_mailing_country</fullName>
+        <field>PersonMailingCountry</field>
+        <formula>$User.Country</formula>
+        <name>update mailing country</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Account Name UpperCase</fullName>
+        <actions>
+            <name>Account_Name_UpperCase</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>AND( NOT(IsPersonAccount), OR(ISNEW(),  ISCHANGED( Name ) ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Default language person account</fullName>
+        <actions>
+            <name>Update_language_person_account</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>(IsPersonAccount = true) &amp;&amp;  ISBlANK(TEXT(Language__c ))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>PersonAccount Name UpperCase</fullName>
+        <actions>
+            <name>PersonAccount_First_Name_Uppercase</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Person_Account_LastName_Uppercase</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>AND( IsPersonAccount ,  OR( ISNEW() ,  ISCHANGED(Name) ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Nueva_Cliente_Web_Creado</fullName>
+        <assignedTo>bsales@porcelanosa-usa.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>NUEVO CLIENTE DE CITA EN TIENDA CREADO</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Account.CreatedDate</offsetFromField>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Nueva Cliente Web Creado</subject>
+    </tasks>
+</Workflow>

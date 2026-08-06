@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OwnerReason__c</fullName>
+    <description>FIeld to explain the reason the owner is allocated (used by LeadHelper). It is a technical field that does not have to be displayed.</description>
+    <externalId>false</externalId>
+    <label>Owner Reason</label>
+    <length>40</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

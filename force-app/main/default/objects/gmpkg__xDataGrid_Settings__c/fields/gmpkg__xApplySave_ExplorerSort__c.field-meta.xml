@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gmpkg__xApplySave_ExplorerSort__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <inlineHelpText>Check this option to have Apply and Apply&amp;Save when applying a sort from the Grid Explorer</inlineHelpText>
+    <label>Apply&amp;Save Explorer Sort</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

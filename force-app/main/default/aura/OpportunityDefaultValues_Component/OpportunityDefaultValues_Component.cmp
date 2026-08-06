@@ -1,0 +1,27 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasSObjectName,lightning:actionOverride,lightning:hasPageReference" access="global" controller="OpportunityDefaultValues_Controller" >
+	
+    <aura:attribute name="pageReference" type="Object"/>
+    
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="recordTypeId" type="String"/>
+    <aura:attribute name="recordTypeFields" type="Object"/>    
+    <aura:attribute name="simpleRecord" type="Object"/>
+    <aura:attribute name="recordLoaded" type="Boolean" default="false"/>
+    <aura:attribute name="recordTypeLoaded" type="Boolean" default="false"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <force:recordData aura:id="recordEditor"
+                      recordId="{!v.recordId}"
+                      fields="IsPersonAccount, PersonContactId, Owner.CountryCode, PersonMailingCountry,PersonMailingCountryCode, BillingCountry, BillingCountryCode, PersonMailingStreet, BillingStreet, PersonMailingCity, BillingCity, PersonMailingPostalCode, BillingPostalCode"
+                      targetFields="{!v.simpleRecord}" 
+                      recordUpdated="{!c.recordUpdated}"/>
+    
+    <force:recordData aura:id="recordTypeEditor"
+                      mode="VIEW"
+                      recordId="{!v.recordTypeId}"
+                      fields="DeveloperName"
+                      targetFields="{!v.recordTypeFields}"
+                      recordUpdated="{!c.recordTypeUpdated}"/>
+    
+</aura:component>

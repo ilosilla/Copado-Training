@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>bsales@porcelanosa-usa.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>jaume.guinot@porcelanosa.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>marc.gielissen@porcelanosagrupo.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>marcelo.bou@porcelanosa.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Approval Step</label>
+        <name>Step_1</name>
+    </approvalStep>
+    <description>Out of Scotland territory</description>
+    <emailTemplate>unfiled$public/Notification_Approval_Request</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionRecordLock>true</finalRejectionRecordLock>
+    <label>Scotland</label>
+    <processOrder>0</processOrder>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

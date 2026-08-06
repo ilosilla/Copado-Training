@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UniqueKey__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>Key generated in the trigger (SAPRequestsDomain.cls) to prevent duplicated CREATE operations</description>
+    <externalId>false</externalId>
+    <label>Unique Key</label>
+    <length>44</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

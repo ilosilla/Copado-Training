@@ -1,0 +1,79 @@
+<!--
+  @description       : 
+  @author            : EHG@nubika.com
+  @group             : 
+  @last modified on  : 02-06-2023
+  @last modified by  : EHG@nubika.com
+-->
+<template>
+    <hr class="slds-var-m-top_medium slds-var-m-bottom_x-small">
+    <div>
+        <template if:false={qntIntroduced}>
+            <div class="slds-wrap header">       
+                <lightning-input class="searchCodeInput" type="search" label="" placeholder="Search by Code" onchange={handleSearchChange}></lightning-input>
+            </div>
+        </template>
+      <template if:true={showProduct}>
+            <div class="quick-item-layout">
+                <!--AQUI METEMOS LA INFORMACIÓN DEL PRODUCTO Y EL PRECIO-->
+                <div class="slds-grid slds-gutters slds-wrap slds-p-vertical_xx-small">
+                    <div class="slds-col slds-p-vertical_xxx-small slds-size_1-of-1">
+                        <span>
+                            <p class="slds-truncate">Product: <b>{product.product.Name}</b></p>
+                        </span>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xxx-small slds-size_1-of-1">
+                        <span>
+                            Price:&nbsp;
+                            <b>
+                                <lightning-formatted-number
+                                    value={salesPrice}
+                                    format-style="currency"
+                                    currency-code={product.price.CurrencyIsoCode}
+                                    currency-display-as="symbol"
+                                ></lightning-formatted-number>
+                                &nbsp;/&nbsp;{product.productUnit}
+                            </b>
+                        </span>
+                    </div>
+                    <div class="slds-col slds-p-vertical_xxx-small slds-size_1-of-1">
+                        <!--AQUI METEMOS EL IMPUT PARA LAS CANTIDADES-->
+                        <span style="display: inline-block;max-width:100px">
+                            <lightning-input name="quantityField" data-id="quantityField" type="text" label={cartItem.productInfo.productUnitPlural} onchange={calculateTotals} value={cartItem.quantity} max="999" class="quickOrderInputQuantity"> <!--pattern="[0-9]*" min="0" step="1"
+                                message-when-pattern-mismatch="Please enter only integers."> --></lightning-input>
+                        </span>
+                        <span class="slds-p-horizontal_x-small">
+                            <lightning-formatted-number
+                                value={cartItem.total}
+                                format-style="currency"
+                                currency-code={product.price.CurrencyIsoCode}
+                                currency-display-as="symbol"
+                            ></lightning-formatted-number>
+                        </span>
+                    </div>
+                </div>
+                <div>
+                    <lightning-button-icon
+                        icon-name="utility:delete"
+                        variant="brand"
+                        alternative-text="Delete"
+                        class="slds-m-left_xx-small"
+                        title="Delete"
+                        onclick={deleteItem}
+                    ></lightning-button-icon>
+                </div>
+            </div>
+      </template>
+
+      <template if:true={showError}>
+        <!--AQUI METEMOS LA INFORMACIÓN DEL PRODUCTO Y EL PRECIO-->
+            <div class="slds-col slds-m-top_xx-small">
+              <p>
+                No product found for: <b>{searchTerm}</b>
+              </p>
+            </div>
+        
+        <!--AQUI METEMOS EL IMPUT PARA LAS CANTIDADES-->
+    </template>
+  </div>
+</template>

@@ -1,0 +1,24 @@
+<aura:component 
+    implements="flexipage:availableForAllPageTypes,force:hasRecordId,lightning:hasPageReference,lightning:isUrlAddressable,lightning:actionOverride,force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome" 
+    controller="ContactAddressController" 
+    access="global" >
+
+    <!-- Variales -->
+    <aura:attribute name="syncing" type="Boolean" default="true"/>
+    <aura:attribute name="syncable" type="Boolean" default="true"/>
+    <aura:attribute name="text" type="String"/>
+    <aura:attribute name="retryEnabled" type="Boolean" default="false"/>
+
+    <!-- Event handlers -->
+    <aura:handler name="init" value="{!this}" action="{!c.handleInit}"/>
+
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+    
+    <aura:if isTrue="{!v.syncing}">
+        <lightning:spinner alternativeText="Syncing addresses with SAP"/>
+    </aura:if>
+
+    <div aura:id="message" class="slds-text-heading_small">{!v.text}</div>
+
+</aura:component>

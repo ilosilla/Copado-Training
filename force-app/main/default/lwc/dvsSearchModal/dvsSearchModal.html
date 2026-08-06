@@ -1,0 +1,394 @@
+<template>
+    <template lwc:if={dvsEnabled}>
+        <lightning-modal-header label={label.componentTitle}></lightning-modal-header>
+        <template lwc:if={notWaitingForResult}>
+            <template lwc:if={dvsManaged}>
+                <div class="slds-notify slds-notify_alert" role="alert">
+                    <h5>{statusMessage} - <lightning-formatted-date-time value={accountdDvsData.DVSAcceptedDate__c}></lightning-formatted-date-time></h5>
+                </div>
+            </template>
+        </template>
+        <lightning-modal-body>
+        <c-custom-toast auto-close-time="8000"></c-custom-toast>
+        <article class="slds-card dvs-search-card">
+            <div class="dvs-search-card-body">
+                
+                <template lwc:if={hasResult}>
+                    <div class="slds-m-around_medium search-form">
+                        <div class="slds-notify slds-notify_alert slds-box--border slds-alert_error" role="alert">
+                            {textResults}
+                        </div>
+                        <template lwc:if={result}>
+                            <template lwc:if={result.success}>
+                                <select class="slds-truncate slds-select" id="selectResult" name="selectResult" onchange={onCompanySelected}>
+                                    <template for:each={resultsArray} for:item="company" for:index="index">
+                                        <option key={company.id1} value={index}>{company.name} ({company.id1}) - {company.street}, {company.postalCode} {company.city}</option>
+                                    </template>
+                                </select>
+                                <div class="slds-p-top_large search-form-button-list">
+                                    <lightning-button class="search-card-button" variant="brand" icon-name="utility:search" label={label.newSearch} onclick={onPreviousClicked}></lightning-button>
+                                </div>
+
+                                <hr>
+
+                                <div class="slds-notify slds-notify_alert slds-box--border slds-alert_error" role="alert">
+                                    <lightning-icon icon-name="utility:warning" variant="inverse" size="xx-small" class="slds-m-right--x-small" title="xx-small size"></lightning-icon><h2>{checkDataText}</h2>
+                                </div>
+
+                                <template lwc:if={selectedCompany}>
+                                    <div class="slds-form slds-m-top--x-large" role="list">
+                                        <div class="slds-form__row">
+                                            <div class="slds-form__item" role="listitem">
+                                              <div class="slds-form-element slds-form-element_stacked">
+                                                <div class="slds-form-element__control" style="border-bottom: 1px solid black;">
+                                                    <h2>{upperExistingData}</h2>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="slds-form__item" role="listitem">
+                                              <div class="slds-form-element slds-form-element_stacked">
+                                                <div class="slds-form-element__control" style="border-bottom: 1px solid black;">
+                                                    <h2>{upperOfficialData}</h2>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                        <div class="slds-form__row">
+                                          <div class="slds-form__item" role="listitem">
+                                            <div class="slds-form-element slds-form-element_stacked">
+                                              <label class="slds-form-element__label" for="single-form-element-id-02">{nameLabel}:</label>
+                                              <div class="slds-form-element__control custom-data">
+                                                <p class={labelStyle} >
+                                                    {companyNameCurrent}
+                                                </p>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="slds-form__item" role="listitem">
+                                            <div class="slds-form-element slds-form-element_stacked">
+                                              <label class="slds-form-element__label" for="single-form-element-id-03">{nameLabel}:</label>
+                                              <div class="slds-form-element__control custom-data">
+                                                <p class={labelStyle} >
+                                                    {companyNameResult}
+                                                </p>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="slds-form__row">
+                                            <div class="slds-form__item" role="listitem">
+                                              <div class="slds-form-element slds-form-element_stacked">
+                                                <label class="slds-form-element__label" for="single-form-element-id-02">{id1Label}:</label>
+                                                <div class="slds-form-element__control custom-data">
+                                                    <p class={idStyle}>
+                                                        {companyId1Current}
+                                                    </p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="slds-form__item" role="listitem">
+                                              <div class="slds-form-element slds-form-element_stacked">
+                                                <label class="slds-form-element__label" for="single-form-element-id-03">{id1Label}:</label>
+                                                <div class="slds-form-element__control custom-data">
+                                                    <p class={idStyle}>
+                                                        {companyId1Result}
+                                                    </p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                          <div class="slds-form__row">
+                                            <div class="slds-form__item" role="listitem">
+                                              <div class="slds-form-element slds-form-element_stacked">
+                                                <label class="slds-form-element__label" for="single-form-element-id-02">{id2Label}:</label>
+                                                <div class="slds-form-element__control custom-data">
+                                                    <p class={otherIdStyle} >{companyId2Current}</p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="slds-form__item" role="listitem">
+                                              <div class="slds-form-element slds-form-element_stacked">
+                                                <label class="slds-form-element__label" for="single-form-element-id-03">{id2Label}:</label>
+                                                <div class="slds-form-element__control custom-data">
+                                                    <p class={otherIdStyle} >{companyId2Result}</p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                          <div class="slds-form__row">
+                                            <div class="slds-form__item" role="listitem">
+                                              <div class="slds-form-element slds-form-element_stacked">
+                                                <label class="slds-form-element__label" for="single-form-element-id-02">{addressLabel}:</label>
+                                                <div class="slds-form-element__control custom-data">
+                                                    <p class={addressStyle}>{companyStreetCurrent}<br/>{companyPostalCodeCurrent}<br/>{companyCityCurrent}</p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="slds-form__item" role="listitem">
+                                              <div class="slds-form-element slds-form-element_stacked">
+                                                <label class="slds-form-element__label" for="single-form-element-id-03">{addressLabel}:</label>
+                                                <div class="slds-form-element__control custom-data">
+                                                    <p class={addressStyle}>{companyStreetResult}<br/>{companyPostalCodeResult}<br/>{companyCityResult}</p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                      </div>
+
+                                      <template lwc:if={perfectMatch}>
+                                        <div class="slds-form__row slds-m-top--large">
+                                            <div class="slds-form__item slds-align--absolute-center" role="listitem">
+                                                <lightning-button class="search-card-button" variant="brand" icon-name="utility:check" label={label.confirmDataLabel} onclick={onConfirmData}></lightning-button>
+                                            </div>
+                                        </div>
+                                    </template>
+                                    <template lwc:else>
+                                            <template lwc:if={userCanConfirm}>
+                                                <div class="slds-form__row slds-m-top--large">
+                                                    <div class="slds-form__item slds-align--absolute-center" role="listitem">
+                                                        <lightning-button class="search-card-button" variant="brand" icon-name="utility:bookmark_stroke" label={label.keepExistingData} onclick={onConfirmData}></lightning-button>
+                                                    </div>
+                                                    <div class="slds-form__item slds-align--absolute-center" role="listitem">
+                                                        <lightning-button class="search-card-button" variant="brand" icon-name="utility:level_down" label={label.keepOfficialData} onclick={onApplyChanges}></lightning-button>
+                                                    </div>
+                                                  </div>
+                                            </template>
+                                            <template lwc:else>
+                                                <template lwc:if={accountOnSAP}>
+                                                    <div class="slds-form__row slds-m-top--large">
+                                                        <div class="slds-form__item slds-align--absolute-center" role="listitem">
+                                                            <lightning-button class="search-card-button" variant="brand" icon-name="utility:bookmark_stroke" label={label.keepExistingData} onclick={onDiscardChangesPopup}></lightning-button>
+                                                        </div>
+                                                        <div class="slds-form__item slds-align--absolute-center" role="listitem">
+                                                            <lightning-button class="search-card-button" variant="brand" icon-name="utility:level_down" label={label.keepOfficialData} onclick={onApplyChanges}></lightning-button>
+                                                        </div>
+                                                      </div>
+                                                </template>
+                                                <template lwc:else>
+                                                    <div class="slds-form__row slds-m-top--large">
+                                                        <div class="slds-form__item slds-align--absolute-center" role="listitem">
+                                                            <lightning-button class="search-card-button" variant="brand" icon-name="utility:bookmark_stroke" label={label.keepExistingData} onclick={onDiscardChangesPopup}></lightning-button>
+                                                        </div>
+                                                        <div class="slds-form__item slds-align--absolute-center" role="listitem">
+                                                            <lightning-button class="search-card-button" variant="brand" icon-name="utility:level_down" label={label.keepOfficialData} onclick={onApplyChanges}></lightning-button>
+                                                        </div>
+                                                      </div>
+                                                </template>
+                                            </template>
+                                    </template>
+                                </template>
+                            </template>
+                            <template lwc:else>
+                                <template lwc:if={errorMsg}>
+                                    <p class="slds-m-top--large">{errorMsg}</p>
+                                </template>
+                                <template lwc:else>
+                                    <p class="slds-m-top--large">{result.message}</p>
+                                </template>
+                                <div class="slds-p-top_large search-form-button-list">
+                                    <lightning-button class="search-card-button" variant="brand" icon-name="utility:search" label={label.newSearch} onclick={onPreviousClicked}></lightning-button>
+                                    <template lwc:if={userCanConfirm}>
+                                        <lightning-button class="search-card-button" variant="brand" icon-name="utility:check" label={label.confirmDataLabel} onclick={onConfirmData}></lightning-button>
+                                    </template>
+                                    <template lwc:else>
+                                        <lightning-button class="search-card-button" variant="brand" icon-name="utility:check" label={label.confirm} onclick={onConfirmNoResultsPopup}></lightning-button>
+                                    </template>
+                                </div>
+                            </template>
+                        </template>
+                    </div>
+                </template>
+                <template lwc:elseif={discrepancyFound}>
+                    <div class="slds-m-around_medium search-form">
+                        <label for="selectResult" class="slds-form-element__label slds-no-flex">
+                            {searchStatus}
+                        </label>
+                        <lightning-textarea name="discrepancy" label="" readonly value={discrepancyOutput}></lightning-textarea>
+                        <div class="slds-p-top_large search-form-button-list">
+                            <lightning-button class="search-card-button" variant="brand" label={label.newSearch} onclick={onPreviousClicked}></lightning-button>
+                        </div>
+                            <div class="search-result-tile">
+                                <lightning-card  variant="Narrow">
+                                    <div class="slds-grid slds-wrap">
+                                        <div class="slds-col slds-size_1-of-2 result-title">
+                                            <h2>{label.existingData}</h2>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2 result-title">
+                                            <h2>{label.officialData}</h2>
+                                        </div>
+                                            <div class="slds-col slds-size_1-of-2">
+                                                <dl class="slds-dl_horizontal">
+                                                    <dt class="slds-dl_horizontal__label">
+                                                        <p class={labelStyle}>{nameLabel} :</p>
+                                                    </dt>
+                                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                        <p class={labelStyle} >{companyNameCurrent}</p>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-2">
+                                                <dl class="slds-dl_horizontal">
+                                                    <dt class="slds-dl_horizontal__label">
+                                                        <p class={labelStyle}>{nameLabel} :</p>
+                                                    </dt>
+                                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                        <p class={labelStyle} >{companyNameResult}</p>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-2">
+                                                <dl class="slds-dl_horizontal">
+                                                    <dt class="slds-dl_horizontal__label">
+                                                        <p class={idStyle}>{id1Label} :</p>
+                                                    </dt>
+                                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                        <p class={idStyle} >{companyId1Current}</p>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-2">
+                                                <dl class="slds-dl_horizontal">
+                                                    <dt class="slds-dl_horizontal__label">
+                                                        <p class={idStyle}>{id1Label} :</p>
+                                                    </dt>
+                                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                        <p class={idStyle} >{companyId1Result}</p>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-2">
+                                                <dl class="slds-dl_horizontal">
+                                                    <dt class="slds-dl_horizontal__label">
+                                                        <p class={otherIdStyle}>{id2Label} :</p>
+                                                    </dt>
+                                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                        <p class={otherIdStyle} >{companyId2Current}</p>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-2">
+                                                <dl class="slds-dl_horizontal">
+                                                    <dt class="slds-dl_horizontal__label">
+                                                        <p class={otherIdStyle}>{id2Label} :</p>
+                                                    </dt>
+                                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                        <p class={otherIdStyle} >{companyId2Result}</p>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-2">
+                                                <dl class="slds-dl_horizontal">
+                                                    <dt class="slds-dl_horizontal__label">
+                                                        <p class={addressStyle}>{addressLabel} :</p>
+                                                    </dt>
+                                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                        <p class={addressStyle}>{companyStreetCurrent}<br/>{companyPostalCodeCurrent}<br/>{companyCityCurrent}</p>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-2">
+                                                <dl class="slds-dl_horizontal">
+                                                    <dt class="slds-dl_horizontal__label">
+                                                        <p class={addressStyle}>{addressLabel} :</p>
+                                                    </dt>
+                                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                        <p class={addressStyle}>{companyStreetResult}<br/>{companyPostalCodeResult}<br/>{companyCityResult}</p>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                    </div>    
+                                </lightning-card>
+                            </div>
+                            <template lwc:if={perfectMatch}>
+                            <div class="slds-p-top_large search-form-button-list">
+                                <lightning-button class="search-card-button" variant="brand" label={label.keepOfficialData} onclick={onApplyChanges}></lightning-button>
+                            </div>
+                            </template>
+                            <template lwc:else>
+                                <div class="slds-p-top_large search-form-button-list">
+                                    <template lwc:if={accountOnSAP}>
+                                        <lightning-button class="search-card-button" variant="brand" label={label.keepOfficialData} onclick={onApplyChanges}></lightning-button>
+                                    </template>
+                                    <template lwc:else>
+                                        <lightning-button class="search-card-button" variant="brand" label={label.keepOfficialData} onclick={onApplyChanges}></lightning-button>
+                                        <lightning-button class="search-card-button" variant="brand" label={label.keepExistingData} onclick={onDiscardChangesPopup}></lightning-button>
+                                    </template>
+                                </div>
+                            </template>
+    
+                    </div>
+                </template>
+                <template lwc:elseif={waitingForResult}>
+                    <div class="holder">
+                        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+                    </div>
+                </template>
+                <template lwc:else>
+                    <div class="slds-m-around_medium search-form">
+                        <label for="searchType" class="slds-form-element__label slds-no-flex">
+                            <abbr title="required" class="slds-required">*</abbr>{label.searchBy}
+                        </label>
+                        <select class="slds-select" id="searchType" name="searchType" onchange={onSearchTypeChange}>
+                            <option value="ID" selected={byId}>{searchByIdLabel}</option>
+                            <option value="Name" selected={byName}>{label.name}</option>
+                        </select>
+                        <div class="slds-p-vertical_medium">
+                            <template lwc:if={byId}>
+                                <div>
+                                    <lightning-input class="slds-input_bare" required="true" name="idNumber" type="text" label={searchByIdLabel} value={idNumberValue} onchange={onParamChange} onkeypress={handleEnter}></lightning-input>
+                                </div>
+                            </template>
+                            <template lwc:else>
+                                <div class="slds-grid slds-wrap">
+                                    <div class="slds-col slds-size_2-of-2">
+                                        <lightning-input class="slds-input_bare" required="true" name="name" type="text" label={label.name} value={companyNameCurrent} onchange={onParamChange} onkeypress={handleEnter}></lightning-input>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-2 slds-p-right_small slds-p-top_small">
+                                        <lightning-input class="slds-input_bare" name="city" type="text" label={label.city} value={companyCityCurrent} onchange={onParamChange} onkeypress={handleEnter}></lightning-input>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-2 slds-p-left_small slds-p-top_small">
+                                        <lightning-input class="slds-input_bare" name="postalCode" type="text" label={label.postcode} value={companyPostalCodeCurrent} onchange={onParamChange} onkeypress={handleEnter}></lightning-input>
+                                    </div> 
+                                </div>
+                                <!-- <lightning-input class="fuzzy-checkBox" type="checkbox" name="fuzzySearch" label={label.fuzzySearch} onchange={handleCheckbox}></lightning-input> -->
+                            </template>
+                            <!-- <div> 
+                                <p class="search-status">{searchStatus}</p>
+                            </div> -->
+                            <div class="slds-p-top_large search-form-button-list">
+                                <lightning-button-group>
+                                    <lightning-button class="search-card-button" variant="brand" icon-name="utility:search" label={label.search} onclick={onSearchClick}></lightning-button>
+                                    <template lwc:if={dvsDiscarded}>
+                                        <template lwc:if={userCanConfirm}>
+                                            <lightning-button class="search-card-button" variant="brand" icon-name="utility:check" label={label.confirmDataLabel} onclick={onConfirmData}></lightning-button>
+                                        </template>
+                                    </template>
+                                </lightning-button-group>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </article>
+        </lightning-modal-body>
+    </template>
+    <template lwc:else>
+        <lightning-modal-body>
+            <div class="slds-notify slds-notify_alert slds-alert_warning">
+                <span class="slds-assistive-text">warning</span>
+                <h2>{label.componentTitle}</h2>
+            </div>
+            <div class="slds-p-around--small slds-text-align--center" style="border: 2px solid #dd7a01;">
+                <div>
+                    <h3>
+                        {label.dvsEnabledLabel}
+                    </h3>
+                </div>
+            </div>
+        </lightning-modal-body>
+    </template>
+</template>

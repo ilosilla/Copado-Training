@@ -1,0 +1,84 @@
+.full_modal {
+    min-width:100% !important;
+}
+
+.full_modal_body {
+    max-height: 100% !important;
+    height: 100% !important;
+}
+ 
+.large_modal {
+    min-width:80% !important;
+}
+
+.large_modal_body {
+    max-height: 90% !important;
+    height: 90% !important;
+}
+
+.auto_modal {
+    width: auto !important;
+}
+
+.auto_modal_body {
+    max-height: 80% !important;
+    height: auto !important;
+}
+
+
+.narrow_modal {
+    min-width:60% !important;
+}
+
+.narrow_modal_body {
+    max-height: 50% !important;
+    height: 30% !important;
+}
+
+.medium_modal {
+    min-width:50% !important;
+    width:50% !important;
+}
+
+.medium_modal_body {
+    max-height :50% !important;
+    height: 50% !important;
+}
+
+.medium-tall_modal {
+    min-width:50% !important;
+    width:50% !important;
+}
+
+.medium-tall_modal_body {
+    max-height :70% !important;
+    height: 70% !important;
+}
+
+
+.small_modal {
+    min-width:40%;
+}
+
+.small_modal_body {
+    max-height: 30% !important;
+    height: 30% !important;
+}
+
+.body_slot {
+    height: 100%;
+}
+
+
+::slotted(div) {
+    height: 100% !important;
+}
+
+slot[name="body"] { height:100%; }
+slot[name="body"]>div { height:100%; }
+
+/* variant="seamless": complementary-panel look, no divider between header and body */
+.modal-header_seamless {
+    border-bottom: none;
+    box-shadow: none;
+}

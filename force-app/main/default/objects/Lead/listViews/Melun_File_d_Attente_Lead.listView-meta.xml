@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Melun_File_d_Attente_Lead</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE_CODE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <filterScope>Queue</filterScope>
+    <label>Melun File d&apos;Attente</label>
+    <queue>Melun_File_d_Attente</queue>
+    <sharedTo>
+        <role>B_U_2_Ceinture</role>
+        <role>Commecial_Ext_rieur_Melun</role>
+        <role>Responsable_Agence</role>
+        <role>Sociedad_Paris_IDF</role>
+    </sharedTo>
+</ListView>

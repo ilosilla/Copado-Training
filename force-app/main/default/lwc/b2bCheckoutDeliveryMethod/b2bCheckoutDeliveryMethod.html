@@ -1,0 +1,81 @@
+<template>  
+    <template lwc:if={isEditing}>
+
+        <div class="checkout-section__title">
+            Delivery method
+        </div>
+
+        <div class="checkout-section__intro">
+            Choose a delivery method for this order
+        </div>
+
+        <div class="checkout-options">
+
+            <label class="checkout-option">
+                <input
+                    type="radio"
+                    name="deliveryMethod"
+                    value="SHIP-TO-CUSTOMER"
+                    checked={isShipToCustomer}
+                    onchange={handleDeliveryMethodChange}
+                />
+                <div class="checkout-option__content">
+                    <div class="checkout-option__title">
+                        Ship to my address
+                    </div>
+                    <div class="checkout-option__description">
+                        Delivery to the selected address. Shipping costs may apply.
+                    </div>
+                </div>
+            </label>
+
+            <label class="checkout-option">
+                <input
+                    type="radio"
+                    name="deliveryMethod"
+                    value="CUSTOMER-PICKUP"
+                    checked={isPickup}
+                    onchange={handleDeliveryMethodChange}
+                />
+                <div class="checkout-option__content">
+                    <div class="checkout-option__title">
+                        Pick up at our warehouse
+                    </div>
+                    <div class="checkout-option__description">
+                        Collect your order at our main warehouse. No shipping charges.
+                    </div>
+                </div>
+            </label>
+        </div>
+
+        <div class="checkout-actions checkout-actions_right">
+            <lightning-button
+                variant="brand"
+                label="Confirm delivery method"
+                onclick={handleConfirm}
+                disabled={isConfirmDeliveryMethodDisabled}>
+            </lightning-button>
+        </div>
+    </template>
+
+    <!-- Summary-->
+    <template lwc:else>
+        <div class="checkout-summary">
+            <div class="checkout-summary__header">
+               <div class="checkout-summary__title">Delivery method</div>
+                <lightning-button
+                    variant="base"
+                    label="Change"
+                    onclick={handleChange}
+                    class="b2b-change-link">
+                </lightning-button>
+            </div>
+
+            <div class="checkout-summary__body">
+                <div class="checkout-summary__value">
+                    {deliveryMethodLabel}
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- objectType --></label>
+    <name>objectType__c</name>
+    <picklistValues>
+        <masterLabel>INSTALLER</masterLabel>
+        <translation><!-- INSTALLER --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MATERIAL BANK (EUR)</masterLabel>
+        <translation><!-- MATERIAL BANK (EUR) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OWNER USA</masterLabel>
+        <translation><!-- OWNER USA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PORSAMARKET</masterLabel>
+        <translation><!-- PORSAMARKET --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SALES OFFICE</masterLabel>
+        <translation><!-- SALES OFFICE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SALES ORG</masterLabel>
+        <translation><!-- SALES ORG --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

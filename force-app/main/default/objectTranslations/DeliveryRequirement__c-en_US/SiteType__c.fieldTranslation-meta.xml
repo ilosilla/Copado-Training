@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Site Type --></label>
+    <name>SiteType__c</name>
+    <picklistValues>
+        <masterLabel>Commercial Site</masterLabel>
+        <translation><!-- Commercial Site --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Residential Site</masterLabel>
+        <translation><!-- Residential Site --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

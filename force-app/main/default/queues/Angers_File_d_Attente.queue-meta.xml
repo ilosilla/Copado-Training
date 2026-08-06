@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesIncludeBosses>true</doesIncludeBosses>
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Angers File d&apos;Attente</name>
+    <queueMembers>
+        <roles>
+            <role>B_U_Loire</role>
+            <role>Sales_Office_Angers</role>
+            <role>Commercial_Ext_rieur_Angers</role>
+            <role>Sociedad_Ouest</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+</Queue>

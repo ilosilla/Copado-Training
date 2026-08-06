@@ -1,0 +1,49 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <template lwc:if={isClaim}>
+        <c-lib-page-canvas     
+            mode="modal"
+            show-modal={showModal}
+            size="full"
+            show-header = "false"
+            onclose = {closeActionForm}
+            show-positive-button="false"
+            show-negative-button="false">  
+
+            <div slot="body" style="height: 100%;">
+                <c-case-claim-edit data-id="case-form" record-id={recordId} onclose={handleCancel}></c-case-claim-edit>
+            </div>
+
+            <div slot="footer">
+                <lightning-button variant="neutral" label={label.cancel} onclick={handleCancel} class="slds-button"></lightning-button> 
+                <lightning-button variant="brand" label={label.save} onclick={handleSaveClick} class="slds-button"></lightning-button>       
+            </div>
+
+        </c-lib-page-canvas>
+    </template>
+    <template lwc:else>
+        <template lwc:if={showCaseWindow}>            
+            <c-lib-modal     
+                modal-size = 'full'
+                show-modal='true'
+                show-close-icon="false"
+                show-header = "false"
+                onclose = {closeActionForm}
+                show-positive-button="false"
+                show-negative-button="false"
+                positive-button-label="Si">  
+                <div slot="body">
+                    <c-case-collection-l-w-c data-id="case-form" record-id={recordId} invoice-number={invoiceNumber} invoice-data={invoiceData} onclose={handleCancel}></c-case-collection-l-w-c>
+                </div>
+                <div slot="footer">
+                    <lightning-button variant="neutral" label={label.cancel} onclick={handleCancel} class="slds-button"></lightning-button> 
+                    <lightning-button variant="neutral" label={label.saveAndNew} onclick={handleSaveAndNewClick} class="slds-button" if:false={recordId}></lightning-button>
+                    <lightning-button variant="brand" label={label.save} onclick={handleSaveClick} class="slds-button"></lightning-button>       
+                </div>
+            </c-lib-modal>
+        </template>
+        <template lwc:if={showInvoiceWindow}>
+            <c-case-invoice-search oncontinue={handleContinue} oncancel={handleCancel}></c-case-invoice-search>    
+        </template>
+    </template>
+</template>

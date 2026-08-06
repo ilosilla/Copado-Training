@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Event Subtype --></label>
+    <name>Event_Subtype__c</name>
+    <picklistValues>
+        <masterLabel>Altissima</masterLabel>
+        <translation><!-- Altissima --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bathroom fixtures</masterLabel>
+        <translation><!-- Bathroom fixtures --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Butech</masterLabel>
+        <translation><!-- Butech --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Catalogs</masterLabel>
+        <translation><!-- Catalogs --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Facades</masterLabel>
+        <translation><!-- Facades --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Healthcare</masterLabel>
+        <translation><!-- Healthcare --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kitchen</masterLabel>
+        <translation><!-- Kitchen --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Krion</masterLabel>
+        <translation><!-- Krion --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LVT</masterLabel>
+        <translation><!-- LVT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Laminate</masterLabel>
+        <translation><!-- Laminate --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tile</masterLabel>
+        <translation><!-- Tile --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Urbatek</masterLabel>
+        <translation><!-- Urbatek --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wood</masterLabel>
+        <translation><!-- Wood --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Xlight</masterLabel>
+        <translation><!-- Xlight --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Xtone</masterLabel>
+        <translation><!-- Xtone --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

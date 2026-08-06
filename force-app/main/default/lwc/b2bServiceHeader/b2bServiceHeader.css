@@ -1,0 +1,65 @@
+.custom-header {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--com-c-layout-header-max-width, var(--dxp-s-header-content-max-width));
+}
+
+.header-row__service {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  column-gap: 16px; /* un pelín más */
+  padding: 10px 8px; /* aquí está el aire real */
+  border-bottom: 1px solid var(--b2b-border-color);
+}
+
+.header-logo h4 {
+    color: var(--psa-color-logo, #4a4a4a) !important;
+    font-family: var(--psa-font-logo) !important;
+    font-size: 1.6rem;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+}
+
+.header-left {
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+}
+
+.header-left .sep {
+    margin: 0 10px;
+}
+
+.header-title {
+    font-size: 1.20rem;
+    color: #555;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right .sep {
+  margin: 0 10px;
+}
+
+.header-right .cell {
+  display: inline-flex;
+  align-items: center;
+}
+
+.sep {
+    opacity: 0.5;
+}
+
+.header-icon {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}

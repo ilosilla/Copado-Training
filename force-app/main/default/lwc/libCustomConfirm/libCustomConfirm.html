@@ -1,0 +1,19 @@
+<template>
+    <lightning-modal-header class="custom-confirm-header">        
+        <div class="slds-theme_warning slds-theme_alert-texture" style="padding:16px;">        
+        <h1 class="slds-modal__title slds-hyphenate">La label es: {label}</h1>
+        </div>
+    </lightning-modal-header>
+
+    <lightning-modal-body class="custom-confirm-body"> 
+        <div class="slds-var-p-horizontal_medium">
+        <p>This is a custom modal with <b>three buttons</b>.</p>
+    </div>
+    </lightning-modal-body>
+
+    <div class="slds-theme_default slds-modal_prompt slds-modal__footer custom-confirm-footer">
+        <lightning-button label="Yes" variant="brand" onclick={handleYesClick}></lightning-button>
+        <lightning-button label="No" variant="neutral" onclick={handleNoClick} class="slds-var-m-left_x-small"></lightning-button>
+        <lightning-button label="Cancel" variant="destructive" onclick={handleCancelClick} class="slds-var-m-left_x-small"></lightning-button>
+    </div>
+</template>

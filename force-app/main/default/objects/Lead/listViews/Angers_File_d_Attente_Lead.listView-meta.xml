@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Angers_File_d_Attente_Lead</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE_CODE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <filterScope>Queue</filterScope>
+    <label>Angers File d&apos;Attente</label>
+    <queue>Angers_File_d_Attente</queue>
+    <sharedTo>
+        <role>B_U_Loire</role>
+        <role>Commercial_Ext_rieur_Angers</role>
+        <role>Responsable_Agence_Angers</role>
+        <role>Sociedad_Ouest</role>
+    </sharedTo>
+</ListView>

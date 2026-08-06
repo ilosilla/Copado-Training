@@ -1,0 +1,12 @@
+/* businessTripForm.css */
+.hide-label .slds-form-element__label {
+    display: none;
+}
+
+.custom-textarea-large {
+    --sds-c-textarea-sizing-min-height:120px;
+}
+
+.tab-class {
+    min-height: 700px;
+}

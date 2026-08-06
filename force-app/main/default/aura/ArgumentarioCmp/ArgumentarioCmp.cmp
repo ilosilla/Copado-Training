@@ -1,0 +1,112 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="Argumentario_Controller">
+
+    <aura:attribute name="opportunity" type="Opportunity" default="{'sobjectType':'Opportunity'}"/>
+    <aura:attribute name="displayOpportunity" type="Opportunity" default="{'sobjectType':'Opportunity'}"/>
+    <aura:attribute name="spinner" type="Boolean" default="false"/>
+    
+    <aura:attribute name="stageMap" type="Map" default="{}"/>
+    <aura:attribute name="currentStage" type="String" default=""/>
+	<aura:attribute name="currentStageTranslated" type="String" default=""/>
+    
+    <aura:attribute name="firstScreen" type="Boolean" default="true"/>
+    <aura:attribute name="lastScreen" type="Boolean" default="false"/>
+    <aura:attribute name="successFailureFinalScreen" type="Boolean" default="false"/>
+    <aura:attribute name="fieldsToUpdate" type="Map" default="{}"/>
+    <aura:attribute name="accountFieldsToUpdate" type="Map" default="{}"/>
+    
+    <!--RecordId para probar con App-->
+    <!--<aura:attribute name="recordId" type="String" default="0061w00000e56nuAAA"/>-->
+    <aura:attribute name="recordError" type="String" default=""/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <!--fields="StageName"-->
+    <force:recordData aura:id="forceRecordCmp"
+        			  recordId="{!v.recordId}"
+                      fields="Id,Name,Close_Mode__c,StageName,Order__c,Account.Name,Account.PersonEmail,Account.ShippingStreet"
+                      targetFields="{!v.opportunity}"
+                      targetError="{! v.recordError}"
+                      recordUpdated="{!c.handleRecordUpdate}"/>
+    
+    <article id="scrollTo" class="slds-card" style="min-width: 44rem;">
+        
+        <header class="slds-modal__header">
+            <h2 class="slds-text-heading_medium slds-hyphenate">{!v.currentStageTranslated}</h2>
+        </header>
+        
+        <div class="slds-card__body slds-card__body_inner slds-align_absolute-center" style="padding: 0.5rem; width: 44rem;">
+            
+            <aura:if isTrue="{!v.spinner}">
+                
+                <div class="whiteBackground">
+                    <div class="relative">
+                        <lightning:spinner variant="brand" size="large" alternativeText="Loading"/>
+                    </div>
+                </div>
+                
+            </aura:if>
+            <!--Introducción con Datos de la Cuenta-->
+            <aura:if isTrue="{!and(v.spinner == false, v.currentStage == 'New')}">
+                
+                <c:NewOpportunity aura:id="newId" newOpportunity="{!v.opportunity}"
+                                  firstScreen="{!v.firstScreen}" lastScreen="{!v.lastScreen}" 
+                                  successFailureFinalScreen="{!v.successFailureFinalScreen}" fieldsToUpdate="{!v.fieldsToUpdate}"/>
+                
+            </aura:if>
+            <aura:if isTrue="{!and(v.spinner == false, v.currentStage == 'Qualification')}">
+                
+                <c:Qualification aura:id="qualificationId" opportunity="{!v.opportunity}"
+                                   firstScreen="{!v.firstScreen}" lastScreen="{!v.lastScreen}" 
+                                   successFailureFinalScreen="{!v.successFailureFinalScreen}" 
+                                   fieldsToUpdate="{!v.fieldsToUpdate}" accountFieldsToUpdate="{!v.accountFieldsToUpdate}"/>
+                
+            </aura:if>
+            <aura:if isTrue="{!and(v.spinner == false, v.currentStage == 'Pending')}">
+                
+                <c:Pending aura:id="pendingId" opportunity="{!v.opportunity}"
+                                   firstScreen="{!v.firstScreen}" lastScreen="{!v.lastScreen}" 
+                                   successFailureFinalScreen="{!v.successFailureFinalScreen}" 
+                                   fieldsToUpdate="{!v.fieldsToUpdate}"/>
+                
+            </aura:if>
+            <aura:if isTrue="{!and(v.spinner == false, v.currentStage == 'Closed Won')}">
+                
+                <c:ClosedWon aura:id="closedWonId" opportunity="{!v.opportunity}"
+                                   firstScreen="{!v.firstScreen}" lastScreen="{!v.lastScreen}" 
+                                   successFailureFinalScreen="{!v.successFailureFinalScreen}" 
+                                   fieldsToUpdate="{!v.fieldsToUpdate}"/>
+                
+            </aura:if>
+            <aura:if isTrue="{!and(v.spinner == false, v.currentStage == 'Closed Lost')}">
+                
+                <c:ClosedLost aura:id="closedLostId" opportunity="{!v.opportunity}"
+                                   firstScreen="{!v.firstScreen}" lastScreen="{!v.lastScreen}" 
+                                   successFailureFinalScreen="{!v.successFailureFinalScreen}" 
+                                   fieldsToUpdate="{!v.fieldsToUpdate}"/>
+                
+            </aura:if>
+             
+        </div>    
+        
+        <footer  class="slds-modal__footer slds-align_absolute-center">
+            
+            <aura:if isTrue="{!and(v.firstScreen == false, v.lastScreen == false)}">
+                <lightning:button class="slds-button slds-button_brand" label="{!$Label.c.Previous}" onclick="{!c.previousStep}"/>
+            </aura:if>
+            
+            <aura:if isTrue="{!v.lastScreen == false}">
+                <lightning:button class="slds-button slds-button_brand" label="{!$Label.c.Next}" onclick="{!c.nextStep}"/>
+            </aura:if>
+            <!-- Si una pantalla tiene lastScreen y firstScreen en verdadero no tiene que mostrar botones -->
+            <aura:if isTrue="{! v.lastScreen &amp;&amp; !v.firstScreen &amp;&amp; v.successFailureFinalScreen}">
+                <lightning:button class="slds-button slds-button_brand" label="{!$Label.c.Finish}" onclick="{!c.finishStage}"/>
+            </aura:if>
+            
+            <aura:if isTrue="{! v.lastScreen &amp;&amp; !v.firstScreen &amp;&amp; v.successFailureFinalScreen == false}">
+                <lightning:button class="slds-button slds-button_brand" label="{!$Label.c.Accept}" onclick="{!c.reloadStage}"/>
+            </aura:if>
+            
+        </footer>
+        
+    </article>
+    
+</aura:component>

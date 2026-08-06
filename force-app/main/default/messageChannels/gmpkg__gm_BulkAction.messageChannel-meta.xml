@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This Lightning Message Channel sends job information from the component to the monitor.</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>Job Id</description>
+        <fieldName>jobId</fieldName>
+    </lightningMessageFields>
+    <masterLabel>Bulk Action</masterLabel>
+</LightningMessageChannel>

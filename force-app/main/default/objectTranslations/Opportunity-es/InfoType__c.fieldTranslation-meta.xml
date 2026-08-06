@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Opportunity Info Type --></label>
+    <name>InfoType__c</name>
+    <picklistValues>
+        <masterLabel>Custom Project</masterLabel>
+        <translation><!-- Custom Project --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Facade</masterLabel>
+        <translation><!-- Facade --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kitchen</masterLabel>
+        <translation><!-- Kitchen --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

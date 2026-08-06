@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunities_SAP_Errors__c</fullName>
+    <description>Number of opportunities that could not be sent to SAP or are In Process of being sent</description>
+    <label>Opportunities SAP Errors</label>
+    <summaryFilterItems>
+        <field>Opportunity.SAP_Status__c</field>
+        <operation>notEqual</operation>
+        <value></value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Opportunity.SAP_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Success</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

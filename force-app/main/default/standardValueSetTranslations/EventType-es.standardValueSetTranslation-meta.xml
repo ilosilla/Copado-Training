@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>CPD presentation</masterLabel>
+        <translation><!-- CPD presentation --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Claim Visit</masterLabel>
+        <translation>Visita de Reclamación</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Client event</masterLabel>
+        <translation>Evento con Clientes</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Customer Entertainment</masterLabel>
+        <translation>Entreteniemiento</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>E-commerce Showroom Appointment</masterLabel>
+        <translation><!-- E-commerce Showroom Appointment --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>E-commerce Virtual appointment</masterLabel>
+        <translation><!-- E-commerce Virtual appointment --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Factory trip</masterLabel>
+        <translation>Viaje a fábrica</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Library update/Samples delivery</masterLabel>
+        <translation>Actualización de Biblioteca/ Envío de muestras</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Lunch and Learn (CEU)</masterLabel>
+        <translation><!-- Lunch and Learn (CEU) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Meeting</masterLabel>
+        <translation><!-- Meeting --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Non Commercial</masterLabel>
+        <translation>No comercial</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Opportunity Follow Up Meeting</masterLabel>
+        <translation>Seguimiento de la Oportunidad</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Product Presentation</masterLabel>
+        <translation>Presentación del Producto</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Prospect meeting</masterLabel>
+        <translation>Reunión de Prospección</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Showroom Visit</masterLabel>
+        <translation>Visita a la Tienda</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Site visit</masterLabel>
+        <translation>Visita a la Obra</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Trade show</masterLabel>
+        <translation>Feria</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Virtual appointment</masterLabel>
+        <translation><!-- Virtual appointment --></translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

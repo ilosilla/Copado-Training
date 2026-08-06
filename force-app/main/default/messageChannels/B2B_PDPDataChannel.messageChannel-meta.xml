@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Shares PDP Product2, PricebookEntry and PIMProduct data between PDP components.</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>Product2 data for PDP (Map or SObject)</description>
+        <fieldName>productData</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>PricebookEntry data for PDP</description>
+        <fieldName>priceData</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>PIMProduct data for PDP</description>
+        <fieldName>pimData</fieldName>
+    </lightningMessageFields>
+    <masterLabel>B2B PDP Data Channel</masterLabel>
+</LightningMessageChannel>

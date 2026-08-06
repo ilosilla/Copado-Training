@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Change_of_Opportunity</fullName>
+    <active>true</active>
+    <description>The Opportunity cannot be changed</description>
+    <errorConditionFormula>AND(ISNEW(), NOT(Opportunity__r.Id = Opportunity__c) )</errorConditionFormula>
+    <errorDisplayField>Opportunity__c</errorDisplayField>
+    <errorMessage>The Opportunity cannot be changed</errorMessage>
+</ValidationRule>

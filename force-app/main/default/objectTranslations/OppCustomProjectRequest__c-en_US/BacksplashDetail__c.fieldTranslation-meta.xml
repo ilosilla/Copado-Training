@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Backsplash Detail --></label>
+    <name>BacksplashDetail__c</name>
+    <picklistValues>
+        <masterLabel>3/8  Bookmatched (XTONE)</masterLabel>
+        <translation><!-- 3/8  Bookmatched (XTONE) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>3/8 Random Pattern (XTONE)</masterLabel>
+        <translation><!-- 3/8 Random Pattern (XTONE) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coved/Moulded (KRION)</masterLabel>
+        <translation><!-- Coved/Moulded (KRION) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Loose/Standard (KRION)</masterLabel>
+        <translation><!-- Loose/Standard (KRION) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>¼ Bookmatched (XTONE)</masterLabel>
+        <translation><!-- ¼ Bookmatched (XTONE) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>¼ Random Pattern (XTONE)</masterLabel>
+        <translation><!-- ¼ Random Pattern (XTONE) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>½ Random Pattern (XTONE)</masterLabel>
+        <translation><!-- ½ Random Pattern (XTONE) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>½ Standard Continuous Flow (XTONE)</masterLabel>
+        <translation><!-- ½ Standard Continuous Flow (XTONE) --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

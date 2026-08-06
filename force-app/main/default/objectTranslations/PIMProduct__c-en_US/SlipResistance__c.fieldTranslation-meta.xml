@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Barefoot Slip Resistance --></label>
+    <name>SlipResistance__c</name>
+    <picklistValues>
+        <masterLabel>-</masterLabel>
+        <translation><!-- - --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Slip Resistance A (12°–18°)</masterLabel>
+        <translation><!-- Slip Resistance A (12°–18°) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Slip Resistance B (18°–24°)</masterLabel>
+        <translation><!-- Slip Resistance B (18°–24°) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Slip Resistance C (&gt;24°)</masterLabel>
+        <translation><!-- Slip Resistance C (&gt;24°) --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

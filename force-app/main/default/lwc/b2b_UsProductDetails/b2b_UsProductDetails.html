@@ -1,0 +1,32 @@
+<template>
+    <section class="rc-section">
+        <div class="rc-section-header">
+            <h2>Product Details</h2>
+            <span class="toggle no-select rc-section-symbol" onclick={toggleOpen}>
+                <lightning-icon icon-name={toggleSymbol} size="small"></lightning-icon>
+            </span>
+        </div>
+
+        <div class={bodyClass}>
+            <div class="rc-section-content">
+                <template for:each={renderAttributes} for:item="att">
+                    <template lwc:if={att.skip}>
+                        <!-- hueco vacío -->
+                        <div key={att.key} class="break"></div>
+                    </template>
+                    <template lwc:else>
+                        <div key={att.key} class="cell">
+                            <span class="label">{att.label}</span>
+                            <span class="value">{att.value}</span>
+                        </div>
+                    </template>
+                </template>
+            </div>
+        </div>
+
+        <div class="rc-section-footer">
+            <a href={productFinderUrl} target="_blank">VIEW THE COMPLETE PRODUCT SHEET WITH PHOTOS AND TECHNICAL DOWNLOADS</a>
+        </div>
+
+    </section>
+</template>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PorcelanosaAddress__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Porcelanosa Address</label>
+    <referenceTo>PorcelanosaAddress__c</referenceTo>
+    <relationshipLabel>B2B Deliveries</relationshipLabel>
+    <relationshipName>B2BDeliveries</relationshipName>
+    <required>false</required>
+    <type>Lookup</type>
+</CustomField>

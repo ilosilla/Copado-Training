@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sarah_Dempsey_Contacted_Leads</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE_CODE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>AccountId__c</columns>
+    <columns>ContactId__c</columns>
+    <columns>LeadSubtype__c</columns>
+    <columns>Sales_Office__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>contains</operation>
+        <value>Contacted via Phone,Contacted via Email</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.FIRST_NAME</field>
+        <operation>equals</operation>
+        <value>Sarah</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.LAST_NAME</field>
+        <operation>equals</operation>
+        <value>Dempsey</value>
+    </filters>
+    <label>Sarah Dempsey Contacted Leads</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>NYC_Outside_Sales</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

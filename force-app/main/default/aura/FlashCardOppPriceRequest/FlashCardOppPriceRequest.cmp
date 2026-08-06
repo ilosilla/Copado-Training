@@ -1,0 +1,93 @@
+<!--
+ Ivan Losilla - August 2021
+ Component created to show basic info about a Price Request on an Opportunity as a Flash Card.
+ It gives you the option to open a price request already existing.
+-->
+
+<aura:component 
+  	implements="flexipage:availableForAllPageTypes,force:hasSObjectName,force:hasRecordId"
+	access="global"
+    controller="OppPriceRequestComponentController">
+    
+    <!-- Data Attributes -->
+    <aura:attribute name="priceRequest" type="Object"/>
+    
+    <!-- UI attributes -->
+    <aura:attribute name="titleFlashCard" type="String"/>
+    <aura:attribute name="disableOpenButton" type="Boolean" default="false"/>
+    <aura:attribute name="subtitleFlashCard" type="String"/>
+    <aura:attribute name="isActive" type="Boolean" default="false"/>
+    <aura:attribute name="isManager" type="Boolean" default="false"/>
+    <aura:attribute name="isStoreManager" type="Boolean" default="false"/>
+    <aura:attribute name="isFactoryManager" type="Boolean" default="false"/>
+    <aura:attribute name="isStoreApprover" type="Boolean" default="false"/>
+    <aura:attribute name="isFactoryApprover" type="Boolean" default="false"/>
+    <aura:attribute name="showComponent" type="Boolean" default="false"/>
+    
+    <!-- Quick action ttributes -->
+    <lightning:quickActionAPI aura:id="quickActionAPI" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    
+    <aura:if isTrue="{! v.isActive  }">
+        <article class="slds-card">
+            <header class="slds-border_bottom">
+                <div class="slds-media slds-media_center slds-has-flexi-truncate slds-page-header slds-border_bottom" >
+                    <div class="slds-page-header__name-title slds-size_full">
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-size_12-of-12">
+                                <aura:if isTrue="{! v.priceRequest != null }">
+                                    <p class="slds-card__header-title slds-truncate slds-card__header-link">
+                                        <lightning:icon iconName="standard:price_books" class="slds-m-bottom--x-small slds-m-right--x-small" size="small"/> {! v.titleFlashCard }
+                                    </p>
+                                    <aura:if isTrue="{! v.priceRequest.ApproveCode__c != null }">
+                                        <p class="slds-card__header-title slds-text-body_regular slds-truncate slds-card__header-link">
+                                            <span>  {! $Label.c.prequest_approve_code }: {! v.priceRequest.ApproveCode__c}</span>
+                                        </p>
+                                    </aura:if>
+                                    <p>{! v.subtitleFlashCard }</p>
+                                    <aura:set attribute="else">
+                                        <p class="slds-card__header-title slds-truncate slds-card__header-link">
+                                            <lightning:icon iconName="standard:price_books" class="slds-m-bottom--x-small slds-m-right--x-small" size="small"/> {! v.titleFlashCard }
+                                        </p>
+                                        <span >  
+                                            {! v.subtitleFlashCard }
+                                        </span>
+                                    </aura:set>
+                                </aura:if>
+                                <aura:if isTrue="{! and(v.priceRequest != null, v.disableOpenButton == false) }">
+                                    <lightning:button stretch="true" variant="neutral" onclick="{! c.toggleModal }" class="slds-m-top--x-small" title="{! $Label.c.prequest_pricerequest }">
+                                        {! $Label.c.dict_open }
+                                    </lightning:button>
+                                </aura:if>
+                                <aura:if isTrue="{! v.priceRequest == null }">
+                                    <lightning:button variant="neutral" stretch="true" onclick="{! c.toggleModal }" class="slds-m-top--x-small" title="{! $Label.c.prequest_pricerequest }">
+                                        {! $Label.c.dict_new }
+                                    </lightning:button>
+                                </aura:if>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </header>
+        </article>
+        
+        <!-- Modal with Price Request Component -->
+        <section aura:id="modalPriceRequest" role="dialog" tabindex="-1" class="slds-modal slds-modal_large" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+            <div class="slds-modal__container">
+                <div class="slds-modal__content" id="modal-content-id-1">
+                    <aura:if isTrue="{! v.showComponent == true }">
+                        <c:OppPriceRequestComponent closeComponent="{! c.toggleModal }" recordId="{! v.recordId }"/>
+                        <!--<aura:if isTrue="{! v.isFactoryManager == true }">
+                            <c:OppPriceRequestComponentFactory closeComponent="{! c.toggleModal }" recordId="{! v.recordId }"/>
+                             <aura:set attribute="else">
+                                <c:OppPriceRequestComponent closeComponent="{! c.toggleModal }" recordId="{! v.recordId }"/>
+                             </aura:set>
+                        </aura:if>-->
+                    </aura:if>
+                </div>
+            </div>
+        </section>
+        <div aura:id="backdropId" class="slds-backdrop"></div>
+    </aura:if>
+</aura:component>

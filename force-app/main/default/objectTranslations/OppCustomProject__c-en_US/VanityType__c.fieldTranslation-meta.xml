@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Vanity Collection Type --></label>
+    <name>VanityType__c</name>
+    <picklistValues>
+        <masterLabel>CITY</masterLabel>
+        <translation><!-- CITY --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FOLK</masterLabel>
+        <translation><!-- FOLK --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KOLE</masterLabel>
+        <translation><!-- KOLE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NEXT</masterLabel>
+        <translation><!-- NEXT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PENROSE</masterLabel>
+        <translation><!-- PENROSE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RAS</masterLabel>
+        <translation><!-- RAS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TETRIS</masterLabel>
+        <translation><!-- TETRIS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRAVAT</masterLabel>
+        <translation><!-- TRAVAT --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

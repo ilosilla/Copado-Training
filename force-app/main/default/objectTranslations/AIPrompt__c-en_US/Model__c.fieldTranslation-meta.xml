@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Model --></label>
+    <name>Model__c</name>
+    <picklistValues>
+        <masterLabel>gpt-3.5-turbo</masterLabel>
+        <translation><!-- gpt-3.5-turbo --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>gpt-4-turbo</masterLabel>
+        <translation><!-- gpt-4-turbo --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>gpt-4o</masterLabel>
+        <translation><!-- gpt-4o --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>gpt-4o-mini</masterLabel>
+        <translation><!-- gpt-4o-mini --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

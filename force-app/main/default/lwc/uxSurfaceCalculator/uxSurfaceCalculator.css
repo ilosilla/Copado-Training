@@ -1,0 +1,153 @@
+/* =========================================================
+   BODY
+   ========================================================= */
+
+.calc-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-right: 0.75rem;
+}
+
+/* =========================================================
+   PRODUCT
+   ========================================================= */
+
+.calc-product {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.calc-sku {
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--b2b-pretitle-text-color, #6b6b6b);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.calc-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--b2b-page-title-color, #1a1a1a);
+    line-height: 1.2;
+}
+
+/* =========================================================
+   INPUTS ROW — two shaded blocks
+   ========================================================= */
+
+.calc-inputs-row {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.calc-inputs-block {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.75rem;
+    background: var(--b2b-data-card-bg_light, #f7f8f9);
+    padding: 0.75rem 1.25rem;
+}
+
+.calc-qty {
+    flex: 0 0 auto;
+    --biq-outline: 2px solid var(--psa-secondary-text-color);
+    --biq-outline-offset: 0px;
+    --biq-input-size: 1rem;
+    --biq-input-weight: 400;
+    --biq-input-color: var(--psa-color-brand);
+    --biq-label-color: var(--b2b-field-label-text-color-light);
+}
+
+/* =========================================================
+   CONVERSION FACTORS
+   ========================================================= */
+
+.calc-factors {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    color: var(--b2b-paragraph-text-color, #5a5a5a);
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--b2b-border-color);
+}
+
+.calc-factors strong {
+    color: var(--b2b-data-value-color, #1a1a1a);
+}
+
+.calc-factor::before {
+    content: '▪ ';
+    color: var(--b2b-paragraph-text-color, #5a5a5a);
+}
+
+
+/* =========================================================
+   RESULT
+   ========================================================= */
+
+.calc-result {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--b2b-border-color);
+}
+
+.calc-result-label {
+    font-size: 0.8rem;
+    color: var(--b2b-paragraph-text-color, #5a5a5a);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.calc-result-summary {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--b2b-page-title-color, #1a1a1a);
+}
+
+.calc-result-empty {
+    font-size: 0.85rem;
+    color: var(--b2b-paragraph-text-color, #9a9a9a);
+}
+
+.calc-result-note {
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--b2b-paragraph-text-color, #5a5a5a);
+}
+
+/* =========================================================
+   CTA BUTTON
+   ========================================================= */
+
+.calc-cta {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background-color: var(--psa-color-brand);
+    color: #ffffff;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.calc-cta:hover {
+    background-color: var(--psa-neutral-background);
+    color: var(--psa-color-brand);
+    outline: 1px solid var(--psa-color-brand);
+}
+
+.calc-cta[disabled] {
+    background-color: var(--psa-btn-disabled-bg);
+    color: var(--psa-btn-disabled-fg);
+    cursor: not-allowed;
+    opacity: 0.6;
+}

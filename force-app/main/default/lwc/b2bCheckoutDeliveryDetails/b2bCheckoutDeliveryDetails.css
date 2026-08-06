@@ -1,0 +1,251 @@
+:host {
+    /* no-op: keeps room for future per-component tokens */
+}
+
+/* =========================================================
+   DELIVERY DETAILS – LAYOUT
+   ========================================================= */
+
+.checkout-form {
+    /* wrapper */
+}
+
+.checkout-form lightning-input,
+.checkout-form lightning-combobox,
+.checkout-form lightning-textarea {    
+    /* Labels */
+    --dxp-s-form-element-label-font-size: var(--b2b-field-label-font-size);
+    --dxp-s-form-element-label-font-weight: var(--b2b-field-label-font-weight);
+    --dxp-s-form-element-label-color: var(--b2b-field-label-text-color-dark);
+    
+    /* Values */
+    --dxp-c-input-text-font-size: var(--b2b-field-value-font-size);
+    --dxp-s-form-element-text-font-weight: var(--b2b-field-value-font-weight-weak);
+    --dxp-s-form-element-text-color: var(--b2b-field-value-text-color);   
+    --dxp-c-textarea-text-font-size: var(--b2b-field-value-font-size);
+
+    /* Others */
+    --dxp-s-form-element-color-border: var(--b2b-field-border-color);
+    --dxp-s-form-element-radius-border: var(--b2b-field-border-radius);
+    --dxp-g-spacing-medium: var(--b2b-field-spacing-medium);
+    --dxp-s-form-element-color-border-focus: var(--b2b-field-border-color-focus);
+    --dxp-s-form-element-text-font-family: var(--b2b-field-font-family);
+
+    --slds-c-checkbox-color-background-checked: #ffffff;
+    --slds-c-checkbox-color-border-checked: #1C3241;
+    --slds-c-checkbox-mark-color-foreground: #1C3241;  /* tick oscuro sobre fondo blanco */
+}
+
+.checkout-form lightning-input.input-required {
+    --dxp-s-form-element-label-font-weight: var(--b2b-checkout-required-label-font-weight);
+}
+
+
+/* =========================================================
+   DELIVERY ADDRESS — SECTION
+   ========================================================= */
+.checkout-section__title {
+    font-size: var(--b2b-checkout-section-title-size);
+    font-weight: var(--b2b-checkout-section-title-weight);
+    color: var(--b2b-checkout-strong-color);
+    margin-bottom: 0.75rem;
+}
+
+.checkout-section__intro {
+    margin-bottom: 1rem;
+    color: var(--b2b-checkout-base-color);
+}
+
+.dd-date-col{
+}
+
+.dd-date-hint .b2b-microcopy{
+    margin-top: 1.2rem;
+    max-width: 100%;
+    background: rgba(28, 50, 65, 0.06);          /* brand muy suave */
+    padding: 0.55rem 0.75rem;
+    border-radius: 0px;
+    color: #1C3241;
+    line-height: 1.35;
+}
+
+/* 2-col grids (1/3 + 2/3) */
+.dd-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1.5rem; /* 24px */
+    align-items: start;
+}
+
+/* 3-col grid (3 x 1/3) */
+.dd-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem; /* 24px */
+    margin-top: 0.25rem; 
+}
+
+.dd-grid--primary {
+    margin-top: 0.5rem; /* 8px under intro */
+}
+
+.dd-grid--secondary {
+    margin-top: 0; /* inside the requirements card */
+}
+
+/* Stacked fields (left columns) */
+.dd-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* 12px */
+    min-width: 0;
+}
+
+/* Right column (instructions) */
+.dd-instructions {
+    min-width: 0;
+}
+
+.dd-instructions--primary {
+    margin-top: 0.25rem; /* 12px below contact row */
+}
+
+/* =========================================================
+   DELIVERY REQUIREMENTS CARD (FULL WIDTH)
+   ========================================================= */
+
+.dd-req-card {
+    margin-top: 1rem; 
+    padding: 1rem; 
+    padding-bottom: 0.5rem;
+    border-radius: 4px;
+    border: none;
+    background: rgba(0, 0, 0, 0.035);
+}
+
+.dd-req-card__title {
+    font-size: 1.05em;
+    font-weight: 600;
+    color: var(--b2b-checkout-strong-color, #181818);
+    line-height: 1.2;
+}
+
+.dd-req-card__divider {
+    height: 1px;
+    background: var(--b2b-border-color, rgba(0, 0, 0, 0.12));
+    margin: 0.5rem 0 0.75rem 0; /* 8px top / 12px bottom */
+}
+
+/* Requirements layout: row of 2 selects + grid of checks */
+.dd-req-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; 
+}
+
+.dd-req-combos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem; /* 24px */
+}
+
+/* =========================================================
+   CHECKBOX GRID (2/3 column)
+   ========================================================= */
+
+.dd-checks-grid {
+    display: grid;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0rem 1.5rem; 
+    align-items: start;
+    min-width: 0;
+}
+
+/* =========================================================
+   Secondary section title hook (kept)
+   ========================================================= */
+
+.checkout-section__title--secondary {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .dd-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem; /* 16px */
+    }
+
+    .dd-grid-3 {
+        grid-template-columns: 1fr;
+        gap: 0.75rem; /* 12px */
+    }
+
+    .dd-checks-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem 1rem; /* 8px / 16px */
+    }
+
+    .dd-req-combos {
+        grid-template-columns: 1fr;
+        gap: 0.75rem; /* 12px */
+    }
+}
+
+.checkout-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--b2b-border-color);
+    padding-top: 1rem;
+}
+
+/* =========================================================
+    SUMMARY MODE
+ * =========================================================  */
+.checkout-summary__header { 
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+ .checkout-summary__block{
+    margin-left: var(--b2b-checkout-gutter-margin, 0.75rem);
+    padding-left: var(--b2b-checkout-gutter-padding, 0.75rem);
+    line-height: 1.45;
+}
+
+.checkout-summary__title{
+    font-size: var(--b2b-checkout-section-title-size);
+    font-weight: var(--b2b-checkout-section-title-weight);
+    color: var(--b2b-checkout-strong-color);
+    margin: 0;
+}
+
+/* Dirección compacta */
+.checkout-summary__date{
+  font-weight: 600; /* semibold */
+  color: var(--b2b-checkout-strong-color);
+}
+
+.checkout-summary__sep {
+  margin: 0 0.35rem;
+  color: var(--b2b-checkout-base-color);
+}
+
+.checkout-summary__contact {
+  color: var(--b2b-checkout-base-color);
+}
+
+/* Segunda línea (shipping) */
+.checkout-summary__instructions {
+  color: var(--b2b-checkout-base-color);
+}

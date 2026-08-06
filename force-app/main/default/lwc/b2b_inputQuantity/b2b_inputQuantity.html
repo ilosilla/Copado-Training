@@ -1,0 +1,30 @@
+<template>
+  <div class="field" style={hostStyle}>
+    
+    <label class="field-label" for={inputId}>{label}</label>
+
+    <div class="triple" aria-label={label}>
+      <button class="symbol-btn" data-step={negStep} onclick={onStep} title="menos">−</button>
+
+      <div class="input-cell">
+        <input
+          id={inputId}
+          class="slds-input centered no-border no-spinners sized"
+          type="number"
+          step={stepAttr}
+          inputmode={inputMode}
+          pattern={patternAttr}
+          value={displayValue}
+          oninput={onInput}
+          onblur={onBlur}
+          aria-invalid={invalidAttr}
+          aria-describedby={errorId}
+        />
+      </div>
+
+      <button class="symbol-btn" data-step={posStep} onclick={onStep} title="más">+</button>
+    </div>
+
+    <div id={errorId} class={errorClass}>{errorMessage}</div>
+  </div>
+</template>

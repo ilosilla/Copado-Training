@@ -1,0 +1,78 @@
+/*.THIS .topMargin{
+    margin-top: .4rem;
+}
+
+.THIS .topPadding{
+    padding: .3rem;
+}*/
+
+.THIS .slds-pill_link .slds-pill__icon_container{
+    left: .3rem;
+}
+
+.THIS .slds-pill__action {
+    /*padding: .48rem !important;
+    min-height: 1.875rem;
+    line-height: 1.875rem;
+    border-radius: 5px;
+    border-color: #cccccc;
+    margin: 3px;
+    padding-top: 0.48rem;
+    padding-right: calc(1rem + 0.25rem + 2px);
+    padding-bottom: 0.48rem;
+    padding-left: calc(1.25rem + 0.25rem + 8px);*/
+}
+
+.THIS span.slds-media__figure{
+    margin-top: 0!important;
+}
+
+.THIS .slds-listbox_vertical .slds-listbox__option:hover{
+    background-color: rgb(0, 242, 242);
+}
+
+.THIS .slds-icon_container, .THIS .slds-icon__container{
+    border-radius: 2px;
+}
+
+.THIS .slds-pill_link .slds-pill__icon_container, .THIS .slds-pill--link .slds-pill__icon_container {
+    left: calc(.125rem + 3px + 4px);
+    margin-right: 8px;
+}
+
+.THIS .slds-pill_link:hover, .THIS .slds-pill--link:hover {
+    background-color: rgb(0, 242, 242);
+}
+
+.THIS .slds-pill_link .slds-pill__remove, .THIS .slds-pill--link .slds-pill__remove {
+    right: calc(.125rem + 3px + 4px);
+}
+
+.THIS .pill-size {
+    width: 100%;
+}
+
+/*.THIS .disabled {
+    background-color: #ecebea;
+    border-color: #c9c7c5;
+    cursor: not-allowed;
+    user-select: none;
+}
+
+.THIS .left-padding {
+    padding-left: 2rem;
+}
+
+/*.THIS .lista {
+    min-height: 40px;
+    margin-top: 1px !important;
+}
+
+.THIS .flow-listwidth{
+	max-width: 700px;
+	left: 350px;
+}
+
+.THIS .email-related-width{
+    max-width: 60%;
+}*/

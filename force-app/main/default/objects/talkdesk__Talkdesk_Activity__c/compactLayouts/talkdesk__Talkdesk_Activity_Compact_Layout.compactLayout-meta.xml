@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>talkdesk__Talkdesk_Activity_Compact_Layout</fullName>
+    <fields>talkdesk__Start_Time__c</fields>
+    <fields>Name</fields>
+    <fields>talkdesk__Contact__c</fields>
+    <fields>talkdesk__Case__c</fields>
+    <fields>talkdesk__User__c</fields>
+    <fields>talkdesk__CallDuration__c</fields>
+    <fields>talkdesk__Recording__c</fields>
+    <label>Talkdesk Activity Compact Layout</label>
+</CompactLayout>

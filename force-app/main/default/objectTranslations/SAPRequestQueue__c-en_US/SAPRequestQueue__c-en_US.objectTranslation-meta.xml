@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SAP Request Queue</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SAP Requests Queue</value>
+    </caseValues>
+    <layouts>
+        <layout>SAP Request Queue Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Payload&amp;Response --></label>
+            <section>Payload&amp;Response</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- SAP Dispatcher --></label>
+        <name>SAP_Dispatcher</name>
+    </quickActions>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

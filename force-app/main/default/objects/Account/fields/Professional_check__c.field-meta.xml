@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Professional_check__c</fullName>
+    <formula>ISPICKVAL(Account_Classification__c, &apos;Architectural firm&apos;) || ISPICKVAL(Account_Classification__c, &apos;Building company&apos;) || ISPICKVAL(Account_Classification__c, &apos;Design-Build company&apos;) 
+		|| ISPICKVAL(Account_Classification__c, &apos;Developer&apos;) || ISPICKVAL(Account_Classification__c, &apos;Distribuitor / 3rd party retailer/dealer&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Professional check</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

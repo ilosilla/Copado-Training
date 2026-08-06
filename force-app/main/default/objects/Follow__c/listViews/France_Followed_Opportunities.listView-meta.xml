@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>France_Followed_Opportunities</fullName>
+    <columns>Opportunity__c</columns>
+    <columns>OpportunityActivity__c</columns>
+    <columns>OpportunityStage__c</columns>
+    <columns>OpportunityType__c</columns>
+    <columns>OpportunityAmount__c</columns>
+    <columns>OpportunityCloseDate__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Follow__c.Opportunity</value>
+    </filters>
+    <filters>
+        <field>OWNER.ALIAS</field>
+        <operation>contains</operation>
+        <value>sseg</value>
+    </filters>
+    <label>France Followed Opportunities</label>
+</ListView>

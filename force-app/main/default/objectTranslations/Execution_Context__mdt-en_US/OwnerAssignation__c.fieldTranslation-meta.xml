@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Owner Assignation --></label>
+    <name>OwnerAssignation__c</name>
+    <picklistValues>
+        <masterLabel>Extended US (país, cp, profile, etc)</masterLabel>
+        <translation><!-- Extended US (país, cp, profile, etc) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Standard (país y cp)</masterLabel>
+        <translation><!-- Standard (país y cp) --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

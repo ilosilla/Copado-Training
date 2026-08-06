@@ -1,0 +1,916 @@
+<template>
+    <!-- Overlay de loading -->
+    <template if:true={isLoading}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <div class="slds-modal slds-fade-in-open" style="display: flex; align-items: center; justify-content: center;">
+            <lightning-spinner alternative-text="Loading..." size="large"></lightning-spinner>
+        </div>
+    </template>
+
+    <!-- Overlay de loading -->
+    <template if:true={isLoadingForm}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <div class="slds-modal slds-fade-in-open" style="display: flex; align-items: center; justify-content: center;">
+            <lightning-spinner alternative-text="Loading..." size="large"></lightning-spinner>
+        </div>
+    </template>
+
+    <template if:false={isLoading}>
+        <div class="slds-grid slds-gutters">
+
+            <!-- LEFT PANEL (tu contenido actual) -->
+            <div class="slds-col slds-size_8-of-12">
+
+                <div class="slds-box slds-theme_shade slds-p-around_medium slds-rounded_large">
+                    <div class="slds-grid slds-grid_vertical-align-center">
+                
+                        <div class="slds-col slds-size_2-of-12">
+                            <lightning-button
+                                label="Previous"
+                                variant="bare"
+                                icon-name="utility:chevronleft"
+                                size="x-small"
+                                alternative-text="Previous"
+                                onclick={handlePrevious}
+                                icon-position="left"
+                            ></lightning-button>
+                        </div>
+                
+                        <div class="slds-col slds-size_8-of-12 slds-text-align_center">
+                            <h2 class="slds-text-heading_small">Account Info {titleIndex}</h2>
+                        </div>
+                
+                        <div class="slds-col slds-size_2-of-12 slds-text-align_right">
+                            <lightning-button
+                                label="Next"
+                                variant="bare"
+                                icon-name="utility:chevronright"
+                                size="x-small"
+                                alternative-text="Next"
+                                onclick={handleNext}
+                                icon-position="right"
+                            ></lightning-button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slds-p-around_medium slds-rounded_large slds-text-align--right">
+                    <lightning-button
+                    class="slds-m-right--x-small"
+                    label="Change owner"
+                    variant="brand-outline"
+                    onclick={handleUpdateOwner}>
+                </lightning-button>
+                    <lightning-button 
+                        label="Remove as Key Account"
+                        variant="brand-outline"
+                        data-id={accountInfo.Id}
+                        onclick={handleRemoveAsKey}>
+                    </lightning-button>
+                </div>
+
+                <lightning-record-edit-form
+                        record-id={accountInfo.Id}
+                        object-api-name="Account"
+                        onload={handleLoadForm}
+                    >
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-size_4-of-12">
+                            <lightning-output-field field-name="Name"></lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_4-of-12">
+                            <lightning-output-field field-name="OwnerId"></lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_4-of-12">
+                            <lightning-output-field field-name="Activity_Level__c"></lightning-output-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-size_4-of-12">
+                            <lightning-output-field field-name="SAP_Id__c"></lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_4-of-12">
+                            <lightning-output-field field-name="SalesMaturity__c"></lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_4-of-12">
+                            <lightning-output-field field-name="Account_Status__c"></lightning-output-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-size_4-of-12">
+                            <lightning-output-field field-name="BillingCountryCode"></lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_4-of-12">
+                            <lightning-output-field field-name="BillingPostalCode"></lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_4-of-12">
+                            <lightning-output-field field-name="BillingStreet"></lightning-output-field>
+                        </div>
+                    </div>
+                </lightning-record-edit-form>
+
+                <div class="slds-box slds-theme_shade slds-p-around_small slds-rounded_large slds-m-top--large">
+                    <h2 class="slds-text-heading_small slds-align--absolute-center">Additional data</h2>
+                </div>
+
+                <lightning-tabset>
+                    <lightning-tab label="Comments">
+                        <div class="slds-box_xx-small slds-m-bottom_small slds-rounded_large email-header" style="max-height: 400px; overflow-y: auto;">
+                            <template for:each={comments} for:item="comment">
+                                <table class="slds-table slds-table_cell-buffer slds-no-row-hover slds-table_bordered" key={comment.Id} style="margin-bottom: 10px;border:1px solid;">
+                                    <tr class="slds-theme_shade">
+                                        <th width="20%" style="text-align: center; font-weight: bold;">Completed</th>
+                                        <th width="60%" style="text-align: center; font-weight: bold;">Answer</th>
+                                        <th width="20%" style="text-align: center; font-weight: bold;">Actions</th>
+                                    </tr>
+                                    <tr>
+                                        <td width="20%" style="text-align: center; font-weight: bold;">
+                                            <lightning-formatted-date-time
+                                                    value={comment.WeeklyCompleted__c}
+                                                    year="numeric"
+                                                    month="numeric"
+                                                    day="numeric">
+                                                </lightning-formatted-date-time>
+                                        </td>
+                                        <td width="60%" style="text-align: center;">
+                                            <div style="
+                                                display: -webkit-box;
+                                                -webkit-line-clamp: 10;
+                                                -webkit-box-orient: vertical;
+                                                text-overflow: ellipsis;
+                                                white-space: normal;
+                                            ">
+                                                <lightning-formatted-rich-text value={comment.Value2__c}></lightning-formatted-rich-text>
+                                            </div>
+                                        </td >
+                                        <td width="20%" style="text-align: center; font-weight: bold;">
+                                            <template if:true={comment.selected}>
+                                                <lightning-button
+                                                    label="+ Info"
+                                                    variant="brand"
+                                                    class="slds-m-top_medium slds-hidden"
+                                                    data-id={comment.Id}>
+                                                </lightning-button>
+                                            </template>
+                                            <template if:false={comment.selected}>
+                                                <lightning-button
+                                                    label="+ Info"
+                                                    variant="brand"
+                                                    class="slds-m-top_medium"
+                                                    data-id={comment.Id}
+                                                    onclick={handleCommentSelected}>
+                                                </lightning-button>
+                                            </template>
+                                        </td>
+                                    </tr>
+                                    <tr class="slds-theme_shade">
+                                        <th colspan="3" style="text-align: center; font-weight: bold;">Comment</th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" style="text-align: center;">
+                                            <div style="
+                                                display: -webkit-box;
+                                                -webkit-line-clamp: 10;
+                                                -webkit-box-orient: vertical;
+                                                text-overflow: ellipsis;
+                                                white-space: normal;
+                                            ">
+                                                <lightning-formatted-rich-text value={comment.Value__c}></lightning-formatted-rich-text>
+                                            </div>
+                                        </td >
+                                    </tr>
+                                </table>
+                            </template>
+                        </div>
+                    </lightning-tab>
+                    <lightning-tab label="Team Members" title="2nd tab extended title">
+
+                        <template if:false={locked}>
+                            <div class="slds-p-around_small slds-rounded_large slds-text-align--right">
+                                <lightning-button 
+                                    label="Add member"
+                                    variant="brand-outline"
+                                    onclick={handleNewMember}>
+                                </lightning-button>
+                            </div>
+                        </template>
+        
+                        <div class="slds-box_xx-small slds-m-bottom_small slds-rounded_large email-header" style="max-height: 350px; overflow-y: auto;">
+                            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                <thead>
+                                    <tr class="slds-line-height_reset">
+                                        <th style="width: 40%;" scope="col">
+                                            <div class="slds-truncate" title="Account Name">Name</div>
+                                        </th>
+                                        <th style="width: 40%;" scope="col">
+                                            <div class="slds-truncate" title="Account Name">Role</div>
+                                        </th>
+                                        <th style="width: 20%;" scope="col">
+                                            <div class="slds-truncate" title="Account Name">Actions</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each={teamMembers} for:item="teamMember">
+                                        <tr class="slds-hint-parent" key={teamMember.Id}>
+                                            <td data-label="Owner Comment">
+                                                <div>
+                                                    {teamMember.User.Name}
+                                                </div>
+                                            </td>
+                                            <td data-label="Name">
+                                                <div>
+                                                    {teamMember.TeamMemberRole}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <template if:false={locked}>
+                                                    <lightning-button
+                                                        label="Add to email"
+                                                        variant="brand"
+                                                        class="slds-m-top_medium"
+                                                        data-id={teamMember.Id}
+                                                        data-email={teamMember.User.Email}
+                                                        onclick={handleAddEmail}>
+                                                    </lightning-button>
+                                                </template>
+                                            </td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
+                    </lightning-tab>
+
+                    <lightning-tab label={numberKeyOpportunitiesLabel} title="2nd tab extended title">
+
+                         <div class="slds-theme_shade slds-rounded_large slds-p-around--small">
+                            <h4 class="slds-align--absolute-center">Main Comment</h4>
+                        </div>
+
+                        <template if:true={keyOppscanSendEmail}>
+                             <div class="slds-grid slds-gutters slds-m-bottom--medium slds-m-top--small">
+                                <div class="slds-col slds-size_10-of-12">
+                                    <lightning-input
+                                        variant="label-hidden"
+                                        value={mainOppComment}
+                                        onchange={handleChangeMainComment}>
+                                    </lightning-input>
+                                </div>
+                                <div class="slds-col slds-size_2-of-12">
+                                    <lightning-button variant="brand-outline" disabled={mainCommentHasNoValue} label="Send comment" title="Send comment" onclick={handleSendOppComments} class="slds-m-left_x-small"></lightning-button>
+
+                                </div>
+                            </div>
+                        </template>
+                        <template if:false={keyOppscanSendEmail}>
+                            <div class="slds-p-around--medium slds-text-align--center">
+                                <i><b>No key opportunities pending to answer.</b></i>
+                            </div>
+                        </template>
+
+                       
+        
+                        <!--<div class="slds-box_xx-small slds-m-bottom_small slds-rounded_large email-header" style="max-height: 350px; overflow-y: auto;">-->
+                        <div class="slds-box_xx-small slds-m-bottom_small slds-rounded_large email-header" style="max-height: 350px; overflow-y: auto;">
+                             <template for:each={opportunities} for:item="opportunity">
+                                <template if:true={opportunity.keyOpp}>
+                                    <table class="slds-table slds-table_cell-buffer slds-no-row-hover slds-table_bordered" key={opportunity.Id} style="margin-bottom: 10px;border:1px solid;">
+                                        <tr class="slds-theme_shade">
+                                            <th width="20%" class="slds-theme_shade" style="text-align: center; font-weight: bold;">Name</th>
+                                            <th width="20%" style="text-align: center; font-weight: bold;">Answered</th>
+                                            <th width="20%" style="text-align: center; font-weight: bold;">Stage</th>
+                                            <th width="20%" style="text-align: center; font-weight: bold;">Owner</th>
+                                            <th width="20%" style="text-align: center; font-weight: bold;">Actions</th>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;">
+                                                <a href={opportunity.opportunityLink} target="_blank">{opportunity.Name}</a>
+                                            </td>
+                                            <td style="text-align: center;">
+                                                <lightning-formatted-date-time value={opportunity.answer}
+                                                    year="numeric"
+                                                    month="numeric"
+                                                    day="numeric">
+                                                </lightning-formatted-date-time>
+                                            </td>
+                                            <td style="text-align: center;">
+                                                {opportunity.StageName}
+                                            </td>
+                                            <td style="text-align: center;">
+                                                {opportunity.Owner.Name}
+                                            </td>
+                                            <td style="text-align: center;">
+                                                <div class="lgc-bg">
+                                                    <lightning-button-icon icon-name="utility:change_owner" data-id={opportunity.Id} onclick={handleUpdateOwnerOpportunity} alternative-text="Change owner" class="slds-m-left_xx-small" title="Change owner"></lightning-button-icon>
+                                                    <lightning-button-icon icon-name="utility:change_record_type" data-id={opportunity.Id} onclick={handleUpdateAccountOpportunity} alternative-text="Change Account" class="slds-m-left_xx-small" title="Change Account"></lightning-button-icon>
+                                                    <lightning-button-icon icon-name="utility:delete" data-id={opportunity.Id} onclick={handleRemoveAsKeyOpportunity} alternative-text="Remove as Key" class="slds-m-left_xx-small" title="Remove as Key"></lightning-button-icon>
+                                                    <lightning-button-icon icon-name="utility:archive" data-id={opportunity.Id} onclick={handleManageOpportunityHistoric} alternative-text="Historic" class="slds-m-left_xx-small" title="Historic"></lightning-button-icon>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="slds-theme_shade">
+                                            <th colspan="5" style="text-align: center; font-weight: bold;">Last comment</th>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="5">
+                                                <div style="
+                                                        display: -webkit-box;
+                                                        -webkit-line-clamp: 10;
+                                                        -webkit-box-orient: vertical;
+                                                        text-overflow: ellipsis;
+                                                        white-space: normal;
+                                                    ">
+                                                        <lightning-formatted-rich-text value={opportunity.comment}></lightning-formatted-rich-text>
+                                                    </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </template>
+                            </template>
+                        </div>
+                    </lightning-tab>
+
+                    <lightning-tab label={numberOpportunitiesLabel} title="2nd tab extended title">
+
+                        <!--<div class="slds-box_xx-small slds-m-bottom_small slds-rounded_large email-header" style="max-height: 350px; overflow-y: auto;">-->
+                        <div class="slds-box_xx-small slds-m-bottom_small slds-rounded_large email-header" style="max-height: 350px; overflow-y: auto;">
+                            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                <thead>
+                                    <tr class="slds-line-height_reset">
+                                        <th style="width: 100;" scope="col">
+                                            <div class="slds-truncate" title="Account Name">Name</div>
+                                        </th>
+                                        <th style="width: 10%;" scope="col">
+                                            <div class="slds-truncate" title="Account Name">Stage</div>
+                                        </th>
+                                        <th style="width: 10%;" scope="col">
+                                            <div class="slds-truncate" title="Account Name">Owner</div>
+                                        </th>
+                                        <th style="width: 10%;" scope="col">
+                                            <div class="slds-truncate" title="Account Name">Last Activity</div>
+                                        </th>
+                                        <th style="width: 20%;" scope="col">
+                                            <div class="slds-truncate" title="Account Name">Actions</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each={opportunities} for:item="opportunity">
+                                        <tr class="slds-hint-parent" key={opportunity.Id}>
+                                            <td data-label="Owner Comment">
+                                                <div>
+                                                    <template if:true={opportunity.keyOpp}>
+                                                        <lightning-icon icon-name="utility:bookmark_alt" size="xx-small" class="slds-m-right--x-small" alternative-text="Key Opportunity"></lightning-icon>
+                                                    </template>
+                                                    <a href={opportunity.opportunityLink} target="_blank">{opportunity.Name}</a>
+                                                </div>
+                                            </td>
+                                            <td data-label="Owner Comment">
+                                                <div>
+                                                    {opportunity.StageName}
+                                                </div>
+                                            </td>
+                                            <td data-label="Owner Comment">
+                                                <div>
+                                                    {opportunity.Owner.Name}
+                                                </div>
+                                            </td>
+                                            <td data-label="Owner Comment">
+                                                <div>
+                                                    <lightning-formatted-rich-text value={opportunity.Activity_Level__c} ></lightning-formatted-rich-text>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-p-around_medium lgc-bg">
+                                                    <lightning-button-icon icon-name="utility:change_owner" data-id={opportunity.Id} onclick={handleUpdateOwnerOpportunity} alternative-text="Change owner" class="slds-m-left_xx-small" title="Change owner"></lightning-button-icon>
+                                                    <lightning-button-icon icon-name="utility:change_record_type" data-id={opportunity.Id} onclick={handleUpdateAccountOpportunity} alternative-text="Change Account" class="slds-m-left_xx-small" title="Change Account"></lightning-button-icon>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
+                    </lightning-tab>
+
+                    <lightning-tab label={numberActivitiesLabel} title="Activities">
+
+                        <div class="slds-box_xx-small slds-m-bottom_small slds-rounded_large"
+                            style="max-height: 350px; overflow-y: auto;">
+
+                            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                <thead>
+                                    <tr class="slds-line-height_reset">
+                                        <th scope="col" style="width: 5%"></th>
+                                        <th scope="col" style="width: 55%">
+                                            <div class="slds-truncate" title="Subject">Subject</div>
+                                        </th>
+                                        <th scope="col" style="width: 20%">
+                                            <div class="slds-truncate" title="Date">Date</div>
+                                        </th>
+                                        <th scope="col" style="width: 10%">
+                                            <div class="slds-truncate" title="Type">Type</div>
+                                        </th>
+                                        <th scope="col" style="width: 15%">
+                                            <div class="slds-truncate" title="Owner">Owner</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <template for:each={activities} for:item="activity">
+                                        <tr key={activity.id} class="slds-hint-parent">
+                                            <td>
+                                                <lightning-icon
+                                                    icon-name={activity.icon}
+                                                    size="x-small"
+                                                    alternative-text={activity.type}>
+                                                </lightning-icon>
+                                            </td>
+                                            <td>
+                                                <div style="
+                                                        display: -webkit-box;
+                                                        -webkit-line-clamp: 3;
+                                                        -webkit-box-orient: vertical;
+                                                        text-overflow: ellipsis;
+                                                        white-space: normal;
+                                                    ">
+                                                <a href={activity.link} target="_blank">
+                                                    {activity.subject}
+                                                </a>
+                                                </div>
+                                            </td>
+                                             <td>
+                                                <lightning-formatted-date-time
+                                                    value={activity.date}
+                                                    year="numeric"
+                                                    month="short"
+                                                    day="2-digit"
+                                                    hour="2-digit"
+                                                    minute="2-digit">
+                                                </lightning-formatted-date-time>
+                                            </td>
+
+                                            <td>
+                                                {activity.type}
+                                            </td>
+
+                                            <td>
+                                                {activity.ownerName}
+                                            </td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </lightning-tab>
+
+                    <lightning-tab label={numberContactsLabel} title="Contacts">
+                        <div class="slds-box_xx-small slds-m-bottom_small slds-rounded_large"
+                            style="max-height: 350px; overflow-y: auto;">
+
+                            <template if:true={hasContacts}>
+                                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                    <thead>
+                                        <tr class="slds-line-height_reset">
+                                            <th scope="col">
+                                                <div class="slds-truncate" title="Name">Name</div>
+                                            </th>
+                                            <th scope="col" style="width: 20%">
+                                                <div class="slds-truncate" title="Title">Title</div>
+                                            </th>
+                                            <th scope="col" style="width: 20%">
+                                                <div class="slds-truncate" title="Email">Email</div>
+                                            </th>
+                                            <th scope="col" style="width: 15%">
+                                                <div class="slds-truncate" title="Phone">Phone</div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <template for:each={contacts} for:item="contact">
+                                            <tr key={contact.Id} class="slds-hint-parent">
+                                                <td>
+                                                    <a href="/lightning/r/Contact/{contact.Id}/view" target="_blank">
+                                                        {contact.Name}
+                                                    </a>
+                                                </td>
+                                                <td>{contact.Title}</td>
+                                                <td>
+                                                    {contact.Email}
+                                                </td>
+                                                <td>{contact.Phone}</td>
+                                            </tr>
+                                        </template>
+                                    </tbody>
+                                </table>
+                            </template>
+
+                            <template if:false={hasContacts}>
+                                <div class="slds-text-align_center slds-p-around_medium">
+                                    No contacts found
+                                </div>
+                            </template>
+
+                        </div>
+                    </lightning-tab>
+                </lightning-tabset>
+
+            </div>
+
+            <!-- RIGHT PANEL -->
+            <div class="slds-col slds-size_4-of-12 slds-border--left" style="min-height: 800px;">
+
+                <div class="slds-box slds-theme_shade slds-p-around_medium slds-rounded_large">
+                    <h2 class="slds-text-heading_small slds-align--absolute-center">
+                        Comment Data - 
+                        <lightning-formatted-date-time value={selectedComment.WeeklyCompleted__c}
+                            year="numeric"
+                            month="numeric"
+                            day="numeric">
+                        </lightning-formatted-date-time>
+                    </h2>
+                </div>
+
+                <template if:true={selectedComment.SentAnswer__c}>
+                    <div class="slds-p-around--x-small slds-rounded_large slds-m-top--x-small slds-theme--success slds-text-align--center">
+                            Answered - 
+                            <lightning-formatted-date-time value={selectedComment.SentAnswer__c}
+                                year="numeric"
+                                month="numeric"
+                                day="numeric">
+                            </lightning-formatted-date-time>
+                    </div>
+                </template>
+                <template if:false={selectedComment.SentAnswer__c}>
+                    <div class="slds-p-around--x-small slds-rounded_large slds-m-top--x-small slds-theme--warning slds-text-align--center">
+                           Not answered
+                    </div>
+                </template>
+
+                <template if:false={locked}>
+                    <!-- Checkbox de envío -->
+                    <div class="slds-m-top_small slds-grid slds-grid_vertical-align-center">
+                        <lightning-input
+                            type="checkbox"
+                            label="Include in email send"
+                            data-id={selectedComment.Id}
+                            checked={selectedComment.sendEmail} 
+                            onchange={handleSendEmailChanged}
+                            disabled={locked}>
+                        </lightning-input>
+                    </div>
+                    <div class="slds-m-top_small slds-grid slds-grid_vertical-align-center">
+                        <lightning-input
+                            type="checkbox"
+                            label="Remove as Key Account after Email Sent"
+                            data-id={selectedComment.Id}
+                            checked={selectedComment.removeKey} 
+                            onchange={handleRemoveKeyChanged}
+                            disabled={locked}>
+                        </lightning-input>
+                    </div>
+                </template>
+
+                    <div class="slds-theme_default slds-m-top_medium email-preview">
+                        <lightning-tabset>
+                            <lightning-tab label="Email Data">
+
+                                <!-- Info de la Cuenta (tipo header de email) -->
+                                <div class="slds-box_xx-small slds-m-bottom_small slds-rounded_large email-header">
+                                    <p><strong>To:</strong> {selectedComment.Value4__c}</p>
+                                    <p class="wrap-text"><strong>CC:</strong> {selectedComment.Value3__c}</p>
+                                </div>
+                                <!-- Body: Comentarios y traducción -->
+                                <div class="slds-box_xx-small slds-theme_default slds-rounded_large email-body">
+                                    <p class="slds-m-bottom_xx-small">
+                                        Comment
+                                    </p>
+                                    <div class="slds-box slds-box_xx-small slds-theme_shade slds-m-bottom_small slds-rounded_large email-header" style="min-height: 100px;">
+                                        {selectedComment.Value__c}
+                                    </div>
+
+                                    <br/>
+                                    <template if:true={selectedComment}>
+                                        <template if:true={selectedComment.Id}>
+                                            <template if:false={locked}>
+                                                <lightning-input-rich-text
+                                                    label="Answer" 
+                                                    placeholder="Add your feedback here..." 
+                                                    label-visible="true"
+                                                    value={selectedComment.Value2__c} 
+                                                    data-id={selectedComment.Id}
+                                                    onchange={handleCommentChanged}
+                                                    disabled={locked}>
+                                                </lightning-input-rich-text>
+                                            </template>
+                                            <template if:true={locked}>
+                                                <p class="slds-m-bottom_xx-small">
+                                                    Answer
+                                                </p>
+                                                <div class="slds-box slds-box_xx-small slds-theme_shade slds-m-bottom_small slds-rounded_large email-header" style="min-height: 100px;">
+                                                    <lightning-formatted-rich-text value={selectedComment.Value2__c}></lightning-formatted-rich-text>
+                                                </div>
+                                            </template>
+                                        </template>
+                                    </template>
+
+                                    <br/>
+
+                                    <template if:false={locked}>
+                                        <!-- Botón de traducción -->
+                                        <lightning-button
+                                        label="Translate to French" 
+                                        data-id={selectedComment.Id} 
+                                        onclick={handleTranslateClick} 
+                                        disabled={isTranslating}>
+                                        </lightning-button>
+
+                                        <br/>
+                                    </template>
+                                    
+                                </div>
+                            </lightning-tab>
+                            <template if:false={locked}>
+                                <lightning-tab label="Email Adresess">
+                                    <div class="slds-box_xx-small slds-m-bottom_small slds-rounded_large email-header wrap-text">
+                                        <div class="slds-p-around--xx-small slds-theme_shade slds-box_border">
+                                            <h2 class="slds-text-heading_small slds-align--absolute-center">Email To</h2>
+                                        </div>
+
+                                       <ul class="slds-p-top--small">
+                                            <template for:each={emailToList} for:item="emailTo">
+                                                <li  key={emailTo}>
+                                                    <span class="slds-badge slds-badge_lightest slds-m-right_x-small slds-m-bottom_x-small badge-wrapper">
+                                                        {emailTo}
+                                                        <lightning-button-icon
+                                                            variant="bare"
+                                                            icon-name="utility:close"
+                                                            size="xx-small"
+                                                            alternative-text="Remove"
+                                                            data-email={emailTo}
+                                                            onclick={handleRemoveToEmail}
+                                                        ></lightning-button-icon>
+                                                    </span>
+                                                </li>
+                                            </template>
+                                        </ul>
+
+                                        <div class="slds-p-around--xx-small slds-theme_shade slds-m-top--small slds-box_border">
+                                            <h2 class="slds-text-heading_small slds-align--absolute-center">
+                                                Email CC
+                                            </h2>
+                                        </div>
+                                        
+                                        <div class="slds-m-top--small">
+                                            <lightning-record-picker
+                                                lwc:ref="recordPickerRef"
+                                                label="Add user"
+                                                placeholder="Search Users..."
+                                                object-api-name="User"
+                                                filter={filterUsers}
+                                                display-info={displayInfoUsers}
+                                                onchange={addUserToEmailCCList}
+                                            >
+                                            </lightning-record-picker>
+                                        </div>
+                                        
+                                        <ul class="slds-p-top--small">
+                                            <template for:each={emailCCList} for:item="emailCC">
+                                                <li  key={emailCC}>
+                                                    <span class="slds-badge slds-badge_lightest slds-m-right_x-small slds-m-bottom_x-small badge-wrapper">
+                                                        {emailCC}
+                                                        <lightning-button-icon
+                                                            variant="bare"
+                                                            icon-name="utility:close"
+                                                            size="xx-small"
+                                                            alternative-text="Remove"
+                                                            data-email={emailCC}
+                                                            onclick={handleRemoveEmail}
+                                                        ></lightning-button-icon>
+                                                    </span>
+                                                </li>
+                                            </template>
+                                        </ul>
+                                    </div>
+                                </lightning-tab>
+                            </template>
+                        </lightning-tabset>
+                    </div>
+                </div>
+            </div>
+    </template>
+
+    <template if:true={isModalChangeOwnerOpen}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <!-- Modal -->
+        <section role="dialog" class="slds-modal slds-fade-in-open slds-modal_small">
+            <div class="slds-modal__container" style="width:200px">
+                
+                <!-- Header con "X" -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Cerrar"
+                            onclick={handleCloseModal}>
+                        <lightning-icon icon-name="utility:close" size="small" alternative-text="Cerrar"></lightning-icon>
+                    </button>
+                    <h2 class="slds-text-heading_medium">Change Account Owner</h2>
+                </header>
+
+                <!-- Contenido -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-flow
+                        flow-api-name="Change_Owner"
+                        flow-input-variables={inputVariablesChangeOwner}
+                        onstatuschange={handleFlowStatusChange}>
+                    </lightning-flow>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template if:true={isModalChangeOwnerOpportunityOpen}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <!-- Modal -->
+        <section role="dialog" class="slds-modal slds-fade-in-open slds-modal_small">
+            <div class="slds-modal__container" style="width:200px">
+                
+                <!-- Header con "X" -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Cerrar"
+                            onclick={handleCloseModal}>
+                        <lightning-icon icon-name="utility:close" size="small" alternative-text="Cerrar"></lightning-icon>
+                    </button>
+                    <h2 class="slds-text-heading_medium">Change Opportunity Owner</h2>
+                </header>
+
+                <!-- Contenido -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-flow
+                        flow-api-name="Change_Owner"
+                        flow-input-variables={inputVariablesChangeOwnerOpportunity}
+                        onstatuschange={handleFlowStatusChangeOpportunity}>
+                    </lightning-flow>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template if:true={isModalChangeAccountOpen}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <!-- Modal -->
+        <section role="dialog" class="slds-modal slds-fade-in-open slds-modal_small">
+            <div class="slds-modal__container" style="width:200px">
+                
+                <!-- Header con "X" -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Cerrar"
+                            onclick={handleCloseModal}>
+                        <lightning-icon icon-name="utility:close" size="small" alternative-text="Cerrar"></lightning-icon>
+                    </button>
+                    <h2 class="slds-text-heading_medium">Change Opportunity Account</h2>
+                </header>
+
+                <!-- Contenido -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-flow
+                        flow-api-name="Change_Opportunity_Account"
+                        flow-input-variables={inputVariablesChangeOwnerOpportunity}
+                        onstatuschange={handleFlowStatusChangeOpportunity}>
+                    </lightning-flow>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template if:true={isModalNewMemberOpen}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <!-- Modal -->
+        <section role="dialog" class="slds-modal slds-fade-in-open slds-modal_small">
+            <div class="slds-modal__container" style="width:200px">
+                
+                <!-- Header con "X" -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Cerrar"
+                            onclick={handleCloseModal}>
+                        <lightning-icon icon-name="utility:close" size="small" alternative-text="Cerrar"></lightning-icon>
+                    </button>
+                    <h2 class="slds-text-heading_medium">Change Opportunity Owner</h2>
+                </header>
+
+                <!-- Contenido -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-flow
+                        flow-api-name="Add_Team_Member"
+                        flow-input-variables={inputVariablesChangeOwner}
+                        onstatuschange={handleFlowStatusChange}>
+                    </lightning-flow>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template if:true={isOppCommentsModalOpen}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+
+        <section role="dialog" class="slds-modal slds-fade-in-open slds-modal_small">
+            <div class="slds-modal__container">
+                
+                <!-- Header con "X" -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Cerrar"
+                            onclick={handleCloseModal}>
+                        <lightning-icon icon-name="utility:close" size="small" alternative-text="Cerrar"></lightning-icon>
+                    </button>
+                </header>
+
+                <!-- Contenido -->
+                <div class="slds-modal__content slds-modal__content_headless slds-p-around_medium">
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                 <th style="width: 100px;" scope="col">
+                                    <div class="slds-truncate" title="Account Name">Opportunity</div>
+                                </th>
+                                <th style="width: 100px;" scope="col">
+                                    <div class="slds-truncate" title="Account Name">Completed</div>
+                                </th>
+                                <th style="width: 250px;" scope="col">
+                                    <div class="slds-truncate" title="Account Name">Comment</div>
+                                </th>
+                                <th style="width: 100px;" scope="col">
+                                    <div class="slds-truncate" title="Account Name">Answered</div>
+                                </th>
+                                <th style="width: 250px" scope="col">
+                                    <div class="slds-truncate" title="Account Name">Answer</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             <template for:each={selectedOpportunityComments} for:item="comment">
+                                <tr class="slds-hint-parent" key={comment.Id}>
+                                    <td data-label="Owner Comment">
+                                        <div>
+                                            {comment.Opportunity__r.Name}
+                                        </div>
+                                    </td>
+                                    <td data-label="Owner Comment">
+                                        <div>
+                                            <lightning-formatted-date-time value={comment.WeeklyCompleted__c}
+                                                year="numeric"
+                                                month="numeric"
+                                                day="numeric">
+                                            </lightning-formatted-date-time>
+                                        </div>
+                                    </td>
+                                    <td data-label="Owner Comment">
+                                        <div style="
+                                            display: -webkit-box;
+                                            -webkit-line-clamp: 3;
+                                            -webkit-box-orient: vertical;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            white-space: normal;
+                                        ">
+                                            <lightning-formatted-rich-text value={comment.Value__c}></lightning-formatted-rich-text>
+                                        </div>
+                                    </td>
+                                    <td data-label="Owner Comment">
+                                        <div>
+                                            <lightning-formatted-date-time value={comment.SentAnswer__c}
+                                                year="numeric"
+                                                month="numeric"
+                                                day="numeric">
+                                            </lightning-formatted-date-time>
+                                        </div>
+                                    </td>
+                                    <td data-label="Owner Comment">
+                                        <div style="
+                                            display: -webkit-box;
+                                            -webkit-line-clamp: 3;
+                                            -webkit-box-orient: vertical;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            white-space: normal;
+                                        ">
+                                            <lightning-formatted-rich-text value={comment.Value2__c}></lightning-formatted-rich-text>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+    </template>
+</template>

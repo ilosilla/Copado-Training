@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Postal_code_billing_GB</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( CONTAINS($User.Username, &apos;loads.user&apos;) = false,
+CONTAINS($User.Username, &apos;ivan.losilla&apos;) = false,
+(IsPersonAccount=False), 
+(ISPICKVAL(BillingCountryCode, &quot;GB&quot;) ),     
+NOT(REGEX(BillingPostalCode, &quot;([Gg][Ii][Rr] 0[Aa][Aa])|((([a-zA-Z-[QVXqvx]][0-9][0-9]?)|(([a-zA-Z-[QVXqvx]][a-zA-Z-[IJZijz]][0-9][0-9]?)|(([a-zA-Z-[QVXqvx]][0-9][aA-HJKSTUWhjkstuw])|([a-zA-Z-[QVXqvx]][a-zA-Z-[IJZijz]][0-9][ABEHMNPRVWXYabehmnprvwxy])))) [0-9][a-zA-Z-[CIKMOVcikmov]]{2})&quot;)) 
+)</errorConditionFormula>
+    <errorMessage>Invalid GB post code for Trade Account</errorMessage>
+</ValidationRule>

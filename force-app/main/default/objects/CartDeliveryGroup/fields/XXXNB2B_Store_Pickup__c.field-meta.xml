@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>XXXNB2B_Store_Pickup__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>XXXPickup</label>
+    <type>Checkbox</type>
+</CustomField>

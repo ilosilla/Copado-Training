@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UK_Address</fullName>
+    <columns>NBK_Sales_Org__c</columns>
+    <columns>NAME</columns>
+    <columns>NBK_OnlineAppointment__c</columns>
+    <columns>NBK_Appointment_type__c</columns>
+    <columns>NBK_isActive__c</columns>
+    <columns>NBK_SalesOffice__c</columns>
+    <columns>NBK_Business_Hours__c</columns>
+    <columns>BreakHours__c</columns>
+    <columns>NBK_GeolocationShowroom__c</columns>
+    <columns>NBK_ShowroomImage__c</columns>
+    <columns>NBK_Address__City__s</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NBK_Address__CountryCode__s</field>
+        <operation>equals</operation>
+        <value>GB</value>
+    </filters>
+    <label>UK Address</label>
+</ListView>

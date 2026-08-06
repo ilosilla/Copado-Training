@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Price_Books</fullName>
+    <columns>PRICEBOOK2.NAME</columns>
+    <columns>ExecutionContext__c</columns>
+    <columns>SamplesOnly__c</columns>
+    <columns>SAPCustomer__c</columns>
+    <columns>SAPSync__c</columns>
+    <columns>IsRetailReferencePricebook__c</columns>
+    <columns>PriceType__c</columns>
+    <columns>Bzirk__c</columns>
+    <columns>PRICEBOOK2.IS_ACTIVE</columns>
+    <columns>LastSync__c</columns>
+    <columns>LastSyncResult__c</columns>
+    <columns>PRICEBOOK2.CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Price Books</label>
+</ListView>

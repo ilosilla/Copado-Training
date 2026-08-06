@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Salutation_FirstName_Required</fullName>
+    <active>true</active>
+    <description>Salutation and FirstName fields should be required for personAccount</description>
+    <errorConditionFormula>AND(CONTAINS($User.Username, &apos;loads.user&apos;) = false,CONTAINS($User.Username, &apos;apiuser&apos;) = false,
+NOT( $Permission.BypassValidationRulesCP ),
+      Potential__c = false,
+  IsPersonAccount,
+  OR(
+    ISPICKVAL(Salutation, &apos;&apos;),
+    ISBLANK(FirstName)
+  )
+)</errorConditionFormula>
+    <errorMessage>Salutation and FirstName fields should be required for Person Account.</errorMessage>
+</ValidationRule>

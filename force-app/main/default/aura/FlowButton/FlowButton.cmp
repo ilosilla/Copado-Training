@@ -1,0 +1,15 @@
+<!-- 
+	Flow Button
+    Ramón
+    August 2020
+-->
+<aura:component implements="lightning:availableForFlowScreens,forceCommunity:availableForAllPageTypes" access="global">
+    
+    <!-- component parametres -->
+    <aura:attribute name="label" type="String" access="global"/>
+    <aura:attribute name="action" type="String" access="global"/>
+    	
+    <!-- aura:handler name="init" value="{!this}" action="{!c.onInit}"/ -->
+    	
+	<lightning:button variant="brand" label="{!v.label}" onclick="{!c.handleClick}" />
+</aura:component>

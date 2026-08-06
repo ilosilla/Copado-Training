@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Check this if the customer is returning the goods himselt to the warehouse --></help>
+    <label><!-- Customer will return the goods --></label>
+    <name>CustomerReturns__c</name>
+</CustomFieldTranslation>

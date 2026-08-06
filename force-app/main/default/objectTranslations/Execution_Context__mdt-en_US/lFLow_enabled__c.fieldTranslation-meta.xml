@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Enables or disables login flow for the current execution context --></help>
+    <label><!-- Login flow enabled --></label>
+    <name>lFLow_enabled__c</name>
+</CustomFieldTranslation>

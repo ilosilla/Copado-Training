@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_and_price__c</fullName>
+    <defaultValue>&quot;Product -  Price&quot;</defaultValue>
+    <description>Product and price of the opportunity</description>
+    <inlineHelpText>Product and price of the opportunity</inlineHelpText>
+    <label>Product and price</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

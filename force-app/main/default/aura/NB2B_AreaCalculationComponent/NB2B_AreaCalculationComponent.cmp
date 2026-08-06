@@ -1,0 +1,194 @@
+<!--
+  @description       : 
+  @author            : EHG@nubika.com
+  @group             : 
+  @last modified on  : 02-10-2023
+  @last modified by  : EHG@nubika.com
+-->
+<aura:component access="global" controller="NB2B_AreaCalculationController" implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,forceCommunity:availableForAllPageTypes" >
+    <aura:Attribute name="showComponent" type="Boolean" default="false" />
+    <aura:Attribute name="pieces" 		 type="Integer" default="0" />
+    <aura:Attribute name="boxes"  		 type="Integer" default="0" />
+    <aura:Attribute name="squareM" 		 type="Decimal" default="0" />
+	<aura:Attribute name="squareMTotal"  type="Decimal" default="0" />
+	<aura:Attribute name="squareMTotalAux"  type="Decimal" default="0" />
+    <aura:Attribute name="product" 		 type="Object"  default="{}" />
+    <aura:Attribute name="price" 		 type="Object"  default="{}" />
+    <aura:Attribute name="total" 		 type="Integer" default="0" />
+    <aura:Attribute name="totalAux" 		 type="Integer" default="0" />
+    <aura:Attribute name="pallet" 		 type="Integer" default="0" />
+    <aura:Attribute name="amount" 		 type="Decimal" default="0" />
+    <aura:Attribute name="amountTxt" 	 type="String" default="0" />
+    <aura:Attribute name="webStoreId"    type="String"  default="" />
+    <aura:Attribute name="userLanguage"    type="String"  default="" />
+    <aura:Attribute name="unitPrice"	type="String"  default="en_US" />
+    <aura:Attribute name="unitProductPrice"	type="String"  default="en_US" />
+    <aura:Attribute name="unitProductPricePlural"	type="String"  default="en_US" />
+    <aura:Attribute name="recordId" 	 type="String"/>
+    <aura:Attribute name="shade" 	 type="String"/>
+    <aura:Attribute name="disableOK" type="Boolean" default="true"/>
+
+    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_small" aria-labelledby="modal-heading-01" aria-modal="true">
+        <div class="slds-modal__container">
+            <div class="slds-grid" style="width: 100%;background-color: white;">
+                <div class="slds-col slds-size_1-of-2 colProductCalculate">
+                    <span>
+                        <div class="slds-m-top_medium slds-m-bottom_x-large">
+                            <div class="slds-p-around_medium lgc-bg">
+                                <span>
+                                    <h1 class="slds-text-heading_medium slds-m-bottom_medium">
+                                        <b>{!v.product.Name}</b>
+                                    </h1>
+                                    <h5 class="slds-text-heading_medium slds-m-bottom_medium" style="color:grey">
+                                        {!$Label.c.NB2B_ByPorcelanosa}
+                                    </h5>
+                                </span>
+                            </div>
+                            <div class="slds-p-around_medium lgc-bg">
+                                <span>
+                                    <div class="slds-grid slds-gutters" style="align-items: end;">
+                                    <div class="slds-col  slds-size_1-of-1">
+                                        <span>
+                                            <lightning:input 
+                                                messageWhenRangeOverflow="Value too large"
+                                                messageWhenBadInput="Bad entry value"
+                                                messageWhenStepMismatch="Max 3 decimals"
+                                                label="{!$Label.c.NB2B_Square_Meters}"
+                                                type="number" onchange="{! c.calculateMtsRound }"  step=".001" value="{!v.squareM}" min="0" max="10000"/>
+                                        </span>
+                                    </div>
+                                    </div>
+                                    <br/>
+                                    <div class="slds-grid slds-gutters" style="align-items: end;">                                    
+                                    <div class="slds-col slds-size_1-of-1">
+                                        <span>
+                                            <lightning:input
+                                                messageWhenStepMismatch="Please enter an integer"
+                                                type="number" 
+                                                onchange="{! c.calculateMts }" 
+                                                step="1" 
+                                                value="{!v.pallet}" 
+                                                min="0" 
+                                                max="1000"
+                                                label="{!$Label.c.NB2B_Pallets}"/>
+                                        </span>
+                                    </div>
+                                    </div>
+                                    <br/>
+                                    <div class="slds-grid slds-gutters" style="align-items: end;">
+                                    <div class="slds-col slds-size_1-of-1">
+                                        <span>
+                                            <lightning:input messageWhenStepMismatch="Please enter an integer" 
+                                            type="number" onchange="{! c.calculateMts }" step="1" value="{!v.boxes}" min="0" max="10000"
+                                            label = "{!$Label.c.NB2B_Boxes}"/>
+                                        </span>
+                                    </div>
+                                    </div>
+                                    <br/>
+                                    <div class="slds-grid slds-gutters" style="align-items: end;">                                    
+                                    <div class="slds-col slds-size_1-of-1">
+                                        <span>
+                                            <lightning:input messageWhenStepMismatch="Please enter an integer" type="number" onchange="{! c.calculateMts }"  step="1" 
+                                            value="{!v.pieces}" min="0" max="10000" label="{!$Label.c.NB2B_Pieces}"/>
+                                        </span>
+                                    </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-p-around_medium lgc-bg" style="align-items: end;">
+                                <span>
+                                    <h5 class="slds-text-heading_medium slds-m-bottom_medium" style="font-size: medium;">
+                                        <b>{!$Label.c.NB2B_Quantity_to_Order}&nbsp;:&nbsp;{!v.total}&nbsp;{!v.unitProductPricePlural}&nbsp;({!v.squareMTotal}&nbsp; {!$Label.c.NB2B_M2})</b>
+                                    </h5>
+                                </span>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <div class="slds-col slds-size_1-of-2 colProductInformation">                    
+                    <div class="slds-p-around_medium lgc-bg"><span></span></div>
+                    <div class="slds-p-around_medium lgc-bg"><span></span></div>
+                    <div class="slds-p-around_medium lgc-bg">
+                        <span>
+                            <div class="slds-col slds-size_1-of-1"><span><h1 class="title">Product Information</h1></span></div>
+                        </span>
+                    </div>
+                    <span>
+                        <div class="slds-m-top_medium slds-m-bottom_x-large" style="margin-left: 10px;">
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col slds-size_1-of-3">
+                                    <span class="label">
+                                        {!$Label.c.NB2B_Code}:
+                                    </span>
+                                </div>
+                                <div class="slds-col slds-size_2-of-3">
+                                    <span>
+                                        {!v.product.StockKeepingUnit}
+                                    </span>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col slds-size_1-of-3">
+                                    <span class="label">
+                                        {!$Label.c.NB2B_Box_Pallet}:
+                                    </span>
+                                </div>
+                                <div class="slds-col slds-size_2-of-3">
+                                    <span>
+                                        {!v.product.BoxXPal__c}
+                                    </span>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col slds-size_1-of-3">
+                                    <span class="label">
+                                        {!$Label.c.NB2B_Pieces_Box}:
+                                    </span>
+                                </div>
+                                <div class="slds-col slds-size_2-of-3">
+                                    <span>
+                                        {!v.product.PcsXBox__c}
+                                    </span>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col slds-size_1-of-3">
+                                    <span class="label">
+                                        {!$Label.c.NB2B_M2_Box}:
+                                    </span>
+                                </div>
+                                <div class="slds-col slds-size_2-of-3">
+                                    <span>
+                                        <lightning:formattedNumber value="{!v.product.M2XBox__c}" maximumFractionDigits="2"/>
+                                    </span>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col slds-size_1-of-3">
+                                    <span class="label">
+                                        {!$Label.c.NB2B_Weight}:
+                                    </span>
+                                </div>
+                                <div class="slds-col slds-size_2-of-3">
+                                    <span>
+                                        {!v.product.PesoUMV__c}{!$Label.c.NB2B_Kg_Box}{!v.unitProductPrice}
+                                    </span>
+                                </div>
+                            </div>
+                            <br/><br/><br/><br/>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" onclick="{! c.handleCancel }" aria-label="Cancel and close">{!$Label.c.NB2B_Button_Cancel}</button>
+                <button class="slds-button slds-button_brand" onclick="{! c.addToCart }" disabled="{!v.total le 0}">{!$Label.c.NB2B_Button_Apply}</button>
+            </div>
+        </div>
+    </section>
+<div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+</aura:component>

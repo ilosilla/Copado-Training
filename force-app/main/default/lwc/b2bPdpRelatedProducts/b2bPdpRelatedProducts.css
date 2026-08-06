@@ -1,0 +1,120 @@
+/* ==============================
+   RELATED PRODUCTS
+   ============================== */
+
+.pdp-related-container {
+    margin-top: 0.6rem;
+    padding: 0.6rem 0.75rem;
+    background: var(--b2b-data-card-bg_light, #f7f8f9);
+    border-radius: 0.25rem;
+}
+
+.pdp-related-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+
+@media (max-width: 700px) {
+    .pdp-related-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------- Card ---------- */
+
+.related-card {
+    border: 1px solid var(--b2b-border-color);
+    border-radius: 4px;
+    background: #fff;
+    height: 88px;               /* MÁS COMPACTA */
+}
+
+.related-card-content {
+    display: flex;
+    align-items: center;        /* 🔑 CENTRADO REAL */
+    gap: 0.75rem;
+    height: 100%;
+    padding: 0.5rem 0.75rem;    /* 🔑 AQUÍ estaba el caos antes */
+}
+
+.related-card:focus {
+    outline: 2px solid var(--psa-color-brand);
+    outline-offset: 2px;
+}
+
+.related-card:hover {
+    box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+    transform: translateY(-1px);
+}
+/* ---------- Image ---------- */
+
+.related-image {
+    width: 52px;
+    height: 100%;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* ---------- Text ---------- */
+
+.related-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.related-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.related-sku {
+    font-size: 0.7rem;
+    opacity: 0.8;
+}
+
+/* ---------- Tags ---------- */
+
+.related-tags {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--b2b-microcopy-info-text-color);
+    margin-bottom: rem;
+}
+
+.related-tag:not(:last-child)::after {
+    content: " · ";
+    opacity: 0.5;
+}
+
+.related-tag {
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 0; /*2px 6px;*/
+    background-color: none; /*var(--b2b-microcopy-info-bg-color);*/
+    color: var(--b2b-microcopy-info-text-color);
+    border-radius: 0; /*2px;*/
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.related-link {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.related-link:hover {
+    text-decoration: none;
+}
+
+.pdp-related-title {
+    font-weight: 700;
+    color: var(--psa-color-brand);
+    margin-bottom: 0.4rem;
+}

@@ -1,0 +1,140 @@
+<template>
+    <div class="doc">
+
+        <!-- Header row -->
+
+        <template lwc:if={ui_isLoading}>
+            <div class="doc__loading">
+                <lightning-spinner size="small" alternative-text="Loading"></lightning-spinner>
+            </div>
+        </template>
+
+        <template lwc:if={st_error}>
+            <div class="doc__error">
+                <lightning-icon icon-name="utility:error" variant="error" size="x-small"></lightning-icon>
+                <div class="doc__error-text">{st_error}</div>
+            </div>
+        </template>
+
+        <!-- =========================
+             HEADER
+             ========================= -->
+        <section class="doc__section">
+
+            <div class="doc__header">
+
+                <!-- LEFT (2/3): long fields -->
+                <div class="doc__header-left">
+
+                    <div class="doc__field">
+                        <div class="doc__label">Sales org</div>
+                        <div class="doc__value doc__value--strong">{st_header.salesOrg}</div>
+                    </div>
+
+                    <div class="doc__field">
+                        <div class="doc__label">Bill to</div>
+                        <div class="doc__value doc__value--strong">{st_header.billToName}</div>
+                        <div class="doc__value doc__value--muted">{st_header.billToAddress}</div>
+                    </div>
+
+                    <div class="doc__field">
+                        <div class="doc__label">Ship to</div>
+                        <div class="doc__value doc__value--strong">{st_header.shipToName}</div>
+                        <div class="doc__value doc__value--muted">{st_header.shipToAddress}</div>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT (1/3): short facts -->
+                <div class="doc__header-right">
+
+                    <div class="doc__fact">
+                        <div class="doc__label">B2B Order number</div>
+                        <div class="doc__value doc__value--strong">{sfOrderNumber}</div>
+                    </div>
+
+                    <div class="doc__fact">
+                        <div class="doc__label">Order date</div>
+                        <div class="doc__value">{orderDateLabel}</div>
+                    </div>
+
+                    <div class="doc__fact">
+                        <div class="doc__label">Delivery date</div>
+                        <div class="doc__value">{deliveryDateLabel}</div>
+                    </div>
+
+                    <div class="doc__fact">
+                        <div class="doc__label">PO number</div>
+                        <div class="doc__value">{st_header.poNumber}</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             TOTALS
+             ========================= -->
+        <div class="doc__totals">
+            <div class="doc__totals-col">
+                <div class="doc__totals-label">Net</div>
+                <div class="doc__totals-value">{netLabel}</div>
+            </div>
+
+            <div class="doc__totals-col">
+                <div class="doc__totals-label">Tax</div>
+                <div class="doc__totals-value">{taxLabel}</div>
+            </div>
+
+            <div class="doc__totals-col doc__totals-col">
+                <div class="doc__totals-label">Total</div>
+                <div class="doc__totals-value">{totalLabel}</div>
+            </div>
+        </div>
+
+        <!-- =========================
+             LINES
+             ========================= -->
+        <section class="doc__section">
+            <div class="doc__table-wrap">
+                <table class="doc__table">
+                    <thead>
+                        <tr>
+                            <th scope="col">SKU</th>
+                            <th scope="col">Name</th>
+                            <th scope="col" class="num">Qty</th>
+                            <th scope="col">UoM</th>
+                            <th scope="col" class="num">Net</th>
+                            <th scope="col" class="num">Tax</th>
+                            <th scope="col" class="num">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template lwc:if={hasLines}>
+                            <template for:each={st_lines} for:item="l">
+                                <tr key={l.key}>
+                                    <td class="cell--strong">{l.sku}</td>
+                                    <td>{l.name}</td>
+                                    <td class="num">{l.qty}</td>
+                                    <td>{l.uom}</td>
+                                    <td class="num">{l.netLabel}</td>
+                                    <td class="num">{l.taxLabel}</td>
+                                    <td class="num cell--strong">{l.totalLabel}</td>
+                                </tr>
+                            </template>
+                        </template>
+
+                        <template lwc:if={isLinesEmpty}>
+                            <tr>
+                                <td colspan="7" class="doc__empty">No lines.</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+</template>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COL_AfterSalesChannels__c</fullName>
+    <description>List of channels associated with after salaes (separated by ;)</description>
+    <externalId>false</externalId>
+    <label>COL After Sales Channels</label>
+    <length>30</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

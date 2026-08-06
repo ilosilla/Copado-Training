@@ -1,0 +1,112 @@
+:host {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 4px;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: white;   
+    width: 100%; 
+}
+
+.custom-header .header-section {
+  border-bottom: 1px solid rgba(240, 240, 240, 0.6);
+}
+
+.custom-header .header-row {
+    /*
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--com-c-layout-header-max-width, var(--dxp-s-header-content-max-width));
+}
+
+/* ==== TOP BAR ==== */
+.top-section {
+    background-color: #cfe1e6;  
+}
+
+.top-bar {
+    display: flex;             
+    justify-content: center;   
+    align-items: center;
+    column-gap: 1rem;
+    padding: 6px 15px;
+}
+
+.slds-list__item a {
+    background-color: yellow;
+}
+
+/* Col 1: lista de enlaces, ocupa el resto */
+.top-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0.75rem;
+}
+
+.top-links li:not(:last-child)::after { 
+    content: "|"; 
+    padding-left: 0.75rem; 
+}
+
+.top-links a { 
+    color: var(--psa-color-brand) !important;
+    font-size: 12px; 
+    text-transform: uppercase; 
+    letter-spacing: 0.2em;
+    font-weight: bold;
+}
+
+/* ==== MIDDLE ROW ==== */
+.middle-bar {
+  display: grid !important;  
+  grid-template-columns: minmax(max-content, 1fr) minmax(0, 700px) auto auto;
+  align-items: center;
+  column-gap: 12px;
+  padding: 10px 15px;
+}
+
+/* El logo absorbe lo que sobre y puede encoger sin romper */
+.logo { min-width: 0; background-color:}
+
+.logo ::slotted(*) {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+/* Celdas derechas pegadas al borde derecho */
+.profile, .cart { justify-self: end; min-width: 0; }
+
+
+/* —— Clave: cada slot del cluster debe “encoger y medir su contenido” —— */
+
+/* SEARCH: ancho = contenido, limitado a 300px máx, nunca 100% */
+.search::slotted(*) {
+  display: block !important;
+  width: 100% !important;      
+  max-width: 100% !important;  
+  text-align: right;
+}
+
+/* PROFILE y CART: ancho justo del contenido */
+.profile::slotted(*),
+.cart::slotted(*) {
+  display: inline-flex !important; 
+  width: auto !important;
+  max-width: none !important;
+  white-space: nowrap;             
+  align-items: center;
+}
+
+.header-logo h3 {
+    color: var(--psa-color-logo, #4a4a4a);
+    font-family:  var(--psa-font-header) !important;
+    font-size: 2em;
+    -webkit-font-smoothing: antialiased;
+}

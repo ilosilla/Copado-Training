@@ -1,0 +1,125 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasSObjectName,force:hasRecordId,force:lightningQuickActionWithoutHeader,lightning:actionOverride" access="global" controller="ReviewSmsComponentController">  
+    <aura:attribute name="showSpinner" type="Boolean" default="true"/>
+    <aura:attribute name="lastAction" type="Object"/>
+    <aura:attribute name="mainText" type="String" default=""/>
+    <aura:attribute name="validPhoneText" type="String" default=""/>
+    <aura:attribute name="changedLastAction" type="Boolean" default="false"/>
+    <aura:attribute name="askText" type="String" default=""/>
+    <aura:attribute name="recordLoadError" type="String"/>
+    <aura:attribute name="needsCheckbox" type="Boolean" default="false"/>
+    <aura:attribute name="enableSubmit" type="Boolean" default="false"/>
+    <aura:attribute name="canReview" type="Boolean" default="false"/>
+    <aura:attribute name="validPhone" type="Boolean" default="false"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.changedLastAction}" action="{!c.handleLastActionLoad}"/>
+    <aura:handler name="change" value="{!v.sendConfirmation}" action="{!c.handleConfirmationChange}"/>
+    <aura:handler name="change" value="{!v.canReview}" action="{!c.handleCanReview}"/>
+    
+    <lightning:notificationsLibrary aura:id="notificationsLibrary"/>
+    
+    <aura:attribute name="account" type="Object"/>
+    <force:recordData aura:id="recordLoader"
+                      recordId="{!v.recordId}"
+                      layoutType="FULL"
+                      fields="PersonOtherPhone, Phone, PersonMailingCountryCode"
+                      targetFields="{!v.account}"
+                      recordUpdated="{!c.handleOnAccountLoad}"
+                      targetError="{!v.recordLoadError}"   />
+    
+    <aura:html tag="style">
+        .cuf-content {
+        padding: 0 0rem !important;
+        }
+        .slds-p-around_medium {
+        padding: 0rem !important;
+        }
+        .slds-modal__content{
+        overflow-y: hidden;
+        height:unset !important;
+        max-height:unset !important;
+        text-align: center;
+        }
+        .slds-modal__container{
+        width: 100%;
+        max-width: 52.5rem;
+        min-width: 20rem;
+        margin: 0 auto;
+        }
+        .confirmCheckbox{
+        	margin: auto;
+            border: 1px solid!important;
+            width: 25px!important;
+            height: 25px!important;
+        }
+        .warningInside {
+        	    width: 61%;
+                margin: auto;
+                margin-top: 20px;
+        }
+    </aura:html>
+   
+    <aura:if isTrue="{!v.showSpinner}">
+        <div aura:id="spinnerId" class="slds-spinner_container">
+            <div class="slds-spinner_brand  slds-spinner slds-spinner_large slds-is-relative" role="alert">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </aura:if>
+    
+    <div class="slds-modal slds-fade-in-open" >
+        <div class="{! $Browser.formFactor != 'DESKTOP' ? 'slds-modal__container mobilePosition' : 'slds-modal__container'}">
+            
+            <header class="slds-modal__header">
+                <aura:if isTrue="{! $Browser.formFactor == 'DESKTOP'}">
+                    <lightning:buttonIcon alternativeText="Close" onclick="{!c.handleOnCancel}" iconName="utility:close" variant="bare" size="large" class="slds-modal__close slds-button_icon-inverse"/>
+                </aura:if>
+                <h2 class="slds-text-heading_medium slds-hyphenate">
+                	<ui:outputRichText value="{!$Label.c.ReviewSmsTtile}"/>
+                </h2>
+            </header>
+            
+            <div class="slds-modal__content slds-p-around_medium" style="overflow-y: auto !important; padding: 1rem 2rem;">
+    
+                <lightning:recordEditForm aura:id="form"  
+                                          onload="{!c.handleOnFormload}"   
+                                          onsubmit="{!c.handleOnSubmit}"                                  
+                                          onsuccess="{!c.handleOnSuccess}"
+                                          onerror="{!c.handleOnError}"
+                                          class="slds-card__body_inner">
+                    <lightning:layout multipleRows="true">
+                        <aura:if isTrue="{! !v.validPhone}">
+                            <lightning:layoutItem size="12" flexibility="auto" padding="around-small" class="{# $Browser.isPhone ? 'slds-order_12 slds-alert_warning warningInside' : 'slds-alert_warning warningInside'}">
+                                <ui:outputRichText class="marginLeft12" value="{! v.validPhoneText}"/>
+                            </lightning:layoutItem>
+                        </aura:if>
+                        
+                        <lightning:layoutItem size="12" flexibility="auto" padding="around-small" class="{# $Browser.isPhone ? 'slds-order_12' : ''}">
+                            <ui:outputRichText aura:id="mainMessage" class="marginLeft12" value="{! v.mainText}"/>
+                        </lightning:layoutItem>
+                        
+                        <aura:if isTrue="{!v.needsCheckbox}">
+                            <lightning:layoutItem size="12" flexibility="auto" padding="around-small" class="{# $Browser.isPhone ? 'slds-order_12' : ''}">
+                                <ui:inputCheckbox aura:id="sendConfirmation" label="{!$Label.c.ReviewSMSCheckbox}" change="{!c.handleConfirmationChange}" class="confirmCheckbox"/>
+                            </lightning:layoutItem>
+                        </aura:if>
+                        
+                        <lightning:layoutItem size="12" flexibility="auto" padding="around-small" class="{# $Browser.isPhone ? 'slds-order_12' : ''}">
+                            <ui:outputRichText aura:id="askMessage" class="marginLeft12" value="{! v.askText}"/>
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                    
+                    <footer class="modal-footer slds-modal__footer">
+                        <div class="slds-align_absolute-center">
+                            <lightning:button variant="neutral" label="{!$Label.c.No}" onclick="{!c.handleOnCancel}"/>
+                            <lightning:button variant="brand" label="{!$Label.c.Yes}" onclick="{!c.handleOnSubmit}" disabled="{! !v.enableSubmit}"/>
+                        </div>
+                    </footer>
+                </lightning:recordEditForm>
+                
+            </div>
+        </div>
+    </div>
+</aura:component>

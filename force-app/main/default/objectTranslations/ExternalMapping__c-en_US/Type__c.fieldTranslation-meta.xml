@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type --></label>
+    <name>Type__c</name>
+    <picklistValues>
+        <masterLabel>ACCOUNT</masterLabel>
+        <translation><!-- ACCOUNT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CONTACT</masterLabel>
+        <translation><!-- CONTACT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SALESOFFICE</masterLabel>
+        <translation><!-- SALESOFFICE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>USER</masterLabel>
+        <translation><!-- USER --></translation>
+    </picklistValues>
+</CustomFieldTranslation>
