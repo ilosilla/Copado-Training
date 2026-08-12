@@ -88,6 +88,10 @@
                 <behavior>Readonly</behavior>
                 <field>Sales_Office__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Copado_field_test__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
