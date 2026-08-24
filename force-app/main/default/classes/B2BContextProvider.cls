@@ -23,6 +23,7 @@
  *  invalidated on session timeout, logout, or browser close.
  *
  *  DATA MODEL
+ *  test
  *  ----------
  *  B2BAccountSettings__c  — one record per account; account-level settings
  *                            and lookup (Market__c) to B2BMarketSettings__c.
@@ -46,6 +47,7 @@
  *
  *  @author  Ramón Prades
  *  @since   2026
+ * test2 
  * ─────────────────────────────────────────────────────────────────────────────
  */
 public without sharing class B2BContextProvider {
